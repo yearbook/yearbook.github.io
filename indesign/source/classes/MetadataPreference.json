@@ -1,0 +1,426 @@
+{
+  "name": "MetadataPreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Metadata preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "serverURL",
+          "rwaccess": "readonly",
+          "shortdesc": "The location of the document on the asset management server.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "modificationDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The most recent modification date of the document.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "creationDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The creation date of the document.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "creator",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the application used to create the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "format",
+          "rwaccess": "readonly",
+          "shortdesc": "The format of the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the MetadataPreference &amp;&#35;40;a Document&#41;.",
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "author",
+          "shortdesc": "The author of the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "shortdesc": "The description of the MetadataPreference.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "jobName",
+          "shortdesc": "The job name.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "copyrightStatus",
+          "shortdesc": "The copyright status of the document.",
+          "datatype": {
+            "type": "CopyrightStatus"
+          }
+        },
+        {
+          "name": "copyrightNotice",
+          "shortdesc": "The text to use as a copyright notice.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "copyrightInfoURL",
+          "shortdesc": "The URL of the file that contains the linked copyright statement.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "keywords",
+          "shortdesc": "The list of keywords associated with the document.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "documentTitle",
+          "shortdesc": "The title of the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "save",
+          "shortdesc": "Saves the metadata in the document to an external file.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "to",
+                "shortdesc": "The path to the external file.",
+                "datatype": {
+                  "type": "File"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "replace",
+          "shortdesc": "Replaces the current metadata in the document with metadata from the specified file.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "using",
+                "shortdesc": "The full path to the file that contains the replacement metadata.",
+                "datatype": {
+                  "type": "File"
+                }
+              },
+              {
+                "name": "affectAll",
+                "optional": true,
+                "shortdesc": "If true, treats all properties as external. Note: Defaults to false. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "append",
+          "shortdesc": "Uses metadata from the specified external file to define any undefined metadata properties in the document.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "from",
+                "shortdesc": "The path to the external file that contains the metadata.",
+                "datatype": {
+                  "type": "File"
+                }
+              },
+              {
+                "name": "affectAll",
+                "optional": true,
+                "shortdesc": "If true, also replaces existing metadata with data from the external file. If false, does not replace existing metadata. Note: Defaults to false. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "getProperty",
+          "shortdesc": "Gets the XMP property value associated with the specified path.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "namespace",
+                "shortdesc": "The namespace of the property.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "path",
+                "shortdesc": "The specified path.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "setProperty",
+          "shortdesc": "Sets the XMP property associated with the specified path.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "namespace",
+                "shortdesc": "The namespace of the property.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "path",
+                "shortdesc": "The specified path&amp;&#35;40;s&#41;.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value to assign to the property. Note: To remove the property, pass an empty string.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "createContainerItem",
+          "shortdesc": "Creates an empty container.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "namespace",
+                "shortdesc": "The namespace of the container.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "path",
+                "shortdesc": "The path to the container.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "index",
+                "optional": true,
+                "shortdesc": "The index of the item within the container. Specified values must be 1 or greater. To append the item to the end of the index and allow the next available value to be assigned, use 0. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              {
+                "name": "container",
+                "optional": true,
+                "shortdesc": "The container type. Note: Required when the new item is the first item added to the container. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "ContainerType",
+                  "value": "ContainerType.BAG"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "countContainer",
+          "shortdesc": "Counts the number of items in the container.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "namespace",
+                "shortdesc": "The namespace of the container.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "path",
+                "shortdesc": "The path to the container.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the MetadataPreference.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "MetadataPreference",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "name": "XMLAttribute",
+  "dynamic": true,
+  "shortdesc": "An XML attribute.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the XMLAttribute &amp;&#35;40;a XMLElement&#41;.",
+          "datatype": {
+            "type": "XMLElement"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the XMLAttribute within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the XMLAttribute.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value",
+          "shortdesc": "The value of the XMLAttribute.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the XMLAttribute."
+        },
+        {
+          "name": "convertToElement",
+          "shortdesc": "Converts the XML attribute to a child element of its parent element.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "located",
+                "optional": true,
+                "shortdesc": "The location of the new XML element within the parent XML element of the XML attribute. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "XMLElementLocation",
+                  "value": "XMLElementLocation.ELEMENT_START"
+                }
+              },
+              {
+                "name": "markupTag",
+                "shortdesc": "The XML tag to apply to the new XML element. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "XMLTag"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "XMLElement"
+          }
+        },
+        {
+          "name": "select",
+          "shortdesc": "Selects the object.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "existingSelection",
+                "optional": true,
+                "shortdesc": "The selection status of the XMLAttribute in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "SelectionOptions",
+                  "value": "SelectionOptions.REPLACE_WITH"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the XMLAttribute.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "XMLAttribute",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

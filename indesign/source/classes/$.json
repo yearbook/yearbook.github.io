@@ -1,0 +1,383 @@
+{
+  "name": "$",
+  "dynamic": true,
+  "shortdesc": "The $ object provides a number of debugging facilities and informational methods.",
+  "elements": [
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "error",
+          "shortdesc": "The most recent run-time error information.",
+          "description": {
+            "a": {
+              "href": "#/Error",
+              "$t": "Error"
+            }
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Error",
+              "$t": "Error"
+            }
+          }
+        },
+        {
+          "name": "version",
+          "rwaccess": "readonly",
+          "shortdesc": "The version number of the ExtendScript engine.",
+          "description": "Formatted as a three-part number and description; for example: &quot;3.92.95 &amp;&#35;40;debug&#41;\".",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "build",
+          "rwaccess": "readonly",
+          "shortdesc": "The ExtendScript build information.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "buildDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The ExtendScript build date.",
+          "datatype": {
+            "type": {
+              "href": "#/Date",
+              "$t": "Date"
+            }
+          }
+        },
+        {
+          "name": "global",
+          "rwaccess": "readonly",
+          "shortdesc": "A reference to the global object, which contains the JavaScript global namespace.",
+          "datatype": {
+            "type": {
+              "href": "#/global",
+              "$t": "Object"
+            }
+          }
+        },
+        {
+          "name": "stack",
+          "rwaccess": "readonly",
+          "shortdesc": "The current stack trace.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "level",
+          "shortdesc": "The current debugging level, which enables or disables the JavaScript debugger.",
+          "description": "One of 0 &amp;&#35;40;no debugging&#41;, 1 (break on runtime errors), or 2 (full debug mode).",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "flags",
+          "shortdesc": "Gets or sets low-level debug output flags.",
+          "description": {
+            "li": [
+              "0x0002 &amp;&#35;40;2&#41;: Displays each line with its line number as it is executed.",
+              "0x0040 &amp;&#35;40;64&#41;: Enables excessive garbage collection. Usually, garbage collection starts when the number of objects has increased by a certain amount since the last garbage collection. This flag causes ExtendScript to garbage collect after almost every statement. This impairs performance severely, but is useful when you suspect that an object gets released too soon.",
+              "0x0080 &amp;&#35;40;128&#41;: Displays all calls with their arguments and the return value.",
+              {
+                "a": {
+                  "href": "#/$/class/strict",
+                  "$t": "strict"
+                }
+              },
+              "0x0200 &amp;&#35;40;512&#41;: Enables the localization feature of the toString method. Equivalent to the localize property."
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "strict",
+          "shortdesc": "Sets or clears strict mode for object modification.",
+          "description": "When true, any attempt to write to a read-only property causes a runtime error. Some objects do not permit the creation of new properties when true.",
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "locale",
+          "shortdesc": "Gets or sets the current locale.",
+          "description": {
+            "br": {}
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "localize",
+          "shortdesc": "Set to true to enable the extended localization features of the built-in toString&amp;&#35;40;&#41; method.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "decimalPoint",
+          "shortdesc": "The character used as the decimal point character in formatted numeric output.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "memCache",
+          "shortdesc": "The ExtendScript memory cache size, in bytes.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "screens",
+          "rwaccess": "readonly",
+          "shortdesc": "An array of objects containing information about the display screens attached to your computer.",
+          "description": {
+            "i": [
+              "left, top, right, bottom",
+              "primary"
+            ],
+            "br": {}
+          },
+          "datatype": {
+            "type": "Object",
+            "array": true
+          }
+        },
+        {
+          "name": "os",
+          "rwaccess": "readonly",
+          "shortdesc": "The current operating system version information.",
+          "datatype": {
+            "type": "string"
+          },
+          "example": {
+            "font": {
+              "face": "_typewriter",
+              "br": {}
+            }
+          }
+        },
+        {
+          "name": "fileName",
+          "rwaccess": "readonly",
+          "shortdesc": "The file name of the current script.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "line",
+          "rwaccess": "readonly",
+          "shortdesc": "The current line number of the currently executing script.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "hiresTimer",
+          "rwaccess": "readonly",
+          "shortdesc": "A high-resolution timer, measuring the time in microseconds. The timer starts when ExtendScript isinitialized during the application startup sequence. Every read access resets the timer to Zero.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "engineName",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the current ExtendScript engine, if set.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "includePath",
+          "rwaccess": "readonly",
+          "shortdesc": "The path for include files for the current script.",
+          "datatype": {
+            "type": "string"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "about",
+          "shortdesc": "Shows an About box for the ExtendScript component, and returns the text for the box.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toString",
+          "shortdesc": "Converts this object to a string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "write",
+          "shortdesc": "Prints text to the Console.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "text",
+                "shortdesc": "The text to print. All arguments are concatenated.",
+                "datatype": {
+                  "type": "any"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "writeln",
+          "shortdesc": "Prints text to the Console, and adds a newline character.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "text",
+                "shortdesc": "The text to print. All arguments are concatenated.",
+                "datatype": {
+                  "type": "any"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "bp",
+          "shortdesc": "Breaks execution at the current position.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "condition",
+                "optional": true,
+                "shortdesc": "A string containing a JavaScript statement to be used as a condition. If the statement evaluates to true or nonzero when this point is reached, execution stops.",
+                "datatype": {
+                  "type": "any"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "getenv",
+          "shortdesc": "Retrieves the value of an environment variable.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of the variable.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "setenv",
+          "shortdesc": "Sets the value of an environment variable.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of the variable.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value of the variable.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "sleep",
+          "shortdesc": "Suspends the calling thread for a number of milliseconds.",
+          "description": "During a sleep period, checks at 100 millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "msecs",
+                "shortdesc": "Number of milliseconds to sleep.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "colorPicker",
+          "shortdesc": "Invokes the platform-specific color selection dialog, and returns the selected color.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "color",
+                "shortdesc": "The color to be preselected in the dialog, as 0xRRGGBB, or -1 for the platform default.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "evalFile",
+          "shortdesc": "Loads and evaluates a file.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "file",
+                "shortdesc": "The file to load.",
+                "datatype": {
+                  "type": {
+                    "href": "#/File",
+                    "$t": "File"
+                  }
+                }
+              },
+              {
+                "name": "timeout",
+                "optional": true,
+                "shortdesc": "An optional timeout in milliseconds.",
+                "datatype": {
+                  "type": "number",
+                  "value": 10000
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "gc",
+          "shortdesc": "Initiates garbage collection in the ExtendScript engine."
+        }
+      ]
+    }
+  ]
+}

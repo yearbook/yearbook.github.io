@@ -1,0 +1,79 @@
+{
+  "name": "QName",
+  "dynamic": true,
+  "shortdesc": "A qualified XML name, containing the URI and the local name.",
+  "elements": [
+    {
+      "type": "constructor",
+      "method": [
+        {
+          "name": "QName",
+          "shortdesc": "Creates a QName object.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "uri",
+                "shortdesc": {
+                  "a": {
+                    "href": "#/Namespace",
+                    "$t": "Namespace"
+                  }
+                },
+                "description": {
+                  "u": {
+                    "li": [
+                      {
+                        "a": {
+                          "href": "#/Namespace",
+                          "$t": "Namespace"
+                        }
+                      },
+                      "If this is a QName object, the URI and localName is set to those of that object.",
+                      "If this is a string, the URI is set to that string."
+                    ]
+                  }
+                },
+                "datatype": {
+                  "type": "any"
+                }
+              },
+              {
+                "name": "name",
+                "optional": true,
+                "shortdesc": "The local name. Used only if URI is given as a string.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "QName"
+          },
+          "example": "new QName &amp;&#35;40;&quot;http:/www.adobe.com\", \"name\"&#41;"
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "uri",
+          "rwaccess": "readonly",
+          "shortdesc": "The URI part of the qualified name.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "localName",
+          "rwaccess": "readonly",
+          "shortdesc": "The local name part of the qualified name.",
+          "datatype": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  ]
+}

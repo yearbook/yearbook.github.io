@@ -1,0 +1,319 @@
+{
+  "name": "LanguageWithVendors",
+  "dynamic": true,
+  "shortdesc": "A language that allows the specification of a hyphenation rules source, a spell-checking source, and a thesaurus.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the LanguageWithVendors.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "icuLocaleName",
+          "rwaccess": "readonly",
+          "shortdesc": "The full name of the Language object&apos;s ICU locale.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "spellingVendorList",
+          "rwaccess": "readonly",
+          "shortdesc": "A list of spelling vendors.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "hyphenationVendorList",
+          "rwaccess": "readonly",
+          "shortdesc": "A list of hyphenation vendors.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the LanguageWithVendors.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the LanguageWithVendors &amp;&#35;40;a Application&#41;.",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the LanguageWithVendors within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "singleQuotes",
+          "shortdesc": "The single quotes pair for the language.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "doubleQuotes",
+          "shortdesc": "The double quotes pair for the language.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "hyphenationVendor",
+          "shortdesc": "The hyphenation rules source.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "spellingVendor",
+          "shortdesc": "The spell-checking source.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "thesaurusVendor",
+          "shortdesc": "The thesaurus source.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "dictionaryPaths",
+          "shortdesc": "The user dictionaries for the language.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "addDictionaryPath",
+          "shortdesc": "Adds the specified user dictionary.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "filePath",
+                "shortdesc": "The path to the dictionary file.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "removeDictionaryPath",
+          "shortdesc": "Removes the specified user dictionary.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "filePath",
+                "shortdesc": "The path to the dictionary file.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the LanguageWithVendors.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "LanguageWithVendors",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

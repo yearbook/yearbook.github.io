@@ -1,0 +1,516 @@
+{
+  "name": "Scrollbar",
+  "dynamic": true,
+  "shortdesc": "A scrollbar with a draggable scroll indicator and stepper buttons to move the indicator.",
+  "description": {
+    "a": [
+      {
+        "href": "#/Scrollbar/event/onChange",
+        "$t": "onChange&amp;&#35;40;&#41;"
+      },
+      {
+        "href": "#/Scrollbar/notify",
+        "$t": "notify&amp;&#35;40;&#41;"
+      },
+      {
+        "href": "#/Scrollbar/event/onChanging",
+        "$t": "onChanging&amp;&#35;40;&#41;"
+      },
+      {
+        "href": "#/EditText",
+        "$t": "EditText"
+      }
+    ]
+  },
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "stepdelta",
+          "shortdesc": "The amount by which to increment or decrement a scrollbar element&apos;s position when the user clicks a stepper button.",
+          "datatype": {
+            "type": "Number",
+            "min": 0
+          }
+        },
+        {
+          "name": "jumpdelta",
+          "shortdesc": "The amount to increment or decrement a scrollbar indicator&apos;s position when the user clicks ahead or behind the moveable element.",
+          "description": "Default is 20% of the range between the maxvalue and minvalue property values.",
+          "datatype": {
+            "type": "Number",
+            "min": 0
+          }
+        },
+        {
+          "name": "value",
+          "shortdesc": "The current position of the indicator.",
+          "description": "If set to a value outside the range specified by minvalue and maxvalue, it is automatically reset to the closest boundary.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "minvalue",
+          "shortdesc": {
+            "b": "value"
+          },
+          "description": {
+            "a": {
+              "href": "#/Scrollbar/maxvalue",
+              "$t": "maxvalue"
+            }
+          },
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "maxvalue",
+          "shortdesc": {
+            "b": "value"
+          },
+          "description": {
+            "a": {
+              "href": "#/Scrollbar/minvalue",
+              "$t": "minvalue"
+            }
+          },
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "active",
+          "shortdesc": "True if this element is active.",
+          "description": {
+            "a": {
+              "href": "#/Button",
+              "$t": "Button"
+            }
+          },
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "shortcutKey",
+          "shortdesc": {
+            "a": {
+              "href": "#/Scrollbar/event/onShortcutKey",
+              "$t": "onShortcutKey&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "graphics",
+          "rwaccess": "readonly",
+          "shortdesc": {
+            "a": {
+              "href": "#/Scrollbar/event/onDraw",
+              "$t": "onDraw&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": {
+              "href": "#/ScriptUIGraphics",
+              "$t": "ScriptUIGraphics"
+            }
+          }
+        },
+        {
+          "name": "visible",
+          "shortdesc": "True if this element is shown, false if it is hidden.",
+          "description": "When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "bounds",
+          "shortdesc": "The boundaries of the element, in parent-relative coordinates.",
+          "description": "Setting an element&apos;s size or location changes its bounds property, and vice-versa.",
+          "datatype": {
+            "type": {
+              "href": "#/Bounds",
+              "$t": "Bounds"
+            }
+          }
+        },
+        {
+          "name": "location",
+          "shortdesc": "The upper left corner of this element relative to its parent.",
+          "description": "The location is defined as [bounds.x, bounds.y]. Setting an element&apos;s location changes its bounds property, and vice-versa.",
+          "datatype": {
+            "type": {
+              "href": "#/Point",
+              "$t": "Point"
+            }
+          }
+        },
+        {
+          "name": "maximumSize",
+          "shortdesc": "The maximum height and width to which the element can be resized.",
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "minimumSize",
+          "shortdesc": "The minimum height and width to which the element can be resized.",
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "preferredSize",
+          "shortdesc": "The preferred size, used by layout managers to determine the best size for each element.",
+          "description": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default.",
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "size",
+          "shortdesc": "The current dimensions of this element.",
+          "description": {
+            "a": [
+              {
+                "href": "#LayoutManager",
+                "$t": "LayoutManager"
+              },
+              {
+                "href": "#/Scrollbar/preferredSize",
+                "$t": "preferredSize"
+              }
+            ]
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "windowBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The bounds of this element relative to the top-level parent window.",
+          "datatype": {
+            "type": {
+              "href": "#/Bounds",
+              "$t": "Bounds"
+            }
+          }
+        },
+        {
+          "name": "alignment",
+          "shortdesc": {
+            "i": "alignChildren"
+          },
+          "description": {
+            "li": [
+              {
+                "b": [
+                  "top",
+                  "bottom",
+                  "fill"
+                ]
+              },
+              {
+                "b": [
+                  "left",
+                  "right",
+                  "fill"
+                ]
+              },
+              {
+                "b": [
+                  "top",
+                  "bottom",
+                  "left",
+                  "right",
+                  "fill"
+                ]
+              }
+            ]
+          },
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "children",
+          "rwaccess": "readonly",
+          "shortdesc": "An array of child elements.",
+          "datatype": {
+            "type": "Object",
+            "array": true
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "An object that contains one or more creation properties of the container &amp;&#35;40;properties used only when the element is created&#41;.",
+          "description": {
+            "a": {
+              "href": "#/Scrollbar/add",
+              "$t": "add&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "enabled",
+          "shortdesc": "True if this element is enabled.",
+          "description": "An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "helpTip",
+          "shortdesc": "The help text that is displayed when the mouse hovers over the element.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "indent",
+          "shortdesc": "The number of pixels to indent the element during automatic layout.",
+          "description": "Applies for column orientation and left alignment, or row orientation and top alignment.",
+          "datatype": {
+            "type": "Number",
+            "min": 0
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent element.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "window",
+          "rwaccess": "readonly",
+          "shortdesc": "The window that this element belongs to.",
+          "datatype": {
+            "type": {
+              "href": "#/Window",
+              "$t": "Window"
+            }
+          }
+        },
+        {
+          "name": "type",
+          "rwaccess": "readonly",
+          "shortdesc": "The element type, &quot;scrollbar\".",
+          "datatype": {
+            "type": "String"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "notify",
+          "shortdesc": "Sends a notification message, simulating the specified user interaction event.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventName",
+                "optional": true,
+                "shortdesc": "The name of the control event handler to call.",
+                "description": {
+                  "b": [
+                    "onClick",
+                    "onChange",
+                    "onChanging",
+                    "onChange",
+                    "onClick"
+                  ]
+                },
+                "datatype": {
+                  "type": "String"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "show",
+          "shortdesc": "Shows this element.",
+          "description": "When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states."
+        },
+        {
+          "name": "hide",
+          "shortdesc": "Hides this element."
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Registers an event handler for a particular type of event occuring in this element.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventName",
+                "shortdesc": "The name of the event.",
+                "description": {
+                  "i": "JavaScript Tools Guide"
+                },
+                "datatype": {
+                  "type": "String"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The function that handles the event.",
+                "description": {
+                  "a": {
+                    "href": "#/UIEvent",
+                    "$t": "UIEvent"
+                  }
+                },
+                "datatype": {
+                  "type": {
+                    "href": "$COMMON/javascript.xml#/Function",
+                    "$t": "Function"
+                  }
+                }
+              },
+              {
+                "name": "capturePhase",
+                "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
+                "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+                "datatype": {
+                  "type": "Boolean",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Unregisters an event handler for a particular type of event occuring in this element.",
+          "description": "All arguments must be identical to those that were used to register the event handler.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventName",
+                "shortdesc": "The name of the event.",
+                "datatype": {
+                  "type": "String"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The function that handles the event.",
+                "datatype": {
+                  "type": {
+                    "href": "$COMMON/javascript.xml#/Function",
+                    "$t": "Function"
+                  }
+                }
+              },
+              {
+                "name": "capturePhase",
+                "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
+                "datatype": {
+                  "type": "Boolean",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "dispatchEvent",
+          "shortdesc": "Simulates the occurrence of an event in this target.",
+          "description": {
+            "a": {
+              "href": "#/UIEvent",
+              "$t": "UIEvent"
+            }
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Event",
+              "$t": "Event"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "method": [
+        {
+          "name": "onActivate",
+          "shortdesc": "An event-handler callback function, called when the element acquires the keyboard focus.",
+          "description": "Called when the user gives the control the keyboard focus by clicking it or tabbing into it."
+        },
+        {
+          "name": "onDeactivate",
+          "shortdesc": "An event-handler callback function, called when the element loses the keyboard focus.",
+          "description": "Called when the user moves the keyboard focus from the previously active control to another control."
+        },
+        {
+          "name": "onDraw",
+          "shortdesc": "An event-handler callback function, called when the window is about to be drawn.",
+          "description": {
+            "a": [
+              {
+                "href": "#/ScriptUIGraphics",
+                "$t": "ScriptUIGraphics"
+              },
+              {
+                "href": "#/DrawState",
+                "$t": "DrawState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "onChanging",
+          "shortdesc": "An event-handler callback function, called when the content of the element is in the process of changing",
+          "description": "The handler is called for any motion of the position indicator while this control has the input focus."
+        },
+        {
+          "name": "onChange",
+          "shortdesc": "An event-handler callback function, called when the user has finished dragging the position indicator, or has clicked the control."
+        },
+        {
+          "name": "onShortcutKey",
+          "shortdesc": {
+            "a": {
+              "href": "#/Scrollbar/shortcutKey",
+              "$t": "shortcutKey"
+            }
+          },
+          "description": "In Windows only."
+        }
+      ]
+    }
+  ]
+}

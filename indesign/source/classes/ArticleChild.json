@@ -1,0 +1,192 @@
+{
+  "name": "ArticleChild",
+  "dynamic": true,
+  "shortdesc": "Member of a group that is part of an article.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "itemRef",
+          "rwaccess": "readonly",
+          "shortdesc": "The underlying page item",
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the ArticleChild.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the ArticleChild &amp;&#35;40;a Group&#41;.",
+          "datatype": {
+            "type": "Group"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the ArticleChild within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Moves the ArticleChild to the specified location.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "to",
+                "shortdesc": "The location relative to the reference object or within the containing object.",
+                "datatype": {
+                  "type": "LocationOptions"
+                }
+              },
+              {
+                "name": "reference",
+                "shortdesc": "The reference object. Note: Required when the to value specifies before or after. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "ArticleChild"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "ArticleChild"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the ArticleChild.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "ArticleChild",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

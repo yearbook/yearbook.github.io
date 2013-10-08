@@ -1,0 +1,803 @@
+{
+  "name": "PrinterPreset",
+  "dynamic": true,
+  "shortdesc": "A preset that contains all of the print settings.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "printerList",
+          "rwaccess": "readonly",
+          "shortdesc": "Available printers.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "ppdList",
+          "rwaccess": "readonly",
+          "shortdesc": "Available PPDs.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "paperSizeList",
+          "rwaccess": "readonly",
+          "shortdesc": "A list of the available paper sizes.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "screeningList",
+          "rwaccess": "readonly",
+          "shortdesc": "Lists the ink screenings available in the PPD. Note: Valid only when color output is separations or in rip separations.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the PrinterPreset &amp;&#35;40;a Application&#41;.",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the PrinterPreset within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the PrinterPreset.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "printer",
+          "shortdesc": "The current printer. Can return: Printer enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "ppd",
+          "shortdesc": "The PPD, specified as a PPD name or an enumeration. Can return: PPDValues enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "printFile",
+          "shortdesc": "The PostScript file to print to. Note: Valid only when the current printer is defined as postscript file.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "copies",
+          "shortdesc": "The number of copies to print. Note: Not valid when printer is PostScript File.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "collating",
+          "shortdesc": "If true, collate printed copies.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "reverseOrder",
+          "shortdesc": "If true, prints pages in reverse order.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "sequence",
+          "shortdesc": "The sequence of pages to print.",
+          "datatype": {
+            "type": "Sequences"
+          }
+        },
+        {
+          "name": "printSpreads",
+          "shortdesc": "If true, prints each spread with all spread pages on a single sheet. If false, prints spread pages as separate pages.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "printMasterPages",
+          "shortdesc": "If true, prints master pages.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "printNonprinting",
+          "shortdesc": "If true, prints non-printing objects. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "printBlankPages",
+          "shortdesc": "If true, prints blank pages. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "printGuidesGrids",
+          "shortdesc": "If true, prints visible guides and baseline grids. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "paperSize",
+          "shortdesc": "The paper size, specified as either a string or an enumeration. For information on paper size names, see paper size list. Can return: PaperSizes enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "paperHeight",
+          "shortdesc": "The paper height. Note: Valid only when paper size is custom or scale mode is scale width height. Can return: PaperSize enumerator or Unit.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "paperWidth",
+          "shortdesc": "The paper width. Note: Valid only when paper size is custom or scale mode is scale width height. Can return: PaperSize enumerator or Unit.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "paperOffset",
+          "shortdesc": "The amount of space to offset the page from the left edge of the imageable area.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "paperGap",
+          "shortdesc": "The space between document pages on the printing medium.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "paperTransverse",
+          "shortdesc": "If true, uses transverse orientation.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "printPageOrientation",
+          "shortdesc": "The orientation of the printed page.",
+          "datatype": {
+            "type": "PrintPageOrientation"
+          }
+        },
+        {
+          "name": "pagePosition",
+          "shortdesc": "The position of the page on the printing medium. Note: Valid only when tile is false.",
+          "datatype": {
+            "type": "PagePositions"
+          }
+        },
+        {
+          "name": "scaleMode",
+          "shortdesc": "The policy for scaling the page. Note: Valid only when printing from Layout view.",
+          "datatype": {
+            "type": "ScaleModes"
+          }
+        },
+        {
+          "name": "scaleWidth",
+          "shortdesc": "The amount &amp;&#35;40;as a percentage&#41;  that the page width is scaled during printing. (Range: 0 to 1000) Note: Valid only when scale mode is scale width height.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "scaleHeight",
+          "shortdesc": "The amount &amp;&#35;40;as a percentage&#41; that the page height is scaled during printing. (Range: 0 to 1000) Note: Valid only when scale mode is scale width height.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "scaleProportional",
+          "shortdesc": "If true, constrains the proportions of the scaling; uses the most recent value for either scale width or scale height to define both values. Note: Valid only when scale mode is scale width height.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "thumbnails",
+          "shortdesc": "If true, prints thumbnails. Note: Valid only when trapping is off and tile is false.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "thumbnailsPerPage",
+          "shortdesc": "The number of thumbnails per page.",
+          "datatype": {
+            "type": "ThumbsPerPage"
+          }
+        },
+        {
+          "name": "tile",
+          "shortdesc": "If true, tiles pages.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "tilingType",
+          "shortdesc": "The tiling type. Note: Valid only when tiling is true.",
+          "datatype": {
+            "type": "TilingTypes"
+          }
+        },
+        {
+          "name": "tilingOverlap",
+          "shortdesc": "The amount of tiling overlap. Note: Valid only when tiling is true and tiling type is not manual.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "allPrinterMarks",
+          "shortdesc": "If true, prints all printer marks. If false, prints specified printer marks.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "cropMarks",
+          "shortdesc": "Prints crop marks that define where the page should be trimmed.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "bleedMarks",
+          "shortdesc": "If true, print bleed marks.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "registrationMarks",
+          "shortdesc": "If true, prints small targets outside the page area for aligning color separations.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "colorBars",
+          "shortdesc": "If true, add small squares of color representing the CMYK inks and tints of gray in 10% increments.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "pageInformationMarks",
+          "shortdesc": "If true, prints the filename, page number, current date and time, and color separation name.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "markType",
+          "shortdesc": "The type of printer marks, either an enum value or the name of a custom marks file. Can return: MarkTypes enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "markLineWeight",
+          "shortdesc": "The stroke weight &amp;&#35;40;in points&#41; for printer marks.",
+          "datatype": {
+            "type": "MarkLineWeight"
+          }
+        },
+        {
+          "name": "markOffset",
+          "shortdesc": "The distance to offset the page marks from the edge of the page.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "useDocumentBleedToPrint",
+          "shortdesc": "If true, uses the bleed area set for the document.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "bleedTop",
+          "shortdesc": "The height of the bleed area at the top of the page. Note: Valid only when use document bleed to print is true.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 432
+          }
+        },
+        {
+          "name": "bleedBottom",
+          "shortdesc": "The height of the bleed area at the bottom of the page. Note: Valid only when use document bleed to print is true.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 432
+          }
+        },
+        {
+          "name": "bleedInside",
+          "shortdesc": "The width of the bleed area at the inside of the page. Note: Valid only when use document bleed to print is true.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 432
+          }
+        },
+        {
+          "name": "bleedOutside",
+          "shortdesc": "The width of the bleed area at the outside of the page. Note: Valid only when use document bleed to print is true.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 432
+          }
+        },
+        {
+          "name": "includeSlugToPrint",
+          "shortdesc": "If true, includes the slug area in the printed document.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "colorOutput",
+          "shortdesc": "The color output mode for composites. Note: Not valid when a device-independent PPD is specified.",
+          "datatype": {
+            "type": "ColorOutputModes"
+          }
+        },
+        {
+          "name": "textAsBlack",
+          "shortdesc": "If true, prints all text as black unless text has the color None or Paper or a color value that equals white. If false, prints colored text, such as blue hyperlinks, in halftone patterns. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "trapping",
+          "shortdesc": "The type of trapping.",
+          "datatype": {
+            "type": "Trapping"
+          }
+        },
+        {
+          "name": "flip",
+          "shortdesc": "The direction in which to flip the printed image.",
+          "datatype": {
+            "type": "Flip"
+          }
+        },
+        {
+          "name": "negative",
+          "shortdesc": "If true, prints the document as a negative.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "screening",
+          "shortdesc": "The ink screening settings for composite gray output in PostScript or PDF format. . Can return: Screeening enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "compositeAngle",
+          "shortdesc": "The screen angle to use when printing composites. &amp;&#35;40;Range: 0 to 360&#41; Note: Valid only for PostScript or PDF files that use custom screening.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "compositeFrequency",
+          "shortdesc": "The screen frequency to use when printing composites. &amp;&#35;40;Range: 1 to 500&#41; Note: Valid only for PostScript or PDF files that use custom screening.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "simulateOverprint",
+          "shortdesc": "If true, simulates the effects of overprinting spot inks with different neutral density values by converting spot colors to process colors for printing. Note: Not valid when the color output mode is defined to leave color profiles unchanged.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "printCyan",
+          "shortdesc": "If true, prints the cyan ink. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "cyanAngle",
+          "shortdesc": "The angle override for cyan ink. &amp;&#35;40;Range: 0 to 360&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "cyanFrequency",
+          "shortdesc": "The frequency override for cyan ink. &amp;&#35;40;Range: 1 to 500&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "printMagenta",
+          "shortdesc": "If true, prints the magenta ink. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "magentaAngle",
+          "shortdesc": "The angle override for magenta ink. &amp;&#35;40;Range: 0 to 360&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "magentaFrequency",
+          "shortdesc": "The frequency override for magenta ink. &amp;&#35;40;Range: 1 to 500&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "printYellow",
+          "shortdesc": "If true, prints the yellow ink. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "yellowAngle",
+          "shortdesc": "The angle override for yellow ink. &amp;&#35;40;Range: 0 to 360&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "yellowFrequency",
+          "shortdesc": "The frequency override for yellow ink. &amp;&#35;40;Range: 1 to 500&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "printBlack",
+          "shortdesc": "If true, prints the black ink. Note: Valid only when trapping is off.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "blackAngle",
+          "shortdesc": "The angle override for black ink. &amp;&#35;40;Range: 0 to 360&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "blackFrequency",
+          "shortdesc": "The frequency override for black ink. &amp;&#35;40;Range: 1 to 500&#41;",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "sendImageData",
+          "shortdesc": "The image data sent to the printer or file.",
+          "datatype": {
+            "type": "ImageDataTypes"
+          }
+        },
+        {
+          "name": "fontDownloading",
+          "shortdesc": "Controls how fonts are downloaded to the printer.",
+          "datatype": {
+            "type": "FontDownloading"
+          }
+        },
+        {
+          "name": "downloadPPDFonts",
+          "shortdesc": "If true, downloads all fonts listed in the selected PPD. Valid only when font downloading is complete or subset.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "postscriptLevel",
+          "shortdesc": "The PostScript level of the printer.",
+          "datatype": {
+            "type": "PostScriptLevels"
+          }
+        },
+        {
+          "name": "dataFormat",
+          "shortdesc": "The format in which to send image data to the printer.",
+          "datatype": {
+            "type": "DataFormat"
+          }
+        },
+        {
+          "name": "sourceSpace",
+          "shortdesc": "The source of the color management system. Note: Valid only when use color management is true.",
+          "datatype": {
+            "type": "SourceSpaces"
+          }
+        },
+        {
+          "name": "profile",
+          "shortdesc": "The color profile. Can return: Profile enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "crd",
+          "shortdesc": "The color-rendering dictionary &amp;&#35;40;CRD&#41;, specified as a CRD name or an enumeration value. Note: Valid only when use color management is true. Can return: ColorRenderingDictionary enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "intent",
+          "shortdesc": "The rendering intent. Note: Valid only when use color management is true.",
+          "datatype": {
+            "type": "RenderingIntent"
+          }
+        },
+        {
+          "name": "opiImageReplacement",
+          "shortdesc": "If true, prints graphics that are either OPI comments stored in imported EPS files or linked using OPI comments. For information on linking files using OPI comments, see omit EPS, omit PDF, or omit bitmaps.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "omitEPS",
+          "shortdesc": "If true, replaces EPS images with OPI links.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "omitPDF",
+          "shortdesc": "If true, replaces PDF images with OPI links.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "omitBitmaps",
+          "shortdesc": "If true, replaces bitmap images with OPI links.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "flattenerPresetName",
+          "shortdesc": "The name of the transparency flattener preset.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "ignoreSpreadOverrides",
+          "shortdesc": "If true, ignores flattener spread overrides.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "bleedChain",
+          "shortdesc": "If true, forces all bleed area settings to be the same, using the most recent bleed measurement setting. If false, allows bleed top, bleed bottom, bleed inside, and bleed outside to have different measurements.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "bitmapPrinting",
+          "shortdesc": "If true, uses bitmap printing.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "bitmapResolution",
+          "shortdesc": "The resolution for bitmap printing. &amp;&#35;40;Range: 72 to 1200&#41; Note: Valid when bitmap printing is true.",
+          "datatype": {
+            "type": "number",
+            "min": 72,
+            "max": 1200
+          }
+        },
+        {
+          "name": "printLayers",
+          "shortdesc": "The layers to print.",
+          "datatype": {
+            "type": "PrintLayerOptions"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the PrinterPreset."
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicates the PrinterPreset.",
+          "datatype": {
+            "type": "PrinterPreset"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the PrinterPreset.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "PrinterPreset",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

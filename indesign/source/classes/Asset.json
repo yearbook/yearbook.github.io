@@ -1,0 +1,275 @@
+{
+  "name": "Asset",
+  "dynamic": true,
+  "shortdesc": "An object library asset.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "date",
+          "rwaccess": "readonly",
+          "shortdesc": "The date and time the Asset was created.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the Asset.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Asset &amp;&#35;40;a Library&#41;.",
+          "datatype": {
+            "type": "Library"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Asset within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the Asset.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "shortdesc": "The description of the Asset.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "assetType",
+          "shortdesc": "The type of object library asset.",
+          "datatype": {
+            "type": "AssetType"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the Asset."
+        },
+        {
+          "name": "placeAsset",
+          "shortdesc": "Places the asset in the specified document or text.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "on",
+                "shortdesc": "The document or text object in which to place the asset. Can accept: Document or Text.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "varies=any",
+            "array": {}
+          }
+        },
+        {
+          "name": "select",
+          "shortdesc": "Selects the object.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "existingSelection",
+                "optional": true,
+                "shortdesc": "The selection status of the Asset in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "SelectionOptions",
+                  "value": "SelectionOptions.REPLACE_WITH"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Asset.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Asset",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

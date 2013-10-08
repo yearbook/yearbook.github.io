@@ -1,0 +1,302 @@
+{
+  "name": "LinkMetadata",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "MetaData properties for the link source file.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "author",
+          "rwaccess": "readonly",
+          "shortdesc": "The author of the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "description",
+          "rwaccess": "readonly",
+          "shortdesc": "The description of the LinkMetadata.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "jobName",
+          "rwaccess": "readonly",
+          "shortdesc": "The job name.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "copyrightStatus",
+          "rwaccess": "readonly",
+          "shortdesc": "The copyright status of the document.",
+          "datatype": {
+            "type": "CopyrightStatus"
+          }
+        },
+        {
+          "name": "copyrightNotice",
+          "rwaccess": "readonly",
+          "shortdesc": "The text to use as a copyright notice.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "copyrightInfoURL",
+          "rwaccess": "readonly",
+          "shortdesc": "The URL of the file that contains the linked copyright statement.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "keywords",
+          "rwaccess": "readonly",
+          "shortdesc": "The list of keywords associated with the document.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "serverURL",
+          "rwaccess": "readonly",
+          "shortdesc": "The location of the document on the asset management server.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "modificationDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The most recent modification date of the document.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "creationDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The creation date of the document.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "documentTitle",
+          "rwaccess": "readonly",
+          "shortdesc": "The title of the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "creator",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the application used to create the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "format",
+          "rwaccess": "readonly",
+          "shortdesc": "The format of the document.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the LinkMetadata &amp;&#35;40;a Link&#41;.",
+          "datatype": {
+            "type": "Link"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "getProperty",
+          "shortdesc": "Gets the XMP property value associated with the specified path.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "namespace",
+                "shortdesc": "The namespace of the property.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "path",
+                "shortdesc": "The specified path.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "countContainer",
+          "shortdesc": "Counts the number of items in the container.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "namespace",
+                "shortdesc": "The namespace of the container.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "path",
+                "shortdesc": "The path to the container.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the LinkMetadata.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "LinkMetadata",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

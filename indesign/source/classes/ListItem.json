@@ -1,0 +1,172 @@
+{
+  "name": "ListItem",
+  "dynamic": true,
+  "shortdesc": "An item in a list box, drop-down list, or tree view.",
+  "description": {
+    "i": "add&amp;&#35;40;&#41;",
+    "a": [
+      {
+        "href": "#/ListBox/add",
+        "$t": "ListBox.add&amp;&#35;40;&#41;"
+      },
+      {
+        "href": "#/DropDownList/add",
+        "$t": "DropDownList.add&amp;&#35;40;&#41;"
+      },
+      {
+        "href": "#/TreeView/add",
+        "$t": "TreeView.add&amp;&#35;40;&#41;"
+      },
+      {
+        "href": "#/DropDownList",
+        "$t": "DropDownList"
+      },
+      {
+        "href": "#/ListItem/text",
+        "$t": "text"
+      },
+      {
+        "href": "#/ListItem/image",
+        "$t": "image"
+      },
+      {
+        "href": "#/ListItem/subitems",
+        "$t": "subitems"
+      }
+    ],
+    "br": {}
+  },
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "checked",
+          "shortdesc": "The checked state of an item in a list.",
+          "description": "When true, the item is marked with the platform-appropriate checkmark. When false, no checkmark is drawn, but space is reserved for it in the left margin, so that the item lines up with other checkable items. When undefined, no space is reserved for a checkmark.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "expanded",
+          "shortdesc": {
+            "i": "node",
+            "a": {
+              "href": "#/TreeView",
+              "$t": "TreeView"
+            }
+          },
+          "description": "When true, the item is in the expanded state and its children are shown, when false, it is collapsed and children are hidden.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": {
+            "i": "items"
+          },
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "selected",
+          "shortdesc": "The selection state of this item.",
+          "description": "When true, the item is part of the selection for its parent list. When false, the item is not selected. Set to true to select this item in a single-selection list, or to add it to the selection array for a multi-selection list.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "image",
+          "shortdesc": "An image object for an icon to display in the item.",
+          "description": {
+            "a": {
+              "href": "#/ListItem/subitems",
+              "$t": "subitems"
+            }
+          },
+          "datatype": {
+            "type": {
+              "href": "#/ScriptUIImage",
+              "$t": "ScriptUIImage"
+            }
+          }
+        },
+        {
+          "name": "text",
+          "shortdesc": "The label text to display for the item, a localizable string.",
+          "description": {
+            "a": {
+              "href": "#/ListItem/subitems",
+              "$t": "subitems"
+            }
+          },
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "subItems",
+          "rwaccess": "readonly",
+          "shortdesc": {
+            "a": {
+              "href": "#/ListBox",
+              "$t": "ListBox"
+            }
+          },
+          "description": {
+            "li": [
+              {
+                "b": "text"
+              },
+              {
+                "b": "image",
+                "a": {
+                  "href": "#/ScriptUIImage",
+                  "$t": "ScriptUIImage"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Array"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "An object that contains one or more creation properties of the item &amp;&#35;40;properties used only when the element is created&#41;.",
+          "description": "A ListItem object has no creation properties.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent element, a list control.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "type",
+          "rwaccess": "readonly",
+          "shortdesc": "The element type.",
+          "description": {
+            "a": {
+              "href": "#/DropDownList",
+              "$t": "DropDownList"
+            }
+          },
+          "datatype": {
+            "type": "String"
+          }
+        }
+      ]
+    }
+  ]
+}

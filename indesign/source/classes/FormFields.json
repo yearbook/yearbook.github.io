@@ -1,0 +1,247 @@
+{
+  "name": "FormFields",
+  "dynamic": true,
+  "shortdesc": "A collection of form fields.",
+  "elements": [
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "count",
+          "shortdesc": "Displays the number of elements in the FormField.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "add",
+          "shortdesc": "Creates a new FormField",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "layer",
+                "shortdesc": "The layer on which to create the FormField. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "Layer"
+                }
+              },
+              {
+                "name": "at",
+                "optional": true,
+                "shortdesc": "The location at which to insert the FormField relative to the reference object or within the container object. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "LocationOptions",
+                  "value": "LocationOptions.UNKNOWN"
+                }
+              },
+              {
+                "name": "reference",
+                "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "withProperties",
+                "shortdesc": "Initial values for properties of the new FormField &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "Object"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "item",
+          "shortdesc": "Returns the FormField with the specified index or name.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "The index or name. Can accept: Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "itemByName",
+          "shortdesc": "Returns the FormField with the specified name.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "itemByID",
+          "shortdesc": "Returns the FormField with the specified ID.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "id",
+                "shortdesc": "The ID.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "itemByRange",
+          "shortdesc": "Returns the FormFields within the specified range.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "from",
+                "shortdesc": "The FormField, index, or name at the beginning of the range. Can accept: FormField, Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "to",
+                "shortdesc": "The FormField, index, or name at the end of the range. Can accept: FormField, Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField",
+            "array": {}
+          }
+        },
+        {
+          "name": "firstItem",
+          "shortdesc": "Returns the first FormField in the collection.",
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "lastItem",
+          "shortdesc": "Returns the last FormField in the collection.",
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "middleItem",
+          "shortdesc": "Returns the middle FormField in the collection.",
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "previousItem",
+          "shortdesc": "Returns the FormField with the index previous to the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "obj",
+                "shortdesc": "The index of the FormField that follows the desired FormField.",
+                "datatype": {
+                  "type": "FormField"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "nextItem",
+          "shortdesc": "Returns the FormField whose index follows the specified FormField in the collection.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "obj",
+                "shortdesc": "The FormField whose index comes before the desired FormField.",
+                "datatype": {
+                  "type": "FormField"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "anyItem",
+          "shortdesc": "Returns any FormField in the collection.",
+          "datatype": {
+            "type": "FormField"
+          }
+        },
+        {
+          "name": "everyItem",
+          "shortdesc": "Returns every FormField in the collection.",
+          "datatype": {
+            "type": "FormField",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the FormField.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "[]",
+          "shortdesc": "Returns the FormField with the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "The index.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "FormField"
+          }
+        }
+      ],
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of objects in the collection.",
+          "datatype": {
+            "type": "number"
+          }
+        }
+      ]
+    }
+  ]
+}

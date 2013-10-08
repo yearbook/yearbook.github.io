@@ -1,0 +1,254 @@
+{
+  "name": "RegExp",
+  "dynamic": true,
+  "shortdesc": "Wraps a regular expression.",
+  "elements": [
+    {
+      "type": "constructor",
+      "method": [
+        {
+          "name": "RegExp",
+          "shortdesc": "Creates and returns a new RegExp object set to the value of the argument converted to a regular expression.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "pattern",
+                "shortdesc": "The pattern to convert.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "flags",
+                "optional": true,
+                "shortdesc": "Flags that control how the conversion is performed.",
+                "description": {
+                  "u": {
+                    "li": [
+                      "&quot;i\" -- ignore case in pattern matching",
+                      "&quot;m\" -- treat the string as multiple lines",
+                      "&quot;g\" -- do global pattern matching"
+                    ]
+                  }
+                },
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "RegExp"
+          }
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "$1",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;1.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$2",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;2.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$3",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;3.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$4",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;4.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$5",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;5.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$6",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;6.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$7",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;7.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$8",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;8.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$9",
+          "rwaccess": "readonly",
+          "shortdesc": "The matched subexpression &amp;#35;9.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "lastMatch",
+          "rwaccess": "readonly",
+          "shortdesc": "The last match.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "lastParen",
+          "rwaccess": "readonly",
+          "shortdesc": "The value of the last matched subexpression.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "leftContext",
+          "rwaccess": "readonly",
+          "shortdesc": "The string before the match.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "rightContext",
+          "rwaccess": "readonly",
+          "shortdesc": "The string after the match.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "global",
+          "shortdesc": "Indicates whether the match is a global match.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "ignoreCase",
+          "shortdesc": "Indicates whether the match is not case sensitive.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "multiline",
+          "shortdesc": "Indicates whether the match matches multiple lines.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "input",
+          "shortdesc": "The original input string.",
+          "datatype": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "toString",
+          "shortdesc": "Converts this RegExp object to a string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "compile",
+          "shortdesc": "Compiles a string to a regular expression. Returns true if the compilation was successful.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "pattern",
+                "shortdesc": "The pattern to compile.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "exec",
+          "shortdesc": "Execute a regular expression.",
+          "description": "The return value is an array of matches, with the first element containing the match, and successive elements containing the results of any matching subexpression in their order of appearance. If there is no match, the result is null.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "text",
+                "shortdesc": "The string to match.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Array",
+              "$t": "Array"
+            }
+          }
+        },
+        {
+          "name": "test",
+          "shortdesc": "Execute a regular expression, and return true if there is a match.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "text",
+                "shortdesc": "The string to match.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "name": "PreflightOption",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Preflight options.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the PreflightOption &amp;&#35;40;a Application or Document&#41;.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "preflightScope",
+          "shortdesc": "The pages or documents to preflight, specified either as an enumeration or a string. To specify a range, separate page numbers in the string with a hyphen &amp;&#35;40;-&#41;. To specify separate pages, separate page numbers in the string with a comma (,). Can return: PreflightScopeOptions enumerator or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "preflightWhichLayers",
+          "shortdesc": "Which layers to preflight.",
+          "datatype": {
+            "type": "PreflightLayerOptions"
+          }
+        },
+        {
+          "name": "preflightIncludeObjectsOnPasteboard",
+          "shortdesc": "If true, include objects on pasteboard when preflighting.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "preflightIncludeNonprintingObjects",
+          "shortdesc": "If true, include objects that do not print when preflighting.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "preflightProfilePolicy",
+          "shortdesc": "The policy for preflighting applied when opening a document or book, whether to use embedded profile or the another profile when the preflight is turned on.",
+          "datatype": {
+            "type": "PreflightProfileOptions"
+          }
+        },
+        {
+          "name": "preflightWorkingProfile",
+          "shortdesc": "The working preflight profile. Can return: PreflightProfile or String.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "preflightEmbedWorkingProfile",
+          "shortdesc": "If true, embed working profile when creating new document.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "preflightOff",
+          "shortdesc": "If true, preflight is turned off for all documents or for this document.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the PreflightOption.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "PreflightOption",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "name": "TransformationMatrix",
+  "dynamic": true,
+  "shortdesc": "A transformation matrix.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the TransformationMatrix.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "matrixValues",
+          "rwaccess": "readonly",
+          "shortdesc": "The values of the transformation matrix.",
+          "datatype": {
+            "type": "number",
+            "array": true
+          }
+        },
+        {
+          "name": "horizontalScaleFactor",
+          "rwaccess": "readonly",
+          "shortdesc": "The horizontal scale factor of the transformation matrix.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "verticalScaleFactor",
+          "rwaccess": "readonly",
+          "shortdesc": "The vertical scale factor of the transformation matrix.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "clockwiseShearAngle",
+          "rwaccess": "readonly",
+          "shortdesc": "The shear angle of the transformation matrix.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "counterclockwiseRotationAngle",
+          "rwaccess": "readonly",
+          "shortdesc": "The rotation angle of the transformation matrix.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "horizontalTranslation",
+          "rwaccess": "readonly",
+          "shortdesc": "The horizontal translation of the transformation matrix.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "verticalTranslation",
+          "rwaccess": "readonly",
+          "shortdesc": "The vertical translation of the transformation matrix.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "matrixMapping",
+          "rwaccess": "readonly",
+          "shortdesc": "The mapping the transformation matrix performs on the unit triangle. Can return: Array of Array of 2 Arrays of 2 Reals.",
+          "datatype": {
+            "type": "mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the TransformationMatrix &amp;&#35;40;a Application&#41;.",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the TransformationMatrix within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "scaleMatrix",
+          "shortdesc": "Scale the transformation matrix.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "horizontallyBy",
+                "shortdesc": "The horizontal scale factor &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "verticallyBy",
+                "shortdesc": "The vertical scale factor &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "TransformationMatrix"
+          }
+        },
+        {
+          "name": "shearMatrix",
+          "shortdesc": "Shear the transformation matrix.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "byAngle",
+                "shortdesc": "The horizontal shear angle &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "bySlope",
+                "shortdesc": "The horizontal shear slope &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "TransformationMatrix"
+          }
+        },
+        {
+          "name": "rotateMatrix",
+          "shortdesc": "Rotate the transformation matrix.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "byAngle",
+                "shortdesc": "The counterclockwise rotation angle &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "byCosine",
+                "shortdesc": "The cosine of the desired rotation &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "bySine",
+                "shortdesc": "The sine of the desired rotation &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "TransformationMatrix"
+          }
+        },
+        {
+          "name": "translateMatrix",
+          "shortdesc": "Translate the transformation matrix.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "horizontallyBy",
+                "shortdesc": "The horizontal translation distance &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "verticallyBy",
+                "shortdesc": "The vertical translation distance &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "TransformationMatrix"
+          }
+        },
+        {
+          "name": "catenateMatrix",
+          "shortdesc": "Multiply the transformation matrix by another.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "withMatrix",
+                "shortdesc": "The right hand matrix factor",
+                "datatype": {
+                  "type": "TransformationMatrix"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "TransformationMatrix"
+          }
+        },
+        {
+          "name": "invertMatrix",
+          "shortdesc": "Invert the transformation matrix.",
+          "datatype": {
+            "type": "TransformationMatrix"
+          }
+        },
+        {
+          "name": "changeCoordinates",
+          "shortdesc": "Multiply the point by the matrix.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "point",
+                "shortdesc": "The point to transform",
+                "datatype": {
+                  "type": "number",
+                  "array": {}
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the TransformationMatrix.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "TransformationMatrix",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

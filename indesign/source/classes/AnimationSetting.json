@@ -1,0 +1,303 @@
+{
+  "name": "AnimationSetting",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Animation settings.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "hasCustomSettings",
+          "rwaccess": "readonly",
+          "shortdesc": "Determines if this animated object has custom settings.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the AnimationSetting &amp;&#35;40;a PageItem, HtmlItem, FormField, SignatureField, TextBox, RadioButton, ListBox, ComboBox, CheckBox, MultiStateObject, Button, MediaItem, Sound, Movie, EPSText, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Graphic, ImportedPage, PICT, WMF, PDF, EPS, Image, Group or TextFrame&#41;.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "preset",
+          "shortdesc": "The base animation preset applied. Can return: MotionPreset, String or NothingEnum enumerator.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "transformOffsets",
+          "shortdesc": "The tranform offset percentage from the target object bounding box&apos;s left-top corner.",
+          "datatype": {
+            "type": "number",
+            "array": true
+          }
+        },
+        {
+          "name": "duration",
+          "shortdesc": "The duration in second for this animation.",
+          "datatype": {
+            "type": "number",
+            "min": 0.125,
+            "max": 60
+          }
+        },
+        {
+          "name": "motionPathPoints",
+          "shortdesc": "The list of motion path points for this animation. Can return: Ordered array containing pathPointArray:Array of Ordered array containing anchor:Array of 2 Reals, leftDirection:Array of 2 Reals, rightDirection:Array of 2 Reals, pathOpen:Boolean.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "motionPath",
+          "shortdesc": "The list of motion path points and key frames for this animation. Can return: Ordered array containing keyFrame:Long Integer, pathPoint:Ordered array containing anchor:Array of 2 Reals, leftDirection:Array of 2 Reals, rightDirection:Array of 2 Reals.",
+          "datatype": {
+            "type": "mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "opacityArray",
+          "shortdesc": "The list of opacity key frames for this animation. Can return: Ordered array containing keyFrame:Long Integer, value:Real.",
+          "datatype": {
+            "type": "mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "rotationArray",
+          "shortdesc": "The list of rotation key frames for this animation. Can return: Ordered array containing keyFrame:Long Integer, value:Real.",
+          "datatype": {
+            "type": "mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "scaleXArray",
+          "shortdesc": "The list of scale x key frames for this animation. Can return: Ordered array containing keyFrame:Long Integer, value:Real.",
+          "datatype": {
+            "type": "mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "scaleYArray",
+          "shortdesc": "The list of scale y key frames for this animation. Can return: Ordered array containing keyFrame:Long Integer, value:Real.",
+          "datatype": {
+            "type": "mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "designOption",
+          "shortdesc": "The animation design option.",
+          "datatype": {
+            "type": "DesignOptions"
+          }
+        },
+        {
+          "name": "easeType",
+          "shortdesc": "The ease type.",
+          "datatype": {
+            "type": "AnimationEaseOptions"
+          }
+        },
+        {
+          "name": "plays",
+          "shortdesc": "The number of times this animation plays.",
+          "datatype": {
+            "type": "number",
+            "min": 1,
+            "max": 100
+          }
+        },
+        {
+          "name": "playsLoop",
+          "shortdesc": "Set to true if animation play loops.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "initiallyHidden",
+          "shortdesc": "Determines if this object is initially hidden when displayed in an exported SWF file.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "hiddenAfter",
+          "shortdesc": "Determines if this object is hidden after its animation is played in an exported SWF file.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "saveACopy",
+          "shortdesc": "Save a copy of this motion preset to a InDesign motion preset file.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "to",
+                "shortdesc": "The Flash motion preset file to export to.",
+                "datatype": {
+                  "type": "File"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "save",
+          "shortdesc": "Save this motion preset as custom preset.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name for the new motion preset.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "MotionPreset"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the AnimationSetting.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "AnimationSetting",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

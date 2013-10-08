@@ -1,0 +1,574 @@
+{
+  "name": "TextPath",
+  "dynamic": true,
+  "shortdesc": "A text object that is on a path.",
+  "elements": [
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "BEFORE_PLACE",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched before a TextPath is placed. This event bubbles. This event is cancelable.",
+          "datatype": {
+            "type": "string",
+            "value": "beforePlace"
+          }
+        },
+        {
+          "name": "AFTER_PLACE",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched after a TextPath is placed. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "string",
+            "value": "afterPlace"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "centerBracket",
+          "rwaccess": "readonly",
+          "shortdesc": "The halfway point between the start bracket and the end bracket.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "parentStory",
+          "rwaccess": "readonly",
+          "shortdesc": "The story that contains the text.",
+          "datatype": {
+            "type": "Story"
+          }
+        },
+        {
+          "name": "startTextFrame",
+          "rwaccess": "readonly",
+          "shortdesc": "The first text frame in the thread. Can return: TextFrame or TextPath.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "endTextFrame",
+          "rwaccess": "readonly",
+          "shortdesc": "The last text frame in the thread. Can return: TextFrame or TextPath.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "textFrameIndex",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the text frame within the story.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "overflows",
+          "rwaccess": "readonly",
+          "shortdesc": "If true, the story has overset text.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the TextPath.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the TextPath &amp;&#35;40;a SplineItem, Polygon, GraphicLine, Rectangle, Oval, TextFrame or EPSText&#41;.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the TextPath within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "texts",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text objects.",
+          "datatype": {
+            "type": "Texts"
+          }
+        },
+        {
+          "name": "characters",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of characters.",
+          "datatype": {
+            "type": "Characters"
+          }
+        },
+        {
+          "name": "words",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of words.",
+          "datatype": {
+            "type": "Words"
+          }
+        },
+        {
+          "name": "lines",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of lines.",
+          "datatype": {
+            "type": "Lines"
+          }
+        },
+        {
+          "name": "textColumns",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text columns.",
+          "datatype": {
+            "type": "TextColumns"
+          }
+        },
+        {
+          "name": "paragraphs",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of paragraphs.",
+          "datatype": {
+            "type": "Paragraphs"
+          }
+        },
+        {
+          "name": "insertionPoints",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of insertion points.",
+          "datatype": {
+            "type": "InsertionPoints"
+          }
+        },
+        {
+          "name": "textStyleRanges",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text style ranges.",
+          "datatype": {
+            "type": "TextStyleRanges"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "pathAlignment",
+          "shortdesc": "The alignment of the type on a path.",
+          "datatype": {
+            "type": "PathTypeAlignments"
+          }
+        },
+        {
+          "name": "textAlignment",
+          "shortdesc": "The alignment applied to the type on a path.",
+          "datatype": {
+            "type": "TextTypeAlignments"
+          }
+        },
+        {
+          "name": "pathEffect",
+          "shortdesc": "The effect applied to the type on a path.",
+          "datatype": {
+            "type": "TextPathEffects"
+          }
+        },
+        {
+          "name": "flipPathEffect",
+          "shortdesc": "The flip effect applied to the type on a path.",
+          "datatype": {
+            "type": "FlipValues"
+          }
+        },
+        {
+          "name": "pathSpacing",
+          "shortdesc": "The spacing applied to the type on a path.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "startBracket",
+          "shortdesc": "The location of the start of the type on the path, expressed in points. Note: 0 is the first point on the path.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "endBracket",
+          "shortdesc": "The end of the type on a path. Note: Additional text becomes overset text unless the text is linked to another path or text frame.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "previousTextFrame",
+          "shortdesc": "The previous text frame in the thread. Can return: TextFrame or TextPath. Can also accept: NothingEnum enumerator.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "nextTextFrame",
+          "shortdesc": "The next text frame in the thread. Can return: TextFrame or TextPath. Can also accept: NothingEnum enumerator.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "contents",
+          "shortdesc": "The contents of the text frame. Can return: String, TextFrameContents enumerator or SpecialCharacters enumerator.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the TextPath; this is an alias to the TextPath&apos;s label property.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "findText",
+          "shortdesc": "Finds text that matches the find what value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "changeText",
+          "shortdesc": "Finds text that matches the find what value and replaces the text with the change to value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "findGrep",
+          "shortdesc": "Finds text that matches the find what value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "changeGrep",
+          "shortdesc": "Finds text that matches the find what value and replaces the text with the change to value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "findGlyph",
+          "shortdesc": "Finds glyphs that match the find what value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "changeGlyph",
+          "shortdesc": "Finds glyphs that match the find what value and replaces the glyphs with the change to value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "findTransliterate",
+          "shortdesc": "Finds text that matches the find character type value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "changeTransliterate",
+          "shortdesc": "Finds text that matches the find character type value and replaces the text with the change character type value.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "reverseOrder",
+                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Text",
+            "array": {}
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the TextPath."
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the TextPath.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "TextPath",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

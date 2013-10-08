@@ -1,0 +1,240 @@
+{
+  "name": "Notes",
+  "dynamic": true,
+  "shortdesc": "A collection of notes.",
+  "elements": [
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "count",
+          "shortdesc": "Displays the number of elements in the Note.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "add",
+          "shortdesc": "Creates a new note.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "at",
+                "optional": true,
+                "shortdesc": "The location relative to the reference object or within the containing object. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "LocationOptions",
+                  "value": "LocationOptions.UNKNOWN"
+                }
+              },
+              {
+                "name": "reference",
+                "shortdesc": "The reference object. Note: Required when the at parameter specifies before or after. Can accept: Note or InsertionPoint. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "withProperties",
+                "shortdesc": "Initial values for properties of the new Note &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "Object"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "item",
+          "shortdesc": "Returns the Note with the specified index or name.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "The index or name. Can accept: Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "itemByName",
+          "shortdesc": "Returns the Note with the specified name.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "itemByID",
+          "shortdesc": "Returns the Note with the specified ID.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "id",
+                "shortdesc": "The ID.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "itemByRange",
+          "shortdesc": "Returns the Notes within the specified range.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "from",
+                "shortdesc": "The Note, index, or name at the beginning of the range. Can accept: Note, Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "to",
+                "shortdesc": "The Note, index, or name at the end of the range. Can accept: Note, Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note",
+            "array": {}
+          }
+        },
+        {
+          "name": "firstItem",
+          "shortdesc": "Returns the first Note in the collection.",
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "lastItem",
+          "shortdesc": "Returns the last Note in the collection.",
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "middleItem",
+          "shortdesc": "Returns the middle Note in the collection.",
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "previousItem",
+          "shortdesc": "Returns the Note with the index previous to the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "obj",
+                "shortdesc": "The index of the Note that follows the desired Note.",
+                "datatype": {
+                  "type": "Note"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "nextItem",
+          "shortdesc": "Returns the Note whose index follows the specified Note in the collection.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "obj",
+                "shortdesc": "The Note whose index comes before the desired Note.",
+                "datatype": {
+                  "type": "Note"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "anyItem",
+          "shortdesc": "Returns any Note in the collection.",
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "everyItem",
+          "shortdesc": "Returns every Note in the collection.",
+          "datatype": {
+            "type": "Note",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Note.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "[]",
+          "shortdesc": "Returns the Note with the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "The index.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        }
+      ],
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of objects in the collection.",
+          "datatype": {
+            "type": "number"
+          }
+        }
+      ]
+    }
+  ]
+}

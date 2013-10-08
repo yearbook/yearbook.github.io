@@ -1,0 +1,164 @@
+{
+  "name": "Function",
+  "dynamic": true,
+  "shortdesc": "Wraps a built-in or JavaScript function.",
+  "elements": [
+    {
+      "type": "constructor",
+      "method": [
+        {
+          "name": "Function",
+          "description": "The Function constructor parses the argument list and creates a Function object.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "arguments",
+                "shortdesc": "The list of formal arguments, separated by commas.",
+                "description": "The formal arguments can also be supplied one by one; in this case, the last argument to the Function constructor is considered to be the function body.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "body",
+                "shortdesc": "The body of the function to create.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Function"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "arguments",
+          "shortdesc": "The function arguments, packed into an array.",
+          "description": "This property is deprecated; use the arguments property within the function body.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of formal arguments.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "arity",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of formal arguments.",
+          "description": "This property is deprecated; use the length property instead.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The function name.",
+          "datatype": {
+            "type": "string"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "apply",
+          "shortdesc": {
+            "i": "this"
+          },
+          "description": {
+            "i": "call&amp;&#35;40;&#41;"
+          },
+          "parameters": {
+            "parameter": [
+              {
+                "name": "thisObj",
+                "description": {
+                  "i": "this"
+                },
+                "datatype": {
+                  "type": "Object"
+                }
+              },
+              {
+                "name": "args",
+                "shortdesc": "An array of arguments.",
+                "datatype": {
+                  "type": {
+                    "href": "#/Array",
+                    "$t": "Array"
+                  }
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "call",
+          "shortdesc": {
+            "i": "this"
+          },
+          "description": {
+            "i": "apply&amp;&#35;40;&#41;"
+          },
+          "parameters": {
+            "parameter": [
+              {
+                "name": "thisObj",
+                "description": {
+                  "i": "this"
+                },
+                "datatype": {
+                  "type": "Object"
+                }
+              },
+              {
+                "name": "argument",
+                "description": "The first agument to the function. Add as many as needed.",
+                "datatype": {
+                  "type": "any"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": {
+            "a": {
+              "href": "#/global/instance/eval",
+              "$t": "eval&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toString",
+          "shortdesc": "Returns the function definition as a string.",
+          "datatype": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "name": "UnitValue",
+  "dynamic": true,
+  "shortdesc": "Represents a measurement as a combination of values and unit.",
+  "description": "Note that this object is not available in all applications.",
+  "elements": [
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "baseUnit",
+          "shortdesc": "The base unit for all conversions.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "type",
+          "rwaccess": "readonly",
+          "shortdesc": "The unit name.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value",
+          "shortdesc": "The numeric value.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "baseUnit",
+          "shortdesc": "The base unit.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "convert",
+          "shortdesc": "Converts this instance to a different unit.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "unitName",
+                "shortdesc": "The unit name.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "as",
+          "shortdesc": "Returns this instance as a different unit.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "unitName",
+                "shortdesc": "The unit name.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "UnitValue"
+          }
+        }
+      ]
+    }
+  ]
+}

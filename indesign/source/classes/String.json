@@ -1,0 +1,580 @@
+{
+  "name": "String",
+  "dynamic": true,
+  "shortdesc": "A character string. Each character is adressable by index.",
+  "elements": [
+    {
+      "type": "constructor",
+      "method": [
+        {
+          "name": "String",
+          "shortdesc": "Returns a string representation of the value given as an argument.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "value",
+                "shortdesc": "A number, variable, or object to convert to a string.",
+                "description": {},
+                "datatype": {
+                  "type": "any"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": {
+              "href": "#/String",
+              "$t": "String"
+            }
+          },
+          "example": "new String&amp;&#35;40;value&#41;"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "method": [
+        {
+          "name": "fromCharCode",
+          "shortdesc": "Returns a string created by concatenation one or more characters specified as ASCII values.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "value1",
+                "shortdesc": "One or more ASCII values.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": {
+              "href": "#/String",
+              "$t": "String"
+            }
+          },
+          "example": "String.fromCharCode&amp;&#35;40;value1,...valueN&#41;"
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The length of the string.",
+          "datatype": {
+            "type": "number"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toString",
+          "shortdesc": "Returns itself.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": {
+            "a": {
+              "href": "#/global/instance/eval",
+              "$t": "eval&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "valueOf",
+          "shortdesc": "Returns itself.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "charAt",
+          "shortdesc": "Returns the character at the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "An integer between 0 and string.length -1, specifying the character to return.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.charAt&amp;&#35;40;index&#41;"
+        },
+        {
+          "name": "charCodeAt",
+          "shortdesc": "Returns the Unicode value of the character at the given index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "An integer between 0 and string.length -1, specifying the character.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          },
+          "example": "string.charCodeAt&amp;&#35;40;index&#41;"
+        },
+        {
+          "name": "concat",
+          "shortdesc": "If necessary, converts the one or more given values to strings.",
+          "description": "Those values are concatenated with the original string, the result is returned. The original string is not effected.  Returns the concatenated string.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "value",
+                "shortdesc": "The values to be concatenated with the given string.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.concat&amp;&#35;40;value1,...valueN&#41;"
+        },
+        {
+          "name": "indexOf",
+          "shortdesc": "Returns the index within the string of the first occurrence of the specified string, starting the search at fromIndex if provided.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "searchValue",
+                "shortdesc": "The string for which to search.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "offset",
+                "optional": true,
+                "shortdesc": "The starting offset of the search.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          },
+          "example": "string.indexOf&amp;&#35;40;searchValue, fromIndex&#41;"
+        },
+        {
+          "name": "lastIndexOf",
+          "shortdesc": "Returns the index within the string of the last occurrence of the specified value.",
+          "description": "The string is searched backward, starting at fromIndex.  Returns the index within the string where the last occurrence of searchValue was found, or -1 if it was not found.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "searchValue",
+                "shortdesc": "The string for which to search.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "offset",
+                "optional": true,
+                "shortdesc": "The starting offset of the search.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          },
+          "example": "string.lastIndexOf&amp;&#35;40;searchValue, fromIndex&#41;"
+        },
+        {
+          "name": "slice",
+          "shortdesc": "Extracts a substring of the given string and returns it as a new string.",
+          "description": "The substring begins at startSlice, and includes all characters up to, but not including the character at the index endSlice.   A negative value indexes from the end of the string.  For example, a negative value for startSlice is resolved as: string. length + startSlice.  The original string is unchanged.  Returns a substring of characters from the given string, starting at startSlice and ending with endSlice-1.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "startSlice",
+                "shortdesc": "The index at which to begin extraction.",
+                "description": {},
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "endSlice",
+                "optional": true,
+                "shortdesc": "The index at which to end extraction.",
+                "description": "If omitted, slice extracts to the end of the string.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.slice&amp;&#35;40;startSlice, endSlice&#41;"
+        },
+        {
+          "name": "toLowerCase",
+          "shortdesc": "Returns a new string which contains all the characters of the original string converted to lowercase.",
+          "description": "The original string is unchanged.",
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.toLowerCase&amp;&#35;40;&#41;"
+        },
+        {
+          "name": "toUpperCase",
+          "shortdesc": "Returns a new string which contains all the characters of the original string converted to uppercase.",
+          "description": "The original string is unchanged.",
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.toUpperCase&amp;&#35;40;&#41;"
+        },
+        {
+          "name": "toLocaleLowerCase",
+          "shortdesc": "Returns a new string which contains all the characters of the original string converted to lowercase &amp;&#35;40;localized&#41;.",
+          "description": "The original string is unchanged.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toLocaleUpperCase",
+          "shortdesc": "Returns a new string which contains all the characters of the original string converted to uppercase &amp;&#35;40;localized&#41;.",
+          "description": "The original string is unchanged.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "localeCompare",
+          "shortdesc": "Performs a localized comparison of two strings.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "what",
+                "shortdesc": "The string to compare with.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "match",
+          "shortdesc": "Matches a string against a regular expression.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "regexp",
+                "shortdesc": "The regular expression to use.",
+                "datatype": {
+                  "type": {
+                    "href": "#/RegExp",
+                    "$t": "RegExp"
+                  }
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Array",
+              "$t": "Array"
+            }
+          }
+        },
+        {
+          "name": "replace",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "what",
+                "datatype": {
+                  "type": "any"
+                }
+              },
+              {
+                "name": "with",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "search",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "search",
+                "datatype": {
+                  "type": "RegExp"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "split",
+          "shortdesc": "Splits a string into a group of substrings, places those strings in an array, and returns the array.",
+          "description": "The substrings are created by breaking the original string at places that match delimiter, the delimiter characters are removed.  Returns an array whose elements are the substrings.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "delimiter",
+                "shortdesc": "Specifies the string to use for delimiting.",
+                "description": "If delimiter is omitted, the array returned contains one element, consisting of the entire string.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "limit",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.split&amp;&#35;40;delimiter&#41;"
+        },
+        {
+          "name": "substr",
+          "shortdesc": "Returns a string containing the characters beginning at the specified index, start, through the specified number of characters.",
+          "description": "The original string is unchanged.  Returns a string containing the extracted characters.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "start",
+                "shortdesc": "Location at which to begin extracting characters.",
+                "description": {},
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "length",
+                "shortdesc": "&amp;&#35;40;OptIonal&#41; The number of characters to extract.",
+                "description": {},
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.substr&amp;&#35;40;start, length&#41;"
+        },
+        {
+          "name": "substring",
+          "shortdesc": "Returns a substring of the given string by extracting characters from indexA up to but not including indexB.",
+          "description": "The original string is unchanged.  Returns a substring of characters from the given string, starting at indexA and ending with indexB-1.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "indexA",
+                "shortdesc": "The index to begin extracting.",
+                "description": {},
+                "datatype": {
+                  "type": "number"
+                }
+              },
+              {
+                "name": "indexB",
+                "shortdesc": "&amp;&#35;40;Optional&#41; The index at which to end extraction.",
+                "description": "If omitted, slice extracts to the end of the string.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "string.substring&amp;&#35;40;indexA, indexB&#41;"
+        },
+        {
+          "name": "anchor",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;a&amp;gt;tag.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The text to be stored in the anchors&apos; name attribute.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "big",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;big&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "blink",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;blink&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "bold",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;b&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "fixed",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;tt&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "fontcolor",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;font&amp;gt;tag.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "color",
+                "shortdesc": "The value to be stored in the tag&apos;s color attribute.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "fontsize",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;font&amp;gt;tag.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "size",
+                "shortdesc": "The value to be stored in the tag&apos;s size attribute.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "italics",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;i&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "link",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;a&amp;gt;tag.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "href",
+                "shortdesc": "The value to be stored in the tag&apos;s href attribute.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "small",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;small&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "strike",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;strike&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sub",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;sub&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sup",
+          "shortdesc": "Returns a string consisting of this string enclosed in a&amp;lt;sup&amp;gt;tag.",
+          "datatype": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  ]
+}

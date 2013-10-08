@@ -1,0 +1,254 @@
+{
+  "name": "Articles",
+  "dynamic": true,
+  "shortdesc": "A collection of articles.",
+  "elements": [
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "add",
+          "shortdesc": "Creates a new Article",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The article name &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "articleExportStatus",
+                "shortdesc": "The article&apos;s export status &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool"
+                }
+              },
+              {
+                "name": "at",
+                "optional": true,
+                "shortdesc": "The location relative to the reference object or within the containing object. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "LocationOptions",
+                  "value": "LocationOptions.AT_END"
+                }
+              },
+              {
+                "name": "reference",
+                "shortdesc": "The reference object. Note: Required when the to value specifies before or after. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "Article"
+                }
+              },
+              {
+                "name": "withProperties",
+                "shortdesc": "Initial values for properties of the new Article &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "Object"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "count",
+          "shortdesc": "Displays the number of elements in the Article.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "item",
+          "shortdesc": "Returns the Article with the specified index or name.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "The index or name. Can accept: Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "itemByName",
+          "shortdesc": "Returns the Article with the specified name.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "itemByID",
+          "shortdesc": "Returns the Article with the specified ID.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "id",
+                "shortdesc": "The ID.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "itemByRange",
+          "shortdesc": "Returns the Articles within the specified range.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "from",
+                "shortdesc": "The Article, index, or name at the beginning of the range. Can accept: Article, Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "to",
+                "shortdesc": "The Article, index, or name at the end of the range. Can accept: Article, Long Integer or String.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article",
+            "array": {}
+          }
+        },
+        {
+          "name": "firstItem",
+          "shortdesc": "Returns the first Article in the collection.",
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "lastItem",
+          "shortdesc": "Returns the last Article in the collection.",
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "middleItem",
+          "shortdesc": "Returns the middle Article in the collection.",
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "previousItem",
+          "shortdesc": "Returns the Article with the index previous to the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "obj",
+                "shortdesc": "The index of the Article that follows the desired Article.",
+                "datatype": {
+                  "type": "Article"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "nextItem",
+          "shortdesc": "Returns the Article whose index follows the specified Article in the collection.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "obj",
+                "shortdesc": "The Article whose index comes before the desired Article.",
+                "datatype": {
+                  "type": "Article"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "anyItem",
+          "shortdesc": "Returns any Article in the collection.",
+          "datatype": {
+            "type": "Article"
+          }
+        },
+        {
+          "name": "everyItem",
+          "shortdesc": "Returns every Article in the collection.",
+          "datatype": {
+            "type": "Article",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Article.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "[]",
+          "shortdesc": "Returns the Article with the specified index.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "index",
+                "shortdesc": "The index.",
+                "datatype": {
+                  "type": "number"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Article"
+          }
+        }
+      ],
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of objects in the collection.",
+          "datatype": {
+            "type": "number"
+          }
+        }
+      ]
+    }
+  ]
+}

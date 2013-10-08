@@ -1,0 +1,242 @@
+{
+  "name": "DataMergePreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Data merge preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the DataMergePreference &amp;&#35;40;a DataMerge&#41;.",
+          "datatype": {
+            "type": "DataMerge"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "recordSelection",
+          "shortdesc": "The records to merge.",
+          "datatype": {
+            "type": "RecordSelection"
+          }
+        },
+        {
+          "name": "leftMargin",
+          "shortdesc": "The offset value of the left margin in the target document.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "topMargin",
+          "shortdesc": "The offset value of the top margin in the target document.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "rightMargin",
+          "shortdesc": "The offset value of the right margin in the target document.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "bottomMargin",
+          "shortdesc": "The offset value of the bottom margin in the target document.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "arrangeBy",
+          "shortdesc": "The order in which to arrange multiple records on the page in the target document.",
+          "datatype": {
+            "type": "ArrangeBy"
+          }
+        },
+        {
+          "name": "rowSpacing",
+          "shortdesc": "The amount of space between rows of records in the target document.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "columnSpacing",
+          "shortdesc": "The amount of space between columns of records in the target document.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "recordNumber",
+          "shortdesc": "The number of the record to merge. Note: Valid only when record selection is one record.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "recordRange",
+          "shortdesc": "The range of records to merge. Note: Valid only when record selection is range.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordsPerPage",
+          "shortdesc": "The number of records to place on each page in the document.",
+          "datatype": {
+            "type": "RecordsPerPage"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "alertMissingImages",
+          "shortdesc": "If true, lists missing images in the specified output file.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "outputMissingImagesReportFile",
+                "shortdesc": "The path to the output file.",
+                "datatype": {
+                  "type": "File"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the DataMergePreference.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "DataMergePreference",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

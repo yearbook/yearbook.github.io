@@ -1,0 +1,365 @@
+{
+  "name": "Note",
+  "dynamic": true,
+  "shortdesc": "A note in a story.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "creationDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The date and time the note was created.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "modificationDate",
+          "rwaccess": "readonly",
+          "shortdesc": "The date and time the note was last modified.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "userName",
+          "rwaccess": "readonly",
+          "shortdesc": "The user who made the note.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "storyOffset",
+          "rwaccess": "readonly",
+          "shortdesc": "The insertion point before the table in the story containing the table.",
+          "datatype": {
+            "type": "InsertionPoint"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the Note.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Note &amp;&#35;40;a XmlStory, Story, TextFrame, InsertionPoint or Cell&#41;.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Note within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "textVariableInstances",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text variable instances.",
+          "datatype": {
+            "type": "TextVariableInstances"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "texts",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text objects.",
+          "datatype": {
+            "type": "Texts"
+          }
+        },
+        {
+          "name": "characters",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of characters.",
+          "datatype": {
+            "type": "Characters"
+          }
+        },
+        {
+          "name": "words",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of words.",
+          "datatype": {
+            "type": "Words"
+          }
+        },
+        {
+          "name": "lines",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of lines.",
+          "datatype": {
+            "type": "Lines"
+          }
+        },
+        {
+          "name": "textColumns",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text columns.",
+          "datatype": {
+            "type": "TextColumns"
+          }
+        },
+        {
+          "name": "paragraphs",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of paragraphs.",
+          "datatype": {
+            "type": "Paragraphs"
+          }
+        },
+        {
+          "name": "insertionPoints",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of insertion points.",
+          "datatype": {
+            "type": "InsertionPoints"
+          }
+        },
+        {
+          "name": "textStyleRanges",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text style ranges.",
+          "datatype": {
+            "type": "TextStyleRanges"
+          }
+        },
+        {
+          "name": "hiddenTexts",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of hidden text objects.",
+          "datatype": {
+            "type": "HiddenTexts"
+          }
+        },
+        {
+          "name": "collapsed",
+          "shortdesc": "If true, the note is collapsed in galley view.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the Note; this is an alias to the Note&apos;s label property.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the Note."
+        },
+        {
+          "name": "convertToText",
+          "shortdesc": "Converts the note to story text."
+        },
+        {
+          "name": "move",
+          "shortdesc": "Moves the note to the specified location.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "to",
+                "shortdesc": "The new location relative to the reference object or within the containing object.",
+                "datatype": {
+                  "type": "LocationOptions"
+                }
+              },
+              {
+                "name": "reference",
+                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. Can accept: Text or Story. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Note"
+          }
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Note.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Note",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

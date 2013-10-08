@@ -1,0 +1,238 @@
+{
+  "name": "DataMerge",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "A data merge object.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "dataMergePreferences",
+          "rwaccess": "readonly",
+          "shortdesc": "The data merge preference properties that define the layout and content of the target page.",
+          "datatype": {
+            "type": "DataMergePreference"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the DataMerge &amp;&#35;40;a Document&#41;.",
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "preferences",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of preferences objects.",
+          "datatype": {
+            "type": "Preferences"
+          }
+        },
+        {
+          "name": "dataMergeFields",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of data merge fields.",
+          "datatype": {
+            "type": "DataMergeFields"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "selectDataSource",
+          "shortdesc": "Specifies the file to use as the data source.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "dataSourceFile",
+                "shortdesc": "The path to the data source file.",
+                "datatype": {
+                  "type": "File"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "updateDataSource",
+          "shortdesc": "Updates the data source file with the most current data."
+        },
+        {
+          "name": "removeDataSource",
+          "shortdesc": "Removes the data source."
+        },
+        {
+          "name": "mergeRecords",
+          "shortdesc": "Merges records and produces an optional overset report.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "outputOversetReportFile",
+                "shortdesc": "The path to the file in which to store the overset report. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "File"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "exportFile",
+          "shortdesc": "Merges records and exports to PDF.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "to",
+                "shortdesc": "The path of exported PDF file.",
+                "datatype": {
+                  "type": "File"
+                }
+              },
+              {
+                "name": "using",
+                "shortdesc": "The PDF export style to use. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "PDFExportPreset"
+                }
+              },
+              {
+                "name": "outputOversetReportFile",
+                "shortdesc": "The path to the file in which to store the overset report. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "File"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the DataMerge.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "DataMerge",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "name": "XMLRuleProcessor",
+  "dynamic": true,
+  "shortdesc": "An XML rule processor.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "halted",
+          "rwaccess": "readonly",
+          "shortdesc": "If true, the XML rule process has halted.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "rulePaths",
+          "rwaccess": "readonly",
+          "shortdesc": "The XPath condition paths of the rules in the rule set.",
+          "datatype": {
+            "type": "string",
+            "array": true
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the XMLRuleProcessor.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the XMLRuleProcessor &amp;&#35;40;a Application&#41;.",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the XMLRuleProcessor within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the XMLRuleProcessor; this is an alias to the XMLRuleProcessor&apos;s label property.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the XMLRuleProcessor."
+        },
+        {
+          "name": "startProcessingRuleSet",
+          "shortdesc": "Start processing an XML rule set.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "initialElement",
+                "shortdesc": "The XML element at which to start processing the rule set.",
+                "datatype": {
+                  "type": "XMLElement"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "XMLRuleMatchData"
+          }
+        },
+        {
+          "name": "findNextMatch",
+          "shortdesc": "Finds the next matching XML element.",
+          "datatype": {
+            "type": "XMLRuleMatchData"
+          }
+        },
+        {
+          "name": "startProcessingSubtree",
+          "shortdesc": "Process the XML elements of the current XML element.",
+          "datatype": {
+            "type": "XMLRuleMatchData"
+          }
+        },
+        {
+          "name": "skipChildren",
+          "shortdesc": "Do not process XML elements &amp;&#35;40;children&#41; of the current XML element."
+        },
+        {
+          "name": "endProcessingRuleSet",
+          "shortdesc": "Stop processing XML rule set."
+        },
+        {
+          "name": "halt",
+          "shortdesc": "Halt the XML rule processor."
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "value",
+                "shortdesc": "The value.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "key",
+                "shortdesc": "The key.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the XMLRuleProcessor.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "XMLRuleProcessor",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

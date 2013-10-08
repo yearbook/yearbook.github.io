@@ -1,0 +1,299 @@
+{
+  "name": "TextFramePreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Text frame preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the TextFramePreference &amp;&#35;40;a Application, Document, TextFrame or ObjectStyle&#41;.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "textColumnCount",
+          "shortdesc": "The number of columns in the text frame. Note: Depending on the value of use fixed column width, the number of columns can change automatically when the text frame size changes.",
+          "datatype": {
+            "type": "number",
+            "min": 1,
+            "max": 40
+          }
+        },
+        {
+          "name": "textColumnGutter",
+          "shortdesc": "The space between columns in the text frame.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 8640
+          }
+        },
+        {
+          "name": "textColumnFixedWidth",
+          "shortdesc": "The column width of the columns in the text frame.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 8640
+          }
+        },
+        {
+          "name": "useFixedColumnWidth",
+          "shortdesc": "If true, maintains column width when the text frame is resized. If false, causes columns to resize when the text frame is resized. Note: When true, resizing the frame can change the number of columns in the frame.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "insetSpacing",
+          "shortdesc": "The amount to offset text from the edges of the text frame, specified either as a single value applied uniformly to all sides of the text frame or as an array of 4 values in the format [top inset, left inset, bottom inset, right inset]. Can return: Unit &amp;&#35;40;0 - 8640 points&#41; or Array of 4 Units (0 - 8640 points).",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "firstBaselineOffset",
+          "shortdesc": "The distance between the baseline of the text and the top inset of the text frame or cell.",
+          "datatype": {
+            "type": "FirstBaseline"
+          }
+        },
+        {
+          "name": "minimumFirstBaselineOffset",
+          "shortdesc": "The minimum distance between the baseline of the text and the top inset of the text frame or cell.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 8640
+          }
+        },
+        {
+          "name": "verticalJustification",
+          "shortdesc": "The vertical alignment of the text content.",
+          "datatype": {
+            "type": "VerticalJustification"
+          }
+        },
+        {
+          "name": "verticalThreshold",
+          "shortdesc": "The maximum amount of vertical space between two paragraphs. Note: Valid only when vertical justification is justified; the specified amount is applied in addition to the space before or space after values defined for the paragraph.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 8640
+          }
+        },
+        {
+          "name": "ignoreWrap",
+          "shortdesc": "If true, ignores text wrap settings for drawn or placed objects in the text frame.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "useFlexibleColumnWidth",
+          "shortdesc": "If true, maintains column width between a min and max range when the text frame is resized. If false, causes columns to resize when the text frame is resized. Note: When true, resizing the frame can change the number of columns in the frame.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "textColumnMaxWidth",
+          "shortdesc": "The maximum column width of the columns in the text frame. Use 0 to indicate no upper limit.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+            "min": 0,
+            "max": 8640
+          }
+        },
+        {
+          "name": "autoSizingType",
+          "shortdesc": "Auto-sizing type of text frame. Based on type, reference value is automatically adjusted. For example, for height only type, top-left reference point becomes top-center. Recommended to change auto-sizing type, after setting other auto-sizing attributes",
+          "datatype": {
+            "type": "AutoSizingTypeEnum"
+          }
+        },
+        {
+          "name": "autoSizingReferencePoint",
+          "shortdesc": "The reference point for auto sizing of text frame. Reference point is automatically adjusted to the suitable value depending on the auto-sizing type value. As an example, top left reference point becomes top center for height only dimension",
+          "datatype": {
+            "type": "AutoSizingReferenceEnum"
+          }
+        },
+        {
+          "name": "useMinimumHeightForAutoSizing",
+          "shortdesc": "If true, minimum height value is used during the auto-sizing of text frame.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "minimumHeightForAutoSizing",
+          "shortdesc": "The minimum height for auto-sizing of the text frame.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "useMinimumWidthForAutoSizing",
+          "shortdesc": "If true, minimum width value is used during the auto-sizing of text frame.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "minimumWidthForAutoSizing",
+          "shortdesc": "The minimum width for auto-sizing of the text frame.",
+          "datatype": {
+            "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
+          }
+        },
+        {
+          "name": "useNoLineBreaksForAutoSizing",
+          "shortdesc": "If true, line-breaks are not introduced after auto sizing.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "verticalBalanceColumns",
+          "shortdesc": "Vertically justify balanced across all columns.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the TextFramePreference.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "TextFramePreference",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "name": "Object",
+  "dynamic": true,
+  "shortdesc": "The base class of all JavaScript objects.",
+  "elements": [
+    {
+      "type": "constructor",
+      "method": [
+        {
+          "name": "Object",
+          "shortdesc": "Creates and returns a new object of a given type.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "what",
+                "shortdesc": "The object type.",
+                "datatype": {
+                  "type": "any"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Object"
+          },
+          "example": "new Object&amp;&#35;40;&#41;"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "method": [
+        {
+          "name": "isValid",
+          "shortdesc": "Reports whether an object is still valid.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "what",
+                "shortdesc": "The object to check.",
+                "datatype": {
+                  "type": "Object"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "prototype",
+          "rwaccess": "readonly",
+          "shortdesc": "Points to the prototype object for this object.",
+          "description": "Note that this property is treated as an XML element in the XML class.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "constructor",
+          "rwaccess": "readonly",
+          "shortdesc": "Points to the constructor function that created this object.",
+          "description": "Note that this property is treated as an XML element in the XML class.",
+          "datatype": {
+            "type": {
+              "href": "#/Function",
+              "$t": "Function"
+            }
+          }
+        },
+        {
+          "name": "reflect",
+          "rwaccess": "readonly",
+          "shortdesc": "Retrieves and returns the Reflection object associated with this method or a property.",
+          "description": "Note that this property is treated as an XML element in the XML class.",
+          "datatype": {
+            "type": {
+              "href": "#/Reflection",
+              "$t": "Reflection"
+            }
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toString",
+          "shortdesc": "Creates and returns a string representing this object.",
+          "description": {
+            "a": {
+              "href": "#/Date",
+              "$t": "Date"
+            },
+            "i": "type"
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "example": "obj.toString&amp;&#35;40;&#41;"
+        },
+        {
+          "name": "toLocaleString",
+          "shortdesc": {
+            "a": {
+              "href": "#/Object/instance/toString",
+              "$t": "toString&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "hasOwnProperty",
+          "shortdesc": "Reports whether a given property is defined with an instance or within the prototype chain.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of the property to check.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "propertyIsEnumerable",
+          "shortdesc": "Reports whether a given property is enumerable.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of the property to check.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "isPrototypeOf",
+          "shortdesc": "Checks whether the given object is a prototype of this object.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "what",
+                "shortdesc": "The object to check.",
+                "datatype": {
+                  "type": "Object"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "valueOf",
+          "shortdesc": "Retrieves and returns the primitive value of this object.",
+          "description": "If the object has no primitive value, returns the object itself.  Note that you rarely need to call this method yourself.  The JavaScript interpreter automatically invokes it when encountering an object where a primitive value is expected.",
+          "datatype": {
+            "type": "Object"
+          },
+          "example": "obj.valueOf&amp;&#35;40;&#41;"
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Creates and returns a string representation of this object.",
+          "description": {
+            "a": {
+              "href": "#/global/instance/eval",
+              "$t": "eval&amp;&#35;40;&#41;"
+            }
+          },
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "unwatch",
+          "shortdesc": "Removes the watch function of a property.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of the property to unwatch.",
+                "datatype": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "watch",
+          "shortdesc": "Adds a watch function to a property, which is called when the value changes.",
+          "description": "This function can accept, modify, or reject a new value that the user, application, or a script has attempted to place in a property.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of the property to watch.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "func",
+                "shortdesc": "The function to be called when the value of this property changes.",
+                "description": {
+                  "li": [
+                    "name: the name of the property that changes.",
+                    "oldValue: The old property value.",
+                    "newValue: The new property value that was specified."
+                  ]
+                },
+                "datatype": {
+                  "type": {
+                    "href": "#/Function",
+                    "$t": "Function"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

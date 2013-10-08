@@ -1,0 +1,427 @@
+{
+  "name": "FlashPlayer",
+  "dynamic": true,
+  "shortdesc": "A control that contains a Flash Player, which can load and play Flash movies stored in SWF files.",
+  "description": "The ScriptUI FlashPlayer element runs the Flash application within an Adobe application. The Flash application runs ActionScript, a different implementation of JavaScript from the ExtendScript version of JavaScript that Adobe applications run. A control object of this type contains functions that allow your script to load SWF files, control movie playback, and communicate with the ActionScript environment.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "active",
+          "shortdesc": "True if this element is active.",
+          "description": {
+            "a": {
+              "href": "#/Button",
+              "$t": "Button"
+            }
+          },
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "visible",
+          "shortdesc": "True if this element is shown, false if it is hidden.",
+          "description": "When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "bounds",
+          "shortdesc": "The boundaries of the element, in parent-relative coordinates.",
+          "description": "Setting an element&apos;s size or location changes its bounds property, and vice-versa.",
+          "datatype": {
+            "type": {
+              "href": "#/Bounds",
+              "$t": "Bounds"
+            }
+          }
+        },
+        {
+          "name": "location",
+          "shortdesc": "The upper left corner of this element relative to its parent.",
+          "description": "The location is defined as [bounds.x, bounds.y]. Setting an element&apos;s location changes its bounds property, and vice-versa.",
+          "datatype": {
+            "type": {
+              "href": "#/Point",
+              "$t": "Point"
+            }
+          }
+        },
+        {
+          "name": "maximumSize",
+          "shortdesc": "The maximum height and width to which the element can be resized.",
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "minimumSize",
+          "shortdesc": "The minimum height and width to which the element can be resized.",
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "preferredSize",
+          "shortdesc": "The preferred size, used by layout managers to determine the best size for each element.",
+          "description": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default.",
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "size",
+          "shortdesc": "The current dimensions of this element.",
+          "description": {
+            "a": {
+              "href": "#LayoutManager",
+              "$t": "LayoutManager"
+            },
+            "i": "preferredSize"
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Dimension",
+              "$t": "Dimension"
+            }
+          }
+        },
+        {
+          "name": "windowBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The bounds of this element relative to the top-level parent window.",
+          "datatype": {
+            "type": {
+              "href": "#/Bounds",
+              "$t": "Bounds"
+            }
+          }
+        },
+        {
+          "name": "alignment",
+          "shortdesc": {
+            "i": "alignChildren"
+          },
+          "description": {
+            "li": [
+              {
+                "b": [
+                  "top",
+                  "bottom",
+                  "fill"
+                ]
+              },
+              {
+                "b": [
+                  "left",
+                  "right",
+                  "fill"
+                ]
+              },
+              {
+                "b": [
+                  "top",
+                  "bottom",
+                  "left",
+                  "right",
+                  "fill"
+                ]
+              }
+            ]
+          },
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "An object that contains one or more creation properties of the container &amp;&#35;40;properties used only when the element is created&#41;.",
+          "description": "A FlashPlayer object has no creation properties.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "enabled",
+          "shortdesc": "True if this element is enabled.",
+          "description": "An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "helpTip",
+          "shortdesc": "The help text that is displayed when the mouse hovers over the element.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "indent",
+          "shortdesc": "The number of pixels to indent the element during automatic layout.",
+          "description": "Applies for column orientation and left alignment, or row orientation and top alignment.",
+          "datatype": {
+            "type": "Number",
+            "min": 0
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent element.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "window",
+          "rwaccess": "readonly",
+          "shortdesc": "The window that this element belongs to.",
+          "datatype": {
+            "type": {
+              "href": "#/Window",
+              "$t": "Window"
+            }
+          }
+        },
+        {
+          "name": "type",
+          "rwaccess": "readonly",
+          "shortdesc": "The element type, &quot;flashplayer\".",
+          "datatype": {
+            "type": "String"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "invokePlayerFunction",
+          "shortdesc": "Invokes an ActionScript function defined in the Flash application.",
+          "description": "Returns the result of the invoked function, which must be one of the allowed types. The ActionScript class and date objects are not supported as return values.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "name",
+                "shortdesc": "The name of a Flash ActionScript function that has been registered with the ExternalInterface object by the currently loaded SWF file.",
+                "datatype": {
+                  "type": "String"
+                }
+              },
+              {
+                "name": "argument",
+                "optional": true,
+                "shortdesc": "An argument to pass through to the function.",
+                "description": "There can be any number of arguments. An argument must be one of these data types:Number, String, Boolean, null, undefined, Object, Array. No other data types are supported.",
+                "datatype": {
+                  "type": "Any"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Any"
+          }
+        },
+        {
+          "name": "loadMovie",
+          "shortdesc": "Loads a movie into the Flash Player, and begins playing it.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "file",
+                "shortdesc": "The File object for the SWF file to load.",
+                "datatype": {
+                  "type": {
+                    "href": "$COMMON/javascript.xml#/File",
+                    "$t": "File"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "playMovie",
+          "shortdesc": "Restarts a movie that has been stopped.",
+          "description": {
+            "br": {}
+          },
+          "parameters": {
+            "parameter": [
+              {
+                "name": "rewind",
+                "shortdesc": "When true, restarts the movie from the beginning; otherwise, starts playing from the\tpoint where it was stopped.",
+                "datatype": {
+                  "type": "Boolean",
+                  "value": false
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "stopMovie",
+          "shortdesc": "Halts playback of the current movie.",
+          "description": {
+            "br": {}
+          }
+        },
+        {
+          "name": "notify",
+          "shortdesc": "Sends a notification message, simulating the specified user interaction event.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventName",
+                "optional": true,
+                "shortdesc": "The name of the control event handler to call.",
+                "description": {
+                  "b": [
+                    "onClick",
+                    "onChange",
+                    "onChanging",
+                    "onChange",
+                    "onClick"
+                  ]
+                },
+                "datatype": {
+                  "type": "String"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "show",
+          "shortdesc": "Shows this element.",
+          "description": "When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states."
+        },
+        {
+          "name": "hide",
+          "shortdesc": "Hides this element."
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Registers an event handler for a particular type of event occuring in this element.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventName",
+                "shortdesc": "The name of the event.",
+                "description": {
+                  "i": "JavaScript Tools Guide"
+                },
+                "datatype": {
+                  "type": "String"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The function that handles the event.",
+                "description": {
+                  "a": {
+                    "href": "#/UIEvent",
+                    "$t": "UIEvent"
+                  }
+                },
+                "datatype": {
+                  "type": {
+                    "href": "$COMMON/javascript.xml#/Function",
+                    "$t": "Function"
+                  }
+                }
+              },
+              {
+                "name": "capturePhase",
+                "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
+                "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+                "datatype": {
+                  "type": "Boolean",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Unregisters an event handler for a particular type of event occuring in this element.",
+          "description": "All arguments must be identical to those that were used to register the event handler.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventName",
+                "shortdesc": "The name of the event.",
+                "datatype": {
+                  "type": "String"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The function that handles the event.",
+                "datatype": {
+                  "type": {
+                    "href": "$COMMON/javascript.xml#/Function",
+                    "$t": "Function"
+                  }
+                }
+              },
+              {
+                "name": "capturePhase",
+                "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
+                "datatype": {
+                  "type": "Boolean",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "dispatchEvent",
+          "shortdesc": "Simulates the occurrence of an event in this target.",
+          "description": {
+            "a": {
+              "href": "#/UIEvent",
+              "$t": "UIEvent"
+            }
+          },
+          "datatype": {
+            "type": {
+              "href": "#/Event",
+              "$t": "Event"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "method": [
+        {
+          "name": "callback",
+          "shortdesc": "A function definition for a callback from the Flash ActionScript environment.",
+          "description": "The Flash ActionScript code can call any callback function defined on the ExtendScript side of the FlashPlayer object, invoking it by name as a property of the control object. The function can take any arguments of a supported data types, and can return any value of a supported data type. data types:Number, String, Boolean, null, undefined, Object, Array."
+        }
+      ]
+    }
+  ]
+}

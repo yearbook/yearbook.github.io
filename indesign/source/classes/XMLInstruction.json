@@ -1,0 +1,238 @@
+{
+  "name": "XMLInstruction",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/XMLItem",
+    "$t": "XMLItem"
+  },
+  "shortdesc": "An XML processing instruction.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "storyOffset",
+          "rwaccess": "readonly",
+          "shortdesc": "The insertion point before the table in the story containing the table.",
+          "datatype": {
+            "type": "InsertionPoint"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the XMLInstruction.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the XMLInstruction &amp;&#35;40;a Document or XMLElement&#41;.",
+          "datatype": {
+            "type": "mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the XMLInstruction within its containing object.",
+          "datatype": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "target",
+          "shortdesc": "A name that identifies the processing instruction to an application reading the exported XML file.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "data",
+          "shortdesc": "A value that tells the application reading the exported XML file what to do with the processing instruction.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Moves the element to the specified location.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "to",
+                "shortdesc": "The location in relation to the reference object or within the containing object.",
+                "datatype": {
+                  "type": "LocationOptions"
+                }
+              },
+              {
+                "name": "reference",
+                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: XMLItem or Text. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "mixed"
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "XMLInstruction"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicates the XMLInstruction.",
+          "datatype": {
+            "type": "XMLInstruction"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the XMLInstruction."
+        },
+        {
+          "name": "select",
+          "shortdesc": "Selects the object.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "existingSelection",
+                "optional": true,
+                "shortdesc": "The selection status of the XMLInstruction in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "SelectionOptions",
+                  "value": "SelectionOptions.REPLACE_WITH"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the XMLInstruction.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "XMLInstruction",
+            "array": {}
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": {
+            "parameter": [
+              {
+                "name": "eventType",
+                "shortdesc": "The registered event type.",
+                "datatype": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "handler",
+                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+                "datatype": {
+                  "type": "mixed"
+                }
+              },
+              {
+                "name": "captures",
+                "optional": true,
+                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
+                "datatype": {
+                  "type": "bool",
+                  "value": false
+                }
+              }
+            ]
+          },
+          "datatype": {
+            "type": "bool"
+          }
+        }
+      ]
+    }
+  ]
+}
