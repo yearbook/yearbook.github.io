@@ -11,7 +11,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched before the MenuAction is invoked. This event does not bubble. This event is cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "beforeInvoke"
           }
         },
@@ -20,7 +20,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched after the MenuAction is invoked. This event does not bubble. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterInvoke"
           }
         }
@@ -34,15 +34,15 @@
           "rwaccess": "readonly",
           "shortdesc": "The name of the MenuAction.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "title",
           "rwaccess": "readonly",
-          "shortdesc": "The name of the MenuAction for display in the user interface. The title includes any ampersand characters &amp;&#35;40;&amp;&amp;&#35;41;, which are used to tell the Windows OS to underline the following character in the name for use with the Alt key to navigate to a menu item. Double ampersands are used to display an actual ampersand character in the name. The Mac OS ignores and removes the extra ampersand characters.",
+          "shortdesc": "The name of the MenuAction for display in the user interface. The title includes any ampersand characters &#40;&&#41;, which are used to tell the Windows OS to underline the following character in the name for use with the Alt key to navigate to a menu item. Double ampersands are used to display an actual ampersand character in the name. The Mac OS ignores and removes the extra ampersand characters.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -50,7 +50,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The menu action area.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -58,7 +58,7 @@
           "rwaccess": "readonly",
           "shortdesc": "If true, the MenuAction is enabled.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -66,7 +66,7 @@
           "rwaccess": "readonly",
           "shortdesc": "If true, the menu item associated with the menu action is checked.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -74,7 +74,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the MenuAction.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -82,13 +82,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the MenuAction &amp;&#35;40;a Application&#41;.",
+          "shortdesc": "The parent of the MenuAction &#40;a Application).",
           "datatype": {
             "type": "Application"
           }
@@ -98,7 +98,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the MenuAction within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -121,7 +121,7 @@
           "name": "label",
           "shortdesc": "A property that can be set to any string.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -140,48 +140,44 @@
         {
           "name": "insertLabel",
           "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "shortdesc": "The value.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
         },
         {
           "name": "extractLabel",
           "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the MenuAction.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -189,46 +185,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "MenuAction",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -236,35 +230,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

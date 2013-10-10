@@ -15,15 +15,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the XMLImportPreference &amp;&#35;40;a Application or Document&#41;.",
+          "shortdesc": "The parent of the XMLImportPreference &#40;a Application or Document).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -46,49 +46,49 @@
           "name": "createLinkToXML",
           "shortdesc": "If true, creates a link to the imported XML file. If false, embeds the file.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "repeatTextElements",
           "shortdesc": "If true, repeating text elements inherit the formatting applied to placeholder text. Note: Valid only when import style is merge.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "ignoreUnmatchedIncoming",
           "shortdesc": "If true, ignores elements that do not match the existing structure. Note: Valid only when import style is merge.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "importTextIntoTables",
           "shortdesc": "If true, imports text into tables if tags match placeholder tables and their cells. Note: Valid only when import style is merge.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "ignoreWhitespace",
           "shortdesc": "If true, leaves existing content in place if the matching XML content contains only whitespace characters such as a carriage return or a tab character. Note: Valid only when import style is merge.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "removeUnmatchedExisting",
           "shortdesc": "If true, deletes existing elements or placeholders in the document that do not have matches in the XML file. Note: Valid only when import style is merge.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "importToSelected",
           "shortdesc": "If true, imports into the selected XML element. If false, imports at the root element.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -102,21 +102,21 @@
           "name": "allowTransform",
           "shortdesc": "If true, transforms the XML using an XSLT file.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "transformFilename",
           "shortdesc": "The name of the XSLT file. Note: Valid when allow transform is true. Can return: File or XMLTransformFile enumerator.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
           "name": "transformParameters",
           "shortdesc": "Stylesheet parameters as a list of name/value pairs in the format [[name, value], [name, value], ...]. Can return: Ordered array containing name:String, value:String.",
           "datatype": {
-            "type": "mixed",
+            "type": "Mixed",
             "array": true
           }
         },
@@ -124,7 +124,7 @@
           "name": "importCALSTables",
           "shortdesc": "If true, imports CALS tables as InDesign tables.",
           "datatype": {
-            "type": "bool",
+            "type": "Boolean",
             "value": true
           }
         },
@@ -141,7 +141,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the XMLImportPreference.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -149,46 +149,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "XMLImportPreference",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -196,35 +194,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

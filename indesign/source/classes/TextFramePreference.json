@@ -15,15 +15,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the TextFramePreference &amp;&#35;40;a Application, Document, TextFrame or ObjectStyle&#41;.",
+          "shortdesc": "The parent of the TextFramePreference &#40;a Application, Document, TextFrame or ObjectStyle).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -46,7 +46,7 @@
           "name": "textColumnCount",
           "shortdesc": "The number of columns in the text frame. Note: Depending on the value of use fixed column width, the number of columns can change automatically when the text frame size changes.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 1,
             "max": 40
           }
@@ -73,14 +73,14 @@
           "name": "useFixedColumnWidth",
           "shortdesc": "If true, maintains column width when the text frame is resized. If false, causes columns to resize when the text frame is resized. Note: When true, resizing the frame can change the number of columns in the frame.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "insetSpacing",
-          "shortdesc": "The amount to offset text from the edges of the text frame, specified either as a single value applied uniformly to all sides of the text frame or as an array of 4 values in the format [top inset, left inset, bottom inset, right inset]. Can return: Unit &amp;&#35;40;0 - 8640 points&#41; or Array of 4 Units (0 - 8640 points).",
+          "shortdesc": "The amount to offset text from the edges of the text frame, specified either as a single value applied uniformly to all sides of the text frame or as an array of 4 values in the format [top inset, left inset, bottom inset, right inset]. Can return: Unit &#40;0 - 8640 points) or Array of 4 Units (0 - 8640 points).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -119,14 +119,14 @@
           "name": "ignoreWrap",
           "shortdesc": "If true, ignores text wrap settings for drawn or placed objects in the text frame.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "useFlexibleColumnWidth",
           "shortdesc": "If true, maintains column width between a min and max range when the text frame is resized. If false, causes columns to resize when the text frame is resized. Note: When true, resizing the frame can change the number of columns in the frame.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -156,7 +156,7 @@
           "name": "useMinimumHeightForAutoSizing",
           "shortdesc": "If true, minimum height value is used during the auto-sizing of text frame.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -170,7 +170,7 @@
           "name": "useMinimumWidthForAutoSizing",
           "shortdesc": "If true, minimum width value is used during the auto-sizing of text frame.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -184,14 +184,14 @@
           "name": "useNoLineBreaksForAutoSizing",
           "shortdesc": "If true, line-breaks are not introduced after auto sizing.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "verticalBalanceColumns",
           "shortdesc": "Vertically justify balanced across all columns.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -207,7 +207,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the TextFramePreference.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -215,46 +215,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "TextFramePreference",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -262,35 +260,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

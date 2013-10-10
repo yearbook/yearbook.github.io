@@ -27,7 +27,7 @@
           "rwaccess": "readonly",
           "shortdesc": "If true, the assignment is packaged.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -35,15 +35,15 @@
           "rwaccess": "readonly",
           "shortdesc": "If true, the assignment package is up to date.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "filePath",
           "rwaccess": "readonly",
-          "shortdesc": "The file path &amp;&#35;40;colon delimited on the Mac OS&#41;. Can also accept: File.",
+          "shortdesc": "The file path &#40;colon delimited on the Mac OS). Can also accept: File.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -51,7 +51,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the Assignment.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -59,13 +59,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the Assignment &amp;&#35;40;a Document&#41;.",
+          "shortdesc": "The parent of the Assignment &#40;a Document).",
           "datatype": {
             "type": "Document"
           }
@@ -75,7 +75,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the Assignment within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -106,14 +106,14 @@
           "name": "name",
           "shortdesc": "The name of the Assignment.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "userName",
           "shortdesc": "The user name to assign to tracked changes and notes.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -125,23 +125,23 @@
         },
         {
           "name": "frameColor",
-          "shortdesc": "The color of the assignment&apos;s frames. Can return: Array of 3 Reals &amp;&#35;40;0 - 255&#41; or UIColors enumerator or NothingEnum enumerator.",
+          "shortdesc": "The color of the assignment's frames. Can return: Array of 3 Reals &#40;0 - 255) or UIColors enumerator or NothingEnum enumerator.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
           "name": "includeLinksWhenPackage",
           "shortdesc": "If true, includes linked files when packaging the assignment.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "label",
           "shortdesc": "A property that can be set to any string.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -156,26 +156,24 @@
         {
           "name": "update",
           "shortdesc": "Updates the assignment file.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "versionComments",
-                "shortdesc": "The comment for this version. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "forceSave",
-                "optional": true,
-                "shortdesc": "If true, forcibly saves a version. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "versionComments",
+              "shortdesc": "The comment for this version. &#40;Optional)",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "forceSave",
+              "optional": true,
+              "shortdesc": "If true, forcibly saves a version. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "remove",
@@ -184,33 +182,31 @@
         {
           "name": "createPackage",
           "shortdesc": "Creates an assignment package.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "filePath",
-                "shortdesc": "The full path name of the assignment package file.",
-                "datatype": {
-                  "type": "File"
-                }
-              },
-              {
-                "name": "submit",
-                "optional": true,
-                "shortdesc": "If true, submits assigned stories before packaging the assignment. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": true
-                }
-              },
-              {
-                "name": "withProperties",
-                "shortdesc": "Initial values for properties of the new Assignment &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "filePath",
+              "shortdesc": "The full path name of the assignment package file.",
+              "datatype": {
+                "type": "File"
               }
-            ]
-          },
+            },
+            {
+              "name": "submit",
+              "optional": true,
+              "shortdesc": "If true, submits assigned stories before packaging the assignment. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new Assignment &#40;Optional)",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
             "type": "File"
           }
@@ -222,48 +218,44 @@
         {
           "name": "insertLabel",
           "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "shortdesc": "The value.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
         },
         {
           "name": "extractLabel",
           "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the Assignment.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -271,46 +263,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "Assignment",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -318,35 +308,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

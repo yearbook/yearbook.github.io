@@ -19473,6 +19473,7 @@ var ybmDocApp = angular.module('ybmDocApp', ['ngRoute']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {templateUrl: './templates/index.html'})
+      .when('/about', {templateUrl: './templates/about.html'})
       .when('/search', {templateUrl: './templates/search.html', controller: IndexListCtrl})
       .when('/:className', {templateUrl: './templates/class-detail.html', controller: ClassDetailCtrl})
       .otherwise({

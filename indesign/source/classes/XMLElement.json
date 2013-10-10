@@ -31,7 +31,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The text content or page item referred to by the element. Can return: Text, Story, PageItem, Movie, Sound, Graphic, Table or Cell.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -39,7 +39,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the XMLElement.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -47,15 +47,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the XMLElement &amp;&#35;40;a Document or XMLElement&#41;.",
+          "shortdesc": "The parent of the XMLElement &#40;a Document or XMLElement).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -63,7 +63,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the XMLElement within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -109,7 +109,7 @@
         {
           "name": "pageItems",
           "rwaccess": "readonly",
-          "shortdesc": "The page items collection, which can be used to process all page items in a container &amp;&#35;40;such as a document, page, or group&#41;, regardless of type.",
+          "shortdesc": "The page items collection, which can be used to process all page items in a container &#40;such as a document, page, or group), regardless of type.",
           "datatype": {
             "type": "PageItems"
           }
@@ -117,7 +117,7 @@
         {
           "name": "images",
           "rwaccess": "readonly",
-          "shortdesc": "A collection of bitmap images in any bitmap file format &amp;&#35;40;including TIFF, JPEG, or GIF&#41;.",
+          "shortdesc": "A collection of bitmap images in any bitmap file format &#40;including TIFF, JPEG, or GIF).",
           "datatype": {
             "type": "Images"
           }
@@ -125,7 +125,7 @@
         {
           "name": "graphics",
           "rwaccess": "readonly",
-          "shortdesc": "A collection of imported graphics in any graphic file format &amp;&#35;40;vector, metafile, or bitmap&#41;.",
+          "shortdesc": "A collection of imported graphics in any graphic file format &#40;vector, metafile, or bitmap).",
           "datatype": {
             "type": "Graphics"
           }
@@ -277,7 +277,7 @@
           "name": "contents",
           "shortdesc": "The contents of the text. Can return: String or SpecialCharacters enumerator.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -292,24 +292,22 @@
         {
           "name": "move",
           "shortdesc": "Moves the element to the specified location.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "shortdesc": "The location in relation to the reference object or within the containing object.",
-                "datatype": {
-                  "type": "LocationOptions"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: XMLItem or Text. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "shortdesc": "The location in relation to the reference object or within the containing object.",
+              "datatype": {
+                "type": "LocationOptions"
               }
-            ]
-          },
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: XMLItem or Text. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
             "type": "XMLElement"
           }
@@ -324,32 +322,28 @@
         {
           "name": "markup",
           "shortdesc": "Associates the object with the specified XML element while preserving existing content.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The object to mark up. Can accept: PageItem, Movie, Sound, Graphic, Story, Text or Table.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The object to mark up. Can accept: PageItem, Movie, Sound, Graphic, Story, Text or Table.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "placeXML",
           "shortdesc": "Places XML content into the story, replacing the existing content.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The object to place into. Can accept: Story, PageItem, Graphic, Movie or Sound.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The object to place into. Can accept: Story, PageItem, Graphic, Movie or Sound.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "untag",
@@ -358,77 +352,69 @@
         {
           "name": "validate",
           "shortdesc": "Validates the element against a DTD.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "maximumErrors",
-                "optional": true,
-                "shortdesc": "The maximum number of validation errors to generate. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "number",
-                  "value": 250
-                }
+          "parameters": [
+            {
+              "name": "maximumErrors",
+              "optional": true,
+              "shortdesc": "The maximum number of validation errors to generate. &#40;Optional)",
+              "datatype": {
+                "type": "Number",
+                "value": 250
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "ValidationError",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "applyParagraphStyle",
           "shortdesc": "Applies the specified paragraph style to the text content of the XMLElement.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The paragraph style to apply. Can accept: String or ParagraphStyle.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "clearingOverrides",
-                "optional": true,
-                "shortdesc": "If true, clears any attributes before applying the style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": true
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The paragraph style to apply. Can accept: String or ParagraphStyle.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            },
+            {
+              "name": "clearingOverrides",
+              "optional": true,
+              "shortdesc": "If true, clears any attributes before applying the style. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
         },
         {
           "name": "applyCharacterStyle",
           "shortdesc": "Applies the specified character style to the text content of the XMLElement.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The character style to apply. Can accept: String or CharacterStyle.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The character style to apply. Can accept: String or CharacterStyle.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "convertToAttribute",
           "shortdesc": "Converts the XMLElement to an attribute of its parent element.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The name to give to the new attribute. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The name to give to the new attribute. &#40;Optional)",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "XMLAttribute"
           }
@@ -436,24 +422,22 @@
         {
           "name": "convertElementToTable",
           "shortdesc": "Converts the content of the XML element to a table.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "rowTag",
-                "shortdesc": "The XML tag that indicates a table row.",
-                "datatype": {
-                  "type": "XMLTag"
-                }
-              },
-              {
-                "name": "cellTag",
-                "shortdesc": "The XML tag that indicates a table cell.",
-                "datatype": {
-                  "type": "XMLTag"
-                }
+          "parameters": [
+            {
+              "name": "rowTag",
+              "shortdesc": "The XML tag that indicates a table row.",
+              "datatype": {
+                "type": "XMLTag"
               }
-            ]
-          },
+            },
+            {
+              "name": "cellTag",
+              "shortdesc": "The XML tag that indicates a table cell.",
+              "datatype": {
+                "type": "XMLTag"
+              }
+            }
+          ],
           "datatype": {
             "type": "Table"
           }
@@ -461,18 +445,16 @@
         {
           "name": "placeIntoInlineFrame",
           "shortdesc": "Places an XML element into an inline frame.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "dimensions",
-                "shortdesc": "The dimensions of the inline frame in the format [width, height].",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
+          "parameters": [
+            {
+              "name": "dimensions",
+              "shortdesc": "The dimensions of the inline frame in the format [width, height].",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -480,26 +462,24 @@
         {
           "name": "placeIntoInlineCopy",
           "shortdesc": "Associates an existing page item with the XML element and places it into an inline frame.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "copyItem",
-                "shortdesc": "The page item to copy.",
-                "datatype": {
-                  "type": "PageItem"
-                }
-              },
-              {
-                "name": "retainExistingFrame",
-                "optional": true,
-                "shortdesc": "If true, moves the existing page item. If false, moves a copy of the page item. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "copyItem",
+              "shortdesc": "The page item to copy.",
+              "datatype": {
+                "type": "PageItem"
               }
-            ]
-          },
+            },
+            {
+              "name": "retainExistingFrame",
+              "optional": true,
+              "shortdesc": "If true, moves the existing page item. If false, moves a copy of the page item. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -507,24 +487,22 @@
         {
           "name": "setContent",
           "shortdesc": "Replaces the content of XML element with content imported from a file.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The file path to the import file.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "relativeBasePath",
-                "shortdesc": "Base path used to resolve relative paths. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The file path to the import file.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "relativeBasePath",
+              "shortdesc": "Base path used to resolve relative paths. &#40;Optional)",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -532,24 +510,22 @@
         {
           "name": "insertTextAsContent",
           "shortdesc": "Inserts the specified text as content before, in, or after the XML element.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The text to be inserted. Can accept: String or SpecialCharacters enumerator.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "position",
-                "shortdesc": "The position at which to insert the text. Note that text inserted before or after the element does not become part of the content of the element. Instead, it becomes content of the parent of the element.",
-                "datatype": {
-                  "type": "XMLElementPosition"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The text to be inserted. Can accept: String or SpecialCharacters enumerator.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "position",
+              "shortdesc": "The position at which to insert the text. Note that text inserted before or after the element does not become part of the content of the element. Instead, it becomes content of the parent of the element.",
+              "datatype": {
+                "type": "XMLElementPosition"
+              }
+            }
+          ],
           "datatype": {
             "type": "Text"
           }
@@ -557,106 +533,98 @@
         {
           "name": "applyTableStyle",
           "shortdesc": "Applies a table style to the table associated with the XMLElement.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The table style to apply. Can accept: String or TableStyle.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "clearingOverrides",
-                "optional": true,
-                "shortdesc": "If true, removes local formatting before applying the table style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": true
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The table style to apply. Can accept: String or TableStyle.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            },
+            {
+              "name": "clearingOverrides",
+              "optional": true,
+              "shortdesc": "If true, removes local formatting before applying the table style. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
         },
         {
           "name": "applyCellStyle",
           "shortdesc": "Applies a cell style to the table cells associated with the XMLElement.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The cell style to apply. Can accept: String or CellStyle.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "clearingOverrides",
-                "optional": true,
-                "shortdesc": "If true, removes local formatting before applying the cell style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": true
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The cell style to apply. Can accept: String or CellStyle.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            },
+            {
+              "name": "clearingOverrides",
+              "optional": true,
+              "shortdesc": "If true, removes local formatting before applying the cell style. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
         },
         {
           "name": "applyObjectStyle",
           "shortdesc": "Applies an object style to the frame associated with the XMLElement.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The object style to apply. Can accept: String or ObjectStyle.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "clearingOverrides",
-                "optional": true,
-                "shortdesc": "If true, removes local formatting before applying the object style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": true
-                }
-              },
-              {
-                "name": "clearingOverridesThroughRootObjectStyle",
-                "optional": true,
-                "shortdesc": "If true, clears unchecked category attributes through the root style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The object style to apply. Can accept: String or ObjectStyle.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            },
+            {
+              "name": "clearingOverrides",
+              "optional": true,
+              "shortdesc": "If true, removes local formatting before applying the object style. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "clearingOverridesThroughRootObjectStyle",
+              "optional": true,
+              "shortdesc": "If true, clears unchecked category attributes through the root style. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "placeIntoFrame",
           "shortdesc": "Places the XML element into a new rectangular page item. If the XML element was already associated with a page item, that page item is deleted.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "on",
-                "shortdesc": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "geometricBounds",
-                "shortdesc": "The bounds of the page item excluding the stroke width, in the format [y1, x1, y2, x2].",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
+          "parameters": [
+            {
+              "name": "on",
+              "shortdesc": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "geometricBounds",
+              "shortdesc": "The bounds of the page item excluding the stroke width, in the format [y1, x1, y2, x2].",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -664,41 +632,39 @@
         {
           "name": "placeIntoCopy",
           "shortdesc": "Associates the XML element with a copy of a page item.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "on",
-                "shortdesc": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "placePoint",
-                "shortdesc": "The page coordinates of the top left corner of the page item, in the format [y1, x1]",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
-              },
-              {
-                "name": "copyItem",
-                "shortdesc": "The page item to copy.",
-                "datatype": {
-                  "type": "PageItem"
-                }
-              },
-              {
-                "name": "retainExistingFrame",
-                "optional": true,
-                "shortdesc": "If true, associates the XML element with the existing page item and moves the page item &amp;&#35;40;rather than a copy of the page item&#41;. (Optional)",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "on",
+              "shortdesc": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "placePoint",
+              "shortdesc": "The page coordinates of the top left corner of the page item, in the format [y1, x1]",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            },
+            {
+              "name": "copyItem",
+              "shortdesc": "The page item to copy.",
+              "datatype": {
+                "type": "PageItem"
+              }
+            },
+            {
+              "name": "retainExistingFrame",
+              "optional": true,
+              "shortdesc": "If true, associates the XML element with the existing page item and moves the page item &#40;rather than a copy of the page item). (Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -706,266 +672,246 @@
         {
           "name": "importXML",
           "shortdesc": "Imports the specified XML file into an InDesign document.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "from",
-                "shortdesc": "The XML file.",
-                "datatype": {
-                  "type": "File"
-                }
+          "parameters": [
+            {
+              "name": "from",
+              "shortdesc": "The XML file.",
+              "datatype": {
+                "type": "File"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "evaluateXPathExpression",
           "shortdesc": "Evaluates an XPath expression starting at this XML element in the structure.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The XPath expression.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "prefixMappingTable",
-                "shortdesc": "The namespace mapping table. Can accept: Array of Arrays of 2 Strings. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed",
-                  "array": {}
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The XPath expression.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "prefixMappingTable",
+              "shortdesc": "The namespace mapping table. Can accept: Array of Arrays of 2 Strings. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed",
+                "array": true
+              }
+            }
+          ],
           "datatype": {
             "type": "XMLItem",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "findText",
           "shortdesc": "Finds text that matches the find what value.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "reverseOrder",
-                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool"
-                }
+          "parameters": [
+            {
+              "name": "reverseOrder",
+              "shortdesc": "If true, returns the results in reverse order. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Text",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "changeText",
           "shortdesc": "Finds text that matches the find what value and replaces the text with the change to value.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "reverseOrder",
-                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool"
-                }
+          "parameters": [
+            {
+              "name": "reverseOrder",
+              "shortdesc": "If true, returns the results in reverse order. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Text",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "findGrep",
           "shortdesc": "Finds text that matches the find what value.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "reverseOrder",
-                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool"
-                }
+          "parameters": [
+            {
+              "name": "reverseOrder",
+              "shortdesc": "If true, returns the results in reverse order. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Text",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "changeGrep",
           "shortdesc": "Finds text that matches the find what value and replaces the text with the change to value.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "reverseOrder",
-                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool"
-                }
+          "parameters": [
+            {
+              "name": "reverseOrder",
+              "shortdesc": "If true, returns the results in reverse order. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Text",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "findTransliterate",
           "shortdesc": "Finds text that matches the find character type value.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "reverseOrder",
-                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool"
-                }
+          "parameters": [
+            {
+              "name": "reverseOrder",
+              "shortdesc": "If true, returns the results in reverse order. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Text",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "changeTransliterate",
           "shortdesc": "Finds text that matches the find character type value and replaces the text with the change character type value.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "reverseOrder",
-                "shortdesc": "If true, returns the results in reverse order. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool"
-                }
+          "parameters": [
+            {
+              "name": "reverseOrder",
+              "shortdesc": "If true, returns the results in reverse order. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Text",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "exportFile",
-          "shortdesc": "Exports the object&amp;&#35;40;s&#41; to a file.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "format",
-                "shortdesc": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "to",
-                "shortdesc": "The path to the export file.",
-                "datatype": {
-                  "type": "File"
-                }
-              },
-              {
-                "name": "showingOptions",
-                "optional": true,
-                "shortdesc": "If true, displays the export options dialog. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "using",
-                "shortdesc": "The export style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "PDFExportPreset"
-                }
-              },
-              {
-                "name": "versionComments",
-                "shortdesc": "The comment for this version. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "forceSave",
-                "optional": true,
-                "shortdesc": "If true, forcibly saves a version. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "shortdesc": "Exports the object&#40;s) to a file.",
+          "parameters": [
+            {
+              "name": "format",
+              "shortdesc": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            },
+            {
+              "name": "to",
+              "shortdesc": "The path to the export file.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "showingOptions",
+              "optional": true,
+              "shortdesc": "If true, displays the export options dialog. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "using",
+              "shortdesc": "The export style. &#40;Optional)",
+              "datatype": {
+                "type": "PDFExportPreset"
+              }
+            },
+            {
+              "name": "versionComments",
+              "shortdesc": "The comment for this version. &#40;Optional)",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "forceSave",
+              "optional": true,
+              "shortdesc": "If true, forcibly saves a version. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "asynchronousExportFile",
-          "shortdesc": "asynchronously exports the object&amp;&#35;40;s&#41; to a file.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "format",
-                "shortdesc": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "to",
-                "shortdesc": "The path to the export file.",
-                "datatype": {
-                  "type": "File"
-                }
-              },
-              {
-                "name": "showingOptions",
-                "optional": true,
-                "shortdesc": "If true, displays the export options dialog. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "using",
-                "shortdesc": "The export style. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "PDFExportPreset"
-                }
-              },
-              {
-                "name": "versionComments",
-                "shortdesc": "The comment for this version. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "forceSave",
-                "optional": true,
-                "shortdesc": "If true, forcibly saves a version. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "shortdesc": "asynchronously exports the object&#40;s) to a file.",
+          "parameters": [
+            {
+              "name": "format",
+              "shortdesc": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "to",
+              "shortdesc": "The path to the export file.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "showingOptions",
+              "optional": true,
+              "shortdesc": "If true, displays the export options dialog. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "using",
+              "shortdesc": "The export style. &#40;Optional)",
+              "datatype": {
+                "type": "PDFExportPreset"
+              }
+            },
+            {
+              "name": "versionComments",
+              "shortdesc": "The comment for this version. &#40;Optional)",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "forceSave",
+              "optional": true,
+              "shortdesc": "If true, forcibly saves a version. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "BackgroundTask"
           }
@@ -973,24 +919,22 @@
         {
           "name": "store",
           "shortdesc": "Stores the object in the specified library.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The library in which to store the object.",
-                "datatype": {
-                  "type": "Library"
-                }
-              },
-              {
-                "name": "withProperties",
-                "shortdesc": "Initial values for properties of the new XMLElement &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The library in which to store the object.",
+              "datatype": {
+                "type": "Library"
               }
-            ]
-          },
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new XMLElement &#40;Optional)",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
             "type": "Asset"
           }
@@ -1002,25 +946,23 @@
         {
           "name": "select",
           "shortdesc": "Selects the object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "existingSelection",
-                "optional": true,
-                "shortdesc": "The selection status of the XMLElement in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "SelectionOptions",
-                  "value": "SelectionOptions.REPLACE_WITH"
-                }
+          "parameters": [
+            {
+              "name": "existingSelection",
+              "optional": true,
+              "shortdesc": "The selection status of the XMLElement in relation to previously selected objects. &#40;Optional)",
+              "datatype": {
+                "type": "SelectionOptions",
+                "value": "SelectionOptions.REPLACE_WITH"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the XMLElement.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -1028,46 +970,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "XMLElement",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -1075,35 +1015,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

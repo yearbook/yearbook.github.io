@@ -11,7 +11,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The name of the UserDictionary.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -19,13 +19,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the UserDictionary &amp;&#35;40;a Application&#41;.",
+          "shortdesc": "The parent of the UserDictionary &#40;a Application).",
           "datatype": {
             "type": "Application"
           }
@@ -35,7 +35,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the UserDictionary within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -58,7 +58,7 @@
           "name": "addedWords",
           "shortdesc": "A list of words added to the user dictionary.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "array": true
           }
         },
@@ -66,7 +66,7 @@
           "name": "removedWords",
           "shortdesc": "A list of words removed from the user dictionary.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "array": true
           }
         },
@@ -82,58 +82,54 @@
         {
           "name": "addWord",
           "shortdesc": "Adds the specified words to the specified list in the dictionary.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "addedWords",
-                "shortdesc": "The words to add.",
-                "datatype": {
-                  "type": "string",
-                  "array": {}
-                }
-              },
-              {
-                "name": "removedList",
-                "optional": true,
-                "shortdesc": "If true, adds the words to the removed words list. If false or unspecified, adds the words to the added words list. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "addedWords",
+              "shortdesc": "The words to add.",
+              "datatype": {
+                "type": "String",
+                "array": true
               }
-            ]
-          }
+            },
+            {
+              "name": "removedList",
+              "optional": true,
+              "shortdesc": "If true, adds the words to the removed words list. If false or unspecified, adds the words to the added words list. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "removeWord",
           "shortdesc": "Removes the specified words from the specified list in the dictionary.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "removedWords",
-                "shortdesc": "The words to remove.",
-                "datatype": {
-                  "type": "string",
-                  "array": {}
-                }
-              },
-              {
-                "name": "removedList",
-                "optional": true,
-                "shortdesc": "If true, removes the words from the removed words list. If false or unspecified, removes the words from the added words list. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "removedWords",
+              "shortdesc": "The words to remove.",
+              "datatype": {
+                "type": "String",
+                "array": true
               }
-            ]
-          }
+            },
+            {
+              "name": "removedList",
+              "optional": true,
+              "shortdesc": "If true, removes the words from the removed words list. If false or unspecified, removes the words from the added words list. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the UserDictionary.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -141,46 +137,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "UserDictionary",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -188,35 +182,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

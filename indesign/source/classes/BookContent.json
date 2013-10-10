@@ -27,7 +27,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The size of the BookContent file.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -43,7 +43,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The page range of the book content object within the book.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -59,7 +59,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The name of the BookContent.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -67,7 +67,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the BookContent.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -75,13 +75,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the BookContent &amp;&#35;40;a Book&#41;.",
+          "shortdesc": "The parent of the BookContent &#40;a Book).",
           "datatype": {
             "type": "Book"
           }
@@ -91,7 +91,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the BookContent within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -114,7 +114,7 @@
           "name": "label",
           "shortdesc": "A property that can be set to any string.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -129,26 +129,24 @@
         {
           "name": "move",
           "shortdesc": "Moves the book content object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "optional": true,
-                "shortdesc": "The location relative to the reference object or within the book. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "LocationOptions",
-                  "value": "LocationOptions.AT_END"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "BookContent"
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "optional": true,
+              "shortdesc": "The location relative to the reference object or within the book. &#40;Optional)",
+              "datatype": {
+                "type": "LocationOptions",
+                "value": "LocationOptions.AT_END"
               }
-            ]
-          },
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. &#40;Optional)",
+              "datatype": {
+                "type": "BookContent"
+              }
+            }
+          ],
           "datatype": {
             "type": "BookContent"
           }
@@ -160,17 +158,15 @@
         {
           "name": "replace",
           "shortdesc": "Replaces a book content object with a new file. Note: If the new file replaces the current style source document, the new file becomes the style source document.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The full path name of the new book content object.",
-                "datatype": {
-                  "type": "File"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The full path name of the new book content object.",
+              "datatype": {
+                "type": "File"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "BookContent"
           }
@@ -182,72 +178,66 @@
         {
           "name": "preflight",
           "shortdesc": "Preflight a book content object and optionally save the resulting report.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "shortdesc": "The preflight report to save to. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "File"
-                }
-              },
-              {
-                "name": "autoOpen",
-                "optional": true,
-                "shortdesc": "If true, automatically open the report after creation. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "shortdesc": "The preflight report to save to. &#40;Optional)",
+              "datatype": {
+                "type": "File"
               }
-            ]
-          }
+            },
+            {
+              "name": "autoOpen",
+              "optional": true,
+              "shortdesc": "If true, automatically open the report after creation. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "insertLabel",
           "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "shortdesc": "The value.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
         },
         {
           "name": "extractLabel",
           "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the BookContent.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -255,46 +245,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "BookContent",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -302,35 +290,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

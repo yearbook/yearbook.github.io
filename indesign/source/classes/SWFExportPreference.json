@@ -15,13 +15,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the SWFExportPreference &amp;&#35;40;a Application&#41;.",
+          "shortdesc": "The parent of the SWFExportPreference &#40;a Application).",
           "datatype": {
             "type": "Application"
           }
@@ -46,7 +46,7 @@
           "name": "flattenTransparency",
           "shortdesc": "Flatten transparency when exporting.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -74,7 +74,7 @@
           "name": "frameRate",
           "shortdesc": "The frame rate in frames per second.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 1,
             "max": 120
           }
@@ -97,7 +97,7 @@
           "name": "fitScale",
           "shortdesc": "The size fits to given scale percentage.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 1,
             "max": 1000,
             "value": 100
@@ -107,36 +107,36 @@
           "name": "fitWidthAndHeight",
           "shortdesc": "The size fits to given width and height.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "array": true
           }
         },
         {
           "name": "pageRange",
-          "shortdesc": "The pages to print, specified either as an enumeration or a string. To specify a range, separate page numbers in the string with a hyphen &amp;&#35;40;-&#41;. To specify separate pages, separate page numbers in the string with a comma (,). Can return: PageRange enumerator or String.",
+          "shortdesc": "The pages to print, specified either as an enumeration or a string. To specify a range, separate page numbers in the string with a hyphen &#40;-). To specify separate pages, separate page numbers in the string with a comma (,). Can return: PageRange enumerator or String.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
           "name": "dynamicDocumentExportReaderSpreads",
-          "shortdesc": "If true, each spread in the exported document is combined into a single page that has spread&apos;s original width.",
+          "shortdesc": "If true, each spread in the exported document is combined into a single page that has spread's original width.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "rasterizePages",
           "shortdesc": "If true, all the pages in the exported document will be rasterized.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "generateHTML",
           "shortdesc": "Flag indicates whether to generate HTML.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -150,7 +150,7 @@
           "name": "includeInteractivePageCurl",
           "shortdesc": "Flag indicates whether to include interactive page curl when export to SWF.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -178,7 +178,7 @@
           "name": "rasterResolution",
           "shortdesc": "The raster resolution.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 72,
             "max": 2400
           }
@@ -194,21 +194,21 @@
           "name": "resamplingThreshold",
           "shortdesc": "The resampling threshold.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
           "name": "useNetworkAccess",
           "shortdesc": "Flag indicates whether to allow to use network access when export to SWF.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "viewSWFAfterExporting",
           "shortdesc": "Flag indicates to whether to view the SWF after exporting.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -224,7 +224,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the SWFExportPreference.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -232,46 +232,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "SWFExportPreference",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -279,35 +277,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

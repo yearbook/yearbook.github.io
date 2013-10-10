@@ -10,38 +10,36 @@
           "name": "count",
           "shortdesc": "Displays the number of elements in the MixedInk.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
           "name": "add",
           "shortdesc": "Creates a new mixed ink swatch.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "inkList",
-                "shortdesc": "The inks to mix. Note: Must contain at least two process inks and one spot ink. Can accept: Array of Inks or MixedInkGroup.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "inkPercentages",
-                "shortdesc": "The percent to use of each ink in the ink list. &amp;&#35;40;Range: 0 to 100 for each ink&#41;",
-                "datatype": {
-                  "type": "number",
-                  "array": {}
-                }
-              },
-              {
-                "name": "withProperties",
-                "shortdesc": "Initial values for properties of the new MixedInk &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "inkList",
+              "shortdesc": "The inks to mix. Note: Must contain at least two process inks and one spot ink. Can accept: Array of Inks or MixedInkGroup.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "inkPercentages",
+              "shortdesc": "The percent to use of each ink in the ink list. &#40;Range: 0 to 100 for each ink)",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new MixedInk &#40;Optional)",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -49,17 +47,15 @@
         {
           "name": "item",
           "shortdesc": "Returns the MixedInk with the specified index or name.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "index",
-                "shortdesc": "The index or name. Can accept: Long Integer or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index or name. Can accept: Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -67,17 +63,15 @@
         {
           "name": "itemByName",
           "shortdesc": "Returns the MixedInk with the specified name.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "name",
-                "shortdesc": "The name.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "name",
+              "shortdesc": "The name.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -85,17 +79,15 @@
         {
           "name": "itemByID",
           "shortdesc": "Returns the MixedInk with the specified ID.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "id",
-                "shortdesc": "The ID.",
-                "datatype": {
-                  "type": "number"
-                }
+          "parameters": [
+            {
+              "name": "id",
+              "shortdesc": "The ID.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -103,27 +95,25 @@
         {
           "name": "itemByRange",
           "shortdesc": "Returns the MixedInks within the specified range.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "from",
-                "shortdesc": "The MixedInk, index, or name at the beginning of the range. Can accept: MixedInk, Long Integer or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "to",
-                "shortdesc": "The MixedInk, index, or name at the end of the range. Can accept: MixedInk, Long Integer or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "from",
+              "shortdesc": "The MixedInk, index, or name at the beginning of the range. Can accept: MixedInk, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "to",
+              "shortdesc": "The MixedInk, index, or name at the end of the range. Can accept: MixedInk, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
             "type": "MixedInk",
-            "array": {}
+            "array": true
           }
         },
         {
@@ -150,17 +140,15 @@
         {
           "name": "previousItem",
           "shortdesc": "Returns the MixedInk with the index previous to the specified index.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "obj",
-                "shortdesc": "The index of the MixedInk that follows the desired MixedInk.",
-                "datatype": {
-                  "type": "MixedInk"
-                }
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The index of the MixedInk that follows the desired MixedInk.",
+              "datatype": {
+                "type": "MixedInk"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -168,17 +156,15 @@
         {
           "name": "nextItem",
           "shortdesc": "Returns the MixedInk whose index follows the specified MixedInk in the collection.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "obj",
-                "shortdesc": "The MixedInk whose index comes before the desired MixedInk.",
-                "datatype": {
-                  "type": "MixedInk"
-                }
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The MixedInk whose index comes before the desired MixedInk.",
+              "datatype": {
+                "type": "MixedInk"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -195,30 +181,28 @@
           "shortdesc": "Returns every MixedInk in the collection.",
           "datatype": {
             "type": "MixedInk",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the MixedInk.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "[]",
           "shortdesc": "Returns the MixedInk with the specified index.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "index",
-                "shortdesc": "The index.",
-                "datatype": {
-                  "type": "number"
-                }
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "MixedInk"
           }
@@ -230,7 +214,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The number of objects in the collection.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         }
       ]

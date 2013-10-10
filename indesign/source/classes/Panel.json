@@ -9,12 +9,6 @@
       "property": [
         {
           "name": "characters",
-          "shortdesc": {
-            "a": {
-              "href": "#Panel/preferredSize",
-              "$t": "preferredSize"
-            }
-          },
           "datatype": {
             "type": "Number",
             "min": 0
@@ -23,13 +17,6 @@
         {
           "name": "justify",
           "shortdesc": "The default text justification style for child text elements.",
-          "description": {
-            "b": [
-              "left",
-              "center",
-              "right"
-            ]
-          },
           "datatype": {
             "type": "String",
             "value": "left"
@@ -45,17 +32,8 @@
         {
           "name": "graphics",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "a": {
-              "href": "#Panel/event/onDraw",
-              "$t": "onDraw&amp;&#35;40;&#41;"
-            }
-          },
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIGraphics",
-              "$t": "ScriptUIGraphics"
-            }
+            "type": "ScriptUIGraphics"
           }
         },
         {
@@ -69,43 +47,31 @@
         {
           "name": "bounds",
           "shortdesc": "The boundaries of the element, in parent-relative coordinates.",
-          "description": "Setting an element&apos;s size or location changes its bounds property, and vice-versa.",
+          "description": "Setting an element's size or location changes its bounds property, and vice-versa.",
           "datatype": {
-            "type": {
-              "href": "#/Bounds",
-              "$t": "Bounds"
-            }
+            "type": "Bounds"
           }
         },
         {
           "name": "location",
-          "shortdesc": "The upper left corner of this element&apos;s frame relative to its parent.",
-          "description": "The location is defined as [bounds.x, bounds.y]. Setting an element&apos;s location changes its bounds property, and vice-versa.",
+          "shortdesc": "The upper left corner of this element's frame relative to its parent.",
+          "description": "The location is defined as [bounds.x, bounds.y]. Setting an element's location changes its bounds property, and vice-versa.",
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         },
         {
           "name": "maximumSize",
           "shortdesc": "The maximum height and width to which the element can be resized.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
           "name": "minimumSize",
           "shortdesc": "The minimum height and width to which the element can be resized.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
@@ -113,27 +79,14 @@
           "shortdesc": "The preferred size, used by layout managers to determine the best size for each element.",
           "description": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
           "name": "size",
           "shortdesc": "The current dimensions of this element.",
-          "description": {
-            "a": {
-              "href": "#LayoutManager",
-              "$t": "LayoutManager"
-            },
-            "i": "preferredSize"
-          },
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
@@ -141,10 +94,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The bounds of this element relative to the top-level parent window.",
           "datatype": {
-            "type": {
-              "href": "#/Bounds",
-              "$t": "Bounds"
-            }
+            "type": "Bounds"
           }
         },
         {
@@ -166,23 +116,8 @@
         {
           "name": "layout",
           "shortdesc": "The layout manager for this container.",
-          "description": {
-            "a": [
-              {
-                "href": "#LayoutManager/layout",
-                "$t": "layout&amp;&#35;40;&#41;"
-              },
-              {
-                "href": "#LayoutManager",
-                "$t": "LayoutManager"
-              }
-            ]
-          },
           "datatype": {
-            "type": {
-              "href": "#/LayoutManager",
-              "$t": "LayoutManager"
-            }
+            "type": "LayoutManager"
           }
         },
         {
@@ -196,19 +131,6 @@
         {
           "name": "orientation",
           "shortdesc": "The layout orientation of children in a container.",
-          "description": {
-            "a": {
-              "href": "#LayoutManager",
-              "$t": "LayoutManager"
-            },
-            "b": [
-              "row",
-              "column",
-              "stack",
-              "alignChildren",
-              "alignment"
-            ]
-          },
           "datatype": {
             "type": "String"
           }
@@ -223,61 +145,13 @@
         },
         {
           "name": "alignment",
-          "shortdesc": {
-            "i": "alignChildren"
-          },
-          "description": {
-            "li": [
-              {
-                "b": [
-                  "top",
-                  "bottom",
-                  "fill"
-                ]
-              },
-              {
-                "b": [
-                  "left",
-                  "right",
-                  "fill"
-                ]
-              },
-              {
-                "b": [
-                  "top",
-                  "bottom",
-                  "left",
-                  "right",
-                  "fill"
-                ]
-              }
-            ]
-          },
           "datatype": {
             "type": "String"
           }
         },
         {
           "name": "properties",
-          "shortdesc": "An object that contains one or more creation properties of the control &amp;&#35;40;properties used only when the element is created&#41;.",
-          "description": {
-            "li": [
-              {
-                "b": [
-                  "borderStyle",
-                  "black",
-                  "etched",
-                  "gray",
-                  "raised",
-                  "sunken",
-                  "etched"
-                ]
-              },
-              {
-                "b": "su1PanelCoordinates"
-              }
-            ]
-          },
+          "shortdesc": "An object that contains one or more creation properties of the control &#40;properties used only when the element is created).",
           "datatype": {
             "type": "Object"
           }
@@ -319,16 +193,13 @@
           "rwaccess": "readonly",
           "shortdesc": "The window that this element belongs to.",
           "datatype": {
-            "type": {
-              "href": "#/Window",
-              "$t": "Window"
-            }
+            "type": "Window"
           }
         },
         {
           "name": "type",
           "rwaccess": "readonly",
-          "shortdesc": "The element type; &quot;panel\".",
+          "shortdesc": "The element type; \"panel\".",
           "datatype": {
             "type": "String"
           }
@@ -348,131 +219,82 @@
           "name": "add",
           "shortdesc": "Adds a child element to this container.",
           "description": "Creates and returns a new control or container object and adds it to the children of this group.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": {
-                  "i": "type"
-                },
-                "description": {
-                  "i": "JavaScript Tools Guide"
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "bounds",
-                "optional": true,
-                "shortdesc": "A bounds specification that describes the size and position of the new control or container, relative to its parent.",
-                "description": {
-                  "a": {
-                    "href": "#/Bounds",
-                    "$t": "Bounds"
-                  },
-                  "b": "bounds"
-                },
-                "datatype": {
-                  "type": {
-                    "href": "#/Bounds",
-                    "$t": "Bounds"
-                  }
-                }
-              },
-              {
-                "name": "text",
-                "optional": true,
-                "shortdesc": "The text or label, a localizable string.",
-                "description": {
-                  "b": "text"
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "properties",
-                "optional": true,
-                "shortdesc": "An object that contains one or more creation properties of the new child &amp;&#35;40;properties used only when the element is created&#41;.",
-                "description": {
-                  "br": "properties"
-                },
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "bounds",
+              "optional": true,
+              "shortdesc": "A bounds specification that describes the size and position of the new control or container, relative to its parent.",
+              "datatype": {
+                "type": "Bounds"
+              }
+            },
+            {
+              "name": "text",
+              "optional": true,
+              "shortdesc": "The text or label, a localizable string.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "properties",
+              "optional": true,
+              "shortdesc": "An object that contains one or more creation properties of the new child &#40;properties used only when the element is created).",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
             "type": "Object"
           }
         },
         {
           "name": "remove",
-          "shortdesc": {
-            "a": {
-              "href": "#/Panel/children",
-              "$t": "children"
-            }
-          },
           "description": "No error results if the child does not exist.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "what",
-                "shortdesc": {
-                  "b": "text"
-                },
-                "datatype": {
-                  "type": "Any"
-                }
+          "parameters": [
+            {
+              "name": "what",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "addEventListener",
           "shortdesc": "Registers an event handler for a particular type of event occuring in this element.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventName",
-                "shortdesc": "The name of the event.",
-                "description": {
-                  "i": "JavaScript Tools Guide"
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The function that handles the event.",
-                "description": {
-                  "a": {
-                    "href": "#/UIEvent",
-                    "$t": "UIEvent"
-                  }
-                },
-                "datatype": {
-                  "type": {
-                    "href": "$COMMON/javascript.xml#/Function",
-                    "$t": "Function"
-                  }
-                }
-              },
-              {
-                "name": "capturePhase",
-                "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
-                "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventName",
+              "shortdesc": "The name of the event.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The function that handles the event.",
+              "datatype": {
+                "type": "Function"
+              }
+            },
+            {
+              "name": "capturePhase",
+              "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
+              "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "Boolean"
           }
@@ -481,35 +303,30 @@
           "name": "removeEventListener",
           "shortdesc": "Unregisters an event handler for a particular type of event occuring in this element.",
           "description": "All arguments must be identical to those that were used to register the event handler.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventName",
-                "shortdesc": "The name of the event.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The function that handles the event.",
-                "datatype": {
-                  "type": {
-                    "href": "$COMMON/javascript.xml#/Function",
-                    "$t": "Function"
-                  }
-                }
-              },
-              {
-                "name": "capturePhase",
-                "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventName",
+              "shortdesc": "The name of the event.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The function that handles the event.",
+              "datatype": {
+                "type": "Function"
+              }
+            },
+            {
+              "name": "capturePhase",
+              "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "Boolean"
           }
@@ -517,17 +334,8 @@
         {
           "name": "dispatchEvent",
           "shortdesc": "Simulates the occurrence of an event in this target.",
-          "description": {
-            "a": {
-              "href": "#/UIEvent",
-              "$t": "UIEvent"
-            }
-          },
           "datatype": {
-            "type": {
-              "href": "#/Event",
-              "$t": "Event"
-            }
+            "type": "Event"
           }
         }
       ]
@@ -537,19 +345,7 @@
       "method": [
         {
           "name": "onDraw",
-          "shortdesc": "An event-handler callback function, called when the panel is about to be drawn.",
-          "description": {
-            "a": [
-              {
-                "href": "#/ScriptUIGraphics",
-                "$t": "ScriptUIGraphics"
-              },
-              {
-                "href": "#/DrawState",
-                "$t": "DrawState"
-              }
-            ]
-          }
+          "shortdesc": "An event-handler callback function, called when the panel is about to be drawn."
         }
       ]
     }

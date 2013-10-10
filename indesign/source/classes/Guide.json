@@ -11,7 +11,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched after a Guide is placed. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterPlace"
           }
         }
@@ -25,7 +25,7 @@
           "rwaccess": "readonly",
           "shortdesc": "If true, the object originated on a master spread and was overridden. If false, the object either originated on a master spread and was not overridden, or the object did not originate on a master page.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -33,7 +33,7 @@
           "rwaccess": "readonly",
           "shortdesc": "An object that originated on a master page and has been overridden. Can return: PageItem, Guide, Graphic, Movie or Sound.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -49,7 +49,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the Guide.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -57,15 +57,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the Guide &amp;&#35;40;a Spread or MasterSpread&#41;.",
+          "shortdesc": "The parent of the Guide &#40;a Spread or MasterSpread).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -73,7 +73,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the Guide within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -96,14 +96,14 @@
           "name": "allowOverrides",
           "shortdesc": "If true, the master page item can be overridden.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "guideColor",
-          "shortdesc": "The color of the guide, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals &amp;&#35;40;0 - 255&#41; or UIColors enumerator.",
+          "shortdesc": "The color of the guide, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals &#40;0 - 255) or UIColors enumerator.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -124,14 +124,14 @@
           "name": "fitToPage",
           "shortdesc": "If true, horizontal orientation guides stop at the edges of the specified page. If false, the guides extends across the width of the spread and into the pasteboard area.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "viewThreshold",
-          "shortdesc": "The view magnification as a percentage below which guides are no longer displayed. &amp;&#35;40;Range: 5.0 to 4000.0&#41;",
+          "shortdesc": "The view magnification as a percentage below which guides are no longer displayed. &#40;Range: 5.0 to 4000.0)",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 5,
             "max": 4000
           }
@@ -140,7 +140,7 @@
           "name": "locked",
           "shortdesc": "If true, the Guide is locked.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -168,14 +168,14 @@
           "name": "label",
           "shortdesc": "A property that can be set to any string.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "name",
-          "shortdesc": "The name of the Guide; this is an alias to the Guide&apos;s label property.",
+          "shortdesc": "The name of the Guide; this is an alias to the Guide's label property.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -190,19 +190,17 @@
         {
           "name": "override",
           "shortdesc": "Overrides a master page item and places the item on the document page as a new object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "destinationPage",
-                "shortdesc": "The document page that contains the master page item to override.",
-                "datatype": {
-                  "type": "Page"
-                }
+          "parameters": [
+            {
+              "name": "destinationPage",
+              "shortdesc": "The document page that contains the master page item to override.",
+              "datatype": {
+                "type": "Page"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "varies=any"
+            "type": "Mixed"
           }
         },
         {
@@ -220,26 +218,24 @@
         {
           "name": "move",
           "shortdesc": "Moves the guide to a new location. Note: Either the to or the by parameter is required; if both parameters are defined, only the to value is used.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "shortdesc": "The new location of the guide, in the format [x, y]. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
-              },
-              {
-                "name": "by",
-                "shortdesc": "The amount to move the guide relative to its current position, in the format [x, y]. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "shortdesc": "The new location of the guide, in the format [x, y]. &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
               }
-            ]
-          }
+            },
+            {
+              "name": "by",
+              "shortdesc": "The amount to move the guide relative to its current position, in the format [x, y]. &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            }
+          ]
         },
         {
           "name": "duplicate",
@@ -251,118 +247,108 @@
         {
           "name": "transformValuesOf",
           "shortdesc": "Get the transformation values of the page item.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "in",
-                "shortdesc": "The coordinate space to use",
-                "datatype": {
-                  "type": "CoordinateSpaces"
-                }
+          "parameters": [
+            {
+              "name": "in",
+              "shortdesc": "The coordinate space to use",
+              "datatype": {
+                "type": "CoordinateSpaces"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "TransformationMatrix",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "resolve",
           "shortdesc": "Get the coordinates of the given location in the specified coordinate system.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "location",
-                "shortdesc": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "in",
-                "shortdesc": "The coordinate space to use.",
-                "datatype": {
-                  "type": "CoordinateSpaces"
-                }
-              },
-              {
-                "name": "consideringRulerUnits",
-                "optional": true,
-                "shortdesc": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "location",
+              "shortdesc": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "in",
+              "shortdesc": "The coordinate space to use.",
+              "datatype": {
+                "type": "CoordinateSpaces"
+              }
+            },
+            {
+              "name": "consideringRulerUnits",
+              "optional": true,
+              "shortdesc": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "varies=any"
+            "type": "Mixed"
           }
         },
         {
           "name": "select",
           "shortdesc": "Selects the object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "existingSelection",
-                "optional": true,
-                "shortdesc": "The selection status of the Guide in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "SelectionOptions",
-                  "value": "SelectionOptions.REPLACE_WITH"
-                }
+          "parameters": [
+            {
+              "name": "existingSelection",
+              "optional": true,
+              "shortdesc": "The selection status of the Guide in relation to previously selected objects. &#40;Optional)",
+              "datatype": {
+                "type": "SelectionOptions",
+                "value": "SelectionOptions.REPLACE_WITH"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "insertLabel",
           "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "shortdesc": "The value.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
         },
         {
           "name": "extractLabel",
           "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the Guide.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -370,46 +356,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "Guide",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -417,35 +401,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

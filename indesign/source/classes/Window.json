@@ -2,12 +2,6 @@
   "name": "Window",
   "dynamic": true,
   "shortdesc": "The instance represents a top-level window or dialog box, which contains user-interface elements.",
-  "description": {
-    "a": {
-      "href": "#/Window",
-      "$t": "Window"
-    }
-  },
   "elements": [
     {
       "type": "constructor",
@@ -15,86 +9,39 @@
         {
           "name": "Window",
           "shortdesc": "Creates a new window.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": "The window type.",
-                "description": {
-                  "u": {
-                    "li": [
-                      {
-                        "b": "window"
-                      },
-                      {
-                        "b": "palette"
-                      },
-                      {
-                        "b": "dialog"
-                      }
-                    ]
-                  }
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "title",
-                "optional": true,
-                "shortdesc": "The window title, a localizable string.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "bounds",
-                "optional": true,
-                "shortdesc": "The window&apos;s position and size.",
-                "datatype": {
-                  "type": {
-                    "href": "#/Bounds",
-                    "$t": "Bounds"
-                  }
-                }
-              },
-              {
-                "name": "properties",
-                "optional": true,
-                "shortdesc": "An object containing creation-only properties.",
-                "description": {
-                  "u": {
-                    "li": [
-                      {
-                        "b": "resizeable"
-                      },
-                      {
-                        "b": "su1PanelCoordinates"
-                      },
-                      {
-                        "br": "closeButton"
-                      },
-                      {
-                        "b": "maximizeButton"
-                      },
-                      {
-                        "b": "minimizeButton"
-                      },
-                      {
-                        "b": "independent"
-                      },
-                      {
-                        "b": "borderless"
-                      }
-                    ]
-                  }
-                },
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The window type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "title",
+              "optional": true,
+              "shortdesc": "The window title, a localizable string.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "bounds",
+              "optional": true,
+              "shortdesc": "The window's position and size.",
+              "datatype": {
+                "type": "Bounds"
+              }
+            },
+            {
+              "name": "properties",
+              "optional": true,
+              "shortdesc": "An object containing creation-only properties.",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ]
         }
       ]
     },
@@ -104,12 +51,6 @@
         {
           "name": "frameworkName",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "a": {
-              "href": "#/ScriptUI/class/frameworkName",
-              "$t": "ScriptUI.frameworkName"
-            }
-          },
           "datatype": {
             "type": "String"
           }
@@ -117,14 +58,8 @@
         {
           "name": "version",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "a": {
-              "href": "#/ScriptUI/class/version",
-              "$t": "ScriptUI.version"
-            }
-          },
           "datatype": {
-            "type": "Any"
+            "type": "Mixed"
           }
         }
       ],
@@ -132,104 +67,89 @@
         {
           "name": "find",
           "shortdesc": "Use this method to find an existing window.",
-          "description": {
-            "a": {
-              "href": "#/Window",
-              "$t": "Window"
-            }
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": "The name of a predefined resource available to JavaScript in the current application; or the window type.",
-                "description": "If a title is specified, the type is used if more than one window with that title is found. Can be null or the empty string.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "title",
-                "shortdesc": "The window title.",
-                "datatype": {
-                  "type": "String"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The name of a predefined resource available to JavaScript in the current application; or the window type.",
+              "description": "If a title is specified, the type is used if more than one window with that title is found. Can be null or the empty string.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/Window",
-              "$t": "Window"
+            },
+            {
+              "name": "title",
+              "shortdesc": "The window title.",
+              "datatype": {
+                "type": "String"
+              }
             }
+          ],
+          "datatype": {
+            "type": "Window"
           }
         },
         {
           "name": "alert",
           "shortdesc": "Displays a platform-standard dialog containing a short message and an OK button.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "message",
-                "shortdesc": "TThe string for the displayed message.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "title",
-                "optional": true,
-                "shortdesc": "A string to appear as the title of the dialog, if the platform supports a title.",
-                "description": "Ignored in Mac OS, which does not support titles for alert dialogs. The default title string is &quot;Script Alert\".",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "errorIcon",
-                "shortdesc": "When true, the platform-standard alert icon is replaced by the platform-standard error icon in the dialog.",
-                "description": "Ignored in Mac OS, which does not support icons for alert dialogs.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "message",
+              "shortdesc": "TThe string for the displayed message.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "title",
+              "optional": true,
+              "shortdesc": "A string to appear as the title of the dialog, if the platform supports a title.",
+              "description": "Ignored in Mac OS, which does not support titles for alert dialogs. The default title string is \"Script Alert\".",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "errorIcon",
+              "shortdesc": "When true, the platform-standard alert icon is replaced by the platform-standard error icon in the dialog.",
+              "description": "Ignored in Mac OS, which does not support icons for alert dialogs.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "confirm",
           "shortdesc": "Displays a platform-standard dialog containing a short message and two buttons labeled Yes and No.",
           "description": "Returns true if the user clicked Yes, false if the user clicked No.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "message",
-                "shortdesc": "The string for the displayed message.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "noAsDefault",
-                "shortdesc": "When true, the No button is the default choice, selected when the user types Enter.",
-                "description": "Default is false, meaning that Yes is the default choice.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "title",
-                "optional": true,
-                "shortdesc": "A string to appear as the title of the dialog, if the platform supports a title.",
-                "description": "Ignored in Mac OS, which does not support titles for alert dialogs. The default title string is &quot;Script Alert\".",
-                "datatype": {
-                  "type": "String"
-                }
+          "parameters": [
+            {
+              "name": "message",
+              "shortdesc": "The string for the displayed message.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "noAsDefault",
+              "shortdesc": "When true, the No button is the default choice, selected when the user types Enter.",
+              "description": "Default is false, meaning that Yes is the default choice.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "title",
+              "optional": true,
+              "shortdesc": "A string to appear as the title of the dialog, if the platform supports a title.",
+              "description": "Ignored in Mac OS, which does not support titles for alert dialogs. The default title string is \"Script Alert\".",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
           "datatype": {
             "type": "Boolean"
           }
@@ -238,34 +158,32 @@
           "name": "prompt",
           "shortdesc": "Displays a modal dialog that returns the user’s text input.",
           "description": "Returns the value of the text edit field if the user clicked OK, null if the user clicked Cancel.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "prompt",
-                "shortdesc": "The string for the displayed message.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "default",
-                "optional": true,
-                "shortdesc": "The initial value to be displayed in the text edit field.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "title",
-                "optional": true,
-                "shortdesc": "A string to appear as the title of the dialog.",
-                "description": "In Windows, this appears in the window’s frame; in Mac OS it appears above the message. The default title string is &quot;Script Prompt\".",
-                "datatype": {
-                  "type": "String"
-                }
+          "parameters": [
+            {
+              "name": "prompt",
+              "shortdesc": "The string for the displayed message.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "default",
+              "optional": true,
+              "shortdesc": "The initial value to be displayed in the text edit field.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "title",
+              "optional": true,
+              "shortdesc": "A string to appear as the title of the dialog.",
+              "description": "In Windows, this appears in the window’s frame; in Mac OS it appears above the message. The default title string is \"Script Prompt\".",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
           "datatype": {
             "type": "String"
           }
@@ -278,14 +196,8 @@
         {
           "name": "graphics",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "i": "onDraw"
-          },
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIGraphics",
-              "$t": "ScriptUIGraphics"
-            }
+            "type": "ScriptUIGraphics"
           }
         },
         {
@@ -298,12 +210,9 @@
         },
         {
           "name": "bounds",
-          "shortdesc": "The bounds of the window&apos;s drawable area, excluding the frame, in screen coordinates.",
+          "shortdesc": "The bounds of the window's drawable area, excluding the frame, in screen coordinates.",
           "datatype": {
-            "type": {
-              "href": "#/Bounds",
-              "$t": "Bounds"
-            }
+            "type": "Bounds"
           }
         },
         {
@@ -312,68 +221,44 @@
           "shortdesc": "The bounds of the window frame in screen coordinates.",
           "description": "The frame consists of the title bar and borders that enclose the content region of a window, depending on the windowing system.",
           "datatype": {
-            "type": {
-              "href": "#/Bounds",
-              "$t": "Bounds"
-            }
+            "type": "Bounds"
           }
         },
         {
           "name": "frameLocation",
           "shortdesc": "The top left corner of the window frame in screen coordinates.",
-          "description": {
-            "a": {
-              "href": "#/Window/frameBounds",
-              "$t": "frameBounds"
-            }
-          },
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         },
         {
           "name": "frameSize",
           "rwaccess": "readonly",
-          "shortdesc": "The size and location of the window&apos;s frame in screen coordinates.",
+          "shortdesc": "The size and location of the window's frame in screen coordinates.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
           "name": "location",
-          "shortdesc": "The upper left corner of the window&apos;s drawable area.",
+          "shortdesc": "The upper left corner of the window's drawable area.",
           "description": "The same as [bounds.x, bounds.y].",
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         },
         {
           "name": "maximumSize",
           "shortdesc": "The largest rectangle to which the window can be resized.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
           "name": "minimumSize",
           "shortdesc": "The smallest rectangle to which the window can be resized.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
@@ -381,20 +266,14 @@
           "shortdesc": "The preferred size of the window.",
           "description": "Used in automatic layout and resizing. To set a specific value for only one dimension, specify the other dimension as -1.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
           "name": "size",
           "shortdesc": "The current size and location of the content area of the window in screen coordinates.",
           "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
+            "type": "Dimension"
           }
         },
         {
@@ -402,10 +281,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The bounds of this window relative to the top-level parent window.",
           "datatype": {
-            "type": {
-              "href": "#/Bounds",
-              "$t": "Bounds"
-            }
+            "type": "Bounds"
           }
         },
         {
@@ -419,13 +295,6 @@
         {
           "name": "justify",
           "shortdesc": "The default text justification style for child text elements.",
-          "description": {
-            "b": [
-              "left",
-              "center",
-              "right"
-            ]
-          },
           "datatype": {
             "type": "String",
             "value": "left"
@@ -442,50 +311,26 @@
         {
           "name": "active",
           "shortdesc": "Set to true to make this window active.",
-          "description": {
-            "li": [
-              "A modal dialog that is visible is by definition the active dialog.",
-              "An active palette is the front-most window.",
-              {
-                "a": {
-                  "href": "#/Button",
-                  "$t": "Button"
-                }
-              }
-            ]
-          },
           "datatype": {
             "type": "Boolean"
           }
         },
         {
           "name": "shortcutKey",
-          "shortdesc": {
-            "a": {
-              "href": "#/Window/event/onShortcutKey",
-              "$t": "onShortcutKey&amp;&#35;40;&#41;"
-            }
-          },
           "datatype": {
             "type": "String"
           }
         },
         {
           "name": "cancelElement",
-          "shortdesc": {
-            "i": "dialog"
-          },
-          "description": "The cancellation key is the Esc key. By default, looks for a button whose name or text is &quot;cancel\" &amp;&#35;40;case disregarded&#41;.",
+          "description": "The cancellation key is the Esc key. By default, looks for a button whose name or text is \"cancel\" &#40;case disregarded).",
           "datatype": {
             "type": "Object"
           }
         },
         {
           "name": "defaultElement",
-          "shortdesc": {
-            "b": "dialog"
-          },
-          "description": "By default, looks for a button whose name or text is &quot;ok\" &amp;&#35;40;case disregarded&#41;.",
+          "description": "By default, looks for a button whose name or text is \"ok\" &#40;case disregarded).",
           "datatype": {
             "type": "Object"
           }
@@ -507,13 +352,6 @@
         {
           "name": "alignChildren",
           "shortdesc": "Tells the layout manager how unlike-sized children of this container should be aligned within a column or row.",
-          "description": {
-            "b": [
-              "alignment",
-              "alignChildren",
-              "alignment"
-            ]
-          },
           "datatype": {
             "type": "String"
           }
@@ -522,7 +360,7 @@
           "name": "children",
           "rwaccess": "readonly",
           "shortdesc": "The collection of UI elements that have been added to this container.",
-          "description": "An array indexed by number or by a string containing an element&apos;s name. The length property of this array is the number of child elements for container elements, and is zero for controls.",
+          "description": "An array indexed by number or by a string containing an element's name. The length property of this array is the number of child elements for container elements, and is zero for controls.",
           "datatype": {
             "type": "Object",
             "array": true
@@ -531,23 +369,8 @@
         {
           "name": "layout",
           "shortdesc": "The layout manager for this container.",
-          "description": {
-            "a": [
-              {
-                "href": "#LayoutManager/layout",
-                "$t": "layout&amp;&#35;40;&#41;"
-              },
-              {
-                "href": "#LayoutManager",
-                "$t": "LayoutManager"
-              }
-            ]
-          },
           "datatype": {
-            "type": {
-              "href": "#/LayoutManager",
-              "$t": "LayoutManager"
-            }
+            "type": "LayoutManager"
           }
         },
         {
@@ -561,19 +384,6 @@
         {
           "name": "orientation",
           "shortdesc": "The layout orientation of children in a container.",
-          "description": {
-            "a": {
-              "href": "#LayoutManager",
-              "$t": "LayoutManager"
-            },
-            "b": [
-              "row",
-              "column",
-              "stack",
-              "alignChildren",
-              "alignment"
-            ]
-          },
           "datatype": {
             "type": "String"
           }
@@ -588,51 +398,13 @@
         },
         {
           "name": "alignment",
-          "shortdesc": {
-            "i": "alignChildren"
-          },
-          "description": {
-            "li": [
-              {
-                "b": [
-                  "top",
-                  "bottom",
-                  "fill"
-                ]
-              },
-              {
-                "b": [
-                  "left",
-                  "right",
-                  "fill"
-                ]
-              },
-              {
-                "b": [
-                  "top",
-                  "bottom",
-                  "left",
-                  "right",
-                  "fill"
-                ]
-              }
-            ]
-          },
           "datatype": {
             "type": "String"
           }
         },
         {
           "name": "properties",
-          "shortdesc": "An object that contains one or more creation properties of the container &amp;&#35;40;properties used only when the element is created&#41;.",
-          "description": {
-            "li": [
-              "resizeable: When true, the window can be resized by the user. Default is false.",
-              "su1PanelCoordinates: Photoshop only. When true, the child panels of this window automatically adjust the positions of their children for compatability with Photoshop CS &amp;&#35;40;in which the vertical coordinate was measured from outside the frame&#41;. Default is false. Individual panels can override the parent window’s setting.",
-              "closeButton: Bridge only. When true, the title bar includes a button to close the window, if the platform and window type allow it. When false, it does not. Default is true. Not used for dialogs.",
-              "maximizeButton: Bridge only. When true, the title bar includes a button to expand the window to its maximum size &amp;&#35;40;typically, the entire screen&#41;, if the platform and window type allow it. When false, it does not. Default is false for type palette, true for type window. Not used for dialogs."
-            ]
-          },
+          "shortdesc": "An object that contains one or more creation properties of the container &#40;properties used only when the element is created).",
           "datatype": {
             "type": "Object"
           }
@@ -673,16 +445,13 @@
           "rwaccess": "readonly",
           "shortdesc": "The window that this element belongs to.",
           "datatype": {
-            "type": {
-              "href": "#/Window",
-              "$t": "Window"
-            }
+            "type": "Window"
           }
         },
         {
           "name": "type",
           "rwaccess": "readonly",
-          "shortdesc": "The element type; &quot;dialog\", \"palette\", or \"window\".",
+          "shortdesc": "The element type; \"dialog\", \"palette\", or \"window\".",
           "datatype": {
             "type": "String"
           }
@@ -690,7 +459,7 @@
         {
           "name": "opacity",
           "shortdesc": "The opacity of the window, in the range [0..1].",
-          "description": "A value of 1.0 &amp;&#35;40;the default&#41; makes the window completely opaque, a value of 0 makes it completely transparent. Intermediate values make it partially transparent to any degree.",
+          "description": "A value of 1.0 &#40;the default) makes the window completely opaque, a value of 0 makes it completely transparent. Intermediate values make it partially transparent to any degree.",
           "datatype": {
             "type": "Number",
             "value": 1
@@ -700,213 +469,135 @@
       "method": [
         {
           "name": "show",
-          "shortdesc": "Makes this window visible.",
-          "description": {
-            "a": {
-              "href": "#/Window/event/onShow",
-              "$t": "onShow&amp;&#35;40;&#41;"
-            },
-            "li": "For a modal dialog, opens the dialog and does not return until the dialog is dismissed. If it is dismissed via the close&amp;&#35;40;&#41; method, this method returns any result value passed to that method. Otherwise, returns 0."
-          }
+          "shortdesc": "Makes this window visible."
         },
         {
           "name": "hide",
-          "shortdesc": "Hides this windows.",
-          "description": {
-            "li": "For a modal dialog, closes the dialog and sets its result to 0."
-          }
+          "shortdesc": "Hides this windows."
         },
         {
           "name": "notify",
           "shortdesc": "Sends a notification message to all listeners, simulating the specified user interaction event.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventName",
-                "optional": true,
-                "shortdesc": "The event name; if omitted, the default event is sent.",
-                "description": {
-                  "b": [
-                    "onClose",
-                    "onMove",
-                    "onMoving",
-                    "onResize",
-                    "onResizing",
-                    "onShow"
-                  ]
-                },
-                "datatype": {
-                  "type": "String"
-                }
+          "parameters": [
+            {
+              "name": "eventName",
+              "optional": true,
+              "shortdesc": "The event name; if omitted, the default event is sent.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "center",
           "shortdesc": "Centers this window on screen or with repect to another window.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "window",
-                "optional": true,
-                "shortdesc": "The relative window. If not specified, centers on the screen.",
-                "datatype": {
-                  "type": {
-                    "href": "#/Window",
-                    "$t": "Window"
-                  }
-                }
+          "parameters": [
+            {
+              "name": "window",
+              "optional": true,
+              "shortdesc": "The relative window. If not specified, centers on the screen.",
+              "datatype": {
+                "type": "Window"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "close",
           "shortdesc": "Closes this window.",
-          "description": {
-            "a": {
-              "href": "#/Window/event/onClose",
-              "$t": "onClose&amp;&#35;40;&#41;"
-            }
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "return",
-                "optional": true,
-                "shortdesc": "A number to be returned from the show&amp;&#35;40;&#41; method that invoked this window as a modal dialog.",
-                "datatype": {
-                  "type": "Any"
-                }
+          "parameters": [
+            {
+              "name": "return",
+              "optional": true,
+              "shortdesc": "A number to be returned from the show&#40;) method that invoked this window as a modal dialog.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "add",
           "shortdesc": "Creates and returns a new control or container object and adds it to the children of this window.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": {
-                  "i": "type"
-                },
-                "description": {
-                  "i": "JavaScript Tools Guide"
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "bounds",
-                "optional": true,
-                "shortdesc": "A bounds specification that describes the size and position of the new control or container, relative to its parent.",
-                "description": {
-                  "a": {
-                    "href": "#/Bounds",
-                    "$t": "Bounds"
-                  },
-                  "b": "bounds"
-                },
-                "datatype": {
-                  "type": {
-                    "href": "#/Bounds",
-                    "$t": "Bounds"
-                  }
-                }
-              },
-              {
-                "name": "text",
-                "optional": true,
-                "shortdesc": "The text or label, a localizable string.",
-                "description": {
-                  "b": "text"
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "properties",
-                "optional": true,
-                "shortdesc": "An object that contains one or more creation properties of the new child &amp;&#35;40;properties used only when the element is created&#41;.",
-                "description": {
-                  "br": "properties"
-                },
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "bounds",
+              "optional": true,
+              "shortdesc": "A bounds specification that describes the size and position of the new control or container, relative to its parent.",
+              "datatype": {
+                "type": "Bounds"
+              }
+            },
+            {
+              "name": "text",
+              "optional": true,
+              "shortdesc": "The text or label, a localizable string.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "properties",
+              "optional": true,
+              "shortdesc": "An object that contains one or more creation properties of the new child &#40;properties used only when the element is created).",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
             "type": "Object"
           }
         },
         {
           "name": "remove",
-          "shortdesc": {
-            "b": "children"
-          },
           "description": "No error results if the child does not exist.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "what",
-                "shortdesc": {
-                  "b": "text"
-                },
-                "datatype": {
-                  "type": "Any"
-                }
+          "parameters": [
+            {
+              "name": "what",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "addEventListener",
           "shortdesc": "Registers an event handler for a particular type of event occuring in this window.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventName",
-                "shortdesc": "The name of the event.",
-                "description": "Predefined event names are: change, changing, move, moving, resize, resizing, show , enterKey, focus, blur, keydown, keyup, mousedown, mouseup, mousemove, mouseover, mouseout, click &amp;&#35;40;detail = 1 for single, 2 for double&#41;.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The function that handles the event.",
-                "description": {
-                  "a": {
-                    "href": "#/UIEvent",
-                    "$t": "UIEvent"
-                  }
-                },
-                "datatype": {
-                  "type": {
-                    "href": "$COMMON/javascript.xml#/Function",
-                    "$t": "Function"
-                  }
-                }
-              },
-              {
-                "name": "capturePhase",
-                "optional": true,
-                "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
-                "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventName",
+              "shortdesc": "The name of the event.",
+              "description": "Predefined event names are: change, changing, move, moving, resize, resizing, show , enterKey, focus, blur, keydown, keyup, mousedown, mouseup, mousemove, mouseover, mouseout, click &#40;detail = 1 for single, 2 for double).",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The function that handles the event.",
+              "datatype": {
+                "type": "Function"
+              }
+            },
+            {
+              "name": "capturePhase",
+              "optional": true,
+              "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
+              "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "Boolean"
           }
@@ -915,35 +606,30 @@
           "name": "removeEventListener",
           "shortdesc": "Unregisters an event handler for a particular type of event occuring in this window.",
           "description": "All arguments must be identical to those that were used to register the event handler.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventName",
-                "shortdesc": "The name of the event.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The function that handles the event.",
-                "datatype": {
-                  "type": {
-                    "href": "$COMMON/javascript.xml#/Function",
-                    "$t": "Function"
-                  }
-                }
-              },
-              {
-                "name": "capturePhase",
-                "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventName",
+              "shortdesc": "The name of the event.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The function that handles the event.",
+              "datatype": {
+                "type": "Function"
+              }
+            },
+            {
+              "name": "capturePhase",
+              "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "Boolean"
           }
@@ -951,17 +637,8 @@
         {
           "name": "dispatchEvent",
           "shortdesc": "Simulates the occurrence of an event in this target.",
-          "description": {
-            "a": {
-              "href": "#/UIEvent",
-              "$t": "UIEvent"
-            }
-          },
           "datatype": {
-            "type": {
-              "href": "#/UIEvent",
-              "$t": "UIEvent"
-            }
+            "type": "UIEvent"
           }
         }
       ]
@@ -982,12 +659,6 @@
         {
           "name": "onClose",
           "shortdesc": "An event-handler callback function, called  when the window is about to be closed.",
-          "description": {
-            "a": {
-              "href": "#/Window/close",
-              "$t": "close&amp;&#35;40;&#41;"
-            }
-          },
           "datatype": {
             "type": "Boolean"
           }
@@ -1011,23 +682,11 @@
           "description": "Called while a window is being resized, each time the height or width changes. A handler can monitor the resize operation."
         },
         {
-          "name": "onShortcutKey",
-          "shortdesc": {
-            "a": {
-              "href": "#/Window/shortcutKey",
-              "$t": "shortcutKey"
-            }
-          }
+          "name": "onShortcutKey"
         },
         {
           "name": "onShow",
-          "shortdesc": "An event-handler callback function, called just before the window is displayed",
-          "description": {
-            "a": {
-              "href": "#/Window/show",
-              "$t": "show&amp;&#35;40;&#41;"
-            }
-          }
+          "shortdesc": "An event-handler callback function, called just before the window is displayed"
         }
       ]
     }

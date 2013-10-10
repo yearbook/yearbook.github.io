@@ -19,7 +19,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the Spread within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -53,7 +53,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the Spread.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -61,13 +61,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the Spread &amp;&#35;40;a Document&#41;.",
+          "shortdesc": "The parent of the Spread &#40;a Document).",
           "datatype": {
             "type": "Document"
           }
@@ -107,7 +107,7 @@
         {
           "name": "pageItems",
           "rwaccess": "readonly",
-          "shortdesc": "The page items collection, which can be used to process all page items in a container &amp;&#35;40;such as a document, page, or group&#41;, regardless of type.",
+          "shortdesc": "The page items collection, which can be used to process all page items in a container &#40;such as a document, page, or group), regardless of type.",
           "datatype": {
             "type": "PageItems"
           }
@@ -267,14 +267,14 @@
           "name": "allowPageShuffle",
           "shortdesc": "If true, guarantees that when pages are added to a spread it will contain a maximum of two pages. If false, allows pages to be added or moved into existing spreads. For override information, see preserve layout when shuffling.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "showMasterItems",
           "shortdesc": "If true, displays master page items on document pages in the spread.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -288,7 +288,7 @@
           "name": "idmlComponentName",
           "shortdesc": "The IDML component name of the Spread.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -316,14 +316,14 @@
           "name": "label",
           "shortdesc": "A property that can be set to any string.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "name",
-          "shortdesc": "The name of the Spread; this is an alias to the Spread&apos;s label property.",
+          "shortdesc": "The name of the Spread; this is an alias to the Spread's label property.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -338,34 +338,32 @@
         {
           "name": "placeXML",
           "shortdesc": "Places the XML element onto a page. If the place point is above an existing page item, place the XML element into the page item.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The XML element to place.",
-                "datatype": {
-                  "type": "XMLElement"
-                }
-              },
-              {
-                "name": "placePoint",
-                "shortdesc": "The point at which to place the object, specified in the format [x, y].",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
-              },
-              {
-                "name": "autoflowing",
-                "optional": true,
-                "shortdesc": "If true, autoflows placed text. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The XML element to place.",
+              "datatype": {
+                "type": "XMLElement"
               }
-            ]
-          },
+            },
+            {
+              "name": "placePoint",
+              "shortdesc": "The point at which to place the object, specified in the format [x, y].",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            },
+            {
+              "name": "autoflowing",
+              "optional": true,
+              "shortdesc": "If true, autoflows placed text. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -373,24 +371,22 @@
         {
           "name": "setContent",
           "shortdesc": "Replaces the content of XML element with content imported from a file.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "using",
-                "shortdesc": "The file path to the import file.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "relativeBasePath",
-                "shortdesc": "Base path used to resolve relative paths. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The file path to the import file.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "relativeBasePath",
+              "shortdesc": "Base path used to resolve relative paths. &#40;Optional)",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
           "datatype": {
             "type": "PageItem"
           }
@@ -398,26 +394,24 @@
         {
           "name": "move",
           "shortdesc": "Moves the spread.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "optional": true,
-                "shortdesc": "The location of the spread relative to the reference object or within the document.  &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "LocationOptions",
-                  "value": "LocationOptions.AT_END"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. Can accept: Spread, Page or Document. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "optional": true,
+              "shortdesc": "The location of the spread relative to the reference object or within the document.  &#40;Optional)",
+              "datatype": {
+                "type": "LocationOptions",
+                "value": "LocationOptions.AT_END"
               }
-            ]
-          },
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. Can accept: Spread, Page or Document. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
             "type": "Spread"
           }
@@ -429,68 +423,64 @@
         {
           "name": "duplicate",
           "shortdesc": "Duplicates the spread.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "optional": true,
-                "shortdesc": "The location of the spread relative to the reference object or within the document. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "LocationOptions",
-                  "value": "LocationOptions.AT_END"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required only when the to parameter specifies before or after. Can accept: Spread, Document or MasterSpread. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "optional": true,
+              "shortdesc": "The location of the spread relative to the reference object or within the document. &#40;Optional)",
+              "datatype": {
+                "type": "LocationOptions",
+                "value": "LocationOptions.AT_END"
               }
-            ]
-          },
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required only when the to parameter specifies before or after. Can accept: Spread, Document or MasterSpread. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
-            "type": "varies=any"
+            "type": "Mixed"
           }
         },
         {
           "name": "placeAndLink",
           "shortdesc": "Deprecated: Use contentPlace method. Original Description: Create a linked story and place it into the target.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "parentStory",
-                "shortdesc": "The story to place and link from.",
-                "datatype": {
-                  "type": "Story"
-                }
-              },
-              {
-                "name": "placePoint",
-                "shortdesc": "The point at which to place &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
-              },
-              {
-                "name": "destinationLayer",
-                "shortdesc": "The layer on which to place &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Layer"
-                }
-              },
-              {
-                "name": "showingOptions",
-                "optional": true,
-                "shortdesc": "Whether to display the link options dialog &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "parentStory",
+              "shortdesc": "The story to place and link from.",
+              "datatype": {
+                "type": "Story"
               }
-            ]
-          },
+            },
+            {
+              "name": "placePoint",
+              "shortdesc": "The point at which to place &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            },
+            {
+              "name": "destinationLayer",
+              "shortdesc": "The layer on which to place &#40;Optional)",
+              "datatype": {
+                "type": "Layer"
+              }
+            },
+            {
+              "name": "showingOptions",
+              "optional": true,
+              "shortdesc": "Whether to display the link options dialog &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "Story"
           }
@@ -498,60 +488,58 @@
         {
           "name": "place",
           "shortdesc": "Places the file.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "fileName",
-                "shortdesc": "The file to place",
-                "datatype": {
-                  "type": "File"
-                }
-              },
-              {
-                "name": "placePoint",
-                "shortdesc": "The point at which to place &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
-              },
-              {
-                "name": "destinationLayer",
-                "shortdesc": "The layer on which to place &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Layer"
-                }
-              },
-              {
-                "name": "showingOptions",
-                "optional": true,
-                "shortdesc": "Whether to display the import options dialog &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "autoflowing",
-                "optional": true,
-                "shortdesc": "Whether to autoflow placed text &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "withProperties",
-                "shortdesc": "Initial values for properties of the placed object&amp;&#35;40;s&#41; (Optional)",
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "fileName",
+              "shortdesc": "The file to place",
+              "datatype": {
+                "type": "File"
               }
-            ]
-          },
+            },
+            {
+              "name": "placePoint",
+              "shortdesc": "The point at which to place &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            },
+            {
+              "name": "destinationLayer",
+              "shortdesc": "The layer on which to place &#40;Optional)",
+              "datatype": {
+                "type": "Layer"
+              }
+            },
+            {
+              "name": "showingOptions",
+              "optional": true,
+              "shortdesc": "Whether to display the import options dialog &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "autoflowing",
+              "optional": true,
+              "shortdesc": "Whether to autoflow placed text &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the placed object&#40;s) (Optional)",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
-            "type": "varies=any",
-            "array": {}
+            "type": "Mixed",
+            "array": true
           }
         },
         {
@@ -565,318 +553,302 @@
         {
           "name": "select",
           "shortdesc": "Selects the object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "existingSelection",
-                "optional": true,
-                "shortdesc": "The selection status of the Spread in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "SelectionOptions",
-                  "value": "SelectionOptions.REPLACE_WITH"
-                }
+          "parameters": [
+            {
+              "name": "existingSelection",
+              "optional": true,
+              "shortdesc": "The selection status of the Spread in relation to previously selected objects. &#40;Optional)",
+              "datatype": {
+                "type": "SelectionOptions",
+                "value": "SelectionOptions.REPLACE_WITH"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "createGuides",
           "shortdesc": "Creates multiple guides on all pages of the spread.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "numberOfRows",
-                "optional": true,
-                "shortdesc": "The number of rows to create on each page. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "number",
-                  "min": 0,
-                  "max": 40,
-                  "value": 0
-                }
-              },
-              {
-                "name": "numberOfColumns",
-                "optional": true,
-                "shortdesc": "The number of columns to create on each page.  &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "number",
-                  "min": 0,
-                  "max": 40,
-                  "value": 0
-                }
-              },
-              {
-                "name": "rowGutter",
-                "optional": true,
-                "shortdesc": "The height of the gutter between rows. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "min": 0,
-                  "max": 1440,
-                  "value": 0
-                }
-              },
-              {
-                "name": "columnGutter",
-                "optional": true,
-                "shortdesc": "The width of the gutter between columns. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "min": 0,
-                  "max": 1440,
-                  "value": 0
-                }
-              },
-              {
-                "name": "guideColor",
-                "shortdesc": "The color to make the guides, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can accept: Array of 3 Reals &amp;&#35;40;0 - 255&#41; or UIColors enumerator. (Optional)",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "fitMargins",
-                "optional": true,
-                "shortdesc": "If true, the row height and column width are calculated based on the space within the page margins. If false, row height and column width are calculated based on the full page. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "removeExisting",
-                "optional": true,
-                "shortdesc": "If true, removes existing guides when creating new ones. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "layer",
-                "shortdesc": "The layer on which to create the guides. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Layer"
-                }
+          "parameters": [
+            {
+              "name": "numberOfRows",
+              "optional": true,
+              "shortdesc": "The number of rows to create on each page. &#40;Optional)",
+              "datatype": {
+                "type": "Number",
+                "min": 0,
+                "max": 40,
+                "value": 0
               }
-            ]
-          }
+            },
+            {
+              "name": "numberOfColumns",
+              "optional": true,
+              "shortdesc": "The number of columns to create on each page.  &#40;Optional)",
+              "datatype": {
+                "type": "Number",
+                "min": 0,
+                "max": 40,
+                "value": 0
+              }
+            },
+            {
+              "name": "rowGutter",
+              "optional": true,
+              "shortdesc": "The height of the gutter between rows. &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "min": 0,
+                "max": 1440,
+                "value": 0
+              }
+            },
+            {
+              "name": "columnGutter",
+              "optional": true,
+              "shortdesc": "The width of the gutter between columns. &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "min": 0,
+                "max": 1440,
+                "value": 0
+              }
+            },
+            {
+              "name": "guideColor",
+              "shortdesc": "The color to make the guides, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can accept: Array of 3 Reals &#40;0 - 255) or UIColors enumerator. (Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "fitMargins",
+              "optional": true,
+              "shortdesc": "If true, the row height and column width are calculated based on the space within the page margins. If false, row height and column width are calculated based on the full page. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "removeExisting",
+              "optional": true,
+              "shortdesc": "If true, removes existing guides when creating new ones. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "layer",
+              "shortdesc": "The layer on which to create the guides. &#40;Optional)",
+              "datatype": {
+                "type": "Layer"
+              }
+            }
+          ]
         },
         {
           "name": "transform",
           "shortdesc": "Transform the page item.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "in",
-                "shortdesc": "The coordinate space to use",
-                "datatype": {
-                  "type": "CoordinateSpaces"
-                }
-              },
-              {
-                "name": "from",
-                "shortdesc": "The temporary origin during the transformation. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "withMatrix",
-                "shortdesc": "Transform matrix. Can accept: Array of 6 Reals or TransformationMatrix.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "replacingCurrent",
-                "shortdesc": "Transform components to consider; providing this optional parameter causes the target&apos;s existing transform components to be replaced with new values.  Without this parameter, the given matrix is concatenated onto the target's existing transform combining the effect of the two. Can accept: MatrixContent enumerator, Array of MatrixContent enumerators or Long Integer. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "consideringRulerUnits",
-                "optional": true,
-                "shortdesc": "If true then a ruler based origin is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "in",
+              "shortdesc": "The coordinate space to use",
+              "datatype": {
+                "type": "CoordinateSpaces"
               }
-            ]
-          }
+            },
+            {
+              "name": "from",
+              "shortdesc": "The temporary origin during the transformation. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "withMatrix",
+              "shortdesc": "Transform matrix. Can accept: Array of 6 Reals or TransformationMatrix.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "replacingCurrent",
+              "shortdesc": "Transform components to consider; providing this optional parameter causes the target's existing transform components to be replaced with new values.  Without this parameter, the given matrix is concatenated onto the target's existing transform combining the effect of the two. Can accept: MatrixContent enumerator, Array of MatrixContent enumerators or Long Integer. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "consideringRulerUnits",
+              "optional": true,
+              "shortdesc": "If true then a ruler based origin is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "transformValuesOf",
           "shortdesc": "Get the transformation values of the page item.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "in",
-                "shortdesc": "The coordinate space to use",
-                "datatype": {
-                  "type": "CoordinateSpaces"
-                }
+          "parameters": [
+            {
+              "name": "in",
+              "shortdesc": "The coordinate space to use",
+              "datatype": {
+                "type": "CoordinateSpaces"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "TransformationMatrix",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "resolve",
           "shortdesc": "Get the coordinates of the given location in the specified coordinate system.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "location",
-                "shortdesc": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "in",
-                "shortdesc": "The coordinate space to use.",
-                "datatype": {
-                  "type": "CoordinateSpaces"
-                }
-              },
-              {
-                "name": "consideringRulerUnits",
-                "optional": true,
-                "shortdesc": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "location",
+              "shortdesc": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "in",
+              "shortdesc": "The coordinate space to use.",
+              "datatype": {
+                "type": "CoordinateSpaces"
+              }
+            },
+            {
+              "name": "consideringRulerUnits",
+              "optional": true,
+              "shortdesc": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "varies=any"
+            "type": "Mixed"
           }
         },
         {
           "name": "contentPlace",
           "shortdesc": "Duplicate an object and place it into the target.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "pageItems",
-                "shortdesc": "One or more page items to place or load",
-                "datatype": {
-                  "type": "PageItem",
-                  "array": {}
-                }
-              },
-              {
-                "name": "linkPageItems",
-                "optional": true,
-                "shortdesc": "Whether to link pageItems in content placer &amp;&#35;40;if true it will override link stories value&#41; (Optional)",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "linkStories",
-                "optional": true,
-                "shortdesc": "Whether to link stories in content placer &amp;&#35;40;only applicable for single story, pageItem links will also be created in case of more than one item&#41; (Optional)",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "mapStyles",
-                "optional": true,
-                "shortdesc": "Whether to map styles in content placer &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
-              },
-              {
-                "name": "placePoint",
-                "shortdesc": "The point at which to place &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
-                  "array": {}
-                }
-              },
-              {
-                "name": "destinationLayer",
-                "shortdesc": "The layer on which to place &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Layer"
-                }
-              },
-              {
-                "name": "showingOptions",
-                "optional": true,
-                "shortdesc": "Whether to display the link options dialog &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "pageItems",
+              "shortdesc": "One or more page items to place or load",
+              "datatype": {
+                "type": "PageItem",
+                "array": true
               }
-            ]
-          },
+            },
+            {
+              "name": "linkPageItems",
+              "optional": true,
+              "shortdesc": "Whether to link pageItems in content placer &#40;if true it will override link stories value) (Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "linkStories",
+              "optional": true,
+              "shortdesc": "Whether to link stories in content placer &#40;only applicable for single story, pageItem links will also be created in case of more than one item) (Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "mapStyles",
+              "optional": true,
+              "shortdesc": "Whether to map styles in content placer &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "placePoint",
+              "shortdesc": "The point at which to place &#40;Optional)",
+              "datatype": {
+                "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any",
+                "array": true
+              }
+            },
+            {
+              "name": "destinationLayer",
+              "shortdesc": "The layer on which to place &#40;Optional)",
+              "datatype": {
+                "type": "Layer"
+              }
+            },
+            {
+              "name": "showingOptions",
+              "optional": true,
+              "shortdesc": "Whether to display the link options dialog &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "varies=any",
-            "array": {}
+            "type": "Mixed",
+            "array": true
           }
         },
         {
           "name": "insertLabel",
           "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "shortdesc": "The value.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
         },
         {
           "name": "extractLabel",
           "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the Spread.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -884,46 +856,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "Spread",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -931,35 +901,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

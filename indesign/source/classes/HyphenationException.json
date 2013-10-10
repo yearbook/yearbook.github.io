@@ -11,7 +11,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The name of the HyphenationException.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -19,13 +19,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the HyphenationException &amp;&#35;40;a Document&#41;.",
+          "shortdesc": "The parent of the HyphenationException &#40;a Document).",
           "datatype": {
             "type": "Document"
           }
@@ -35,7 +35,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the HyphenationException within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -58,7 +58,7 @@
           "name": "removedExceptions",
           "shortdesc": "A list of words removed from the hyphenation exceptions list.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "array": true
           }
         },
@@ -66,7 +66,7 @@
           "name": "addedExceptions",
           "shortdesc": "A list of words added to the hyphenation exceptions list.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "array": true
           }
         },
@@ -82,58 +82,54 @@
         {
           "name": "addException",
           "shortdesc": "Adds the specified words to the hyphenation exceptions list.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "addedExceptions",
-                "shortdesc": "The list of words to add.",
-                "datatype": {
-                  "type": "string",
-                  "array": {}
-                }
-              },
-              {
-                "name": "removedList",
-                "optional": true,
-                "shortdesc": "If true, adds the words to the removed exceptions list. If false or unspecified, adds the words to the added exceptions list. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "addedExceptions",
+              "shortdesc": "The list of words to add.",
+              "datatype": {
+                "type": "String",
+                "array": true
               }
-            ]
-          }
+            },
+            {
+              "name": "removedList",
+              "optional": true,
+              "shortdesc": "If true, adds the words to the removed exceptions list. If false or unspecified, adds the words to the added exceptions list. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "removeException",
           "shortdesc": "Removes the specified words from the hyphenation exceptions list.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "removedExceptions",
-                "shortdesc": "The list of words to remove.",
-                "datatype": {
-                  "type": "string",
-                  "array": {}
-                }
-              },
-              {
-                "name": "removedList",
-                "optional": true,
-                "shortdesc": "If true, removes the words from the removed exceptions list. If false or unspecified, adds the words to the added exceptions list. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "removedExceptions",
+              "shortdesc": "The list of words to remove.",
+              "datatype": {
+                "type": "String",
+                "array": true
               }
-            ]
-          }
+            },
+            {
+              "name": "removedList",
+              "optional": true,
+              "shortdesc": "If true, removes the words from the removed exceptions list. If false or unspecified, adds the words to the added exceptions list. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the HyphenationException.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -141,46 +137,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "HyphenationException",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -188,35 +182,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

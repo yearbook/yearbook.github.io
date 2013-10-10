@@ -2,16 +2,6 @@
   "name": "UIEvent",
   "dynamic": true,
   "shortdesc": "Encapsulates input event information for an event that propagates through a container and control hierarchy.",
-  "description": {
-    "i": [
-      "windowObj",
-      "controlObj"
-    ],
-    "a": {
-      "href": "#/Window/addEventListener",
-      "$t": "addEventListener&amp;&#35;40;&#41;"
-    }
-  },
   "elements": [
     {
       "type": "constructor",
@@ -19,65 +9,48 @@
         {
           "name": "UIEvent",
           "shortdesc": "Creates an event.",
-          "description": {
-            "a": {
-              "href": "#/UIEvent",
-              "$t": "UIEvent"
-            }
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": {
-                  "a": {
-                    "href": "#/UIEvent/type",
-                    "$t": "UIEvent.type"
-                  }
-                },
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "captures",
-                "shortdesc": "Set to true if this event can be captured.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "bubbles",
-                "shortdesc": "Set to true if the event bubbles.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "view",
-                "optional": true,
-                "shortdesc": "The ScriptUI element that this event relates to.",
-                "datatype": {
-                  "type": "Object"
-                }
-              },
-              {
-                "name": "detail",
-                "optional": true,
-                "shortdesc": "The click count for a mouse-click event.",
-                "datatype": {
-                  "type": "Number"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/UIEvent",
-              "$t": "UIEvent"
+            },
+            {
+              "name": "captures",
+              "shortdesc": "Set to true if this event can be captured.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "bubbles",
+              "shortdesc": "Set to true if the event bubbles.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "view",
+              "optional": true,
+              "shortdesc": "The ScriptUI element that this event relates to.",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "detail",
+              "optional": true,
+              "shortdesc": "The click count for a mouse-click event.",
+              "datatype": {
+                "type": "Number"
+              }
             }
+          ],
+          "datatype": {
+            "type": "UIEvent"
           }
         }
       ]
@@ -104,7 +77,7 @@
         {
           "name": "cancelable",
           "rwaccess": "readonly",
-          "shortdesc": "True if the default action associated with the event can be canceled with preventDefault&amp;&#35;40;&#41;.",
+          "shortdesc": "True if the default action associated with the event can be canceled with preventDefault&#40;).",
           "datatype": {
             "type": "Boolean"
           }
@@ -138,19 +111,13 @@
           "rwaccess": "readonly",
           "shortdesc": "The date and time at which the event occurred.",
           "datatype": {
-            "type": {
-              "href": "$COMMON/javascript.xml#/Date",
-              "$t": "Date"
-            }
+            "type": "Date"
           }
         },
         {
           "name": "type",
           "rwaccess": "readonly",
           "shortdesc": "The name of the event that this  object represents.",
-          "description": {
-            "i": "JavaScript Tools Guide"
-          },
           "datatype": {
             "type": "String"
           }
@@ -160,7 +127,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The ScriptUI element that this event relates to.",
           "datatype": {
-            "type": "Any"
+            "type": "Mixed"
           }
         },
         {
@@ -168,7 +135,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The click count for a mouse-click event.",
           "datatype": {
-            "type": "Any"
+            "type": "Mixed"
           }
         }
       ],
@@ -184,88 +151,84 @@
         {
           "name": "initEvent",
           "shortdesc": "Initializes a UI event as a core W3C event.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "captures",
-                "shortdesc": "Set to true if this event can be captured.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "bubbles",
-                "shortdesc": "Set to true if the event bubbles.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "cancelable",
-                "shortdesc": "Set to true if the default action is cancelable.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "captures",
+              "shortdesc": "Set to true if this event can be captured.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "bubbles",
+              "shortdesc": "Set to true if the event bubbles.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "cancelable",
+              "shortdesc": "Set to true if the default action is cancelable.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
         },
         {
           "name": "initUIEvent",
           "shortdesc": "Initializes an event.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "captures",
-                "shortdesc": "Set to true if this event can be captured.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "bubbles",
-                "shortdesc": "Set to true if the event bubbles.",
-                "datatype": {
-                  "type": "Boolean",
-                  "value": false
-                }
-              },
-              {
-                "name": "view",
-                "optional": true,
-                "shortdesc": "The ScriptUI element that this event relates to.",
-                "datatype": {
-                  "type": "Object"
-                }
-              },
-              {
-                "name": "detail",
-                "optional": true,
-                "shortdesc": "The click count for a mouse-click event.",
-                "datatype": {
-                  "type": "Number"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "captures",
+              "shortdesc": "Set to true if this event can be captured.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "bubbles",
+              "shortdesc": "Set to true if the event bubbles.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "view",
+              "optional": true,
+              "shortdesc": "The ScriptUI element that this event relates to.",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "detail",
+              "optional": true,
+              "shortdesc": "The click count for a mouse-click event.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
         }
       ]
     }

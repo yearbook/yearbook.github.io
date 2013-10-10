@@ -11,13 +11,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the TimingGroup &amp;&#35;40;a TimingList&#41;.",
+          "shortdesc": "The parent of the TimingGroup &#40;a TimingList).",
           "datatype": {
             "type": "TimingList"
           }
@@ -27,7 +27,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the TimingGroup within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -58,14 +58,14 @@
           "name": "placement",
           "shortdesc": "The placement of the timing group in the timing list.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
           "name": "plays",
           "shortdesc": "The number of times this timing group plays.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 1,
             "max": 100
           }
@@ -74,7 +74,7 @@
           "name": "playsLoop",
           "shortdesc": "Set to true if timing group loops.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -97,24 +97,22 @@
         {
           "name": "move",
           "shortdesc": "Moves the timing group or target to the specified location.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "shortdesc": "The location in relation to the reference object or within the containing object.",
-                "datatype": {
-                  "type": "LocationOptions"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: TimingGroup, TimingTarget or TimingList. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "shortdesc": "The location in relation to the reference object or within the containing object.",
+              "datatype": {
+                "type": "LocationOptions"
               }
-            ]
-          },
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: TimingGroup, TimingTarget or TimingList. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
             "type": "TimingGroup"
           }
@@ -123,7 +121,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the TimingGroup.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -131,46 +129,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "TimingGroup",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -178,35 +174,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

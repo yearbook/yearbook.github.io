@@ -11,15 +11,15 @@
           "rwaccess": "readonly",
           "shortdesc": "A reference to the assigned story. Can return: Story, PageItem, Oval, Rectangle or Polygon.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
           "name": "filePath",
           "rwaccess": "readonly",
-          "shortdesc": "The file path &amp;&#35;40;colon delimited on the Mac OS&#41;. Can also accept: File.",
+          "shortdesc": "The file path &#40;colon delimited on the Mac OS). Can also accept: File.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -27,7 +27,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the AssignedStory.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -35,13 +35,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the AssignedStory &amp;&#35;40;a Assignment&#41;.",
+          "shortdesc": "The parent of the AssignedStory &#40;a Assignment).",
           "datatype": {
             "type": "Assignment"
           }
@@ -51,7 +51,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the AssignedStory within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -74,14 +74,14 @@
           "name": "name",
           "shortdesc": "The name of the AssignedStory.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "label",
           "shortdesc": "A property that can be set to any string.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -96,26 +96,24 @@
         {
           "name": "move",
           "shortdesc": "Moves the assigned story to the specified location.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "to",
-                "optional": true,
-                "shortdesc": "The location of the assigned story relative to the reference object or within the containing object. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "LocationOptions",
-                  "value": "LocationOptions.AT_END"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. Can accept: Assignment or AssignedStory. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "to",
+              "optional": true,
+              "shortdesc": "The location of the assigned story relative to the reference object or within the containing object. &#40;Optional)",
+              "datatype": {
+                "type": "LocationOptions",
+                "value": "LocationOptions.AT_END"
               }
-            ]
-          },
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. Can accept: Assignment or AssignedStory. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
             "type": "AssignedStory"
           }
@@ -123,48 +121,44 @@
         {
           "name": "insertLabel",
           "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "value",
-                "shortdesc": "The value.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
         },
         {
           "name": "extractLabel",
           "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "key",
-                "shortdesc": "The key.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the AssignedStory.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -172,46 +166,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "AssignedStory",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -219,35 +211,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

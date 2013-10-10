@@ -15,7 +15,7 @@
           "rwaccess": "readonly",
           "shortdesc": "A list of the clipping paths stored in the graphic.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "array": true
           }
         },
@@ -24,7 +24,7 @@
           "rwaccess": "readonly",
           "shortdesc": "A list of the alpha channels stored in the graphic.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "array": true
           }
         },
@@ -33,15 +33,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the ClippingPathSettings &amp;&#35;40;a Image, EPS, WMF, PICT, PDF or ImportedPage&#41;.",
+          "shortdesc": "The parent of the ClippingPathSettings &#40;a Image, EPS, WMF, PICT, PDF or ImportedPage).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -79,51 +79,51 @@
           "name": "invertPath",
           "shortdesc": "If true, inverts the clipping path.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "includeInsideEdges",
           "shortdesc": "If true, creates interior clipping paths within the surrounding clipping path. Note: Valid only when clipping type is alpha channel or detect edges.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "restrictToFrame",
           "shortdesc": "If true, truncates the clipping path at the edge of the frame containing the graphic. Note: Valid only when clipping type is alpha channel or detect edges.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "useHighResolutionImage",
           "shortdesc": "If true, uses the high-resolution version of the graphic to create the clipping path. If false, calculates the clipping path based on screen-display resolution. Note: Valid only when clipping type is detect edges.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "threshold",
-          "shortdesc": "The lowest value &amp;&#35;40;darkest&#41; pixel to allow in the image. All pixels in the image whose values are greater than (lighter than) the threshold value are clipped (obscured). (Range: 0 to 255) Note: Valid only when clipping type is detect edges or alpha channel.",
+          "shortdesc": "The lowest value &#40;darkest) pixel to allow in the image. All pixels in the image whose values are greater than (lighter than) the threshold value are clipped (obscured). (Range: 0 to 255) Note: Valid only when clipping type is detect edges or alpha channel.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 0,
             "max": 255
           }
         },
         {
           "name": "tolerance",
-          "shortdesc": "Specifies how similar a pixel&apos;s intensity value can be to the threshold value before the pixel is obscured by the clipping path. &amp;&#35;40;Range: 0 to 10&#41; Note: Valid only when clipping type is detect edges or alpha channel.",
+          "shortdesc": "Specifies how similar a pixel's intensity value can be to the threshold value before the pixel is obscured by the clipping path. &#40;Range: 0 to 10) Note: Valid only when clipping type is detect edges or alpha channel.",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 0,
             "max": 10
           }
         },
         {
           "name": "insetFrame",
-          "shortdesc": "Shrinks the area enclosed by the clipping path by the specified amount. &amp;&#35;40;Range depends on the unit. For points: -10000 to 10000; picas: -833p4 to 833p4; inches: -138.8889 to 138.8889; mm: -3527.778 to 3527.778; cm: -352.7778 to 352.7778; ciceros: -781c11.889 to 781c11.889&#41;",
+          "shortdesc": "Shrinks the area enclosed by the clipping path by the specified amount. &#40;Range depends on the unit. For points: -10000 to 10000; picas: -833p4 to 833p4; inches: -138.8889 to 138.8889; mm: -3527.778 to 3527.778; cm: -352.7778 to 352.7778; ciceros: -781c11.889 to 781c11.889)",
           "datatype": {
             "type": "Measurement Unit &amp;&#35;40;Number or String&#41;=any"
           }
@@ -132,7 +132,7 @@
           "name": "appliedPathName",
           "shortdesc": "The name of the Photoshop path or alpha channel to use as a clipping path.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -155,7 +155,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the ClippingPathSettings.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -163,46 +163,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "ClippingPathSettings",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -210,35 +208,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

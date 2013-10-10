@@ -15,7 +15,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterSelectionChanged"
           }
         },
@@ -24,7 +24,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterSelectionAttributeChanged"
           }
         },
@@ -33,7 +33,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched before the StoryWindow becomes inactive. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "beforeDeactivate"
           }
         },
@@ -42,7 +42,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched after the StoryWindow becomes active. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterActivate"
           }
         },
@@ -51,7 +51,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched when the value of a property changes on this StoryWindow. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterAttributeChanged"
           }
         },
@@ -60,7 +60,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched after a StoryWindow is opened. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterOpen"
           }
         },
@@ -69,7 +69,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched before a StoryWindow is closed. This event bubbles. This event is cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "beforeClose"
           }
         },
@@ -78,7 +78,7 @@
           "rwaccess": "readonly",
           "shortdesc": "Dispatched when a StoryWindow is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
           "datatype": {
-            "type": "string",
+            "type": "String",
             "value": "afterClose"
           }
         }
@@ -92,7 +92,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The name of the StoryWindow.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -100,13 +100,13 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the StoryWindow &amp;&#35;40;a Document&#41;.",
+          "shortdesc": "The parent of the StoryWindow &#40;a Document).",
           "datatype": {
             "type": "Document"
           }
@@ -116,7 +116,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the StoryWindow within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -137,7 +137,7 @@
         },
         {
           "name": "selection",
-          "shortdesc": "The selected object&amp;&#35;40;s&#41;. Can also accept: Object or NothingEnum enumerator.",
+          "shortdesc": "The selected object&#40;s). Can also accept: Object or NothingEnum enumerator.",
           "datatype": {
             "type": "Object",
             "array": true
@@ -145,9 +145,9 @@
         },
         {
           "name": "bounds",
-          "shortdesc": "The bounds of the window &amp;&#35;40;specified in pixels&#41; in the form [top, left, bottom, right].",
+          "shortdesc": "The bounds of the window &#40;specified in pixels) in the form [top, left, bottom, right].",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "array": true
           }
         },
@@ -169,27 +169,25 @@
       "method": [
         {
           "name": "select",
-          "shortdesc": "Selects the specified object&amp;&#35;40;s&#41;.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "selectableItems",
-                "shortdesc": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "existingSelection",
-                "optional": true,
-                "shortdesc": "The selection status of the StoryWindow in relation to previously selected objects. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "SelectionOptions",
-                  "value": "SelectionOptions.REPLACE_WITH"
-                }
+          "shortdesc": "Selects the specified object&#40;s).",
+          "parameters": [
+            {
+              "name": "selectableItems",
+              "shortdesc": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          }
+            },
+            {
+              "name": "existingSelection",
+              "optional": true,
+              "shortdesc": "The selection status of the StoryWindow in relation to previously selected objects. &#40;Optional)",
+              "datatype": {
+                "type": "SelectionOptions",
+                "value": "SelectionOptions.REPLACE_WITH"
+              }
+            }
+          ]
         },
         {
           "name": "close",
@@ -215,7 +213,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the StoryWindow.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -223,46 +221,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "StoryWindow",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -270,35 +266,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

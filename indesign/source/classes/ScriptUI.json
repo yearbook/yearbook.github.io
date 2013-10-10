@@ -18,9 +18,6 @@
           "name": "compatibility",
           "rwaccess": "readonly",
           "shortdesc": "An object whose properties are the names of compatability modes supported by the host application.",
-          "description": {
-            "b": "ScriptUI.compatability.su1PanelCoordinates"
-          },
           "datatype": {
             "type": "Object"
           }
@@ -38,24 +35,15 @@
           "rwaccess": "readonly",
           "shortdesc": "An object whose properties define attributes of the environment in which ScriptUI operates.",
           "datatype": {
-            "type": {
-              "href": "#/Environment",
-              "$t": "Environment"
-            }
+            "type": "Environment"
           }
         },
         {
           "name": "events",
           "rwaccess": "readonly",
           "shortdesc": "An object whose properties and methods provide access to objects used in the ScriptUI event system.",
-          "description": {
-            "b": "createEvent&amp;&#35;40;&#41;"
-          },
           "datatype": {
-            "type": {
-              "href": "#/Events",
-              "$t": "Events"
-            }
+            "type": "Events"
           }
         },
         {
@@ -71,18 +59,12 @@
           "rwaccess": "readonly",
           "shortdesc": "A string containing the version number of the ScriptUI component framework",
           "datatype": {
-            "type": "Any"
+            "type": "Mixed"
           }
         },
         {
           "name": "Alignment",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "i": [
-              "alignment",
-              "alignChildren"
-            ]
-          },
           "description": "Predefined alignment values are: TOP, BOTTOM, LEFT, RIGHT, FILL, CENTER",
           "datatype": {
             "type": "String"
@@ -91,12 +73,6 @@
         {
           "name": "FontStyle",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "a": {
-              "href": "#/ScriptUI/newFont",
-              "$t": "ScriptUI.newFont&amp;&#35;40;&#41;"
-            }
-          },
           "description": "Predefined styles are REGULAR, BOLD, ITALIC, BOLDITALIC.",
           "datatype": {
             "type": "Object"
@@ -106,19 +82,17 @@
       "method": [
         {
           "name": "getResourceText",
-          "shortdesc": "Finds and returns the resource for a given text string from the host application&apos;s resource data.",
+          "shortdesc": "Finds and returns the resource for a given text string from the host application's resource data.",
           "description": "If no string resource matches the given text, the text itself is returned.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "text",
-                "shortdesc": "The text to match.",
-                "datatype": {
-                  "type": "String"
-                }
+          "parameters": [
+            {
+              "name": "text",
+              "shortdesc": "The text to match.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "String"
           }
@@ -127,91 +101,75 @@
           "name": "newImage",
           "shortdesc": "Loads a new image from resources or disk files into an image object.",
           "description": "Creates a new global image object for use in controls that can display images, loading the associated images from the specified resources or image files.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "normal",
-                "shortdesc": "The resource name or the disk file path to the image used for the normal state.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "disabled",
-                "optional": true,
-                "shortdesc": "The resource name, or the disk file path to the image used for the disabled state.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "pressed",
-                "optional": true,
-                "shortdesc": "The resource name, or the file-system path to the image used for the pressed state.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "rollover",
-                "optional": true,
-                "shortdesc": "The resource name, or the file-system path to the image used for the rollover state.",
-                "datatype": {
-                  "type": "String"
-                }
+          "parameters": [
+            {
+              "name": "normal",
+              "shortdesc": "The resource name or the disk file path to the image used for the normal state.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/ScriptUIImage",
-              "$t": "ScriptUIImage"
+            },
+            {
+              "name": "disabled",
+              "optional": true,
+              "shortdesc": "The resource name, or the disk file path to the image used for the disabled state.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "pressed",
+              "optional": true,
+              "shortdesc": "The resource name, or the file-system path to the image used for the pressed state.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "rollover",
+              "optional": true,
+              "shortdesc": "The resource name, or the file-system path to the image used for the rollover state.",
+              "datatype": {
+                "type": "String"
+              }
             }
+          ],
+          "datatype": {
+            "type": "ScriptUIImage"
           }
         },
         {
           "name": "newFont",
           "shortdesc": "Creates a new font object for use in text controls and titles.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "name",
-                "shortdesc": "The font name, or the font family name.",
-                "datatype": {
+          "parameters": [
+            {
+              "name": "name",
+              "shortdesc": "The font name, or the font family name.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "style",
+              "datatype": [
+                {
                   "type": "String"
-                }
-              },
-              {
-                "name": "style",
-                "shortdesc": {
-                  "a": {
-                    "href": "#/ScriptUI/class/FontStyle",
-                    "$t": "ScriptUI.FontStyle"
-                  }
                 },
-                "datatype": [
-                  {
-                    "type": "String"
-                  },
-                  {
-                    "type": "Number"
-                  }
-                ]
-              },
-              {
-                "name": "size",
-                "shortdesc": "The font size in points.",
-                "datatype": {
+                {
                   "type": "Number"
                 }
+              ]
+            },
+            {
+              "name": "size",
+              "shortdesc": "The font size in points.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/ScriptUIFont",
-              "$t": "ScriptUIFont"
             }
+          ],
+          "datatype": {
+            "type": "ScriptUIFont"
           }
         }
       ]

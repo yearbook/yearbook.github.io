@@ -10,54 +10,52 @@
           "name": "count",
           "shortdesc": "Displays the number of elements in the Group.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
           "name": "add",
           "shortdesc": "Creates a new Group.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "groupItems",
-                "shortdesc": "The objects to group.",
-                "datatype": {
-                  "type": "PageItem",
-                  "array": {}
-                }
-              },
-              {
-                "name": "layer",
-                "shortdesc": "The layer on which to create the Group. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Layer"
-                }
-              },
-              {
-                "name": "at",
-                "optional": true,
-                "shortdesc": "The location at which to insert the Group relative to the reference object or within the container object. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "LocationOptions",
-                  "value": "LocationOptions.UNKNOWN"
-                }
-              },
-              {
-                "name": "reference",
-                "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "withProperties",
-                "shortdesc": "Initial values for properties of the new Group &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "Object"
-                }
+          "parameters": [
+            {
+              "name": "groupItems",
+              "shortdesc": "The objects to group.",
+              "datatype": {
+                "type": "PageItem",
+                "array": true
               }
-            ]
-          },
+            },
+            {
+              "name": "layer",
+              "shortdesc": "The layer on which to create the Group. &#40;Optional)",
+              "datatype": {
+                "type": "Layer"
+              }
+            },
+            {
+              "name": "at",
+              "optional": true,
+              "shortdesc": "The location at which to insert the Group relative to the reference object or within the container object. &#40;Optional)",
+              "datatype": {
+                "type": "LocationOptions",
+                "value": "LocationOptions.UNKNOWN"
+              }
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. &#40;Optional)",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new Group &#40;Optional)",
+              "datatype": {
+                "type": "Object"
+              }
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -65,17 +63,15 @@
         {
           "name": "item",
           "shortdesc": "Returns the Group with the specified index or name.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "index",
-                "shortdesc": "The index or name. Can accept: Long Integer or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index or name. Can accept: Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -83,17 +79,15 @@
         {
           "name": "itemByName",
           "shortdesc": "Returns the Group with the specified name.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "name",
-                "shortdesc": "The name.",
-                "datatype": {
-                  "type": "string"
-                }
+          "parameters": [
+            {
+              "name": "name",
+              "shortdesc": "The name.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -101,17 +95,15 @@
         {
           "name": "itemByID",
           "shortdesc": "Returns the Group with the specified ID.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "id",
-                "shortdesc": "The ID.",
-                "datatype": {
-                  "type": "number"
-                }
+          "parameters": [
+            {
+              "name": "id",
+              "shortdesc": "The ID.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -119,27 +111,25 @@
         {
           "name": "itemByRange",
           "shortdesc": "Returns the Groups within the specified range.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "from",
-                "shortdesc": "The Group, index, or name at the beginning of the range. Can accept: Group, Long Integer or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "to",
-                "shortdesc": "The Group, index, or name at the end of the range. Can accept: Group, Long Integer or String.",
-                "datatype": {
-                  "type": "mixed"
-                }
+          "parameters": [
+            {
+              "name": "from",
+              "shortdesc": "The Group, index, or name at the beginning of the range. Can accept: Group, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
               }
-            ]
-          },
+            },
+            {
+              "name": "to",
+              "shortdesc": "The Group, index, or name at the end of the range. Can accept: Group, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
           "datatype": {
             "type": "Group",
-            "array": {}
+            "array": true
           }
         },
         {
@@ -166,17 +156,15 @@
         {
           "name": "previousItem",
           "shortdesc": "Returns the Group with the index previous to the specified index.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "obj",
-                "shortdesc": "The index of the Group that follows the desired Group.",
-                "datatype": {
-                  "type": "Group"
-                }
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The index of the Group that follows the desired Group.",
+              "datatype": {
+                "type": "Group"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -184,17 +172,15 @@
         {
           "name": "nextItem",
           "shortdesc": "Returns the Group whose index follows the specified Group in the collection.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "obj",
-                "shortdesc": "The Group whose index comes before the desired Group.",
-                "datatype": {
-                  "type": "Group"
-                }
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The Group whose index comes before the desired Group.",
+              "datatype": {
+                "type": "Group"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -211,30 +197,28 @@
           "shortdesc": "Returns every Group in the collection.",
           "datatype": {
             "type": "Group",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the Group.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "[]",
           "shortdesc": "Returns the Group with the specified index.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "index",
-                "shortdesc": "The index.",
-                "datatype": {
-                  "type": "number"
-                }
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
+            }
+          ],
           "datatype": {
             "type": "Group"
           }
@@ -246,7 +230,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The number of objects in the collection.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         }
       ]

@@ -4,10 +4,6 @@
   "shortdesc": {
     "i": "graphics"
   },
-  "description": {
-    "i": "onDraw",
-    "b": {}
-  },
   "elements": [
     {
       "type": "class",
@@ -15,13 +11,6 @@
         {
           "name": "BrushType",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "i": "type",
-            "a": {
-              "href": "#/ScriptUIGraphics/newBrush",
-              "$t": "newBrush&amp;&#35;40;&#41;"
-            }
-          },
           "description": "Type constants are: SOLID_COLOR, THEME_COLOR.",
           "datatype": {
             "type": "Object"
@@ -30,13 +19,6 @@
         {
           "name": "PenType",
           "rwaccess": "readonly",
-          "shortdesc": {
-            "i": "type",
-            "a": {
-              "href": "#/ScriptUIGraphics/newPen",
-              "$t": "newPen&amp;&#35;40;&#41;"
-            }
-          },
           "description": "Type constants are: SOLID_COLOR, THEME_COLOR.",
           "datatype": {
             "type": "Object"
@@ -52,10 +34,7 @@
           "shortdesc": "The background color for containers; for non-containers, the parent background color.",
           "description": "The paint color and style is defined in this brush object.This property is only supported for controls like  dropdownlist, edittext, and listbox.",
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIBrush",
-              "$t": "ScriptUIBrush"
-            }
+            "type": "ScriptUIBrush"
           }
         },
         {
@@ -63,10 +42,7 @@
           "shortdesc": "The background color for containers when disabled or inactive; for non-containers, the parent background color.",
           "description": "The paint color and style is defined in this brush object.This property is only supported for controls like  dropdownlist, edittext, and listbox.",
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIBrush",
-              "$t": "ScriptUIBrush"
-            }
+            "type": "ScriptUIBrush"
           }
         },
         {
@@ -74,20 +50,14 @@
           "shortdesc": "The text color when the element is disabled or inactive.",
           "description": "The paint color and style is defined in this pen object.",
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIPen",
-              "$t": "ScriptUIPen"
-            }
+            "type": "ScriptUIPen"
           }
         },
         {
           "name": "font",
           "shortdesc": "The default font to use for displaying text.",
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIFont",
-              "$t": "ScriptUIFont"
-            }
+            "type": "ScriptUIFont"
           }
         },
         {
@@ -95,10 +65,7 @@
           "shortdesc": "The text color.",
           "description": "The paint color and style is defined in this pen object.",
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIPen",
-              "$t": "ScriptUIPen"
-            }
+            "type": "ScriptUIPen"
           }
         },
         {
@@ -106,10 +73,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The current drawing path, encapsulated in a path object.",
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIPath",
-              "$t": "ScriptUIPath"
-            }
+            "type": "ScriptUIPath"
           }
         },
         {
@@ -117,10 +81,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The current position in the current drawing path.",
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         }
       ],
@@ -128,525 +89,320 @@
         {
           "name": "newBrush",
           "shortdesc": "Creates a new painting brush object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": "The brush type, solid or theme.",
-                "description": {
-                  "i": [
-                    "ScriptUIGraphics.BrushType.SOLID_COLOR",
-                    "ScriptUIGraphics.BrushType.THEME_COLOR"
-                  ]
-                },
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "color",
-                "shortdesc": "The brush color.",
-                "description": {
-                  "li": [
-                    "If type is SOLID_COLOR, the color expressed as an array of three or four values, in the form [R, B, G, A] specifying the red, green, and blue values of the color and, optionally, the opacity &amp;&#35;40;alpha channel&#41;. All values are numbers in the range [0.0..1.0]. An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.",
-                    "If the type is THEME_COLOR, the name string of the theme. Theme colors are defined by the host application."
-                  ]
-                },
-                "datatype": [
-                  {
-                    "type": "Number",
-                    "array": {
-                      "size": 4
-                    }
-                  },
-                  {
-                    "type": "String"
-                  }
-                ]
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The brush type, solid or theme.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/ScriptUIBrush",
-              "$t": "ScriptUIBrush"
+            },
+            {
+              "name": "color",
+              "shortdesc": "The brush color.",
+              "datatype": [
+                {
+                  "type": "Number",
+                  "array": {
+                    "size": 4
+                  }
+                },
+                {
+                  "type": "String"
+                }
+              ]
             }
+          ],
+          "datatype": {
+            "type": "ScriptUIBrush"
           }
         },
         {
           "name": "newPen",
           "shortdesc": "Creates a new drawing pen object.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "type",
-                "shortdesc": "The pen type, solid or theme.",
-                "description": {
-                  "i": [
-                    "ScriptUIGraphics.PenType.SOLID_COLOR",
-                    "ScriptUIGraphics.PenType.THEME_COLOR"
-                  ]
-                },
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "color",
-                "shortdesc": "The pen color.",
-                "description": {
-                  "li": [
-                    "If type is SOLID_COLOR, the color expressed as an array of three or four values, in the form [R, B, G, A] specifying the red, green, and blue values of the color and, optionally, the opacity &amp;&#35;40;alpha channel&#41;. All values are numbers in the range [0.0..1.0]. An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.",
-                    "If the type is THEME_COLOR, the name string of the theme. Theme colors are defined by the host application."
-                  ]
-                },
-                "datatype": [
-                  {
-                    "type": "Number",
-                    "array": {
-                      "size": 4
-                    }
-                  },
-                  {
-                    "type": "String"
-                  }
-                ]
-              },
-              {
-                "name": "width",
-                "shortdesc": "The width of the pen line in pixels.",
-                "description": "The line is centered around the current point. For example, if the value is 2, drawing a line from &amp;&#35;40;0, 10&#41; to (5, 10) paints the two rows of pixels directly above and below y-position 10.",
-                "datatype": {
-                  "type": "Number"
-                }
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The pen type, solid or theme.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/ScriptUIPen",
-              "$t": "ScriptUIPen"
+            },
+            {
+              "name": "color",
+              "shortdesc": "The pen color.",
+              "datatype": [
+                {
+                  "type": "Number",
+                  "array": {
+                    "size": 4
+                  }
+                },
+                {
+                  "type": "String"
+                }
+              ]
+            },
+            {
+              "name": "width",
+              "shortdesc": "The width of the pen line in pixels.",
+              "description": "The line is centered around the current point. For example, if the value is 2, drawing a line from &#40;0, 10) to (5, 10) paints the two rows of pixels directly above and below y-position 10.",
+              "datatype": {
+                "type": "Number"
+              }
             }
+          ],
+          "datatype": {
+            "type": "ScriptUIPen"
           }
         },
         {
           "name": "newPath",
           "shortdesc": "Creates a new, empty path object.",
-          "description": {
-            "a": {
-              "href": "#/SciptUIGraphics/currentPath",
-              "$t": "currentPath"
-            }
-          },
           "datatype": {
-            "type": {
-              "href": "#/ScriptUIPath",
-              "$t": "ScriptUIPath"
-            }
+            "type": "ScriptUIPath"
           }
         },
         {
           "name": "closePath",
-          "shortdesc": "Closes the current path.",
-          "description": {
-            "a": [
-              {
-                "href": "#/ScriptUIGraphics/currentPoint",
-                "$t": "currentPoint"
-              },
-              {
-                "href": "#/ScriptUIGraphics/currentPath",
-                "$t": "currentPath"
-              }
-            ]
-          }
+          "shortdesc": "Closes the current path."
         },
         {
           "name": "moveTo",
-          "shortdesc": {
-            "a": {
-              "href": "#/ScriptUIGraphics/currentPath",
-              "$t": "currentPath"
+          "parameters": [
+            {
+              "name": "x",
+              "shortdesc": "The X coordinate for the new point, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "y",
+              "shortdesc": "The Y coordinate for the new point, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
             }
-          },
-          "description": {
-            "a": [
-              {
-                "href": "#/Point",
-                "$t": "Point"
-              },
-              {
-                "href": "#/ScriptUIGraphics/currentPoint",
-                "$t": "currentPoint"
-              }
-            ]
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "x",
-                "shortdesc": "The X coordinate for the new point, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "y",
-                "shortdesc": "The Y coordinate for the new point, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              }
-            ]
-          },
+          ],
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         },
         {
           "name": "lineTo",
-          "shortdesc": {
-            "a": {
-              "href": "#/ScriptUIGraphics/currentPath",
-              "$t": "currentPath"
+          "parameters": [
+            {
+              "name": "x",
+              "shortdesc": "The X coordinate for the destination point, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "y",
+              "shortdesc": "The Y coordinate for the destination point, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
             }
-          },
-          "description": {
-            "a": [
-              {
-                "href": "#/ScriptUIGraphics/currentPoint",
-                "$t": "currentPoint"
-              },
-              {
-                "href": "#/Point",
-                "$t": "Point"
-              },
-              {
-                "href": "#/ScriptUIGraphics/currentPoint",
-                "$t": "currentPoint"
-              }
-            ]
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "x",
-                "shortdesc": "The X coordinate for the destination point, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "y",
-                "shortdesc": "The Y coordinate for the destination point, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              }
-            ]
-          },
+          ],
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         },
         {
           "name": "rectPath",
-          "shortdesc": {
-            "a": {
-              "href": "#/ScriptUIGraphics/currentPath",
-              "$t": "currentPath"
+          "parameters": [
+            {
+              "name": "left",
+              "shortdesc": "The left coordinate relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "top",
+              "shortdesc": "The top coordinate relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "width",
+              "shortdesc": "The width in pixels.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "height",
+              "shortdesc": "The height in pixels.",
+              "datatype": {
+                "type": "Number"
+              }
             }
-          },
-          "description": {
-            "a": [
-              {
-                "href": "#/ScriptUIGraphics/fillPath",
-                "$t": "fillPath&amp;&#35;40;&#41;"
-              },
-              {
-                "href": "#/ScriptUIGraphics/strokePath",
-                "$t": "strokePath&amp;&#35;40;&#41;"
-              },
-              {
-                "href": "#/Point",
-                "$t": "Point"
-              },
-              {
-                "href": "#/ScriptUIGraphics/currentPoint",
-                "$t": "currentPoint"
-              }
-            ],
-            "br": {}
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "left",
-                "shortdesc": "The left coordinate relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "top",
-                "shortdesc": "The top coordinate relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "width",
-                "shortdesc": "The width in pixels.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "height",
-                "shortdesc": "The height in pixels.",
-                "datatype": {
-                  "type": "Number"
-                }
-              }
-            ]
-          },
+          ],
           "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
-            }
+            "type": "Point"
           }
         },
         {
           "name": "ellipsePath",
-          "shortdesc": {
-            "a": [
-              {
-                "href": "#/ScriptUIGraphics/currentPath",
-                "$t": "currentPath"
-              },
-              {
-                "href": "#/ScriptUIGraphics/fillPath",
-                "$t": "fillPath&amp;&#35;40;&#41;"
-              },
-              {
-                "href": "#/ScriptUIGraphics/strokePath",
-                "$t": "strokePath&amp;&#35;40;&#41;"
+          "parameters": [
+            {
+              "name": "left",
+              "shortdesc": "The left coordinate of the region, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
-          "description": {
-            "a": [
-              {
-                "href": "#/Point",
-                "$t": "Point"
-              },
-              {
-                "href": "#/ScriptUIGraphics/currentPoint",
-                "$t": "currentPoint"
+            },
+            {
+              "name": "top",
+              "shortdesc": "The top coordinate of the region, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "left",
-                "shortdesc": "The left coordinate of the region, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "top",
-                "shortdesc": "The top coordinate of the region, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "width",
-                "shortdesc": "The width of the region in pixels.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "height",
-                "shortdesc": "The height of the region in pixels.",
-                "datatype": {
-                  "type": "Number"
-                }
+            },
+            {
+              "name": "width",
+              "shortdesc": "The width of the region in pixels.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/Point",
-              "$t": "Point"
+            },
+            {
+              "name": "height",
+              "shortdesc": "The height of the region in pixels.",
+              "datatype": {
+                "type": "Number"
+              }
             }
+          ],
+          "datatype": {
+            "type": "Point"
           }
         },
         {
           "name": "strokePath",
           "shortdesc": "Strokes the path segments of a path with a given drawing pen.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "pen",
-                "shortdesc": "The drawing pen that defines the color and line width.",
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIPen",
-                    "$t": "ScriptUIPen"
-                  }
-                }
-              },
-              {
-                "name": "path",
-                "optional": true,
-                "shortdesc": {
-                  "a": {
-                    "href": "#/ScriptUIGraphics/currentPath",
-                    "$t": "currentPath"
-                  }
-                },
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIPath",
-                    "$t": "ScriptUIPath"
-                  }
-                }
+          "parameters": [
+            {
+              "name": "pen",
+              "shortdesc": "The drawing pen that defines the color and line width.",
+              "datatype": {
+                "type": "ScriptUIPen"
               }
-            ]
-          }
+            },
+            {
+              "name": "path",
+              "optional": true,
+              "datatype": {
+                "type": "ScriptUIPath"
+              }
+            }
+          ]
         },
         {
           "name": "fillPath",
           "shortdesc": "Fills a path using a given painting brush.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "brush",
-                "shortdesc": "The brush object that defines the fill color.",
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIBrush",
-                    "$t": "ScriptUIBrush"
-                  }
-                }
-              },
-              {
-                "name": "path",
-                "optional": true,
-                "shortdesc": {
-                  "a": {
-                    "href": "#/ScriptUIGraphics/currentPath",
-                    "$t": "currentPath"
-                  }
-                },
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIPath",
-                    "$t": "ScriptUIPath"
-                  }
-                }
+          "parameters": [
+            {
+              "name": "brush",
+              "shortdesc": "The brush object that defines the fill color.",
+              "datatype": {
+                "type": "ScriptUIBrush"
               }
-            ]
-          }
+            },
+            {
+              "name": "path",
+              "optional": true,
+              "datatype": {
+                "type": "ScriptUIPath"
+              }
+            }
+          ]
         },
         {
           "name": "drawFocusRing",
           "shortdesc": "Draws a focus ring within a region of this element.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "left",
-                "shortdesc": "The left coordinate of the region.",
-                "description": "Value is relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "top",
-                "shortdesc": "The top coordinate of the region.",
-                "description": "Value is relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "width",
-                "shortdesc": "The width of the region in pixels.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "height",
-                "shortdesc": "The height of the region in pixels.",
-                "datatype": {
-                  "type": "Number"
-                }
+          "parameters": [
+            {
+              "name": "left",
+              "shortdesc": "The left coordinate of the region.",
+              "description": "Value is relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          }
+            },
+            {
+              "name": "top",
+              "shortdesc": "The top coordinate of the region.",
+              "description": "Value is relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "width",
+              "shortdesc": "The width of the region in pixels.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "height",
+              "shortdesc": "The height of the region in pixels.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
         },
         {
           "name": "drawImage",
           "shortdesc": "Draws an image within a given region of the element.",
-          "description": "Uses the version of the image that is appropriate to the element&apos;s current state.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "image",
-                "shortdesc": "The image to draw.",
-                "description": "This object contains different versions of an image appropriate to various element states, such as a dimmed version for the disabled state.",
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIImage",
-                    "$t": "ScriptUIImage"
-                  }
-                }
-              },
-              {
-                "name": "left",
-                "shortdesc": "The left coordinate of the region, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "top",
-                "shortdesc": "The top coordinate of the region, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "width",
-                "optional": true,
-                "shortdesc": "The width in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image width.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "height",
-                "optional": true,
-                "shortdesc": "The height in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image height.",
-                "datatype": {
-                  "type": "Number"
-                }
+          "description": "Uses the version of the image that is appropriate to the element's current state.",
+          "parameters": [
+            {
+              "name": "image",
+              "shortdesc": "The image to draw.",
+              "description": "This object contains different versions of an image appropriate to various element states, such as a dimmed version for the disabled state.",
+              "datatype": {
+                "type": "ScriptUIImage"
               }
-            ]
-          }
+            },
+            {
+              "name": "left",
+              "shortdesc": "The left coordinate of the region, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "top",
+              "shortdesc": "The top coordinate of the region, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "width",
+              "optional": true,
+              "shortdesc": "The width in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image width.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "height",
+              "optional": true,
+              "shortdesc": "The height in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image height.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
         },
         {
           "name": "drawOSControl",
@@ -655,107 +411,73 @@
         {
           "name": "drawString",
           "shortdesc": "Draw a string of text starting at a given point in this element, using a given drawing pen and font.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "text",
-                "shortdesc": "The text string.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "pen",
-                "shortdesc": "The drawing pen to use.",
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIPen",
-                    "$t": "ScriptUIPen"
-                  }
-                }
-              },
-              {
-                "name": "x",
-                "shortdesc": "The left coordinate, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "y",
-                "shortdesc": "The top coordinate, relative to the origin of this element.",
-                "datatype": {
-                  "type": "Number"
-                }
-              },
-              {
-                "name": "font",
-                "optional": true,
-                "shortdesc": {
-                  "a": {
-                    "href": "#/ScriptUIGraphics/font",
-                    "$t": "font"
-                  }
-                },
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIFont",
-                    "$t": "ScriptUIFont"
-                  }
-                }
+          "parameters": [
+            {
+              "name": "text",
+              "shortdesc": "The text string.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          }
+            },
+            {
+              "name": "pen",
+              "shortdesc": "The drawing pen to use.",
+              "datatype": {
+                "type": "ScriptUIPen"
+              }
+            },
+            {
+              "name": "x",
+              "shortdesc": "The left coordinate, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "y",
+              "shortdesc": "The top coordinate, relative to the origin of this element.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "font",
+              "optional": true,
+              "datatype": {
+                "type": "ScriptUIFont"
+              }
+            }
+          ]
         },
         {
           "name": "measureString",
           "shortdesc": "Calculates the size needed to display a string using the given font.",
-          "description": {
-            "a": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
-            }
-          },
-          "parameters": {
-            "parameter": [
-              {
-                "name": "text",
-                "shortdesc": "The text string to measure.",
-                "datatype": {
-                  "type": "String"
-                }
-              },
-              {
-                "name": "font",
-                "optional": true,
-                "shortdesc": {
-                  "a": {
-                    "href": "#/ScriptUIGraphics/font",
-                    "$t": "font"
-                  }
-                },
-                "datatype": {
-                  "type": {
-                    "href": "#/ScriptUIFont",
-                    "$t": "ScriptUIFont"
-                  }
-                }
-              },
-              {
-                "name": "boundingWidth",
-                "optional": true,
-                "shortdesc": "The bounding width.",
-                "datatype": {
-                  "type": "Number"
-                }
+          "parameters": [
+            {
+              "name": "text",
+              "shortdesc": "The text string to measure.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
-          "datatype": {
-            "type": {
-              "href": "#/Dimension",
-              "$t": "Dimension"
+            },
+            {
+              "name": "font",
+              "optional": true,
+              "datatype": {
+                "type": "ScriptUIFont"
+              }
+            },
+            {
+              "name": "boundingWidth",
+              "optional": true,
+              "shortdesc": "The bounding width.",
+              "datatype": {
+                "type": "Number"
+              }
             }
+          ],
+          "datatype": {
+            "type": "Dimension"
           }
         }
       ]

@@ -15,15 +15,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the ObjectExportOption &amp;&#35;40;a ObjectStyle, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Group or TextFrame&#41;.",
+          "shortdesc": "The parent of the ObjectExportOption &#40;a ObjectStyle, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Group or TextFrame).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -60,28 +60,28 @@
           "name": "customAltText",
           "shortdesc": "The custom alternate text entered by the user",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "customActualText",
           "shortdesc": "The custom actual text entered by the user",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "altMetadataProperty",
           "shortdesc": "The metadata property to use as source of alternate text. Can return: Ordered array containing namespacePrefix:String, propertyPath:String.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
           "name": "actualMetadataProperty",
           "shortdesc": "The metadata property to use as source of actual text. Can return: Ordered array containing namespacePrefix:String, propertyPath:String.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -95,7 +95,7 @@
           "name": "customImageConversion",
           "shortdesc": "If true, custom image conversion is enabled for object",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -130,7 +130,7 @@
           "name": "gifOptionsInterlaced",
           "shortdesc": "If true, generates interlaced GIFs. Note: Not valid  when image conversion is JPEG.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -158,7 +158,7 @@
           "name": "imageSpaceBefore",
           "shortdesc": "Space Before applied to images",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 0,
             "max": 8640
           }
@@ -167,7 +167,7 @@
           "name": "imageSpaceAfter",
           "shortdesc": "Space After applied to images",
           "datatype": {
-            "type": "number",
+            "type": "Number",
             "min": 0,
             "max": 8640
           }
@@ -176,7 +176,7 @@
           "name": "useImagePageBreak",
           "shortdesc": "If true, image page break settings will be used in objects",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -190,7 +190,7 @@
           "name": "customLayout",
           "shortdesc": "If true, custom layout is enabled for object",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
@@ -213,21 +213,21 @@
           "name": "altText",
           "shortdesc": "Provides the alternate text for the object",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "actualText",
           "shortdesc": "Provides the actual text for the object",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the ObjectExportOption.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -235,46 +235,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "ObjectExportOption",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -282,35 +280,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]

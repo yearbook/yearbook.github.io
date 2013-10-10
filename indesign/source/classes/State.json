@@ -11,7 +11,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The unique ID of the State.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -19,15 +19,15 @@
           "rwaccess": "readonly",
           "shortdesc": "Returns true if the object specifier resolves to valid objects.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "parent",
           "rwaccess": "readonly",
-          "shortdesc": "The parent of the State &amp;&#35;40;a Button, MultiStateObject, CheckBox or RadioButton&#41;.",
+          "shortdesc": "The parent of the State &#40;a Button, MultiStateObject, CheckBox or RadioButton).",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -35,7 +35,7 @@
           "rwaccess": "readonly",
           "shortdesc": "The index of the State within its containing object.",
           "datatype": {
-            "type": "number"
+            "type": "Number"
           }
         },
         {
@@ -57,7 +57,7 @@
         {
           "name": "pageItems",
           "rwaccess": "readonly",
-          "shortdesc": "The page items collection, which can be used to process all page items in a container &amp;&#35;40;such as a document, page, or group&#41;, regardless of type.",
+          "shortdesc": "The page items collection, which can be used to process all page items in a container &#40;such as a document, page, or group), regardless of type.",
           "datatype": {
             "type": "PageItems"
           }
@@ -113,7 +113,7 @@
         {
           "name": "images",
           "rwaccess": "readonly",
-          "shortdesc": "A collection of bitmap images in any bitmap file format &amp;&#35;40;including TIFF, JPEG, or GIF&#41;.",
+          "shortdesc": "A collection of bitmap images in any bitmap file format &#40;including TIFF, JPEG, or GIF).",
           "datatype": {
             "type": "Images"
           }
@@ -121,7 +121,7 @@
         {
           "name": "graphics",
           "rwaccess": "readonly",
-          "shortdesc": "A collection of imported graphics in any graphic file format &amp;&#35;40;vector, metafile, or bitmap&#41;.",
+          "shortdesc": "A collection of imported graphics in any graphic file format &#40;vector, metafile, or bitmap).",
           "datatype": {
             "type": "Graphics"
           }
@@ -178,28 +178,28 @@
           "name": "name",
           "shortdesc": "The name of the State.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "active",
           "shortdesc": "If true, the state is active in the exported PDF.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "enabled",
           "shortdesc": "If true, the state is enabled in PDF documents.",
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         },
         {
           "name": "statetype",
-          "shortdesc": "For a button, the type of user action that dictates the object&apos;s appearance. For a MultiStateObject, which has no user actions associated with states, this property is a numeric value uniquely identifying the state. Can return: StateTypes enumerator or Long Integer.",
+          "shortdesc": "For a button, the type of user action that dictates the object's appearance. For a MultiStateObject, which has no user actions associated with states, this property is a numeric value uniquely identifying the state. Can return: StateTypes enumerator or Long Integer.",
           "datatype": {
-            "type": "mixed"
+            "type": "Mixed"
           }
         },
         {
@@ -213,38 +213,34 @@
       "method": [
         {
           "name": "releaseAsObject",
-          "shortdesc": "Releases this state&apos;s appearance as a page item, removing the state from its parent object."
+          "shortdesc": "Releases this state's appearance as a page item, removing the state from its parent object."
         },
         {
           "name": "move",
           "shortdesc": "Moves the state to a new position in its parent collection.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "newPosition",
-                "shortdesc": "the index to move the state to in its parent collection",
-                "datatype": {
-                  "type": "number"
-                }
+          "parameters": [
+            {
+              "name": "newPosition",
+              "shortdesc": "the index to move the state to in its parent collection",
+              "datatype": {
+                "type": "Number"
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "addItemsToState",
           "shortdesc": "Adds page items to this state.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "pageitems",
-                "shortdesc": "One or more page items to add to this state.",
-                "datatype": {
-                  "type": "PageItem",
-                  "array": {}
-                }
+          "parameters": [
+            {
+              "name": "pageitems",
+              "shortdesc": "One or more page items to add to this state.",
+              "datatype": {
+                "type": "PageItem",
+                "array": true
               }
-            ]
-          }
+            }
+          ]
         },
         {
           "name": "remove",
@@ -254,7 +250,7 @@
           "name": "toSource",
           "shortdesc": "Generates a string which, if executed, will return the State.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
@@ -262,46 +258,44 @@
           "shortdesc": "Resolves the object specifier, creating an array of object references.",
           "datatype": {
             "type": "State",
-            "array": {}
+            "array": true
           }
         },
         {
           "name": "toSpecifier",
           "shortdesc": "Retrieves the object specifier.",
           "datatype": {
-            "type": "string"
+            "type": "String"
           }
         },
         {
           "name": "addEventListener",
           "shortdesc": "Adds an event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
             "type": "EventListener"
           }
@@ -309,35 +303,33 @@
         {
           "name": "removeEventListener",
           "shortdesc": "Removes the event listener.",
-          "parameters": {
-            "parameter": [
-              {
-                "name": "eventType",
-                "shortdesc": "The registered event type.",
-                "datatype": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "handler",
-                "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-                "datatype": {
-                  "type": "mixed"
-                }
-              },
-              {
-                "name": "captures",
-                "optional": true,
-                "shortdesc": "This parameter is obsolete. &amp;&#35;40;Optional&#41;",
-                "datatype": {
-                  "type": "bool",
-                  "value": false
-                }
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
               }
-            ]
-          },
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. &#40;Optional)",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
           "datatype": {
-            "type": "bool"
+            "type": "Boolean"
           }
         }
       ]
