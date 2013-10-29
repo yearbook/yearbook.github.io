@@ -1,0 +1,238 @@
+{
+  "name": "TextRange",
+  "dynamic": true,
+  "shortdesc": "A range of characters from a text item.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "characterOffset",
+          "shortdesc": "Offset of the first character of the range from the beginning of the story, in characters.",
+          "datatype": {
+            "type": "Int32"
+          }
+        },
+        {
+          "name": "length",
+          "shortdesc": "Length of text range.",
+          "datatype": {
+            "type": "Int32",
+            "min": 0
+          }
+        },
+        {
+          "name": "contents",
+          "shortdesc": "The text string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "kerning",
+          "shortdesc": "Controls the spacing between two characters (in milli-ems)",
+          "datatype": {
+            "type": "Int32"
+          }
+        },
+        {
+          "name": "story",
+          "rwaccess": "readonly",
+          "shortdesc": "The story of the text range.",
+          "datatype": {
+            "type": "Story"
+          }
+        },
+        {
+          "name": "textSelection",
+          "rwaccess": "readonly",
+          "shortdesc": "The selected text (ranges) in the text range.",
+          "datatype": {
+            "type": "TextRange",
+            "array": true
+          }
+        },
+        {
+          "name": "characters",
+          "rwaccess": "readonly",
+          "shortdesc": "All the characters in this text range.",
+          "datatype": {
+            "type": "Characters"
+          }
+        },
+        {
+          "name": "words",
+          "rwaccess": "readonly",
+          "shortdesc": "All the words in this text range.",
+          "datatype": {
+            "type": "Words"
+          }
+        },
+        {
+          "name": "lines",
+          "rwaccess": "readonly",
+          "shortdesc": "All the lines in this text range.",
+          "datatype": {
+            "type": "Lines"
+          }
+        },
+        {
+          "name": "paragraphs",
+          "rwaccess": "readonly",
+          "shortdesc": "All the paragraphs in this text range.",
+          "datatype": {
+            "type": "Paragraphs"
+          }
+        },
+        {
+          "name": "textRanges",
+          "rwaccess": "readonly",
+          "shortdesc": "All the text in this text range.",
+          "datatype": {
+            "type": "TextRanges"
+          }
+        },
+        {
+          "name": "insertionPoints",
+          "rwaccess": "readonly",
+          "shortdesc": "All the insertion points in this text range.",
+          "datatype": {
+            "type": "InsertionPoints"
+          }
+        },
+        {
+          "name": "characterStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "List of referenced character styles in the text range.",
+          "datatype": {
+            "type": "CharacterStyles"
+          }
+        },
+        {
+          "name": "paragraphStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "List of referenced paragraph styles in the text range.",
+          "datatype": {
+            "type": "ParagraphStyles"
+          }
+        },
+        {
+          "name": "characterAttributes",
+          "rwaccess": "readonly",
+          "shortdesc": "The character properties for the text range.",
+          "datatype": {
+            "type": "CharacterAttributes"
+          }
+        },
+        {
+          "name": "paragraphAttributes",
+          "rwaccess": "readonly",
+          "shortdesc": "The paragraph properties for the text range.",
+          "datatype": {
+            "type": "ParagraphAttributes"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Move the object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "TextRange"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "TextRange"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "select",
+          "shortdesc": "Select the text range.",
+          "parameters": [
+            {
+              "name": "addToDocument",
+              "optional": true,
+              "shortdesc": "Whether to add the text range to the document text selection.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "deSelect",
+          "shortdesc": "Deselect the text range."
+        },
+        {
+          "name": "changeCaseTo",
+          "shortdesc": "Change the capitalization of text.",
+          "parameters": [
+            {
+              "name": "type",
+              "shortdesc": "The type of case.",
+              "datatype": {
+                "type": "CaseChangeType"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

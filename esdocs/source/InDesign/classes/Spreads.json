@@ -1,0 +1,226 @@
+{
+  "name": "Spreads",
+  "dynamic": true,
+  "shortdesc": "A collection of spreads.",
+  "elements": [
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "count",
+          "shortdesc": "Displays the number of elements in the Spread.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "add",
+          "shortdesc": "Creates a new spread.",
+          "parameters": [
+            {
+              "name": "at",
+              "optional": true,
+              "shortdesc": "The location of the spread relative to the reference object or within the document.  ",
+              "datatype": {
+                "type": "LocationOptions",
+                "value": "LocationOptions.UNKNOWN"
+              }
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the at parameter specifies before or after. Can accept: Spread or Document. ",
+              "datatype": {
+                "type": "Mixed"
+              },
+              "optional": true
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new Spread ",
+              "datatype": {
+                "type": "Object"
+              },
+              "optional": true
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "item",
+          "shortdesc": "Returns the Spread with the specified index or name.",
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index or name. Can accept: Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "itemByName",
+          "shortdesc": "Returns the Spread with the specified name.",
+          "parameters": [
+            {
+              "name": "name",
+              "shortdesc": "The name.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "itemByID",
+          "shortdesc": "Returns the Spread with the specified ID.",
+          "parameters": [
+            {
+              "name": "id",
+              "shortdesc": "The ID.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "itemByRange",
+          "shortdesc": "Returns the Spreads within the specified range.",
+          "parameters": [
+            {
+              "name": "from",
+              "shortdesc": "The Spread, index, or name at the beginning of the range. Can accept: Spread, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "to",
+              "shortdesc": "The Spread, index, or name at the end of the range. Can accept: Spread, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread",
+            "array": true
+          }
+        },
+        {
+          "name": "firstItem",
+          "shortdesc": "Returns the first Spread in the collection.",
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "lastItem",
+          "shortdesc": "Returns the last Spread in the collection.",
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "middleItem",
+          "shortdesc": "Returns the middle Spread in the collection.",
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "previousItem",
+          "shortdesc": "Returns the Spread with the index previous to the specified index.",
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The index of the Spread that follows the desired Spread.",
+              "datatype": {
+                "type": "Spread"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "nextItem",
+          "shortdesc": "Returns the Spread whose index follows the specified Spread in the collection.",
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The Spread whose index comes before the desired Spread.",
+              "datatype": {
+                "type": "Spread"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "anyItem",
+          "shortdesc": "Returns any Spread in the collection.",
+          "datatype": {
+            "type": "Spread"
+          }
+        },
+        {
+          "name": "everyItem",
+          "shortdesc": "Returns every Spread in the collection.",
+          "datatype": {
+            "type": "Spread",
+            "array": true
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Spread.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "[]",
+          "shortdesc": "Returns the Spread with the specified index.",
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Spread"
+          }
+        }
+      ],
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of objects in the collection.",
+          "datatype": {
+            "type": "Number"
+          }
+        }
+      ]
+    }
+  ]
+}

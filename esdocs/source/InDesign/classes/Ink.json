@@ -1,0 +1,286 @@
+{
+  "name": "Ink",
+  "dynamic": true,
+  "shortdesc": "An ink.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isProcessInk",
+          "rwaccess": "readonly",
+          "shortdesc": "If true, the ink is a process ink.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the Ink.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "solidity",
+          "rwaccess": "readonly",
+          "shortdesc": "The solidity value of the ink. (Range: 0.0 to 1.0)",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 1
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the Ink.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Ink (a Application or Document).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Ink within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "aliasInkName",
+          "shortdesc": "The ink object to map this ink to.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "angle",
+          "shortdesc": "The angle of the ink. (Range: 0 to 360)",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 360
+          }
+        },
+        {
+          "name": "convertToProcess",
+          "shortdesc": "Converts spot inks to process inks.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "frequency",
+          "shortdesc": "The frequency of the ink. (Range: 1 to 500)",
+          "datatype": {
+            "type": "Number",
+            "min": 1,
+            "max": 500
+          }
+        },
+        {
+          "name": "neutralDensity",
+          "shortdesc": "The neutral density of the ink. (Range: 0.001 to 10.0)",
+          "datatype": {
+            "type": "Number",
+            "min": 0.001,
+            "max": 10
+          }
+        },
+        {
+          "name": "printInk",
+          "shortdesc": "If true, prints the ink. Only valid when printing separations.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "trapOrder",
+          "shortdesc": "The place of the ink in the trapping sequence.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "inkType",
+          "shortdesc": "The trapping type of the ink.",
+          "datatype": {
+            "type": "InkTypes"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Ink.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Ink",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

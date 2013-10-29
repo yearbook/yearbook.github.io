@@ -1,0 +1,283 @@
+{
+  "name": "Section",
+  "dynamic": true,
+  "shortdesc": "A section.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of pages in the section.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "alternateLayoutLength",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of pages in the alternate layout section.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the Section.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Section (a Document).",
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Section within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "alternateLayout",
+          "shortdesc": "The alternate layout name for a set of pages.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the Section.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "pageNumberStyle",
+          "shortdesc": "The page number style. Can return: PageNumberStyle enumerator or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "continueNumbering",
+          "shortdesc": "If true, continues page numbers sequentially from the previous section.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "includeSectionPrefix",
+          "shortdesc": "If true, places the specified prefix before page numbers on all pages in the section.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "pageNumberStart",
+          "shortdesc": "The page number assigned to the first page in the section. Note: Valid only when continue numbering is false.",
+          "datatype": {
+            "type": "Number",
+            "min": 1,
+            "max": 999999
+          }
+        },
+        {
+          "name": "marker",
+          "shortdesc": "The section marker.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "pageStart",
+          "shortdesc": "The start page for the section.",
+          "datatype": {
+            "type": "Page"
+          }
+        },
+        {
+          "name": "sectionPrefix",
+          "shortdesc": "The prefix to place before page numbers on pages in the section. May include up to 8 characters. Note: Valid only when include section prefix is true.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the Section."
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Section.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Section",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

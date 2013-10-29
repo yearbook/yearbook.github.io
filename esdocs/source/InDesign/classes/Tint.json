@@ -1,0 +1,289 @@
+{
+  "name": "Tint",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Color",
+    "$t": "Color"
+  },
+  "shortdesc": "A tint swatch.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "baseColor",
+          "rwaccess": "readonly",
+          "shortdesc": "The color that the tint is based on.",
+          "datatype": {
+            "type": "Color"
+          }
+        },
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the Tint.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "model",
+          "rwaccess": "readonly",
+          "shortdesc": "The color model.",
+          "datatype": {
+            "type": "ColorModel"
+          }
+        },
+        {
+          "name": "space",
+          "rwaccess": "readonly",
+          "shortdesc": "The color space.",
+          "datatype": {
+            "type": "ColorSpace"
+          }
+        },
+        {
+          "name": "colorValue",
+          "rwaccess": "readonly",
+          "shortdesc": "The ink values that create the color, specified as a percentage for each ink. Note: The number of values required and the range depends on the color space. For RGB, specify three values, with each value in the range 0 to 255; for CMYK, specify four values representing C, M, Y, and K, with each value in the range 0 to 100; for LAB, specify three values representing L (Range: 0 to 100), A (Range: -128 to 127), and B (Range: -128 to 127); for mixed ink, specify values for each ink in the ink list, with each value in the range 0 to 100.",
+          "datatype": {
+            "type": "Number",
+            "array": true
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the Tint.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Tint (a Application or Document).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Tint within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "tintValue",
+          "shortdesc": "The percent of the base color. (Range: 0 to 100)",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the swatch.",
+          "parameters": [
+            {
+              "name": "replacingWith",
+              "shortdesc": "The swatch to apply in place of the deleted swatch. ",
+              "datatype": {
+                "type": "Swatch"
+              },
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicates the Tint.",
+          "datatype": {
+            "type": "Tint"
+          }
+        },
+        {
+          "name": "merge",
+          "shortdesc": "Merges the specified swatches with the swatch.",
+          "parameters": [
+            {
+              "name": "with",
+              "shortdesc": "The swatches to merge. Can accept: Array of Swatches, Swatch or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Swatch"
+          }
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Tint.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Tint",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "name": "Documents",
+  "dynamic": true,
+  "shortdesc": "A collection of documents.",
+  "elements": [
+    {
+      "type": "class",
+      "method": [
+        {
+          "name": "addDocument",
+          "shortdesc": "Create a document from the preset.",
+          "parameters": [
+            {
+              "name": "startupPreset",
+              "shortdesc": "The name of startup document preset.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "presetSettings",
+              "shortdesc": "The custom document preset settings.",
+              "datatype": {
+                "type": "DocumentPreset"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "add",
+          "shortdesc": "A document.",
+          "parameters": [
+            {
+              "name": "documentColorSpace",
+              "optional": true,
+              "shortdesc": "The color model used for the document.",
+              "datatype": {
+                "type": "DocumentColorSpace",
+                "value": "DocumentColorSpace.CMYK"
+              }
+            },
+            {
+              "name": "width",
+              "optional": true,
+              "shortdesc": "Width of the artboard.",
+              "datatype": {
+                "type": "Number",
+                "value": 612
+              }
+            },
+            {
+              "name": "height",
+              "optional": true,
+              "shortdesc": "Height of the artboard.",
+              "datatype": {
+                "type": "Number",
+                "value": 792
+              }
+            },
+            {
+              "name": "numArtboards",
+              "optional": true,
+              "shortdesc": "Number of artboards for new document.Range (1:100).",
+              "datatype": {
+                "type": "Int32",
+                "value": 1
+              }
+            },
+            {
+              "name": "artboardLayout",
+              "optional": true,
+              "shortdesc": "Layout of artboards for new document.",
+              "datatype": {
+                "type": "DocumentArtboardLayout",
+                "value": "DocumentArtboardLayout.GridByRow"
+              }
+            },
+            {
+              "name": "artboardSpacing",
+              "optional": true,
+              "shortdesc": "Spacing between artboards for new document.",
+              "datatype": {
+                "type": "Number",
+                "value": 20
+              }
+            },
+            {
+              "name": "artboardRowsOrCols",
+              "optional": true,
+              "shortdesc": "Number of rows (for rows layout) OR column(for column layouts)of artboards.Range is 1 to (docNumArtboards - 1) or 1 for single row or column layouts.",
+              "datatype": {
+                "type": "Int32",
+                "value": 1
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Document"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "Number of elements in the collection.",
+          "datatype": {
+            "type": "int"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "getByName",
+          "shortdesc": "Get the first element in the collection with the provided name.",
+          "parameters": [
+            {
+              "name": "name",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "arrange",
+          "shortdesc": "Arranges the documents in the specified style.",
+          "parameters": [
+            {
+              "name": "layoutStyle",
+              "shortdesc": "The document layout style.",
+              "datatype": {
+                "type": "DocumentLayoutStyle"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

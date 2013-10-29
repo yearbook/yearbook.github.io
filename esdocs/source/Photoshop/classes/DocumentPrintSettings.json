@@ -1,0 +1,250 @@
+{
+  "name": "DocumentPrintSettings",
+  "dynamic": true,
+  "shortdesc": "Print settings for a document.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "caption",
+          "shortdesc": "Description field from File Info.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "labels",
+          "shortdesc": "Prints the document title.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "cornerCropMarks",
+          "shortdesc": "Print corner crop marks.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "centerCropMarks",
+          "shortdesc": "Print center crop marks.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "colorBars",
+          "shortdesc": "Print color calibration bars.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "registrationMarks",
+          "shortdesc": "Print registration marks.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "negative",
+          "shortdesc": "Invert the image colors.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "flip",
+          "shortdesc": "Flip the image horizontally.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "interpolate",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "vectorData",
+          "shortdesc": "Include vector data.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "backgroundColor",
+          "shortdesc": "Background color of page.",
+          "datatype": {
+            "type": "SolidColor"
+          }
+        },
+        {
+          "name": "renderIntent",
+          "shortdesc": "Color conversion intent when print space is different from the source space.",
+          "datatype": {
+            "type": "Intent"
+          }
+        },
+        {
+          "name": "hardProof",
+          "shortdesc": "Print a hard proof.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "printSpace",
+          "shortdesc": "Color space for printer. Can be nothing (meaning same as source); 'Working RGB', 'Working CMYK', 'Working Gray', 'Lab Color' (meaning one of the working spaces or Lab color); or a string specifying a specific colorspace (default is same as source).",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "mapBlack",
+          "shortdesc": "Map blacks.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "printSelected",
+          "shortdesc": "Print the selected area of the document.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "printBorder",
+          "shortdesc": "Width of the print border.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        },
+        {
+          "name": "bleedWidth",
+          "shortdesc": "Bleed width.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        },
+        {
+          "name": "colorHandling",
+          "shortdesc": "Color handling.",
+          "datatype": {
+            "type": "PrintColorHandling"
+          }
+        },
+        {
+          "name": "copies",
+          "shortdesc": "Number of copies.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "docPosition",
+          "shortdesc": "Position of image when printing.",
+          "datatype": {
+            "type": "DocPositionStyle"
+          }
+        },
+        {
+          "name": "posY",
+          "shortdesc": "Y position of image on page.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        },
+        {
+          "name": "posX",
+          "shortdesc": "X position of image on page.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        },
+        {
+          "name": "scale",
+          "shortdesc": "Scale of image on page.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "activePrinter",
+          "shortdesc": "Currently selected printer.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "printers",
+          "shortdesc": "List of available printers.",
+          "datatype": {
+            "type": "String",
+            "array": true
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "setPagePosition",
+          "shortdesc": "Set the position of the image on the page.",
+          "parameters": [
+            {
+              "name": "docPosition",
+              "shortdesc": "Position of the image on page when printing. Can be centered, scale to fit, or user defined.",
+              "datatype": {
+                "type": "DocPositionStyle"
+              }
+            },
+            {
+              "name": "posX",
+              "optional": true,
+              "shortdesc": "X position of image on page.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "posY",
+              "optional": true,
+              "shortdesc": "Y position of image on page.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "scale",
+              "optional": true,
+              "shortdesc": "Position of the image on page when printing. Can be centered, scale to fit, or user defined.",
+              "datatype": {
+                "type": "Number",
+                "value": 100
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

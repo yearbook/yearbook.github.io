@@ -1,0 +1,179 @@
+{
+  "name": "PasteboardPreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Pasteboard preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the PasteboardPreference (a Application or Document).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "pasteboardMargins",
+          "shortdesc": "The minimum horizontal and vertical pasteboard margins. A horizontal margin of -1 means one document page width",
+          "datatype": {
+            "type": "Mixed",
+            "array": true
+          }
+        },
+        {
+          "name": "previewBackgroundColor",
+          "shortdesc": "The color of the preview background, specified either as an array of three doubles, each in the range 0 to 255, representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "bleedGuideColor",
+          "shortdesc": "The color of bleed guides, specified either as an array of three doubles, each in the range 0 to 255, representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "slugGuideColor",
+          "shortdesc": "The color of slug guides, specified either as an array of three doubles, each in the range 0 to 255, representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "matchPreviewBackgroundToThemeColor",
+          "shortdesc": "If true, match the Preview Background color to Theme Color, else use the color-value specified in Preview Background color drop down.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the PasteboardPreference.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "PasteboardPreference",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

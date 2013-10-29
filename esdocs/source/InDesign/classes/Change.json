@@ -1,0 +1,259 @@
+{
+  "name": "Change",
+  "dynamic": true,
+  "shortdesc": "A tracked change made to a story.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "date",
+          "rwaccess": "readonly",
+          "shortdesc": "The date on which the tracked change was made. Note: Valid only when track changes is true.",
+          "datatype": {
+            "type": "Date"
+          }
+        },
+        {
+          "name": "changeType",
+          "rwaccess": "readonly",
+          "shortdesc": "The type of tracked change. Note: Valid only when track changes is true.",
+          "datatype": {
+            "type": "ChangeTypes"
+          }
+        },
+        {
+          "name": "userName",
+          "rwaccess": "readonly",
+          "shortdesc": "The user who made the change. Note: Valid only when track changes is true.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "storyOffset",
+          "rwaccess": "readonly",
+          "shortdesc": "The location of the first insertion point in the object (relative to the beginning of the story).",
+          "datatype": {
+            "type": "InsertionPoint"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Change (a Story, XmlStory or Cell).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Change within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "texts",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text objects.",
+          "datatype": {
+            "type": "Texts"
+          }
+        },
+        {
+          "name": "characters",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of characters.",
+          "datatype": {
+            "type": "Characters"
+          }
+        },
+        {
+          "name": "words",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of words.",
+          "datatype": {
+            "type": "Words"
+          }
+        },
+        {
+          "name": "lines",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of lines.",
+          "datatype": {
+            "type": "Lines"
+          }
+        },
+        {
+          "name": "textColumns",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text columns.",
+          "datatype": {
+            "type": "TextColumns"
+          }
+        },
+        {
+          "name": "paragraphs",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of paragraphs.",
+          "datatype": {
+            "type": "Paragraphs"
+          }
+        },
+        {
+          "name": "insertionPoints",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of insertion points.",
+          "datatype": {
+            "type": "InsertionPoints"
+          }
+        },
+        {
+          "name": "textStyleRanges",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text style ranges.",
+          "datatype": {
+            "type": "TextStyleRanges"
+          }
+        },
+        {
+          "name": "textVariableInstances",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of text variable instances.",
+          "datatype": {
+            "type": "TextVariableInstances"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "accept",
+          "shortdesc": "Accepts the tracked change. Note: Valid only when track changes is true."
+        },
+        {
+          "name": "reject",
+          "shortdesc": "Rejects the tracked change. Note: Valid only when track changes is true."
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Change.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Change",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

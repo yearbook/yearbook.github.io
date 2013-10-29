@@ -1,0 +1,95 @@
+{
+  "name": "TracingObject",
+  "dynamic": true,
+  "shortdesc": "A tracing object.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "sourceArt",
+          "rwaccess": "readonly",
+          "shortdesc": "The source art used when creating a new tracing object.",
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "tracingOptions",
+          "rwaccess": "readonly",
+          "shortdesc": "The options used when tracing the artwork.",
+          "datatype": {
+            "type": "TracingOptions"
+          }
+        },
+        {
+          "name": "pathCount",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of paths in the tracing result.",
+          "datatype": {
+            "type": "Int32"
+          }
+        },
+        {
+          "name": "anchorCount",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of anchors in the tracing result.",
+          "datatype": {
+            "type": "Int32"
+          }
+        },
+        {
+          "name": "usedColorCount",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of colors used in the tracing result.",
+          "datatype": {
+            "type": "Int32"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "releaseTracing",
+          "shortdesc": "Release the source artwork for the tracing object. Deletes this tracing object.",
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "expandTracing",
+          "shortdesc": "Expand the tracing to paths. Deletes this tracing object.",
+          "parameters": [
+            {
+              "name": "viewed",
+              "optional": true,
+              "shortdesc": "Expand as viewed with the raster and vector view modes.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "GroupItem"
+          }
+        }
+      ]
+    }
+  ]
+}

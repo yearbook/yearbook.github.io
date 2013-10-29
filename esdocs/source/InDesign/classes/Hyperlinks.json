@@ -1,0 +1,224 @@
+{
+  "name": "Hyperlinks",
+  "dynamic": true,
+  "shortdesc": "A collection of hyperlinks.",
+  "elements": [
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "add",
+          "shortdesc": "Creates a new hyperlink.",
+          "parameters": [
+            {
+              "name": "hyperlinkSource",
+              "shortdesc": "The hyperlinked object. Can accept: HyperlinkPageItemSource, HyperlinkTextSource or CrossReferenceSource.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "hyperlinkDestination",
+              "shortdesc": "The destination that the hyperlink points to. Can accept: Ordered array containing fileName:String, volumn:String, directoryId:Long Integer, dataLinkClassId:Long Integer, destinationUid:Long Integer, HyperlinkTextDestination, HyperlinkPageDestination, HyperlinkExternalPageDestination, HyperlinkURLDestination or ParagraphDestination. ",
+              "datatype": {
+                "type": "Mixed"
+              },
+              "optional": true
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new Hyperlink ",
+              "datatype": {
+                "type": "Object"
+              },
+              "optional": true
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "count",
+          "shortdesc": "Displays the number of elements in the Hyperlink.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "item",
+          "shortdesc": "Returns the Hyperlink with the specified index or name.",
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index or name. Can accept: Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "itemByName",
+          "shortdesc": "Returns the Hyperlink with the specified name.",
+          "parameters": [
+            {
+              "name": "name",
+              "shortdesc": "The name.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "itemByID",
+          "shortdesc": "Returns the Hyperlink with the specified ID.",
+          "parameters": [
+            {
+              "name": "id",
+              "shortdesc": "The ID.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "itemByRange",
+          "shortdesc": "Returns the Hyperlinks within the specified range.",
+          "parameters": [
+            {
+              "name": "from",
+              "shortdesc": "The Hyperlink, index, or name at the beginning of the range. Can accept: Hyperlink, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "to",
+              "shortdesc": "The Hyperlink, index, or name at the end of the range. Can accept: Hyperlink, Long Integer or String.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink",
+            "array": true
+          }
+        },
+        {
+          "name": "firstItem",
+          "shortdesc": "Returns the first Hyperlink in the collection.",
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "lastItem",
+          "shortdesc": "Returns the last Hyperlink in the collection.",
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "middleItem",
+          "shortdesc": "Returns the middle Hyperlink in the collection.",
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "previousItem",
+          "shortdesc": "Returns the Hyperlink with the index previous to the specified index.",
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The index of the Hyperlink that follows the desired Hyperlink.",
+              "datatype": {
+                "type": "Hyperlink"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "nextItem",
+          "shortdesc": "Returns the Hyperlink whose index follows the specified Hyperlink in the collection.",
+          "parameters": [
+            {
+              "name": "obj",
+              "shortdesc": "The Hyperlink whose index comes before the desired Hyperlink.",
+              "datatype": {
+                "type": "Hyperlink"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "anyItem",
+          "shortdesc": "Returns any Hyperlink in the collection.",
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        },
+        {
+          "name": "everyItem",
+          "shortdesc": "Returns every Hyperlink in the collection.",
+          "datatype": {
+            "type": "Hyperlink",
+            "array": true
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Hyperlink.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "[]",
+          "shortdesc": "Returns the Hyperlink with the specified index.",
+          "parameters": [
+            {
+              "name": "index",
+              "shortdesc": "The index.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Hyperlink"
+          }
+        }
+      ],
+      "property": [
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "The number of objects in the collection.",
+          "datatype": {
+            "type": "Number"
+          }
+        }
+      ]
+    }
+  ]
+}

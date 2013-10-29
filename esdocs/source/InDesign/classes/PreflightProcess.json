@@ -1,0 +1,238 @@
+{
+  "name": "PreflightProcess",
+  "dynamic": true,
+  "shortdesc": "An active preflight process.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "targetObject",
+          "rwaccess": "readonly",
+          "shortdesc": "The target document the process is inspecting.",
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "appliedProfile",
+          "rwaccess": "readonly",
+          "shortdesc": "The preflight profile the process is using.",
+          "datatype": {
+            "type": "PreflightProfile"
+          }
+        },
+        {
+          "name": "description",
+          "rwaccess": "readonly",
+          "shortdesc": "The description of the PreflightProcess.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "processResults",
+          "rwaccess": "readonly",
+          "shortdesc": "The results found by the process as a large string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "processInventory",
+          "rwaccess": "readonly",
+          "shortdesc": "A string containing a description of all elements visited by the process.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "aggregatedResults",
+          "rwaccess": "readonly",
+          "shortdesc": "The aggregated results found by the process. Can return: Ordered array containing documentName:String, profileName:String, results:Array of Ordered array containing parentNodeID:Long Integer, errorName:String, pageNumber:String, errorInfo:String, errorDetail:Array of Ordered array containing label:String, description:String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the PreflightProcess (a Application).",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the PreflightProcess within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the PreflightProcess."
+        },
+        {
+          "name": "waitForProcess",
+          "shortdesc": "Waits for the process to finish, up to an optional maximum amount of time. No other processes get cycles during this time.",
+          "parameters": [
+            {
+              "name": "waitTime",
+              "shortdesc": "The maximum time to wait, in seconds; if omitted, waits until completion no matter how long it takes. ",
+              "datatype": {
+                "type": "Number"
+              },
+              "optional": true
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "saveReport",
+          "shortdesc": "Saves a report of the completed preflight process.",
+          "parameters": [
+            {
+              "name": "to",
+              "shortdesc": "The preflight report to save to.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "autoOpen",
+              "optional": true,
+              "shortdesc": "If true, automatically open the report after creation. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the PreflightProcess.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "PreflightProcess",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

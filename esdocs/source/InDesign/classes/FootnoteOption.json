@@ -1,0 +1,455 @@
+{
+  "name": "FootnoteOption",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Options for specifying default footnote formatting.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the FootnoteOption (a Application or Document).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "footnoteNumberingStyle",
+          "shortdesc": "The footnote numbering style. Can return: FootnoteNumberingStyle enumerator or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "startAt",
+          "shortdesc": "The number at which to start footnote numbering.",
+          "datatype": {
+            "type": "Number",
+            "min": 1,
+            "max": 100000
+          }
+        },
+        {
+          "name": "restartNumbering",
+          "shortdesc": "The point at which to restart footnote numbering. Can return: FootnoteRestarting enumerator or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "showPrefixSuffix",
+          "shortdesc": "The position of the footnote prefix and/or suffix. Can return: FootnotePrefixSuffix enumerator or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "prefix",
+          "shortdesc": "The prefix text of the footnote. (Limit: 0 to 100 characters)",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "suffix",
+          "shortdesc": "The suffix text of the footnote. (Limit: 0 to 100 characters)",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "footnoteTextStyle",
+          "shortdesc": "The paragraph style to apply to footnotes. Note: The space before and after the paragraph defined in the paragraph style is ignored for footnotes. To define space above and between footnotes, see spacer and space between.",
+          "datatype": {
+            "type": "ParagraphStyle"
+          }
+        },
+        {
+          "name": "footnoteMarkerStyle",
+          "shortdesc": "The character style to apply to footnote reference numbers in the main text.",
+          "datatype": {
+            "type": "CharacterStyle"
+          }
+        },
+        {
+          "name": "markerPositioning",
+          "shortdesc": "The position of footnote reference numbers in the main text. Can return: FootnoteMarkerPositioning enumerator or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "separatorText",
+          "shortdesc": "The text to insert between the footnote marker number and the footnote text. (Range: 0 to 100 characters)",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "spaceBetween",
+          "shortdesc": "The amount of vertical space between footnotes. Note: The space before and space after defined for the paragraph style applied to the footnote is ignored.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 864
+          }
+        },
+        {
+          "name": "spacer",
+          "shortdesc": "The minimum amount of vertical space between the bottom of the text column and the first footnote. Note: The space before amount defined in the paragraph style applied to the footnote is ignored for the first footnote.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 864
+          }
+        },
+        {
+          "name": "footnoteFirstBaselineOffset",
+          "shortdesc": "The distance between the top of the footnote container and the footnote text.",
+          "datatype": {
+            "type": "FootnoteFirstBaseline"
+          }
+        },
+        {
+          "name": "footnoteMinimumFirstBaselineOffset",
+          "shortdesc": "The minimum distance between the baseline of the text and the top of the footnote container.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 103680
+          }
+        },
+        {
+          "name": "eosPlacement",
+          "shortdesc": "If true, footnotes at the end of the story are placed just below the text. If false, footnotes at the end of the story are placed at the bottom of the column.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "noSplitting",
+          "shortdesc": "If true, footnotes cannot split across columns. If false, footnotes flow into succeeding columns when the footnote text causes the footnote area to expand upward to reach the footnote reference number in the main text.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "ruleOn",
+          "shortdesc": "If true, draws a rule between the text and the first footnote in the column.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "ruleType",
+          "shortdesc": "The stroke type of the rule above the first footnote in a column. Note: Valid when rule on is true. Can return: StrokeStyle or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "ruleLineWeight",
+          "shortdesc": "The stroke weight of the rule above the first footnote in the column. (Range: 0 to 1000) Note: Valid when rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 1000
+          }
+        },
+        {
+          "name": "ruleColor",
+          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the stroke of the rule above the first footnote in the column. Note: Valid when rule on is true. Can return: Swatch or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "ruleGapColor",
+          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the stroke gap of the rule above the first footnote in the column. Note: Valid when rule type is not solid. Can return: Swatch or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "ruleTint",
+          "shortdesc": "The tint (as a percentage) of the rule above the first footnote in the column. (Range: 0 to 100) Note: Valid when rule on is true.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "ruleGapTint",
+          "shortdesc": "The tint (as a percentage) of the gap color of the rule above the first footnote in the column. (Range: 0 to 100) Note: Valid when rule type is not solid.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "ruleGapOverprint",
+          "shortdesc": "If true, overprints the gap color of the rule above the first footnote in the column. Note: Valid when rule type is not solid.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "ruleOverprint",
+          "shortdesc": "If true, overprints the rule above the first footnote in the column. Note: Valid when rule on is true.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "ruleLeftIndent",
+          "shortdesc": "The amount to left indent the rule above the first footnote in the column. Note: Valid when rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": -103680,
+            "max": 103680
+          }
+        },
+        {
+          "name": "ruleWidth",
+          "shortdesc": "The length of the rule above the first footnote in the column. Note: Valid when rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 103680
+          }
+        },
+        {
+          "name": "ruleOffset",
+          "shortdesc": "The vertical offset of the rule above the first footnote in the column. Note: Valid when rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": -15552,
+            "max": 15552
+          }
+        },
+        {
+          "name": "continuingRuleOn",
+          "shortdesc": "If true, draws a rule above footnote text that continues from a previous column. Note: Valid when no splitting is false or undefined.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "continuingRuleType",
+          "shortdesc": "The stroke type of the rule above continued footnote text. Note: Valid when continuing rule on is true. Can return: StrokeStyle or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "continuingRuleLineWeight",
+          "shortdesc": "The stroke weight of the rule above continued footnote text. (Range: 0 to 1000) Note: Valid when continuing rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 1000
+          }
+        },
+        {
+          "name": "continuingRuleColor",
+          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the rule above continued footnote text. Note: Valid when continuing rule on is true. Can return: Swatch or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "continuingRuleGapColor",
+          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the stroke gap of the rule above continued footnote text. Note: Valid when continuing rule type is not solid. Can return: Swatch or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "continuingRuleTint",
+          "shortdesc": "The tint (as a percentage) of the rule above continued footnote text. (Range: 0 to 100) Note: Valid when continuing rule type is not solid.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "continuingRuleGapTint",
+          "shortdesc": "The tint (as a percentage) of the gap color of the rule above continued footnote text. (Range: 0 to 100) Note: Valid when continuing rule type is not solid.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "continuingRuleOverprint",
+          "shortdesc": "If true, overprints the rule above continued footnote text. Note: Valid when continuing rule on is true.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "continuingRuleGapOverprint",
+          "shortdesc": "If true, overprints the gap color of the rule above continued footnote text. Note: Valid when continuing rule type is not solid.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "continuingRuleLeftIndent",
+          "shortdesc": "The amount to left indent the rule above continued footnote text. Note: Valid when continuing rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": -103680,
+            "max": 103680
+          }
+        },
+        {
+          "name": "continuingRuleWidth",
+          "shortdesc": "The length of the rule above continued footnote text. Note: Valid when continuing rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 103680
+          }
+        },
+        {
+          "name": "continuingRuleOffset",
+          "shortdesc": "The vertical offset of the rule above continued footnote text. Note: Valid when continuing rule on is true.",
+          "datatype": {
+            "type": "Mixed",
+            "min": -15552,
+            "max": 15552
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the FootnoteOption.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "FootnoteOption",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

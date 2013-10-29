@@ -1,0 +1,240 @@
+{
+  "name": "TextVariableInstance",
+  "dynamic": true,
+  "shortdesc": "A text variable instance in the text.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the TextVariableInstance.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "resultText",
+          "rwaccess": "readonly",
+          "shortdesc": "The text that replaces the variable marker. Note: This property cannot be set; it can be used only to update variables. .",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "storyOffset",
+          "rwaccess": "readonly",
+          "shortdesc": "The insertion point before the table in the story containing the table.",
+          "datatype": {
+            "type": "InsertionPoint"
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the TextVariableInstance.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the TextVariableInstance (a XmlStory, TextFrame, Story, Note, Cell, Footnote or Change).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the TextVariableInstance within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "associatedTextVariable",
+          "shortdesc": "The associated text variable.",
+          "datatype": {
+            "type": "TextVariable"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the TextVariableInstance."
+        },
+        {
+          "name": "convertToText",
+          "shortdesc": "Converts the footnote to part of the story text and places the converted text at the former location of the footnote marker in the text.",
+          "datatype": {
+            "type": "Text"
+          }
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the TextVariableInstance.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "TextVariableInstance",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

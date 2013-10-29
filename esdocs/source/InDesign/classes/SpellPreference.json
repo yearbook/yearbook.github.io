@@ -1,0 +1,206 @@
+{
+  "name": "SpellPreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Spell-check preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the SpellPreference (a Application).",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "dynamicSpellCheck",
+          "shortdesc": "If true, underlines misspelled and repeated words, uncapitalized proper nouns, and uncapitalized first words in sentences. Note: Valid only when the corresponding properties are true. For information, see check misspelled words, check repeated words, check capitalized words, and check capitalized sentences.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "misspelledWordColor",
+          "shortdesc": "The underline color for misspelled words, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Note: Valid only when both dynamic spell check and check misspelled words are true. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "repeatedWordColor",
+          "shortdesc": "The underline color for repeated words, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Note: Valid only when both dynamic spell check and check repeated words are true. . Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "uncapitalizedWordColor",
+          "shortdesc": "The underline color for uncapitalized proper nouns, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Note: Valid only when both dynamic spell check and check capitalized words are true. . Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "uncapitalizedSentenceColor",
+          "shortdesc": "The underline color for the first word in sentences that do not begin with a capital letter, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Note: Valid when both dynamic spell check and check capitalized sentences are true. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "checkMisspelledWords",
+          "shortdesc": "If true, checks for misspelled words.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "checkRepeatedWords",
+          "shortdesc": "If true, checks for repeated words.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "checkCapitalizedWords",
+          "shortdesc": "If true, checks for uncapitalized proper nouns.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "checkCapitalizedSentences",
+          "shortdesc": "If true, checks for uncapitalized first words in sentences.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the SpellPreference.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "SpellPreference",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

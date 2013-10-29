@@ -1,0 +1,188 @@
+{
+  "name": "ToolBox",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Tool box tools",
+  "elements": [
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "AFTER_ATTRIBUTE_CHANGED",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched when the value of a property changes on this ToolBox. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterAttributeChanged"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "currentToolName",
+          "rwaccess": "readonly",
+          "shortdesc": "The currently active tool's name.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "currentToolHint",
+          "rwaccess": "readonly",
+          "shortdesc": "The currently active tool's hint.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "currentToolIconFile",
+          "rwaccess": "readonly",
+          "shortdesc": "The currently active tool's icon resource file.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the ToolBox (a Application).",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "currentTool",
+          "shortdesc": "The currently active tool.",
+          "datatype": {
+            "type": "UITools"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the ToolBox.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "ToolBox",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

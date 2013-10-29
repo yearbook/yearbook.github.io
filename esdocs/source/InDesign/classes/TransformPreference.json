@@ -1,0 +1,178 @@
+{
+  "name": "TransformPreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Transform preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the TransformPreference (a Application).",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "dimensionsIncludeStrokeWeight",
+          "shortdesc": "If true, includes the stroke weight when displaying object dimensions. If false, measures objects from the path or frame.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "transformationsAreTotals",
+          "shortdesc": "If true, transformation values are relative to the parent object. If false, the transformation values are absolute values.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "showContentOffset",
+          "shortdesc": "If true, measures the x and y values of the object relative to the containing frame. If false, measures the x and y values relative to the rulers.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "whenScaling",
+          "shortdesc": "The method used to scale a page item.",
+          "datatype": {
+            "type": "WhenScalingOptions"
+          }
+        },
+        {
+          "name": "adjustStrokeWeightWhenScaling",
+          "shortdesc": "If true, strokes are scaled when objects are scaled.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the TransformPreference.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "TransformPreference",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

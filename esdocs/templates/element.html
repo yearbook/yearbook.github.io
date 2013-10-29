@@ -1,0 +1,40 @@
+
+<header>
+  <div id="articleSearch" class="input-group"><span class="input-group-addon">Filter</span>
+    <input id="elementFilter" ng-model="elementFilter" class="form-control"/>
+  </div>
+  <h1>{{ class.name }}<small> {{ namespace }}</small></h1>
+  <div class="info"><span ng-show="class.dynamic" class="left label label-primary">Dynamic</span><span ng-show="class.superclass" class="right"><span>Superclass:</span><a href="#/{{ namespace }}/{{ class.superclass.$t }}"><code>{{ class.superclass.$t }}</code></a></span></div>
+</header>
+<section>
+  <div ng-show="property" class="panel panel-default"><a name="{{ property.name }}"></a>
+    <div class="panel-heading"><span ng-show="property.datatype.array"><code>Array</code></span><a href="#/{{ namespace }}/{{ property.datatype.type }}" ng-show="property.datatype.type"><code>{{ property.datatype.type }}</code></a><b>{{ property.name }}</b><span ng-show="property.rwaccess == &quot;readonly&quot;" class="label label-danger">Read only</span><span class="label label-primary">Property</span></div>
+    <div class="panel-body">{{ property.shortdesc }}</div>
+  </div>
+  <div ng-show="method" class="panel panel-default"><a name="{{ method.name }}"></a>
+    <div class="panel-heading"><a href="#/{{ namespace }}/{{ method.datatype.type }}" ng-show="method.datatype.type"><code>{{ method.datatype.type }}</code></a><b>{{ method.name }}</b><span>&#40;</span><span ng-repeat="param in method.parameters"><a href="#/{{ namespace }}/{{ param.datatype.type }}"><code>{{ param.datatype.type }}</code></a><b>{{ param.name }}</b><span ng-show="$first &amp;&amp; !$last || $middle">&#44;</span></span><span>&#41;</span><span class="label label-success">Method</span></div>
+    <div class="panel-body">{{ method.shortdesc }}
+      <div ng-show="(method.parameters).length">
+        <hr/>
+        <h4>Parameters</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Type</td>
+              <td>Name</td>
+              <td>Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="param in method.parameters">
+              <td><a href="#/{{ namespace }}/{{ param.datatype.type }}"><code>{{ param.datatype.type }}</code></a></td>
+              <td>{{ param.name }}</td>
+              <td><span ng-show="param.optional" class="label label-info">Optional</span>{{ param.shortdesc }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<hr/>

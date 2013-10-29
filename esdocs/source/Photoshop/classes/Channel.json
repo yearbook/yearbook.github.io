@@ -1,0 +1,124 @@
+{
+  "name": "Channel",
+  "dynamic": true,
+  "shortdesc": "Object that stores information about a color element in the image, analogous to a plate in the printing process that applies a single color. The document&apos;s color mode determines the number of default channels. For example, an RGB document has four default channels: A composite channel: RGB; and three component channels: red, green, and blue. A channel can also be an alpha channel, which stores selections as masks; or a spot channel, which stores spot colors.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "histogram",
+          "rwaccess": "readonly",
+          "shortdesc": "A histogram of the color of the channel.",
+          "datatype": {
+            "type": "int",
+            "array": true
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The channel name.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "kind",
+          "shortdesc": "The type of channel.",
+          "datatype": {
+            "type": "ChannelType"
+          }
+        },
+        {
+          "name": "opacity",
+          "shortdesc": "The opacity of alpha channels (called solidity for spot channels). Range: 0 to 100. Valid only when 'type' = masked area or selected area.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "visible",
+          "shortdesc": "If true, the channel is visible.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "color",
+          "shortdesc": "The color of the channel. Not valid for component channels.",
+          "datatype": {
+            "type": "SolidColor"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Channel"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "merge",
+          "shortdesc": "Merges a spot channel into the component channels."
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicates the channel.",
+          "parameters": [
+            {
+              "name": "targetDocument",
+              "optional": true,
+              "shortdesc": "The document to duplicate the channel to.",
+              "datatype": {
+                "type": "Document"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Channel"
+          }
+        }
+      ]
+    }
+  ]
+}

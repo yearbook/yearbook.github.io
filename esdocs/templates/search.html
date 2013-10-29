@@ -1,0 +1,17 @@
+
+<header>
+  <div id="articleSearch" class="input-group"><span class="input-group-addon">Filter</span>
+    <input id="elementFilter" ng-model="elementFilter" class="form-control"/>
+  </div>
+  <h1>Search index</h1>
+  <div class="info"><span class="left">Index of all properties and methods.</span><span class="right"><span class="label label-danger">SLOW</span></span></div>
+</header>
+<section>
+  <div ng-repeat="(namespace, classes) in search">
+    <article ng-repeat="(class, elements) in (filteredIndex = (classes | limitTo:4))">
+      <div ng-show="(elements | filter:elementFilter).length">
+        <h6><a href="#/{{ namespace }}/{{ class }}">{{ namespace }} :: {{ class }}</a></h6><a href="#/{{ namespace }}/{{ class }}/{{ element }}" ng-repeat="element in (filteredElements = (elements | filter:elementFilter | limitTo: 5))" class="tag"><code>{{ element }}</code></a>
+      </div>
+    </article>
+  </div>
+</section>

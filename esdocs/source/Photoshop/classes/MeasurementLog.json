@@ -1,0 +1,75 @@
+{
+  "name": "MeasurementLog",
+  "dynamic": true,
+  "shortdesc": "The log of measurements taken.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "exportMeasurements",
+          "shortdesc": "Exports the specified measurements.",
+          "parameters": [
+            {
+              "name": "file",
+              "optional": true,
+              "shortdesc": "The file to export to. If not specified, a 'file save' dialog is displayed.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "range",
+              "optional": true,
+              "shortdesc": "The measurements to export. Default: selected.",
+              "datatype": {
+                "type": "MeasurementRange"
+              }
+            },
+            {
+              "name": "dataPoints",
+              "optional": true,
+              "shortdesc": "An array of identifiers of data points to export. The order of the data points is respected in the exported file. Defaults to data points visible in Measurement Log palette.",
+              "datatype": {
+                "type": "String",
+                "array": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "deleteMeasurements",
+          "shortdesc": "Deletes the specified measurements.",
+          "parameters": [
+            {
+              "name": "range",
+              "optional": true,
+              "shortdesc": "The measurements to delete. Default: selected.",
+              "datatype": {
+                "type": "MeasurementRange"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

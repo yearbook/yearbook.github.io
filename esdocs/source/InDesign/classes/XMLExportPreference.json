@@ -1,0 +1,270 @@
+{
+  "name": "XMLExportPreference",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "XML export preferences.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the XMLExportPreference (a Application or Document).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "viewAfterExport",
+          "shortdesc": "If true, displays exported XML content in a specified viewer.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "preferredBrowser",
+          "shortdesc": "The preferred browser for viewing XML. Can return: File or NothingEnum enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "exportFromSelected",
+          "shortdesc": "If true, exports XML content from the selected XML element. If false, exports the entire document.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "fileEncoding",
+          "shortdesc": "The file encoding type for exporting XML content.",
+          "datatype": {
+            "type": "XMLFileEncoding"
+          }
+        },
+        {
+          "name": "ruby",
+          "shortdesc": "If true, includes Ruby text in the exported XML content.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "excludeDtd",
+          "shortdesc": "If true, excludes the DTD from the exported XML content.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "copyOriginalImages",
+          "shortdesc": "If true, copies original images to the images subfolder.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "copyOptimizedImages",
+          "shortdesc": "If true, copies optimized images to the images subfolder.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "copyFormattedImages",
+          "shortdesc": "If true, copies formatted images to the images subfolder.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "imageConversion",
+          "shortdesc": "The file format to use for converted images. Note: Valid only when copy optimized images and/or copy formatted images is true.",
+          "datatype": {
+            "type": "ImageConversion"
+          }
+        },
+        {
+          "name": "gifOptionsPalette",
+          "shortdesc": "The color palette for GIF conversion. Note: Not valid when image conversion is JPEG.",
+          "datatype": {
+            "type": "GIFOptionsPalette"
+          }
+        },
+        {
+          "name": "gifOptionsInterlaced",
+          "shortdesc": "If true, generates interlaced GIFs. Note: Not valid  when image conversion is JPEG.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "jpegOptionsQuality",
+          "shortdesc": "The quality of converted JPEG images. Note: Not valid when image conversion is GIF.",
+          "datatype": {
+            "type": "JPEGOptionsQuality"
+          }
+        },
+        {
+          "name": "jpegOptionsFormat",
+          "shortdesc": "The formatting method for converted JPEG images. Note: Not valid  when image conversion is GIF.",
+          "datatype": {
+            "type": "JPEGOptionsFormat"
+          }
+        },
+        {
+          "name": "allowTransform",
+          "shortdesc": "If true, transforms the XML using an XSLT file.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "transformFilename",
+          "shortdesc": "The name of the XSLT file. Note: Valid when allow transform is true. Can return: File or XMLTransformFile enumerator.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "characterReferences",
+          "shortdesc": "If true, replaces special characters with character references.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "exportUntaggedTablesFormat",
+          "shortdesc": "The export format for untagged tables in tagged stories.",
+          "datatype": {
+            "type": "XMLExportUntaggedTablesFormat",
+            "value": "XMLExportUntaggedTablesFormat.CALS"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the XMLExportPreference.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "XMLExportPreference",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

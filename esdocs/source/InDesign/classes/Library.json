@@ -1,0 +1,216 @@
+{
+  "name": "Library",
+  "dynamic": true,
+  "shortdesc": "An object library.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the Library.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "fullName",
+          "rwaccess": "readonly",
+          "shortdesc": "The full path to the Library, including the name of the Library.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "filePath",
+          "rwaccess": "readonly",
+          "shortdesc": "The full path to the file.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "associatedPanel",
+          "rwaccess": "readonly",
+          "shortdesc": "The associated panel.",
+          "datatype": {
+            "type": "Panel"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Library (a Application).",
+          "datatype": {
+            "type": "Application"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Library within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "assets",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of object library assets.",
+          "datatype": {
+            "type": "Assets"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "close",
+          "shortdesc": "Closes the Library."
+        },
+        {
+          "name": "store",
+          "shortdesc": "Stores the specified object in the library.",
+          "parameters": [
+            {
+              "name": "using",
+              "shortdesc": "The page item(s) to store. Can accept: Array of PageItems, Movies, Sounds, Graphics or XMLElements.",
+              "datatype": {
+                "type": "Mixed",
+                "array": true
+              }
+            },
+            {
+              "name": "withProperties",
+              "shortdesc": "Initial values for properties of the new Library ",
+              "datatype": {
+                "type": "Object"
+              },
+              "optional": true
+            }
+          ],
+          "datatype": {
+            "type": "Asset"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Library.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Library",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

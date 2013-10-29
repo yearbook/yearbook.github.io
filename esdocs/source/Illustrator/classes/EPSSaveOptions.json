@@ -1,0 +1,106 @@
+{
+  "name": "EPSSaveOptions",
+  "dynamic": true,
+  "shortdesc": "Options which may be supplied when saving a document as an Illustrator EPS file.",
+  "elements": [
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "compatibility",
+          "shortdesc": "What Illustrator file format version to create.",
+          "datatype": {
+            "type": "Compatibility",
+            "value": "Compatibility.ILLUSTRATOR17"
+          }
+        },
+        {
+          "name": "preview",
+          "shortdesc": "EPS preview format.",
+          "datatype": {
+            "type": "EPSPreview"
+          }
+        },
+        {
+          "name": "embedLinkedFiles",
+          "shortdesc": "Are linked image files to be included in the saved document.",
+          "datatype": {
+            "type": "Boolean",
+            "value": false
+          }
+        },
+        {
+          "name": "includeDocumentThumbnails",
+          "shortdesc": "Include thumbnail image of the EPS artwork.",
+          "datatype": {
+            "type": "Boolean",
+            "value": true
+          }
+        },
+        {
+          "name": "embedAllFonts",
+          "shortdesc": "Embed all fonts used by the document in the saved file (version 7 or later)",
+          "datatype": {
+            "type": "Boolean",
+            "value": false
+          }
+        },
+        {
+          "name": "cmykPostScript",
+          "shortdesc": "Use CMYK PostScript.",
+          "datatype": {
+            "type": "Boolean",
+            "value": true
+          }
+        },
+        {
+          "name": "postScript",
+          "shortdesc": "PostScript level to use (level 1 valid for file format version 8 or older)",
+          "datatype": {
+            "type": "EPSPostScriptLevelEnum",
+            "value": "EPSPostScriptLevelEnum.LEVEL2"
+          }
+        },
+        {
+          "name": "flattenOutput",
+          "shortdesc": "How should transparency be flattened for older file format versions (pre-version 9)",
+          "datatype": {
+            "type": "OutputFlattening",
+            "value": "OutputFlattening.PRESERVEAPPEARANCE"
+          }
+        },
+        {
+          "name": "compatibleGradientPrinting",
+          "shortdesc": "Create a raster item of the gradient or gradient mesh so that PostScript Level 2 printers can print the object.",
+          "datatype": {
+            "type": "Boolean",
+            "value": false
+          }
+        },
+        {
+          "name": "overprint",
+          "datatype": {
+            "type": "PDFOverprint",
+            "value": "PDFOverprint.PRESERVEPDFOVERPRINT"
+          }
+        },
+        {
+          "name": "saveMultipleArtboards",
+          "shortdesc": "All the artboards or range of the artboards will be saved.",
+          "datatype": {
+            "type": "Boolean",
+            "value": false
+          }
+        },
+        {
+          "name": "artboardRange",
+          "shortdesc": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
+          "datatype": {
+            "type": "String",
+            "value": {}
+          }
+        }
+      ]
+    }
+  ]
+}

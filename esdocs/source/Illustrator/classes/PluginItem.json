@@ -1,0 +1,97 @@
+{
+  "name": "PluginItem",
+  "dynamic": true,
+  "superclass": "PageItem",
+  "shortdesc": "Plugin artwork item.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "isTracing",
+          "rwaccess": "readonly",
+          "shortdesc": "Is the plugin group a tracing?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "tracing",
+          "rwaccess": "readonly",
+          "shortdesc": "The tracing object associated with this plugin item.",
+          "datatype": {
+            "type": "TracingObject"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Move the object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PluginItem"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PluginItem"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        }
+      ]
+    }
+  ]
+}

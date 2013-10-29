@@ -1,0 +1,90 @@
+{
+  "name": "ParagraphStyle",
+  "dynamic": true,
+  "shortdesc": "A named style that remembers paragraph attributes.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The paragraph style's name.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "characterAttributes",
+          "rwaccess": "readonly",
+          "shortdesc": "The character properties for the text range.",
+          "datatype": {
+            "type": "CharacterAttributes"
+          }
+        },
+        {
+          "name": "paragraphAttributes",
+          "rwaccess": "readonly",
+          "shortdesc": "The paragraph properties for the text range.",
+          "datatype": {
+            "type": "ParagraphAttributes"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "add",
+          "shortdesc": "Adds an element.",
+          "datatype": {
+            "type": "ParagraphStyle"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "applyTo",
+          "shortdesc": "Apply the paragraph style to text object(s)",
+          "parameters": [
+            {
+              "name": "textItem",
+              "shortdesc": "The text object(s) to apply the style to.",
+              "datatype": {
+                "type": "any"
+              }
+            },
+            {
+              "name": "clearingOverrides",
+              "optional": true,
+              "shortdesc": "Whether to clear any text attributes before apply the style.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

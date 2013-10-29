@@ -1,0 +1,630 @@
+{
+  "name": "PageItem",
+  "dynamic": true,
+  "shortdesc": "A page item object.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "URL",
+          "shortdesc": "The value of the Adobe URL tag assigned to this artwork item.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "note",
+          "shortdesc": "The note assigned to this artwork item.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "layer",
+          "rwaccess": "readonly",
+          "shortdesc": "The layer to which this artwork belongs.",
+          "datatype": {
+            "type": "Layer"
+          }
+        },
+        {
+          "name": "locked",
+          "shortdesc": "Is this artwork item locked?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "hidden",
+          "shortdesc": "Is this artwork item hidden?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "selected",
+          "shortdesc": "Is this artwork item selected?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "position",
+          "shortdesc": "The position of the top left corner of the art item.",
+          "datatype": {
+            "type": "Point"
+          }
+        },
+        {
+          "name": "width",
+          "shortdesc": "The width of the art item.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 16348
+          }
+        },
+        {
+          "name": "height",
+          "shortdesc": "The height of the art item.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 16348
+          }
+        },
+        {
+          "name": "geometricBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The bounds of the artwork excluding stroke width.",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "visibleBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The visible bounds of the artwork including stroke width.",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "controlBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The bounds of the artwork including stroke width and controls.",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The item's name.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "blendingMode",
+          "shortdesc": "The mode used when compositing an object.",
+          "datatype": {
+            "type": "BlendModes"
+          }
+        },
+        {
+          "name": "opacity",
+          "shortdesc": "The object's opacity (between 0.0 and 100.0)",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "isIsolated",
+          "shortdesc": "Is the artwork isolated.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "artworkKnockout",
+          "shortdesc": "Is the artwork used to create a knockout.",
+          "datatype": {
+            "type": "KnockoutState"
+          }
+        },
+        {
+          "name": "zOrderPosition",
+          "rwaccess": "readonly",
+          "shortdesc": "The drawing order of the art within it's group or layer.",
+          "datatype": {
+            "type": "Int32"
+          }
+        },
+        {
+          "name": "editable",
+          "rwaccess": "readonly",
+          "shortdesc": "Can the art item be modified.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "sliced",
+          "shortdesc": "Is the art item sliced (default: false)",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "top",
+          "shortdesc": "The top position of the art item.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "left",
+          "shortdesc": "The left position of the art item.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "visibilityVariable",
+          "shortdesc": "The visibility variable bound to this page item.",
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "tags",
+          "rwaccess": "readonly",
+          "shortdesc": "The collection of tags associated with this page item.",
+          "datatype": {
+            "type": "Tags"
+          }
+        },
+        {
+          "name": "pixelAligned",
+          "shortdesc": "Is this artwork item aligned to Pixel Grid?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "wrapped",
+          "shortdesc": "Wrap text frame objects around this object (text frame must be above the object)",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "wrapOffset",
+          "shortdesc": "Use this offset when wrapping text around this object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "wrapInside",
+          "shortdesc": "Should the text frame object be wrapped inside this object?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Move the object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "translate",
+          "shortdesc": "Reposition art object(s)",
+          "parameters": [
+            {
+              "name": "deltaX",
+              "optional": true,
+              "shortdesc": "Horizontal transformation.",
+              "datatype": {
+                "type": "Number",
+                "value": 0
+              }
+            },
+            {
+              "name": "deltaY",
+              "optional": true,
+              "shortdesc": "Vertical transformation.",
+              "datatype": {
+                "type": "Number",
+                "value": 0
+              }
+            },
+            {
+              "name": "transformObjects",
+              "optional": true,
+              "shortdesc": "Are art object positions and orientations affected?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "transformFillPatterns",
+              "optional": true,
+              "shortdesc": "Are the fill patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "transformFillGradients",
+              "optional": true,
+              "shortdesc": "Are the fill gradients assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "transformStrokePattern",
+              "optional": true,
+              "shortdesc": "Are the stroke patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "resize",
+          "shortdesc": "Scale art object(s)",
+          "parameters": [
+            {
+              "name": "scaleX",
+              "shortdesc": "Horizontal scaling factor expressed as a percentage (100 = 100%)",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "scaleY",
+              "shortdesc": "Vertical scaling factor expressed as a percentage (100 = 100%)",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "changePositions",
+              "optional": true,
+              "shortdesc": "Are art object positions and orientations effected?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeFillPatterns",
+              "optional": true,
+              "shortdesc": "Are the fill patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeFillGradients",
+              "optional": true,
+              "shortdesc": "Are the fill gradients assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeStrokePattern",
+              "optional": true,
+              "shortdesc": "Are the stroke patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeLineWidths",
+              "optional": true,
+              "shortdesc": "The amount line widths are to be scaled (expressed as a percentage)",
+              "datatype": {
+                "type": "Number",
+                "value": 100
+              }
+            },
+            {
+              "name": "scaleAbout",
+              "optional": true,
+              "shortdesc": "The point on the art item's bounding box to which the scale is applied.",
+              "datatype": {
+                "type": "Transformation",
+                "value": "Transformation.CENTER"
+              }
+            }
+          ]
+        },
+        {
+          "name": "rotate",
+          "shortdesc": "Rotate art object(s)",
+          "parameters": [
+            {
+              "name": "angle",
+              "shortdesc": "Angle of rotation (in degrees). Rotation is performed counter-clock wise.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "changePositions",
+              "optional": true,
+              "shortdesc": "Are art object positions and orientations effected?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeFillPatterns",
+              "optional": true,
+              "shortdesc": "Are the fill patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeFillGradients",
+              "optional": true,
+              "shortdesc": "Are the fill gradients assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeStrokePattern",
+              "optional": true,
+              "shortdesc": "Are the stroke patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "rotateAbout",
+              "optional": true,
+              "shortdesc": "The point on the art item's bounding box to which the rotation is applied.",
+              "datatype": {
+                "type": "Transformation",
+                "value": "Transformation.CENTER"
+              }
+            }
+          ]
+        },
+        {
+          "name": "transform",
+          "shortdesc": "Transform art object(s) using a transformation matrix.",
+          "parameters": [
+            {
+              "name": "transformationMatrix",
+              "shortdesc": "The transformation matrix to be applied to the objects.",
+              "datatype": {
+                "type": "Matrix"
+              }
+            },
+            {
+              "name": "changePositions",
+              "optional": true,
+              "shortdesc": "Are art object positions and orientations effected?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeFillPatterns",
+              "optional": true,
+              "shortdesc": "Are the fill patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeFillGradients",
+              "optional": true,
+              "shortdesc": "Are the fill gradients assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeStrokePattern",
+              "optional": true,
+              "shortdesc": "Are the stroke patterns assigned to paths to be transformed?",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "changeLineWidths",
+              "optional": true,
+              "shortdesc": "The amount line widths are to be scaled (expressed as a percentage)",
+              "datatype": {
+                "type": "Number",
+                "value": 100
+              }
+            },
+            {
+              "name": "transformAbout",
+              "optional": true,
+              "shortdesc": "The point on the art item's bounding box to which scale and rotation operations apply.",
+              "datatype": {
+                "type": "Transformation",
+                "value": "Transformation.CENTER"
+              }
+            }
+          ]
+        },
+        {
+          "name": "bringInPerspective",
+          "shortdesc": "Place art object(s)in perspective grid at spedified perspective plane and coordinate.",
+          "parameters": [
+            {
+              "name": "positionX",
+              "shortdesc": "Position towards X direction of specified or active perspective grid plane.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "positionY",
+              "shortdesc": "Position towards Y direction of specified or active perspective grid plane.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "perspectiveGridPlane",
+              "shortdesc": "Type of perspective grid plane.",
+              "datatype": {
+                "type": "PerspectiveGridPlaneType"
+              }
+            }
+          ]
+        },
+        {
+          "name": "zOrder",
+          "shortdesc": "Arranges the art relative to other art in the group or layer.",
+          "parameters": [
+            {
+              "name": "zOrderCmd",
+              "shortdesc": "How to arrange the art.",
+              "datatype": {
+                "type": "ZOrderMethod"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyEffect",
+          "shortdesc": "Apply effect to selected artItem.",
+          "parameters": [
+            {
+              "name": "liveEffectXML",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "sendScriptMessage",
+          "shortdesc": "Sends the script message to the required plugin.",
+          "parameters": [
+            {
+              "name": "pluginName",
+              "shortdesc": "Plugin to which message needs to be sent.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "messageSelector",
+              "shortdesc": "Functionality that is to be executed.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "inputString",
+              "shortdesc": "Pass any data encoded in a string.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "String"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1055 @@
+{
+  "name": "Document",
+  "dynamic": true,
+  "shortdesc": "A document.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "stationery",
+          "rwaccess": "readonly",
+          "shortdesc": "Is the file a stationery file?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "fullName",
+          "rwaccess": "readonly",
+          "shortdesc": "The file associated with the document.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "activeLayer",
+          "shortdesc": "The active layer.",
+          "datatype": {
+            "type": "Layer"
+          }
+        },
+        {
+          "name": "activeView",
+          "rwaccess": "readonly",
+          "shortdesc": "The document's current view.",
+          "datatype": {
+            "type": "View"
+          }
+        },
+        {
+          "name": "geometricBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The bounds of the illustration excluding stroke width.",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "visibleBounds",
+          "rwaccess": "readonly",
+          "shortdesc": "The visible bounds of the illustration including stroke width.",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "rulerOrigin",
+          "datatype": {
+            "type": "Point"
+          }
+        },
+        {
+          "name": "rulerUnits",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "RulerUnits"
+          }
+        },
+        {
+          "name": "pageOrigin",
+          "datatype": {
+            "type": "Point"
+          }
+        },
+        {
+          "name": "cropBox",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "cropStyle",
+          "datatype": {
+            "type": "CropOptions"
+          }
+        },
+        {
+          "name": "width",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "height",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "showPlacedImages",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "outputResolution",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "printTiles",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "selection",
+          "shortdesc": "The selection within the document.",
+          "datatype": {
+            "type": "any"
+          }
+        },
+        {
+          "name": "splitLongPaths",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "tileFullPages",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "useDefaultScreen",
+          "rwaccess": "readonly",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "documentColorSpace",
+          "rwaccess": "readonly",
+          "shortdesc": "The color space used for the document.",
+          "datatype": {
+            "type": "DocumentColorSpace"
+          }
+        },
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The document's name.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "path",
+          "rwaccess": "readonly",
+          "shortdesc": "Path specification for the document.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "saved",
+          "shortdesc": "Has the document been saved?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "defaultFilled",
+          "shortdesc": "Should a new path be filled?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "defaultFillColor",
+          "shortdesc": "Default fill color.",
+          "datatype": {
+            "type": "Color"
+          }
+        },
+        {
+          "name": "defaultFillOverprint",
+          "shortdesc": "Will art beneath a filled object be overprinted by default?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "defaultStroked",
+          "shortdesc": "Should a new path be stroked?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "defaultStrokeColor",
+          "shortdesc": "Default stroke color.",
+          "datatype": {
+            "type": "Color"
+          }
+        },
+        {
+          "name": "defaultStrokeOverprint",
+          "shortdesc": "Will art beneath a stroked object be overprinted by default?",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "defaultStrokeWidth",
+          "shortdesc": "Default width of stroke.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "defaultStrokeDashes",
+          "shortdesc": "Default dash lengths (set to {} for a solid line)",
+          "datatype": {
+            "type": "Number",
+            "array": true
+          }
+        },
+        {
+          "name": "defaultStrokeDashOffset",
+          "shortdesc": "The default distance into the dash pattern at which the pattern should be started.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "defaultStrokeCap",
+          "shortdesc": "Default type of line capping.",
+          "datatype": {
+            "type": "StrokeCap"
+          }
+        },
+        {
+          "name": "defaultStrokeJoin",
+          "shortdesc": "Default type of joints.",
+          "datatype": {
+            "type": "StrokeJoin"
+          }
+        },
+        {
+          "name": "defaultStrokeMiterLimit",
+          "shortdesc": "Specifies whether a join is mitered (pointed) or beveled (squared-off) by default.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "activeDataSet",
+          "shortdesc": "The active data set.",
+          "datatype": {
+            "type": "DataSet"
+          }
+        },
+        {
+          "name": "variablesLocked",
+          "shortdesc": "The locked variables.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "XMPString",
+          "shortdesc": "The XMP packet string associated with the document.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "rasterEffectSettings",
+          "shortdesc": "The document raster effects settings.",
+          "datatype": {
+            "type": "RasterEffectOptions"
+          }
+        },
+        {
+          "name": "artboards",
+          "rwaccess": "readonly",
+          "shortdesc": "All artboards in the document.",
+          "datatype": {
+            "type": "Artboards"
+          }
+        },
+        {
+          "name": "compoundPathItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The compound path artwork in this collection.",
+          "datatype": {
+            "type": "CompoundPathItems"
+          }
+        },
+        {
+          "name": "layers",
+          "rwaccess": "readonly",
+          "shortdesc": "The layers in this document.",
+          "datatype": {
+            "type": "Layers"
+          }
+        },
+        {
+          "name": "pageItems",
+          "rwaccess": "readonly",
+          "shortdesc": "All the artwork in this document.",
+          "datatype": {
+            "type": "PageItems"
+          }
+        },
+        {
+          "name": "pathItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The path artwork in this document.",
+          "datatype": {
+            "type": "PathItems"
+          }
+        },
+        {
+          "name": "tags",
+          "rwaccess": "readonly",
+          "shortdesc": "The tags in this document.",
+          "datatype": {
+            "type": "Tags"
+          }
+        },
+        {
+          "name": "views",
+          "rwaccess": "readonly",
+          "shortdesc": "The views in this document.",
+          "datatype": {
+            "type": "Views"
+          }
+        },
+        {
+          "name": "rasterItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The raster art items in this document.",
+          "datatype": {
+            "type": "RasterItems"
+          }
+        },
+        {
+          "name": "placedItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The placed art items in this document.",
+          "datatype": {
+            "type": "PlacedItems"
+          }
+        },
+        {
+          "name": "meshItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The mesh art items in this document.",
+          "datatype": {
+            "type": "MeshItems"
+          }
+        },
+        {
+          "name": "pluginItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The plugin art items in this document.",
+          "datatype": {
+            "type": "PluginItems"
+          }
+        },
+        {
+          "name": "graphItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The graph art items in this document.",
+          "datatype": {
+            "type": "GraphItems"
+          }
+        },
+        {
+          "name": "nonNativeItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The non-native art items in this document.",
+          "datatype": {
+            "type": "NonNativeItems"
+          }
+        },
+        {
+          "name": "groupItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The group items in this document.",
+          "datatype": {
+            "type": "GroupItems"
+          }
+        },
+        {
+          "name": "textFrames",
+          "rwaccess": "readonly",
+          "shortdesc": "The text frame items in this document.",
+          "datatype": {
+            "type": "TextFrameItems"
+          }
+        },
+        {
+          "name": "stories",
+          "rwaccess": "readonly",
+          "shortdesc": "The story items in this document.",
+          "datatype": {
+            "type": "Stories"
+          }
+        },
+        {
+          "name": "characterStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "The list of character styles in this document.",
+          "datatype": {
+            "type": "CharacterStyles"
+          }
+        },
+        {
+          "name": "paragraphStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "The list of paragraph styles in this document.",
+          "datatype": {
+            "type": "ParagraphStyles"
+          }
+        },
+        {
+          "name": "kinsokuSet",
+          "rwaccess": "readonly",
+          "shortdesc": "The Kinsoku set.",
+          "datatype": {
+            "type": "String",
+            "array": true
+          }
+        },
+        {
+          "name": "mojikumiSet",
+          "rwaccess": "readonly",
+          "shortdesc": "The Mojikumi set.",
+          "datatype": {
+            "type": "String",
+            "array": true
+          }
+        },
+        {
+          "name": "swatches",
+          "rwaccess": "readonly",
+          "shortdesc": "The swatches in this document.",
+          "datatype": {
+            "type": "Swatches"
+          }
+        },
+        {
+          "name": "swatchGroups",
+          "rwaccess": "readonly",
+          "shortdesc": "The Swatch Groups in this document.",
+          "datatype": {
+            "type": "SwatchGroups"
+          }
+        },
+        {
+          "name": "gradients",
+          "rwaccess": "readonly",
+          "shortdesc": "The gradients available in this document.",
+          "datatype": {
+            "type": "Gradients"
+          }
+        },
+        {
+          "name": "patterns",
+          "rwaccess": "readonly",
+          "shortdesc": "The patterns available in this document.",
+          "datatype": {
+            "type": "Patterns"
+          }
+        },
+        {
+          "name": "spots",
+          "rwaccess": "readonly",
+          "shortdesc": "The custom spot colors available in this document.",
+          "datatype": {
+            "type": "Spots"
+          }
+        },
+        {
+          "name": "symbols",
+          "rwaccess": "readonly",
+          "shortdesc": "The symbols defined in this document.",
+          "datatype": {
+            "type": "Symbols"
+          }
+        },
+        {
+          "name": "symbolItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The symbol items in this document.",
+          "datatype": {
+            "type": "SymbolItems"
+          }
+        },
+        {
+          "name": "brushes",
+          "rwaccess": "readonly",
+          "shortdesc": "The brushes defined in this document.",
+          "datatype": {
+            "type": "Brushes"
+          }
+        },
+        {
+          "name": "graphicStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "The graphic styles defined in this document.",
+          "datatype": {
+            "type": "ArtStyles"
+          }
+        },
+        {
+          "name": "variables",
+          "rwaccess": "readonly",
+          "shortdesc": "The variables defined in this document.",
+          "datatype": {
+            "type": "Variables"
+          }
+        },
+        {
+          "name": "inkList",
+          "rwaccess": "readonly",
+          "shortdesc": "The list of inks in this document.",
+          "datatype": {
+            "type": "Ink",
+            "array": true
+          }
+        },
+        {
+          "name": "dataSets",
+          "rwaccess": "readonly",
+          "shortdesc": "The data sets defined in this document.",
+          "datatype": {
+            "type": "DataSets"
+          }
+        },
+        {
+          "name": "legacyTextItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The text frame items in this story.",
+          "datatype": {
+            "type": "LegacyTextItems"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "close",
+          "shortdesc": "Close the specified document(s)",
+          "parameters": [
+            {
+              "name": "saving",
+              "optional": true,
+              "shortdesc": "Specifies whether changes should be saved before closing.",
+              "datatype": {
+                "type": "SaveOptions"
+              }
+            }
+          ]
+        },
+        {
+          "name": "save",
+          "shortdesc": "Save the document."
+        },
+        {
+          "name": "saveAs",
+          "shortdesc": "Save the document with specific save options.",
+          "parameters": [
+            {
+              "name": "saveIn",
+              "shortdesc": "The file to save the document in.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Options for the file type specified.",
+              "datatype": {
+                "type": "any"
+              }
+            }
+          ]
+        },
+        {
+          "name": "print",
+          "shortdesc": "Print the document.",
+          "parameters": [
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Print options.",
+              "datatype": {
+                "type": "PrintOptions"
+              }
+            }
+          ]
+        },
+        {
+          "name": "exportFile",
+          "shortdesc": "Export the specified document(s)",
+          "parameters": [
+            {
+              "name": "exportFile",
+              "shortdesc": "The file to export the document to.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "exportFormat",
+              "shortdesc": "The file type to export the document as.",
+              "datatype": {
+                "type": "ExportType"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Options for the file type specified.",
+              "datatype": {
+                "type": "any"
+              }
+            }
+          ]
+        },
+        {
+          "name": "activate",
+          "shortdesc": "Activate the first window associated with the document."
+        },
+        {
+          "name": "importVariables",
+          "shortdesc": "Import a library containing datasets, variables and their associated dynamic data. Importing variables will overwrite existing variables and datasets.",
+          "parameters": [
+            {
+              "name": "fileSpec",
+              "shortdesc": "File spec to import from.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "exportVariables",
+          "shortdesc": "Save datasets into an XML library. The datasets contain variables and their associated dynamic data.",
+          "parameters": [
+            {
+              "name": "file",
+              "shortdesc": "File spec to export to.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "importCharacterStyles",
+          "shortdesc": "Load the character styles from the Illustrator file.",
+          "parameters": [
+            {
+              "name": "fileSpec",
+              "shortdesc": "File spec to import from.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "importParagraphStyles",
+          "shortdesc": "Load the paragraph styles from the Illustrator file.",
+          "parameters": [
+            {
+              "name": "fileSpec",
+              "shortdesc": "File spec to import from.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "importPrintPreset",
+          "shortdesc": "Apply the named print preset from the file to the current print setting.",
+          "parameters": [
+            {
+              "name": "printPreset",
+              "shortdesc": "The name of a print preset to import.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "fileSpec",
+              "shortdesc": "File to import from.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "exportPrintPreset",
+          "shortdesc": "Export the current print setting to the preset file.",
+          "parameters": [
+            {
+              "name": "file",
+              "shortdesc": "File to export to.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "importPDFPreset",
+          "shortdesc": "Load all PDF presets from a file.",
+          "parameters": [
+            {
+              "name": "fileSpec",
+              "shortdesc": "File to import from.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "replacingPreset",
+              "optional": true,
+              "shortdesc": "Should existing editable presets be replaced?",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "exportPDFPreset",
+          "shortdesc": "Save all PDF presets to a file.",
+          "parameters": [
+            {
+              "name": "file",
+              "shortdesc": "File to export to.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "importPerspectiveGridPreset",
+          "shortdesc": "Loads mentioned perspective grid preset, if preset name is specified, else loads all(if no preset name is specified) presets, from the specified file.",
+          "parameters": [
+            {
+              "name": "fileSpec",
+              "shortdesc": "File to import from.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "perspectivePreset",
+              "optional": true,
+              "shortdesc": "Name of perspective grid preset.",
+              "datatype": {
+                "type": "String",
+                "value": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "exportPerspectiveGridPreset",
+          "shortdesc": "Saves all perspective grid presets to a file.",
+          "parameters": [
+            {
+              "name": "file",
+              "shortdesc": "File to export to.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "imageCapture",
+          "shortdesc": "Capture the artwork content inside the clip bound as raster image, and write out the captured image data into the target image file.",
+          "parameters": [
+            {
+              "name": "imageFile",
+              "shortdesc": "The file to which the captured image should be written.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "clipBounds",
+              "optional": true,
+              "shortdesc": "The rectangular region of the artwork for image capture. If the parameter is omitted, the entire artwork bound is captured.",
+              "datatype": {
+                "type": "Rect"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Describes the image capture options.",
+              "datatype": {
+                "type": "ImageCaptureOptions"
+              }
+            }
+          ]
+        },
+        {
+          "name": "windowCapture",
+          "shortdesc": "Capture the current document window to the target TIFF image file.",
+          "parameters": [
+            {
+              "name": "imageFile",
+              "shortdesc": "The TIFF file to which the captured image should be written.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "windowSize",
+              "shortdesc": "The size to make the window before capture.",
+              "datatype": {
+                "type": "Point"
+              }
+            }
+          ]
+        },
+        {
+          "name": "rasterize",
+          "shortdesc": "Rasterize the source art(s) within the specified clip bounds. The source art(s) are disposed as a result of the rasterization.",
+          "parameters": [
+            {
+              "name": "sourceArt",
+              "shortdesc": "The page item(s) to be rasterized.",
+              "datatype": {
+                "type": "any"
+              }
+            },
+            {
+              "name": "clipBounds",
+              "optional": true,
+              "shortdesc": "The rectangular region of the artwork for the rasterization. If the parameter is omitted, the bounds of the source art(s) is used instead.",
+              "datatype": {
+                "type": "Rect"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Describes the rasterization options.",
+              "datatype": {
+                "type": "RasterizeOptions"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "rearrangeArtboards",
+          "shortdesc": "Rearrange Artboards in the document.",
+          "parameters": [
+            {
+              "name": "artboardLayout",
+              "optional": true,
+              "shortdesc": "Layout of artboards for rearrangement.",
+              "datatype": {
+                "type": "DocumentArtboardLayout",
+                "value": "DocumentArtboardLayout.GridByRow"
+              }
+            },
+            {
+              "name": "artboardRowsOrCols",
+              "optional": true,
+              "shortdesc": "Number of rows (for rows layout) OR column(for column layouts)of artboards.Range is 1 to (docNumArtboards - 1) or 1 for single row or column layouts.",
+              "datatype": {
+                "type": "Int32",
+                "value": 1
+              }
+            },
+            {
+              "name": "artboardSpacing",
+              "optional": true,
+              "shortdesc": "Spacing between artboards.",
+              "datatype": {
+                "type": "Number",
+                "value": 20
+              }
+            },
+            {
+              "name": "artboardMoveArtwork",
+              "optional": true,
+              "shortdesc": "Whether to move artwork with artboards.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "selectObjectsOnActiveArtboard",
+          "shortdesc": "Select art objects in active artboard.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "fitArtboardToSelectedArt",
+          "shortdesc": "Change the artboard to selected art bounds.",
+          "parameters": [
+            {
+              "name": "index",
+              "optional": true,
+              "shortdesc": "The index of the artboard to update.",
+              "datatype": {
+                "type": "Int32"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "convertCoordinate",
+          "shortdesc": "Converts the coordinate system of a single point from one coordinate system to another.",
+          "parameters": [
+            {
+              "name": "coordinate",
+              "shortdesc": "The Coordinate to convert.",
+              "datatype": {
+                "type": "Point"
+              }
+            },
+            {
+              "name": "source",
+              "shortdesc": "The source coordinate system.",
+              "datatype": {
+                "type": "CoordinateSystem"
+              }
+            },
+            {
+              "name": "destination",
+              "shortdesc": "The destination coordinate system.",
+              "datatype": {
+                "type": "CoordinateSystem"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Point"
+          }
+        },
+        {
+          "name": "selectPerspectivePreset",
+          "shortdesc": "Selects a predefined preset to define grid for the current document.",
+          "parameters": [
+            {
+              "name": "perspectivePreset",
+              "shortdesc": "Name of perspective grid preset.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "showPerspectiveGrid",
+          "shortdesc": "Shows the current active perspective grid for the document, if no active perspective grid then shows the default perspective grid for the document.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "hidePerspectiveGrid",
+          "shortdesc": "Hides the current active perspective grid for the document, if there is visible perspective grid.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "getPerspectiveActivePlane",
+          "shortdesc": "Gets the active plane of the active perspective grid of the document.",
+          "datatype": {
+            "type": "PerspectiveGridPlaneType"
+          }
+        },
+        {
+          "name": "setPerspectiveActivePlane",
+          "shortdesc": "Sets the active perspective plane for the active grid of the document.",
+          "parameters": [
+            {
+              "name": "perspectiveGridPlane",
+              "shortdesc": "Type of perspective grid plane.",
+              "datatype": {
+                "type": "PerspectiveGridPlaneType"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

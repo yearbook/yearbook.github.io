@@ -1,0 +1,251 @@
+{
+  "name": "PrintBookletOption",
+  "dynamic": true,
+  "superclass": {
+    "href": "#/Preference",
+    "$t": "Preference"
+  },
+  "shortdesc": "Print booklet options.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the PrintBookletOption (a Document).",
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "pageRange",
+          "shortdesc": "The pages to print, specified either as an enumeration or a string. To specify a range, separate page numbers in the string with a hyphen (-). To specify separate pages, separate page numbers in the string with a comma (,). Can return: PageRange enumerator or String.",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "bookletType",
+          "shortdesc": "The type of booklet.",
+          "datatype": {
+            "type": "BookletTypeOptions"
+          }
+        },
+        {
+          "name": "spaceBetweenPages",
+          "shortdesc": "The amount of space between pages.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 288
+          }
+        },
+        {
+          "name": "bleedBetweenPages",
+          "shortdesc": "The amount of bleed between pages.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 144
+          }
+        },
+        {
+          "name": "creep",
+          "shortdesc": "The amount of creep (binding adjustment based on paper thickness) to add.",
+          "datatype": {
+            "type": "Mixed",
+            "min": -144,
+            "max": 144
+          }
+        },
+        {
+          "name": "signatureSize",
+          "shortdesc": "The signature size of booklet (for perfect binding).",
+          "datatype": {
+            "type": "SignatureSizeOptions"
+          }
+        },
+        {
+          "name": "topMargin",
+          "shortdesc": "Top margin of the printed booklet.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 288
+          }
+        },
+        {
+          "name": "bottomMargin",
+          "shortdesc": "Bottom margin of the printed booklet.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 288
+          }
+        },
+        {
+          "name": "leftMargin",
+          "shortdesc": "Left margin of the printed booklet.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 288
+          }
+        },
+        {
+          "name": "rightMargin",
+          "shortdesc": "Right margin of the printed booklet.",
+          "datatype": {
+            "type": "Mixed",
+            "min": 0,
+            "max": 288
+          }
+        },
+        {
+          "name": "autoAdjustMargins",
+          "shortdesc": "If true, automatically adjust margins to fit the specified printer's marks and bleed area.",
+          "datatype": {
+            "type": "Boolean",
+            "value": true
+          }
+        },
+        {
+          "name": "marginsUniformSize",
+          "shortdesc": "If true, make all margins equal to the top margin.",
+          "datatype": {
+            "type": "Boolean",
+            "value": false
+          }
+        },
+        {
+          "name": "printBlankPrinterSpreads",
+          "shortdesc": "If true, print blank spreads.",
+          "datatype": {
+            "type": "Boolean",
+            "value": true
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the PrintBookletOption.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "PrintBookletOption",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

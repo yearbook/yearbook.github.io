@@ -1,0 +1,119 @@
+{
+  "name": "LayerComps",
+  "dynamic": true,
+  "shortdesc": "The layer comp objects associated with the document.",
+  "elements": [
+    {
+      "type": "instance",
+      "method": [
+        {
+          "name": "add",
+          "shortdesc": "Adds a layer comp.",
+          "parameters": [
+            {
+              "name": "name",
+              "shortdesc": "The name of the layer comp.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "comment",
+              "optional": true,
+              "shortdesc": "The description of the layer comp.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "appearance",
+              "optional": true,
+              "shortdesc": "If true, uses the layer appearance or style for this layer comp.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "position",
+              "optional": true,
+              "shortdesc": "If true, uses the layer position for this layer comp.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "visibility",
+              "optional": true,
+              "shortdesc": "If true, uses the layer visibility for this layer comp.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ],
+          "datatype": {
+            "type": "LayerComp"
+          }
+        },
+        {
+          "name": "getByName",
+          "shortdesc": "Get the first element in the collection with the provided name.",
+          "parameters": [
+            {
+              "name": "name",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "LayerComp"
+          }
+        },
+        {
+          "name": "[]",
+          "shortdesc": "Get an element in the collection with the provided index.",
+          "parameters": [
+            {
+              "name": "index",
+              "datatype": {
+                "type": "uint"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "LayerComp"
+          }
+        }
+      ],
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "Number of elements in the collection.",
+          "datatype": {
+            "type": "int"
+          }
+        }
+      ]
+    }
+  ]
+}

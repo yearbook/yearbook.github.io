@@ -1,0 +1,275 @@
+{
+  "name": "CharacterStyleGroup",
+  "dynamic": true,
+  "shortdesc": "A character style group.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "allCharacterStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "Lists all character styles (regardless of their group).",
+          "datatype": {
+            "type": "CharacterStyle",
+            "array": true
+          }
+        },
+        {
+          "name": "id",
+          "rwaccess": "readonly",
+          "shortdesc": "The unique ID of the CharacterStyleGroup.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the CharacterStyleGroup (a Document, Application or CharacterStyleGroup).",
+          "datatype": {
+            "type": "Mixed"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the CharacterStyleGroup within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "characterStyles",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of character styles.",
+          "datatype": {
+            "type": "CharacterStyles"
+          }
+        },
+        {
+          "name": "characterStyleGroups",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of character style groups.",
+          "datatype": {
+            "type": "CharacterStyleGroups"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the CharacterStyleGroup.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "label",
+          "shortdesc": "A property that can be set to any string.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicates the CharacterStyleGroup.",
+          "datatype": {
+            "type": "CharacterStyleGroup"
+          }
+        },
+        {
+          "name": "move",
+          "shortdesc": "Moves the style to the specified location.",
+          "parameters": [
+            {
+              "name": "to",
+              "shortdesc": "The location relative to the reference object or within the containing object.",
+              "datatype": {
+                "type": "LocationOptions"
+              }
+            },
+            {
+              "name": "reference",
+              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. Can accept: ParagraphStyle, ParagraphStyleGroup, CharacterStyle, CharacterStyleGroup, CellStyle, CellStyleGroup, TableStyle, TableStyleGroup, Document or Application. ",
+              "datatype": {
+                "type": "Mixed"
+              },
+              "optional": true
+            }
+          ],
+          "datatype": {
+            "type": "CharacterStyleGroup"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes the style.",
+          "parameters": [
+            {
+              "name": "replacingWith",
+              "shortdesc": "The style to apply in place of the deleted style. Can accept: ParagraphStyle or CharacterStyle. ",
+              "datatype": {
+                "type": "Mixed"
+              },
+              "optional": true
+            }
+          ]
+        },
+        {
+          "name": "insertLabel",
+          "shortdesc": "Sets the label to the value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "value",
+              "shortdesc": "The value.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "extractLabel",
+          "shortdesc": "Gets the label value associated with the specified key.",
+          "parameters": [
+            {
+              "name": "key",
+              "shortdesc": "The key.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the CharacterStyleGroup.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "CharacterStyleGroup",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "name": "Layer",
+  "dynamic": true,
+  "shortdesc": "A layer object.",
+  "description": "Layers may contain nested layers, which are called sublayers in the user interface. The layer object contains all of the page items in the specific layer as elements. Your script can access page items as elements of either the layer object or the document object.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the layer.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "allLocked",
+          "shortdesc": "If true, the layer's contents and settings are locked.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "blendMode",
+          "shortdesc": "The mode to use when compositing an object.",
+          "datatype": {
+            "type": "BlendMode"
+          }
+        },
+        {
+          "name": "linkedLayers",
+          "rwaccess": "readonly",
+          "shortdesc": "The layers linked to this layer.",
+          "datatype": {
+            "type": "Layer",
+            "array": true
+          }
+        },
+        {
+          "name": "opacity",
+          "shortdesc": "The layer's master opacity (as a percentage). Range: 0.0 to 100.0.",
+          "datatype": {
+            "type": "Number",
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "name": "visible",
+          "shortdesc": "If true, the layer is visible.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "bounds",
+          "rwaccess": "readonly",
+          "shortdesc": "Bounding rectangle of the Layer.",
+          "datatype": {
+            "type": "UnitRect"
+          }
+        },
+        {
+          "name": "xmpMetadata",
+          "rwaccess": "readonly",
+          "shortdesc": "The XMP properties of the document. The Camera RAW settings are stored here.",
+          "datatype": {
+            "type": "XMPMetadata"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Move the object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Layer"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "optional": true,
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "optional": true,
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Layer"
+          }
+        },
+        {
+          "name": "moveToEnd",
+          "shortdesc": "...",
+          "parameters": [
+            {
+              "name": "layerSet",
+              "optional": true,
+              "datatype": {
+                "type": "LayerSet"
+              }
+            }
+          ]
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "unlink",
+          "shortdesc": "Unlinks the layer."
+        },
+        {
+          "name": "link",
+          "shortdesc": "Links the layer with the specified layer.",
+          "parameters": [
+            {
+              "name": "with",
+              "shortdesc": "The layer to link to.",
+              "datatype": {
+                "type": "Layer"
+              }
+            }
+          ]
+        },
+        {
+          "name": "translate",
+          "shortdesc": "Moves the object relative to its current position.",
+          "parameters": [
+            {
+              "name": "deltaX",
+              "optional": true,
+              "shortdesc": "The amount to move the object horizontally.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "deltaY",
+              "optional": true,
+              "shortdesc": "The amount to move the object vertically.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            }
+          ]
+        },
+        {
+          "name": "rotate",
+          "shortdesc": "Rotates the object.",
+          "parameters": [
+            {
+              "name": "angle",
+              "shortdesc": "The number of degrees to rotate the object.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "anchor",
+              "optional": true,
+              "shortdesc": "The point to rotate about.",
+              "datatype": {
+                "type": "AnchorPosition",
+                "value": "AnchorPosition.MIDDLECENTER"
+              }
+            }
+          ]
+        },
+        {
+          "name": "resize",
+          "shortdesc": "Scales the object.",
+          "parameters": [
+            {
+              "name": "horizontal",
+              "optional": true,
+              "shortdesc": "The amount to scale the object horizontally (as a percentage).",
+              "datatype": {
+                "type": "Number",
+                "value": 100
+              }
+            },
+            {
+              "name": "vertical",
+              "optional": true,
+              "shortdesc": "The amount to scale the object vertically (as a percentage).",
+              "datatype": {
+                "type": "Number",
+                "value": 100
+              }
+            },
+            {
+              "name": "anchor",
+              "optional": true,
+              "shortdesc": "The point to resize about.",
+              "datatype": {
+                "type": "AnchorPosition",
+                "value": "AnchorPosition.MIDDLECENTER"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "SymbolItems",
+  "dynamic": true,
+  "shortdesc": "A collection of symbol items.",
+  "elements": [
+    {
+      "type": "class",
+      "method": [
+        {
+          "name": "add",
+          "shortdesc": "An instance of a symbol item.",
+          "parameters": [
+            {
+              "name": "symbol",
+              "shortdesc": "The symbol to make an instance of.",
+              "datatype": {
+                "type": "Symbol"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "SymbolItem"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "length",
+          "rwaccess": "readonly",
+          "shortdesc": "Number of elements in the collection.",
+          "datatype": {
+            "type": "int"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "getByName",
+          "shortdesc": "Get the first element in the collection with the provided name.",
+          "parameters": [
+            {
+              "name": "name",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "SymbolItem"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "name": "PathItem",
+  "dynamic": true,
+  "shortdesc": "A path or drawing object, such as the outline of a shape or a straight or curved line, which contains sub paths that comprise its geometry.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "name",
+          "shortdesc": "The name of the path item.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "subPathItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The sub path objects for this path item.",
+          "datatype": {
+            "type": "SubPathItems"
+          }
+        },
+        {
+          "name": "kind",
+          "shortdesc": "The type of path.",
+          "datatype": {
+            "type": "PathKind"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "add",
+          "shortdesc": "Adds an element.",
+          "datatype": {
+            "type": "PathItem"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PathItem"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicates this path item.",
+          "parameters": [
+            {
+              "name": "name",
+              "optional": true,
+              "shortdesc": "The name for the new path.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PathItem"
+          }
+        },
+        {
+          "name": "makeSelection",
+          "shortdesc": "Makes a selection object, whose border is the path, from this path item object.",
+          "parameters": [
+            {
+              "name": "feather",
+              "optional": true,
+              "shortdesc": "The feather amount in pixels. Range: 0.0 to 250.0.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "antiAlias",
+              "optional": true,
+              "shortdesc": "If true, the selection uses anti-aliasing.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            },
+            {
+              "name": "operation",
+              "optional": true,
+              "shortdesc": "The selection behavior relative to the existing selection (when a selection already exists).",
+              "datatype": {
+                "type": "SelectionType"
+              }
+            }
+          ]
+        },
+        {
+          "name": "fillPath",
+          "shortdesc": "Fills the area enclosed by the path.",
+          "parameters": [
+            {
+              "name": "fillColor",
+              "optional": true,
+              "shortdesc": "The color of the fill for this path.",
+              "datatype": {
+                "type": "any"
+              }
+            },
+            {
+              "name": "mode",
+              "optional": true,
+              "shortdesc": "The blending mode of the fill for this path.",
+              "datatype": {
+                "type": "ColorBlendMode"
+              }
+            },
+            {
+              "name": "opacity",
+              "optional": true,
+              "shortdesc": "The opacity of the fill for this path (as a percentage). Range: 0.0 to 100.0.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "preserveTransparency",
+              "optional": true,
+              "shortdesc": "If true, transparency is preserved.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            },
+            {
+              "name": "feather",
+              "optional": true,
+              "shortdesc": "The feather amount in pixels. Range: 0.0 to 250.0.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "antiAlias",
+              "optional": true,
+              "shortdesc": "If true, uses anti-aliasing for the selection.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            },
+            {
+              "name": "wholePath",
+              "optional": true,
+              "shortdesc": "If true, uses all subpaths when doing the fill.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "strokePath",
+          "shortdesc": "Strokes the path.",
+          "parameters": [
+            {
+              "name": "tool",
+              "optional": true,
+              "shortdesc": "The tool to use when stroking the path.",
+              "datatype": {
+                "type": "ToolType"
+              }
+            },
+            {
+              "name": "simulatePressure",
+              "optional": true,
+              "shortdesc": "If true, simulates the pressure when using the tool.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "makeClippingPath",
+          "shortdesc": "Makes this path item the clipping path for this document.",
+          "parameters": [
+            {
+              "name": "flatness",
+              "optional": true,
+              "shortdesc": "Flatness in device pixels; tells the PostScript printer how to approximate curves. Range: 0.2 to 100).",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "select",
+          "shortdesc": "Makes this path item the active or selected path item."
+        },
+        {
+          "name": "deselect",
+          "shortdesc": "Unselects the selection, no path items are selected."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "name": "PlacedItem",
+  "dynamic": true,
+  "superclass": "PageItem",
+  "shortdesc": "Placed artwork item.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "file",
+          "shortdesc": "The file containing the placed artwork.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "matrix",
+          "shortdesc": "The transformation matrix of the placed art object.",
+          "datatype": {
+            "type": "Matrix"
+          }
+        },
+        {
+          "name": "boundingBox",
+          "rwaccess": "readonly",
+          "shortdesc": "Dimensions of placed art object, regardless of transformations.",
+          "datatype": {
+            "type": "Rect"
+          }
+        },
+        {
+          "name": "contentVariable",
+          "shortdesc": "The content variable bound to this placed art object.",
+          "datatype": {
+            "type": "any"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "move",
+          "shortdesc": "Move the object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PlacedItem"
+          }
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "PlacedItem"
+          }
+        },
+        {
+          "name": "remove",
+          "shortdesc": "Deletes this object."
+        },
+        {
+          "name": "removeAll",
+          "shortdesc": "Deletes all elements."
+        },
+        {
+          "name": "embed",
+          "shortdesc": "Embed the placed art within the illustration."
+        },
+        {
+          "name": "trace",
+          "shortdesc": "Trace this raster object using default options. Reorders this placed to the source art.",
+          "datatype": {
+            "type": "PluginItem"
+          }
+        },
+        {
+          "name": "relink",
+          "shortdesc": "Relink the placed art with supplied art from file.",
+          "parameters": [
+            {
+              "name": "fileSpec",
+              "shortdesc": "File spec to relink from.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

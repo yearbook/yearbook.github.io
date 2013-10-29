@@ -1,0 +1,297 @@
+{
+  "name": "Window",
+  "dynamic": true,
+  "shortdesc": "A window.",
+  "elements": [
+    {
+      "type": "class",
+      "property": [
+        {
+          "name": "AFTER_SELECTION_CHANGED",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterSelectionChanged"
+          }
+        },
+        {
+          "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterSelectionAttributeChanged"
+          }
+        },
+        {
+          "name": "BEFORE_DEACTIVATE",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched before the Window becomes inactive. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "beforeDeactivate"
+          }
+        },
+        {
+          "name": "AFTER_ACTIVATE",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched after the Window becomes active. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterActivate"
+          }
+        },
+        {
+          "name": "AFTER_ATTRIBUTE_CHANGED",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched when the value of a property changes on this Window. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterAttributeChanged"
+          }
+        },
+        {
+          "name": "AFTER_OPEN",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched after a Window is opened. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterOpen"
+          }
+        },
+        {
+          "name": "BEFORE_CLOSE",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched before a Window is closed. This event bubbles. This event is cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "beforeClose"
+          }
+        },
+        {
+          "name": "AFTER_CLOSE",
+          "rwaccess": "readonly",
+          "shortdesc": "Dispatched when a Window is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
+          "datatype": {
+            "type": "String",
+            "value": "afterClose"
+          }
+        }
+      ]
+    },
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The name of the Window.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "isValid",
+          "rwaccess": "readonly",
+          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The parent of the Window (a Document).",
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "index",
+          "rwaccess": "readonly",
+          "shortdesc": "The index of the Window within its containing object.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "events",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of events.",
+          "datatype": {
+            "type": "Events"
+          }
+        },
+        {
+          "name": "eventListeners",
+          "rwaccess": "readonly",
+          "shortdesc": "A collection of event listeners.",
+          "datatype": {
+            "type": "EventListeners"
+          }
+        },
+        {
+          "name": "selection",
+          "shortdesc": "The selected object(s). Can also accept: Object or NothingEnum enumerator.",
+          "datatype": {
+            "type": "Object",
+            "array": true
+          }
+        },
+        {
+          "name": "bounds",
+          "shortdesc": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right].",
+          "datatype": {
+            "type": "Number",
+            "array": true
+          }
+        },
+        {
+          "name": "selectionKeyObject",
+          "shortdesc": "The key object of the selection. Can also accept: NothingEnum enumerator.",
+          "datatype": {
+            "type": "PageItem"
+          }
+        },
+        {
+          "name": "properties",
+          "shortdesc": "A property that allows setting of several properties at the same time.",
+          "datatype": {
+            "type": "Object"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "select",
+          "shortdesc": "Selects the specified object(s).",
+          "parameters": [
+            {
+              "name": "selectableItems",
+              "shortdesc": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "existingSelection",
+              "optional": true,
+              "shortdesc": "The selection status of the Window in relation to previously selected objects. ",
+              "datatype": {
+                "type": "SelectionOptions",
+                "value": "SelectionOptions.REPLACE_WITH"
+              }
+            }
+          ]
+        },
+        {
+          "name": "close",
+          "shortdesc": "Closes the Window."
+        },
+        {
+          "name": "maximize",
+          "shortdesc": "Maximizes the window."
+        },
+        {
+          "name": "minimize",
+          "shortdesc": "Minimizes the window."
+        },
+        {
+          "name": "restore",
+          "shortdesc": "Restores the window."
+        },
+        {
+          "name": "bringToFront",
+          "shortdesc": "Brings the object to the front."
+        },
+        {
+          "name": "toSource",
+          "shortdesc": "Generates a string which, if executed, will return the Window.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "getElements",
+          "shortdesc": "Resolves the object specifier, creating an array of object references.",
+          "datatype": {
+            "type": "Window",
+            "array": true
+          }
+        },
+        {
+          "name": "toSpecifier",
+          "shortdesc": "Retrieves the object specifier.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "addEventListener",
+          "shortdesc": "Adds an event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "EventListener"
+          }
+        },
+        {
+          "name": "removeEventListener",
+          "shortdesc": "Removes the event listener.",
+          "parameters": [
+            {
+              "name": "eventType",
+              "shortdesc": "The registered event type.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "handler",
+              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
+              "datatype": {
+                "type": "Mixed"
+              }
+            },
+            {
+              "name": "captures",
+              "optional": true,
+              "shortdesc": "This parameter is obsolete. ",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Boolean"
+          }
+        }
+      ]
+    }
+  ]
+}

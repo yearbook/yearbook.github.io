@@ -1,0 +1,1424 @@
+{
+  "name": "ArtLayer",
+  "dynamic": true,
+  "superclass": "Layer",
+  "shortdesc": "An object within a document that contains the visual elements of the image &amp;&#35;40;equivalent to a layer in the Adobe Photoshop application&#41;.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "fillOpacity",
+          "shortdesc": "The interior opacity of the layer. Range: 0.0 to 100.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "layerMaskDensity",
+          "shortdesc": "The density of the layer mask. Range: 0.0 to 100.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "layerMaskFeather",
+          "shortdesc": "The feather of the layer mask. Range: 0.0 and 250.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "vectorMaskDensity",
+          "shortdesc": "The density of the vector mask. Range: 0.0 and 100.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "vectorMaskFeather",
+          "shortdesc": "The feather of the vector mask. Range: 0.0 and 250.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "filterMaskDensity",
+          "shortdesc": "The density of the filter mask. Range: 0.0 and 100.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "filterMaskFeather",
+          "shortdesc": "The feather of the filter mask. Range: 0.0 and 250.0.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "grouped",
+          "shortdesc": "If true, the layer is grouped with the layer below.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "isBackgroundLayer",
+          "shortdesc": "If true, the layer is a background layer.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "pixelsLocked",
+          "shortdesc": "If true, the pixels in the layer's image cannot be edited.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "positionLocked",
+          "shortdesc": "If true, the pixels in the layer's image cannot be moved within the layer.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "transparentPixelsLocked",
+          "shortdesc": "If true, editing is confined to the opaque portions of the layer.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "kind",
+          "shortdesc": "Sets the layer kind (such as 'text layer') for an empty layer. Valid only when the layer is empty and when 'is background layer ' is false. You can use the 'kind ' property to make a background layer a normal layer; however, to make a layer a background layer, you must set 'is background layer' to true.",
+          "datatype": {
+            "type": "LayerKind"
+          }
+        },
+        {
+          "name": "textItem",
+          "rwaccess": "readonly",
+          "shortdesc": "The text that is associated with the layer. Valid only when 'kind' is text layer.",
+          "datatype": {
+            "type": "TextItem"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "applyStyle",
+          "shortdesc": "Applies the specified style to the layer.",
+          "parameters": [
+            {
+              "name": "styleName",
+              "shortdesc": "The layer style to apply.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "clear",
+          "shortdesc": "Cuts the layer without moving it to the clipboard."
+        },
+        {
+          "name": "copy",
+          "shortdesc": "Copies the layer to the clipboard.",
+          "parameters": [
+            {
+              "name": "merge",
+              "optional": true,
+              "shortdesc": "If true, the copy includes all visible layers. If false, the copy only copies from the current layer.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "cut",
+          "shortdesc": "Cuts the layer to the clipboard."
+        },
+        {
+          "name": "merge",
+          "shortdesc": "Merges the layer down, removing the layer from the document. Returns a reference to the art layer that this layer is merged into.",
+          "datatype": {
+            "type": "ArtLayer"
+          }
+        },
+        {
+          "name": "rasterize",
+          "shortdesc": "Converts the targeted content in the layer into a flat, raster image.",
+          "parameters": [
+            {
+              "name": "target",
+              "shortdesc": "What to rasterize.",
+              "datatype": {
+                "type": "RasterizeType"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyAverage",
+          "shortdesc": "Applies the average filter."
+        },
+        {
+          "name": "applyGaussianBlur",
+          "shortdesc": "Applies the gaussian blur filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The blur width in pixels. Range: 1.0 to 250.0.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyLensBlur",
+          "shortdesc": "Apply the lens blur filter.",
+          "parameters": [
+            {
+              "name": "source",
+              "optional": true,
+              "shortdesc": "The source for the depth map.",
+              "datatype": {
+                "type": "DepthMapSource",
+                "value": "DepthMapSource.NONE"
+              }
+            },
+            {
+              "name": "focalDistance",
+              "optional": true,
+              "shortdesc": "The blur focal distance (in pixels) for the depth map. RangeL 0 to 255. Valid only when 'source' is transparency or layer mask.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "invertDepthMap",
+              "optional": true,
+              "shortdesc": "If true, inverts the depth map.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "shape",
+              "optional": true,
+              "shortdesc": "The shape of the iris.",
+              "datatype": {
+                "type": "Geometry",
+                "value": "Geometry.HEXAGON"
+              }
+            },
+            {
+              "name": "radius",
+              "optional": true,
+              "shortdesc": "The radius of the iris. Range: 0 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 15
+              }
+            },
+            {
+              "name": "bladeCurvature",
+              "optional": true,
+              "shortdesc": "The blade curvature of the iris. Range: 0 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "rotation",
+              "optional": true,
+              "shortdesc": "The rotation of the iris (in degrees). Range: 0 to 360.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "brightness",
+              "optional": true,
+              "shortdesc": "The brightness for the specular highlights. Range: 0 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "threshold",
+              "optional": true,
+              "shortdesc": "The threshold for the specular highlights. Range: 0 to 255.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "amount",
+              "optional": true,
+              "shortdesc": "The amount of noise. Range: 0 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "distribution",
+              "optional": true,
+              "shortdesc": "The distribution value for the noise.",
+              "datatype": {
+                "type": "NoiseDistribution",
+                "value": "NoiseDistribution.UNIFORM"
+              }
+            },
+            {
+              "name": "monochromatic",
+              "optional": true,
+              "shortdesc": "If true, the noise is monochromatic.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyBlur",
+          "shortdesc": "Applies the blur filter."
+        },
+        {
+          "name": "applyBlurMore",
+          "shortdesc": "Applies the blur more filter."
+        },
+        {
+          "name": "applyMotionBlur",
+          "shortdesc": "Applies the motion blur filter.",
+          "parameters": [
+            {
+              "name": "angle",
+              "shortdesc": "The angle (in degrees). Range: -360 to 360.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "radius",
+              "shortdesc": "The radius (in pixels). Range: 1 to 999.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyRadialBlur",
+          "shortdesc": "Applies the radial blur filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The amount of blur. Range: 1 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "blurMethod",
+              "shortdesc": "The blur method to use.",
+              "datatype": {
+                "type": "RadialBlurMethod"
+              }
+            },
+            {
+              "name": "blurQuality",
+              "shortdesc": "The smoothness or graininess of the blurred image.",
+              "datatype": {
+                "type": "RadialBlurQuality"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applySmartBlur",
+          "shortdesc": "Applies the smart blur filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The blur radius. Range: 0 - 1000.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "threshold",
+              "shortdesc": "The blur threshold. Range: 0 - 1000.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "blurQuality",
+              "shortdesc": "The smoothness or graininess of the blurred image.",
+              "datatype": {
+                "type": "SmartBlurQuality"
+              }
+            },
+            {
+              "name": "mode",
+              "shortdesc": "The smart blur mode.",
+              "datatype": {
+                "type": "SmartBlurMode"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyDiffuseGlow",
+          "shortdesc": "Applies the diffuse glow filter.",
+          "parameters": [
+            {
+              "name": "graininess",
+              "shortdesc": "The amount of graininess. Range: 0 to 10.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "glowAmount",
+              "shortdesc": "The glow amount. Range: 0 to 20.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "clearAmount",
+              "shortdesc": "The clear amount. Range: 0 to 20.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyDisplace",
+          "shortdesc": "Applies the displace filter.",
+          "parameters": [
+            {
+              "name": "horizontalScale",
+              "shortdesc": "The amount of horizontal distortion. Range: -999 to 999.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "verticalScale",
+              "shortdesc": "The amount of vertical distortion. Range: -999 to 999.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "displacementType",
+              "shortdesc": "The displacement type.",
+              "datatype": {
+                "type": "DisplacementMapType"
+              }
+            },
+            {
+              "name": "undefinedAreas",
+              "shortdesc": "The treatment of undistorted areas.",
+              "datatype": {
+                "type": "UndefinedAreas"
+              }
+            },
+            {
+              "name": "displacementMapFile",
+              "shortdesc": "The distortion image map.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyGlassEffect",
+          "shortdesc": "Applies the glass filter.",
+          "parameters": [
+            {
+              "name": "distortion",
+              "shortdesc": "The amount of distortion. Range: 0 to 20.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "smoothness",
+              "shortdesc": "The smoothness. Range: 1 to 15.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "scaling",
+              "shortdesc": "The amount of scaling. Range: 50 to 200.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "invert",
+              "optional": true,
+              "shortdesc": "If true, the texture is inverted.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            },
+            {
+              "name": "texture",
+              "optional": true,
+              "shortdesc": "The type of texture.",
+              "datatype": {
+                "type": "TextureType"
+              }
+            },
+            {
+              "name": "textureFile",
+              "optional": true,
+              "shortdesc": "The file from which to load the texture type.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyOceanRipple",
+          "shortdesc": "Applies the ocean ripple filter.",
+          "parameters": [
+            {
+              "name": "size",
+              "shortdesc": "The ripple size. Range: 1 to 15.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "magnitude",
+              "shortdesc": "The ripple magnitude. Range: 0 to 20.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyPinch",
+          "shortdesc": "Applies the pinch filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The pinch amount. Range: -100 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyPolarCoordinates",
+          "shortdesc": "Applies the polar coordinates filter.",
+          "parameters": [
+            {
+              "name": "conversion",
+              "shortdesc": "The conversion type.",
+              "datatype": {
+                "type": "PolarConversionType"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyRipple",
+          "shortdesc": "Applies the ripple filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The ripple amount. Range: -999 to 999.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "size",
+              "shortdesc": "The ripple size.",
+              "datatype": {
+                "type": "RippleSize"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyShear",
+          "shortdesc": "Applies the shear filter.",
+          "parameters": [
+            {
+              "name": "curve",
+              "shortdesc": "Specification of the shear curve in points as x,y coordinate pairs in the format [[x1, y1],[x2, y2]]. Any number of coordinate pairs can be specified.",
+              "datatype": {
+                "type": "any",
+                "array": true
+              }
+            },
+            {
+              "name": "undefinedAreas",
+              "shortdesc": "The treatment of areas left blank by the distortion.",
+              "datatype": {
+                "type": "UndefinedAreas"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applySpherize",
+          "shortdesc": "Applies the spherize filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The amount of distortion. Range: -100 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "mode",
+              "shortdesc": "The distortion mode.",
+              "datatype": {
+                "type": "SpherizeMode"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyTwirl",
+          "shortdesc": "Applies the twirl filter.",
+          "parameters": [
+            {
+              "name": "angle",
+              "shortdesc": "The twirl angle. Range: -999 to 999.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyWave",
+          "shortdesc": "Applies the wave filter.",
+          "parameters": [
+            {
+              "name": "generatorNumber",
+              "shortdesc": "The number of generators. Range: 1 to 999.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "minimumWavelength",
+              "shortdesc": "The minimum wave length. Range: 1 to 998.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "maximumWavelength",
+              "shortdesc": "The maximum wave length. Range: 2 to (minimum wavelength + 1)",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "minimumAmplitude",
+              "shortdesc": "The minimum amplitude. Range: 1 to 998.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "maximumAmplitude",
+              "shortdesc": "The maximum amplitude. Range: 2 to (minimum amplitude + 1)",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "horizontalScale",
+              "shortdesc": "The amount of horizontal scale (as a percentage). Range: 1 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "verticalScale",
+              "shortdesc": "The amount of vertical scale (as a percentage). Range: 1 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "waveType",
+              "shortdesc": "The wave type.",
+              "datatype": {
+                "type": "WaveType"
+              }
+            },
+            {
+              "name": "undefinedAreas",
+              "shortdesc": "The treatment of areas left blank by the distortion.",
+              "datatype": {
+                "type": "UndefinedAreas"
+              }
+            },
+            {
+              "name": "randomSeed",
+              "shortdesc": "The random seed.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyZigZag",
+          "shortdesc": "Applies the zigzag filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The amount of zigzag. Range: -100 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "ridges",
+              "shortdesc": "The ridge length.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "style",
+              "shortdesc": "The zigzag style.",
+              "datatype": {
+                "type": "ZigZagType"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyAddNoise",
+          "shortdesc": "Applies the add noise filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The amount of noise (as a percentage). Range: 0.1 to 400.0.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "distribution",
+              "shortdesc": "The noise distribution type.",
+              "datatype": {
+                "type": "NoiseDistribution"
+              }
+            },
+            {
+              "name": "monochromatic",
+              "shortdesc": "If true, applies the filter only to the tonal elements in the image without changing the colors.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyDespeckle",
+          "shortdesc": "Applies the despeckle filter."
+        },
+        {
+          "name": "applyDustAndScratches",
+          "shortdesc": "Applies the dust and scratches filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The size (in pixels) of the area searched for dissimilar pixels. Range: 1 to 16.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "threshold",
+              "shortdesc": "Determines how dissimilar the pixels should be before they are eliminated. Range: 0 to 255.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyMedianNoise",
+          "shortdesc": "Applies the median noise filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The size of the area searched for pixels of similar brightness. Range: 0 to 100.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyClouds",
+          "shortdesc": "Applies the clouds filter."
+        },
+        {
+          "name": "applyDifferenceClouds",
+          "shortdesc": "Applies the difference clouds filter."
+        },
+        {
+          "name": "applyLensFlare",
+          "shortdesc": "Applies the lens flare filter.",
+          "parameters": [
+            {
+              "name": "brightness",
+              "shortdesc": "The flare brightness. Range: 10 to 300.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "flareCenter",
+              "shortdesc": "The position of the flare center.",
+              "datatype": {
+                "type": "UnitPoint"
+              }
+            },
+            {
+              "name": "lensType",
+              "shortdesc": "The lens type.",
+              "datatype": {
+                "type": "LensType"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyTextureFill",
+          "shortdesc": "Applies the texture fill filter.",
+          "parameters": [
+            {
+              "name": "textureFile",
+              "shortdesc": "The texture file. Must be a grayscale Photoshop file.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applySharpen",
+          "shortdesc": "Applies the sharpen filter."
+        },
+        {
+          "name": "applySharpenEdges",
+          "shortdesc": "Applies the sharpen edges filter."
+        },
+        {
+          "name": "applySharpenMore",
+          "shortdesc": "Applies the sharpen more filter."
+        },
+        {
+          "name": "applyUnSharpMask",
+          "shortdesc": "Applies the unsharp mask filter.",
+          "parameters": [
+            {
+              "name": "amount",
+              "shortdesc": "The amount of sharpening (as a percentage). Range: 1 to 500.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "radius",
+              "shortdesc": "The radius in pixels. Range: 0.1 to 250.0.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "threshold",
+              "shortdesc": "The contrast threshold. Range: 0 to 255.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyDeInterlace",
+          "shortdesc": "Applies the de-interlace filter.",
+          "parameters": [
+            {
+              "name": "eliminateFields",
+              "shortdesc": "The fields to eliminate.",
+              "datatype": {
+                "type": "EliminateFields"
+              }
+            },
+            {
+              "name": "createFields",
+              "shortdesc": "The method to use to replace eliminated fields.",
+              "datatype": {
+                "type": "CreateFields"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyNTSC",
+          "shortdesc": "Applies the NTSC colors filter."
+        },
+        {
+          "name": "applyCustomFilter",
+          "shortdesc": "Applies the custom filter.",
+          "parameters": [
+            {
+              "name": "characteristics",
+              "shortdesc": "The custom filter characteristics. This is an array of 25 values that corresponds to a left-to-right, top-to- bottom traversal of the array presented in the Custom dialog in the user interface (Filter&gt;Other&gt;Custom).",
+              "datatype": {
+                "type": "int",
+                "array": true
+              }
+            },
+            {
+              "name": "scale",
+              "shortdesc": "The value by which to divide the sum of the brightness values of the pixels included in the calculation.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "offset",
+              "shortdesc": "The value to be added to the result of the scale calculation.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyHighPass",
+          "shortdesc": "Applies the high pass filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The width (in pixels) of the radius where edge details are retained.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyMaximum",
+          "shortdesc": "Applies the maximum filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The choke area (in pixels). Range: 0 to 100.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyMinimum",
+          "shortdesc": "Applies the minimum filter.",
+          "parameters": [
+            {
+              "name": "radius",
+              "shortdesc": "The spread area (in pixels). Range: 0 to 100.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "applyOffset",
+          "shortdesc": "Applies the offset filter.",
+          "parameters": [
+            {
+              "name": "horizontal",
+              "shortdesc": "The amount (in pixels) to move the selection horizontally (to the right). Range: -6144 to 6144.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "vertical",
+              "shortdesc": "The amount (in pixels) to move the selection vertically (downward). Range: -6144 to 6144.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "undefinedAreas",
+              "shortdesc": "The method for filling areas left blank by the offset.",
+              "datatype": {
+                "type": "OffsetUndefinedAreas"
+              }
+            }
+          ]
+        },
+        {
+          "name": "adjustLevels",
+          "shortdesc": "Adjusts levels of the selected channels.",
+          "parameters": [
+            {
+              "name": "inputRangeStart",
+              "shortdesc": "The input levels minimum. Range: 0 to 253.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "inputRangeEnd",
+              "shortdesc": "The input levels maximum. Range: (input range start + 2) to 253.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "inputRangeGamma",
+              "shortdesc": "The input levels gamma. Range: 0.10 to 9.99.",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "outputRangeStart",
+              "shortdesc": "The output levels minimum. Range: 0 to 253.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "outputRangeEnd",
+              "shortdesc": "The output levels maximum. Range: (output range start + 2) to 253.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "autoLevels",
+          "shortdesc": "Adjust the levels of the selected channels using the auto levels option."
+        },
+        {
+          "name": "autoContrast",
+          "shortdesc": "Adjusts the contrast of the selected channels automatically."
+        },
+        {
+          "name": "adjustCurves",
+          "shortdesc": "Adjusts the tonal range of the selected channel using up to fourteen points.",
+          "parameters": [
+            {
+              "name": "curveShape",
+              "shortdesc": "The curve points. The number of points must be between 2 and 14.",
+              "datatype": {
+                "type": "Point",
+                "array": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "adjustBrightnessContrast",
+          "shortdesc": "Adjusts the brightness and constrast.",
+          "parameters": [
+            {
+              "name": "brightness",
+              "shortdesc": "The brightness amount. Range: -100 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            },
+            {
+              "name": "contrast",
+              "shortdesc": "The contrast amount. Range: -100 to 100.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "adjustColorBalance",
+          "shortdesc": "Adjusts the color balance of the layer's component channels.",
+          "parameters": [
+            {
+              "name": "shadows",
+              "optional": true,
+              "shortdesc": "The adjustments for the shadows. The array must include three values (in the range -100 to 100), which represent cyan or red, magenta or green, and yellow or blue, when the document mode is CMYK or RGB.",
+              "datatype": {
+                "type": "int",
+                "array": true
+              }
+            },
+            {
+              "name": "midtones",
+              "optional": true,
+              "shortdesc": "The adjustments for the midtones. The array must include three values (in the range -100 to 100), which represent cyan or red, magenta or green, and yellow or blue, when the document mode is CMYK or RGB.",
+              "datatype": {
+                "type": "int",
+                "array": true
+              }
+            },
+            {
+              "name": "highlights",
+              "optional": true,
+              "shortdesc": "The adjustments for the highlights. The array must include three values (in the range -100 to 100), which represent cyan or red, magenta or green, and yellow or blue, when the document mode is CMYK or RGB.",
+              "datatype": {
+                "type": "int",
+                "array": true
+              }
+            },
+            {
+              "name": "preserveLuminosity",
+              "optional": true,
+              "shortdesc": "If true, luminosity is preserved.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            }
+          ]
+        },
+        {
+          "name": "desaturate",
+          "shortdesc": "Converts a color image to a grayscale image in the current color mode by assigning equal values of each component color to each pixel."
+        },
+        {
+          "name": "selectiveColor",
+          "parameters": [
+            {
+              "name": "selectionMethod",
+              "shortdesc": "Modifies the amount of a process color in a specified primary color without affecting the other primary colors.",
+              "datatype": {
+                "type": "AdjustmentReference"
+              }
+            },
+            {
+              "name": "reds",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "yellows",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "greens",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "cyans",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "blues",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "magentas",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "whites",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "neutrals",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            },
+            {
+              "name": "blacks",
+              "optional": true,
+              "shortdesc": "Array of 4 values: cyan, magenta, yellow, black.",
+              "datatype": {
+                "type": "Number",
+                "array": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "mixChannels",
+          "shortdesc": "Modifies a targeted (output) color channel using a mix of the existing color channels in the image. (output channels = An array of channel specifications. For each component channel, specify a list of adjustment values (-200 to 200) followed by a 'constant' value (-200 to 200).) When monochrome = true, the maximum number of channel value specifications is 1. Valid only when 'document mode' = RGB or CMYK. RGB arrays must include four doubles. CMYK arrays must include five doubles.",
+          "parameters": [
+            {
+              "name": "outputChannels",
+              "shortdesc": "A list of channel specifications. For each component channel that the document has, you must specify a list of adjustment values followed by a 'constant' value.",
+              "datatype": {
+                "type": "any",
+                "array": true
+              }
+            },
+            {
+              "name": "monochrome",
+              "optional": true,
+              "shortdesc": "If true, uses monochrome mixing. Note: If this is true, you can only specify one channel value.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "invert",
+          "shortdesc": "Inverts the colors in the layer by converting the brightness value of each pixel in the channels to the inverse value on the 256-step color-values scale."
+        },
+        {
+          "name": "equalize",
+          "shortdesc": "Redistributes the brightness values of pixels in an image to more evenly represent the entire range of brightness levels within the image."
+        },
+        {
+          "name": "threshold",
+          "shortdesc": "Converts grayscale or color images to high-contrast, B/W images by converting pixels lighter than the specified threshold to white and pixels darker than the threshold to black.",
+          "parameters": [
+            {
+              "name": "level",
+              "shortdesc": "The threshold level.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "posterize",
+          "shortdesc": "Specifies the number of tonal levels for each channel and then maps pixels to the closest matching level.",
+          "parameters": [
+            {
+              "name": "levels",
+              "shortdesc": "The tonal levels. Range: 2 to 255.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "photoFilter",
+          "shortdesc": "Adjusts the layer's color balance and temperature as if a color filter had been applied.",
+          "parameters": [
+            {
+              "name": "fillColor",
+              "optional": true,
+              "shortdesc": "The color to use for the fill.",
+              "datatype": {
+                "type": "SolidColor"
+              }
+            },
+            {
+              "name": "density",
+              "optional": true,
+              "shortdesc": "The density (as a percentage) of the filter effect. Range: 1 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 25
+              }
+            },
+            {
+              "name": "preserveLuminosity",
+              "optional": true,
+              "shortdesc": "If true, luminosity is preserved.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "shadowHighlight",
+          "shortdesc": "Adjusts the range of tones in the shadows and highlights.",
+          "parameters": [
+            {
+              "name": "shadowAmount",
+              "optional": true,
+              "shortdesc": "The shadow amount, as a percentage. Range: 0 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 50
+              }
+            },
+            {
+              "name": "shadowWidth",
+              "optional": true,
+              "shortdesc": "The shadow width, as a percentage. Range: 0 to 100 for tonal width (0 = narrow), (100 = broad).",
+              "datatype": {
+                "type": "int",
+                "value": 50
+              }
+            },
+            {
+              "name": "shadowRaduis",
+              "optional": true,
+              "shortdesc": "The shadow radius (in pixels). Range: 0 to 2500.",
+              "datatype": {
+                "type": "int",
+                "value": 30
+              }
+            },
+            {
+              "name": "highlightAmount",
+              "optional": true,
+              "shortdesc": "The highlight amount, as a percentage. Range: 0 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "highlightWidth",
+              "optional": true,
+              "shortdesc": "The highlight width. Range: 0 to 100 for tonal width (0 = narrow), (100 = broad).",
+              "datatype": {
+                "type": "int",
+                "value": 50
+              }
+            },
+            {
+              "name": "highlightRaduis",
+              "optional": true,
+              "shortdesc": "The highlight radius (in pixels). Range: 0 to 2500.",
+              "datatype": {
+                "type": "int",
+                "value": 30
+              }
+            },
+            {
+              "name": "colorCorrection",
+              "optional": true,
+              "shortdesc": "The amount to adjust the colors in the changed portion of the image. Range: -100 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 20
+              }
+            },
+            {
+              "name": "midtoneContrast",
+              "optional": true,
+              "shortdesc": "The amount of midtone contrast. Range: -100 to 100.",
+              "datatype": {
+                "type": "int",
+                "value": 0
+              }
+            },
+            {
+              "name": "blackClip",
+              "optional": true,
+              "shortdesc": "Fractions of whites to be clipped. Range: 0.000 to 50.000.",
+              "datatype": {
+                "type": "Number",
+                "value": 0.01
+              }
+            },
+            {
+              "name": "whiteClip",
+              "optional": true,
+              "shortdesc": "Fractions of blacks to be clipped. Range: 0.000 to 50.000.",
+              "datatype": {
+                "type": "Number",
+                "value": 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

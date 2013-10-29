@@ -1,0 +1,867 @@
+{
+  "name": "Document",
+  "dynamic": true,
+  "shortdesc": "The active containment object for the layers and all other objects in the script; the basic canvas for the file.",
+  "elements": [
+    {
+      "type": "instance",
+      "property": [
+        {
+          "name": "parent",
+          "rwaccess": "readonly",
+          "shortdesc": "The object's container.",
+          "datatype": {
+            "type": "Object"
+          }
+        },
+        {
+          "name": "typename",
+          "rwaccess": "readonly",
+          "shortdesc": "The class name of the object.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "backgroundLayer",
+          "rwaccess": "readonly",
+          "shortdesc": "The background layer for the document.",
+          "datatype": {
+            "type": "ArtLayer"
+          }
+        },
+        {
+          "name": "bitsPerChannel",
+          "shortdesc": "The number of bits per channel.",
+          "datatype": {
+            "type": "BitsPerChannelType"
+          }
+        },
+        {
+          "name": "ColorProfile",
+          "shortdesc": "The type of color model that defines the working space of the document.",
+          "datatype": {
+            "type": "ColorProfile"
+          }
+        },
+        {
+          "name": "colorProfileName",
+          "shortdesc": "The name of the color profile. Valid only when no value is specified for color profile kind (to indicate a custom color profile).",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "mode",
+          "rwaccess": "readonly",
+          "shortdesc": "The color profile.",
+          "datatype": {
+            "type": "DocumentMode"
+          }
+        },
+        {
+          "name": "componentChannels",
+          "rwaccess": "readonly",
+          "shortdesc": "The color component channels for this document.",
+          "datatype": {
+            "type": "Channel",
+            "array": true
+          }
+        },
+        {
+          "name": "activeHistoryState",
+          "shortdesc": "The current history state for this document.",
+          "datatype": {
+            "type": "HistoryState"
+          }
+        },
+        {
+          "name": "activeHistoryBrushSource",
+          "shortdesc": "The history state to use with the history brush.",
+          "datatype": {
+            "type": "HistoryState"
+          }
+        },
+        {
+          "name": "activeLayer",
+          "shortdesc": "The selected layer.",
+          "datatype": {
+            "type": "Layer"
+          }
+        },
+        {
+          "name": "activeChannels",
+          "shortdesc": "The selected channels.",
+          "datatype": {
+            "type": "Channel",
+            "array": true
+          }
+        },
+        {
+          "name": "info",
+          "rwaccess": "readonly",
+          "shortdesc": "Metadata about the document.",
+          "datatype": {
+            "type": "DocumentInfo"
+          }
+        },
+        {
+          "name": "printSettings",
+          "rwaccess": "readonly",
+          "shortdesc": "Document print settings.",
+          "datatype": {
+            "type": "DocumentPrintSettings"
+          }
+        },
+        {
+          "name": "fullName",
+          "rwaccess": "readonly",
+          "shortdesc": "The full path name of the document.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "height",
+          "rwaccess": "readonly",
+          "shortdesc": "The height of the document.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        },
+        {
+          "name": "managed",
+          "rwaccess": "readonly",
+          "shortdesc": "If true, the document is a workgroup document.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "saved",
+          "rwaccess": "readonly",
+          "shortdesc": "If true, the document been saved since the last change.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "name",
+          "rwaccess": "readonly",
+          "shortdesc": "The document name.",
+          "datatype": {
+            "type": "String"
+          }
+        },
+        {
+          "name": "path",
+          "rwaccess": "readonly",
+          "shortdesc": "The path to the document.",
+          "datatype": {
+            "type": "File"
+          }
+        },
+        {
+          "name": "quickMaskMode",
+          "shortdesc": "If true, the document is in Quick Mask mode.",
+          "datatype": {
+            "type": "Boolean"
+          }
+        },
+        {
+          "name": "resolution",
+          "rwaccess": "readonly",
+          "shortdesc": "The resolution of the document (in pixels per inch)",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "selection",
+          "rwaccess": "readonly",
+          "shortdesc": "The selected area of the document.",
+          "datatype": {
+            "type": "Selection"
+          }
+        },
+        {
+          "name": "width",
+          "rwaccess": "readonly",
+          "shortdesc": "The width of the document.",
+          "datatype": {
+            "type": "UnitValue"
+          }
+        },
+        {
+          "name": "histogram",
+          "rwaccess": "readonly",
+          "shortdesc": "A histogram showing the number of pixels at each color intensity level for the composite channel.",
+          "description": "Valid only when 'mode' = RGB, CMYK, or indexed.",
+          "datatype": {
+            "type": "int",
+            "array": true
+          }
+        },
+        {
+          "name": "pixelAspectRatio",
+          "shortdesc": "The (custom) pixel aspect ratio of the document. Range: 0.100 to 10.000.",
+          "datatype": {
+            "type": "Number"
+          }
+        },
+        {
+          "name": "xmpMetadata",
+          "rwaccess": "readonly",
+          "shortdesc": "The XMP properties of the document. The Camera RAW settings are stored here.",
+          "datatype": {
+            "type": "XMPMetadata"
+          }
+        },
+        {
+          "name": "measurementScale",
+          "rwaccess": "readonly",
+          "shortdesc": "The measurement scale of the document.",
+          "datatype": {
+            "type": "MeasurementScale"
+          }
+        },
+        {
+          "name": "layers",
+          "rwaccess": "readonly",
+          "shortdesc": "The layers collection in the document.",
+          "datatype": {
+            "type": "Layers"
+          }
+        },
+        {
+          "name": "layerSets",
+          "rwaccess": "readonly",
+          "shortdesc": "The layer sets collection in the document.",
+          "datatype": {
+            "type": "LayerSets"
+          }
+        },
+        {
+          "name": "artLayers",
+          "rwaccess": "readonly",
+          "shortdesc": "The art layers collection in the document.",
+          "datatype": {
+            "type": "ArtLayers"
+          }
+        },
+        {
+          "name": "channels",
+          "rwaccess": "readonly",
+          "shortdesc": "The channels collection in this document.",
+          "datatype": {
+            "type": "Channels"
+          }
+        },
+        {
+          "name": "historyStates",
+          "rwaccess": "readonly",
+          "shortdesc": "The history states collection in this document.",
+          "datatype": {
+            "type": "HistoryStates"
+          }
+        },
+        {
+          "name": "layerComps",
+          "rwaccess": "readonly",
+          "shortdesc": "The layer comps collection in this document.",
+          "datatype": {
+            "type": "LayerComps"
+          }
+        },
+        {
+          "name": "pathItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The path items collection in this document.",
+          "datatype": {
+            "type": "PathItems"
+          }
+        },
+        {
+          "name": "countItems",
+          "rwaccess": "readonly",
+          "shortdesc": "The current count items in the document.",
+          "datatype": {
+            "type": "CountItems"
+          }
+        },
+        {
+          "name": "colorSamplers",
+          "rwaccess": "readonly",
+          "shortdesc": "The current color samplers associated with the document.",
+          "datatype": {
+            "type": "ColorSamplers"
+          }
+        }
+      ],
+      "method": [
+        {
+          "name": "duplicate",
+          "shortdesc": "Duplicate this object.",
+          "parameters": [
+            {
+              "name": "relativeObject",
+              "datatype": {
+                "type": "Object"
+              }
+            },
+            {
+              "name": "insertionLocation",
+              "datatype": {
+                "type": "ElementPlacement"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "close",
+          "shortdesc": "Closes the document.",
+          "parameters": [
+            {
+              "name": "saving",
+              "optional": true,
+              "shortdesc": "Specifies whether changes should be saved before closing.",
+              "datatype": {
+                "type": "SaveOptions",
+                "value": "SaveOptions.PROMPTTOSAVECHANGES"
+              }
+            }
+          ]
+        },
+        {
+          "name": "convertProfile",
+          "shortdesc": "Converts the document from using one color profile to using another.",
+          "parameters": [
+            {
+              "name": "destinationProfile",
+              "shortdesc": "The color profile to convert to. Either a string specifying a color profile, one of the working color spaces, or Lab color.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "intent",
+              "shortdesc": "The conversion intent.",
+              "datatype": {
+                "type": "Intent"
+              }
+            },
+            {
+              "name": "blackPointCompensation",
+              "optional": true,
+              "shortdesc": "If true, black point compensation is used.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            },
+            {
+              "name": "dither",
+              "optional": true,
+              "shortdesc": "If true, dither is used.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "changeMode",
+          "shortdesc": "Changes the mode of the document.",
+          "parameters": [
+            {
+              "name": "destinationMode",
+              "shortdesc": "The mode to change to.",
+              "datatype": {
+                "type": "ChangeMode"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Options for changing the mode.",
+              "datatype": {
+                "type": "DocumentConversionOptions"
+              }
+            }
+          ]
+        },
+        {
+          "name": "crop",
+          "shortdesc": "Crops the document.",
+          "parameters": [
+            {
+              "name": "bounds",
+              "shortdesc": "The area to crop.",
+              "datatype": {
+                "type": "UnitRect"
+              }
+            },
+            {
+              "name": "angle",
+              "optional": true,
+              "shortdesc": "The angle of cropping bounds.",
+              "datatype": {
+                "type": "Number",
+                "value": 0
+              }
+            },
+            {
+              "name": "width",
+              "optional": true,
+              "shortdesc": "The width of the resulting document.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "height",
+              "optional": true,
+              "shortdesc": "The height of the resulting document.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            }
+          ]
+        },
+        {
+          "name": "exportDocument",
+          "shortdesc": "Exports the document.",
+          "parameters": [
+            {
+              "name": "exportIn",
+              "shortdesc": "The file to export to.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "exportAs",
+              "optional": true,
+              "shortdesc": "The type of export.",
+              "datatype": {
+                "type": "ExportType",
+                "value": "ExportType.ILLUSTRATORPATHS"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Options for the specified export type.",
+              "datatype": {
+                "type": "ExportOptions"
+              }
+            }
+          ]
+        },
+        {
+          "name": "flipCanvas",
+          "shortdesc": "Flips the canvas horizontally or vertically.",
+          "parameters": [
+            {
+              "name": "direction",
+              "shortdesc": "The direction in which to flip the canvas.",
+              "datatype": {
+                "type": "Direction"
+              }
+            }
+          ]
+        },
+        {
+          "name": "importAnnotations",
+          "shortdesc": "Imports annotations into the document.",
+          "parameters": [
+            {
+              "name": "file",
+              "shortdesc": "The document to import annotations from.",
+              "datatype": {
+                "type": "File"
+              }
+            }
+          ]
+        },
+        {
+          "name": "flatten",
+          "shortdesc": "Flattens all layers."
+        },
+        {
+          "name": "mergeVisibleLayers",
+          "shortdesc": "Flattens all visible layers in the document."
+        },
+        {
+          "name": "paste",
+          "shortdesc": "Pastes contents of the clipboard into the document.",
+          "parameters": [
+            {
+              "name": "intoSelection",
+              "optional": true,
+              "shortdesc": "If true, contents are pasted into the current selection.",
+              "datatype": {
+                "type": "Boolean",
+                "value": false
+              }
+            }
+          ],
+          "datatype": {
+            "type": "ArtLayer"
+          }
+        },
+        {
+          "name": "print",
+          "shortdesc": "Prints the document.",
+          "parameters": [
+            {
+              "name": "postScriptEncoding",
+              "optional": true,
+              "shortdesc": "The encoding type.",
+              "datatype": {
+                "type": "PrintEncoding",
+                "value": "PrintEncoding.BINARY"
+              }
+            },
+            {
+              "name": "sourceSpace",
+              "optional": true,
+              "shortdesc": "The color space for the source.",
+              "datatype": {
+                "type": "SourceSpaceType",
+                "value": "SourceSpaceType.DOCUMENT"
+              }
+            },
+            {
+              "name": "printSpace",
+              "optional": true,
+              "shortdesc": "The color space for the printer. Can be \"nothing\" (meaning same as source); one of the working spaces or Lab color; or a string specifying a color space. Default: nothing.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "intent",
+              "optional": true,
+              "shortdesc": "The color conversion intent.",
+              "datatype": {
+                "type": "Intent",
+                "value": "Intent.RELATIVECOLORIMETRIC"
+              }
+            },
+            {
+              "name": "blackPointCompensation",
+              "optional": true,
+              "shortdesc": "If true, black point compensation is used.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "printOneCopy",
+          "shortdesc": "Print one copy of the document."
+        },
+        {
+          "name": "revealAll",
+          "shortdesc": "Expands the document to show clipped sections."
+        },
+        {
+          "name": "rasterizeAllLayers",
+          "shortdesc": "Rasterizes all layers."
+        },
+        {
+          "name": "recordMeasurements",
+          "shortdesc": "Records the measurements of document.",
+          "parameters": [
+            {
+              "name": "source",
+              "optional": true,
+              "shortdesc": "The source of the measurements to record.",
+              "datatype": {
+                "type": "MeasurementSource"
+              }
+            },
+            {
+              "name": "dataPoints",
+              "optional": true,
+              "shortdesc": "An array of identifiers of data points to record. Any data points not appropriate for the specified source are ignored.",
+              "datatype": {
+                "type": "String",
+                "array": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "rotateCanvas",
+          "shortdesc": "Rotates the canvas.",
+          "parameters": [
+            {
+              "name": "angle",
+              "shortdesc": "The number of degrees to rotate. A positive angle rotates the canvas clockwise; a negative value rotates the canvas counter-clockwise.",
+              "datatype": {
+                "type": "Number"
+              }
+            }
+          ]
+        },
+        {
+          "name": "resizeCanvas",
+          "shortdesc": "Changes the size of the canvas.",
+          "parameters": [
+            {
+              "name": "width",
+              "optional": true,
+              "shortdesc": "The desired width of the canvas.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "height",
+              "optional": true,
+              "shortdesc": "The desired height of the canvas.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "anchor",
+              "optional": true,
+              "shortdesc": "The anchor point to resize around.",
+              "datatype": {
+                "type": "AnchorPosition",
+                "value": "AnchorPosition.MIDDLECENTER"
+              }
+            }
+          ]
+        },
+        {
+          "name": "resizeImage",
+          "shortdesc": "Changes the size of the image.",
+          "parameters": [
+            {
+              "name": "width",
+              "optional": true,
+              "shortdesc": "The desired width of the image.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "height",
+              "optional": true,
+              "shortdesc": "The desired height of the image.",
+              "datatype": {
+                "type": "UnitValue"
+              }
+            },
+            {
+              "name": "resolution",
+              "optional": true,
+              "shortdesc": "The resolution (in pixels per inch)",
+              "datatype": {
+                "type": "Number"
+              }
+            },
+            {
+              "name": "resampleMethod",
+              "optional": true,
+              "shortdesc": "The downsample method.",
+              "datatype": {
+                "type": "ResampleMethod",
+                "value": "ResampleMethod.BICUBIC"
+              }
+            }
+          ]
+        },
+        {
+          "name": "splitChannels",
+          "shortdesc": "Splits the channels of the document.",
+          "datatype": {
+            "type": "Document",
+            "array": true
+          }
+        },
+        {
+          "name": "save",
+          "shortdesc": "Saves the document."
+        },
+        {
+          "name": "saveAs",
+          "shortdesc": "Saves the document with the specified save options.",
+          "parameters": [
+            {
+              "name": "saveIn",
+              "shortdesc": "The file to save to, specified as a string containing the full file path or an alias. If not specified, the document is saved to its existing file.",
+              "datatype": {
+                "type": "File"
+              }
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "shortdesc": "Options for the specified file type.",
+              "datatype": {
+                "type": "any"
+              }
+            },
+            {
+              "name": "asCopy",
+              "optional": true,
+              "shortdesc": "Saves the document as a copy, leaving the original open.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            },
+            {
+              "name": "extensionType",
+              "optional": true,
+              "shortdesc": "Appends the specified extension to the file name.",
+              "datatype": {
+                "type": "Extension"
+              }
+            }
+          ]
+        },
+        {
+          "name": "suspendHistory",
+          "shortdesc": "Provides a single history state for the entire script. Allows a single undo for all actions taken in the script.",
+          "parameters": [
+            {
+              "name": "historyString",
+              "shortdesc": "The string to use for the history state.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "javaScriptString",
+              "shortdesc": "A string of JavaScript code to execute during the suspension of history.",
+              "datatype": {
+                "type": "String"
+              }
+            }
+          ]
+        },
+        {
+          "name": "trap",
+          "shortdesc": "Applies trapping to a CMYK document. Valid only when 'mode' = CMYK.",
+          "parameters": [
+            {
+              "name": "width",
+              "shortdesc": "The trap width in pixels.",
+              "datatype": {
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "name": "trim",
+          "shortdesc": "Trims the transparent area around the image on the specified sides of the canvas.",
+          "parameters": [
+            {
+              "name": "type",
+              "optional": true,
+              "shortdesc": "The color or type of pixels to base the trim on.",
+              "datatype": {
+                "type": "TrimType",
+                "value": "TrimType.TOPLEFT"
+              }
+            },
+            {
+              "name": "top",
+              "optional": true,
+              "shortdesc": "If true, trims away the top of the document.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "left",
+              "optional": true,
+              "shortdesc": "If true, trims away the left of the document.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "bottom",
+              "optional": true,
+              "shortdesc": "If true, trims away the bottom of the document.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            },
+            {
+              "name": "right",
+              "optional": true,
+              "shortdesc": "If true, trims away the right of the document.",
+              "datatype": {
+                "type": "Boolean",
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "duplicate",
+          "shortdesc": "Creates a duplicate of the document object.",
+          "parameters": [
+            {
+              "name": "name",
+              "optional": true,
+              "shortdesc": "The name of the new document.",
+              "datatype": {
+                "type": "String"
+              }
+            },
+            {
+              "name": "mergeLayersOnly",
+              "optional": true,
+              "shortdesc": "If ture, duplicates merged layers only.",
+              "datatype": {
+                "type": "Boolean"
+              }
+            }
+          ],
+          "datatype": {
+            "type": "Document"
+          }
+        },
+        {
+          "name": "autoCount",
+          "shortdesc": "Counts the objects in the document.",
+          "parameters": [
+            {
+              "name": "channel",
+              "shortdesc": "The channel to use for counting.",
+              "datatype": {
+                "type": "Channel"
+              }
+            },
+            {
+              "name": "threshold",
+              "shortdesc": "Threshold to use for counting. Range: 0 to 255.",
+              "datatype": {
+                "type": "int",
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
