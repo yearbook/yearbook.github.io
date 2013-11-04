@@ -19444,6 +19444,7 @@ function ContentsListCtrl($scope, $http) {
   $scope.namespace = 'InDesign';
 
   $scope.update = function() {
+    $scope.classFilter = '';
     $scope.classes = [];
 
     // XHR to get the map data
@@ -19481,17 +19482,23 @@ function ElementCtrl($scope, $routeParams, $http) {
 
     // search data for the element we need
     data.elements.forEach(function(element) {
-      element.property.forEach(function(property) {
-        if (property.name == $routeParams.elementName) {
-          $scope.property = property;
-        }
-      });
 
-      element.method.forEach(function(method) {
-        if (method.name == $routeParams.elementName) {
-          $scope.method = method;
-        }
-      });
+      if (element.property) {
+        element.property.forEach(function(property) {
+          if (property.name == $routeParams.elementName) {
+            $scope.property = property;
+          }
+        });
+      }
+
+      if (element.method) {
+        element.method.forEach(function(method) {
+          if (method.name == $routeParams.elementName) {
+            $scope.method = method;
+          }
+        });
+      }
+
     });
   });
 }
