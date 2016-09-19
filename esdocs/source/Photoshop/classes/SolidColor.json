@@ -1,135 +1,130 @@
 {
-  "name": "SolidColor",
-  "dynamic": true,
-  "shortdesc": "A color definition used in the document.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "model",
-          "shortdesc": "The color model.",
-          "datatype": {
-            "type": "ColorModel"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "model",
+                    "description": "The color model.",
+                    "type": "ColorModel"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rgb",
+                    "description": "The RGB color model.",
+                    "type": "RGBColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gray",
+                    "description": "The grayscale color model.",
+                    "type": "GrayColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "cmyk",
+                    "description": "The CMYK color model.",
+                    "type": "CMYKColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "lab",
+                    "description": "The lab color model.",
+                    "type": "LabColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "hsb",
+                    "description": "The HSB color model.",
+                    "type": "HSBColor"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "nearestWebColor",
+                    "description": "The nearest web color to the current color.",
+                    "type": "RGBColor"
+                }
+            ]
         },
-        {
-          "name": "rgb",
-          "shortdesc": "The RGB color model.",
-          "datatype": {
-            "type": "RGBColor"
-          }
-        },
-        {
-          "name": "gray",
-          "shortdesc": "The grayscale color model.",
-          "datatype": {
-            "type": "GrayColor"
-          }
-        },
-        {
-          "name": "cmyk",
-          "shortdesc": "The CMYK color model.",
-          "datatype": {
-            "type": "CMYKColor"
-          }
-        },
-        {
-          "name": "lab",
-          "shortdesc": "The lab color model.",
-          "datatype": {
-            "type": "LabColor"
-          }
-        },
-        {
-          "name": "hsb",
-          "shortdesc": "The HSB color model.",
-          "datatype": {
-            "type": "HSBColor"
-          }
-        },
-        {
-          "name": "nearestWebColor",
-          "rwaccess": "readonly",
-          "shortdesc": "The nearest web color to the current color.",
-          "datatype": {
-            "type": "RGBColor"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "color",
+                            "description": "Another color to compare with.",
+                            "type": "SolidColor"
+                        }
+                    ],
+                    "name": "isEqual",
+                    "description": "Compares two colors.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "model",
+                    "description": "The color model.",
+                    "type": "ColorModel"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rgb",
+                    "description": "The RGB color model.",
+                    "type": "RGBColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gray",
+                    "description": "The grayscale color model.",
+                    "type": "GrayColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "cmyk",
+                    "description": "The CMYK color model.",
+                    "type": "CMYKColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "lab",
+                    "description": "The lab color model.",
+                    "type": "LabColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "hsb",
+                    "description": "The HSB color model.",
+                    "type": "HSBColor"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "nearestWebColor",
+                    "description": "The nearest web color to the current color.",
+                    "type": "RGBColor"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "model",
-          "shortdesc": "The color model.",
-          "datatype": {
-            "type": "ColorModel"
-          }
-        },
-        {
-          "name": "rgb",
-          "shortdesc": "The RGB color model.",
-          "datatype": {
-            "type": "RGBColor"
-          }
-        },
-        {
-          "name": "gray",
-          "shortdesc": "The grayscale color model.",
-          "datatype": {
-            "type": "GrayColor"
-          }
-        },
-        {
-          "name": "cmyk",
-          "shortdesc": "The CMYK color model.",
-          "datatype": {
-            "type": "CMYKColor"
-          }
-        },
-        {
-          "name": "lab",
-          "shortdesc": "The lab color model.",
-          "datatype": {
-            "type": "LabColor"
-          }
-        },
-        {
-          "name": "hsb",
-          "shortdesc": "The HSB color model.",
-          "datatype": {
-            "type": "HSBColor"
-          }
-        },
-        {
-          "name": "nearestWebColor",
-          "rwaccess": "readonly",
-          "shortdesc": "The nearest web color to the current color.",
-          "datatype": {
-            "type": "RGBColor"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "isEqual",
-          "shortdesc": "Compares two colors.",
-          "parameters": [
-            {
-              "name": "color",
-              "shortdesc": "Another color to compare with.",
-              "datatype": {
-                "type": "SolidColor"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "SolidColor",
+    "description": "A color definition used in the document."
 }

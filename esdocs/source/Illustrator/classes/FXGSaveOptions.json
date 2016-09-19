@@ -1,100 +1,103 @@
 {
-  "name": "FXGSaveOptions",
-  "dynamic": true,
-  "shortdesc": "Options which may be supplied when saving a document as an FXG file.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "saveMultipleArtboards",
-          "shortdesc": "All the artboards or range of the artboards will be saved.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "saveMultipleArtboards",
+                    "description": "All the artboards or range of the artboards will be saved.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": null,
+                    "array": false,
+                    "name": "artboardRange",
+                    "description": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "value": "FXGVersion.VERSION2PT0",
+                    "array": false,
+                    "name": "version",
+                    "description": "The version of the FXG file format to create.",
+                    "type": "FXGVersion"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "preserveEditingCapabilities",
+                    "description": "Choose to preserve the editing capabilities of FXG.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "includeUnusedSymbols",
+                    "description": "Choose to include unused symbols.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "downsampleLinkedImages",
+                    "description": "Choose to downsample the linked images(72ppi)",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "includeMetadata",
+                    "description": "Choose to include metadata (XMP)",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "FiltersPreservePolicy.KEEPFILTERSEDITABLE",
+                    "array": false,
+                    "name": "filtersPolicy",
+                    "description": "The policy used by FXG to preserve filters.",
+                    "type": "FiltersPreservePolicy"
+                },
+                {
+                    "readonly": false,
+                    "value": "TextPreservePolicy.AUTOMATICALLYCONVERTTEXT",
+                    "array": false,
+                    "name": "textPolicy",
+                    "description": "The policy used by FXG to preserve text.",
+                    "type": "TextPreservePolicy"
+                },
+                {
+                    "readonly": false,
+                    "value": "GradientsPreservePolicy.AUTOMATICALLYCONVERTGRADIENTS",
+                    "array": false,
+                    "name": "gradientsPolicy",
+                    "description": "The policy used by FXG to preserve gradients.",
+                    "type": "GradientsPreservePolicy"
+                },
+                {
+                    "readonly": false,
+                    "value": "BlendsExpandPolicy.AUTOMATICALLYCONVERTBLENDS",
+                    "array": false,
+                    "name": "blendsPolicy",
+                    "description": "The policy used by FXG to expand blends.",
+                    "type": "BlendsExpandPolicy"
+                }
+            ]
         },
-        {
-          "name": "artboardRange",
-          "shortdesc": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
-          "datatype": {
-            "type": "String",
-            "value": {}
-          }
-        },
-        {
-          "name": "version",
-          "shortdesc": "The version of the FXG file format to create.",
-          "datatype": {
-            "type": "FXGVersion",
-            "value": "FXGVersion.VERSION2PT0"
-          }
-        },
-        {
-          "name": "preserveEditingCapabilities",
-          "shortdesc": "Choose to preserve the editing capabilities of FXG.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "includeUnusedSymbols",
-          "shortdesc": "Choose to include unused symbols.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "downsampleLinkedImages",
-          "shortdesc": "Choose to downsample the linked images(72ppi)",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "includeMetadata",
-          "shortdesc": "Choose to include metadata (XMP)",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "filtersPolicy",
-          "shortdesc": "The policy used by FXG to preserve filters.",
-          "datatype": {
-            "type": "FiltersPreservePolicy",
-            "value": "FiltersPreservePolicy.KEEPFILTERSEDITABLE"
-          }
-        },
-        {
-          "name": "textPolicy",
-          "shortdesc": "The policy used by FXG to preserve text.",
-          "datatype": {
-            "type": "TextPreservePolicy",
-            "value": "TextPreservePolicy.AUTOMATICALLYCONVERTTEXT"
-          }
-        },
-        {
-          "name": "gradientsPolicy",
-          "shortdesc": "The policy used by FXG to preserve gradients.",
-          "datatype": {
-            "type": "GradientsPreservePolicy",
-            "value": "GradientsPreservePolicy.AUTOMATICALLYCONVERTGRADIENTS"
-          }
-        },
-        {
-          "name": "blendsPolicy",
-          "shortdesc": "The policy used by FXG to expand blends.",
-          "datatype": {
-            "type": "BlendsExpandPolicy",
-            "value": "BlendsExpandPolicy.AUTOMATICALLYCONVERTBLENDS"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "FXGSaveOptions",
+    "description": "Options which may be supplied when saving a document as an FXG file."
 }

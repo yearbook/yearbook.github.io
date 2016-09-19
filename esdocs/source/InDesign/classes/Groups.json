@@ -1,242 +1,228 @@
 {
-  "name": "Groups",
-  "dynamic": true,
-  "shortdesc": "A collection of groups.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Group.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "add",
-          "shortdesc": "Creates a new Group.",
-          "parameters": [
-            {
-              "name": "groupItems",
-              "shortdesc": "The objects to group.",
-              "datatype": {
-                "type": "PageItem",
-                "array": true
-              }
-            },
-            {
-              "name": "layer",
-              "shortdesc": "The layer on which to create the Group. ",
-              "datatype": {
-                "type": "Layer"
-              },
-              "optional": true
-            },
-            {
-              "name": "at",
-              "optional": true,
-              "shortdesc": "The location at which to insert the Group relative to the reference object or within the container object. ",
-              "datatype": {
-                "type": "LocationOptions",
-                "value": "LocationOptions.UNKNOWN"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new Group ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Group with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Group with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Group with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Groups within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Group, index, or name at the beginning of the range. Can accept: Group, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Group, index, or name at the end of the range. Can accept: Group, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Group in the collection.",
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Group in the collection.",
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Group in the collection.",
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Group with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Group that follows the desired Group.",
-              "datatype": {
-                "type": "Group"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Group whose index follows the specified Group in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Group whose index comes before the desired Group.",
-              "datatype": {
-                "type": "Group"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Group in the collection.",
-          "datatype": {
-            "type": "Group"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Group in the collection.",
-          "datatype": {
-            "type": "Group",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Group.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Group with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Group"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Group.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "groupItems",
+                            "description": "The objects to group.",
+                            "type": "PageItem"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "layer",
+                            "description": "The layer on which to create the Group. (Optional)",
+                            "type": "Layer"
+                        },
+                        {
+                            "optional": true,
+                            "value": "LocationOptions.UNKNOWN",
+                            "array": false,
+                            "name": "at",
+                            "description": "The location at which to insert the Group relative to the reference object or within the container object. (Optional)",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new Group (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new Group.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Group with the specified index or name.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Group with the specified name.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Group with the specified ID.",
+                    "type": "Group"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Group, index, or name at the beginning of the range. Can accept: Group, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Group, index, or name at the end of the range. Can accept: Group, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Groups within the specified range.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Group in the collection.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Group in the collection.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Group in the collection.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Group that follows the desired Group.",
+                            "type": "Group"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Group with the index previous to the specified index.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Group whose index comes before the desired Group.",
+                            "type": "Group"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Group whose index follows the specified Group in the collection.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Group in the collection.",
+                    "type": "Group"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Group in the collection.",
+                    "type": "Group"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Group.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Group with the specified index.",
+                    "type": "Group"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Groups",
+    "description": "A collection of groups."
 }

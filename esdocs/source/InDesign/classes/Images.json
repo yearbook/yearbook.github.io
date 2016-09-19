@@ -1,192 +1,184 @@
 {
-  "name": "Images",
-  "dynamic": true,
-  "shortdesc": "A collection of bitmap images in any bitmap file format &amp;&#35;40;including TIFF, JPEG, or GIF&#41;.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Image.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Image with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Image with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Image with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Images within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Image, index, or name at the beginning of the range. Can accept: Image, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Image, index, or name at the end of the range. Can accept: Image, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Image in the collection.",
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Image in the collection.",
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Image in the collection.",
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Image with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Image that follows the desired Image.",
-              "datatype": {
-                "type": "Image"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Image whose index follows the specified Image in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Image whose index comes before the desired Image.",
-              "datatype": {
-                "type": "Image"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Image in the collection.",
-          "datatype": {
-            "type": "Image"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Image in the collection.",
-          "datatype": {
-            "type": "Image",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Image.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Image with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Image"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Image.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Image with the specified index or name.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Image with the specified name.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Image with the specified ID.",
+                    "type": "Image"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Image, index, or name at the beginning of the range. Can accept: Image, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Image, index, or name at the end of the range. Can accept: Image, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Images within the specified range.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Image in the collection.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Image in the collection.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Image in the collection.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Image that follows the desired Image.",
+                            "type": "Image"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Image with the index previous to the specified index.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Image whose index comes before the desired Image.",
+                            "type": "Image"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Image whose index follows the specified Image in the collection.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Image in the collection.",
+                    "type": "Image"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Image in the collection.",
+                    "type": "Image"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Image.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Image with the specified index.",
+                    "type": "Image"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Images",
+    "description": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF)."
 }

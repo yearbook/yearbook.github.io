@@ -1,210 +1,199 @@
 {
-  "name": "TimingGroup",
-  "dynamic": true,
-  "shortdesc": "a timing group.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the TimingGroup (a TimingList).",
-          "datatype": {
-            "type": "TimingList"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the TimingGroup within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "timingTargets",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of timing target.",
-          "datatype": {
-            "type": "TimingTargets"
-          }
-        },
-        {
-          "name": "placement",
-          "shortdesc": "The placement of the timing group in the timing list.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "plays",
-          "shortdesc": "The number of times this timing group plays.",
-          "datatype": {
-            "type": "Number",
-            "min": 1,
-            "max": 100
-          }
-        },
-        {
-          "name": "playsLoop",
-          "shortdesc": "Set to true if timing group loops.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes the TimingGroup."
+                },
+                {
+                    "parameters": [],
+                    "name": "unlink",
+                    "description": "Unlink all targets in the group into separate groups in this timing list."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The location in relation to the reference object or within the containing object.",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: TimingGroup, TimingTarget or TimingList. (Optional)",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "move",
+                    "description": "Moves the timing group or target to the specified location.",
+                    "type": "TimingGroup"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the TimingGroup.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "TimingGroup"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the TimingGroup (a TimingList).",
+                    "type": "TimingList"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the TimingGroup within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "timingTargets",
+                    "description": "A collection of timing target.",
+                    "type": "TimingTargets"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "placement",
+                    "description": "The placement of the timing group in the timing list.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "plays",
+                    "description": "The number of times this timing group plays.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "playsLoop",
+                    "description": "Set to true if timing group loops.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the TimingGroup."
-        },
-        {
-          "name": "unlink",
-          "shortdesc": "Unlink all targets in the group into separate groups in this timing list."
-        },
-        {
-          "name": "move",
-          "shortdesc": "Moves the timing group or target to the specified location.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The location in relation to the reference object or within the containing object.",
-              "datatype": {
-                "type": "LocationOptions"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: TimingGroup, TimingTarget or TimingList. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "TimingGroup"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the TimingGroup.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "TimingGroup",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "TimingGroup",
+    "description": "a timing group."
 }

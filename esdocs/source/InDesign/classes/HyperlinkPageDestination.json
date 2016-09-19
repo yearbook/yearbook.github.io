@@ -1,258 +1,247 @@
 {
-  "name": "HyperlinkPageDestination",
-  "dynamic": true,
-  "shortdesc": "A hyperlink destination that is a document page.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "hidden",
-          "rwaccess": "readonly",
-          "shortdesc": "If true, the hyperlink is hidden.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "id",
-          "rwaccess": "readonly",
-          "shortdesc": "The unique ID of the HyperlinkPageDestination.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the HyperlinkPageDestination (a Document).",
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the HyperlinkPageDestination within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The name of the HyperlinkPageDestination.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "nameManually",
-          "shortdesc": "If true or unspecified, allows a custom destination name; also does not update the name when the destination is moved to a different page. If false, uses the page number as the page destination name and makes the name property read-only for the destination object; also updates the name when the destination is moved to a different page.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "destinationPage",
-          "shortdesc": "The page that the hyperlink points to.",
-          "datatype": {
-            "type": "Page"
-          }
-        },
-        {
-          "name": "viewSetting",
-          "shortdesc": "The destination page size when the page is reached by clicking the hyperlink.",
-          "datatype": {
-            "type": "HyperlinkDestinationPageSetting"
-          }
-        },
-        {
-          "name": "viewBounds",
-          "shortdesc": "The view rectangle, specified in the format [y1, x1, y2, x2]. Note: Valid only when view setting is fixed. Can return: Ordered array containing top:Unit, left:Unit, bottom:Unit, right:Unit.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "viewPercentage",
-          "shortdesc": "The zoom percentage. (Range: 5 to 4000) Note: Valid only when view setting is fixed.",
-          "datatype": {
-            "type": "Number",
-            "min": 5,
-            "max": 4000
-          }
-        },
-        {
-          "name": "label",
-          "shortdesc": "A property that can be set to any string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes the HyperlinkPageDestination."
+                },
+                {
+                    "parameters": [],
+                    "name": "showDestination",
+                    "description": "Jumps to the hyperlink destination."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the HyperlinkPageDestination.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "HyperlinkPageDestination"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "hidden",
+                    "description": "If true, the hyperlink is hidden.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "id",
+                    "description": "The unique ID of the HyperlinkPageDestination.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the HyperlinkPageDestination (a Document).",
+                    "type": "Document"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the HyperlinkPageDestination within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the HyperlinkPageDestination.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "nameManually",
+                    "description": "If true or unspecified, allows a custom destination name; also does not update the name when the destination is moved to a different page. If false, uses the page number as the page destination name and makes the name property read-only for the destination object; also updates the name when the destination is moved to a different page.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "destinationPage",
+                    "description": "The page that the hyperlink points to.",
+                    "type": "Page"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "viewSetting",
+                    "description": "The destination page size when the page is reached by clicking the hyperlink.",
+                    "type": "HyperlinkDestinationPageSetting"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "viewBounds",
+                    "description": "The view rectangle, specified in the format [y1, x1, y2, x2]. Note: Valid only when view setting is fixed. Can return: Ordered array containing top:Unit, left:Unit, bottom:Unit, right:Unit.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "viewPercentage",
+                    "description": "The zoom percentage. (Range: 5 to 4000) Note: Valid only when view setting is fixed.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "label",
+                    "description": "A property that can be set to any string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the HyperlinkPageDestination."
-        },
-        {
-          "name": "showDestination",
-          "shortdesc": "Jumps to the hyperlink destination."
-        },
-        {
-          "name": "insertLabel",
-          "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "extractLabel",
-          "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the HyperlinkPageDestination.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "HyperlinkPageDestination",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "HyperlinkPageDestination",
+    "description": "A hyperlink destination that is a document page."
 }

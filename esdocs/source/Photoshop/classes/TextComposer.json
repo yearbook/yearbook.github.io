@@ -1,32 +1,31 @@
 {
-  "name": "TextComposer",
-  "enumeration": true,
-  "shortdesc": "The text composer.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "ADOBESINGLELINE",
-          "rwaccess": "readonly",
-          "shortdesc": "Offers a traditional approach to composing type one line at a time. Useful if you prefer to have manual control over how lines break.",
-          "description": "Uses the following principles when considering a breakpoint: Compressed or expanded word spacing is preferable to hyphenation; Hyphenation is preferable to compressed or expanded letter spacing; If spacing must be adjusted, compression is better than expansion.",
-          "datatype": {
-            "type": "int",
-            "value": 1
-          }
+    "dynamic": false,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "1",
+                    "array": false,
+                    "name": "ADOBESINGLELINE",
+                    "description": "Offers a traditional approach to composing type one line at a time. Useful if you prefer to have manual control over how lines break.",
+                    "type": "int"
+                },
+                {
+                    "readonly": true,
+                    "value": "2",
+                    "array": false,
+                    "name": "ADOBEEVERYLINE",
+                    "description": "Considers a network of break points for a range of lines and thus optimizes earlier lines in the paragraph to eliminate especially unattractive breaks later on. Results in more even spacing and fewer hyphens.",
+                    "type": "int"
+                }
+            ]
         },
-        {
-          "name": "ADOBEEVERYLINE",
-          "rwaccess": "readonly",
-          "shortdesc": "Considers a network of break points for a range of lines and thus optimizes earlier lines in the paragraph to eliminate especially unattractive breaks later on. Results in more even spacing and fewer hyphens.",
-          "description": "The Adobe Every-line composer approaches composition by identifying possible breakpoints, evaluating them, and assigning a weighted penalty based on these principles: Highest importance is given to evenness of letter and word spacing; Possible breakpoints are evaluated and penalized according to how much they deviate from optimal spacing; Hyphenation is avoided when possible; Breakpoints that require hyphenation are penalized more than those that create uneven spacing; Good breakpoints are preferred over bad breakpoints.",
-          "datatype": {
-            "type": "int",
-            "value": 2
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "TextComposer",
+    "description": "The text composer."
 }

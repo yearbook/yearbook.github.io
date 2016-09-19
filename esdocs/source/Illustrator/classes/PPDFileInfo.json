@@ -1,42 +1,43 @@
 {
-  "name": "PPDFileInfo",
-  "dynamic": true,
-  "shortdesc": "PPD file information.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "languageLevel",
-          "shortdesc": "The PostScript language level.",
-          "datatype": {
-            "type": "String"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "languageLevel",
+                    "description": "The PostScript language level.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "PPDFilePath",
+                    "description": "Path specification for the PPD file.",
+                    "type": "File"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "screenList",
+                    "description": "List of color separation screens.",
+                    "type": "Screen"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "screenSpotFunctionList",
+                    "description": "List of color separation screen spot functions.",
+                    "type": "ScreenSpotFunction"
+                }
+            ]
         },
-        {
-          "name": "PPDFilePath",
-          "shortdesc": "Path specification for the PPD file.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "screenList",
-          "shortdesc": "List of color separation screens.",
-          "datatype": {
-            "type": "Screen",
-            "array": true
-          }
-        },
-        {
-          "name": "screenSpotFunctionList",
-          "shortdesc": "List of color separation screen spot functions.",
-          "datatype": {
-            "type": "ScreenSpotFunction",
-            "array": true
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "PPDFileInfo",
+    "description": "PPD file information."
 }

@@ -1,291 +1,273 @@
 {
-  "name": "ColorSetting",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "Color management settings.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "engineList",
-          "rwaccess": "readonly",
-          "shortdesc": "The available color engines.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "cmsSettingsList",
-          "rwaccess": "readonly",
-          "shortdesc": "A list of valid color management system settings configurations.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "workingSpaceCMYKList",
-          "rwaccess": "readonly",
-          "shortdesc": "A list of valid CMYK color profiles.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "workingSpaceRGBList",
-          "rwaccess": "readonly",
-          "shortdesc": "A list of valid RGB color profiles.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the ColorSetting (a Application).",
-          "datatype": {
-            "type": "Application"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "cmykPolicy",
-          "shortdesc": "The policy for handling colors in a CMYK color model, including reading and embedding color profiles, resolving mismatches between embedded color profiles and the working space, and moving colors between documents.",
-          "datatype": {
-            "type": "ColorSettingsPolicy"
-          }
-        },
-        {
-          "name": "enableColorManagement",
-          "shortdesc": "If true, enables color management.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "engine",
-          "shortdesc": "The color management module (CMM) for mapping color space gamuts between documents.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "mismatchAskWhenOpening",
-          "shortdesc": "If true, displays a prompt when opening a file whose embedded color profile does not match the current working space. The prompt provides the option to override the default mismatch behavior.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "mismatchAskWhenPasting",
-          "shortdesc": "If true, displays a prompt when importing an object (via pasting, drag-and-drop, or other similar methods) whose colors do not match the current working space. The prompt provides the option to override the default mismatch behavior.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "missingAskWhenOpening",
-          "shortdesc": "If true, displays a prompt when opening a file that does not have an embedded color profile. The prompt provides the option to assign a color profile.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "rgbPolicy",
-          "shortdesc": "The policy for handling colors in an RGB color model, including reading and embedding color profiles, handling mismatches between embedded color profiles and the working space, and moving colors from one document to another.",
-          "datatype": {
-            "type": "ColorSettingsPolicy"
-          }
-        },
-        {
-          "name": "cmsSettings",
-          "shortdesc": "The current color management system settings configuration. Note: For information on possible values, see CMS settings list.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "cmsSettingsPath",
-          "shortdesc": "The file path of the CSF file to use.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "useBPC",
-          "shortdesc": "If true, uses black point compensation to ensure that shadow detail is preserved by simulating the full dynamic range of the output device.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "workingSpaceCMYK",
-          "shortdesc": "The current CMYK profile.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "workingSpaceRGB",
-          "shortdesc": "The current RGB profile.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "intent",
-          "shortdesc": "The default rendering intent.",
-          "datatype": {
-            "type": "DefaultRenderingIntent"
-          }
-        },
-        {
-          "name": "accurateLABSpots",
-          "shortdesc": "If true, uses LAB alternates for spot colors when available.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "idealizedBlackToScreen",
-          "shortdesc": "If true, uses idealized black for CMYK-to-RGB or CMYK-to-Gray conversions to the screen.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "idealizedBlackToExport",
-          "shortdesc": "If true, uses idealized black for CMYK-to-RGB or CMYK-to-Gray conversions to print or export.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the ColorSetting.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "ColorSetting"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "engineList",
+                    "description": "The available color engines.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "cmsSettingsList",
+                    "description": "A list of valid color management system settings configurations.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "workingSpaceCMYKList",
+                    "description": "A list of valid CMYK color profiles.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "workingSpaceRGBList",
+                    "description": "A list of valid RGB color profiles.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the ColorSetting (a Application).",
+                    "type": "Application"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "cmykPolicy",
+                    "description": "The policy for handling colors in a CMYK color model, including reading and embedding color profiles, resolving mismatches between embedded color profiles and the working space, and moving colors between documents.",
+                    "type": "ColorSettingsPolicy"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "enableColorManagement",
+                    "description": "If true, enables color management.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "engine",
+                    "description": "The color management module (CMM) for mapping color space gamuts between documents.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "mismatchAskWhenOpening",
+                    "description": "If true, displays a prompt when opening a file whose embedded color profile does not match the current working space. The prompt provides the option to override the default mismatch behavior.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "mismatchAskWhenPasting",
+                    "description": "If true, displays a prompt when importing an object (via pasting, drag-and-drop, or other similar methods) whose colors do not match the current working space. The prompt provides the option to override the default mismatch behavior.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "missingAskWhenOpening",
+                    "description": "If true, displays a prompt when opening a file that does not have an embedded color profile. The prompt provides the option to assign a color profile.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rgbPolicy",
+                    "description": "The policy for handling colors in an RGB color model, including reading and embedding color profiles, handling mismatches between embedded color profiles and the working space, and moving colors from one document to another.",
+                    "type": "ColorSettingsPolicy"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "cmsSettings",
+                    "description": "The current color management system settings configuration. Note: For information on possible values, see CMS settings list.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "cmsSettingsPath",
+                    "description": "The file path of the CSF file to use.",
+                    "type": "File"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "useBPC",
+                    "description": "If true, uses black point compensation to ensure that shadow detail is preserved by simulating the full dynamic range of the output device.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "workingSpaceCMYK",
+                    "description": "The current CMYK profile.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "workingSpaceRGB",
+                    "description": "The current RGB profile.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "intent",
+                    "description": "The default rendering intent.",
+                    "type": "DefaultRenderingIntent"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "accurateLABSpots",
+                    "description": "If true, uses LAB alternates for spot colors when available.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "idealizedBlackToScreen",
+                    "description": "If true, uses idealized black for CMYK-to-RGB or CMYK-to-Gray conversions to the screen.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "idealizedBlackToExport",
+                    "description": "If true, uses idealized black for CMYK-to-RGB or CMYK-to-Gray conversions to print or export.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the ColorSetting.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "ColorSetting",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "ColorSetting",
+    "description": "Color management settings.",
+    "superclass": "Preference"
 }

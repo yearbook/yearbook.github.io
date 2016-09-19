@@ -1,192 +1,184 @@
 {
-  "name": "MenuActions",
-  "dynamic": true,
-  "shortdesc": "A collection of menu actions.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the MenuAction.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the MenuAction with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the MenuAction with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the MenuAction with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the MenuActions within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The MenuAction, index, or name at the beginning of the range. Can accept: MenuAction, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The MenuAction, index, or name at the end of the range. Can accept: MenuAction, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first MenuAction in the collection.",
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last MenuAction in the collection.",
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle MenuAction in the collection.",
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the MenuAction with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the MenuAction that follows the desired MenuAction.",
-              "datatype": {
-                "type": "MenuAction"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the MenuAction whose index follows the specified MenuAction in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The MenuAction whose index comes before the desired MenuAction.",
-              "datatype": {
-                "type": "MenuAction"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any MenuAction in the collection.",
-          "datatype": {
-            "type": "MenuAction"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every MenuAction in the collection.",
-          "datatype": {
-            "type": "MenuAction",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the MenuAction.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the MenuAction with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "MenuAction"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the MenuAction.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the MenuAction with the specified index or name.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the MenuAction with the specified name.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the MenuAction with the specified ID.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The MenuAction, index, or name at the beginning of the range. Can accept: MenuAction, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The MenuAction, index, or name at the end of the range. Can accept: MenuAction, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the MenuActions within the specified range.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first MenuAction in the collection.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last MenuAction in the collection.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle MenuAction in the collection.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the MenuAction that follows the desired MenuAction.",
+                            "type": "MenuAction"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the MenuAction with the index previous to the specified index.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The MenuAction whose index comes before the desired MenuAction.",
+                            "type": "MenuAction"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the MenuAction whose index follows the specified MenuAction in the collection.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any MenuAction in the collection.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every MenuAction in the collection.",
+                    "type": "MenuAction"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the MenuAction.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the MenuAction with the specified index.",
+                    "type": "MenuAction"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "MenuActions",
+    "description": "A collection of menu actions."
 }

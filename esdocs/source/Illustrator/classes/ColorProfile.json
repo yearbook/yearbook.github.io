@@ -1,57 +1,55 @@
 {
-  "name": "ColorProfile",
-  "enumeration": true,
-  "shortdesc": "PDF ICC profile inclusion.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "None",
-          "rwaccess": "readonly",
-          "shortdesc": "All profiles removed (embedProfile == false)",
-          "datatype": {
-            "type": "int",
-            "value": 0
-          }
+    "dynamic": false,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "0",
+                    "array": false,
+                    "name": "None",
+                    "description": "All profiles removed (embedProfile == false)",
+                    "type": "int"
+                },
+                {
+                    "readonly": true,
+                    "value": "1",
+                    "array": false,
+                    "name": "INCLUDEALLPROFILE",
+                    "description": "Everything gets tagged (embedProfile == true)",
+                    "type": "int"
+                },
+                {
+                    "readonly": true,
+                    "value": "2",
+                    "array": false,
+                    "name": "LEAVEPROFILEUNCHANGED",
+                    "description": "Leave tagged items tagged, untagged items untagged.",
+                    "type": "int"
+                },
+                {
+                    "readonly": true,
+                    "value": "3",
+                    "array": false,
+                    "name": "INCLUDERGBPROFILE",
+                    "description": "Tag all RGB, leave CMYK unchanged.",
+                    "type": "int"
+                },
+                {
+                    "readonly": true,
+                    "value": "4",
+                    "array": false,
+                    "name": "INCLUDEDESTPROFILE",
+                    "description": "Everything ends up tagged with the destination profile.",
+                    "type": "int"
+                }
+            ]
         },
-        {
-          "name": "INCLUDEALLPROFILE",
-          "rwaccess": "readonly",
-          "shortdesc": "Everything gets tagged (embedProfile == true)",
-          "datatype": {
-            "type": "int",
-            "value": 1
-          }
-        },
-        {
-          "name": "LEAVEPROFILEUNCHANGED",
-          "rwaccess": "readonly",
-          "shortdesc": "Leave tagged items tagged, untagged items untagged.",
-          "datatype": {
-            "type": "int",
-            "value": 2
-          }
-        },
-        {
-          "name": "INCLUDERGBPROFILE",
-          "rwaccess": "readonly",
-          "shortdesc": "Tag all RGB, leave CMYK unchanged.",
-          "datatype": {
-            "type": "int",
-            "value": 3
-          }
-        },
-        {
-          "name": "INCLUDEDESTPROFILE",
-          "rwaccess": "readonly",
-          "shortdesc": "Everything ends up tagged with the destination profile.",
-          "datatype": {
-            "type": "int",
-            "value": 4
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "ColorProfile",
+    "description": "PDF ICC profile inclusion."
 }

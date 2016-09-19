@@ -1,275 +1,258 @@
 {
-  "name": "ObjectStyleGroup",
-  "dynamic": true,
-  "shortdesc": "An object style group.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "allObjectStyles",
-          "rwaccess": "readonly",
-          "shortdesc": "All object styles contained by the ObjectStyleGroup.",
-          "datatype": {
-            "type": "ObjectStyle",
-            "array": true
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "id",
-          "rwaccess": "readonly",
-          "shortdesc": "The unique ID of the ObjectStyleGroup.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the ObjectStyleGroup (a Document, Application or ObjectStyleGroup).",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the ObjectStyleGroup within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "objectStyles",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of object styles.",
-          "datatype": {
-            "type": "ObjectStyles"
-          }
-        },
-        {
-          "name": "objectStyleGroups",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of object style groups.",
-          "datatype": {
-            "type": "ObjectStyleGroups"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The name of the ObjectStyleGroup.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "label",
-          "shortdesc": "A property that can be set to any string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "duplicate",
+                    "description": "Duplicates the ObjectStyleGroup.",
+                    "type": "ObjectStyleGroup"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The new location relative to the reference object or within the container object.",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the to parameter is before or after. Can accept: ObjectStyle, ObjectStyleGroup, Document or Application. (Optional)",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "move",
+                    "description": "Moves the ObjectStyleGroup to the specified location.",
+                    "type": "ObjectStyleGroup"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "replacingWith",
+                            "description": "The ObjectStyleGroup to apply in place of the deleted ObjectStyleGroup. (Optional)",
+                            "type": "ObjectStyle"
+                        }
+                    ],
+                    "name": "remove",
+                    "description": "Deletes the ObjectStyleGroup."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the ObjectStyleGroup.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "ObjectStyleGroup"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "allObjectStyles",
+                    "description": "All object styles contained by the ObjectStyleGroup.",
+                    "type": "ObjectStyle"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "id",
+                    "description": "The unique ID of the ObjectStyleGroup.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the ObjectStyleGroup (a Document, Application or ObjectStyleGroup).",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the ObjectStyleGroup within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "objectStyles",
+                    "description": "A collection of object styles.",
+                    "type": "ObjectStyles"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "objectStyleGroups",
+                    "description": "A collection of object style groups.",
+                    "type": "ObjectStyleGroups"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the ObjectStyleGroup.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "label",
+                    "description": "A property that can be set to any string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "duplicate",
-          "shortdesc": "Duplicates the ObjectStyleGroup.",
-          "datatype": {
-            "type": "ObjectStyleGroup"
-          }
-        },
-        {
-          "name": "move",
-          "shortdesc": "Moves the ObjectStyleGroup to the specified location.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The new location relative to the reference object or within the container object.",
-              "datatype": {
-                "type": "LocationOptions"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the to parameter is before or after. Can accept: ObjectStyle, ObjectStyleGroup, Document or Application. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "ObjectStyleGroup"
-          }
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the ObjectStyleGroup.",
-          "parameters": [
-            {
-              "name": "replacingWith",
-              "shortdesc": "The ObjectStyleGroup to apply in place of the deleted ObjectStyleGroup. ",
-              "datatype": {
-                "type": "ObjectStyle"
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "insertLabel",
-          "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "extractLabel",
-          "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the ObjectStyleGroup.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "ObjectStyleGroup",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "ObjectStyleGroup",
+    "description": "An object style group."
 }

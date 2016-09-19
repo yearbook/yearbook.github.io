@@ -1,209 +1,199 @@
 {
-  "name": "Layers",
-  "dynamic": true,
-  "shortdesc": "A collection of layers.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new Layer.",
-          "parameters": [
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new Layer ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Layer.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Layer with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Layer with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Layer with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Layers within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Layer, index, or name at the beginning of the range. Can accept: Layer, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Layer, index, or name at the end of the range. Can accept: Layer, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Layer in the collection.",
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Layer in the collection.",
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Layer in the collection.",
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Layer with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Layer that follows the desired Layer.",
-              "datatype": {
-                "type": "Layer"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Layer whose index follows the specified Layer in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Layer whose index comes before the desired Layer.",
-              "datatype": {
-                "type": "Layer"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Layer in the collection.",
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Layer in the collection.",
-          "datatype": {
-            "type": "Layer",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Layer.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Layer with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Layer"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new Layer (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new Layer.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Layer.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Layer with the specified index or name.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Layer with the specified name.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Layer with the specified ID.",
+                    "type": "Layer"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Layer, index, or name at the beginning of the range. Can accept: Layer, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Layer, index, or name at the end of the range. Can accept: Layer, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Layers within the specified range.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Layer in the collection.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Layer in the collection.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Layer in the collection.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Layer that follows the desired Layer.",
+                            "type": "Layer"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Layer with the index previous to the specified index.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Layer whose index comes before the desired Layer.",
+                            "type": "Layer"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Layer whose index follows the specified Layer in the collection.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Layer in the collection.",
+                    "type": "Layer"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Layer in the collection.",
+                    "type": "Layer"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Layer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Layer with the specified index.",
+                    "type": "Layer"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Layers",
+    "description": "A collection of layers."
 }

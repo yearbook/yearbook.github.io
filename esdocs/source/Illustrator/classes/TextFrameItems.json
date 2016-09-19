@@ -1,196 +1,56 @@
 {
-  "name": "TextFrameItems",
-  "dynamic": true,
-  "shortdesc": "A collection of text frame items.",
-  "elements": [
-    {
-      "type": "class",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Create a point text frame item.",
-          "datatype": {
-            "type": "TextFrameItem"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "pointText",
-          "shortdesc": "Create a point text frame item.",
-          "parameters": [
-            {
-              "name": "anchor",
-              "shortdesc": "The position (coordinates) of the anchor point.",
-              "datatype": {
-                "type": "Point"
-              }
-            },
-            {
-              "name": "orientation",
-              "optional": true,
-              "shortdesc": "The orientation of the text.",
-              "datatype": {
-                "type": "TextOrientation",
-                "value": "TextOrientation.HORIZONTAL"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "areaText",
-          "shortdesc": "Create an area text frame item.",
-          "parameters": [
-            {
-              "name": "textPath",
-              "shortdesc": "The path item associated with the text frame.",
-              "datatype": {
-                "type": "PathItem"
-              }
-            },
-            {
-              "name": "orientation",
-              "optional": true,
-              "shortdesc": "The orientation of the text.",
-              "datatype": {
-                "type": "TextOrientation",
-                "value": "TextOrientation.HORIZONTAL"
-              }
-            },
-            {
-              "name": "baseFrame",
-              "optional": true,
-              "shortdesc": "The base text frame if it has one.",
-              "datatype": {
-                "type": "TextFrameItem"
-              }
-            },
-            {
-              "name": "postFix",
-              "optional": true,
-              "shortdesc": "Whether to postfix/prefix the new text frame to the specified base text frame.",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "pathText",
-          "shortdesc": "Create an on-path text frame item.",
-          "parameters": [
-            {
-              "name": "textPath",
-              "shortdesc": "The path item associated with the text frame.",
-              "datatype": {
-                "type": "PathItem"
-              }
-            },
-            {
-              "name": "startTValue",
-              "optional": true,
-              "shortdesc": "The start position of text along a path, as a value relative to the path's segments (path text only)",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            },
-            {
-              "name": "endTValue",
-              "optional": true,
-              "shortdesc": "The end position of text along a path, as a value relative to the path's segments (path text only)",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            },
-            {
-              "name": "orientation",
-              "optional": true,
-              "shortdesc": "The orientation of the text.",
-              "datatype": {
-                "type": "TextOrientation",
-                "value": "TextOrientation.HORIZONTAL"
-              }
-            },
-            {
-              "name": "baseFrame",
-              "optional": true,
-              "shortdesc": "The base text frame if it has one.",
-              "datatype": {
-                "type": "TextFrameItem"
-              }
-            },
-            {
-              "name": "postFix",
-              "optional": true,
-              "shortdesc": "Whether to postfix/prefix the new text frame to the specified base text frame.",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TextFrameItem"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getByName",
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "TextFrameItem"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "Number of elements in the collection.",
+                    "type": "int"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "Number of elements in the collection.",
-          "datatype": {
-            "type": "int"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "getByName",
-          "shortdesc": "Get the first element in the collection with the provided name.",
-          "parameters": [
-            {
-              "name": "name",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "TextFrameItems",
+    "description": "A collection of text frame items."
 }

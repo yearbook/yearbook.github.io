@@ -1,273 +1,263 @@
 {
-  "name": "CompositeFontEntry",
-  "dynamic": true,
-  "shortdesc": "A composite font entry.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "locked",
-          "rwaccess": "readonly",
-          "shortdesc": "If true, the CompositeFontEntry is locked.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "id",
-          "rwaccess": "readonly",
-          "shortdesc": "The unique ID of the CompositeFontEntry.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the CompositeFontEntry (a CompositeFont).",
-          "datatype": {
-            "type": "CompositeFont"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the CompositeFontEntry within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The name of the CompositeFontEntry.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "appliedFont",
-          "shortdesc": "The font applied to the CompositeFontEntry, specified as either a font object or the name of font family. Can return: Font or String.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "fontStyle",
-          "shortdesc": "The name of the font style.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "relativeSize",
-          "shortdesc": "The size of the entry relative to the base entry. Note: The base entry cannot be modified.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "horizontalScale",
-          "shortdesc": "The horizontal scaling applied to the CompositeFontEntry.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "verticalScale",
-          "shortdesc": "The vertical scaling applied to the CompositeFontEntry.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "customCharacters",
-          "shortdesc": "The characters that the set affects.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "scaleOption",
-          "shortdesc": "If true, scales characters from the center.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "baselineShift",
-          "shortdesc": "The amount of baseline shift.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "label",
-          "shortdesc": "A property that can be set to any string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes the CompositeFontEntry."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the CompositeFontEntry.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "CompositeFontEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "locked",
+                    "description": "If true, the CompositeFontEntry is locked.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "id",
+                    "description": "The unique ID of the CompositeFontEntry.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the CompositeFontEntry (a CompositeFont).",
+                    "type": "CompositeFont"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the CompositeFontEntry within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the CompositeFontEntry.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "appliedFont",
+                    "description": "The font applied to the CompositeFontEntry, specified as either a font object or the name of font family. Can return: Font or String.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fontStyle",
+                    "description": "The name of the font style.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "relativeSize",
+                    "description": "The size of the entry relative to the base entry. Note: The base entry cannot be modified.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "horizontalScale",
+                    "description": "The horizontal scaling applied to the CompositeFontEntry.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "verticalScale",
+                    "description": "The vertical scaling applied to the CompositeFontEntry.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "customCharacters",
+                    "description": "The characters that the set affects.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "scaleOption",
+                    "description": "If true, scales characters from the center.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "baselineShift",
+                    "description": "The amount of baseline shift.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "label",
+                    "description": "A property that can be set to any string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the CompositeFontEntry."
-        },
-        {
-          "name": "insertLabel",
-          "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "extractLabel",
-          "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the CompositeFontEntry.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "CompositeFontEntry",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "CompositeFontEntry",
+    "description": "A composite font entry."
 }

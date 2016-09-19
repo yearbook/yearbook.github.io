@@ -1,160 +1,154 @@
 {
-  "name": "DataMergeFields",
-  "dynamic": true,
-  "shortdesc": "A collection of data merge fields.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the DataMergeField.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the DataMergeField with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the DataMergeFields within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The DataMergeField, index, or name at the beginning of the range. Can accept: DataMergeField, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The DataMergeField, index, or name at the end of the range. Can accept: DataMergeField, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DataMergeField",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first DataMergeField in the collection.",
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last DataMergeField in the collection.",
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle DataMergeField in the collection.",
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the DataMergeField with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the DataMergeField that follows the desired DataMergeField.",
-              "datatype": {
-                "type": "DataMergeField"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the DataMergeField whose index follows the specified DataMergeField in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The DataMergeField whose index comes before the desired DataMergeField.",
-              "datatype": {
-                "type": "DataMergeField"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any DataMergeField in the collection.",
-          "datatype": {
-            "type": "DataMergeField"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every DataMergeField in the collection.",
-          "datatype": {
-            "type": "DataMergeField",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the DataMergeField.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the DataMergeField with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DataMergeField"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the DataMergeField.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the DataMergeField with the specified index or name.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The DataMergeField, index, or name at the beginning of the range. Can accept: DataMergeField, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The DataMergeField, index, or name at the end of the range. Can accept: DataMergeField, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the DataMergeFields within the specified range.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first DataMergeField in the collection.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last DataMergeField in the collection.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle DataMergeField in the collection.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the DataMergeField that follows the desired DataMergeField.",
+                            "type": "DataMergeField"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the DataMergeField with the index previous to the specified index.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The DataMergeField whose index comes before the desired DataMergeField.",
+                            "type": "DataMergeField"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the DataMergeField whose index follows the specified DataMergeField in the collection.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any DataMergeField in the collection.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every DataMergeField in the collection.",
+                    "type": "DataMergeField"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the DataMergeField.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the DataMergeField with the specified index.",
+                    "type": "DataMergeField"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "DataMergeFields",
+    "description": "A collection of data merge fields."
 }

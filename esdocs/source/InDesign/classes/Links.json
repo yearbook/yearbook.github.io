@@ -1,192 +1,184 @@
 {
-  "name": "Links",
-  "dynamic": true,
-  "shortdesc": "A collection of links.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Link.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Link with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Link with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Link with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Links within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Link, index, or name at the beginning of the range. Can accept: Link, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Link, index, or name at the end of the range. Can accept: Link, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Link in the collection.",
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Link in the collection.",
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Link in the collection.",
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Link with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Link that follows the desired Link.",
-              "datatype": {
-                "type": "Link"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Link whose index follows the specified Link in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Link whose index comes before the desired Link.",
-              "datatype": {
-                "type": "Link"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Link in the collection.",
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Link in the collection.",
-          "datatype": {
-            "type": "Link",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Link.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Link with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Link"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Link.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Link with the specified index or name.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Link with the specified name.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Link with the specified ID.",
+                    "type": "Link"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Link, index, or name at the beginning of the range. Can accept: Link, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Link, index, or name at the end of the range. Can accept: Link, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Links within the specified range.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Link in the collection.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Link in the collection.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Link in the collection.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Link that follows the desired Link.",
+                            "type": "Link"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Link with the index previous to the specified index.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Link whose index comes before the desired Link.",
+                            "type": "Link"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Link whose index follows the specified Link in the collection.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Link in the collection.",
+                    "type": "Link"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Link in the collection.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Link.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Link with the specified index.",
+                    "type": "Link"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Links",
+    "description": "A collection of links."
 }

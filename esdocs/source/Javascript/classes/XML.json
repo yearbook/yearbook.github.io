@@ -1,554 +1,470 @@
 {
-  "name": "XML",
-  "dynamic": true,
-  "shortdesc": "Wraps XML into an object.",
-  "elements": [
-    {
-      "type": "constructor",
-      "method": [
-        {
-          "name": "XML",
-          "shortdesc": "Parses an XML string. Throws an error if the XML is incorrect.",
-          "parameters": [
-            {
-              "name": "text",
-              "shortdesc": "The text to parse.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "ignoreComments",
+                    "description": "Controls whether XML comments should be parsed (false) or ignored (true).",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "ignoreProcessingInstructions",
+                    "description": "Controls whether XML preprocessing instructions should be parsed (false) or ignored (true).",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "ignoreWhitespace",
+                    "description": "Controls whether whitespace should be parsed (false) or ignored (true).",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "prettyPrinting",
+                    "description": "When true, XML is pretty-printed when converting to a string.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "2",
+                    "array": false,
+                    "name": "prettyIndent",
+                    "description": "The number of spaces used to indent pretty-printed XML.",
+                    "type": "Number"
+                }
+            ]
+        },
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "namespace",
+                            "description": "The namespace to add.",
+                            "type": "Namespace"
+                        }
+                    ],
+                    "name": "addNamespace",
+                    "description": "Adds a namespace declaration to the node. Returns the XML object itself.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "child",
+                            "description": "The child XML to add.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "appendChild",
+                    "description": "Appends the given XML to this XML as a child. Returns the XML object itself.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The attribute name to look for.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "attribute",
+                    "description": "Returns a list containing all attribute elements matching the given name.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "attributes",
+                    "description": "Returns a list containing all attribute elements.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name or the index of the child element.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "child",
+                    "description": "Returns a list containing all children of this XML matching the given element name.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "childIndex",
+                    "description": "Returns a number representing the ordinal position of this XML object within the context of its parent.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "children",
+                    "description": "Returns an XML object containing all the properties of this XML object in order.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "comments",
+                    "description": "Returns an XML object containing the properties of this XML object that represent XML comments.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "xml",
+                            "description": "The XML to search for.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "contains",
+                    "description": "Checks if this XML object contains the given XML object.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "copy",
+                    "description": "Creates a copy of this XML object.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the descendant to find.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "descendants",
+                    "description": "Returns all the XML-valued descendants of this XML object with the given name.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "name",
+                            "description": "The element name. If not supplied, gets all children that are XML elements.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "elements",
+                    "description": "Returns a list of XML children that are elements with a given name, or all children that are XML elements.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "hasComplexContent",
+                    "description": "Reports whether this XML object contains complex content.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "hasSimpleContent",
+                    "description": "Reports whether this XML object contains simple content.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "inScopeNamespaces",
+                    "description": "\n\t\t\t\t\t\tReturns an array of ",
+                    "type": "Array"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "child1",
+                            "description": "The child to insert the other child after.",
+                            "type": "XML"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "child2",
+                            "description": "The XML to insert.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "insertChildAfter",
+                    "description": "Inserts the given child2 after the given child1 in this XML object and returns this XML object."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "child1",
+                            "description": "The child to search for.",
+                            "type": "XML"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "child2",
+                            "description": "The XML to insert.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "insertChildBefore",
+                    "description": "Inserts the given child2 before the given child1 in this XML object and returns this XML object."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "length",
+                    "description": "Returns the number of elements contained in an XML list. If this XML object is not a list, returns 1.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "localName",
+                    "description": "Returns the local name of this XML object.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "name",
+                    "description": "Returns a QName object containing the URI and the local name of the element.",
+                    "type": "QName"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "namespace",
+                    "description": "Returns a Namespace object containing the namespace URI of the current element.",
+                    "type": "Namespace"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "namespaceDeclarations",
+                    "description": "Returns an array containing all namespace declarations of this XML object.",
+                    "type": "Array"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "nodeKind",
+                    "description": "Returns the type of this XML object as one of the strings \"element\", \"attribute\", \"comment\", \"processing-instruction\", or \"text\".",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "normalize",
+                    "description": "Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent text nodes and eliminating empty text nodes. Returns this XML object.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "parent",
+                    "description": "Returns the parent object of this XML object.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the preprocessing instruction to return.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "processingInstructions",
+                    "description": "Returns a list of preprocessing instructions.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "child",
+                            "description": "The XML to insert.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "prependChild",
+                    "description": "Inserts a given child into this object before its existing XML properties, and returns this XML object.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "namespace",
+                            "description": "The namespace to remove.",
+                            "type": "Namespace"
+                        }
+                    ],
+                    "name": "removeNamespace",
+                    "description": "Removes the given namespace from this XML, and returns this XML.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The property name.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The XML with which to replace the value of the matching property.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "replace",
+                    "description": "Replaces the value of specified XML properties of this XML object returns this XML object. ",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The new value, which can be a single XML object or an XML list.",
+                            "type": "XML"
+                        }
+                    ],
+                    "name": "setChildren",
+                    "description": "Replaces all of the XML-valued properties in this object with a new value, and returns this XML object. ",
+                    "type": "XML"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name to set.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "setLocalName",
+                    "description": "Replaces the local name of this XML object  with a string constructed from the given name"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The fully qualified name.",
+                            "type": "QName"
+                        }
+                    ],
+                    "name": "setName",
+                    "description": "Replaces the name of this XML object with the given QName object."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "namespace",
+                            "description": "The namespace to set.",
+                            "type": "Namespace"
+                        }
+                    ],
+                    "name": "setNamespace",
+                    "description": "Sets the namespace for this XML element. "
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "text",
+                    "description": "Returns an XML list containing all XML properties of this XML object that represent XML text nodes.",
+                    "type": "XML"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toString",
+                    "description": "Returns the string representation of this object.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toXMLString",
+                    "description": "Returns an XML-encoded string representation of this XML object.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "expr",
+                            "description": "The XPath expression to use.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "xpath",
+                    "description": "Evaluates the given XPath expression in accordance with the W3C XPath recommendation, using this XML object as the context node.",
+                    "type": "XML"
+                }
+            ],
+            "properties": []
         }
-      ]
     },
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "ignoreComments",
-          "shortdesc": "Controls whether XML comments should be parsed (false) or ignored (true).",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "ignoreProcessingInstructions",
-          "shortdesc": "Controls whether XML preprocessing instructions should be parsed (false) or ignored (true).",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "ignoreWhitespace",
-          "shortdesc": "Controls whether whitespace should be parsed (false) or ignored (true).",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "prettyPrinting",
-          "shortdesc": "When true, XML is pretty-printed when converting to a string.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "prettyIndent",
-          "shortdesc": "The number of spaces used to indent pretty-printed XML.",
-          "datatype": {
-            "type": "Number",
-            "value": 2
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "settings",
-          "shortdesc": "Returns an object containing the current parsing and print settings for XML.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "setSettings",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The object containing the settings to set.",
-              "datatype": {
-                "type": "Object"
-              }
-            }
-          ]
-        },
-        {
-          "name": "defaultSettings",
-          "shortdesc": "Returns an object containing the default parsing and print settings for XML.",
-          "datatype": {
-            "type": "Object"
-          }
-        }
-      ]
-    },
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "addNamespace",
-          "shortdesc": "Adds a namespace declaration to the node. Returns the XML object itself.",
-          "parameters": [
-            {
-              "name": "namespace",
-              "shortdesc": "The namespace to add.",
-              "datatype": {
-                "type": "Namespace"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "appendChild",
-          "shortdesc": "Appends the given XML to this XML as a child. Returns the XML object itself.",
-          "description": "If the argument is not XML, creates a new XML element containing the argument as text. The element name of that new XML is the same as the last element in the original XML.",
-          "parameters": [
-            {
-              "name": "child",
-              "shortdesc": "The child XML to add.",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "attribute",
-          "shortdesc": "Returns a list containing all attribute elements matching the given name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The attribute name to look for.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "attributes",
-          "shortdesc": "Returns a list containing all attribute elements.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "child",
-          "shortdesc": "Returns a list containing all children of this XML matching the given element name.",
-          "description": "If the argument is a number, uses the number as index into the array of children.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name or the index of the child element.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "childIndex",
-          "shortdesc": "Returns a number representing the ordinal position of this XML object within the context of its parent.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "children",
-          "shortdesc": "Returns an XML object containing all the properties of this XML object in order.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "comments",
-          "shortdesc": "Returns an XML object containing the properties of this XML object that represent XML comments.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "contains",
-          "shortdesc": "Checks if this XML object contains the given XML object.",
-          "parameters": [
-            {
-              "name": "xml",
-              "shortdesc": "The XML to search for.",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "copy",
-          "shortdesc": "Creates a copy of this XML object.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "descendants",
-          "shortdesc": "Returns all the XML-valued descendants of this XML object with the given name.",
-          "description": "If the name parameter is omitted, returns all descendants of this XML object.",
-          "parameters": [
-            {
-              "name": "name",
-              "optional": true,
-              "shortdesc": "The name of the descendant to find.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "elements",
-          "shortdesc": "Returns a list of XML children that are elements with a given name, or all children that are XML elements.",
-          "parameters": [
-            {
-              "name": "name",
-              "optional": true,
-              "shortdesc": "The element name. If not supplied, gets all children that are XML elements.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "hasComplexContent",
-          "shortdesc": "Reports whether this XML object contains complex content.",
-          "description": "An XML object is considered to contain complex content if it represents an XML element that has child elements. XML objects representing attributes, comments, processing instructions and text nodes do not have complex content. The existence of attributes, comments, processing instructions and text nodes within an XML object is not significant in determining if it has complex content.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "hasSimpleContent",
-          "shortdesc": "Reports whether this XML object contains simple content.",
-          "description": "An XML object is considered to contain simple content if it represents a text node, represents an attribute node or if it represents an XML element that has no child elements. XML objects representing comments and processing instructions do not have simple content. The existence of attributes, comments, processing instructions and text nodes within an XML object is not significant in determining if it has simple content.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "inScopeNamespaces",
-          "description": "The last element of the  returned array is the default namespace.",
-          "datatype": {
-            "type": "Array"
-          }
-        },
-        {
-          "name": "insertChildAfter",
-          "shortdesc": "Inserts the given child2 after the given child1 in this XML object and returns this XML object.",
-          "description": "If child1 is null, the method inserts child2 before all children of this XML object (that is, after none of them). If child1 does not exist in this XML object, the method returns without modifying this XML object.",
-          "parameters": [
-            {
-              "name": "child1",
-              "shortdesc": "The child to insert the other child after.",
-              "description": "If null, the method inserts child2 before all children of this XML object.",
-              "datatype": {
-                "type": "XML"
-              }
-            },
-            {
-              "name": "child2",
-              "shortdesc": "The XML to insert.",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ]
-        },
-        {
-          "name": "insertChildBefore",
-          "shortdesc": "Inserts the given child2 before the given child1 in this XML object and returns this XML object.",
-          "description": "If child1 is null, the method inserts child2 after all children of this XML object (that is, before none of them). If child1 does not exist in this XML object, the method returns without modifying this XML object.",
-          "parameters": [
-            {
-              "name": "child1",
-              "shortdesc": "The child to search for.",
-              "description": "If null, the method inserts child2 after all children of this XML object.",
-              "datatype": {
-                "type": "XML"
-              }
-            },
-            {
-              "name": "child2",
-              "shortdesc": "The XML to insert.",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ]
-        },
-        {
-          "name": "length",
-          "shortdesc": "Returns the number of elements contained in an XML list. If this XML object is not a list, returns 1.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "localName",
-          "shortdesc": "Returns the local name of this XML object.",
-          "description": "This value corresponds to the element name unless the name has a namespace prefix. For example, if the element has the name \"ns:tag\", the return value is \"tag\".",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "Returns a QName object containing the URI and the local name of the element.",
-          "datatype": {
-            "type": "QName"
-          }
-        },
-        {
-          "name": "namespace",
-          "shortdesc": "Returns a Namespace object containing the namespace URI of the current element.",
-          "datatype": {
-            "type": "Namespace"
-          }
-        },
-        {
-          "name": "namespaceDeclarations",
-          "shortdesc": "Returns an array containing all namespace declarations of this XML object.",
-          "datatype": {
-            "type": "Array"
-          }
-        },
-        {
-          "name": "nodeKind",
-          "shortdesc": "Returns the type of this XML object as one of the strings \"element\", \"attribute\", \"comment\", \"processing-instruction\", or \"text\".",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "normalize",
-          "shortdesc": "Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent text nodes and eliminating empty text nodes. Returns this XML object.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "parent",
-          "shortdesc": "Returns the parent object of this XML object.",
-          "description": "The root object, as returned by the XML constructor, does not have a parent and returns null. Note that the E4X standard does not define what happens if this XML object is a list containing elements with multiple parents.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "processingInstructions",
-          "shortdesc": "Returns a list of preprocessing instructions.",
-          "description": "Collects processing-instructions with the given name, if supplied. Otherwise, returns an XML list containing all the children of this XML object that are processing-instructions regardless of their name.",
-          "parameters": [
-            {
-              "name": "name",
-              "optional": true,
-              "shortdesc": "The name of the preprocessing instruction to return.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "prependChild",
-          "shortdesc": "Inserts a given child into this object before its existing XML properties, and returns this XML object.",
-          "parameters": [
-            {
-              "name": "child",
-              "shortdesc": "The XML to insert.",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "removeNamespace",
-          "shortdesc": "Removes the given namespace from this XML, and returns this XML.",
-          "parameters": [
-            {
-              "name": "namespace",
-              "shortdesc": "The namespace to remove.",
-              "datatype": {
-                "type": "Namespace"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "replace",
-          "shortdesc": "Replaces the value of specified XML properties of this XML object returns this XML object.",
-          "description": "This method acts like the assignment operator.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The property name.",
-              "description": "Can be a numeric property name, a name for a set of XML elements, or the properties wildcard “*”. If this XML object contains no properties that match the name, the method returns without modifying this XML object.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The XML with which to replace the value of the matching property.",
-              "description": "Can be an XML object, XML list or any value that can be converted to a String with toString().",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "setChildren",
-          "shortdesc": "Replaces all of the XML-valued properties in this object with a new value, and returns this XML object.",
-          "parameters": [
-            {
-              "name": "value",
-              "shortdesc": "The new value, which can be a single XML object or an XML list.",
-              "datatype": {
-                "type": "XML"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "setLocalName",
-          "shortdesc": "Replaces the local name of this XML object  with a string constructed from the given name",
-          "description": "The local name is any part behind a colon character. If there is no colon, it is the entire name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name to set.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "setName",
-          "shortdesc": "Replaces the name of this XML object with the given QName object.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The fully qualified name.",
-              "datatype": {
-                "type": "QName"
-              }
-            }
-          ]
-        },
-        {
-          "name": "setNamespace",
-          "shortdesc": "Sets the namespace for this XML element.",
-          "description": "If the namespace has not been declared in the tree above this element, adds a namespace declaration.",
-          "parameters": [
-            {
-              "name": "namespace",
-              "shortdesc": "The namespace to set.",
-              "datatype": {
-                "type": "Namespace"
-              }
-            }
-          ]
-        },
-        {
-          "name": "text",
-          "shortdesc": "Returns an XML list containing all XML properties of this XML object that represent XML text nodes.",
-          "datatype": {
-            "type": "XML"
-          }
-        },
-        {
-          "name": "toString",
-          "shortdesc": "Returns the string representation of this object.",
-          "description": "For text and attribute nodes, this is the textual value of the node; for other elements, this is the result of calling the toXMLString() method. If this XML object is a list, concatenates the result of calling toString() on each element.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toXMLString",
-          "shortdesc": "Returns an XML-encoded string representation of this XML object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "xpath",
-          "shortdesc": "Evaluates the given XPath expression in accordance with the W3C XPath recommendation, using this XML object as the context node.",
-          "parameters": [
-            {
-              "name": "expr",
-              "shortdesc": "The XPath expression to use.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XML"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "XML",
+    "description": "Wraps XML into an object."
 }

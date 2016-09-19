@@ -1,201 +1,191 @@
 {
-  "name": "TOCStyleEntries",
-  "dynamic": true,
-  "shortdesc": "A collection TOC style entries.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Adds a TOC style entry.",
-          "parameters": [
-            {
-              "name": "styleName",
-              "shortdesc": "The paragraph style to include as TOC entries in the TOC. ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new TOCStyleEntry ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the TOCStyleEntry.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the TOCStyleEntry with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the TOCStyleEntry with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the TOCStyleEntries within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The TOCStyleEntry, index, or name at the beginning of the range. Can accept: TOCStyleEntry, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The TOCStyleEntry, index, or name at the end of the range. Can accept: TOCStyleEntry, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first TOCStyleEntry in the collection.",
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last TOCStyleEntry in the collection.",
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle TOCStyleEntry in the collection.",
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the TOCStyleEntry with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the TOCStyleEntry that follows the desired TOCStyleEntry.",
-              "datatype": {
-                "type": "TOCStyleEntry"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the TOCStyleEntry whose index follows the specified TOCStyleEntry in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The TOCStyleEntry whose index comes before the desired TOCStyleEntry.",
-              "datatype": {
-                "type": "TOCStyleEntry"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any TOCStyleEntry in the collection.",
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every TOCStyleEntry in the collection.",
-          "datatype": {
-            "type": "TOCStyleEntry",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the TOCStyleEntry.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the TOCStyleEntry with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TOCStyleEntry"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "styleName",
+                            "description": "The paragraph style to include as TOC entries in the TOC. (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new TOCStyleEntry (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Adds a TOC style entry.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the TOCStyleEntry.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the TOCStyleEntry with the specified index or name.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the TOCStyleEntry with the specified name.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The TOCStyleEntry, index, or name at the beginning of the range. Can accept: TOCStyleEntry, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The TOCStyleEntry, index, or name at the end of the range. Can accept: TOCStyleEntry, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the TOCStyleEntries within the specified range.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first TOCStyleEntry in the collection.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last TOCStyleEntry in the collection.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle TOCStyleEntry in the collection.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the TOCStyleEntry that follows the desired TOCStyleEntry.",
+                            "type": "TOCStyleEntry"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the TOCStyleEntry with the index previous to the specified index.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The TOCStyleEntry whose index comes before the desired TOCStyleEntry.",
+                            "type": "TOCStyleEntry"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the TOCStyleEntry whose index follows the specified TOCStyleEntry in the collection.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any TOCStyleEntry in the collection.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every TOCStyleEntry in the collection.",
+                    "type": "TOCStyleEntry"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the TOCStyleEntry.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the TOCStyleEntry with the specified index.",
+                    "type": "TOCStyleEntry"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "TOCStyleEntries",
+    "description": "A collection TOC style entries."
 }

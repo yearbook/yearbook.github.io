@@ -1,220 +1,210 @@
 {
-  "name": "ExcelImportPreference",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "Excel import preferences.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the ExcelImportPreference (a Application).",
-          "datatype": {
-            "type": "Application"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "useTypographersQuotes",
-          "shortdesc": "If true, convert straight quotes and apostrophes in the imported text to typographic quotation marks and apostrophes.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "preserveGraphics",
-          "shortdesc": "If true, preserves inline graphics.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "viewName",
-          "shortdesc": "The stored custom or personal view(s) to import with the file.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "sheetName",
-          "shortdesc": "The worksheet to import.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "sheetIndex",
-          "shortdesc": "The worksheet's index. For information, see sheet name.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "rangeName",
-          "shortdesc": "The range of cells to import. Note: Use a colon (:) to separate the start and end cell names in the range.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "alignmentStyle",
-          "shortdesc": "The cell alignment for the imported document.",
-          "datatype": {
-            "type": "AlignmentStyleOptions"
-          }
-        },
-        {
-          "name": "decimalPlaces",
-          "shortdesc": "The number of decimal places to include. Note: Valid only when alignment style is decimal.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "showHiddenCells",
-          "shortdesc": "If true, shows hidden cells.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "errorCode",
-          "shortdesc": "The import error code. (Key: 0=Success; 1=Empty Sheet; 2=Invalid sheet; 3=Invalid range; 4=Invalid View; 5=Misc. Error)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "tableFormatting",
-          "shortdesc": "The format for imported spreadsheets.",
-          "datatype": {
-            "type": "TableFormattingOptions"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the ExcelImportPreference.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "ExcelImportPreference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the ExcelImportPreference (a Application).",
+                    "type": "Application"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "useTypographersQuotes",
+                    "description": "If true, convert straight quotes and apostrophes in the imported text to typographic quotation marks and apostrophes.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveGraphics",
+                    "description": "If true, preserves inline graphics.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "viewName",
+                    "description": "The stored custom or personal view(s) to import with the file.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "sheetName",
+                    "description": "The worksheet to import.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "sheetIndex",
+                    "description": "The worksheet's index. For information, see sheet name.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rangeName",
+                    "description": "The range of cells to import. Note: Use a colon (:) to separate the start and end cell names in the range.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "alignmentStyle",
+                    "description": "The cell alignment for the imported document.",
+                    "type": "AlignmentStyleOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "decimalPlaces",
+                    "description": "The number of decimal places to include. Note: Valid only when alignment style is decimal.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "showHiddenCells",
+                    "description": "If true, shows hidden cells.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "errorCode",
+                    "description": "The import error code. (Key: 0=Success; 1=Empty Sheet; 2=Invalid sheet; 3=Invalid range; 4=Invalid View; 5=Misc. Error)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "tableFormatting",
+                    "description": "The format for imported spreadsheets.",
+                    "type": "TableFormattingOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the ExcelImportPreference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "ExcelImportPreference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "ExcelImportPreference",
+    "description": "Excel import preferences.",
+    "superclass": "Preference"
 }

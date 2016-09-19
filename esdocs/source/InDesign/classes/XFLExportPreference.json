@@ -1,261 +1,246 @@
 {
-  "name": "XFLExportPreference",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "XFL export preferences.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the XFLExportPreference (a Application).",
-          "datatype": {
-            "type": "Application"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "dynamicMediaHandling",
-          "shortdesc": "The dynamic media handling options.",
-          "datatype": {
-            "type": "DynamicMediaHandlingOptions"
-          }
-        },
-        {
-          "name": "insertHyphens",
-          "shortdesc": "If true, discretionary hyphenation points are inserted when TLF text is used.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "fitMethod",
-          "shortdesc": "The fitting method to use.",
-          "datatype": {
-            "type": "FitMethodSettings"
-          }
-        },
-        {
-          "name": "fitOption",
-          "shortdesc": "The options for fitting to predefined dimension.",
-          "datatype": {
-            "type": "FitDimension"
-          }
-        },
-        {
-          "name": "fitScale",
-          "shortdesc": "The size fits to given scale percentage.",
-          "datatype": {
-            "type": "Number",
-            "min": 1,
-            "max": 1000,
-            "value": 100
-          }
-        },
-        {
-          "name": "fitWidthAndHeight",
-          "shortdesc": "The size fits to given width and height.",
-          "datatype": {
-            "type": "Number",
-            "array": true
-          }
-        },
-        {
-          "name": "pageRange",
-          "shortdesc": "The pages to print, specified either as an enumeration or a string. To specify a range, separate page numbers in the string with a hyphen (-). To specify separate pages, separate page numbers in the string with a comma (,). Can return: PageRange enumerator or String.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "dynamicDocumentExportReaderSpreads",
-          "shortdesc": "If true, each spread in the exported document is combined into a single page that has spread's original width.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "rasterizePages",
-          "shortdesc": "If true, all the pages in the exported document will be rasterized.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "flattenTransparency",
-          "shortdesc": "Flatten transparency when exporting.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "textExportPolicy",
-          "shortdesc": "The text export policy.",
-          "datatype": {
-            "type": "DynamicDocumentsTextExportPolicy"
-          }
-        },
-        {
-          "name": "rasterFormat",
-          "shortdesc": "The raster format options.",
-          "datatype": {
-            "type": "XFLRasterizeFormatOptions"
-          }
-        },
-        {
-          "name": "jpegQualityOptions",
-          "shortdesc": "The JPEG quality options.",
-          "datatype": {
-            "type": "DynamicDocumentsJPEGQualityOptions"
-          }
-        },
-        {
-          "name": "rasterResolution",
-          "shortdesc": "The raster resolution.",
-          "datatype": {
-            "type": "Number",
-            "min": 72,
-            "max": 2400
-          }
-        },
-        {
-          "name": "resamplingType",
-          "shortdesc": "The resampling type.",
-          "datatype": {
-            "type": "Sampling"
-          }
-        },
-        {
-          "name": "resamplingThreshold",
-          "shortdesc": "The resampling threshold.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the XFLExportPreference.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "XFLExportPreference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the XFLExportPreference (a Application).",
+                    "type": "Application"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "dynamicMediaHandling",
+                    "description": "The dynamic media handling options.",
+                    "type": "DynamicMediaHandlingOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "insertHyphens",
+                    "description": "If true, discretionary hyphenation points are inserted when TLF text is used.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fitMethod",
+                    "description": "The fitting method to use.",
+                    "type": "FitMethodSettings"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fitOption",
+                    "description": "The options for fitting to predefined dimension.",
+                    "type": "FitDimension"
+                },
+                {
+                    "readonly": false,
+                    "value": "100",
+                    "array": false,
+                    "name": "fitScale",
+                    "description": "The size fits to given scale percentage.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "fitWidthAndHeight",
+                    "description": "The size fits to given width and height.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "pageRange",
+                    "description": "The pages to print, specified either as an enumeration or a string. To specify a range, separate page numbers in the string with a hyphen (-). To specify separate pages, separate page numbers in the string with a comma (,). Can return: PageRange enumerator or String.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "dynamicDocumentExportReaderSpreads",
+                    "description": "If true, each spread in the exported document is combined into a single page that has spread's original width.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rasterizePages",
+                    "description": "If true, all the pages in the exported document will be rasterized.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "flattenTransparency",
+                    "description": "Flatten transparency when exporting.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "textExportPolicy",
+                    "description": "The text export policy.",
+                    "type": "DynamicDocumentsTextExportPolicy"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rasterFormat",
+                    "description": "The raster format options.",
+                    "type": "XFLRasterizeFormatOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "jpegQualityOptions",
+                    "description": "The JPEG quality options.",
+                    "type": "DynamicDocumentsJPEGQualityOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rasterResolution",
+                    "description": "The raster resolution.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "resamplingType",
+                    "description": "The resampling type.",
+                    "type": "Sampling"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "resamplingThreshold",
+                    "description": "The resampling threshold.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the XFLExportPreference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "XFLExportPreference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "XFLExportPreference",
+    "description": "XFL export preferences.",
+    "superclass": "Preference"
 }

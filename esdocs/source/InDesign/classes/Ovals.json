@@ -1,234 +1,221 @@
 {
-  "name": "Ovals",
-  "dynamic": true,
-  "shortdesc": "A collection of ellipses.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new Oval",
-          "parameters": [
-            {
-              "name": "layer",
-              "shortdesc": "The layer on which to create the Oval. ",
-              "datatype": {
-                "type": "Layer"
-              },
-              "optional": true
-            },
-            {
-              "name": "at",
-              "optional": true,
-              "shortdesc": "The location at which to insert the Oval relative to the reference object or within the container object. ",
-              "datatype": {
-                "type": "LocationOptions",
-                "value": "LocationOptions.UNKNOWN"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new Oval ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Oval.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Oval with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Oval with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Oval with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Ovals within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Oval, index, or name at the beginning of the range. Can accept: Oval, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Oval, index, or name at the end of the range. Can accept: Oval, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Oval in the collection.",
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Oval in the collection.",
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Oval in the collection.",
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Oval with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Oval that follows the desired Oval.",
-              "datatype": {
-                "type": "Oval"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Oval whose index follows the specified Oval in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Oval whose index comes before the desired Oval.",
-              "datatype": {
-                "type": "Oval"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Oval in the collection.",
-          "datatype": {
-            "type": "Oval"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Oval in the collection.",
-          "datatype": {
-            "type": "Oval",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Oval.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Oval with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Oval"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "layer",
+                            "description": "The layer on which to create the Oval. (Optional)",
+                            "type": "Layer"
+                        },
+                        {
+                            "optional": true,
+                            "value": "LocationOptions.UNKNOWN",
+                            "array": false,
+                            "name": "at",
+                            "description": "The location at which to insert the Oval relative to the reference object or within the container object. (Optional)",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new Oval (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new Oval",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Oval.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Oval with the specified index or name.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Oval with the specified name.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Oval with the specified ID.",
+                    "type": "Oval"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Oval, index, or name at the beginning of the range. Can accept: Oval, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Oval, index, or name at the end of the range. Can accept: Oval, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Ovals within the specified range.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Oval in the collection.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Oval in the collection.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Oval in the collection.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Oval that follows the desired Oval.",
+                            "type": "Oval"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Oval with the index previous to the specified index.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Oval whose index comes before the desired Oval.",
+                            "type": "Oval"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Oval whose index follows the specified Oval in the collection.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Oval in the collection.",
+                    "type": "Oval"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Oval in the collection.",
+                    "type": "Oval"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Oval.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Oval with the specified index.",
+                    "type": "Oval"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Ovals",
+    "description": "A collection of ellipses."
 }

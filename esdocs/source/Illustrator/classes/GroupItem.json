@@ -1,192 +1,179 @@
 {
-  "name": "GroupItem",
-  "dynamic": true,
-  "superclass": "PageItem",
-  "shortdesc": "An artwork group item.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "clipped",
-          "shortdesc": "Are the group elements clipped to the clipping path?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "groupItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The group items in this group.",
-          "datatype": {
-            "type": "GroupItems"
-          }
-        },
-        {
-          "name": "pageItems",
-          "rwaccess": "readonly",
-          "shortdesc": "All the artwork in this group.",
-          "datatype": {
-            "type": "PageItems"
-          }
-        },
-        {
-          "name": "compoundPathItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The compound path artwork in this group.",
-          "datatype": {
-            "type": "CompoundPathItems"
-          }
-        },
-        {
-          "name": "pathItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The path artwork in this group.",
-          "datatype": {
-            "type": "PathItems"
-          }
-        },
-        {
-          "name": "rasterItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The raster art items in this group.",
-          "datatype": {
-            "type": "RasterItems"
-          }
-        },
-        {
-          "name": "placedItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The placed art items in this group.",
-          "datatype": {
-            "type": "PlacedItems"
-          }
-        },
-        {
-          "name": "meshItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The mesh art items in this group.",
-          "datatype": {
-            "type": "MeshItems"
-          }
-        },
-        {
-          "name": "pluginItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The plugin art items in this group.",
-          "datatype": {
-            "type": "PluginItems"
-          }
-        },
-        {
-          "name": "graphItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The graph art items in this group.",
-          "datatype": {
-            "type": "GraphItems"
-          }
-        },
-        {
-          "name": "nonNativeItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The non-native art items in this group.",
-          "datatype": {
-            "type": "NonNativeItems"
-          }
-        },
-        {
-          "name": "textFrames",
-          "rwaccess": "readonly",
-          "shortdesc": "The text frame items in this group.",
-          "datatype": {
-            "type": "TextFrameItems"
-          }
-        },
-        {
-          "name": "symbolItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The symbol items in this group.",
-          "datatype": {
-            "type": "SymbolItems"
-          }
-        },
-        {
-          "name": "legacyTextItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The text frame items in this story.",
-          "datatype": {
-            "type": "LegacyTextItems"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relativeObject",
+                            "type": "Object"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insertionLocation",
+                            "type": "ElementPlacement"
+                        }
+                    ],
+                    "name": "move",
+                    "description": "Move the object.",
+                    "type": "GroupItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relativeObject",
+                            "type": "Object"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insertionLocation",
+                            "type": "ElementPlacement"
+                        }
+                    ],
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "type": "GroupItem"
+                },
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "clipped",
+                    "description": "Are the group elements clipped to the clipping path?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "groupItems",
+                    "description": "The group items in this group.",
+                    "type": "GroupItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pageItems",
+                    "description": "All the artwork in this group.",
+                    "type": "PageItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "compoundPathItems",
+                    "description": "The compound path artwork in this group.",
+                    "type": "CompoundPathItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pathItems",
+                    "description": "The path artwork in this group.",
+                    "type": "PathItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "rasterItems",
+                    "description": "The raster art items in this group.",
+                    "type": "RasterItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "placedItems",
+                    "description": "The placed art items in this group.",
+                    "type": "PlacedItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "meshItems",
+                    "description": "The mesh art items in this group.",
+                    "type": "MeshItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pluginItems",
+                    "description": "The plugin art items in this group.",
+                    "type": "PluginItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "graphItems",
+                    "description": "The graph art items in this group.",
+                    "type": "GraphItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "nonNativeItems",
+                    "description": "The non-native art items in this group.",
+                    "type": "NonNativeItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textFrames",
+                    "description": "The text frame items in this group.",
+                    "type": "TextFrameItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "symbolItems",
+                    "description": "The symbol items in this group.",
+                    "type": "SymbolItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "legacyTextItems",
+                    "description": "The text frame items in this story.",
+                    "type": "LegacyTextItems"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "move",
-          "shortdesc": "Move the object.",
-          "parameters": [
-            {
-              "name": "relativeObject",
-              "datatype": {
-                "type": "Object"
-              }
-            },
-            {
-              "name": "insertionLocation",
-              "datatype": {
-                "type": "ElementPlacement"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "GroupItem"
-          }
-        },
-        {
-          "name": "duplicate",
-          "shortdesc": "Duplicate this object.",
-          "parameters": [
-            {
-              "name": "relativeObject",
-              "datatype": {
-                "type": "Object"
-              }
-            },
-            {
-              "name": "insertionLocation",
-              "datatype": {
-                "type": "ElementPlacement"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "GroupItem"
-          }
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        }
-      ]
-    }
-  ]
+    },
+    "name": "GroupItem",
+    "description": "An artwork group item.",
+    "superclass": "PageItem"
 }

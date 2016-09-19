@@ -1,95 +1,88 @@
 {
-  "name": "TracingObject",
-  "dynamic": true,
-  "shortdesc": "A tracing object.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "sourceArt",
-          "rwaccess": "readonly",
-          "shortdesc": "The source art used when creating a new tracing object.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "tracingOptions",
-          "rwaccess": "readonly",
-          "shortdesc": "The options used when tracing the artwork.",
-          "datatype": {
-            "type": "TracingOptions"
-          }
-        },
-        {
-          "name": "pathCount",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of paths in the tracing result.",
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "anchorCount",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of anchors in the tracing result.",
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "usedColorCount",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of colors used in the tracing result.",
-          "datatype": {
-            "type": "Int32"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "releaseTracing",
+                    "description": "Release the source artwork for the tracing object. Deletes this tracing object.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "viewed",
+                            "description": "Expand as viewed with the raster and vector view modes.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "expandTracing",
+                    "description": "Expand the tracing to paths. Deletes this tracing object.",
+                    "type": "GroupItem"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "sourceArt",
+                    "description": "The source art used when creating a new tracing object.",
+                    "type": "PageItem"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "tracingOptions",
+                    "description": "The options used when tracing the artwork.",
+                    "type": "TracingOptions"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pathCount",
+                    "description": "The number of paths in the tracing result.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "anchorCount",
+                    "description": "The number of anchors in the tracing result.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "usedColorCount",
+                    "description": "The number of colors used in the tracing result.",
+                    "type": "Int32"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "releaseTracing",
-          "shortdesc": "Release the source artwork for the tracing object. Deletes this tracing object.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "expandTracing",
-          "shortdesc": "Expand the tracing to paths. Deletes this tracing object.",
-          "parameters": [
-            {
-              "name": "viewed",
-              "optional": true,
-              "shortdesc": "Expand as viewed with the raster and vector view modes.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "GroupItem"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "TracingObject",
+    "description": "A tracing object."
 }

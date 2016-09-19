@@ -1,192 +1,184 @@
 {
-  "name": "EPSs",
-  "dynamic": true,
-  "shortdesc": "A collection of EPS files.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the EPS.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the EPS with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the EPS with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the EPS with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the EPSs within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The EPS, index, or name at the beginning of the range. Can accept: EPS, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The EPS, index, or name at the end of the range. Can accept: EPS, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first EPS in the collection.",
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last EPS in the collection.",
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle EPS in the collection.",
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the EPS with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the EPS that follows the desired EPS.",
-              "datatype": {
-                "type": "EPS"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the EPS whose index follows the specified EPS in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The EPS whose index comes before the desired EPS.",
-              "datatype": {
-                "type": "EPS"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any EPS in the collection.",
-          "datatype": {
-            "type": "EPS"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every EPS in the collection.",
-          "datatype": {
-            "type": "EPS",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the EPS.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the EPS with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EPS"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the EPS.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the EPS with the specified index or name.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the EPS with the specified name.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the EPS with the specified ID.",
+                    "type": "EPS"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The EPS, index, or name at the beginning of the range. Can accept: EPS, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The EPS, index, or name at the end of the range. Can accept: EPS, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the EPSs within the specified range.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first EPS in the collection.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last EPS in the collection.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle EPS in the collection.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the EPS that follows the desired EPS.",
+                            "type": "EPS"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the EPS with the index previous to the specified index.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The EPS whose index comes before the desired EPS.",
+                            "type": "EPS"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the EPS whose index follows the specified EPS in the collection.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any EPS in the collection.",
+                    "type": "EPS"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every EPS in the collection.",
+                    "type": "EPS"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the EPS.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the EPS with the specified index.",
+                    "type": "EPS"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "EPSs",
+    "description": "A collection of EPS files."
 }

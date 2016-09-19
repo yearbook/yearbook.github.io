@@ -1,301 +1,279 @@
 {
-  "name": "StoryWindow",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Window",
-    "$t": "Window"
-  },
-  "shortdesc": "A story window.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "AFTER_SELECTION_CHANGED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterSelectionChanged"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "afterSelectionChanged",
+                    "array": false,
+                    "name": "AFTER_SELECTION_CHANGED",
+                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterSelectionAttributeChanged",
+                    "array": false,
+                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
+                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeDeactivate",
+                    "array": false,
+                    "name": "BEFORE_DEACTIVATE",
+                    "description": "Dispatched before the StoryWindow becomes inactive. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterActivate",
+                    "array": false,
+                    "name": "AFTER_ACTIVATE",
+                    "description": "Dispatched after the StoryWindow becomes active. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterAttributeChanged",
+                    "array": false,
+                    "name": "AFTER_ATTRIBUTE_CHANGED",
+                    "description": "Dispatched when the value of a property changes on this StoryWindow. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterOpen",
+                    "array": false,
+                    "name": "AFTER_OPEN",
+                    "description": "Dispatched after a StoryWindow is opened. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeClose",
+                    "array": false,
+                    "name": "BEFORE_CLOSE",
+                    "description": "Dispatched before a StoryWindow is closed. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterClose",
+                    "array": false,
+                    "name": "AFTER_CLOSE",
+                    "description": "Dispatched when a StoryWindow is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                }
+            ]
         },
-        {
-          "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterSelectionAttributeChanged"
-          }
-        },
-        {
-          "name": "BEFORE_DEACTIVATE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before the StoryWindow becomes inactive. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeDeactivate"
-          }
-        },
-        {
-          "name": "AFTER_ACTIVATE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after the StoryWindow becomes active. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterActivate"
-          }
-        },
-        {
-          "name": "AFTER_ATTRIBUTE_CHANGED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched when the value of a property changes on this StoryWindow. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterAttributeChanged"
-          }
-        },
-        {
-          "name": "AFTER_OPEN",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a StoryWindow is opened. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterOpen"
-          }
-        },
-        {
-          "name": "BEFORE_CLOSE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a StoryWindow is closed. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeClose"
-          }
-        },
-        {
-          "name": "AFTER_CLOSE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched when a StoryWindow is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterClose"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "selectableItems",
+                            "description": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "SelectionOptions.REPLACE_WITH",
+                            "array": false,
+                            "name": "existingSelection",
+                            "description": "The selection status of the StoryWindow in relation to previously selected objects. (Optional)",
+                            "type": "SelectionOptions"
+                        }
+                    ],
+                    "name": "select",
+                    "description": "Selects the specified object(s)."
+                },
+                {
+                    "parameters": [],
+                    "name": "close",
+                    "description": "Closes the StoryWindow."
+                },
+                {
+                    "parameters": [],
+                    "name": "maximize",
+                    "description": "Maximizes the window."
+                },
+                {
+                    "parameters": [],
+                    "name": "minimize",
+                    "description": "Minimizes the window."
+                },
+                {
+                    "parameters": [],
+                    "name": "restore",
+                    "description": "Restores the window."
+                },
+                {
+                    "parameters": [],
+                    "name": "bringToFront",
+                    "description": "Brings the object to the front."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the StoryWindow.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "StoryWindow"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the StoryWindow.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the StoryWindow (a Document).",
+                    "type": "Document"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the StoryWindow within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "selection",
+                    "description": "The selected object(s). Can also accept: Object or NothingEnum enumerator.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "bounds",
+                    "description": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right].",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "selectionKeyObject",
+                    "description": "The key object of the selection. Can also accept: NothingEnum enumerator.",
+                    "type": "PageItem"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "name",
-          "rwaccess": "readonly",
-          "shortdesc": "The name of the StoryWindow.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the StoryWindow (a Document).",
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the StoryWindow within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "selection",
-          "shortdesc": "The selected object(s). Can also accept: Object or NothingEnum enumerator.",
-          "datatype": {
-            "type": "Object",
-            "array": true
-          }
-        },
-        {
-          "name": "bounds",
-          "shortdesc": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right].",
-          "datatype": {
-            "type": "Number",
-            "array": true
-          }
-        },
-        {
-          "name": "selectionKeyObject",
-          "shortdesc": "The key object of the selection. Can also accept: NothingEnum enumerator.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "select",
-          "shortdesc": "Selects the specified object(s).",
-          "parameters": [
-            {
-              "name": "selectableItems",
-              "shortdesc": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "existingSelection",
-              "optional": true,
-              "shortdesc": "The selection status of the StoryWindow in relation to previously selected objects. ",
-              "datatype": {
-                "type": "SelectionOptions",
-                "value": "SelectionOptions.REPLACE_WITH"
-              }
-            }
-          ]
-        },
-        {
-          "name": "close",
-          "shortdesc": "Closes the StoryWindow."
-        },
-        {
-          "name": "maximize",
-          "shortdesc": "Maximizes the window."
-        },
-        {
-          "name": "minimize",
-          "shortdesc": "Minimizes the window."
-        },
-        {
-          "name": "restore",
-          "shortdesc": "Restores the window."
-        },
-        {
-          "name": "bringToFront",
-          "shortdesc": "Brings the object to the front."
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the StoryWindow.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "StoryWindow",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "StoryWindow",
+    "description": "A story window.",
+    "superclass": "Window"
 }

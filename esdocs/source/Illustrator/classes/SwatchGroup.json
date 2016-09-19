@@ -1,79 +1,80 @@
 {
-  "name": "SwatchGroup",
-  "dynamic": true,
-  "shortdesc": "A Swatch group.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "Name of the swatch group.",
-          "datatype": {
-            "type": "String"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "swatch",
+                            "description": "The swatch to be added to the group.",
+                            "type": "Swatch"
+                        }
+                    ],
+                    "name": "addSwatch",
+                    "description": "Add a swatch to the group."
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getAllSwatches",
+                    "description": "Get all swatches in the swatch group.",
+                    "type": "Swatch"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "spot",
+                            "description": "The spot swatch to be added to the group.",
+                            "type": "Spot"
+                        }
+                    ],
+                    "name": "addSpot",
+                    "description": "Add a spot swatch to the group."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "Name of the swatch group.",
+                    "type": "String"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "addSwatch",
-          "shortdesc": "Add a swatch to the group.",
-          "parameters": [
-            {
-              "name": "swatch",
-              "shortdesc": "The swatch to be added to the group.",
-              "datatype": {
-                "type": "Swatch"
-              }
-            }
-          ]
-        },
-        {
-          "name": "getAllSwatches",
-          "shortdesc": "Get all swatches in the swatch group.",
-          "datatype": {
-            "type": "Swatch",
-            "array": true
-          }
-        },
-        {
-          "name": "addSpot",
-          "shortdesc": "Add a spot swatch to the group.",
-          "parameters": [
-            {
-              "name": "spot",
-              "shortdesc": "The spot swatch to be added to the group.",
-              "datatype": {
-                "type": "Spot"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    },
+    "name": "SwatchGroup",
+    "description": "A Swatch group."
 }

@@ -1,234 +1,221 @@
 {
-  "name": "ListBoxes",
-  "dynamic": true,
-  "shortdesc": "A collection of listboxes.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the ListBox.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "add",
-          "shortdesc": "Creates a new ListBox",
-          "parameters": [
-            {
-              "name": "layer",
-              "shortdesc": "The layer on which to create the ListBox. ",
-              "datatype": {
-                "type": "Layer"
-              },
-              "optional": true
-            },
-            {
-              "name": "at",
-              "optional": true,
-              "shortdesc": "The location at which to insert the ListBox relative to the reference object or within the container object. ",
-              "datatype": {
-                "type": "LocationOptions",
-                "value": "LocationOptions.UNKNOWN"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new ListBox ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the ListBox with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the ListBox with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the ListBox with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the ListBoxes within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The ListBox, index, or name at the beginning of the range. Can accept: ListBox, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The ListBox, index, or name at the end of the range. Can accept: ListBox, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first ListBox in the collection.",
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last ListBox in the collection.",
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle ListBox in the collection.",
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the ListBox with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the ListBox that follows the desired ListBox.",
-              "datatype": {
-                "type": "ListBox"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the ListBox whose index follows the specified ListBox in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The ListBox whose index comes before the desired ListBox.",
-              "datatype": {
-                "type": "ListBox"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any ListBox in the collection.",
-          "datatype": {
-            "type": "ListBox"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every ListBox in the collection.",
-          "datatype": {
-            "type": "ListBox",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the ListBox.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the ListBox with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ListBox"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the ListBox.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "layer",
+                            "description": "The layer on which to create the ListBox. (Optional)",
+                            "type": "Layer"
+                        },
+                        {
+                            "optional": true,
+                            "value": "LocationOptions.UNKNOWN",
+                            "array": false,
+                            "name": "at",
+                            "description": "The location at which to insert the ListBox relative to the reference object or within the container object. (Optional)",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new ListBox (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new ListBox",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the ListBox with the specified index or name.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the ListBox with the specified name.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the ListBox with the specified ID.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The ListBox, index, or name at the beginning of the range. Can accept: ListBox, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The ListBox, index, or name at the end of the range. Can accept: ListBox, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the ListBoxes within the specified range.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first ListBox in the collection.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last ListBox in the collection.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle ListBox in the collection.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the ListBox that follows the desired ListBox.",
+                            "type": "ListBox"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the ListBox with the index previous to the specified index.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The ListBox whose index comes before the desired ListBox.",
+                            "type": "ListBox"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the ListBox whose index follows the specified ListBox in the collection.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any ListBox in the collection.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every ListBox in the collection.",
+                    "type": "ListBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the ListBox.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the ListBox with the specified index.",
+                    "type": "ListBox"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "ListBoxes",
+    "description": "A collection of listboxes."
 }

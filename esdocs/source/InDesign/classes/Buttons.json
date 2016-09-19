@@ -1,234 +1,221 @@
 {
-  "name": "Buttons",
-  "dynamic": true,
-  "shortdesc": "A collection of buttons.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Button.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "add",
-          "shortdesc": "Creates a new Button",
-          "parameters": [
-            {
-              "name": "layer",
-              "shortdesc": "The layer on which to create the Button. ",
-              "datatype": {
-                "type": "Layer"
-              },
-              "optional": true
-            },
-            {
-              "name": "at",
-              "optional": true,
-              "shortdesc": "The location at which to insert the Button relative to the reference object or within the container object. ",
-              "datatype": {
-                "type": "LocationOptions",
-                "value": "LocationOptions.UNKNOWN"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new Button ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Button with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Button with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Button with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Buttons within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Button, index, or name at the beginning of the range. Can accept: Button, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Button, index, or name at the end of the range. Can accept: Button, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Button in the collection.",
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Button in the collection.",
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Button in the collection.",
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Button with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Button that follows the desired Button.",
-              "datatype": {
-                "type": "Button"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Button whose index follows the specified Button in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Button whose index comes before the desired Button.",
-              "datatype": {
-                "type": "Button"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Button in the collection.",
-          "datatype": {
-            "type": "Button"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Button in the collection.",
-          "datatype": {
-            "type": "Button",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Button.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Button with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Button"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Button.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "layer",
+                            "description": "The layer on which to create the Button. (Optional)",
+                            "type": "Layer"
+                        },
+                        {
+                            "optional": true,
+                            "value": "LocationOptions.UNKNOWN",
+                            "array": false,
+                            "name": "at",
+                            "description": "The location at which to insert the Button relative to the reference object or within the container object. (Optional)",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new Button (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new Button",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Button with the specified index or name.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Button with the specified name.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Button with the specified ID.",
+                    "type": "Button"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Button, index, or name at the beginning of the range. Can accept: Button, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Button, index, or name at the end of the range. Can accept: Button, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Buttons within the specified range.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Button in the collection.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Button in the collection.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Button in the collection.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Button that follows the desired Button.",
+                            "type": "Button"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Button with the index previous to the specified index.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Button whose index comes before the desired Button.",
+                            "type": "Button"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Button whose index follows the specified Button in the collection.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Button in the collection.",
+                    "type": "Button"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Button in the collection.",
+                    "type": "Button"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Button.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Button with the specified index.",
+                    "type": "Button"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Buttons",
+    "description": "A collection of buttons."
 }

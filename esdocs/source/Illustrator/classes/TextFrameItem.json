@@ -1,325 +1,312 @@
 {
-  "name": "TextFrameItem",
-  "dynamic": true,
-  "superclass": "PageItem",
-  "shortdesc": "Text frame item.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "story",
-          "rwaccess": "readonly",
-          "shortdesc": "The story of the text frame.",
-          "datatype": {
-            "type": "Story"
-          }
-        },
-        {
-          "name": "contents",
-          "shortdesc": "The text contents of this text frame.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "textRange",
-          "rwaccess": "readonly",
-          "shortdesc": "The text range of the text frame.",
-          "datatype": {
-            "type": "TextRange"
-          }
-        },
-        {
-          "name": "textSelection",
-          "rwaccess": "readonly",
-          "shortdesc": "The selected text (ranges) in the story.",
-          "datatype": {
-            "type": "TextRange",
-            "array": true
-          }
-        },
-        {
-          "name": "rowCount",
-          "shortdesc": "The row count in the text frame (area text only)",
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "columnCount",
-          "shortdesc": "The column count in the text frame (area text only)",
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "rowGutter",
-          "shortdesc": "The row gutter in the text frame (area text only)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "columnGutter",
-          "shortdesc": "The column gutter in the text frame (area text only)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "flowLinksHorizontally",
-          "shortdesc": "Flow text between linked frame horizontally first. (area text only)",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "spacing",
-          "shortdesc": "The amount of spacing (path text only)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "opticalAlignment",
-          "shortdesc": "Is the optical alignment active?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "kind",
-          "rwaccess": "readonly",
-          "shortdesc": "The type of a text frame item.",
-          "datatype": {
-            "type": "TextType"
-          }
-        },
-        {
-          "name": "contentVariable",
-          "shortdesc": "The content variable bound to this text art item.",
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "orientation",
-          "shortdesc": "The orientation of the text in the frame.",
-          "datatype": {
-            "type": "TextOrientation"
-          }
-        },
-        {
-          "name": "textPath",
-          "rwaccess": "readonly",
-          "shortdesc": "The path for the text frame (area and path text)",
-          "datatype": {
-            "type": "TextPath"
-          }
-        },
-        {
-          "name": "anchor",
-          "shortdesc": "The position of the anchor point (start of base line for point text)",
-          "datatype": {
-            "type": "Point"
-          }
-        },
-        {
-          "name": "startTValue",
-          "shortdesc": "The start position of text along a path, as a value relative to the path's segments (path text only)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "endTValue",
-          "shortdesc": "The end position of text along a path, as a value relative to the path's segments (path text only)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "previousFrame",
-          "shortdesc": "The linked text frame preceding this one.",
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "nextFrame",
-          "shortdesc": "The linked text frame following this one.",
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "matrix",
-          "rwaccess": "readonly",
-          "shortdesc": "The transformation matrix of the text frame object.",
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "antialias",
-          "shortdesc": "The type of a text anti-aliasing on text frame item.",
-          "datatype": {
-            "type": "TextAntialias"
-          }
-        },
-        {
-          "name": "firstBaseline",
-          "shortdesc": "The first baseline offset type for text frame item (for Area Text only)",
-          "datatype": {
-            "type": "FirstBaselineType"
-          }
-        },
-        {
-          "name": "firstBaselineMin",
-          "shortdesc": "The first baseline offset minimum value for text frame item (for Area Text only)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "characters",
-          "rwaccess": "readonly",
-          "shortdesc": "All the characters in this text range.",
-          "datatype": {
-            "type": "Characters"
-          }
-        },
-        {
-          "name": "words",
-          "rwaccess": "readonly",
-          "shortdesc": "All the words in this text range.",
-          "datatype": {
-            "type": "Words"
-          }
-        },
-        {
-          "name": "lines",
-          "rwaccess": "readonly",
-          "shortdesc": "All the lines in this text range.",
-          "datatype": {
-            "type": "Lines"
-          }
-        },
-        {
-          "name": "paragraphs",
-          "rwaccess": "readonly",
-          "shortdesc": "All the paragraphs in this text range.",
-          "datatype": {
-            "type": "Paragraphs"
-          }
-        },
-        {
-          "name": "textRanges",
-          "rwaccess": "readonly",
-          "shortdesc": "All the text in this text range.",
-          "datatype": {
-            "type": "TextRanges"
-          }
-        },
-        {
-          "name": "insertionPoints",
-          "rwaccess": "readonly",
-          "shortdesc": "All the insertion points in this text range.",
-          "datatype": {
-            "type": "InsertionPoints"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relativeObject",
+                            "type": "Object"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insertionLocation",
+                            "type": "ElementPlacement"
+                        }
+                    ],
+                    "name": "move",
+                    "description": "Move the object.",
+                    "type": "TextFrameItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relativeObject",
+                            "type": "Object"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insertionLocation",
+                            "type": "ElementPlacement"
+                        }
+                    ],
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "type": "TextFrameItem"
+                },
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "createOutline",
+                    "description": "Convert text item to path items.",
+                    "type": "GroupItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "convertAreaObjectToPointObject",
+                    "description": "Convert Area Type Text Object To Point Type Object.",
+                    "type": "TextFrameItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "convertPointObjectToAreaObject",
+                    "description": "Convert Point Type Text Object To Area Type Object.",
+                    "type": "TextFrameItem"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "story",
+                    "description": "The story of the text frame.",
+                    "type": "Story"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "contents",
+                    "description": "The text contents of this text frame.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textRange",
+                    "description": "The text range of the text frame.",
+                    "type": "TextRange"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "textSelection",
+                    "description": "The selected text (ranges) in the story.",
+                    "type": "TextRange"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rowCount",
+                    "description": "The row count in the text frame (area text only)",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "columnCount",
+                    "description": "The column count in the text frame (area text only)",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rowGutter",
+                    "description": "The row gutter in the text frame (area text only)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "columnGutter",
+                    "description": "The column gutter in the text frame (area text only)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "flowLinksHorizontally",
+                    "description": "Flow text between linked frame horizontally first. (area text only)",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "spacing",
+                    "description": "The amount of spacing (path text only)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "opticalAlignment",
+                    "description": "Is the optical alignment active?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "kind",
+                    "description": "The type of a text frame item.",
+                    "type": "TextType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "contentVariable",
+                    "description": "The content variable bound to this text art item.",
+                    "type": "any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "orientation",
+                    "description": "The orientation of the text in the frame.",
+                    "type": "TextOrientation"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textPath",
+                    "description": "The path for the text frame (area and path text)",
+                    "type": "TextPath"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "anchor",
+                    "description": "The position of the anchor point (start of base line for point text)",
+                    "type": "Point"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "startTValue",
+                    "description": "The start position of text along a path, as a value relative to the path's segments (path text only)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "endTValue",
+                    "description": "The end position of text along a path, as a value relative to the path's segments (path text only)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "previousFrame",
+                    "description": "The linked text frame preceding this one.",
+                    "type": "TextFrameItem"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "nextFrame",
+                    "description": "The linked text frame following this one.",
+                    "type": "TextFrameItem"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "matrix",
+                    "description": "The transformation matrix of the text frame object.",
+                    "type": "Matrix"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "antialias",
+                    "description": "The type of a text anti-aliasing on text frame item.",
+                    "type": "TextAntialias"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "firstBaseline",
+                    "description": "The first baseline offset type for text frame item (for Area Text only)",
+                    "type": "FirstBaselineType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "firstBaselineMin",
+                    "description": "The first baseline offset minimum value for text frame item (for Area Text only)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "characters",
+                    "description": "All the characters in this text range.",
+                    "type": "Characters"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "words",
+                    "description": "All the words in this text range.",
+                    "type": "Words"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "lines",
+                    "description": "All the lines in this text range.",
+                    "type": "Lines"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "paragraphs",
+                    "description": "All the paragraphs in this text range.",
+                    "type": "Paragraphs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textRanges",
+                    "description": "All the text in this text range.",
+                    "type": "TextRanges"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "insertionPoints",
+                    "description": "All the insertion points in this text range.",
+                    "type": "InsertionPoints"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "move",
-          "shortdesc": "Move the object.",
-          "parameters": [
-            {
-              "name": "relativeObject",
-              "datatype": {
-                "type": "Object"
-              }
-            },
-            {
-              "name": "insertionLocation",
-              "datatype": {
-                "type": "ElementPlacement"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "duplicate",
-          "shortdesc": "Duplicate this object.",
-          "parameters": [
-            {
-              "name": "relativeObject",
-              "datatype": {
-                "type": "Object"
-              }
-            },
-            {
-              "name": "insertionLocation",
-              "datatype": {
-                "type": "ElementPlacement"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "createOutline",
-          "shortdesc": "Convert text item to path items.",
-          "datatype": {
-            "type": "GroupItem"
-          }
-        },
-        {
-          "name": "convertAreaObjectToPointObject",
-          "shortdesc": "Convert Area Type Text Object To Point Type Object.",
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        },
-        {
-          "name": "convertPointObjectToAreaObject",
-          "shortdesc": "Convert Point Type Text Object To Area Type Object.",
-          "datatype": {
-            "type": "TextFrameItem"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "TextFrameItem",
+    "description": "Text frame item.",
+    "superclass": "PageItem"
 }

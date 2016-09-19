@@ -1,192 +1,184 @@
 {
-  "name": "PageItems",
-  "dynamic": true,
-  "shortdesc": "The page items collection, which can be used to process all page items in a container &amp;&#35;40;such as a document, page, or group&#41;, regardless of type.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the PageItem.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the PageItem with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the PageItem with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the PageItem with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the PageItems within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The PageItem, index, or name at the beginning of the range. Can accept: PageItem, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The PageItem, index, or name at the end of the range. Can accept: PageItem, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first PageItem in the collection.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last PageItem in the collection.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle PageItem in the collection.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the PageItem with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the PageItem that follows the desired PageItem.",
-              "datatype": {
-                "type": "PageItem"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the PageItem whose index follows the specified PageItem in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The PageItem whose index comes before the desired PageItem.",
-              "datatype": {
-                "type": "PageItem"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any PageItem in the collection.",
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every PageItem in the collection.",
-          "datatype": {
-            "type": "PageItem",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the PageItem.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the PageItem with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the PageItem.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the PageItem with the specified index or name.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the PageItem with the specified name.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the PageItem with the specified ID.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The PageItem, index, or name at the beginning of the range. Can accept: PageItem, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The PageItem, index, or name at the end of the range. Can accept: PageItem, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the PageItems within the specified range.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first PageItem in the collection.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last PageItem in the collection.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle PageItem in the collection.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the PageItem that follows the desired PageItem.",
+                            "type": "PageItem"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the PageItem with the index previous to the specified index.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The PageItem whose index comes before the desired PageItem.",
+                            "type": "PageItem"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the PageItem whose index follows the specified PageItem in the collection.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any PageItem in the collection.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every PageItem in the collection.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the PageItem.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the PageItem with the specified index.",
+                    "type": "PageItem"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "PageItems",
+    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type."
 }

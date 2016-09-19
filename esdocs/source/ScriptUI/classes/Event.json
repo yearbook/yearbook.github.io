@@ -1,125 +1,107 @@
 {
-  "name": "Event",
-  "dynamic": true,
-  "shortdesc": {
-    "a": {
-      "href": "#/UIEvent",
-      "$t": "UIEvent"
-    }
-  },
-  "description": "Encapsulates input event information for an event that propagates through a container and control hierarchy.  Implements W3C standard event handling.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "NOT_DISPATCHING",
-          "rwaccess": "readonly",
-          "datatype": {
-            "type": "any"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "NOT_DISPATCHING",
+                    "type": "any"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "CAPTURING_PHASE",
+                    "type": "any"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "AT_TARGET",
+                    "type": "any"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "BUBBLING_PHASE",
+                    "type": "any"
+                }
+            ]
         },
-        {
-          "name": "CAPTURING_PHASE",
-          "rwaccess": "readonly",
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "AT_TARGET",
-          "rwaccess": "readonly",
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "BUBBLING_PHASE",
-          "rwaccess": "readonly",
-          "datatype": {
-            "type": "any"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "preventDefault",
+                    "description": "Prevents the default action associated with this event from being called."
+                },
+                {
+                    "parameters": [],
+                    "name": "stopPropagation",
+                    "description": "Stops the propagation of this event."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "captures",
+                    "description": "True if this event can be captured.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "bubbles",
+                    "description": "True if the event is of a type that bubbles.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "cancelable",
+                    "description": "True if the default action associated with the event can be canceled with preventDefault().",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "currentTarget",
+                    "description": "The event target object which is currently handling the event. During capturing and bubbling, this is different from the property target.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventPhase",
+                    "description": "The current phase of event propagation; one of none, target, capture, bubble.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "target",
+                    "description": "The event target object for this event.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "timeStamp",
+                    "description": "The date and time at which the event occurred.",
+                    "type": "Date"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "type",
+                    "description": "The name of the event that this object represents.",
+                    "type": "String"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "captures",
-          "rwaccess": "readonly",
-          "shortdesc": "True if this event can be captured.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "bubbles",
-          "rwaccess": "readonly",
-          "shortdesc": "True if the event is of a type that bubbles.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "cancelable",
-          "rwaccess": "readonly",
-          "shortdesc": "True if the default action associated with the event can be canceled with preventDefault().",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "currentTarget",
-          "rwaccess": "readonly",
-          "shortdesc": "The event target object which is currently handling the event. During capturing and bubbling, this is different from the property target.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "eventPhase",
-          "rwaccess": "readonly",
-          "shortdesc": "The current phase of event propagation; one of none, target, capture, bubble.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "target",
-          "rwaccess": "readonly",
-          "shortdesc": "The event target object for this event.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "timeStamp",
-          "rwaccess": "readonly",
-          "shortdesc": "The date and time at which the event occurred.",
-          "datatype": {
-            "type": "Date"
-          }
-        },
-        {
-          "name": "type",
-          "rwaccess": "readonly",
-          "shortdesc": "The name of the event that this object represents.",
-          "datatype": {
-            "type": "String"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "preventDefault",
-          "shortdesc": "Prevents the default action associated with this event from being called."
-        },
-        {
-          "name": "stopPropagation",
-          "shortdesc": "Stops the propagation of this event."
-        }
-      ]
-    }
-  ]
+    "name": "Event",
+    "description": "\n        Base class for "
 }

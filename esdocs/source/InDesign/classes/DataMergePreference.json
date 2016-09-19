@@ -1,236 +1,225 @@
 {
-  "name": "DataMergePreference",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "Data merge preferences.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the DataMergePreference (a DataMerge).",
-          "datatype": {
-            "type": "DataMerge"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "recordSelection",
-          "shortdesc": "The records to merge.",
-          "datatype": {
-            "type": "RecordSelection"
-          }
-        },
-        {
-          "name": "leftMargin",
-          "shortdesc": "The offset value of the left margin in the target document.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "topMargin",
-          "shortdesc": "The offset value of the top margin in the target document.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "rightMargin",
-          "shortdesc": "The offset value of the right margin in the target document.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "bottomMargin",
-          "shortdesc": "The offset value of the bottom margin in the target document.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "arrangeBy",
-          "shortdesc": "The order in which to arrange multiple records on the page in the target document.",
-          "datatype": {
-            "type": "ArrangeBy"
-          }
-        },
-        {
-          "name": "rowSpacing",
-          "shortdesc": "The amount of space between rows of records in the target document.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "columnSpacing",
-          "shortdesc": "The amount of space between columns of records in the target document.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "recordNumber",
-          "shortdesc": "The number of the record to merge. Note: Valid only when record selection is one record.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "recordRange",
-          "shortdesc": "The range of records to merge. Note: Valid only when record selection is range.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "recordsPerPage",
-          "shortdesc": "The number of records to place on each page in the document.",
-          "datatype": {
-            "type": "RecordsPerPage"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "outputMissingImagesReportFile",
+                            "description": "The path to the output file.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "alertMissingImages",
+                    "description": "If true, lists missing images in the specified output file.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the DataMergePreference.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "DataMergePreference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the DataMergePreference (a DataMerge).",
+                    "type": "DataMerge"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "recordSelection",
+                    "description": "The records to merge.",
+                    "type": "RecordSelection"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftMargin",
+                    "description": "The offset value of the left margin in the target document.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topMargin",
+                    "description": "The offset value of the top margin in the target document.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightMargin",
+                    "description": "The offset value of the right margin in the target document.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomMargin",
+                    "description": "The offset value of the bottom margin in the target document.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "arrangeBy",
+                    "description": "The order in which to arrange multiple records on the page in the target document.",
+                    "type": "ArrangeBy"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rowSpacing",
+                    "description": "The amount of space between rows of records in the target document.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "columnSpacing",
+                    "description": "The amount of space between columns of records in the target document.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "recordNumber",
+                    "description": "The number of the record to merge. Note: Valid only when record selection is one record.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "recordRange",
+                    "description": "The range of records to merge. Note: Valid only when record selection is range.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "recordsPerPage",
+                    "description": "The number of records to place on each page in the document.",
+                    "type": "RecordsPerPage"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "alertMissingImages",
-          "shortdesc": "If true, lists missing images in the specified output file.",
-          "parameters": [
-            {
-              "name": "outputMissingImagesReportFile",
-              "shortdesc": "The path to the output file.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the DataMergePreference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "DataMergePreference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "DataMergePreference",
+    "description": "Data merge preferences.",
+    "superclass": "Preference"
 }

@@ -1,331 +1,308 @@
 {
-  "name": "HTMLExportPreference",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "HTML export preferences.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the HTMLExportPreference (a Document).",
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "exportSelection",
-          "shortdesc": "If true and have selection, export selected content to HTML.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "exportOrder",
-          "shortdesc": "The export order.",
-          "datatype": {
-            "type": "ExportOrder"
-          }
-        },
-        {
-          "name": "bulletExportOption",
-          "shortdesc": "The bullet export option.",
-          "datatype": {
-            "type": "BulletListExportOption"
-          }
-        },
-        {
-          "name": "numberedListExportOption",
-          "shortdesc": "The numbered list export option.",
-          "datatype": {
-            "type": "NumberedListExportOption"
-          }
-        },
-        {
-          "name": "viewDocumentAfterExport",
-          "shortdesc": "If true, open docuemnt in viewer after export.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "imageExportOption",
-          "shortdesc": "The export order.",
-          "datatype": {
-            "type": "ImageExportOption"
-          }
-        },
-        {
-          "name": "imageExportResolution",
-          "shortdesc": "The export resolution",
-          "datatype": {
-            "type": "ImageResolution"
-          }
-        },
-        {
-          "name": "customImageSizeOption",
-          "shortdesc": "Allows user to select the image size option for conversion",
-          "datatype": {
-            "type": "ImageSizeOption"
-          }
-        },
-        {
-          "name": "preserveLayoutAppearence",
-          "shortdesc": "If true, format image based on layout appearence.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "imageAlignment",
-          "shortdesc": "Alignment applied to images",
-          "datatype": {
-            "type": "ImageAlignmentType"
-          }
-        },
-        {
-          "name": "imageSpaceBefore",
-          "shortdesc": "Space Before applied to images",
-          "datatype": {
-            "type": "Number",
-            "min": 0,
-            "max": 8640
-          }
-        },
-        {
-          "name": "imageSpaceAfter",
-          "shortdesc": "Space After applied to images",
-          "datatype": {
-            "type": "Number",
-            "min": 0,
-            "max": 8640
-          }
-        },
-        {
-          "name": "applyImageAlignmentToAnchoredObjectSettings",
-          "shortdesc": "apply image alignment to anchored object settings.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "imageConversion",
-          "shortdesc": "The file format to use for converted images. Note: Valid only when copy optimized images and/or copy formatted images is true.",
-          "datatype": {
-            "type": "ImageConversion"
-          }
-        },
-        {
-          "name": "gifOptionsPalette",
-          "shortdesc": "The color palette for GIF conversion. Note: Not valid when image conversion is JPEG.",
-          "datatype": {
-            "type": "GIFOptionsPalette"
-          }
-        },
-        {
-          "name": "gifOptionsInterlaced",
-          "shortdesc": "If true, generates interlaced GIFs. Note: Not valid  when image conversion is JPEG.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "jpegOptionsQuality",
-          "shortdesc": "The quality of converted JPEG images. Note: Not valid when image conversion is GIF.",
-          "datatype": {
-            "type": "JPEGOptionsQuality"
-          }
-        },
-        {
-          "name": "jpegOptionsFormat",
-          "shortdesc": "The formatting method for converted JPEG images. Note: Not valid  when image conversion is GIF.",
-          "datatype": {
-            "type": "JPEGOptionsFormat"
-          }
-        },
-        {
-          "name": "level",
-          "shortdesc": "The PNG compression level.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "ignoreObjectConversionSettings",
-          "shortdesc": "ignore object level image conversion settings.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "serverPath",
-          "shortdesc": "The server path for image .",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "imageExtension",
-          "shortdesc": "The image extension on server.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "preserveLocalOverride",
-          "shortdesc": "If true, output local style override.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "externalStyleSheets",
-          "shortdesc": "The file path of external cascading style sheets.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "javascripts",
-          "shortdesc": "The file path of external javascripts.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "generateCascadeStyleSheet",
-          "shortdesc": "If true, InDesign will generate cascade style sheet.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the HTMLExportPreference.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "HTMLExportPreference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the HTMLExportPreference (a Document).",
+                    "type": "Document"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "exportSelection",
+                    "description": "If true and have selection, export selected content to HTML.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "exportOrder",
+                    "description": "The export order.",
+                    "type": "ExportOrder"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bulletExportOption",
+                    "description": "The bullet export option.",
+                    "type": "BulletListExportOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "numberedListExportOption",
+                    "description": "The numbered list export option.",
+                    "type": "NumberedListExportOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "viewDocumentAfterExport",
+                    "description": "If true, open docuemnt in viewer after export.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageExportOption",
+                    "description": "The export order.",
+                    "type": "ImageExportOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageExportResolution",
+                    "description": "The export resolution",
+                    "type": "ImageResolution"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "customImageSizeOption",
+                    "description": "Allows user to select the image size option for conversion",
+                    "type": "ImageSizeOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveLayoutAppearence",
+                    "description": "If true, format image based on layout appearence.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageAlignment",
+                    "description": "Alignment applied to images",
+                    "type": "ImageAlignmentType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageSpaceBefore",
+                    "description": "Space Before applied to images",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageSpaceAfter",
+                    "description": "Space After applied to images",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageConversion",
+                    "description": "The file format to use for converted images. Note: Valid only when copy optimized images and/or copy formatted images is true.",
+                    "type": "ImageConversion"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gifOptionsPalette",
+                    "description": "The color palette for GIF conversion. Note: Not valid when image conversion is JPEG.",
+                    "type": "GIFOptionsPalette"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gifOptionsInterlaced",
+                    "description": "If true, generates interlaced GIFs. Note: Not valid  when image conversion is JPEG.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "jpegOptionsQuality",
+                    "description": "The quality of converted JPEG images. Note: Not valid when image conversion is GIF.",
+                    "type": "JPEGOptionsQuality"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "jpegOptionsFormat",
+                    "description": "The formatting method for converted JPEG images. Note: Not valid  when image conversion is GIF.",
+                    "type": "JPEGOptionsFormat"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "level",
+                    "description": "The PNG compression level.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "ignoreObjectConversionSettings",
+                    "description": "ignore object level image conversion settings.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "serverPath",
+                    "description": "The server path for image .",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageExtension",
+                    "description": "The image extension on server.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveLocalOverride",
+                    "description": "If true, output local style override.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "externalStyleSheets",
+                    "description": "The file path of external cascading style sheets.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "javascripts",
+                    "description": "The file path of external javascripts.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "generateCascadeStyleSheet",
+                    "description": "If true, InDesign will generate cascade style sheet.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the HTMLExportPreference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "HTMLExportPreference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "HTMLExportPreference",
+    "description": "HTML export preferences.",
+    "superclass": "Preference"
 }

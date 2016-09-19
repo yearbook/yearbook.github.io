@@ -1,70 +1,73 @@
 {
-  "name": "LayerSet",
-  "dynamic": true,
-  "superclass": "Layer",
-  "shortdesc": "A group of layer objects, which can include art layer objects and other &amp;&#35;40;nested&#41; layer set objects. A single command or set of commands manipulates all layers in a layer set object.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "enabledChannels",
-          "shortdesc": "The channels that are enabled for the layer set. Must be a list of component channels.",
-          "datatype": {
-            "type": "Channel",
-            "array": true
-          }
-        },
-        {
-          "name": "layers",
-          "rwaccess": "readonly",
-          "shortdesc": "The layers in this layer set.",
-          "datatype": {
-            "type": "Layers"
-          }
-        },
-        {
-          "name": "layerSets",
-          "rwaccess": "readonly",
-          "shortdesc": "The layer sets contained within the layer set.",
-          "datatype": {
-            "type": "LayerSets"
-          }
-        },
-        {
-          "name": "artLayers",
-          "rwaccess": "readonly",
-          "shortdesc": "The art layers contained in this layer set.",
-          "datatype": {
-            "type": "ArtLayers"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "add",
+                    "description": "Adds an element.",
+                    "type": "LayerSet"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "merge",
+                    "description": "Merges the layer set.",
+                    "type": "ArtLayer"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "enabledChannels",
+                    "description": "The channels that are enabled for the layer set. Must be a list of component channels.",
+                    "type": "Channel"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "layers",
+                    "description": "The layers in this layer set.",
+                    "type": "Layers"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "layerSets",
+                    "description": "The layer sets contained within the layer set.",
+                    "type": "LayerSets"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "artLayers",
+                    "description": "The art layers contained in this layer set.",
+                    "type": "ArtLayers"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "merge",
-          "shortdesc": "Merges the layer set.",
-          "datatype": {
-            "type": "ArtLayer"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "LayerSet",
+    "description": "A group of layer objects, which can include art layer objects and other (nested) layer set objects. A single command or set of commands manipulates all layers in a layer set object.",
+    "superclass": "Layer"
 }

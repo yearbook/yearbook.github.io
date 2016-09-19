@@ -1,139 +1,134 @@
 {
-  "name": "ExportOptionsGIF",
-  "dynamic": true,
-  "shortdesc": "Options which may be supplied when exporting a document as a GIF file.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "colorCount",
-          "shortdesc": "Number of colors in exported color table.",
-          "datatype": {
-            "type": "Int32",
-            "min": 2,
-            "max": 256,
-            "value": 128
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "128",
+                    "array": false,
+                    "name": "colorCount",
+                    "description": "Number of colors in exported color table.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "value": "ColorReductionMethod.SELECTIVE",
+                    "array": false,
+                    "name": "colorReduction",
+                    "description": "Method used to reduce the number of colors.",
+                    "type": "ColorReductionMethod"
+                },
+                {
+                    "readonly": false,
+                    "value": "0",
+                    "array": false,
+                    "name": "infoLossPercent",
+                    "description": "Level of information loss during compression.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "value": "ColorDitherMethod.DIFFUSION",
+                    "array": false,
+                    "name": "colorDither",
+                    "description": "Method used to dither colors.",
+                    "type": "ColorDitherMethod"
+                },
+                {
+                    "readonly": false,
+                    "value": "88",
+                    "array": false,
+                    "name": "ditherPercent",
+                    "description": "How much should the colors be dithered.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "value": "0",
+                    "array": false,
+                    "name": "webSnap",
+                    "description": "How much should the color table be changed to match the web pallet.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "transparency",
+                    "description": "Should the resulting image use transparency.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "interlaced",
+                    "description": "Should the resulting image be interlaced.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "matte",
+                    "description": "Should the artboard be matted with a color.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "matteColor",
+                    "description": "The color to use when matting the artboard (default: white)",
+                    "type": "RGBColor"
+                },
+                {
+                    "readonly": false,
+                    "value": "100",
+                    "array": false,
+                    "name": "horizontalScale",
+                    "description": "Horizontal scaling factor.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "value": "100",
+                    "array": false,
+                    "name": "verticalScale",
+                    "description": "Vertical scaling factor.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "antiAliasing",
+                    "description": "Should the resulting image be antialiased.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "artBoardClipping",
+                    "description": "Should the resulting image be clipped to the artboard.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "saveAsHTML",
+                    "description": "Should the resulting image be saved as HTML.",
+                    "type": "Boolean"
+                }
+            ]
         },
-        {
-          "name": "colorReduction",
-          "shortdesc": "Method used to reduce the number of colors.",
-          "datatype": {
-            "type": "ColorReductionMethod",
-            "value": "ColorReductionMethod.SELECTIVE"
-          }
-        },
-        {
-          "name": "infoLossPercent",
-          "shortdesc": "Level of information loss during compression.",
-          "datatype": {
-            "type": "Int32",
-            "min": 0,
-            "max": 100,
-            "value": 0
-          }
-        },
-        {
-          "name": "colorDither",
-          "shortdesc": "Method used to dither colors.",
-          "datatype": {
-            "type": "ColorDitherMethod",
-            "value": "ColorDitherMethod.DIFFUSION"
-          }
-        },
-        {
-          "name": "ditherPercent",
-          "shortdesc": "How much should the colors be dithered.",
-          "datatype": {
-            "type": "Int32",
-            "min": 0,
-            "max": 100,
-            "value": 88
-          }
-        },
-        {
-          "name": "webSnap",
-          "shortdesc": "How much should the color table be changed to match the web pallet.",
-          "datatype": {
-            "type": "Int32",
-            "min": 0,
-            "max": 100,
-            "value": 0
-          }
-        },
-        {
-          "name": "transparency",
-          "shortdesc": "Should the resulting image use transparency.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "interlaced",
-          "shortdesc": "Should the resulting image be interlaced.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "matte",
-          "shortdesc": "Should the artboard be matted with a color.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "matteColor",
-          "shortdesc": "The color to use when matting the artboard (default: white)",
-          "datatype": {
-            "type": "RGBColor"
-          }
-        },
-        {
-          "name": "horizontalScale",
-          "shortdesc": "Horizontal scaling factor.",
-          "datatype": {
-            "type": "Number",
-            "value": 100
-          }
-        },
-        {
-          "name": "verticalScale",
-          "shortdesc": "Vertical scaling factor.",
-          "datatype": {
-            "type": "Number",
-            "value": 100
-          }
-        },
-        {
-          "name": "antiAliasing",
-          "shortdesc": "Should the resulting image be antialiased.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "artBoardClipping",
-          "shortdesc": "Should the resulting image be clipped to the artboard.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "saveAsHTML",
-          "shortdesc": "Should the resulting image be saved as HTML.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "ExportOptionsGIF",
+    "description": "Options which may be supplied when exporting a document as a GIF file."
 }

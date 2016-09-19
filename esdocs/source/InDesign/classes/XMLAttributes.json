@@ -1,207 +1,198 @@
 {
-  "name": "XMLAttributes",
-  "dynamic": true,
-  "shortdesc": "A collection of XML attributes.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new XML attribute.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the attribute.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value of the attribute.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new XMLAttribute ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the XMLAttribute.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the XMLAttribute with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the XMLAttribute with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the XMLAttributes within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The XMLAttribute, index, or name at the beginning of the range. Can accept: XMLAttribute, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The XMLAttribute, index, or name at the end of the range. Can accept: XMLAttribute, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first XMLAttribute in the collection.",
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last XMLAttribute in the collection.",
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle XMLAttribute in the collection.",
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the XMLAttribute with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the XMLAttribute that follows the desired XMLAttribute.",
-              "datatype": {
-                "type": "XMLAttribute"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the XMLAttribute whose index follows the specified XMLAttribute in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The XMLAttribute whose index comes before the desired XMLAttribute.",
-              "datatype": {
-                "type": "XMLAttribute"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any XMLAttribute in the collection.",
-          "datatype": {
-            "type": "XMLAttribute"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every XMLAttribute in the collection.",
-          "datatype": {
-            "type": "XMLAttribute",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the XMLAttribute.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the XMLAttribute with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLAttribute"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the attribute.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value of the attribute.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new XMLAttribute (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new XML attribute.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the XMLAttribute.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the XMLAttribute with the specified index or name.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the XMLAttribute with the specified name.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The XMLAttribute, index, or name at the beginning of the range. Can accept: XMLAttribute, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The XMLAttribute, index, or name at the end of the range. Can accept: XMLAttribute, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the XMLAttributes within the specified range.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first XMLAttribute in the collection.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last XMLAttribute in the collection.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle XMLAttribute in the collection.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the XMLAttribute that follows the desired XMLAttribute.",
+                            "type": "XMLAttribute"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the XMLAttribute with the index previous to the specified index.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The XMLAttribute whose index comes before the desired XMLAttribute.",
+                            "type": "XMLAttribute"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the XMLAttribute whose index follows the specified XMLAttribute in the collection.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any XMLAttribute in the collection.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every XMLAttribute in the collection.",
+                    "type": "XMLAttribute"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the XMLAttribute.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the XMLAttribute with the specified index.",
+                    "type": "XMLAttribute"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "XMLAttributes",
+    "description": "A collection of XML attributes."
 }

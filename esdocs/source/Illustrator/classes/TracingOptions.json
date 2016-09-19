@@ -1,200 +1,193 @@
 {
-  "name": "TracingOptions",
-  "dynamic": true,
-  "shortdesc": "Tracing options that guide the tracing process.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "preset",
-          "rwaccess": "readonly",
-          "shortdesc": "The name of the preset in use. Read-only.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "viewMode",
-          "shortdesc": "The visualization mode.",
-          "datatype": {
-            "type": "ViewType"
-          }
-        },
-        {
-          "name": "tracingMode",
-          "shortdesc": "The tracing mode: color, gray, black and white.",
-          "datatype": {
-            "type": "TracingModeType"
-          }
-        },
-        {
-          "name": "tracingColorTypeValue",
-          "shortdesc": "Color Type used for tracing, TracingLimitedColor or TracingFullColor .",
-          "datatype": {
-            "type": "TracingColorType"
-          }
-        },
-        {
-          "name": "palette",
-          "shortdesc": "The color palette (Library) name used for tracing. Use 'Document Library' or any other imported library name.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "colorGroup",
-          "shortdesc": "The color group name used for tracing. Use 'All' or any color group name available in color Palette (library).",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "tracingColors",
-          "shortdesc": "Maximum number of colors allowed for tracing when TracingColorTypeValue is TracingLimitedColor.",
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "colorFidelity",
-          "shortdesc": "ColorFidelity when TracingColorTypeValue is TracingFullColor.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "threshold",
-          "shortdesc": "The threshold value for a black and white mode tracing.",
-          "datatype": {
-            "type": "Int32",
-            "min": 1,
-            "max": 256
-          }
-        },
-        {
-          "name": "grayLevels",
-          "shortdesc": "The gray levels for a grayscale mode tracing..",
-          "datatype": {
-            "type": "Int32",
-            "min": 1,
-            "max": 256
-          }
-        },
-        {
-          "name": "pathFidelity",
-          "shortdesc": "Path fidelity for tracing.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "cornerFidelity",
-          "shortdesc": "Corner fidelity for tracing.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "noiseFidelity",
-          "shortdesc": "Specifies minimum area of pixels to be vectorized.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "tracingMethod",
-          "shortdesc": "Method for tracing, either abutting or adjoining paths.",
-          "datatype": {
-            "type": "TracingMethodType"
-          }
-        },
-        {
-          "name": "fills",
-          "shortdesc": "Tracing with fills. Fills, Strokes or both must be on.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "strokes",
-          "shortdesc": "Tracing with strokes. Fills, Strokes or both must be on.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "maxStrokeWeight",
-          "shortdesc": "Maximum stroke weight (stroke only).",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "snapCurveToLines",
-          "shortdesc": "Controls whether to snap curve to lines.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "ignoreWhite",
-          "shortdesc": "Controls whether to ignore white fill color. Works only if TracingMethod is TracingMethodAbutting and mode is Black and white.",
-          "datatype": {
-            "type": "Boolean"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "presetName",
+                            "description": "The name of the preset.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "loadFromPreset",
+                    "description": "Load options from preset.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "presetName",
+                            "description": "The name of the preset.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "storeToPreset",
+                    "description": "Store options to a preset kAiVectorizeSuite. Will overwrite an existing (unlocked) preset if names match.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "preset",
+                    "description": "The name of the preset in use. Read-only.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "viewMode",
+                    "description": "The visualization mode.",
+                    "type": "ViewType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "tracingMode",
+                    "description": "The tracing mode: color, gray, black and white.",
+                    "type": "TracingModeType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "tracingColorTypeValue",
+                    "description": "Color Type used for tracing, TracingLimitedColor or TracingFullColor .",
+                    "type": "TracingColorType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "palette",
+                    "description": "The color palette (Library) name used for tracing. Use 'Document Library' or any other imported library name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "colorGroup",
+                    "description": "The color group name used for tracing. Use 'All' or any color group name available in color Palette (library).",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "tracingColors",
+                    "description": "Maximum number of colors allowed for tracing when TracingColorTypeValue is TracingLimitedColor.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "colorFidelity",
+                    "description": "ColorFidelity when TracingColorTypeValue is TracingFullColor.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "threshold",
+                    "description": "The threshold value for a black and white mode tracing.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "grayLevels",
+                    "description": "The gray levels for a grayscale mode tracing..",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "pathFidelity",
+                    "description": "Path fidelity for tracing.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "cornerFidelity",
+                    "description": "Corner fidelity for tracing.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "noiseFidelity",
+                    "description": "Specifies minimum area of pixels to be vectorized.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "tracingMethod",
+                    "description": "Method for tracing, either abutting or adjoining paths.",
+                    "type": "TracingMethodType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fills",
+                    "description": "Tracing with fills. Fills, Strokes or both must be on.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokes",
+                    "description": "Tracing with strokes. Fills, Strokes or both must be on.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "maxStrokeWeight",
+                    "description": "Maximum stroke weight (stroke only).",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "snapCurveToLines",
+                    "description": "Controls whether to snap curve to lines.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "ignoreWhite",
+                    "description": "Controls whether to ignore white fill color. Works only if TracingMethod is TracingMethodAbutting and mode is Black and white.",
+                    "type": "Boolean"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "loadFromPreset",
-          "shortdesc": "Load options from preset.",
-          "parameters": [
-            {
-              "name": "presetName",
-              "shortdesc": "The name of the preset.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "storeToPreset",
-          "shortdesc": "Store options to a preset kAiVectorizeSuite. Will overwrite an existing (unlocked) preset if names match.",
-          "parameters": [
-            {
-              "name": "presetName",
-              "shortdesc": "The name of the preset.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "TracingOptions",
+    "description": "Tracing options that guide the tracing process."
 }

@@ -1,1386 +1,1329 @@
 {
-  "name": "Application",
-  "dynamic": true,
-  "shortdesc": "The Adobe Illustrator application.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "rwaccess": "readonly",
-          "shortdesc": "The application's name.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "path",
-          "rwaccess": "readonly",
-          "shortdesc": "Path specification for the application.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "activeDocument",
-          "shortdesc": "The active document.",
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "version",
-          "rwaccess": "readonly",
-          "shortdesc": "The version of the Adobe Illustrator application.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "buildNumber",
-          "rwaccess": "readonly",
-          "shortdesc": "The build number of the Adobe Illustrator application.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "locale",
-          "rwaccess": "readonly",
-          "shortdesc": "The Locale of the Adobe Illustrator application.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "scriptingVersion",
-          "rwaccess": "readonly",
-          "shortdesc": "The version of the Scripting plugin.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "freeMemory",
-          "rwaccess": "readonly",
-          "shortdesc": "The amount of unused memory within the Adobe Illustrator partition.",
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "browserAvailable",
-          "rwaccess": "readonly",
-          "shortdesc": "Is a web browser available?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "selection",
-          "shortdesc": "The selection visible to the user.",
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "visible",
-          "rwaccess": "readonly",
-          "shortdesc": "Is the application visible.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "userInteractionLevel",
-          "shortdesc": "What level of interaction with the user should be allowed when handling script commands.",
-          "datatype": {
-            "type": "UserInteractionLevel"
-          }
-        },
-        {
-          "name": "coordinateSystem",
-          "shortdesc": "Coordinate System used by script.",
-          "datatype": {
-            "type": "CoordinateSystem"
-          }
-        },
-        {
-          "name": "preferences",
-          "rwaccess": "readonly",
-          "shortdesc": "Preferences for Illustrator.",
-          "datatype": {
-            "type": "Preferences"
-          }
-        },
-        {
-          "name": "printerList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of installed printers.",
-          "datatype": {
-            "type": "Printer",
-            "array": true
-          }
-        },
-        {
-          "name": "PPDFileList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of PPD files currently available for use. For performance reasons, the PPDFile entry only contains the model name and file spec of each PPD file.",
-          "datatype": {
-            "type": "PPDFile",
-            "array": true
-          }
-        },
-        {
-          "name": "printPresetsList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of print preset names currently available for use.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "startupPresetsList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of presets available for creating a new document.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "PDFPresetsList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of PDF preset names currently available for use.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "flattenerPresetsList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of flattener style names currently available for use.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "tracingPresetsList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of tracing preset names currently available for use.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "colorSettingsList",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of color settings files currently available for use.",
-          "datatype": {
-            "type": "File",
-            "array": true
-          }
-        },
-        {
-          "name": "defaultColorSettings",
-          "rwaccess": "readonly",
-          "shortdesc": "The default color settings file for the current application locale.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "pasteRemembersLayers",
-          "shortdesc": "Does paste operation remember layers structure?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "documents",
-          "rwaccess": "readonly",
-          "shortdesc": "The open documents.",
-          "datatype": {
-            "type": "Documents"
-          }
-        },
-        {
-          "name": "textFonts",
-          "rwaccess": "readonly",
-          "shortdesc": "Installed fonts.",
-          "datatype": {
-            "type": "TextFonts"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "testName",
+                            "description": "Arguments for Running Tests - eg. Name of Test/Suite.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "runAPITest",
+                    "description": "Runs API Tests from the TestAPI Plug-in."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATLoadModel",
+                    "description": "Loads the aat model to the editor.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATLoadUIExtension",
+                    "description": "Loads a UI description as an extension to the editor.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATLoadLibExtension",
+                    "description": "Loads a session file as an extension to the editor.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [],
+                    "name": "aATExecuteSession",
+                    "description": "Executes the active session in the sequencer."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "file",
+                            "description": "Execute a session file.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "aATExecuteSessionFromFile",
+                    "description": "Executes the active session in the sequencer."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATGetEditorDialogFile",
+                    "description": "Retrieves a file path to the AAT editor swf.",
+                    "type": "File"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "getVersionString",
+                    "description": "Retrieves a string representing the AAT version.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATGetErrorDialogFile",
+                    "description": "Retrieves a file path to the AAT error dialog swf.",
+                    "type": "File"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATErrorsExist",
+                    "description": "Retrieves a boolean indicating the presence of errors in the last script to execute.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "getExecutionOutput",
+                    "description": "Retrieves a string containing the results of the last script to execute.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATClear",
+                    "description": "Clear the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATGetSession",
+                    "description": "Get the active session for the sequncer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATSaveSession",
+                    "description": "Saves the active session in the sequencer to a file.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATSaveAsSession",
+                    "description": "Saves the active session in the sequencer to a new file.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATLoadSessionFile",
+                    "description": "Loads a session into the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to add.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "destinationSequenceID",
+                            "description": "The UID for the owning sequence.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "destinationIndex",
+                            "description": "The item UID where to insert.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "srcItemIDData",
+                            "description": "The item ID of the item to construct.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "type",
+                            "description": "The source of the item to construct.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATAddItem",
+                    "description": "Add the specified to the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to move.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "moveThisID",
+                            "description": "The UID of the item to replace.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "newSessionIndex",
+                            "description": "The index in the session of the destination top-most sequence.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "destinationSequenceID",
+                            "description": "The UID for the owning sequence.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "destinationIndex",
+                            "description": "The index where to insert.",
+                            "type": "Int32"
+                        }
+                    ],
+                    "name": "aATMoveItem",
+                    "description": "Moves the specified in the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to add.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "replaceThisID",
+                            "description": "The UID of the item to replace.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "srcItemIDData",
+                            "description": "The item ID of the item to construct.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "type",
+                            "description": "The source of the item to construct.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATReplaceItem",
+                    "description": "Replaces the specified to the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to add.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "item",
+                            "description": "The item UID.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATRemoveItem",
+                    "description": "Removes the specified item from the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to add.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "item",
+                            "description": "The item UID(s)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATDuplicateItem",
+                    "description": "Duplicates the specified item(s) from the sequencer.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to add.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "item",
+                            "description": "The item UID.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATEditItem",
+                    "description": "Opens the specified item from the sequencer in the item editor.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to edit.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "item",
+                            "description": "The item UID.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "data",
+                            "description": "The data to apply in XML format.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "applyDataToItem",
+                    "description": "Applies the data used in the item editor to the item.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sessionIndex",
+                            "description": "The index in the session of the top-most sequence for the item to add.",
+                            "type": "Int32"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "item",
+                            "description": "The item UID.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "dataID",
+                            "description": "The data to apply in XML format.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "data",
+                            "description": "The data to apply in XML format.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "applySingleDataPointToItem",
+                    "description": "Applies data to the specified item from the sequencer in the item editor.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The string to translate.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "source",
+                            "description": "The plugin name from the source of the key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "translateString",
+                    "description": "Returns a string translated from the key and source data passed in.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "path",
+                            "description": "The path relative to the folder specified by Relative.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relative",
+                            "description": "The current relative path token.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "type",
+                            "description": "The type of dialog to show in string format.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATFileSaveDialog",
+                    "description": "Prompts the user to save a file or choose a file or directory and returns a relative path string to the file.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "path",
+                            "description": "The path relative to the folder specified by Relative.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relative",
+                            "description": "The current relative path token.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "newRelative",
+                            "description": "The new relative path token.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "aATFileRelativeChanged",
+                    "description": "Switches a files relative token and path.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "aATGetListOfRelativePaths",
+                    "description": "Gets an XML string listing the relative paths and the UI strings to display them.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [],
+                    "name": "cut",
+                    "description": "Cut current selection to the clipboard."
+                },
+                {
+                    "parameters": [],
+                    "name": "copy",
+                    "description": "Copy current selection to the clipboard."
+                },
+                {
+                    "parameters": [],
+                    "name": "paste",
+                    "description": "Paste clipboard into the current document."
+                },
+                {
+                    "parameters": [],
+                    "name": "undo",
+                    "description": "Undo the last transaction."
+                },
+                {
+                    "parameters": [],
+                    "name": "redo",
+                    "description": "Redo the last transaction."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "action",
+                            "description": "The name of the action to play (note that the case of letters in the Action name is important and must match the case of the name in the Actions palette)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The name of the action set containing the action being played (note that the case of letters in the Action Set name is important and must match the case of the name in the Actions palette)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "value": "true",
+                            "array": false,
+                            "name": "dialogs",
+                            "description": "Are dialog boxes associated with the action to be presented?",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "doScript",
+                    "description": "Play an action from the Actions Palette."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "menuCommandString",
+                            "description": "Menu command shortcut.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "executeMenuCommand",
+                    "description": "Executes a menu command using the menu shortcut string."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "presetType",
+                            "description": "The preset type.",
+                            "type": "DocumentPresetType"
+                        }
+                    ],
+                    "name": "getPresetFileOfType",
+                    "description": "Given a preset type, returns the full path to the application's default document profile for the type.",
+                    "type": "File"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "actionFilePath",
+                            "description": "The path on the system of the action file to be loaded.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "loadAction",
+                    "description": "Load an action into action palette."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "setName",
+                            "description": "Name of the set to be unloaded.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "actionName",
+                            "description": "Name of the action to be unloaded.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "unloadAction",
+                    "description": "Unloads an action into action palette."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "pluginName",
+                            "description": "Plugin to which message needs to be sent.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "messageSelector",
+                            "description": "Functionality that is to be executed.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputString",
+                            "description": "Pass any data encoded in a string.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "sendScriptMessage",
+                    "description": "Sends the script message to the required plugin.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "preset",
+                            "description": "The name of the preset.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getPresetSettings",
+                    "description": "Given a preset name, tries and retrieves the settings from the preset template.",
+                    "type": "DocumentPreset"
+                },
+                {
+                    "parameters": [],
+                    "name": "redraw",
+                    "description": "Force Illustrator to redraw its window(s)"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "The matrix to invert.",
+                            "type": "Matrix"
+                        }
+                    ],
+                    "name": "invertMatrix",
+                    "description": "Invert a matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "The matrix to check.",
+                            "type": "Matrix"
+                        }
+                    ],
+                    "name": "isSingularMatrix",
+                    "description": "Tests if a matrix is singular (cannot be inverted)",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "The matrix that is to be added to.",
+                            "type": "Matrix"
+                        },
+                        {
+                            "optional": true,
+                            "value": "0.0",
+                            "array": false,
+                            "name": "deltaX",
+                            "description": "Horizontal transformation.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "value": "0.0",
+                            "array": false,
+                            "name": "deltaY",
+                            "description": "Vertical transformation.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "concatenateTranslationMatrix",
+                    "description": "Concatenate a translation to a transformation matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "The matrix that is to be added to.",
+                            "type": "Matrix"
+                        },
+                        {
+                            "optional": true,
+                            "value": "100.0",
+                            "array": false,
+                            "name": "scaleX",
+                            "description": "Horizontal scaling factor expressed as a percentage (100 = 100%)",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "value": "100.0",
+                            "array": false,
+                            "name": "scaleY",
+                            "description": "Vertical scaling factor expressed as a percentage (100 = 100%)",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "concatenateScaleMatrix",
+                    "description": "Concatenate a scale matrix to a transformation matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "The matrix that is to be added to.",
+                            "type": "Matrix"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "angle",
+                            "description": "Angle of rotation (in degrees)",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "concatenateRotationMatrix",
+                    "description": "Concatenate a rotation matrix to a transformation matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "The matrix that is to be added to.",
+                            "type": "Matrix"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "secondMatrix",
+                            "description": "Second transformation matrix.",
+                            "type": "Matrix"
+                        }
+                    ],
+                    "name": "concatenateMatrix",
+                    "description": "Concatenate two transformation matrices.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "matrix",
+                            "description": "First transformation matrix to compare.",
+                            "type": "Matrix"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "secondMatrix",
+                            "description": "Second transformation matrix.",
+                            "type": "Matrix"
+                        }
+                    ],
+                    "name": "isEqualMatrix",
+                    "description": "Compares two matrices for equality.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "getIdentityMatrix",
+                    "description": "Returns an identity matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "0.0",
+                            "array": false,
+                            "name": "angle",
+                            "description": "Angle of rotation (in degrees)",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "getRotationMatrix",
+                    "description": "Returns a rotation transformation matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "100.0",
+                            "array": false,
+                            "name": "scaleX",
+                            "description": "Horizontal scaling factor expressed as a percentage (100 = 100%)",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "value": "100.0",
+                            "array": false,
+                            "name": "scaleY",
+                            "description": "Vertical scaling factor expressed as a percentage (100 = 100%)",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "getScaleMatrix",
+                    "description": "Returns a scale transformation matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "0.0",
+                            "array": false,
+                            "name": "deltaX",
+                            "description": "Horizontal transformation.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "value": "0.0",
+                            "array": false,
+                            "name": "deltaY",
+                            "description": "Vertical transformation.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "getTranslationMatrix",
+                    "description": "Returns a translation matrix.",
+                    "type": "Matrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "file",
+                            "description": "The file to be opened.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "documentColorSpace",
+                            "description": "Choose color space only for documents saved with multiple color models (pre-Illustrator 9)",
+                            "type": "DocumentColorSpace"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "options",
+                            "description": "Options for opening a particular type of file.",
+                            "type": "any"
+                        }
+                    ],
+                    "name": "open",
+                    "description": "Open the specified document file.",
+                    "type": "Document"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "file",
+                            "description": "The AI file to be opened.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "documentColorSpace",
+                            "description": "Choose color space only for documents saved with multiple color models (pre-Illustrator 9)",
+                            "type": "DocumentColorSpace"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "pGFFile",
+                            "description": "Folder to save the output PGF file.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "dumpPGFFile",
+                    "description": "Dump the PGF portion of ai file to txt file.",
+                    "type": "Boolean"
+                },
+                {
+                    "parameters": [],
+                    "name": "quit",
+                    "description": "Quit the application."
+                },
+                {
+                    "parameters": [],
+                    "name": "beep"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "text",
+                            "description": "The placeholder text to be translated.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "translatePlaceholderText",
+                    "description": "Translate the placeholder text to regular text. A method to enter unicode points in hex values.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "fileSpec",
+                            "description": "File spec to import from.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "showPresets",
+                    "description": "Get presets from the file.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "fileSpec",
+                            "description": "File spec for the color settings.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "loadColorSettings",
+                    "description": "Load the color settings from the file. If the file is an empty file spec, the color management will be turned off."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The model name of the PPD file.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getPPDFileInfo",
+                    "description": "Get detailed info from the specified PPD file.",
+                    "type": "PPDFileInfo"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "getScriptableHelpGroup",
+                    "description": "Get the scriptable help group object that represents the search widget in the app bar.",
+                    "type": "any"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "sourceColorSpace",
+                            "description": "The source color space.",
+                            "type": "ImageColorSpace"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "sourceColor",
+                            "description": "The color to convert, an array of color components. First location of the array should contain alpha if source-has-alpha is true.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "destColorSpace",
+                            "description": "The destination color space.",
+                            "type": "ImageColorSpace"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "colorConvertPurpose",
+                            "description": "The parameter which passes the purpose of conversion.",
+                            "type": "ColorConvertPurpose"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "sourceHasAlpha",
+                            "description": "True if alpha channel is present in source color.",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "destHasAlpha",
+                            "description": "True if alpha channel is present in destination color.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "convertSampleColor",
+                    "description": "Converts a sample-component color from one color space to another.",
+                    "type": "Number"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "outputFolder",
+                            "description": "Location for the output files.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "reflectCSAW",
+                    "description": "Generate Creative Suite ActionScript Wrappers in specified directory."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "workspaceName",
+                            "description": "Workspace Name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "switchWorkspace",
+                    "description": "Switches between workspaces.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "workspaceName",
+                            "description": "Workspace Name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "deleteWorkspace",
+                    "description": "Deletes an existing workspace.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "workspaceName",
+                            "description": "Workspace Name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "saveWorkspace",
+                    "description": "Saves a new workspace.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "resetWorkspace",
+                    "description": "Resets the current workspace.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "name",
+                    "description": "The application's name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "path",
+                    "description": "Path specification for the application.",
+                    "type": "File"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "activeDocument",
+                    "description": "The active document.",
+                    "type": "Document"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "userAdobeID",
+                    "description": "The current users adobe id.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "userGUID",
+                    "description": "The current user's GUID.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "version",
+                    "description": "The version of the Adobe Illustrator application.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "buildNumber",
+                    "description": "The build number of the Adobe Illustrator application.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "locale",
+                    "description": "The Locale of the Adobe Illustrator application.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "scriptingVersion",
+                    "description": "The version of the Scripting plugin.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "freeMemory",
+                    "description": "The amount of unused memory within the Adobe Illustrator partition.",
+                    "type": "Int32"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "browserAvailable",
+                    "description": "Is a web browser available?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "selection",
+                    "description": "The selection visible to the user.",
+                    "type": "any"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "visible",
+                    "description": "Is the application visible.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "userInteractionLevel",
+                    "description": "What level of interaction with the user should be allowed when handling script commands.",
+                    "type": "UserInteractionLevel"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "coordinateSystem",
+                    "description": "Coordinate System used by script.",
+                    "type": "CoordinateSystem"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "preferences",
+                    "description": "Preferences for Illustrator.",
+                    "type": "Preferences"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "printerList",
+                    "description": "The list of installed printers.",
+                    "type": "Printer"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "PPDFileList",
+                    "description": "The list of PPD files currently available for use. For performance reasons, the PPDFile entry only contains the model name and file spec of each PPD file.",
+                    "type": "PPDFile"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "printPresetsList",
+                    "description": "The list of print preset names currently available for use.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "startupPresetsList",
+                    "description": "The list of presets available for creating a new document.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "PDFPresetsList",
+                    "description": "The list of PDF preset names currently available for use.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "flattenerPresetsList",
+                    "description": "The list of flattener style names currently available for use.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "tracingPresetsList",
+                    "description": "The list of tracing preset names currently available for use.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "colorSettingsList",
+                    "description": "The list of color settings files currently available for use.",
+                    "type": "File"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "defaultColorSettings",
+                    "description": "The default color settings file for the current application locale.",
+                    "type": "File"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "pasteRemembersLayers",
+                    "description": "Does paste operation remember layers structure?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "documents",
+                    "description": "The open documents.",
+                    "type": "Documents"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textFonts",
+                    "description": "Installed fonts.",
+                    "type": "TextFonts"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "runAPITest",
-          "shortdesc": "Runs API Tests from the TestAPI Plug-in.",
-          "parameters": [
-            {
-              "name": "testName",
-              "shortdesc": "Arguments for Running Tests - eg. Name of Test/Suite.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "aATLoadModel",
-          "shortdesc": "Loads the aat model to the editor.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATLoadUIExtension",
-          "shortdesc": "Loads a UI description as an extension to the editor.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATLoadLibExtension",
-          "shortdesc": "Loads a session file as an extension to the editor.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATExecuteSession",
-          "shortdesc": "Executes the active session in the sequencer."
-        },
-        {
-          "name": "aATExecuteSessionFromFile",
-          "shortdesc": "Executes the active session in the sequencer.",
-          "parameters": [
-            {
-              "name": "file",
-              "shortdesc": "Execute a session file.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ]
-        },
-        {
-          "name": "aATGetEditorDialogFile",
-          "shortdesc": "Retrieves a file path to the AAT editor swf.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "getVersionString",
-          "shortdesc": "Retrieves a string representing the AAT version.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATGetErrorDialogFile",
-          "shortdesc": "Retrieves a file path to the AAT error dialog swf.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "aATErrorsExist",
-          "shortdesc": "Retrieves a boolean indicating the presence of errors in the last script to execute.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "getExecutionOutput",
-          "shortdesc": "Retrieves a string containing the results of the last script to execute.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATClear",
-          "shortdesc": "Clear the sequencer.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATGetSession",
-          "shortdesc": "Get the active session for the sequncer.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATSaveSession",
-          "shortdesc": "Saves the active session in the sequencer to a file.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATSaveAsSession",
-          "shortdesc": "Saves the active session in the sequencer to a new file.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATLoadSessionFile",
-          "shortdesc": "Loads a session into the sequencer.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATAddItem",
-          "shortdesc": "Add the specified to the sequencer.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to add.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "destinationSequenceID",
-              "shortdesc": "The UID for the owning sequence.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "destinationIndex",
-              "shortdesc": "The item UID where to insert.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "srcItemIDData",
-              "shortdesc": "The item ID of the item to construct.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "type",
-              "shortdesc": "The source of the item to construct.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATMoveItem",
-          "shortdesc": "Moves the specified in the sequencer.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to move.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "moveThisID",
-              "shortdesc": "The UID of the item to replace.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "newSessionIndex",
-              "shortdesc": "The index in the session of the destination top-most sequence.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "destinationSequenceID",
-              "shortdesc": "The UID for the owning sequence.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "destinationIndex",
-              "shortdesc": "The index where to insert.",
-              "datatype": {
-                "type": "Int32"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATReplaceItem",
-          "shortdesc": "Replaces the specified to the sequencer.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to add.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "replaceThisID",
-              "shortdesc": "The UID of the item to replace.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "srcItemIDData",
-              "shortdesc": "The item ID of the item to construct.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "type",
-              "shortdesc": "The source of the item to construct.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATRemoveItem",
-          "shortdesc": "Removes the specified item from the sequencer.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to add.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "item",
-              "shortdesc": "The item UID.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATDuplicateItem",
-          "shortdesc": "Duplicates the specified item(s) from the sequencer.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to add.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "item",
-              "shortdesc": "The item UID(s)",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATEditItem",
-          "shortdesc": "Opens the specified item from the sequencer in the item editor.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to add.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "item",
-              "shortdesc": "The item UID.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "applyDataToItem",
-          "shortdesc": "Applies the data used in the item editor to the item.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to edit.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "item",
-              "shortdesc": "The item UID.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "data",
-              "shortdesc": "The data to apply in XML format.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "applySingleDataPointToItem",
-          "shortdesc": "Applies data to the specified item from the sequencer in the item editor.",
-          "parameters": [
-            {
-              "name": "sessionIndex",
-              "shortdesc": "The index in the session of the top-most sequence for the item to add.",
-              "datatype": {
-                "type": "Int32"
-              }
-            },
-            {
-              "name": "item",
-              "shortdesc": "The item UID.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "dataID",
-              "shortdesc": "The data to apply in XML format.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "data",
-              "shortdesc": "The data to apply in XML format.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "translateString",
-          "shortdesc": "Returns a string translated from the key and source data passed in.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The string to translate.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "source",
-              "shortdesc": "The plugin name from the source of the key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATFileSaveDialog",
-          "shortdesc": "Prompts the user to save a file or choose a file or directory and returns a relative path string to the file.",
-          "parameters": [
-            {
-              "name": "path",
-              "shortdesc": "The path relative to the folder specified by Relative.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "relative",
-              "shortdesc": "The current relative path token.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "type",
-              "shortdesc": "The type of dialog to show in string format.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATFileRelativeChanged",
-          "shortdesc": "Switches a files relative token and path.",
-          "parameters": [
-            {
-              "name": "path",
-              "shortdesc": "The path relative to the folder specified by Relative.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "relative",
-              "shortdesc": "The current relative path token.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "newRelative",
-              "shortdesc": "The new relative path token.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "aATGetListOfRelativePaths",
-          "shortdesc": "Gets an XML string listing the relative paths and the UI strings to display them.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "cut",
-          "shortdesc": "Cut current selection to the clipboard."
-        },
-        {
-          "name": "copy",
-          "shortdesc": "Copy current selection to the clipboard."
-        },
-        {
-          "name": "paste",
-          "shortdesc": "Paste clipboard into the current document."
-        },
-        {
-          "name": "undo",
-          "shortdesc": "Undo the last transaction."
-        },
-        {
-          "name": "redo",
-          "shortdesc": "Redo the last transaction."
-        },
-        {
-          "name": "doScript",
-          "shortdesc": "Play an action from the Actions Palette.",
-          "parameters": [
-            {
-              "name": "action",
-              "shortdesc": "The name of the action to play (note that the case of letters in the Action name is important and must match the case of the name in the Actions palette)",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "from",
-              "shortdesc": "The name of the action set containing the action being played (note that the case of letters in the Action Set name is important and must match the case of the name in the Actions palette)",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "dialogs",
-              "optional": true,
-              "shortdesc": "Are dialog boxes associated with the action to be presented?",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            }
-          ]
-        },
-        {
-          "name": "executeMenuCommand",
-          "shortdesc": "Executes a menu command using the menu shortcut string.",
-          "parameters": [
-            {
-              "name": "menuCommandString",
-              "shortdesc": "Menu command shortcut.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "getPresetFileOfType",
-          "shortdesc": "Given a preset type, returns the full path to the application's default document profile for the type.",
-          "parameters": [
-            {
-              "name": "presetType",
-              "shortdesc": "The preset type.",
-              "datatype": {
-                "type": "DocumentPresetType"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "loadAction",
-          "shortdesc": "Load an action into action palette.",
-          "parameters": [
-            {
-              "name": "actionFilePath",
-              "shortdesc": "The path on the system of the action file to be loaded.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ]
-        },
-        {
-          "name": "unloadAction",
-          "shortdesc": "Unloads an action into action palette.",
-          "parameters": [
-            {
-              "name": "setName",
-              "shortdesc": "Name of the set to be unloaded.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "actionName",
-              "shortdesc": "Name of the action to be unloaded.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "sendScriptMessage",
-          "shortdesc": "Sends the script message to the required plugin.",
-          "parameters": [
-            {
-              "name": "pluginName",
-              "shortdesc": "Plugin to which message needs to be sent.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "messageSelector",
-              "shortdesc": "Functionality that is to be executed.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "inputString",
-              "shortdesc": "Pass any data encoded in a string.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getPresetSettings",
-          "shortdesc": "Given a preset name, tries and retrieves the settings from the preset template.",
-          "parameters": [
-            {
-              "name": "preset",
-              "shortdesc": "The name of the preset.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DocumentPreset"
-          }
-        },
-        {
-          "name": "redraw",
-          "shortdesc": "Force Illustrator to redraw its window(s)"
-        },
-        {
-          "name": "invertMatrix",
-          "shortdesc": "Invert a matrix.",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "The matrix to invert.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "isSingularMatrix",
-          "shortdesc": "Tests if a matrix is singular (cannot be inverted)",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "The matrix to check.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "concatenateTranslationMatrix",
-          "shortdesc": "Concatenate a translation to a transformation matrix.",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "The matrix that is to be added to.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            },
-            {
-              "name": "deltaX",
-              "optional": true,
-              "shortdesc": "Horizontal transformation.",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            },
-            {
-              "name": "deltaY",
-              "optional": true,
-              "shortdesc": "Vertical transformation.",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "concatenateScaleMatrix",
-          "shortdesc": "Concatenate a scale matrix to a transformation matrix.",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "The matrix that is to be added to.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            },
-            {
-              "name": "scaleX",
-              "optional": true,
-              "shortdesc": "Horizontal scaling factor expressed as a percentage (100 = 100%)",
-              "datatype": {
-                "type": "Number",
-                "value": 100
-              }
-            },
-            {
-              "name": "scaleY",
-              "optional": true,
-              "shortdesc": "Vertical scaling factor expressed as a percentage (100 = 100%)",
-              "datatype": {
-                "type": "Number",
-                "value": 100
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "concatenateRotationMatrix",
-          "shortdesc": "Concatenate a rotation matrix to a transformation matrix.",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "The matrix that is to be added to.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            },
-            {
-              "name": "angle",
-              "shortdesc": "Angle of rotation (in degrees)",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "concatenateMatrix",
-          "shortdesc": "Concatenate two transformation matrices.",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "The matrix that is to be added to.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            },
-            {
-              "name": "secondMatrix",
-              "shortdesc": "Second transformation matrix.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "isEqualMatrix",
-          "shortdesc": "Compares two matrices for equality.",
-          "parameters": [
-            {
-              "name": "matrix",
-              "shortdesc": "First transformation matrix to compare.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            },
-            {
-              "name": "secondMatrix",
-              "shortdesc": "Second transformation matrix.",
-              "datatype": {
-                "type": "Matrix"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "getIdentityMatrix",
-          "shortdesc": "Returns an identity matrix.",
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "getRotationMatrix",
-          "shortdesc": "Returns a rotation transformation matrix.",
-          "parameters": [
-            {
-              "name": "angle",
-              "optional": true,
-              "shortdesc": "Angle of rotation (in degrees)",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "getScaleMatrix",
-          "shortdesc": "Returns a scale transformation matrix.",
-          "parameters": [
-            {
-              "name": "scaleX",
-              "optional": true,
-              "shortdesc": "Horizontal scaling factor expressed as a percentage (100 = 100%)",
-              "datatype": {
-                "type": "Number",
-                "value": 100
-              }
-            },
-            {
-              "name": "scaleY",
-              "optional": true,
-              "shortdesc": "Vertical scaling factor expressed as a percentage (100 = 100%)",
-              "datatype": {
-                "type": "Number",
-                "value": 100
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "getTranslationMatrix",
-          "shortdesc": "Returns a translation matrix.",
-          "parameters": [
-            {
-              "name": "deltaX",
-              "optional": true,
-              "shortdesc": "Horizontal transformation.",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            },
-            {
-              "name": "deltaY",
-              "optional": true,
-              "shortdesc": "Vertical transformation.",
-              "datatype": {
-                "type": "Number",
-                "value": 0
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Matrix"
-          }
-        },
-        {
-          "name": "open",
-          "shortdesc": "Open the specified document file.",
-          "parameters": [
-            {
-              "name": "file",
-              "shortdesc": "The file to be opened.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "documentColorSpace",
-              "optional": true,
-              "shortdesc": "Choose color space only for documents saved with multiple color models (pre-Illustrator 9)",
-              "datatype": {
-                "type": "DocumentColorSpace"
-              }
-            },
-            {
-              "name": "options",
-              "optional": true,
-              "shortdesc": "Options for opening a particular type of file.",
-              "datatype": {
-                "type": "any"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "dumpPGFFile",
-          "shortdesc": "Dump the PGF portion of ai file to txt file.",
-          "parameters": [
-            {
-              "name": "file",
-              "shortdesc": "The AI file to be opened.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "documentColorSpace",
-              "optional": true,
-              "shortdesc": "Choose color space only for documents saved with multiple color models (pre-Illustrator 9)",
-              "datatype": {
-                "type": "DocumentColorSpace"
-              }
-            },
-            {
-              "name": "pGFFile",
-              "shortdesc": "Folder to save the output PGF file.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "quit",
-          "shortdesc": "Quit the application."
-        },
-        {
-          "name": "beep"
-        },
-        {
-          "name": "translatePlaceholderText",
-          "shortdesc": "Translate the placeholder text to regular text. A method to enter unicode points in hex values.",
-          "parameters": [
-            {
-              "name": "text",
-              "shortdesc": "The placeholder text to be translated.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "showPresets",
-          "shortdesc": "Get presets from the file.",
-          "parameters": [
-            {
-              "name": "fileSpec",
-              "shortdesc": "File spec to import from.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "loadColorSettings",
-          "shortdesc": "Load the color settings from the file. If the file is an empty file spec, the color management will be turned off.",
-          "parameters": [
-            {
-              "name": "fileSpec",
-              "shortdesc": "File spec for the color settings.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ]
-        },
-        {
-          "name": "getPPDFileInfo",
-          "shortdesc": "Get detailed info from the specified PPD file.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The model name of the PPD file.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PPDFileInfo"
-          }
-        },
-        {
-          "name": "getScriptableHelpGroup",
-          "shortdesc": "Get the scriptable help group object that represents the search widget in the app bar.",
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "convertSampleColor",
-          "shortdesc": "Converts a sample-component color from one color space to another.",
-          "parameters": [
-            {
-              "name": "sourceColorSpace",
-              "shortdesc": "The source color space.",
-              "datatype": {
-                "type": "ImageColorSpace"
-              }
-            },
-            {
-              "name": "sourceColor",
-              "shortdesc": "The color to convert, an array of color components. First location of the array should contain alpha if source-has-alpha is true.",
-              "datatype": {
-                "type": "Number",
-                "array": true
-              }
-            },
-            {
-              "name": "destColorSpace",
-              "shortdesc": "The destination color space.",
-              "datatype": {
-                "type": "ImageColorSpace"
-              }
-            },
-            {
-              "name": "colorConvertPurpose",
-              "shortdesc": "The parameter which passes the purpose of conversion.",
-              "datatype": {
-                "type": "ColorConvertPurpose"
-              }
-            },
-            {
-              "name": "sourceHasAlpha",
-              "optional": true,
-              "shortdesc": "True if alpha channel is present in source color.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            },
-            {
-              "name": "destHasAlpha",
-              "optional": true,
-              "shortdesc": "True if alpha channel is present in destination color.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number",
-            "array": true
-          }
-        },
-        {
-          "name": "reflectCSAW",
-          "shortdesc": "Generate Creative Suite ActionScript Wrappers in specified directory.",
-          "parameters": [
-            {
-              "name": "outputFolder",
-              "shortdesc": "Location for the output files.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ]
-        },
-        {
-          "name": "switchWorkspace",
-          "shortdesc": "Switches between workspaces.",
-          "parameters": [
-            {
-              "name": "workspaceName",
-              "shortdesc": "Workspace Name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "deleteWorkspace",
-          "shortdesc": "Deletes an existing workspace.",
-          "parameters": [
-            {
-              "name": "workspaceName",
-              "shortdesc": "Workspace Name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "saveWorkspace",
-          "shortdesc": "Saves a new workspace.",
-          "parameters": [
-            {
-              "name": "workspaceName",
-              "shortdesc": "Workspace Name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "resetWorkspace",
-          "shortdesc": "Resets the current workspace.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Application",
+    "description": "The Adobe Illustrator application."
 }

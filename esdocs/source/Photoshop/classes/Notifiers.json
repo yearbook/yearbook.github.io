@@ -1,103 +1,65 @@
 {
-  "name": "Notifiers",
-  "dynamic": true,
-  "shortdesc": "A collection of notifier objects in the document.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a notifier.",
-          "parameters": [
-            {
-              "name": "event",
-              "shortdesc": "The class id of the event, four characters or a unique string.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "eventFile",
-              "shortdesc": "The script file to execute when the event occurs.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "eventClass",
-              "optional": true,
-              "shortdesc": "The class of the object the event is applied to, four characters or a unique string. When an event applies to multiple types of objects, you use the event class parameter to distinguish which object this Notifier applies to. For example, the Make event (�Mk�) applies to documents (�Dcmn�), channels (�Chnl�) and other objects.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Notifier"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "getByName",
-          "shortdesc": "Get the first element in the collection with the provided name.",
-          "parameters": [
-            {
-              "name": "name",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Notifier"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Get an element in the collection with the provided index.",
-          "parameters": [
-            {
-              "name": "index",
-              "datatype": {
-                "type": "uint"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Notifier"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getByName",
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "Notifier"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "type": "uint"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "Notifier"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "Number of elements in the collection.",
+                    "type": "int"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "Number of elements in the collection.",
-          "datatype": {
-            "type": "int"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Notifiers",
+    "description": "A collection of notifier objects in the document."
 }

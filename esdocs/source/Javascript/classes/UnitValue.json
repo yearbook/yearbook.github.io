@@ -1,81 +1,75 @@
 {
-  "name": "UnitValue",
-  "dynamic": true,
-  "shortdesc": "Represents a measurement as a combination of values and unit.",
-  "description": "Note that this object is not available in all applications.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "baseUnit",
-          "shortdesc": "The base unit for all conversions.",
-          "datatype": {
-            "type": "UnitValue"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "baseUnit",
+                    "description": "The base unit for all conversions.",
+                    "type": "UnitValue"
+                }
+            ]
+        },
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "unitName",
+                            "description": "The unit name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "convert",
+                    "description": "Converts this instance to a different unit.",
+                    "type": "any"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "unitName",
+                            "description": "The unit name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "as",
+                    "description": "Returns this instance as a different unit.",
+                    "type": "UnitValue"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "type",
+                    "description": "The unit name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "value",
+                    "description": "The numeric value.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "baseUnit",
+                    "description": "The base unit.",
+                    "type": "UnitValue"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "type",
-          "rwaccess": "readonly",
-          "shortdesc": "The unit name.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "value",
-          "shortdesc": "The numeric value.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "baseUnit",
-          "shortdesc": "The base unit.",
-          "datatype": {
-            "type": "UnitValue"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "convert",
-          "shortdesc": "Converts this instance to a different unit.",
-          "parameters": [
-            {
-              "name": "unitName",
-              "shortdesc": "The unit name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "as",
-          "shortdesc": "Returns this instance as a different unit.",
-          "parameters": [
-            {
-              "name": "unitName",
-              "shortdesc": "The unit name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "UnitValue"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "UnitValue",
+    "description": "Represents a measurement as a combination of values and unit."
 }

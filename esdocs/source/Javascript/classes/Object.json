@@ -1,196 +1,143 @@
 {
-  "name": "Object",
-  "dynamic": true,
-  "shortdesc": "The base class of all JavaScript objects.",
-  "elements": [
-    {
-      "type": "constructor",
-      "method": [
-        {
-          "name": "Object",
-          "shortdesc": "Creates and returns a new object of a given type.",
-          "parameters": [
-            {
-              "name": "what",
-              "shortdesc": "The object type.",
-              "datatype": {
-                "type": "any"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Object"
-          },
-          "example": "new Object&amp;&#35;40;&#41;"
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
+        },
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toString",
+                    "description": "Creates and returns a string representing this object.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toLocaleString",
+                    "description": "\n\t\t\t\t\t\tCreates and returns a string representing this object, localized for the current locale. See\u00a0",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the property to check.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "hasOwnProperty",
+                    "description": "Reports whether a given property is defined with an instance or within the prototype chain.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the property to check.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "propertyIsEnumerable",
+                    "description": "Reports whether a given property is enumerable.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "what",
+                            "description": "The object to check.",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "isPrototypeOf",
+                    "description": "Checks whether the given object is a prototype of this object.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "valueOf",
+                    "description": "Retrieves and returns the primitive value of this object.",
+                    "type": "Object"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Creates and returns a string representation of this object.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the property to unwatch.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "unwatch",
+                    "description": "Removes the watch function of a property."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the property to watch.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "func",
+                            "description": "The function to be called when the value of this property changes.",
+                            "type": "Function"
+                        }
+                    ],
+                    "name": "watch",
+                    "description": "Adds a watch function to a property, which is called when the value changes."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "prototype",
+                    "description": "Points to the prototype object for this object.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "constructor",
+                    "description": "Points to the constructor function that created this object.",
+                    "type": "Function"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "reflect",
+                    "description": "Retrieves and returns the Reflection object associated with this method or a property.",
+                    "type": "Reflection"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "class",
-      "method": [
-        {
-          "name": "isValid",
-          "shortdesc": "Reports whether an object is still valid.",
-          "parameters": [
-            {
-              "name": "what",
-              "shortdesc": "The object to check.",
-              "datatype": {
-                "type": "Object"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "prototype",
-          "rwaccess": "readonly",
-          "shortdesc": "Points to the prototype object for this object.",
-          "description": "Note that this property is treated as an XML element in the XML class.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "constructor",
-          "rwaccess": "readonly",
-          "shortdesc": "Points to the constructor function that created this object.",
-          "description": "Note that this property is treated as an XML element in the XML class.",
-          "datatype": {
-            "type": "Function"
-          }
-        },
-        {
-          "name": "reflect",
-          "rwaccess": "readonly",
-          "shortdesc": "Retrieves and returns the Reflection object associated with this method or a property.",
-          "description": "Note that this property is treated as an XML element in the XML class.",
-          "datatype": {
-            "type": "Reflection"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "toString",
-          "shortdesc": "Creates and returns a string representing this object.",
-          "datatype": {
-            "type": "String"
-          },
-          "example": "obj.toString&amp;&#35;40;&#41;"
-        },
-        {
-          "name": "toLocaleString",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "hasOwnProperty",
-          "shortdesc": "Reports whether a given property is defined with an instance or within the prototype chain.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the property to check.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "propertyIsEnumerable",
-          "shortdesc": "Reports whether a given property is enumerable.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the property to check.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "isPrototypeOf",
-          "shortdesc": "Checks whether the given object is a prototype of this object.",
-          "parameters": [
-            {
-              "name": "what",
-              "shortdesc": "The object to check.",
-              "datatype": {
-                "type": "Object"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "valueOf",
-          "shortdesc": "Retrieves and returns the primitive value of this object.",
-          "description": "If the object has no primitive value, returns the object itself.  Note that you rarely need to call this method yourself.  The JavaScript interpreter automatically invokes it when encountering an object where a primitive value is expected.",
-          "datatype": {
-            "type": "Object"
-          },
-          "example": "obj.valueOf&amp;&#35;40;&#41;"
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Creates and returns a string representation of this object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "unwatch",
-          "shortdesc": "Removes the watch function of a property.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the property to unwatch.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "watch",
-          "shortdesc": "Adds a watch function to a property, which is called when the value changes.",
-          "description": "This function can accept, modify, or reject a new value that the user, application, or a script has attempted to place in a property.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the property to watch.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "func",
-              "shortdesc": "The function to be called when the value of this property changes.",
-              "datatype": {
-                "type": "Function"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    "name": "Object",
+    "description": "The base class of all JavaScript objects."
 }

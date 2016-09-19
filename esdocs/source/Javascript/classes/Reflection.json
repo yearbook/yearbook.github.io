@@ -1,113 +1,101 @@
 {
-  "name": "Reflection",
-  "dynamic": true,
-  "shortdesc": "Provides information about a class.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "name",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name.",
-          "datatype": {
-            "type": "String"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "methods",
-          "rwaccess": "readonly",
-          "shortdesc": "An array of method descriptions.",
-          "datatype": {
-            "type": "ReflectionInfo",
-            "array": true
-          }
-        },
-        {
-          "name": "properties",
-          "rwaccess": "readonly",
-          "shortdesc": "An array of property descriptions.",
-          "datatype": {
-            "type": "ReflectionInfo",
-            "array": true
-          }
-        },
-        {
-          "name": "staticMethods",
-          "rwaccess": "readonly",
-          "shortdesc": "An array of class method descriptions.",
-          "datatype": {
-            "type": "ReflectionInfo",
-            "array": true
-          }
-        },
-        {
-          "name": "staticProperties",
-          "rwaccess": "readonly",
-          "shortdesc": "An array of class property descriptions.",
-          "datatype": {
-            "type": "ReflectionInfo",
-            "array": true
-          }
-        },
-        {
-          "name": "description",
-          "rwaccess": "readonly",
-          "shortdesc": "The long description text.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "help",
-          "rwaccess": "readonly",
-          "shortdesc": "The short description text.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "sampleCode",
-          "rwaccess": "readonly",
-          "shortdesc": "Sample code, if present.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "sampleFile",
-          "rwaccess": "readonly",
-          "shortdesc": "A file containing sample code. May be null.",
-          "datatype": {
-            "type": "File"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the element to find.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "find",
+                    "description": "Finds an element description by name.",
+                    "type": "ReflectionInfo"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toXML",
+                    "description": "Returns this class information as XML in OMV format.",
+                    "type": "XML"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "name",
+                    "description": "The class name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "methods",
+                    "description": "An array of method descriptions.",
+                    "type": "ReflectionInfo"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "properties",
+                    "description": "An array of property descriptions.",
+                    "type": "ReflectionInfo"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "staticMethods",
+                    "description": "An array of class method descriptions.",
+                    "type": "ReflectionInfo"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "staticProperties",
+                    "description": "An array of class property descriptions.",
+                    "type": "ReflectionInfo"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "description",
+                    "description": "The long description text.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "help",
+                    "description": "The short description text.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "sampleCode",
+                    "description": "Sample code, if present.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "sampleFile",
+                    "description": "A file containing sample code. May be null.",
+                    "type": "File"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "find",
-          "shortdesc": "Finds an element description by name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the element to find.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ReflectionInfo"
-          }
-        },
-        {
-          "name": "toXML",
-          "shortdesc": "Returns this class information as XML in OMV format.",
-          "datatype": {
-            "type": "XML"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Reflection",
+    "description": "Provides information about a class."
 }

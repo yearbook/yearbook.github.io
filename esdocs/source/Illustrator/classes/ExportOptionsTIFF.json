@@ -1,78 +1,79 @@
 {
-  "name": "ExportOptionsTIFF",
-  "dynamic": true,
-  "shortdesc": "Options which may be supplied when exporting a document as a TIFF file.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "imageColorSpace",
-          "shortdesc": "The color space of the exported file.",
-          "datatype": {
-            "type": "ImageColorSpace",
-            "value": "ImageColorSpace.RGB"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "ImageColorSpace.RGB",
+                    "array": false,
+                    "name": "imageColorSpace",
+                    "description": "The color space of the exported file.",
+                    "type": "ImageColorSpace"
+                },
+                {
+                    "readonly": false,
+                    "value": "150",
+                    "array": false,
+                    "name": "resolution",
+                    "description": "The resolution of the exported file.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "value": "AntiAliasingMethod.ARTOPTIMIZED",
+                    "array": false,
+                    "name": "antiAliasing",
+                    "description": "Should the resulting image be antialiased.",
+                    "type": "AntiAliasingMethod"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "lZWCompression",
+                    "description": "Compress TIFF file with LZW Compression when exporting.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "TIFFByteOrder.IBMPC",
+                    "array": false,
+                    "name": "byteOrder",
+                    "description": "Mac or PC byte order when exporting.",
+                    "type": "TIFFByteOrder"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "embedICCProfile",
+                    "description": "Embed an ICC profile when exporting.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "saveMultipleArtboards",
+                    "description": "All the artboards or range of the artboards will be exported.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": null,
+                    "array": false,
+                    "name": "artboardRange",
+                    "description": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
+                    "type": "String"
+                }
+            ]
         },
-        {
-          "name": "resolution",
-          "shortdesc": "The resolution of the exported file.",
-          "datatype": {
-            "type": "Number",
-            "min": 72,
-            "max": 2400,
-            "value": 150
-          }
-        },
-        {
-          "name": "antiAliasing",
-          "shortdesc": "Should the resulting image be antialiased.",
-          "datatype": {
-            "type": "AntiAliasingMethod",
-            "value": "AntiAliasingMethod.ARTOPTIMIZED"
-          }
-        },
-        {
-          "name": "lZWCompression",
-          "shortdesc": "Compress TIFF file with LZW Compression when exporting.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "byteOrder",
-          "shortdesc": "Mac or PC byte order when exporting.",
-          "datatype": {
-            "type": "TIFFByteOrder",
-            "value": "TIFFByteOrder.IBMPC"
-          }
-        },
-        {
-          "name": "embedICCProfile",
-          "shortdesc": "Embed an ICC profile when exporting.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "saveMultipleArtboards",
-          "shortdesc": "All the artboards or range of the artboards will be exported.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "artboardRange",
-          "shortdesc": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
-          "datatype": {
-            "type": "String",
-            "value": {}
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "ExportOptionsTIFF",
+    "description": "Options which may be supplied when exporting a document as a TIFF file."
 }

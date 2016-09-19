@@ -1,36 +1,39 @@
 {
-  "name": "TargaSaveOptions",
-  "dynamic": true,
-  "superclass": "SaveOptions",
-  "shortdesc": "Options for saving a document in TGA &amp;&#35;40;Targa&#41; format.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "resolution",
-          "shortdesc": "The number of bits per pixel.",
-          "datatype": {
-            "type": "TargaBitsPerPixels",
-            "value": "TargaBitsPerPixels.TWENTYFOUR"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "TargaBitsPerPixels.TWENTYFOUR",
+                    "array": false,
+                    "name": "resolution",
+                    "description": "The number of bits per pixel.",
+                    "type": "TargaBitsPerPixels"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "rleCompression",
+                    "description": "If true, RLE compression is used.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "alphaChannels",
+                    "description": "If true, the alpha channels are saved.",
+                    "type": "Boolean"
+                }
+            ]
         },
-        {
-          "name": "rleCompression",
-          "shortdesc": "If true, RLE compression is used.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "alphaChannels",
-          "shortdesc": "If true, the alpha channels are saved.",
-          "datatype": {
-            "type": "Boolean"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "TargaSaveOptions",
+    "description": "Options for saving a document in TGA (Targa) format.",
+    "superclass": "SaveOptions"
 }

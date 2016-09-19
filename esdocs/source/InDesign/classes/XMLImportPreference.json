@@ -1,229 +1,218 @@
 {
-  "name": "XMLImportPreference",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "XML import preferences.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the XMLImportPreference (a Application or Document).",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "createLinkToXML",
-          "shortdesc": "If true, creates a link to the imported XML file. If false, embeds the file.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "repeatTextElements",
-          "shortdesc": "If true, repeating text elements inherit the formatting applied to placeholder text. Note: Valid only when import style is merge.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "ignoreUnmatchedIncoming",
-          "shortdesc": "If true, ignores elements that do not match the existing structure. Note: Valid only when import style is merge.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "importTextIntoTables",
-          "shortdesc": "If true, imports text into tables if tags match placeholder tables and their cells. Note: Valid only when import style is merge.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "ignoreWhitespace",
-          "shortdesc": "If true, leaves existing content in place if the matching XML content contains only whitespace characters such as a carriage return or a tab character. Note: Valid only when import style is merge.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "removeUnmatchedExisting",
-          "shortdesc": "If true, deletes existing elements or placeholders in the document that do not have matches in the XML file. Note: Valid only when import style is merge.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "importToSelected",
-          "shortdesc": "If true, imports into the selected XML element. If false, imports at the root element.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "importStyle",
-          "shortdesc": "The style of incorporating imported XML content into the document.",
-          "datatype": {
-            "type": "XMLImportStyles"
-          }
-        },
-        {
-          "name": "allowTransform",
-          "shortdesc": "If true, transforms the XML using an XSLT file.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "transformFilename",
-          "shortdesc": "The name of the XSLT file. Note: Valid when allow transform is true. Can return: File or XMLTransformFile enumerator.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "transformParameters",
-          "shortdesc": "Stylesheet parameters as a list of name/value pairs in the format [[name, value], [name, value], ...]. Can return: Ordered array containing name:String, value:String.",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "importCALSTables",
-          "shortdesc": "If true, imports CALS tables as InDesign tables.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the XMLImportPreference.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "XMLImportPreference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the XMLImportPreference (a Application or Document).",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "createLinkToXML",
+                    "description": "If true, creates a link to the imported XML file. If false, embeds the file.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "repeatTextElements",
+                    "description": "If true, repeating text elements inherit the formatting applied to placeholder text. Note: Valid only when import style is merge.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "ignoreUnmatchedIncoming",
+                    "description": "If true, ignores elements that do not match the existing structure. Note: Valid only when import style is merge.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "importTextIntoTables",
+                    "description": "If true, imports text into tables if tags match placeholder tables and their cells. Note: Valid only when import style is merge.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "ignoreWhitespace",
+                    "description": "If true, leaves existing content in place if the matching XML content contains only whitespace characters such as a carriage return or a tab character. Note: Valid only when import style is merge.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "removeUnmatchedExisting",
+                    "description": "If true, deletes existing elements or placeholders in the document that do not have matches in the XML file. Note: Valid only when import style is merge.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "importToSelected",
+                    "description": "If true, imports into the selected XML element. If false, imports at the root element.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "importStyle",
+                    "description": "The style of incorporating imported XML content into the document.",
+                    "type": "XMLImportStyles"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "allowTransform",
+                    "description": "If true, transforms the XML using an XSLT file.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "transformFilename",
+                    "description": "The name of the XSLT file. Note: Valid when allow transform is true. Can return: File or XMLTransformFile enumerator.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "transformParameters",
+                    "description": "Stylesheet parameters as a list of name/value pairs in the format [[name, value], [name, value], ...]. Can return: Ordered array containing name:String, value:String.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "importCALSTables",
+                    "description": "If true, imports CALS tables as InDesign tables.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the XMLImportPreference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "XMLImportPreference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "XMLImportPreference",
+    "description": "XML import preferences.",
+    "superclass": "Preference"
 }

@@ -1,253 +1,247 @@
 {
-  "name": "PathItem",
-  "dynamic": true,
-  "superclass": "PageItem",
-  "shortdesc": "An artwork path item.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "closed",
-          "shortdesc": "Is this path closed?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "area",
-          "rwaccess": "readonly",
-          "shortdesc": "The area of this path in square points.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The length of this path in points.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "guides",
-          "shortdesc": "Is this path a guide object?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "filled",
-          "shortdesc": "Should the path be filled?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "fillColor",
-          "shortdesc": "Fill color.",
-          "datatype": {
-            "type": "Color"
-          }
-        },
-        {
-          "name": "fillOverprint",
-          "shortdesc": "Will art beneath a filled object be overprinted?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "stroked",
-          "shortdesc": "Should the path be stroked?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "strokeColor",
-          "shortdesc": "Stroke color.",
-          "datatype": {
-            "type": "Color"
-          }
-        },
-        {
-          "name": "strokeOverprint",
-          "shortdesc": "Will art beneath a stroked object be overprinted?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "strokeWidth",
-          "shortdesc": "Width of stroke.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "strokeDashes",
-          "shortdesc": "Dash lengths (set to {} for a solid line)",
-          "datatype": {
-            "type": "Number",
-            "array": true
-          }
-        },
-        {
-          "name": "strokeDashOffset",
-          "shortdesc": "The default distance into the dash pattern at which the pattern should be started.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "strokeCap",
-          "shortdesc": "Type of line capping.",
-          "datatype": {
-            "type": "StrokeCap"
-          }
-        },
-        {
-          "name": "strokeJoin",
-          "shortdesc": "Type of joints.",
-          "datatype": {
-            "type": "StrokeJoin"
-          }
-        },
-        {
-          "name": "strokeMiterLimit",
-          "shortdesc": "Whether a join is mitered (pointed) or beveled (squared-off)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "clipping",
-          "shortdesc": "Should this be used as a clipping path?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "evenodd",
-          "shortdesc": "Should the even-odd rule be used to determine insideness?",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "resolution",
-          "shortdesc": "The resolution of the path.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "selectedPathPoints",
-          "rwaccess": "readonly",
-          "shortdesc": "All the selected points in the path.",
-          "datatype": {
-            "type": "ObjectArray"
-          }
-        },
-        {
-          "name": "polarity",
-          "shortdesc": "The polarity the path.",
-          "datatype": {
-            "type": "PolarityValues"
-          }
-        },
-        {
-          "name": "pathPoints",
-          "rwaccess": "readonly",
-          "datatype": {
-            "type": "PathPoints"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relativeObject",
+                            "type": "Object"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insertionLocation",
+                            "type": "ElementPlacement"
+                        }
+                    ],
+                    "name": "move",
+                    "description": "Move the object.",
+                    "type": "PathItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "relativeObject",
+                            "type": "Object"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insertionLocation",
+                            "type": "ElementPlacement"
+                        }
+                    ],
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "type": "PathItem"
+                },
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "pathPoints",
+                            "description": "Array of (x, y) coordinate pairs for the path points.",
+                            "type": "any"
+                        }
+                    ],
+                    "name": "setEntirePath",
+                    "description": "Set the path using the provided array of path point (x, y) coordinate pairs."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "closed",
+                    "description": "Is this path closed?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "area",
+                    "description": "The area of this path in square points.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The length of this path in points.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "guides",
+                    "description": "Is this path a guide object?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "filled",
+                    "description": "Should the path be filled?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fillColor",
+                    "description": "Fill color.",
+                    "type": "Color"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fillOverprint",
+                    "description": "Will art beneath a filled object be overprinted?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "stroked",
+                    "description": "Should the path be stroked?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeColor",
+                    "description": "Stroke color.",
+                    "type": "Color"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeOverprint",
+                    "description": "Will art beneath a stroked object be overprinted?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeWidth",
+                    "description": "Width of stroke.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "strokeDashes",
+                    "description": "Dash lengths (set to {} for a solid line)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeDashOffset",
+                    "description": "The default distance into the dash pattern at which the pattern should be started.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeCap",
+                    "description": "Type of line capping.",
+                    "type": "StrokeCap"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeJoin",
+                    "description": "Type of joints.",
+                    "type": "StrokeJoin"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeMiterLimit",
+                    "description": "Whether a join is mitered (pointed) or beveled (squared-off)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "clipping",
+                    "description": "Should this be used as a clipping path?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "evenodd",
+                    "description": "Should the even-odd rule be used to determine insideness?",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "resolution",
+                    "description": "The resolution of the path.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "selectedPathPoints",
+                    "description": "All the selected points in the path.",
+                    "type": "ObjectArray"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "polarity",
+                    "description": "The polarity the path.",
+                    "type": "PolarityValues"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pathPoints",
+                    "type": "PathPoints"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "move",
-          "shortdesc": "Move the object.",
-          "parameters": [
-            {
-              "name": "relativeObject",
-              "datatype": {
-                "type": "Object"
-              }
-            },
-            {
-              "name": "insertionLocation",
-              "datatype": {
-                "type": "ElementPlacement"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PathItem"
-          }
-        },
-        {
-          "name": "duplicate",
-          "shortdesc": "Duplicate this object.",
-          "parameters": [
-            {
-              "name": "relativeObject",
-              "datatype": {
-                "type": "Object"
-              }
-            },
-            {
-              "name": "insertionLocation",
-              "datatype": {
-                "type": "ElementPlacement"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PathItem"
-          }
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "setEntirePath",
-          "shortdesc": "Set the path using the provided array of path point (x, y) coordinate pairs.",
-          "parameters": [
-            {
-              "name": "pathPoints",
-              "shortdesc": "Array of (x, y) coordinate pairs for the path points.",
-              "datatype": {
-                "type": "any",
-                "array": true
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    },
+    "name": "PathItem",
+    "description": "An artwork path item.",
+    "superclass": "PageItem"
 }

@@ -1,429 +1,441 @@
 {
-  "name": "EPubExportPreference",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/Preference",
-    "$t": "Preference"
-  },
-  "shortdesc": "EPub export preferences.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the EPubExportPreference (a Book or Document).",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "includeDocumentMetadata",
-          "shortdesc": "If true, output document metadata into epub.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "epubPublisher",
-          "shortdesc": "The epub publisher.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "id",
-          "shortdesc": "The epub unique identifier, like ISBN.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "exportOrder",
-          "shortdesc": "The export order.",
-          "datatype": {
-            "type": "ExportOrder"
-          }
-        },
-        {
-          "name": "epubCover",
-          "shortdesc": "The epub cover option.",
-          "datatype": {
-            "type": "EpubCover"
-          }
-        },
-        {
-          "name": "coverImageFile",
-          "shortdesc": "The epub cover image file path.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "bulletExportOption",
-          "shortdesc": "The bullet export option.",
-          "datatype": {
-            "type": "BulletListExportOption"
-          }
-        },
-        {
-          "name": "numberedListExportOption",
-          "shortdesc": "The numbered list export option.",
-          "datatype": {
-            "type": "NumberedListExportOption"
-          }
-        },
-        {
-          "name": "leftMargin",
-          "shortdesc": "Left margin of the epub.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "rightMargin",
-          "shortdesc": "Right margin of the epub.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "topMargin",
-          "shortdesc": "Top margin of the epub.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "bottomMargin",
-          "shortdesc": "Bottom margin of the epub.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "viewDocumentAfterExport",
-          "shortdesc": "If true, open docuemnt in viewer after export.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "imageExportResolution",
-          "shortdesc": "The export resolution",
-          "datatype": {
-            "type": "ImageResolution"
-          }
-        },
-        {
-          "name": "customImageSizeOption",
-          "shortdesc": "Allows user to select the image size option for conversion",
-          "datatype": {
-            "type": "ImageSizeOption"
-          }
-        },
-        {
-          "name": "preserveLayoutAppearence",
-          "shortdesc": "If true, format image based on layout appearence.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "imageAlignment",
-          "shortdesc": "Alignment applied to images",
-          "datatype": {
-            "type": "ImageAlignmentType"
-          }
-        },
-        {
-          "name": "imageSpaceBefore",
-          "shortdesc": "Space Before applied to images",
-          "datatype": {
-            "type": "Number",
-            "min": 0,
-            "max": 8640
-          }
-        },
-        {
-          "name": "imageSpaceAfter",
-          "shortdesc": "Space After applied to images",
-          "datatype": {
-            "type": "Number",
-            "min": 0,
-            "max": 8640
-          }
-        },
-        {
-          "name": "applyImageAlignmentToAnchoredObjectSettings",
-          "shortdesc": "apply image alignment to anchored object settings.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "useImagePageBreak",
-          "shortdesc": "If true, image page break settings will be used in objects",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "imagePageBreak",
-          "shortdesc": "Image page break settings to be used with objects",
-          "datatype": {
-            "type": "ImagePageBreakType"
-          }
-        },
-        {
-          "name": "imageConversion",
-          "shortdesc": "The file format to use for converted images. Note: Valid only when copy optimized images and/or copy formatted images is true.",
-          "datatype": {
-            "type": "ImageConversion"
-          }
-        },
-        {
-          "name": "gifOptionsPalette",
-          "shortdesc": "The color palette for GIF conversion. Note: Not valid when image conversion is JPEG.",
-          "datatype": {
-            "type": "GIFOptionsPalette"
-          }
-        },
-        {
-          "name": "gifOptionsInterlaced",
-          "shortdesc": "If true, generates interlaced GIFs. Note: Not valid  when image conversion is JPEG.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "jpegOptionsQuality",
-          "shortdesc": "The quality of converted JPEG images. Note: Not valid when image conversion is GIF.",
-          "datatype": {
-            "type": "JPEGOptionsQuality"
-          }
-        },
-        {
-          "name": "jpegOptionsFormat",
-          "shortdesc": "The formatting method for converted JPEG images. Note: Not valid  when image conversion is GIF.",
-          "datatype": {
-            "type": "JPEGOptionsFormat"
-          }
-        },
-        {
-          "name": "level",
-          "shortdesc": "The PNG compression level.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "ignoreObjectConversionSettings",
-          "shortdesc": "ignore object level image conversion settings.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "tocStyleName",
-          "shortdesc": "The name of TOC style to generate epub TOC.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "breakDocument",
-          "shortdesc": "If  true, break InDesign document into smaller piece when generating epub.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "paragraphStyleName",
-          "shortdesc": "The name of paragraph style to break InDesign document.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "footnoteFollowParagraph",
-          "shortdesc": "If  true, output footnote immediately after its paragraph.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "stripSoftReturn",
-          "shortdesc": "If  true, strip soft return.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "preserveLocalOverride",
-          "shortdesc": "If true, output local style override.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "embedFont",
-          "shortdesc": "If true, embed font in epub.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "externalStyleSheets",
-          "shortdesc": "The file path of external cascading style sheets.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "javascripts",
-          "shortdesc": "The file path of external javascripts.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "version",
-          "shortdesc": "The version of EPUB.",
-          "datatype": {
-            "type": "EpubVersion"
-          }
-        },
-        {
-          "name": "generateCascadeStyleSheet",
-          "shortdesc": "If true, InDesign will generate cascade style sheet.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the EPubExportPreference.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "EPubExportPreference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "level",
+                    "description": "The PNG compression level.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the EPubExportPreference (a Book or Document).",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubTitle",
+                    "description": "The epub title.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubCreator",
+                    "description": "The epub creator.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubSubject",
+                    "description": "The epub subject.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubDescription",
+                    "description": "The epub description.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubDate",
+                    "description": "The epub date.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubRights",
+                    "description": "The epub rights.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "useExistingImageOnExport",
+                    "description": "If true, InDesign will use existing image for graphic objects on export.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubPublisher",
+                    "description": "The epub publisher.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "id",
+                    "description": "The epub unique identifier, like ISBN.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "exportOrder",
+                    "description": "The export order.",
+                    "type": "ExportOrder"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "epubCover",
+                    "description": "The epub cover option.",
+                    "type": "EpubCover"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "coverImageFile",
+                    "description": "The epub cover image file path.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bulletExportOption",
+                    "description": "The bullet export option.",
+                    "type": "BulletListExportOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "numberedListExportOption",
+                    "description": "The numbered list export option.",
+                    "type": "NumberedListExportOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftMargin",
+                    "description": "Left margin of the epub.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightMargin",
+                    "description": "Right margin of the epub.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topMargin",
+                    "description": "Top margin of the epub.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomMargin",
+                    "description": "Bottom margin of the epub.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageExportResolution",
+                    "description": "The export resolution",
+                    "type": "ImageResolution"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "customImageSizeOption",
+                    "description": "Allows user to select the image size option for conversion",
+                    "type": "ImageSizeOption"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveLayoutAppearence",
+                    "description": "If true, format image based on layout appearence.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageAlignment",
+                    "description": "Alignment applied to images",
+                    "type": "ImageAlignmentType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageSpaceBefore",
+                    "description": "Space Before applied to images",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageSpaceAfter",
+                    "description": "Space After applied to images",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "useImagePageBreak",
+                    "description": "If true, image page break settings will be used in objects",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imagePageBreak",
+                    "description": "Image page break settings to be used with objects",
+                    "type": "ImagePageBreakType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "imageConversion",
+                    "description": "The file format to use for converted images. Note: Valid only when copy optimized images and/or copy formatted images is true.",
+                    "type": "ImageConversion"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gifOptionsPalette",
+                    "description": "The color palette for GIF conversion. Note: Not valid when image conversion is JPEG.",
+                    "type": "GIFOptionsPalette"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gifOptionsInterlaced",
+                    "description": "If true, generates interlaced GIFs. Note: Not valid  when image conversion is JPEG.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "jpegOptionsQuality",
+                    "description": "The quality of converted JPEG images. Note: Not valid when image conversion is GIF.",
+                    "type": "JPEGOptionsQuality"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "jpegOptionsFormat",
+                    "description": "The formatting method for converted JPEG images. Note: Not valid  when image conversion is GIF.",
+                    "type": "JPEGOptionsFormat"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "ignoreObjectConversionSettings",
+                    "description": "ignore object level image conversion settings.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "tocStyleName",
+                    "description": "The name of TOC style to generate epub TOC.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "breakDocument",
+                    "description": "If  true, break InDesign document into smaller piece when generating epub.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "paragraphStyleName",
+                    "description": "The name of paragraph style to break InDesign document.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "stripSoftReturn",
+                    "description": "If  true, strip soft return.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveLocalOverride",
+                    "description": "If true, output local style override.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "embedFont",
+                    "description": "If true, embed font in epub.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "externalStyleSheets",
+                    "description": "The file path of external cascading style sheets.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "javascripts",
+                    "description": "The file path of external javascripts.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "version",
+                    "description": "The version of EPUB.",
+                    "type": "EpubVersion"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "generateCascadeStyleSheet",
+                    "description": "If true, InDesign will generate cascade style sheet.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "footnotePlacement",
+                    "description": "The placement of footnote for EPub export",
+                    "type": "EPubFootnotePlacement"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the EPubExportPreference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "EPubExportPreference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "EPubExportPreference",
+    "description": "EPub export preferences.",
+    "superclass": "Preference"
 }

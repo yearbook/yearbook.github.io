@@ -1,72 +1,73 @@
 {
-  "name": "IndexedConversionOptions",
-  "dynamic": true,
-  "superclass": "DocumentConversionOptions",
-  "shortdesc": "Options for converting an RGB image to an indexed color model.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "palette",
-          "shortdesc": "The type of palette.",
-          "datatype": {
-            "type": "Palette",
-            "value": "Palette.EXACT"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "PaletteType.EXACT",
+                    "array": false,
+                    "name": "palette",
+                    "description": "The type of palette.",
+                    "type": "PaletteType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "colors",
+                    "description": "The number of colors in the palette. Not valid for all palette types.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "forced",
+                    "description": "The type of colors to force into the color palette.",
+                    "type": "ForcedColors"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "transparency",
+                    "description": "If true, preserves transparent areas of the image during conversion to GIF format.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "dither",
+                    "description": "The type of dither.",
+                    "type": "DitherType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "ditherAmount",
+                    "description": "The amount of dither. Valid only when 'dither' = diffusion.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveExactColors",
+                    "description": "If true, protects colors in the image that contain entries in the color table from being dithered. Valid only when 'dither' = diffusion.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "matte",
+                    "description": "The color to use to fill anti-aliased edges adjacent to transparent areas of the image. When transparency = false, the matte color is applied to transparent areas.",
+                    "type": "MatteType"
+                }
+            ]
         },
-        {
-          "name": "colors",
-          "shortdesc": "The number of colors in the palette. Not valid for all palette types.",
-          "datatype": {
-            "type": "int"
-          }
-        },
-        {
-          "name": "forced",
-          "shortdesc": "The type of colors to force into the color palette.",
-          "datatype": {
-            "type": "ForcedColors"
-          }
-        },
-        {
-          "name": "transparency",
-          "shortdesc": "If true, preserves transparent areas of the image during conversion to GIF format.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "dither",
-          "shortdesc": "The type of dither.",
-          "datatype": {
-            "type": "Dither"
-          }
-        },
-        {
-          "name": "ditherAmount",
-          "shortdesc": "The amount of dither. Valid only when 'dither' = diffusion.",
-          "datatype": {
-            "type": "int",
-            "min": 1,
-            "max": 100
-          }
-        },
-        {
-          "name": "preserveExactColors",
-          "shortdesc": "If true, protects colors in the image that contain entries in the color table from being dithered. Valid only when 'dither' = diffusion.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "matte",
-          "shortdesc": "The color to use to fill anti-aliased edges adjacent to transparent areas of the image. When transparency = false, the matte color is applied to transparent areas.",
-          "datatype": {
-            "type": "MatteType"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "IndexedConversionOptions",
+    "description": "Options for converting an RGB image to an indexed color model.",
+    "superclass": "DocumentConversionOptions"
 }

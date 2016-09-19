@@ -1,1062 +1,1012 @@
 {
-  "name": "Column",
-  "dynamic": true,
-  "shortdesc": "A table column.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "name",
-          "rwaccess": "readonly",
-          "shortdesc": "The name of the Column.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the Column within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "rowSpan",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of rows that the object spans.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "columnSpan",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of columns that the object spans.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "overflows",
-          "rwaccess": "readonly",
-          "shortdesc": "If true, the story has overset text.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parentRow",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent row of the cell.",
-          "datatype": {
-            "type": "Row"
-          }
-        },
-        {
-          "name": "parentColumn",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent column of the cell.",
-          "datatype": {
-            "type": "Column"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the Column (a Table).",
-          "datatype": {
-            "type": "Table"
-          }
-        },
-        {
-          "name": "cells",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of table cells.",
-          "datatype": {
-            "type": "Cells"
-          }
-        },
-        {
-          "name": "rows",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of table rows.",
-          "datatype": {
-            "type": "Rows"
-          }
-        },
-        {
-          "name": "columns",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of table columns.",
-          "datatype": {
-            "type": "Columns"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "height",
-          "shortdesc": "The height of the Column. For a table or column, specifies the sum of the row heights.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "width",
-          "shortdesc": "The width of the Column. For a table or row, specifies the sum of the column widths.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "contents",
-          "shortdesc": "The text contents. For rows or columns, when specified as a string, the sting populates each cell in the row or column; when specified as an array, the first value in the array populates the left-most cell in the row or the top-most cell in the column; the next value populates the next cell to the right (for rows) or the next lowest cell (for columns), and so on. Can return: String, SpecialCharacters enumerator or Array of Strings or SpecialCharacters enumerators. Can also accept: NothingEnum enumerator or Array of Strings, SpecialCharacters enumerators or NothingEnum enumerators.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "gradientFillLength",
-          "shortdesc": "The length (of a linear gradient) or radius (of a radial gradient) applied to the fill of the object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "gradientFillAngle",
-          "shortdesc": "The angle of a linear gradient applied to the fill of the object. (Range: -180 to 180)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "gradientFillStart",
-          "shortdesc": "The starting point (in page coordinates) of a gradient applied to the fill of the Column, in the format [x, y].",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "topInset",
-          "shortdesc": "The top inset of the cell.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "leftInset",
-          "shortdesc": "The left inset of the cell.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "bottomInset",
-          "shortdesc": "The bottom inset of the cell.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "rightInset",
-          "shortdesc": "The right inset of the cell.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "fillColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the fill of the object. Can also accept: String.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "fillTint",
-          "shortdesc": "The tint (as a percentage) of the fill of the object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "overprintFill",
-          "shortdesc": "If true, the fill of the object will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "topLeftDiagonalLine",
-          "shortdesc": "If true, draws a diagonal line starting from the top left.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "topRightDiagonalLine",
-          "shortdesc": "If true, draws a diagonal line starting from the top right.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "diagonalLineInFront",
-          "shortdesc": "If true, draws the diagonal line in front of cell contents.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeWeight",
-          "shortdesc": "The diagonal line stroke weight.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeType",
-          "shortdesc": "The stroke type of the diagonal line(s). Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeColor",
-          "shortdesc": "The diagonal line color, specified as a swatch.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeTint",
-          "shortdesc": "The diagonal line tint (as a percentage). (Range: 0 to 100)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeOverprint",
-          "shortdesc": "If true, the diagonal line stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the diagonal line stroke. Note: Not valid when diagonal line stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the diagonal line stroke gap color. Note: Not valid when diagonal line stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "diagonalLineStrokeGapOverprint",
-          "shortdesc": "If true, the stroke gap of the diagonal line will overprint. Note: Not valid when diagonal line stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "clipContentToCell",
-          "shortdesc": "If true, clips the cell's content to width and height of the cell.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "firstBaselineOffset",
-          "shortdesc": "The distance between the baseline of the text and the top inset of the cell.",
-          "datatype": {
-            "type": "FirstBaseline"
-          }
-        },
-        {
-          "name": "verticalJustification",
-          "shortdesc": "The vertical alignment of cell.",
-          "datatype": {
-            "type": "VerticalJustification"
-          }
-        },
-        {
-          "name": "paragraphSpacingLimit",
-          "shortdesc": "The maximum space that can be added between paragraphs in a cell. Note: Valid only when vertical justification is justified.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "minimumFirstBaselineOffset",
-          "shortdesc": "The space between the baseline of the text and the top inset of the frame or cell.",
-          "datatype": {
-            "type": "Mixed",
-            "min": 0,
-            "max": 8640
-          }
-        },
-        {
-          "name": "rotationAngle",
-          "shortdesc": "The rotation angle (in degrees) of the cell, specified as one of the following values: 0, 90, 180, or 270.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeWeight",
-          "shortdesc": "The stroke weight of the left edge border stroke.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeType",
-          "shortdesc": "The stroke type of the left edge. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the left edge border stroke.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeTint",
-          "shortdesc": "The tint (as a percentage) of the left edge border stroke. (Range: 0 to 100)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeOverprint",
-          "shortdesc": "If true, the left edge border stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the left edge border stroke. Note: Not valid when left edge stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the left edge border stroke gap color. (Range: 0 to 100) Note: Not valid when left edge stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "leftEdgeStrokeGapOverprint",
-          "shortdesc": "If true, the gap color of the left edge border stroke will overprint. Note: Not valid when left edge stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "topEdgeStrokeWeight",
-          "shortdesc": "The stroke weight of the top edge border stroke.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "topEdgeStrokeType",
-          "shortdesc": "The stroke type of the top edge. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "topEdgeStrokeColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the top edge border stroke.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "topEdgeStrokeTint",
-          "shortdesc": "The tint (as a percentage) of the top edge border stroke. (Range: 0 to 100)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "topEdgeStrokeOverprint",
-          "shortdesc": "If true, the top edge border stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "topEdgeStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the top edge border stroke. Note: Not valid when top edge stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "topEdgeStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the top edge border stroke gap color. (Range: 0 to 100) Note: Not valid when top edge stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "topEdgeStrokeGapOverprint",
-          "shortdesc": "If true, the gap color of the top edge border stroke will overprint. Note: Not valid when top edge stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeWeight",
-          "shortdesc": "The stroke weight of the right edge border stroke.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeType",
-          "shortdesc": "The stroke type of the right edge. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeColor",
-          "shortdesc": "The color, specified as a swatch, of the right edge border stroke.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeTint",
-          "shortdesc": "The tint (as a percentage) of the right edge border stroke. (Range: 0 to 100)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeOverprint",
-          "shortdesc": "If true, the right edge border stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the right edge border stroke. Note: Not valid when right edge stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the right edge border stroke gap color. (Range: 0 to 100) Note: Not valid when right edge stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "rightEdgeStrokeGapOverprint",
-          "shortdesc": "If true, the gap color of the right edge border stroke will overprint. Note: Not valid when right edge stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeWeight",
-          "shortdesc": "The stroke weight of the bottom edge border stroke.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeType",
-          "shortdesc": "The stroke type of the bottom edge. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the bottom edge border stroke.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeTint",
-          "shortdesc": "The tint (as a percentage) of the bottom edge border stroke.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeOverprint",
-          "shortdesc": "If true, the bottom edge border stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the bottom edge border stroke. Note: Not valid when bottom edge stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the bottom edge border stroke gap color. (Range: 0 to 100) Note: Not valid when bottom edge stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "bottomEdgeStrokeGapOverprint",
-          "shortdesc": "If true, the gap color of the bottom edge border stroke will overprint. Note: Not valid when bottom edge stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "innerRowStrokeWeight",
-          "shortdesc": "The stroke weight of the inner row border strokes.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "innerRowStrokeType",
-          "shortdesc": "The stroke type of the inner row. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "innerRowStrokeColor",
-          "shortdesc": "The color, specified as a swatch, of the inner row border stroke.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "innerRowStrokeTint",
-          "shortdesc": "The tint (as a percentage) of the inner row border stroke. (Range: 0 to 100)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "innerRowStrokeOverprint",
-          "shortdesc": "If true, the inner row border stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "innerRowStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the inner row border stroke. Note: Not valid when inner row stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "innerRowStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the inner row border stroke. (Range: 0 to 100) Note: Not valid when inner row stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "innerRowStrokeGapOverprint",
-          "shortdesc": "If true, the gap color of the inner row border stroke will overprint. Note: Not valid when inner row stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "innerColumnStrokeWeight",
-          "shortdesc": "The stroke weight of the inner column border stroke.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "innerColumnStrokeType",
-          "shortdesc": "The stroke type of the inner column. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "innerColumnStrokeColor",
-          "shortdesc": "The color, specified as a swatch, of the inner column border stroke.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "innerColumnStrokeTint",
-          "shortdesc": "The tint (as a percentage) of the inner column border stroke. (Range: 0 to 100)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "innerColumnStrokeOverprint",
-          "shortdesc": "If true, the inner column border stroke will overprint.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "innerColumnStrokeGapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the inner column border stroke. Note: Not valid when inner column stroke type is solid.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "innerColumnStrokeGapTint",
-          "shortdesc": "The tint (as a percentage) of the inner column border stroke gap color. (Range: 0 to 100) Note: Not valid when inner column stroke type is solid.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "innerColumnStrokeGapOverprint",
-          "shortdesc": "If true, the gap color of the inner column border stroke will overprint. Note: Not valid when inner column stroke type is solid.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "minimumHeight",
-          "shortdesc": "The minimum height of the cells in the Column. Note: When auto grow is true, cells can automatically grow larger than this amount when content is added. Also, the minimum height can affect redistribution.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "maximumHeight",
-          "shortdesc": "The maximum height to which cells in the Column may grow. Note: The maximum height cannot be exceeded even when auto grow is set to true. Also, the maximum height can affect redistribution.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "keepWithNextRow",
-          "shortdesc": "If true, keeps the row with the next row when the table is split across text frames or pages.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "startRow",
-          "shortdesc": "Indicates where to start the row.",
-          "datatype": {
-            "type": "StartParagraph"
-          }
-        },
-        {
-          "name": "autoGrow",
-          "shortdesc": "If true, the height of the cell or the cells in the Column can increase or decrease automatically to fit cell content. Note: Allows cells to grow or shrink to the maximum or minimum height, if specified.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "rowType",
-          "shortdesc": "The row type.",
-          "datatype": {
-            "type": "RowTypes"
-          }
-        },
-        {
-          "name": "writingDirection",
-          "shortdesc": "The direction of the text in the cell.",
-          "datatype": {
-            "type": "HorizontalOrVertical"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
+        },
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "recompose",
+                    "description": "Recomposes the text in the Column."
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "findText",
+                    "description": "Finds text that matches the find what value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "changeText",
+                    "description": "Finds text that matches the find what value and replaces the text with the change to value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "findGrep",
+                    "description": "Finds text that matches the find what value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "changeGrep",
+                    "description": "Finds text that matches the find what value and replaces the text with the change to value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "findGlyph",
+                    "description": "Finds glyphs that match the find what value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "changeGlyph",
+                    "description": "Finds glyphs that match the find what value and replaces the glyphs with the change to value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "findTransliterate",
+                    "description": "Finds text that matches the find character type value.",
+                    "type": "Text"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "changeTransliterate",
+                    "description": "Finds text that matches the find character type value and replaces the text with the change character type value.",
+                    "type": "Text"
+                },
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes the Column."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "with",
+                            "description": "The cell(s) to merge with. Can accept: Cell, Row or Column. (Optional)",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "merge",
+                    "description": "Merges the cells.",
+                    "type": "Cell"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "unmerge",
+                    "description": "Unmerges all merged cells in the Column.",
+                    "type": "Cell"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The direction in which to split the cell.",
+                            "type": "HorizontalOrVertical"
+                        }
+                    ],
+                    "name": "split",
+                    "description": "Splits the cell along the specified axis."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The direction in which to redistribute.",
+                            "type": "HorizontalOrVertical"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "thru",
+                            "description": "The last Column in the range. Can accept: Cell, Column or Row. (Optional)",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "redistribute",
+                    "description": "Redistributes the specified range of Columns so that the Columns have a uniform size. Note: The maximum or minimum height or width specified for some of the cells in the range may prevent them from being exactly even."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "SelectionOptions.REPLACE_WITH",
+                            "array": false,
+                            "name": "existingSelection",
+                            "description": "The selection status of the Column in relation to previously selected objects. (Optional)",
+                            "type": "SelectionOptions"
+                        }
+                    ],
+                    "name": "select",
+                    "description": "Selects the object."
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "true",
+                            "array": false,
+                            "name": "deleteOriginal",
+                            "description": "If true, deletes the original text. If false, creates the outlines as separate object(s) on top of the text.  (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "createOutlines",
+                    "description": "Converts text to outlines. Each line of text becomes a polygon object. When the converted text is a single letter that has no internal spaces or detached parts, the polygon contains only a single path. Note: To determine whether a font allows the creation of outlines, see allow outlines.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Column.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "Column"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the Column.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the Column within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "rowSpan",
+                    "description": "The number of rows that the object spans.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "columnSpan",
+                    "description": "The number of columns that the object spans.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "overflows",
+                    "description": "If true, the story has overset text.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parentRow",
+                    "description": "The parent row of the cell.",
+                    "type": "Row"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parentColumn",
+                    "description": "The parent column of the cell.",
+                    "type": "Column"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the Column (a Table).",
+                    "type": "Table"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "cells",
+                    "description": "A collection of table cells.",
+                    "type": "Cells"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "rows",
+                    "description": "A collection of table rows.",
+                    "type": "Rows"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "columns",
+                    "description": "A collection of table columns.",
+                    "type": "Columns"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "height",
+                    "description": "The height of the Column. For a table or column, specifies the sum of the row heights.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "width",
+                    "description": "The width of the Column. For a table or row, specifies the sum of the column widths.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "contents",
+                    "description": "The text contents. For rows or columns, when specified as a string, the sting populates each cell in the row or column; when specified as an array, the first value in the array populates the left-most cell in the row or the top-most cell in the column; the next value populates the next cell to the right (for rows) or the next lowest cell (for columns), and so on. Can return: String, SpecialCharacters enumerator or Array of Strings or SpecialCharacters enumerators. Can also accept: NothingEnum enumerator or Array of Strings, SpecialCharacters enumerators or NothingEnum enumerators.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gradientFillLength",
+                    "description": "The length (of a linear gradient) or radius (of a radial gradient) applied to the fill of the object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gradientFillAngle",
+                    "description": "The angle of a linear gradient applied to the fill of the object. (Range: -180 to 180)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "gradientFillStart",
+                    "description": "The starting point (in page coordinates) of a gradient applied to the fill of the Column, in the format [x, y].",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topInset",
+                    "description": "The top inset of the cell.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftInset",
+                    "description": "The left inset of the cell.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomInset",
+                    "description": "The bottom inset of the cell.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightInset",
+                    "description": "The right inset of the cell.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fillColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the fill of the object. Can also accept: String.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fillTint",
+                    "description": "The tint (as a percentage) of the fill of the object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "overprintFill",
+                    "description": "If true, the fill of the object will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topLeftDiagonalLine",
+                    "description": "If true, draws a diagonal line starting from the top left.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topRightDiagonalLine",
+                    "description": "If true, draws a diagonal line starting from the top right.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineInFront",
+                    "description": "If true, draws the diagonal line in front of cell contents.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeWeight",
+                    "description": "The diagonal line stroke weight.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeType",
+                    "description": "The stroke type of the diagonal line(s). Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeColor",
+                    "description": "The diagonal line color, specified as a swatch.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeTint",
+                    "description": "The diagonal line tint (as a percentage). (Range: 0 to 100)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeOverprint",
+                    "description": "If true, the diagonal line stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the diagonal line stroke. Note: Not valid when diagonal line stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeGapTint",
+                    "description": "The tint (as a percentage) of the diagonal line stroke gap color. Note: Not valid when diagonal line stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "diagonalLineStrokeGapOverprint",
+                    "description": "If true, the stroke gap of the diagonal line will overprint. Note: Not valid when diagonal line stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "clipContentToCell",
+                    "description": "If true, clips the cell's content to width and height of the cell.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "firstBaselineOffset",
+                    "description": "The distance between the baseline of the text and the top inset of the cell.",
+                    "type": "FirstBaseline"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "verticalJustification",
+                    "description": "The vertical alignment of cell.",
+                    "type": "VerticalJustification"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "paragraphSpacingLimit",
+                    "description": "The maximum space that can be added between paragraphs in a cell. Note: Valid only when vertical justification is justified.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "minimumFirstBaselineOffset",
+                    "description": "The space between the baseline of the text and the top inset of the frame or cell.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rotationAngle",
+                    "description": "The rotation angle (in degrees) of the cell, specified as one of the following values: 0, 90, 180, or 270.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeWeight",
+                    "description": "The stroke weight of the left edge border stroke.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeType",
+                    "description": "The stroke type of the left edge. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the left edge border stroke.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeTint",
+                    "description": "The tint (as a percentage) of the left edge border stroke. (Range: 0 to 100)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeOverprint",
+                    "description": "If true, the left edge border stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the left edge border stroke. Note: Not valid when left edge stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeGapTint",
+                    "description": "The tint (as a percentage) of the left edge border stroke gap color. (Range: 0 to 100) Note: Not valid when left edge stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftEdgeStrokeGapOverprint",
+                    "description": "If true, the gap color of the left edge border stroke will overprint. Note: Not valid when left edge stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeWeight",
+                    "description": "The stroke weight of the top edge border stroke.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeType",
+                    "description": "The stroke type of the top edge. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the top edge border stroke.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeTint",
+                    "description": "The tint (as a percentage) of the top edge border stroke. (Range: 0 to 100)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeOverprint",
+                    "description": "If true, the top edge border stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the top edge border stroke. Note: Not valid when top edge stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeGapTint",
+                    "description": "The tint (as a percentage) of the top edge border stroke gap color. (Range: 0 to 100) Note: Not valid when top edge stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topEdgeStrokeGapOverprint",
+                    "description": "If true, the gap color of the top edge border stroke will overprint. Note: Not valid when top edge stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeWeight",
+                    "description": "The stroke weight of the right edge border stroke.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeType",
+                    "description": "The stroke type of the right edge. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeColor",
+                    "description": "The color, specified as a swatch, of the right edge border stroke.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeTint",
+                    "description": "The tint (as a percentage) of the right edge border stroke. (Range: 0 to 100)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeOverprint",
+                    "description": "If true, the right edge border stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the right edge border stroke. Note: Not valid when right edge stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeGapTint",
+                    "description": "The tint (as a percentage) of the right edge border stroke gap color. (Range: 0 to 100) Note: Not valid when right edge stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightEdgeStrokeGapOverprint",
+                    "description": "If true, the gap color of the right edge border stroke will overprint. Note: Not valid when right edge stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeWeight",
+                    "description": "The stroke weight of the bottom edge border stroke.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeType",
+                    "description": "The stroke type of the bottom edge. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the bottom edge border stroke.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeTint",
+                    "description": "The tint (as a percentage) of the bottom edge border stroke.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeOverprint",
+                    "description": "If true, the bottom edge border stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the bottom edge border stroke. Note: Not valid when bottom edge stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeGapTint",
+                    "description": "The tint (as a percentage) of the bottom edge border stroke gap color. (Range: 0 to 100) Note: Not valid when bottom edge stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomEdgeStrokeGapOverprint",
+                    "description": "If true, the gap color of the bottom edge border stroke will overprint. Note: Not valid when bottom edge stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeWeight",
+                    "description": "The stroke weight of the inner row border strokes.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeType",
+                    "description": "The stroke type of the inner row. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeColor",
+                    "description": "The color, specified as a swatch, of the inner row border stroke.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeTint",
+                    "description": "The tint (as a percentage) of the inner row border stroke. (Range: 0 to 100)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeOverprint",
+                    "description": "If true, the inner row border stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the inner row border stroke. Note: Not valid when inner row stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeGapTint",
+                    "description": "The tint (as a percentage) of the inner row border stroke. (Range: 0 to 100) Note: Not valid when inner row stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerRowStrokeGapOverprint",
+                    "description": "If true, the gap color of the inner row border stroke will overprint. Note: Not valid when inner row stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeWeight",
+                    "description": "The stroke weight of the inner column border stroke.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeType",
+                    "description": "The stroke type of the inner column. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeColor",
+                    "description": "The color, specified as a swatch, of the inner column border stroke.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeTint",
+                    "description": "The tint (as a percentage) of the inner column border stroke. (Range: 0 to 100)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeOverprint",
+                    "description": "If true, the inner column border stroke will overprint.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeGapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of the inner column border stroke. Note: Not valid when inner column stroke type is solid.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeGapTint",
+                    "description": "The tint (as a percentage) of the inner column border stroke gap color. (Range: 0 to 100) Note: Not valid when inner column stroke type is solid.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "innerColumnStrokeGapOverprint",
+                    "description": "If true, the gap color of the inner column border stroke will overprint. Note: Not valid when inner column stroke type is solid.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "minimumHeight",
+                    "description": "The minimum height of the cells in the Column. Note: When auto grow is true, cells can automatically grow larger than this amount when content is added. Also, the minimum height can affect redistribution.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "maximumHeight",
+                    "description": "The maximum height to which cells in the Column may grow. Note: The maximum height cannot be exceeded even when auto grow is set to true. Also, the maximum height can affect redistribution.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "keepWithNextRow",
+                    "description": "If true, keeps the row with the next row when the table is split across text frames or pages.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "startRow",
+                    "description": "Indicates where to start the row.",
+                    "type": "StartParagraph"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "autoGrow",
+                    "description": "If true, the height of the cell or the cells in the Column can increase or decrease automatically to fit cell content. Note: Allows cells to grow or shrink to the maximum or minimum height, if specified.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rowType",
+                    "description": "The row type.",
+                    "type": "RowTypes"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "writingDirection",
+                    "description": "The direction of the text in the cell.",
+                    "type": "HorizontalOrVertical"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "recompose",
-          "shortdesc": "Recomposes the text in the Column."
-        },
-        {
-          "name": "findText",
-          "shortdesc": "Finds text that matches the find what value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "changeText",
-          "shortdesc": "Finds text that matches the find what value and replaces the text with the change to value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "findGrep",
-          "shortdesc": "Finds text that matches the find what value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "changeGrep",
-          "shortdesc": "Finds text that matches the find what value and replaces the text with the change to value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "findGlyph",
-          "shortdesc": "Finds glyphs that match the find what value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "changeGlyph",
-          "shortdesc": "Finds glyphs that match the find what value and replaces the glyphs with the change to value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "findTransliterate",
-          "shortdesc": "Finds text that matches the find character type value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "changeTransliterate",
-          "shortdesc": "Finds text that matches the find character type value and replaces the text with the change character type value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Text",
-            "array": true
-          }
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the Column."
-        },
-        {
-          "name": "merge",
-          "shortdesc": "Merges the cells.",
-          "parameters": [
-            {
-              "name": "with",
-              "shortdesc": "The cell(s) to merge with. Can accept: Cell, Row or Column. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "unmerge",
-          "shortdesc": "Unmerges all merged cells in the Column.",
-          "datatype": {
-            "type": "Cell",
-            "array": true
-          }
-        },
-        {
-          "name": "split",
-          "shortdesc": "Splits the cell along the specified axis.",
-          "parameters": [
-            {
-              "name": "using",
-              "shortdesc": "The direction in which to split the cell.",
-              "datatype": {
-                "type": "HorizontalOrVertical"
-              }
-            }
-          ]
-        },
-        {
-          "name": "redistribute",
-          "shortdesc": "Redistributes the specified range of Columns so that the Columns have a uniform size. Note: The maximum or minimum height or width specified for some of the cells in the range may prevent them from being exactly even.",
-          "parameters": [
-            {
-              "name": "using",
-              "shortdesc": "The direction in which to redistribute.",
-              "datatype": {
-                "type": "HorizontalOrVertical"
-              }
-            },
-            {
-              "name": "thru",
-              "shortdesc": "The last Column in the range. Can accept: Cell, Column or Row. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "select",
-          "shortdesc": "Selects the object.",
-          "parameters": [
-            {
-              "name": "existingSelection",
-              "optional": true,
-              "shortdesc": "The selection status of the Column in relation to previously selected objects. ",
-              "datatype": {
-                "type": "SelectionOptions",
-                "value": "SelectionOptions.REPLACE_WITH"
-              }
-            }
-          ]
-        },
-        {
-          "name": "createOutlines",
-          "shortdesc": "Converts text to outlines. Each line of text becomes a polygon object. When the converted text is a single letter that has no internal spaces or detached parts, the polygon contains only a single path. Note: To determine whether a font allows the creation of outlines, see allow outlines.",
-          "parameters": [
-            {
-              "name": "deleteOriginal",
-              "optional": true,
-              "shortdesc": "If true, deletes the original text. If false, creates the outlines as separate object(s) on top of the text.  ",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageItem",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Column.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "Column",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Column",
+    "description": "A table column."
 }

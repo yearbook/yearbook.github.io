@@ -1,42 +1,45 @@
 {
-  "name": "PICTFileSaveOptions",
-  "dynamic": true,
-  "superclass": "SaveOptions",
-  "shortdesc": "Options for saving a document in PICT format.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "alphaChannels",
-          "shortdesc": "If true, the alpha channels are saved.",
-          "datatype": {
-            "type": "Boolean"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "alphaChannels",
+                    "description": "If true, the alpha channels are saved.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "embedColorProfile",
+                    "description": "If true, the color profile is embedded in the document.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "resolution",
+                    "description": "The number of bits per pixel.",
+                    "type": "PICTBitsPerPixels"
+                },
+                {
+                    "readonly": false,
+                    "value": "PICTCompression.NONE",
+                    "array": false,
+                    "name": "compression",
+                    "description": "The compression method.",
+                    "type": "PICTCompression"
+                }
+            ]
         },
-        {
-          "name": "embedColorProfile",
-          "shortdesc": "If true, the color profile is embedded in the document.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "resolution",
-          "shortdesc": "The number of bits per pixel.",
-          "datatype": {
-            "type": "PICTBitsPerPixels"
-          }
-        },
-        {
-          "name": "compression",
-          "shortdesc": "The compression method.",
-          "datatype": {
-            "type": "PICTCompression",
-            "value": "PICTCompression.NONE"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "PICTFileSaveOptions",
+    "description": "Options for saving a document in PICT format.",
+    "superclass": "SaveOptions"
 }

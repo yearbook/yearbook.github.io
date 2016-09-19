@@ -1,211 +1,204 @@
 {
-  "name": "Preferences",
-  "dynamic": true,
-  "shortdesc": "Preferences for Illustrator.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "photoshopFileOptions",
-          "rwaccess": "readonly",
-          "shortdesc": "Options to use when opening or placing a Photoshop file.",
-          "datatype": {
-            "type": "OpenOptionsPhotoshop"
-          }
-        },
-        {
-          "name": "PDFFileOptions",
-          "rwaccess": "readonly",
-          "shortdesc": "Options to use when opening or placing a PDF file.",
-          "datatype": {
-            "type": "OpenOptionsPDF"
-          }
-        },
-        {
-          "name": "AutoCADFileOptions",
-          "rwaccess": "readonly",
-          "shortdesc": "Options to use when opening or placing a AutoCAD file.",
-          "datatype": {
-            "type": "OpenOptionsAutoCAD"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getBooleanPreference",
+                    "description": "Retrieve the value of the application preference key as boolean.",
+                    "type": "Boolean"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The boolean value of the preference key.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "setBooleanPreference",
+                    "description": "Set the value of the application preference key as boolean."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getIntegerPreference",
+                    "description": "Retrieve the value of the application preference key as integer.",
+                    "type": "Int32"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The boolean value of the preference key.",
+                            "type": "Int32"
+                        }
+                    ],
+                    "name": "setIntegerPreference",
+                    "description": "Set the value of the application preference key as integer."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getRealPreference",
+                    "description": "Retrieve the value of the application preference key as real number.",
+                    "type": "Number"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The real value of the preference key.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "setRealPreference",
+                    "description": "Set the value of the application preference key as real number."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getStringPreference",
+                    "description": "Retrieve the value of the application preference key as string type.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The string value of the preference key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "setStringPreference",
+                    "description": "Set the value of the application preference key as string type."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The preference key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "removePreference",
+                    "description": "Delete the application preference key."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "photoshopFileOptions",
+                    "description": "Options to use when opening or placing a Photoshop file.",
+                    "type": "OpenOptionsPhotoshop"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "PDFFileOptions",
+                    "description": "Options to use when opening or placing a PDF file.",
+                    "type": "OpenOptionsPDF"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "AutoCADFileOptions",
+                    "description": "Options to use when opening or placing a AutoCAD file.",
+                    "type": "OpenOptionsAutoCAD"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "getBooleanPreference",
-          "shortdesc": "Retrieve the value of the application preference key as boolean.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "setBooleanPreference",
-          "shortdesc": "Set the value of the application preference key as boolean.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The boolean value of the preference key.",
-              "datatype": {
-                "type": "Boolean"
-              }
-            }
-          ]
-        },
-        {
-          "name": "getIntegerPreference",
-          "shortdesc": "Retrieve the value of the application preference key as integer.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Int32"
-          }
-        },
-        {
-          "name": "setIntegerPreference",
-          "shortdesc": "Set the value of the application preference key as integer.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The boolean value of the preference key.",
-              "datatype": {
-                "type": "Int32"
-              }
-            }
-          ]
-        },
-        {
-          "name": "getRealPreference",
-          "shortdesc": "Retrieve the value of the application preference key as real number.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "setRealPreference",
-          "shortdesc": "Set the value of the application preference key as real number.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The real value of the preference key.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ]
-        },
-        {
-          "name": "getStringPreference",
-          "shortdesc": "Retrieve the value of the application preference key as string type.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "setStringPreference",
-          "shortdesc": "Set the value of the application preference key as string type.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The string value of the preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "removePreference",
-          "shortdesc": "Delete the application preference key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The preference key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Preferences",
+    "description": "Preferences for Illustrator."
 }

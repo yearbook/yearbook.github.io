@@ -1,259 +1,240 @@
 {
-  "name": "Change",
-  "dynamic": true,
-  "shortdesc": "A tracked change made to a story.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "date",
-          "rwaccess": "readonly",
-          "shortdesc": "The date on which the tracked change was made. Note: Valid only when track changes is true.",
-          "datatype": {
-            "type": "Date"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "changeType",
-          "rwaccess": "readonly",
-          "shortdesc": "The type of tracked change. Note: Valid only when track changes is true.",
-          "datatype": {
-            "type": "ChangeTypes"
-          }
-        },
-        {
-          "name": "userName",
-          "rwaccess": "readonly",
-          "shortdesc": "The user who made the change. Note: Valid only when track changes is true.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "storyOffset",
-          "rwaccess": "readonly",
-          "shortdesc": "The location of the first insertion point in the object (relative to the beginning of the story).",
-          "datatype": {
-            "type": "InsertionPoint"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the Change (a Story, XmlStory or Cell).",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the Change within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "texts",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text objects.",
-          "datatype": {
-            "type": "Texts"
-          }
-        },
-        {
-          "name": "characters",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of characters.",
-          "datatype": {
-            "type": "Characters"
-          }
-        },
-        {
-          "name": "words",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of words.",
-          "datatype": {
-            "type": "Words"
-          }
-        },
-        {
-          "name": "lines",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of lines.",
-          "datatype": {
-            "type": "Lines"
-          }
-        },
-        {
-          "name": "textColumns",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text columns.",
-          "datatype": {
-            "type": "TextColumns"
-          }
-        },
-        {
-          "name": "paragraphs",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of paragraphs.",
-          "datatype": {
-            "type": "Paragraphs"
-          }
-        },
-        {
-          "name": "insertionPoints",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of insertion points.",
-          "datatype": {
-            "type": "InsertionPoints"
-          }
-        },
-        {
-          "name": "textStyleRanges",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text style ranges.",
-          "datatype": {
-            "type": "TextStyleRanges"
-          }
-        },
-        {
-          "name": "textVariableInstances",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text variable instances.",
-          "datatype": {
-            "type": "TextVariableInstances"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "accept",
+                    "description": "Accepts the tracked change. Note: Valid only when track changes is true."
+                },
+                {
+                    "parameters": [],
+                    "name": "reject",
+                    "description": "Rejects the tracked change. Note: Valid only when track changes is true."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Change.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "Change"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "date",
+                    "description": "The date on which the tracked change was made. Note: Valid only when track changes is true.",
+                    "type": "Date"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "changeType",
+                    "description": "The type of tracked change. Note: Valid only when track changes is true.",
+                    "type": "ChangeTypes"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "userName",
+                    "description": "The user who made the change. Note: Valid only when track changes is true.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "storyOffset",
+                    "description": "The location of the first insertion point in the object (relative to the beginning of the story).",
+                    "type": "InsertionPoint"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the Change (a Story, XmlStory or Cell).",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the Change within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "texts",
+                    "description": "A collection of text objects.",
+                    "type": "Texts"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "characters",
+                    "description": "A collection of characters.",
+                    "type": "Characters"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "words",
+                    "description": "A collection of words.",
+                    "type": "Words"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "lines",
+                    "description": "A collection of lines.",
+                    "type": "Lines"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textColumns",
+                    "description": "A collection of text columns.",
+                    "type": "TextColumns"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "paragraphs",
+                    "description": "A collection of paragraphs.",
+                    "type": "Paragraphs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "insertionPoints",
+                    "description": "A collection of insertion points.",
+                    "type": "InsertionPoints"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textStyleRanges",
+                    "description": "A collection of text style ranges.",
+                    "type": "TextStyleRanges"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textVariableInstances",
+                    "description": "A collection of text variable instances.",
+                    "type": "TextVariableInstances"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "accept",
-          "shortdesc": "Accepts the tracked change. Note: Valid only when track changes is true."
-        },
-        {
-          "name": "reject",
-          "shortdesc": "Rejects the tracked change. Note: Valid only when track changes is true."
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Change.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "Change",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Change",
+    "description": "A tracked change made to a story."
 }

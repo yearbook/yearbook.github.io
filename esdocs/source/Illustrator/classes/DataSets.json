@@ -1,69 +1,56 @@
 {
-  "name": "DataSets",
-  "dynamic": true,
-  "shortdesc": "A collection of datasets.",
-  "elements": [
-    {
-      "type": "class",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Create a data set.",
-          "datatype": {
-            "type": "DataSet"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
+        },
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getByName",
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "DataSet"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "Number of elements in the collection.",
+                    "type": "int"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "Number of elements in the collection.",
-          "datatype": {
-            "type": "int"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "getByName",
-          "shortdesc": "Get the first element in the collection with the provided name.",
-          "parameters": [
-            {
-              "name": "name",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "DataSet"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "DataSets",
+    "description": "A collection of datasets."
 }

@@ -1,75 +1,78 @@
 {
-  "name": "PresentationOptions",
-  "dynamic": true,
-  "shortdesc": "Options for the PDF presentation command.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "presentation",
-          "shortdesc": "If true, the file type is presentation. If false, the file type is Multi-Page document.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "presentation",
+                    "description": "If true, the file type is presentation. If false, the file type is Multi-Page document.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "autoAdvance",
+                    "description": "If true, the presentation auto advances.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "5",
+                    "array": false,
+                    "name": "interval",
+                    "description": "The amount of time (in seconds) before auto advancing the view. Valid only when 'auto advance' is true. Range: 1 to 60.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "loop",
+                    "description": "If true, the presentation loops after the last page.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "TransitionType.NONE",
+                    "array": false,
+                    "name": "transition",
+                    "description": "The image transition type.",
+                    "type": "TransitionType"
+                },
+                {
+                    "readonly": false,
+                    "value": "MagnificationType.ACTUALSIZE",
+                    "array": false,
+                    "name": "magnification",
+                    "description": "The magnification type when viewing the image.",
+                    "type": "MagnificationType"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "includeFilename",
+                    "description": "If true, includes the file name for the image.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "PDFFileOptions",
+                    "description": "Options for creating the PDF file.",
+                    "type": "PDFSaveOptions"
+                }
+            ]
         },
-        {
-          "name": "autoAdvance",
-          "shortdesc": "If true, the presentation auto advances.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "interval",
-          "shortdesc": "The amount of time (in seconds) before auto advancing the view. Valid only when 'auto advance' is true. Range: 1 to 60.",
-          "datatype": {
-            "type": "int",
-            "value": 5
-          }
-        },
-        {
-          "name": "loop",
-          "shortdesc": "If true, the presentation loops after the last page.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "transition",
-          "shortdesc": "The image transition type.",
-          "datatype": {
-            "type": "TransitionType",
-            "value": "TransitionType.NONE"
-          }
-        },
-        {
-          "name": "magnification",
-          "shortdesc": "The magnification type when viewing the image.",
-          "datatype": {
-            "type": "MagnificationType",
-            "value": "MagnificationType.ACTUALSIZE"
-          }
-        },
-        {
-          "name": "includeFilename",
-          "shortdesc": "If true, includes the file name for the image.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "PDFFileOptions",
-          "shortdesc": "Options for creating the PDF file.",
-          "datatype": {
-            "type": "PDFSaveOptions"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "PresentationOptions",
+    "description": "Options for the PDF presentation command."
 }

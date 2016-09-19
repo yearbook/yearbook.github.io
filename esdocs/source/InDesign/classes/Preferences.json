@@ -1,160 +1,154 @@
 {
-  "name": "Preferences",
-  "dynamic": true,
-  "shortdesc": "A collection of preferences objects.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Preference.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Preference with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Preferences within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Preference, index, or name at the beginning of the range. Can accept: Preference, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Preference, index, or name at the end of the range. Can accept: Preference, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Preference",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Preference in the collection.",
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Preference in the collection.",
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Preference in the collection.",
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Preference with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Preference that follows the desired Preference.",
-              "datatype": {
-                "type": "Preference"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Preference whose index follows the specified Preference in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Preference whose index comes before the desired Preference.",
-              "datatype": {
-                "type": "Preference"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Preference in the collection.",
-          "datatype": {
-            "type": "Preference"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Preference in the collection.",
-          "datatype": {
-            "type": "Preference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Preference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Preference with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Preference"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Preference.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Preference with the specified index or name.",
+                    "type": "Preference"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Preference, index, or name at the beginning of the range. Can accept: Preference, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Preference, index, or name at the end of the range. Can accept: Preference, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Preferences within the specified range.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Preference in the collection.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Preference in the collection.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Preference in the collection.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Preference that follows the desired Preference.",
+                            "type": "Preference"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Preference with the index previous to the specified index.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Preference whose index comes before the desired Preference.",
+                            "type": "Preference"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Preference whose index follows the specified Preference in the collection.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Preference in the collection.",
+                    "type": "Preference"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Preference in the collection.",
+                    "type": "Preference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Preference.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Preference with the specified index.",
+                    "type": "Preference"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Preferences",
+    "description": "A collection of preferences objects."
 }

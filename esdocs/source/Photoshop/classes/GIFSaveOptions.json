@@ -1,81 +1,82 @@
 {
-  "name": "GIFSaveOptions",
-  "dynamic": true,
-  "superclass": "SaveOptions",
-  "shortdesc": "Options for saving a document in GIF format.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "colors",
-          "shortdesc": "The number of colors in palette. Not valid for all palette types.",
-          "datatype": {
-            "type": "int"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "colors",
+                    "description": "The number of colors in palette. Not valid for all palette types.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "dither",
+                    "description": "The type of dither.",
+                    "type": "DitherType"
+                },
+                {
+                    "readonly": false,
+                    "value": "75",
+                    "array": false,
+                    "name": "ditherAmount",
+                    "description": "The amount of dither. Valid only when 'dither type' is diffusion. Range: 1 to 100.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "forced",
+                    "description": "The type of colors to force into the color palette.",
+                    "type": "ForcedColors"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "interlaced",
+                    "description": "If true, rows are interlaced.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "matte",
+                    "description": "The color to use to fill anti-aliased edges adjacent to transparent areas of the image. Default: white.",
+                    "type": "MatteType"
+                },
+                {
+                    "readonly": false,
+                    "value": "PaletteType.LOCALSELECTIVE",
+                    "array": false,
+                    "name": "palette",
+                    "description": "The type of palette to use.",
+                    "type": "PaletteType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preserveExactColors",
+                    "description": "If true, protects colors in the image that contain entries in the color table from being dithered. Valid only when 'dither' = diffusion.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "transparency",
+                    "description": "If true, preserves transparent ares of the image during GIF conversion.",
+                    "type": "Boolean"
+                }
+            ]
         },
-        {
-          "name": "dither",
-          "shortdesc": "The type of dither.",
-          "datatype": {
-            "type": "Dither"
-          }
-        },
-        {
-          "name": "ditherAmount",
-          "shortdesc": "The amount of dither. Valid only when 'dither type' is diffusion. Range: 1 to 100.",
-          "datatype": {
-            "type": "int",
-            "min": 1,
-            "max": 100,
-            "value": 75
-          }
-        },
-        {
-          "name": "forced",
-          "shortdesc": "The type of colors to force into the color palette.",
-          "datatype": {
-            "type": "ForcedColors"
-          }
-        },
-        {
-          "name": "interlaced",
-          "shortdesc": "If true, rows are interlaced.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "matte",
-          "shortdesc": "The color to use to fill anti-aliased edges adjacent to transparent areas of the image. Default: white.",
-          "datatype": {
-            "type": "MatteType"
-          }
-        },
-        {
-          "name": "palette",
-          "shortdesc": "The type of palette to use.",
-          "datatype": {
-            "type": "Palette",
-            "value": "Palette.LOCALSELECTIVE"
-          }
-        },
-        {
-          "name": "preserveExactColors",
-          "shortdesc": "If true, protects colors in the image that contain entries in the color table from being dithered. Valid only when 'dither' = diffusion.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "transparency",
-          "shortdesc": "If true, preserves transparent ares of the image during GIF conversion.",
-          "datatype": {
-            "type": "Boolean"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "GIFSaveOptions",
+    "description": "Options for saving a document in GIF format.",
+    "superclass": "SaveOptions"
 }

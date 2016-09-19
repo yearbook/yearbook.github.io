@@ -1,191 +1,183 @@
 {
-  "name": "XMLExportMaps",
-  "dynamic": true,
-  "shortdesc": "A collection of XML export maps.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Create a new mapping",
-          "parameters": [
-            {
-              "name": "mappedStyle",
-              "shortdesc": "The mapped style. Can accept: ParagraphStyle, CharacterStyle, TableStyle, CellStyle or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "markupTag",
-              "shortdesc": "The tag to map. Can accept: XMLTag or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new XMLExportMap ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "XMLExportMap"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the XMLExportMap.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the XMLExportMap with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the XMLExportMaps within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The XMLExportMap, index, or name at the beginning of the range. Can accept: XMLExportMap, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The XMLExportMap, index, or name at the end of the range. Can accept: XMLExportMap, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLExportMap",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first XMLExportMap in the collection.",
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last XMLExportMap in the collection.",
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle XMLExportMap in the collection.",
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the XMLExportMap with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the XMLExportMap that follows the desired XMLExportMap.",
-              "datatype": {
-                "type": "XMLExportMap"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the XMLExportMap whose index follows the specified XMLExportMap in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The XMLExportMap whose index comes before the desired XMLExportMap.",
-              "datatype": {
-                "type": "XMLExportMap"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any XMLExportMap in the collection.",
-          "datatype": {
-            "type": "XMLExportMap"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every XMLExportMap in the collection.",
-          "datatype": {
-            "type": "XMLExportMap",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the XMLExportMap.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the XMLExportMap with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "XMLExportMap"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "mappedStyle",
+                            "description": "The mapped style. Can accept: ParagraphStyle, CharacterStyle, TableStyle, CellStyle or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "markupTag",
+                            "description": "The tag to map. Can accept: XMLTag or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new XMLExportMap (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Create a new mapping",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the XMLExportMap.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the XMLExportMap with the specified index or name.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The XMLExportMap, index, or name at the beginning of the range. Can accept: XMLExportMap, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The XMLExportMap, index, or name at the end of the range. Can accept: XMLExportMap, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the XMLExportMaps within the specified range.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first XMLExportMap in the collection.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last XMLExportMap in the collection.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle XMLExportMap in the collection.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the XMLExportMap that follows the desired XMLExportMap.",
+                            "type": "XMLExportMap"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the XMLExportMap with the index previous to the specified index.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The XMLExportMap whose index comes before the desired XMLExportMap.",
+                            "type": "XMLExportMap"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the XMLExportMap whose index follows the specified XMLExportMap in the collection.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any XMLExportMap in the collection.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every XMLExportMap in the collection.",
+                    "type": "XMLExportMap"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the XMLExportMap.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the XMLExportMap with the specified index.",
+                    "type": "XMLExportMap"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "XMLExportMaps",
+    "description": "A collection of XML export maps."
 }

@@ -1,209 +1,199 @@
 {
-  "name": "States",
-  "dynamic": true,
-  "shortdesc": "A collection of states.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new State.",
-          "parameters": [
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new State ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the State.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the State with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the State with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the State with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the States within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The State, index, or name at the beginning of the range. Can accept: State, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The State, index, or name at the end of the range. Can accept: State, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first State in the collection.",
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last State in the collection.",
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle State in the collection.",
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the State with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the State that follows the desired State.",
-              "datatype": {
-                "type": "State"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the State whose index follows the specified State in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The State whose index comes before the desired State.",
-              "datatype": {
-                "type": "State"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any State in the collection.",
-          "datatype": {
-            "type": "State"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every State in the collection.",
-          "datatype": {
-            "type": "State",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the State.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the State with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "State"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new State (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new State.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the State.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the State with the specified index or name.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the State with the specified name.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the State with the specified ID.",
+                    "type": "State"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The State, index, or name at the beginning of the range. Can accept: State, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The State, index, or name at the end of the range. Can accept: State, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the States within the specified range.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first State in the collection.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last State in the collection.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle State in the collection.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the State that follows the desired State.",
+                            "type": "State"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the State with the index previous to the specified index.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The State whose index comes before the desired State.",
+                            "type": "State"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the State whose index follows the specified State in the collection.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any State in the collection.",
+                    "type": "State"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every State in the collection.",
+                    "type": "State"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the State.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the State with the specified index.",
+                    "type": "State"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "States",
+    "description": "A collection of states."
 }

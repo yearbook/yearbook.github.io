@@ -1,74 +1,74 @@
 {
-  "name": "Spot",
-  "dynamic": true,
-  "shortdesc": "A custom color.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The custom color's name.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "color",
-          "datatype": {
-            "type": "Color"
-          }
-        },
-        {
-          "name": "colorType",
-          "shortdesc": "Type of the custom color.",
-          "datatype": {
-            "type": "ColorModel"
-          }
-        },
-        {
-          "name": "spotKind",
-          "rwaccess": "readonly",
-          "shortdesc": "Kind of the spot color (i.e. RGB, CMYK or LAB), it is the name of color kind contained in spot.",
-          "datatype": {
-            "type": "SpotColorKind"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getInternalColor",
+                    "description": "Gets the internal color of a spot.",
+                    "type": "Number"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The custom color's name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "color",
+                    "type": "Color"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "colorType",
+                    "description": "Type of the custom color.",
+                    "type": "ColorModel"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "spotKind",
+                    "description": "Kind of the spot color (i.e. RGB, CMYK or LAB), it is the name of color kind contained in spot.",
+                    "type": "SpotColorKind"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "getInternalColor",
-          "shortdesc": "Gets the internal color of a spot.",
-          "datatype": {
-            "type": "Number",
-            "array": true
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Spot",
+    "description": "A custom color."
 }

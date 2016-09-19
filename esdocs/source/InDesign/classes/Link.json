@@ -1,559 +1,517 @@
 {
-  "name": "Link",
-  "dynamic": true,
-  "shortdesc": "A link to a placed file.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "AFTER_NEW",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a Link is created. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterNew"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "afterNew",
+                    "array": false,
+                    "name": "AFTER_NEW",
+                    "description": "Dispatched after a Link is created. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeDelete",
+                    "array": false,
+                    "name": "BEFORE_DELETE",
+                    "description": "Dispatched before a Link is deleted. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterDelete",
+                    "array": false,
+                    "name": "AFTER_DELETE",
+                    "description": "Dispatched after a Link is deleted. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeUpdate",
+                    "array": false,
+                    "name": "BEFORE_UPDATE",
+                    "description": "Dispatched before a Link is updated. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterUpdate",
+                    "array": false,
+                    "name": "AFTER_UPDATE",
+                    "description": "Dispatched after a Link is updated. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeEmbed",
+                    "array": false,
+                    "name": "BEFORE_EMBED",
+                    "description": "Dispatched before a Link is embedded. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterEmbed",
+                    "array": false,
+                    "name": "AFTER_EMBED",
+                    "description": "Dispatched after a Link is embedded. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeUnembed",
+                    "array": false,
+                    "name": "BEFORE_UNEMBED",
+                    "description": "Dispatched before a Link is unembedded. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterUnembed",
+                    "array": false,
+                    "name": "AFTER_UNEMBED",
+                    "description": "Dispatched after a Link is unembedded. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "beforeMove",
+                    "array": false,
+                    "name": "BEFORE_MOVE",
+                    "description": "Dispatched before a Link is relocated from one object to another. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterMove",
+                    "array": false,
+                    "name": "AFTER_MOVE",
+                    "description": "Dispatched after a Link is relocated from one object to another. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterAttributeChanged",
+                    "array": false,
+                    "name": "AFTER_ATTRIBUTE_CHANGED",
+                    "description": "Dispatched when the value of a property changes on this Link. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                }
+            ]
         },
-        {
-          "name": "BEFORE_DELETE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a Link is deleted. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeDelete"
-          }
-        },
-        {
-          "name": "AFTER_DELETE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a Link is deleted. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterDelete"
-          }
-        },
-        {
-          "name": "BEFORE_UPDATE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a Link is updated. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeUpdate"
-          }
-        },
-        {
-          "name": "AFTER_UPDATE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a Link is updated. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterUpdate"
-          }
-        },
-        {
-          "name": "BEFORE_EMBED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a Link is embedded. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeEmbed"
-          }
-        },
-        {
-          "name": "AFTER_EMBED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a Link is embedded. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterEmbed"
-          }
-        },
-        {
-          "name": "BEFORE_UNEMBED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a Link is unembedded. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeUnembed"
-          }
-        },
-        {
-          "name": "AFTER_UNEMBED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a Link is unembedded. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterUnembed"
-          }
-        },
-        {
-          "name": "BEFORE_MOVE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a Link is relocated from one object to another. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforeMove"
-          }
-        },
-        {
-          "name": "AFTER_MOVE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a Link is relocated from one object to another. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterMove"
-          }
-        },
-        {
-          "name": "AFTER_ATTRIBUTE_CHANGED",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched when the value of a property changes on this Link. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterAttributeChanged"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "versionComments",
+                            "description": "The comment for this version (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "forceSave",
+                            "description": "Forcibly save a version (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "checkIn",
+                    "description": "Check in to Version Cue."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The full path name of the new source file. Can accept: File or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "relink",
+                    "description": "Points the link to a new source file."
+                },
+                {
+                    "parameters": [],
+                    "name": "unlink",
+                    "description": "Embeds the source file in the document."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "update",
+                    "description": "Updates the link if the source file has been changed.",
+                    "type": "Link"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The folder to which to copy the unembedded file. (Optional)",
+                            "type": "File"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "versionComments",
+                            "description": "The comment for this version. (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "forceSave",
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "unembed",
+                    "description": "Unembeds the source file. If no folder is specified, creates a link to the original source file; if a folder is specified, copies the file to the folder and creates a link to the copied file."
+                },
+                {
+                    "parameters": [],
+                    "name": "editOriginal",
+                    "description": "Opens the source file of the link in the default editor for the source file type."
+                },
+                {
+                    "parameters": [],
+                    "name": "show",
+                    "description": "Selects the link."
+                },
+                {
+                    "parameters": [],
+                    "name": "revealInSystem",
+                    "description": "Opens the file system to the folder that contains the source file of the link, and selects the file."
+                },
+                {
+                    "parameters": [],
+                    "name": "revealInBridge",
+                    "description": "Opens Adobe Bridge and selects the source file of the link."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The file or folder to which to copy the file.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "versionComments",
+                            "description": "The comment for this version. (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "forceSave",
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "copyLink",
+                    "description": "Copies the link file to the specified location."
+                },
+                {
+                    "parameters": [],
+                    "name": "goToSource",
+                    "description": "Opens the source file of the link in InDesign for SharedContent links."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Link.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "Link"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "versionState",
+                    "description": "The Version Cue version state of the file.",
+                    "type": "VersionState"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "editingState",
+                    "description": "The Version Cue editing state of the file.",
+                    "type": "EditingState"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "linkXmp",
+                    "description": "XMP data for the link source file.",
+                    "type": "LinkMetadata"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the link in the links collection.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The linked object. Can return: Story, Graphic, Movie or Sound.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "assetURL",
+                    "description": "The asset URL of the linked object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "assetID",
+                    "description": "The asset ID of the linked object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "edited",
+                    "description": "If true, indicates the linked object has been edited in the current document but the source file has not been updated.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the Link.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "needed",
+                    "description": "If true, indicates a link to a full-resolution version of the source file is needed. If false, indicates the object is embedded.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "status",
+                    "description": "The status of the link.",
+                    "type": "LinkStatus"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "linkType",
+                    "description": "The file type of the linked object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "date",
+                    "description": "The date and time the Link was created.",
+                    "type": "Date"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "size",
+                    "description": "The size of the Link file.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "filePath",
+                    "description": "The file path (colon delimited on the Mac OS). Can also accept: File.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "id",
+                    "description": "The unique ID of the Link.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "preferences",
+                    "description": "A collection of preferences objects.",
+                    "type": "Preferences"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "links",
+                    "description": "A collection of links.",
+                    "type": "Links"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "label",
+                    "description": "A property that can be set to any string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "versionState",
-          "rwaccess": "readonly",
-          "shortdesc": "The Version Cue version state of the file.",
-          "datatype": {
-            "type": "VersionState"
-          }
-        },
-        {
-          "name": "editingState",
-          "rwaccess": "readonly",
-          "shortdesc": "The Version Cue editing state of the file.",
-          "datatype": {
-            "type": "EditingState"
-          }
-        },
-        {
-          "name": "linkXmp",
-          "rwaccess": "readonly",
-          "shortdesc": "XMP data for the link source file.",
-          "datatype": {
-            "type": "LinkMetadata"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the link in the links collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The linked object. Can return: Story, Graphic, Movie or Sound.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "assetURL",
-          "rwaccess": "readonly",
-          "shortdesc": "The asset URL of the linked object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "assetID",
-          "rwaccess": "readonly",
-          "shortdesc": "The asset ID of the linked object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "edited",
-          "rwaccess": "readonly",
-          "shortdesc": "If true, indicates the linked object has been edited in the current document but the source file has not been updated.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "name",
-          "rwaccess": "readonly",
-          "shortdesc": "The name of the Link.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "needed",
-          "rwaccess": "readonly",
-          "shortdesc": "If true, indicates a link to a full-resolution version of the source file is needed. If false, indicates the object is embedded.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "status",
-          "rwaccess": "readonly",
-          "shortdesc": "The status of the link.",
-          "datatype": {
-            "type": "LinkStatus"
-          }
-        },
-        {
-          "name": "linkType",
-          "rwaccess": "readonly",
-          "shortdesc": "The file type of the linked object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "date",
-          "rwaccess": "readonly",
-          "shortdesc": "The date and time the Link was created.",
-          "datatype": {
-            "type": "Date"
-          }
-        },
-        {
-          "name": "size",
-          "rwaccess": "readonly",
-          "shortdesc": "The size of the Link file.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "filePath",
-          "rwaccess": "readonly",
-          "shortdesc": "The file path (colon delimited on the Mac OS). Can also accept: File.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "id",
-          "rwaccess": "readonly",
-          "shortdesc": "The unique ID of the Link.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "preferences",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of preferences objects.",
-          "datatype": {
-            "type": "Preferences"
-          }
-        },
-        {
-          "name": "links",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of links.",
-          "datatype": {
-            "type": "Links"
-          }
-        },
-        {
-          "name": "label",
-          "shortdesc": "A property that can be set to any string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "checkIn",
-          "shortdesc": "Check in to Version Cue.",
-          "parameters": [
-            {
-              "name": "versionComments",
-              "shortdesc": "The comment for this version ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "forceSave",
-              "optional": true,
-              "shortdesc": "Forcibly save a version ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "relink",
-          "shortdesc": "Points the link to a new source file.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The full path name of the new source file. Can accept: File or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ]
-        },
-        {
-          "name": "unlink",
-          "shortdesc": "Embeds the source file in the document."
-        },
-        {
-          "name": "update",
-          "shortdesc": "Updates the link if the source file has been changed.",
-          "datatype": {
-            "type": "Link"
-          }
-        },
-        {
-          "name": "unembed",
-          "shortdesc": "Unembeds the source file. If no folder is specified, creates a link to the original source file; if a folder is specified, copies the file to the folder and creates a link to the copied file.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The folder to which to copy the unembedded file. ",
-              "datatype": {
-                "type": "File"
-              },
-              "optional": true
-            },
-            {
-              "name": "versionComments",
-              "shortdesc": "The comment for this version. ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "forceSave",
-              "optional": true,
-              "shortdesc": "If true, forcibly saves a version. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "editOriginal",
-          "shortdesc": "Opens the source file of the link in the default editor for the source file type."
-        },
-        {
-          "name": "show",
-          "shortdesc": "Selects the link."
-        },
-        {
-          "name": "revealInSystem",
-          "shortdesc": "Opens the file system to the folder that contains the source file of the link, and selects the file."
-        },
-        {
-          "name": "revealInBridge",
-          "shortdesc": "Opens Adobe Bridge and selects the source file of the link."
-        },
-        {
-          "name": "copyLink",
-          "shortdesc": "Copies the link file to the specified location.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The file or folder to which to copy the file.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "versionComments",
-              "shortdesc": "The comment for this version. ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "forceSave",
-              "optional": true,
-              "shortdesc": "If true, forcibly saves a version. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "goToSource",
-          "shortdesc": "Opens the source file of the link in InDesign for SharedContent links."
-        },
-        {
-          "name": "insertLabel",
-          "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "extractLabel",
-          "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Link.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "Link",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "Link",
+    "description": "A link to a placed file."
 }

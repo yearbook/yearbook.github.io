@@ -1,192 +1,184 @@
 {
-  "name": "Behaviors",
-  "dynamic": true,
-  "shortdesc": "A collection of behavior objects.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Behavior.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Behavior with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Behavior with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Behavior with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Behaviors within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Behavior, index, or name at the beginning of the range. Can accept: Behavior, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Behavior, index, or name at the end of the range. Can accept: Behavior, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Behavior in the collection.",
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Behavior in the collection.",
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Behavior in the collection.",
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Behavior with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Behavior that follows the desired Behavior.",
-              "datatype": {
-                "type": "Behavior"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Behavior whose index follows the specified Behavior in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Behavior whose index comes before the desired Behavior.",
-              "datatype": {
-                "type": "Behavior"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Behavior in the collection.",
-          "datatype": {
-            "type": "Behavior"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Behavior in the collection.",
-          "datatype": {
-            "type": "Behavior",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Behavior.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Behavior with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Behavior"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Behavior.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Behavior with the specified index or name.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Behavior with the specified name.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Behavior with the specified ID.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Behavior, index, or name at the beginning of the range. Can accept: Behavior, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Behavior, index, or name at the end of the range. Can accept: Behavior, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Behaviors within the specified range.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Behavior in the collection.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Behavior in the collection.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Behavior in the collection.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Behavior that follows the desired Behavior.",
+                            "type": "Behavior"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Behavior with the index previous to the specified index.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Behavior whose index comes before the desired Behavior.",
+                            "type": "Behavior"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Behavior whose index follows the specified Behavior in the collection.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Behavior in the collection.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Behavior in the collection.",
+                    "type": "Behavior"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Behavior.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Behavior with the specified index.",
+                    "type": "Behavior"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Behaviors",
+    "description": "A collection of behavior objects."
 }

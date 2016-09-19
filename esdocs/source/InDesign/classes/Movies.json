@@ -1,234 +1,221 @@
 {
-  "name": "Movies",
-  "dynamic": true,
-  "shortdesc": "A collection of movies.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new Movie",
-          "parameters": [
-            {
-              "name": "layer",
-              "shortdesc": "The layer on which to create the Movie. ",
-              "datatype": {
-                "type": "Layer"
-              },
-              "optional": true
-            },
-            {
-              "name": "at",
-              "optional": true,
-              "shortdesc": "The location at which to insert the Movie relative to the reference object or within the container object. ",
-              "datatype": {
-                "type": "LocationOptions",
-                "value": "LocationOptions.UNKNOWN"
-              }
-            },
-            {
-              "name": "reference",
-              "shortdesc": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new Movie ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Movie.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Movie with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Movie with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Movie with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Movies within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Movie, index, or name at the beginning of the range. Can accept: Movie, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Movie, index, or name at the end of the range. Can accept: Movie, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Movie in the collection.",
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Movie in the collection.",
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Movie in the collection.",
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Movie with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Movie that follows the desired Movie.",
-              "datatype": {
-                "type": "Movie"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Movie whose index follows the specified Movie in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Movie whose index comes before the desired Movie.",
-              "datatype": {
-                "type": "Movie"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Movie in the collection.",
-          "datatype": {
-            "type": "Movie"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Movie in the collection.",
-          "datatype": {
-            "type": "Movie",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Movie.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Movie with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Movie"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "layer",
+                            "description": "The layer on which to create the Movie. (Optional)",
+                            "type": "Layer"
+                        },
+                        {
+                            "optional": true,
+                            "value": "LocationOptions.UNKNOWN",
+                            "array": false,
+                            "name": "at",
+                            "description": "The location at which to insert the Movie relative to the reference object or within the container object. (Optional)",
+                            "type": "LocationOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new Movie (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new Movie",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Movie.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Movie with the specified index or name.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Movie with the specified name.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Movie with the specified ID.",
+                    "type": "Movie"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Movie, index, or name at the beginning of the range. Can accept: Movie, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Movie, index, or name at the end of the range. Can accept: Movie, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Movies within the specified range.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Movie in the collection.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Movie in the collection.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Movie in the collection.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Movie that follows the desired Movie.",
+                            "type": "Movie"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Movie with the index previous to the specified index.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Movie whose index comes before the desired Movie.",
+                            "type": "Movie"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Movie whose index follows the specified Movie in the collection.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Movie in the collection.",
+                    "type": "Movie"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Movie in the collection.",
+                    "type": "Movie"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Movie.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Movie with the specified index.",
+                    "type": "Movie"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Movies",
+    "description": "A collection of movies."
 }

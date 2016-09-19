@@ -1,154 +1,65 @@
 {
-  "name": "Documents",
-  "dynamic": true,
-  "shortdesc": "A collection of documents.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "A document.",
-          "parameters": [
-            {
-              "name": "width",
-              "optional": true,
-              "shortdesc": "The width of the document.",
-              "datatype": {
-                "type": "UnitValue"
-              }
-            },
-            {
-              "name": "height",
-              "optional": true,
-              "shortdesc": "The height of the document.",
-              "datatype": {
-                "type": "UnitValue"
-              }
-            },
-            {
-              "name": "resolution",
-              "optional": true,
-              "shortdesc": "The resolution of the document (in pixels per inch)",
-              "datatype": {
-                "type": "Number",
-                "value": 72
-              }
-            },
-            {
-              "name": "name",
-              "optional": true,
-              "shortdesc": "The name of the document.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "mode",
-              "optional": true,
-              "shortdesc": "The document mode.",
-              "datatype": {
-                "type": "NewDocumentMode",
-                "value": "NewDocumentMode.RGB"
-              }
-            },
-            {
-              "name": "initialFill",
-              "optional": true,
-              "shortdesc": "The initial fill of the document.",
-              "datatype": {
-                "type": "DocumentFill",
-                "value": "DocumentFill.WHITE"
-              }
-            },
-            {
-              "name": "pixelAspectRatio",
-              "optional": true,
-              "shortdesc": "The initial pixel aspect ratio of the document.",
-              "datatype": {
-                "type": "Number",
-                "value": 1
-              }
-            },
-            {
-              "name": "bitsPerChannel",
-              "optional": true,
-              "shortdesc": "The number of bits per channel.",
-              "datatype": {
-                "type": "BitsPerChannelType",
-                "value": "BitsPerChannelType.EIGHT"
-              }
-            },
-            {
-              "name": "colorProfileName",
-              "optional": true,
-              "shortdesc": "The name of color profile for document.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Document"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "getByName",
-          "shortdesc": "Get the first element in the collection with the provided name.",
-          "parameters": [
-            {
-              "name": "name",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Get an element in the collection with the provided index.",
-          "parameters": [
-            {
-              "name": "index",
-              "datatype": {
-                "type": "uint"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Document"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getByName",
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "Document"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "type": "uint"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "Document"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "Number of elements in the collection.",
+                    "type": "int"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "Number of elements in the collection.",
-          "datatype": {
-            "type": "int"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Documents",
+    "description": "A collection of documents."
 }

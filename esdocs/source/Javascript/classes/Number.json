@@ -1,169 +1,135 @@
 {
-  "name": "Number",
-  "dynamic": true,
-  "shortdesc": "Wraps a numeric value.",
-  "elements": [
-    {
-      "type": "constructor",
-      "method": [
-        {
-          "name": "Number",
-          "shortdesc": "Returns a new Number object set to the value of the argument converted to a number.",
-          "parameters": [
-            {
-              "name": "value",
-              "shortdesc": "The value of the object being created.",
-              "datatype": {
-                "type": "any"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number"
-          },
-          "example": "new Number&amp;&#35;40;value&#41;"
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "2.2250738585072014e-308",
+                    "array": false,
+                    "name": "MIN_VALUE",
+                    "description": "A constant representing the smallest representable number.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "value": "1.7976931348623158e+308",
+                    "array": false,
+                    "name": "MAX_VALUE",
+                    "description": "A constant representing the largest representable number.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "value": "NaN",
+                    "array": false,
+                    "name": "NaN",
+                    "description": "A constant representing the special \"Not a Number\" value.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "NEGATIVE_INFINITY",
+                    "description": "A constant representing negative infinity.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "POSITIVE_INFINITY",
+                    "description": "A constant representing positive infinity.",
+                    "type": "Number"
+                }
+            ]
+        },
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "radix",
+                            "description": "The optional conversion radix.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "toString",
+                    "description": "Returns the value of a Number object converted to a string.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toLocaleString",
+                    "description": "Returns the value of a Number object converted to a string, using localized conventions.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "decimals",
+                            "description": "The number of decimals.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "toFixed",
+                    "description": "Converts the Number object to a string with fixed decimals.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "decimals",
+                            "description": "The number of decimals.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "toExponential",
+                    "description": "Converts the Number object to a string in scientific notation.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "decimals",
+                            "description": "The number of decimals.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "toPrecision",
+                    "description": "Converts the Number object to a string in either scientific or fixed notation, epending on its value.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "valueOf",
+                    "description": "Returns the value of a Number object as a primitive number.",
+                    "type": "Number"
+                }
+            ],
+            "properties": []
         }
-      ]
     },
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "MIN_VALUE",
-          "rwaccess": "readonly",
-          "shortdesc": "A constant representing the smallest representable number.",
-          "datatype": {
-            "type": "Number",
-            "value": 2.2250738585072014e-308
-          }
-        },
-        {
-          "name": "MAX_VALUE",
-          "rwaccess": "readonly",
-          "shortdesc": "A constant representing the largest representable number.",
-          "datatype": {
-            "type": "Number",
-            "value": 1.7976931348623157e+308
-          }
-        },
-        {
-          "name": "NaN",
-          "rwaccess": "readonly",
-          "shortdesc": "A constant representing the special \"Not a Number\" value.",
-          "datatype": {
-            "type": "Number",
-            "value": "NaN"
-          }
-        },
-        {
-          "name": "NEGATIVE_INFINITY",
-          "rwaccess": "readonly",
-          "shortdesc": "A constant representing negative infinity.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "POSITIVE_INFINITY",
-          "rwaccess": "readonly",
-          "shortdesc": "A constant representing positive infinity.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    },
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "toSource",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "toString",
-          "shortdesc": "Returns the value of a Number object converted to a string.",
-          "parameters": [
-            {
-              "name": "radix",
-              "optional": true,
-              "shortdesc": "The optional conversion radix.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number"
-          },
-          "example": "num.toString&amp;&#35;40;16&#41;"
-        },
-        {
-          "name": "toLocaleString",
-          "shortdesc": "Returns the value of a Number object converted to a string, using localized conventions.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "toFixed",
-          "shortdesc": "Converts the Number object to a string with fixed decimals.",
-          "parameters": [
-            {
-              "name": "decimals",
-              "shortdesc": "The number of decimals.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "toExponential",
-          "shortdesc": "Converts the Number object to a string in scientific notation.",
-          "parameters": [
-            {
-              "name": "decimals",
-              "shortdesc": "The number of decimals.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "toPrecision",
-          "shortdesc": "Converts the Number object to a string in either scientific or fixed notation, epending on its value.",
-          "parameters": [
-            {
-              "name": "decimals",
-              "shortdesc": "The number of decimals.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "valueOf",
-          "shortdesc": "Returns the value of a Number object as a primitive number.",
-          "datatype": {
-            "type": "Number"
-          },
-          "example": "num.valueOf&amp;&#35;40;&#41;"
-        }
-      ]
-    }
-  ]
+    "name": "Number",
+    "description": "Wraps a numeric value."
 }

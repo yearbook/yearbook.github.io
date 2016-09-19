@@ -1,47 +1,43 @@
 {
-  "name": "ScriptUIPen",
-  "dynamic": true,
-  "shortdesc": "A drawing pen that defines a color and line width used to stroke paths.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "color",
-          "rwaccess": "readonly",
-          "shortdesc": "The pen color.",
-          "datatype": {
-            "type": "Number",
-            "array": true
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "theme",
-          "rwaccess": "readonly",
-          "shortdesc": "The theme name.",
-          "description": "The name of a color theme to use for drawing when the type is THEME_COLOR. Theme colors are defined by the host application.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "type",
-          "rwaccess": "readonly",
-          "shortdesc": "The pen type, solid or theme.",
-          "description": "One of these constants: ScriptUIGraphics.PenType.SOLID_COLOR or ScriptUIGraphics.PenType.THEME_COLOR",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "lineWidth",
-          "shortdesc": "The pixel width of the drawing line.",
-          "datatype": {
-            "type": "Number",
-            "min": 1
-          }
+        "instance": {
+            "methods": [],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "color",
+                    "description": "The pen color.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "theme",
+                    "description": "The theme name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "type",
+                    "description": "The pen type, solid or theme.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "lineWidth",
+                    "description": "The pixel width of the drawing line.",
+                    "type": "Number"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    },
+    "name": "ScriptUIPen",
+    "description": "A drawing pen that defines a color and line width used to stroke paths."
 }

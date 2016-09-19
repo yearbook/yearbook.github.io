@@ -1,192 +1,184 @@
 {
-  "name": "Cells",
-  "dynamic": true,
-  "shortdesc": "A collection of table cells.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Cell.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Cell with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Cell with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Cell with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Cells within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Cell, index, or name at the beginning of the range. Can accept: Cell, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Cell, index, or name at the end of the range. Can accept: Cell, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Cell in the collection.",
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Cell in the collection.",
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Cell in the collection.",
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Cell with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Cell that follows the desired Cell.",
-              "datatype": {
-                "type": "Cell"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Cell whose index follows the specified Cell in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Cell whose index comes before the desired Cell.",
-              "datatype": {
-                "type": "Cell"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Cell in the collection.",
-          "datatype": {
-            "type": "Cell"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Cell in the collection.",
-          "datatype": {
-            "type": "Cell",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Cell.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Cell with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Cell"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Cell.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Cell with the specified index or name.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Cell with the specified name.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Cell with the specified ID.",
+                    "type": "Cell"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Cell, index, or name at the beginning of the range. Can accept: Cell, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Cell, index, or name at the end of the range. Can accept: Cell, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Cells within the specified range.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Cell in the collection.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Cell in the collection.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Cell in the collection.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Cell that follows the desired Cell.",
+                            "type": "Cell"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Cell with the index previous to the specified index.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Cell whose index comes before the desired Cell.",
+                            "type": "Cell"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Cell whose index follows the specified Cell in the collection.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Cell in the collection.",
+                    "type": "Cell"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Cell in the collection.",
+                    "type": "Cell"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Cell.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Cell with the specified index.",
+                    "type": "Cell"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Cells",
+    "description": "A collection of table cells."
 }

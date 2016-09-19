@@ -1,486 +1,449 @@
 {
-  "name": "ScriptUIGraphics",
-  "dynamic": true,
-  "shortdesc": {
-    "i": "graphics"
-  },
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "BrushType",
-          "rwaccess": "readonly",
-          "description": "Type constants are: SOLID_COLOR, THEME_COLOR.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "BrushType",
+                    "description": "\n            Contains the enumerated constants for the ",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "PenType",
+                    "description": "\n            Contains the enumerated constants for the ",
+                    "type": "Object"
+                }
+            ]
         },
-        {
-          "name": "PenType",
-          "rwaccess": "readonly",
-          "description": "Type constants are: SOLID_COLOR, THEME_COLOR.",
-          "datatype": {
-            "type": "Object"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "type",
+                            "description": "The brush type, solid or theme.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "color",
+                            "description": "The brush color.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "newBrush",
+                    "description": "Creates a new painting brush object.",
+                    "type": "ScriptUIBrush"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "type",
+                            "description": "The pen type, solid or theme.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "color",
+                            "description": "The pen color.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "width",
+                            "description": "The width of the pen line in pixels.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "newPen",
+                    "description": "Creates a new drawing pen object.",
+                    "type": "ScriptUIPen"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "newPath",
+                    "description": "Creates a new, empty path object.",
+                    "type": "ScriptUIPath"
+                },
+                {
+                    "parameters": [],
+                    "name": "closePath",
+                    "description": "Closes the current path."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "x",
+                            "description": "The X coordinate for the new point, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "y",
+                            "description": "The Y coordinate for the new point, relative to the origin of this element.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "moveTo",
+                    "description": "\n            Adds a given point to the\u00a0",
+                    "type": "Point"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "x",
+                            "description": "The X coordinate for the destination point, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "y",
+                            "description": "The Y coordinate for the destination point, relative to the origin of this element.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "lineTo",
+                    "description": "\n            Adds a path segment to the\u00a0",
+                    "type": "Point"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "left",
+                            "description": "The left coordinate relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "top",
+                            "description": "The top coordinate relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "width",
+                            "description": "The width in pixels.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "height",
+                            "description": "The height in pixels.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "rectPath",
+                    "description": "\n            Defines a rectangular path in the\u00a0",
+                    "type": "Point"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "left",
+                            "description": "The left coordinate of the region, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "top",
+                            "description": "The top coordinate of the region, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "width",
+                            "description": "The width of the region in pixels.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "height",
+                            "description": "The height of the region in pixels.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "ellipsePath",
+                    "description": "\n            Defines an elliptical path within a given rectangular area in the\u00a0",
+                    "type": "Point"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "pen",
+                            "description": "The drawing pen that defines the color and line width.",
+                            "type": "ScriptUIPen"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "path",
+                            "description": "\n                The path object. Default is the\u00a0",
+                            "type": "ScriptUIPath"
+                        }
+                    ],
+                    "name": "strokePath",
+                    "description": "Strokes the path segments of a path with a given drawing pen."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "brush",
+                            "description": "The brush object that defines the fill color.",
+                            "type": "ScriptUIBrush"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "path",
+                            "description": "\n                The path object. Default is the\u00a0",
+                            "type": "ScriptUIPath"
+                        }
+                    ],
+                    "name": "fillPath",
+                    "description": "Fills a path using a given painting brush."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "left",
+                            "description": "The left coordinate of the region.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "top",
+                            "description": "The top coordinate of the region.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "width",
+                            "description": "The width of the region in pixels.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "height",
+                            "description": "The height of the region in pixels.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "drawFocusRing",
+                    "description": "Draws a focus ring within a region of this element."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "image",
+                            "description": "The image to draw.",
+                            "type": "ScriptUIImage"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "left",
+                            "description": "The left coordinate of the region, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "top",
+                            "description": "The top coordinate of the region, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "width",
+                            "description": "The width in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image width.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "height",
+                            "description": "The height in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image height.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "drawImage",
+                    "description": "Draws an image within a given region of the element."
+                },
+                {
+                    "parameters": [],
+                    "name": "drawOSControl",
+                    "description": "Draw the platform-specific control associated with this element."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "text",
+                            "description": "The text string.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "pen",
+                            "description": "The drawing pen to use.",
+                            "type": "ScriptUIPen"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "x",
+                            "description": "The left coordinate, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "y",
+                            "description": "The top coordinate, relative to the origin of this element.",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "font",
+                            "description": "\n                The font to use. Default is the \u00a0",
+                            "type": "ScriptUIFont"
+                        }
+                    ],
+                    "name": "drawString",
+                    "description": "Draw a string of text starting at a given point in this element, using a given drawing pen and font."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "text",
+                            "description": "The text string to measure.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "font",
+                            "description": "\n                The font to use. Default is the\u00a0",
+                            "type": "ScriptUIFont"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "boundingWidth",
+                            "description": "The bounding width.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "measureString",
+                    "description": "Calculates the size needed to display a string using the given font.",
+                    "type": "Dimension"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "backgroundColor",
+                    "description": "The background color for containers; for non-containers, the parent background color.",
+                    "type": "ScriptUIBrush"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "disabledBackgroundColor",
+                    "description": "The background color for containers when disabled or inactive; for non-containers, the parent background color.",
+                    "type": "ScriptUIBrush"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "disabledForegroundColor",
+                    "description": "The text color when the element is disabled or inactive.",
+                    "type": "ScriptUIPen"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "font",
+                    "description": "The default font to use for displaying text.",
+                    "type": "ScriptUIFont"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "foregroundColor",
+                    "description": "The text color.",
+                    "type": "ScriptUIPen"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "currentPath",
+                    "description": "The current drawing path, encapsulated in a path object.",
+                    "type": "ScriptUIPath"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "currentPoint",
+                    "description": "The current position in the current drawing path.",
+                    "type": "Point"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "backgroundColor",
-          "shortdesc": "The background color for containers; for non-containers, the parent background color.",
-          "description": "The paint color and style is defined in this brush object.This property is only supported for controls like  dropdownlist, edittext, and listbox.",
-          "datatype": {
-            "type": "ScriptUIBrush"
-          }
-        },
-        {
-          "name": "disabledBackgroundColor",
-          "shortdesc": "The background color for containers when disabled or inactive; for non-containers, the parent background color.",
-          "description": "The paint color and style is defined in this brush object.This property is only supported for controls like  dropdownlist, edittext, and listbox.",
-          "datatype": {
-            "type": "ScriptUIBrush"
-          }
-        },
-        {
-          "name": "disabledForegroundColor",
-          "shortdesc": "The text color when the element is disabled or inactive.",
-          "description": "The paint color and style is defined in this pen object.",
-          "datatype": {
-            "type": "ScriptUIPen"
-          }
-        },
-        {
-          "name": "font",
-          "shortdesc": "The default font to use for displaying text.",
-          "datatype": {
-            "type": "ScriptUIFont"
-          }
-        },
-        {
-          "name": "foregroundColor",
-          "shortdesc": "The text color.",
-          "description": "The paint color and style is defined in this pen object.",
-          "datatype": {
-            "type": "ScriptUIPen"
-          }
-        },
-        {
-          "name": "currentPath",
-          "rwaccess": "readonly",
-          "shortdesc": "The current drawing path, encapsulated in a path object.",
-          "datatype": {
-            "type": "ScriptUIPath"
-          }
-        },
-        {
-          "name": "currentPoint",
-          "rwaccess": "readonly",
-          "shortdesc": "The current position in the current drawing path.",
-          "datatype": {
-            "type": "Point"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "newBrush",
-          "shortdesc": "Creates a new painting brush object.",
-          "parameters": [
-            {
-              "name": "type",
-              "shortdesc": "The brush type, solid or theme.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "color",
-              "shortdesc": "The brush color.",
-              "datatype": [
-                {
-                  "type": "Number",
-                  "array": {
-                    "size": 4
-                  }
-                },
-                {
-                  "type": "String"
-                }
-              ]
-            }
-          ],
-          "datatype": {
-            "type": "ScriptUIBrush"
-          }
-        },
-        {
-          "name": "newPen",
-          "shortdesc": "Creates a new drawing pen object.",
-          "parameters": [
-            {
-              "name": "type",
-              "shortdesc": "The pen type, solid or theme.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "color",
-              "shortdesc": "The pen color.",
-              "datatype": [
-                {
-                  "type": "Number",
-                  "array": {
-                    "size": 4
-                  }
-                },
-                {
-                  "type": "String"
-                }
-              ]
-            },
-            {
-              "name": "width",
-              "shortdesc": "The width of the pen line in pixels.",
-              "description": "The line is centered around the current point. For example, if the value is 2, drawing a line from (0, 10) to (5, 10) paints the two rows of pixels directly above and below y-position 10.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ScriptUIPen"
-          }
-        },
-        {
-          "name": "newPath",
-          "shortdesc": "Creates a new, empty path object.",
-          "datatype": {
-            "type": "ScriptUIPath"
-          }
-        },
-        {
-          "name": "closePath",
-          "shortdesc": "Closes the current path."
-        },
-        {
-          "name": "moveTo",
-          "parameters": [
-            {
-              "name": "x",
-              "shortdesc": "The X coordinate for the new point, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "y",
-              "shortdesc": "The Y coordinate for the new point, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Point"
-          }
-        },
-        {
-          "name": "lineTo",
-          "parameters": [
-            {
-              "name": "x",
-              "shortdesc": "The X coordinate for the destination point, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "y",
-              "shortdesc": "The Y coordinate for the destination point, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Point"
-          }
-        },
-        {
-          "name": "rectPath",
-          "parameters": [
-            {
-              "name": "left",
-              "shortdesc": "The left coordinate relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "top",
-              "shortdesc": "The top coordinate relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "width",
-              "shortdesc": "The width in pixels.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "height",
-              "shortdesc": "The height in pixels.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Point"
-          }
-        },
-        {
-          "name": "ellipsePath",
-          "parameters": [
-            {
-              "name": "left",
-              "shortdesc": "The left coordinate of the region, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "top",
-              "shortdesc": "The top coordinate of the region, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "width",
-              "shortdesc": "The width of the region in pixels.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "height",
-              "shortdesc": "The height of the region in pixels.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Point"
-          }
-        },
-        {
-          "name": "strokePath",
-          "shortdesc": "Strokes the path segments of a path with a given drawing pen.",
-          "parameters": [
-            {
-              "name": "pen",
-              "shortdesc": "The drawing pen that defines the color and line width.",
-              "datatype": {
-                "type": "ScriptUIPen"
-              }
-            },
-            {
-              "name": "path",
-              "optional": true,
-              "datatype": {
-                "type": "ScriptUIPath"
-              }
-            }
-          ]
-        },
-        {
-          "name": "fillPath",
-          "shortdesc": "Fills a path using a given painting brush.",
-          "parameters": [
-            {
-              "name": "brush",
-              "shortdesc": "The brush object that defines the fill color.",
-              "datatype": {
-                "type": "ScriptUIBrush"
-              }
-            },
-            {
-              "name": "path",
-              "optional": true,
-              "datatype": {
-                "type": "ScriptUIPath"
-              }
-            }
-          ]
-        },
-        {
-          "name": "drawFocusRing",
-          "shortdesc": "Draws a focus ring within a region of this element.",
-          "parameters": [
-            {
-              "name": "left",
-              "shortdesc": "The left coordinate of the region.",
-              "description": "Value is relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "top",
-              "shortdesc": "The top coordinate of the region.",
-              "description": "Value is relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "width",
-              "shortdesc": "The width of the region in pixels.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "height",
-              "shortdesc": "The height of the region in pixels.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ]
-        },
-        {
-          "name": "drawImage",
-          "shortdesc": "Draws an image within a given region of the element.",
-          "description": "Uses the version of the image that is appropriate to the element's current state.",
-          "parameters": [
-            {
-              "name": "image",
-              "shortdesc": "The image to draw.",
-              "description": "This object contains different versions of an image appropriate to various element states, such as a dimmed version for the disabled state.",
-              "datatype": {
-                "type": "ScriptUIImage"
-              }
-            },
-            {
-              "name": "left",
-              "shortdesc": "The left coordinate of the region, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "top",
-              "shortdesc": "The top coordinate of the region, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "width",
-              "optional": true,
-              "shortdesc": "The width in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image width.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "height",
-              "optional": true,
-              "shortdesc": "The height in pixels. If provided, the image is stretched or shrunk to fit. If omitted, uses the original image height.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ]
-        },
-        {
-          "name": "drawOSControl",
-          "shortdesc": "Draw the platform-specific control associated with this element."
-        },
-        {
-          "name": "drawString",
-          "shortdesc": "Draw a string of text starting at a given point in this element, using a given drawing pen and font.",
-          "parameters": [
-            {
-              "name": "text",
-              "shortdesc": "The text string.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "pen",
-              "shortdesc": "The drawing pen to use.",
-              "datatype": {
-                "type": "ScriptUIPen"
-              }
-            },
-            {
-              "name": "x",
-              "shortdesc": "The left coordinate, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "y",
-              "shortdesc": "The top coordinate, relative to the origin of this element.",
-              "datatype": {
-                "type": "Number"
-              }
-            },
-            {
-              "name": "font",
-              "optional": true,
-              "datatype": {
-                "type": "ScriptUIFont"
-              }
-            }
-          ]
-        },
-        {
-          "name": "measureString",
-          "shortdesc": "Calculates the size needed to display a string using the given font.",
-          "parameters": [
-            {
-              "name": "text",
-              "shortdesc": "The text string to measure.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "font",
-              "optional": true,
-              "datatype": {
-                "type": "ScriptUIFont"
-              }
-            },
-            {
-              "name": "boundingWidth",
-              "optional": true,
-              "shortdesc": "The bounding width.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Dimension"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "ScriptUIGraphics",
+    "description": "\n        An object used to draw custom graphics, found in the "
 }

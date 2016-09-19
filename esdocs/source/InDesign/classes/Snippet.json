@@ -1,415 +1,377 @@
 {
-  "name": "Snippet",
-  "dynamic": true,
-  "shortdesc": "An IDML snippet.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "BEFORE_PLACE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a Snippet is placed. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforePlace"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "beforePlace",
+                    "array": false,
+                    "name": "BEFORE_PLACE",
+                    "description": "Dispatched before a Snippet is placed. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                }
+            ]
+        },
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes the Snippet."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Snippet.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "Snippet"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "id",
+                    "description": "The unique ID of the Snippet.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the Snippet (a PlaceGun).",
+                    "type": "PlaceGun"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the Snippet within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pageItems",
+                    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type.",
+                    "type": "PageItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textFrames",
+                    "description": "A collection of text frames.",
+                    "type": "TextFrames"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "rectangles",
+                    "description": "A collection of rectangles.",
+                    "type": "Rectangles"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "splineItems",
+                    "description": "The spline items collection.",
+                    "type": "SplineItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "ovals",
+                    "description": "A collection of ellipses.",
+                    "type": "Ovals"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "graphicLines",
+                    "description": "A collection of graphic lines.",
+                    "type": "GraphicLines"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "polygons",
+                    "description": "A collection of polygons.",
+                    "type": "Polygons"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "groups",
+                    "description": "A collection of groups.",
+                    "type": "Groups"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "buttons",
+                    "description": "A collection of buttons.",
+                    "type": "Buttons"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "formFields",
+                    "description": "A collection of form fields.",
+                    "type": "FormFields"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "multiStateObjects",
+                    "description": "A collection of multi-state objects.",
+                    "type": "MultiStateObjects"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "epstexts",
+                    "description": "EPSTexts",
+                    "type": "EPSTexts"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "images",
+                    "description": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF).",
+                    "type": "Images"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "graphics",
+                    "description": "A collection of imported graphics in any graphic file format (vector, metafile, or bitmap).",
+                    "type": "Graphics"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "epss",
+                    "description": "A collection of EPS files.",
+                    "type": "EPSs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "wmfs",
+                    "description": "A collection of WMF graphics.",
+                    "type": "WMFs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "picts",
+                    "description": "A collection of PICT graphics.",
+                    "type": "PICTs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pdfs",
+                    "description": "A collection of PDF files.",
+                    "type": "PDFs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "checkBoxes",
+                    "description": "A collection of checkboxes.",
+                    "type": "CheckBoxes"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "comboBoxes",
+                    "description": "A collection of comboboxes.",
+                    "type": "ComboBoxes"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "listBoxes",
+                    "description": "A collection of listboxes.",
+                    "type": "ListBoxes"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "radioButtons",
+                    "description": "A collection of radio buttons.",
+                    "type": "RadioButtons"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textBoxes",
+                    "description": "A collection of text boxes.",
+                    "type": "TextBoxes"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "signatureFields",
+                    "description": "A collection of signature fields.",
+                    "type": "SignatureFields"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "label",
+                    "description": "A property that can be set to any string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the Snippet; this is an alias to the Snippet's label property.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "id",
-          "rwaccess": "readonly",
-          "shortdesc": "The unique ID of the Snippet.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the Snippet (a PlaceGun).",
-          "datatype": {
-            "type": "PlaceGun"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the Snippet within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "pageItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type.",
-          "datatype": {
-            "type": "PageItems"
-          }
-        },
-        {
-          "name": "textFrames",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text frames.",
-          "datatype": {
-            "type": "TextFrames"
-          }
-        },
-        {
-          "name": "rectangles",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of rectangles.",
-          "datatype": {
-            "type": "Rectangles"
-          }
-        },
-        {
-          "name": "splineItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The spline items collection.",
-          "datatype": {
-            "type": "SplineItems"
-          }
-        },
-        {
-          "name": "ovals",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of ellipses.",
-          "datatype": {
-            "type": "Ovals"
-          }
-        },
-        {
-          "name": "graphicLines",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of graphic lines.",
-          "datatype": {
-            "type": "GraphicLines"
-          }
-        },
-        {
-          "name": "polygons",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of polygons.",
-          "datatype": {
-            "type": "Polygons"
-          }
-        },
-        {
-          "name": "groups",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of groups.",
-          "datatype": {
-            "type": "Groups"
-          }
-        },
-        {
-          "name": "buttons",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of buttons.",
-          "datatype": {
-            "type": "Buttons"
-          }
-        },
-        {
-          "name": "formFields",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of form fields.",
-          "datatype": {
-            "type": "FormFields"
-          }
-        },
-        {
-          "name": "multiStateObjects",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of multi-state objects.",
-          "datatype": {
-            "type": "MultiStateObjects"
-          }
-        },
-        {
-          "name": "epstexts",
-          "rwaccess": "readonly",
-          "shortdesc": "EPSTexts",
-          "datatype": {
-            "type": "EPSTexts"
-          }
-        },
-        {
-          "name": "images",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF).",
-          "datatype": {
-            "type": "Images"
-          }
-        },
-        {
-          "name": "graphics",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of imported graphics in any graphic file format (vector, metafile, or bitmap).",
-          "datatype": {
-            "type": "Graphics"
-          }
-        },
-        {
-          "name": "epss",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of EPS files.",
-          "datatype": {
-            "type": "EPSs"
-          }
-        },
-        {
-          "name": "wmfs",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of WMF graphics.",
-          "datatype": {
-            "type": "WMFs"
-          }
-        },
-        {
-          "name": "picts",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of PICT graphics.",
-          "datatype": {
-            "type": "PICTs"
-          }
-        },
-        {
-          "name": "pdfs",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of PDF files.",
-          "datatype": {
-            "type": "PDFs"
-          }
-        },
-        {
-          "name": "checkBoxes",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of checkboxes.",
-          "datatype": {
-            "type": "CheckBoxes"
-          }
-        },
-        {
-          "name": "comboBoxes",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of comboboxes.",
-          "datatype": {
-            "type": "ComboBoxes"
-          }
-        },
-        {
-          "name": "listBoxes",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of listboxes.",
-          "datatype": {
-            "type": "ListBoxes"
-          }
-        },
-        {
-          "name": "radioButtons",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of radio buttons.",
-          "datatype": {
-            "type": "RadioButtons"
-          }
-        },
-        {
-          "name": "textBoxes",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text boxes.",
-          "datatype": {
-            "type": "TextBoxes"
-          }
-        },
-        {
-          "name": "signatureFields",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of signature fields.",
-          "datatype": {
-            "type": "SignatureFields"
-          }
-        },
-        {
-          "name": "label",
-          "shortdesc": "A property that can be set to any string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The name of the Snippet; this is an alias to the Snippet's label property.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the Snippet."
-        },
-        {
-          "name": "insertLabel",
-          "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "extractLabel",
-          "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Snippet.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "Snippet",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "Snippet",
+    "description": "An IDML snippet."
 }

@@ -1,148 +1,151 @@
 {
-  "name": "ExportOptionsSaveForWeb",
-  "dynamic": true,
-  "superclass": "ExportOptions",
-  "shortdesc": "Options for exporting Save For Web files.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "format",
-          "shortdesc": "The file format to use. Save For Web supports only Compuserve GIF, JPEG, PNG-8, PNG-24, and BMP formats.",
-          "datatype": {
-            "type": "SaveDocumentType",
-            "value": "SaveDocumentType.COMPUSERVEGIF"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "SaveDocumentType.COMPUSERVEGIF",
+                    "array": false,
+                    "name": "format",
+                    "description": "The file format to use. Save For Web supports only Compuserve GIF, JPEG, PNG-8, PNG-24, and BMP formats.",
+                    "type": "SaveDocumentType"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "PNG8",
+                    "description": "If true, uses 8 bits. If false, uses 24 bits. Valid only when 'format' = PNG.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "0",
+                    "array": false,
+                    "name": "lossy",
+                    "description": "The amount of lossiness allowed.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "ColorReductionType.SELECTIVE",
+                    "array": false,
+                    "name": "colorReduction",
+                    "description": "The color reduction algorithm.",
+                    "type": "ColorReductionType"
+                },
+                {
+                    "readonly": false,
+                    "value": "256",
+                    "array": false,
+                    "name": "colors",
+                    "description": "The number of colors in the palette.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "DitherType.DIFFUSION",
+                    "array": false,
+                    "name": "dither",
+                    "description": "The type of dither.",
+                    "type": "DitherType"
+                },
+                {
+                    "readonly": false,
+                    "value": "100",
+                    "array": false,
+                    "name": "ditherAmount",
+                    "description": "The amount of dither. Valid only when 'dither' = diffusion.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "transparency",
+                    "description": "If true, transparent areas of the image are included in the saved image.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "DitherType.NONE",
+                    "array": false,
+                    "name": "transparencyDither",
+                    "description": "The transparency dither algorithm.",
+                    "type": "DitherType"
+                },
+                {
+                    "readonly": false,
+                    "value": "100",
+                    "array": false,
+                    "name": "transparencyAmount",
+                    "description": "The amount of transparency dither. Valid only when 'transparency' = true.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "interlaced",
+                    "description": "If true, the image downloads in multiple passes, progressive.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "matteColor",
+                    "description": "The colors to blend transparent pixels against.",
+                    "type": "RGBColor"
+                },
+                {
+                    "readonly": false,
+                    "value": "0",
+                    "array": false,
+                    "name": "webSnap",
+                    "description": "The tolerance amount within which to snap close colors to web palette colors.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "optimized",
+                    "description": "If true, creates smaller but less compatible files.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "60",
+                    "array": false,
+                    "name": "quality",
+                    "description": "The quality of the produced image (as a percentage). Range: 0 to 100.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "includeProfile",
+                    "description": "If true, includes the document's embedded profile.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "0",
+                    "array": false,
+                    "name": "blur",
+                    "description": "The amount of blur to apply to the image to reduce artifacts.",
+                    "type": "Number"
+                }
+            ]
         },
-        {
-          "name": "PNG8",
-          "shortdesc": "If true, uses 8 bits. If false, uses 24 bits. Valid only when 'format' = PNG.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "lossy",
-          "shortdesc": "The amount of lossiness allowed.",
-          "datatype": {
-            "type": "int",
-            "value": 0
-          }
-        },
-        {
-          "name": "colorReduction",
-          "shortdesc": "The color reduction algorithm.",
-          "datatype": {
-            "type": "ColorReductionType",
-            "value": "ColorReductionType.SELECTIVE"
-          }
-        },
-        {
-          "name": "colors",
-          "shortdesc": "The number of colors in the palette.",
-          "datatype": {
-            "type": "int",
-            "value": 256
-          }
-        },
-        {
-          "name": "dither",
-          "shortdesc": "The type of dither.",
-          "datatype": {
-            "type": "Dither",
-            "value": "Dither.DIFFUSION"
-          }
-        },
-        {
-          "name": "ditherAmount",
-          "shortdesc": "The amount of dither. Valid only when 'dither' = diffusion.",
-          "datatype": {
-            "type": "int",
-            "value": 100
-          }
-        },
-        {
-          "name": "transparency",
-          "shortdesc": "If true, transparent areas of the image are included in the saved image.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "transparencyDither",
-          "shortdesc": "The transparency dither algorithm.",
-          "datatype": {
-            "type": "Dither",
-            "value": "Dither.NONE"
-          }
-        },
-        {
-          "name": "transparencyAmount",
-          "shortdesc": "The amount of transparency dither. Valid only when 'transparency' = true.",
-          "datatype": {
-            "type": "int",
-            "value": 100
-          }
-        },
-        {
-          "name": "interlaced",
-          "shortdesc": "If true, the image downloads in multiple passes, progressive.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "matteColor",
-          "shortdesc": "The colors to blend transparent pixels against.",
-          "datatype": {
-            "type": "RGBColor"
-          }
-        },
-        {
-          "name": "webSnap",
-          "shortdesc": "The tolerance amount within which to snap close colors to web palette colors.",
-          "datatype": {
-            "type": "int",
-            "value": 0
-          }
-        },
-        {
-          "name": "optimized",
-          "shortdesc": "If true, creates smaller but less compatible files.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "quality",
-          "shortdesc": "The quality of the produced image (as a percentage). Range: 0 to 100.",
-          "datatype": {
-            "type": "int",
-            "value": 60
-          }
-        },
-        {
-          "name": "includeProfile",
-          "shortdesc": "If true, includes the document's embedded profile.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "blur",
-          "shortdesc": "The amount of blur to apply to the image to reduce artifacts.",
-          "datatype": {
-            "type": "Number",
-            "value": 0
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "ExportOptionsSaveForWeb",
+    "description": "Options for exporting Save For Web files.",
+    "superclass": "ExportOptions"
 }

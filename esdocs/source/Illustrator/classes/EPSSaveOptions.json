@@ -1,106 +1,109 @@
 {
-  "name": "EPSSaveOptions",
-  "dynamic": true,
-  "shortdesc": "Options which may be supplied when saving a document as an Illustrator EPS file.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "compatibility",
-          "shortdesc": "What Illustrator file format version to create.",
-          "datatype": {
-            "type": "Compatibility",
-            "value": "Compatibility.ILLUSTRATOR17"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "Compatibility.ILLUSTRATOR17",
+                    "array": false,
+                    "name": "compatibility",
+                    "description": "What Illustrator file format version to create.",
+                    "type": "Compatibility"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preview",
+                    "description": "EPS preview format.",
+                    "type": "EPSPreview"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "embedLinkedFiles",
+                    "description": "Are linked image files to be included in the saved document.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "includeDocumentThumbnails",
+                    "description": "Include thumbnail image of the EPS artwork.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "embedAllFonts",
+                    "description": "Embed all fonts used by the document in the saved file (version 7 or later)",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "cmykPostScript",
+                    "description": "Use CMYK PostScript.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "EPSPostScriptLevelEnum.LEVEL2",
+                    "array": false,
+                    "name": "postScript",
+                    "description": "PostScript level to use (level 1 valid for file format version 8 or older)",
+                    "type": "EPSPostScriptLevelEnum"
+                },
+                {
+                    "readonly": false,
+                    "value": "OutputFlattening.PRESERVEAPPEARANCE",
+                    "array": false,
+                    "name": "flattenOutput",
+                    "description": "How should transparency be flattened for older file format versions (pre-version 9)",
+                    "type": "OutputFlattening"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "compatibleGradientPrinting",
+                    "description": "Create a raster item of the gradient or gradient mesh so that PostScript Level 2 printers can print the object.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "PDFOverprint.PRESERVEPDFOVERPRINT",
+                    "array": false,
+                    "name": "overprint",
+                    "type": "PDFOverprint"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "saveMultipleArtboards",
+                    "description": "All the artboards or range of the artboards will be saved.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": null,
+                    "array": false,
+                    "name": "artboardRange",
+                    "description": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
+                    "type": "String"
+                }
+            ]
         },
-        {
-          "name": "preview",
-          "shortdesc": "EPS preview format.",
-          "datatype": {
-            "type": "EPSPreview"
-          }
-        },
-        {
-          "name": "embedLinkedFiles",
-          "shortdesc": "Are linked image files to be included in the saved document.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "includeDocumentThumbnails",
-          "shortdesc": "Include thumbnail image of the EPS artwork.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "embedAllFonts",
-          "shortdesc": "Embed all fonts used by the document in the saved file (version 7 or later)",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "cmykPostScript",
-          "shortdesc": "Use CMYK PostScript.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "postScript",
-          "shortdesc": "PostScript level to use (level 1 valid for file format version 8 or older)",
-          "datatype": {
-            "type": "EPSPostScriptLevelEnum",
-            "value": "EPSPostScriptLevelEnum.LEVEL2"
-          }
-        },
-        {
-          "name": "flattenOutput",
-          "shortdesc": "How should transparency be flattened for older file format versions (pre-version 9)",
-          "datatype": {
-            "type": "OutputFlattening",
-            "value": "OutputFlattening.PRESERVEAPPEARANCE"
-          }
-        },
-        {
-          "name": "compatibleGradientPrinting",
-          "shortdesc": "Create a raster item of the gradient or gradient mesh so that PostScript Level 2 printers can print the object.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "overprint",
-          "datatype": {
-            "type": "PDFOverprint",
-            "value": "PDFOverprint.PRESERVEPDFOVERPRINT"
-          }
-        },
-        {
-          "name": "saveMultipleArtboards",
-          "shortdesc": "All the artboards or range of the artboards will be saved.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "artboardRange",
-          "shortdesc": "If SaveMultipleArtboards is true,this will be considered for multi-asset extraction which specifies artboard range.Empty string will extracts all the artboards.Default is empty string.",
-          "datatype": {
-            "type": "String",
-            "value": {}
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "EPSSaveOptions",
+    "description": "Options which may be supplied when saving a document as an Illustrator EPS file."
 }

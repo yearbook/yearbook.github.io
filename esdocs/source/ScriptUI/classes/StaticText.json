@@ -1,295 +1,268 @@
 {
-  "name": "StaticText",
-  "dynamic": true,
-  "shortdesc": "A text label that the user cannot change.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "characters",
-          "shortdesc": "A number of characters for which to reserve space when calculating the preferred size of the element.",
-          "datatype": {
-            "type": "Number",
-            "min": 0
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "justify",
-          "shortdesc": "The text justification style.",
-          "datatype": {
-            "type": "String",
-            "value": "left"
-          }
-        },
-        {
-          "name": "text",
-          "shortdesc": "The text to display, a localizable string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "active",
-          "shortdesc": "Always false. This element cannot have input focus.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "shortcutKey",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "graphics",
-          "rwaccess": "readonly",
-          "datatype": {
-            "type": "ScriptUIGraphics"
-          }
-        },
-        {
-          "name": "visible",
-          "shortdesc": "True if this element is shown, false if it is hidden.",
-          "description": "When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "bounds",
-          "shortdesc": "The boundaries of the element, in parent-relative coordinates.",
-          "description": "Setting an element's size or location changes its bounds property, and vice-versa.",
-          "datatype": {
-            "type": "Bounds"
-          }
-        },
-        {
-          "name": "location",
-          "shortdesc": "The upper left corner of this element relative to its parent.",
-          "description": "The location is defined as [bounds.x, bounds.y]. Setting an element's location changes its bounds property, and vice-versa.",
-          "datatype": {
-            "type": "Point"
-          }
-        },
-        {
-          "name": "maximumSize",
-          "shortdesc": "The maximum height and width to which the element can be resized.",
-          "datatype": {
-            "type": "Dimension"
-          }
-        },
-        {
-          "name": "minimumSize",
-          "shortdesc": "The minimum height and width to which the element can be resized.",
-          "datatype": {
-            "type": "Dimension"
-          }
-        },
-        {
-          "name": "preferredSize",
-          "shortdesc": "The preferred size, used by layout managers to determine the best size for each element.",
-          "description": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default.",
-          "datatype": {
-            "type": "Dimension"
-          }
-        },
-        {
-          "name": "size",
-          "shortdesc": "The current dimensions of this element.",
-          "datatype": {
-            "type": "Dimension"
-          }
-        },
-        {
-          "name": "windowBounds",
-          "rwaccess": "readonly",
-          "shortdesc": "The bounds of this element relative to the top-level parent window.",
-          "datatype": {
-            "type": "Bounds"
-          }
-        },
-        {
-          "name": "alignment",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "children",
-          "rwaccess": "readonly",
-          "shortdesc": "An array of child elements.",
-          "datatype": {
-            "type": "Object",
-            "array": true
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "An object that contains one or more creation properties of the container (properties used only when the element is created).",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "enabled",
-          "shortdesc": "True if this element is enabled.",
-          "description": "An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "helpTip",
-          "shortdesc": "The help text that is displayed when the mouse hovers over the element.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "indent",
-          "shortdesc": "The number of pixels to indent the element during automatic layout.",
-          "description": "Applies for column orientation and left alignment, or row orientation and top alignment.",
-          "datatype": {
-            "type": "Number",
-            "min": 0
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent element.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "window",
-          "rwaccess": "readonly",
-          "shortdesc": "The window that this element belongs to.",
-          "datatype": {
-            "type": "Window"
-          }
-        },
-        {
-          "name": "type",
-          "rwaccess": "readonly",
-          "shortdesc": "The element type, \"statictext\".",
-          "datatype": {
-            "type": "String"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "eventName",
+                            "description": "The name of the control event handler to call. ",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "notify",
+                    "description": "Sends a notification message, simulating the specified user interaction event. "
+                },
+                {
+                    "parameters": [],
+                    "name": "show",
+                    "description": "Shows this element."
+                },
+                {
+                    "parameters": [],
+                    "name": "hide",
+                    "description": "Hides this element."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventName",
+                            "description": "The name of the event.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The function that handles the event.",
+                            "type": "Function"
+                        },
+                        {
+                            "optional": false,
+                            "value": "false",
+                            "array": false,
+                            "name": "capturePhase",
+                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Registers an event handler for a particular type of event occuring in this element.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventName",
+                            "description": "The name of the event.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The function that handles the event.",
+                            "type": "Function"
+                        },
+                        {
+                            "optional": false,
+                            "value": "false",
+                            "array": false,
+                            "name": "capturePhase",
+                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "dispatchEvent",
+                    "description": "Simulates the occurrence of an event in this target. ",
+                    "type": "Event"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "characters",
+                    "description": "A number of characters for which to reserve space when calculating the preferred size of the element. ",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "value": "left",
+                    "array": false,
+                    "name": "justify",
+                    "description": "The text justification style. ",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "text",
+                    "description": "The text to display, a localizable string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "active",
+                    "description": "Always false. This element cannot have input focus. ",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "shortcutKey",
+                    "description": "\n            The key sequence that invokes the\u00a0",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "graphics",
+                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0",
+                    "type": "ScriptUIGraphics"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "visible",
+                    "description": "True if this element is shown, false if it is hidden.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bounds",
+                    "description": "The boundaries of the element, in parent-relative coordinates. ",
+                    "type": "Bounds"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "location",
+                    "description": "The upper left corner of this element relative to its parent.",
+                    "type": "Point"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "maximumSize",
+                    "description": " The maximum height and width to which the element can be resized.",
+                    "type": "Dimension"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "minimumSize",
+                    "description": "The minimum height and width to which the element can be resized.",
+                    "type": "Dimension"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "preferredSize",
+                    "description": "The preferred size, used by layout managers to determine the best size for each element.",
+                    "type": "Dimension"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "size",
+                    "description": "The current dimensions of this element.",
+                    "type": "Dimension"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "windowBounds",
+                    "description": "The bounds of this element relative to the top-level parent window.",
+                    "type": "Bounds"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "alignment",
+                    "description": "\n            The alignment style for this element. If defined, this value overrides the ",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "children",
+                    "description": "An array of child elements.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "An object that contains one or more creation properties of the container (properties used only when the element is created). ",
+                    "type": "Object"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "enabled",
+                    "description": "True if this element is enabled.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "helpTip",
+                    "description": "The help text that is displayed when the mouse hovers over the element.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "indent",
+                    "description": "The number of pixels to indent the element during automatic layout.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent element.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "window",
+                    "description": "The window that this element belongs to.",
+                    "type": "Window"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "type",
+                    "description": "The element type, \"statictext\".",
+                    "type": "String"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "notify",
-          "shortdesc": "Sends a notification message, simulating the specified user interaction event.",
-          "parameters": [
-            {
-              "name": "eventName",
-              "optional": true,
-              "shortdesc": "The name of the control event handler to call.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "show",
-          "shortdesc": "Shows this element.",
-          "description": "When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states."
-        },
-        {
-          "name": "hide",
-          "shortdesc": "Hides this element."
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Registers an event handler for a particular type of event occuring in this element.",
-          "parameters": [
-            {
-              "name": "eventName",
-              "shortdesc": "The name of the event.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The function that handles the event.",
-              "datatype": {
-                "type": "Function"
-              }
-            },
-            {
-              "name": "capturePhase",
-              "shortdesc": "When true, the handler is called only in the capturing phase of the event propagation.",
-              "description": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Unregisters an event handler for a particular type of event occuring in this element.",
-          "description": "All arguments must be identical to those that were used to register the event handler.",
-          "parameters": [
-            {
-              "name": "eventName",
-              "shortdesc": "The name of the event.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The function that handles the event.",
-              "datatype": {
-                "type": "Function"
-              }
-            },
-            {
-              "name": "capturePhase",
-              "shortdesc": "Whether to call the handler only in the capturing phase of the event propagation.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "dispatchEvent",
-          "shortdesc": "Simulates the occurrence of an event in this target.",
-          "datatype": {
-            "type": "Event"
-          }
-        }
-      ]
     },
-    {
-      "type": "event",
-      "method": [
-        {
-          "name": "onDraw",
-          "shortdesc": "An event-handler callback function, called when the window is about to be drawn."
-        },
-        {
-          "name": "onShortcutKey",
-          "description": "In Windows only."
-        }
-      ]
-    }
-  ]
+    "name": "StaticText",
+    "description": "A text label that the user cannot change."
 }

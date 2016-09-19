@@ -1,200 +1,190 @@
 {
-  "name": "BuildingBlocks",
-  "dynamic": true,
-  "shortdesc": "A collection of cross reference building blocks.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new cross reference building block.",
-          "parameters": [
-            {
-              "name": "blockType",
-              "shortdesc": "Type of the building block.",
-              "datatype": {
-                "type": "BuildingBlockTypes"
-              }
-            },
-            {
-              "name": "appliedCharacterStyle",
-              "shortdesc": "Character style to be applied to the building block. ",
-              "datatype": {
-                "type": "CharacterStyle"
-              },
-              "optional": true
-            },
-            {
-              "name": "customText",
-              "shortdesc": "Building block custom text. Currently this is only useful in custom string building block. It is ignored for other types of building blocks. ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new BuildingBlock ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "BuildingBlock"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the BuildingBlock.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the BuildingBlock with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the BuildingBlocks within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The BuildingBlock, index, or name at the beginning of the range. Can accept: BuildingBlock, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The BuildingBlock, index, or name at the end of the range. Can accept: BuildingBlock, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "BuildingBlock",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first BuildingBlock in the collection.",
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last BuildingBlock in the collection.",
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle BuildingBlock in the collection.",
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the BuildingBlock with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the BuildingBlock that follows the desired BuildingBlock.",
-              "datatype": {
-                "type": "BuildingBlock"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the BuildingBlock whose index follows the specified BuildingBlock in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The BuildingBlock whose index comes before the desired BuildingBlock.",
-              "datatype": {
-                "type": "BuildingBlock"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any BuildingBlock in the collection.",
-          "datatype": {
-            "type": "BuildingBlock"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every BuildingBlock in the collection.",
-          "datatype": {
-            "type": "BuildingBlock",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the BuildingBlock.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the BuildingBlock with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "BuildingBlock"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "blockType",
+                            "description": "Type of the building block.",
+                            "type": "BuildingBlockTypes"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "appliedCharacterStyle",
+                            "description": "Character style to be applied to the building block. (Optional)",
+                            "type": "CharacterStyle"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "customText",
+                            "description": "Building block custom text. Currently this is only useful in custom string building block. It is ignored for other types of building blocks. (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new BuildingBlock (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new cross reference building block.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the BuildingBlock.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the BuildingBlock with the specified index or name.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The BuildingBlock, index, or name at the beginning of the range. Can accept: BuildingBlock, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The BuildingBlock, index, or name at the end of the range. Can accept: BuildingBlock, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the BuildingBlocks within the specified range.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first BuildingBlock in the collection.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last BuildingBlock in the collection.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle BuildingBlock in the collection.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the BuildingBlock that follows the desired BuildingBlock.",
+                            "type": "BuildingBlock"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the BuildingBlock with the index previous to the specified index.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The BuildingBlock whose index comes before the desired BuildingBlock.",
+                            "type": "BuildingBlock"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the BuildingBlock whose index follows the specified BuildingBlock in the collection.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any BuildingBlock in the collection.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every BuildingBlock in the collection.",
+                    "type": "BuildingBlock"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the BuildingBlock.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the BuildingBlock with the specified index.",
+                    "type": "BuildingBlock"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "BuildingBlocks",
+    "description": "A collection of cross reference building blocks."
 }

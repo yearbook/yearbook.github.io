@@ -1,2063 +1,1901 @@
 {
-  "name": "CheckBox",
-  "dynamic": true,
-  "superclass": {
-    "href": "#/FormField",
-    "$t": "FormField"
-  },
-  "shortdesc": "A checkbox.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "BEFORE_PLACE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched before a CheckBox is placed. This event bubbles. This event is cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "beforePlace"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": true,
+                    "value": "beforePlace",
+                    "array": false,
+                    "name": "BEFORE_PLACE",
+                    "description": "Dispatched before a CheckBox is placed. This event bubbles. This event is cancelable.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "value": "afterPlace",
+                    "array": false,
+                    "name": "AFTER_PLACE",
+                    "description": "Dispatched after a CheckBox is placed. This event bubbles. This event is not cancelable.",
+                    "type": "String"
+                }
+            ]
         },
-        {
-          "name": "AFTER_PLACE",
-          "rwaccess": "readonly",
-          "shortdesc": "Dispatched after a CheckBox is placed. This event bubbles. This event is not cancelable.",
-          "datatype": {
-            "type": "String",
-            "value": "afterPlace"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object to bring the object in front of (must have same parent) (Optional)",
+                            "type": "PageItem"
+                        }
+                    ],
+                    "name": "bringToFront",
+                    "description": "Brings the CheckBox to the front of its layer or in front of a particular item."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference object to send the object behind (Optional)",
+                            "type": "PageItem"
+                        }
+                    ],
+                    "name": "sendToBack",
+                    "description": "Sends the CheckBox to the back of its layer or behind a particular item (must have same parent)."
+                },
+                {
+                    "parameters": [],
+                    "name": "bringForward",
+                    "description": "Brings the CheckBox forward one level in its layer."
+                },
+                {
+                    "parameters": [],
+                    "name": "sendBackward",
+                    "description": "Sends the CheckBox back one level in its layer."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "given",
+                            "description": "The CheckBox's new shape.",
+                            "type": "ConvertShapeOptions"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "numberOfSides",
+                            "description": "The number of sides for the resulting polygon. (Range: 3 to 100) (Optional)",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "insetPercentage",
+                            "description": "The star inset percentage for the resulting polygon. (Range: 0.0 to 100.0)  (Optional)",
+                            "type": "Number"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "cornerRadius",
+                            "description": "The corner radius of the resulting rectangle. (Optional)",
+                            "type": "Measurement Unit (Number or String)=any"
+                        }
+                    ],
+                    "name": "convertShape",
+                    "description": "Converts the CheckBox to a different shape."
+                },
+                {
+                    "parameters": [],
+                    "name": "convertToObject",
+                    "description": "Converts the button object to the page item currently in the active state. Page items from other states will be lost."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The XML element whose content you want to place.",
+                            "type": "XMLElement"
+                        }
+                    ],
+                    "name": "placeXML",
+                    "description": "Places XML content into the specified object. Note: Replaces any existing content."
+                },
+                {
+                    "parameters": [],
+                    "name": "autoTag",
+                    "description": "Tag the object or the parent story using default tags defined in XML preference."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The XML element.",
+                            "type": "XMLElement"
+                        }
+                    ],
+                    "name": "markup",
+                    "description": "Associates the page item with the specified XML element while preserving existing content."
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "findObject",
+                    "description": "Finds objects that match the find what value.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reverseOrder",
+                            "description": "If true, returns the results in reverse order. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "changeObject",
+                    "description": "Finds objects that match the find what value and replace the objects with the change to value.",
+                    "type": "PageItem"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "destinationPage",
+                            "description": "The document page that contains the master page item to override.",
+                            "type": "Page"
+                        }
+                    ],
+                    "name": "override",
+                    "description": "Overrides a master page item and places the item on the document page as a new object.",
+                    "type": "Mixed"
+                },
+                {
+                    "parameters": [],
+                    "name": "removeOverride",
+                    "description": "Removes the override from a previously overridden master page item."
+                },
+                {
+                    "parameters": [],
+                    "name": "detach",
+                    "description": "Detaches an overridden master page item from the master page."
+                },
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes the CheckBox."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "given",
+                            "description": "The fit option to use.",
+                            "type": "FitOptions"
+                        }
+                    ],
+                    "name": "fit",
+                    "description": "Applies the specified fit option to content in a frame."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "given",
+                            "description": "The axis around which to flip the CheckBox.",
+                            "type": "Flip"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "around",
+                            "description": "The point around which to flip the CheckBox. Can accept: Array of 2 Units or AnchorPoint enumerator. (Optional)",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "flipItem",
+                    "description": "Flips the CheckBox."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The location of the new CheckBox, specified in coordinates in the format [x, y]. Can accept: Array of 2 Units, Spread, Page or Layer. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "by",
+                            "description": "Amount by which to offset the new CheckBox from the original CheckBox's position. (Optional)",
+                            "type": "Measurement Unit (Number or String)=any"
+                        }
+                    ],
+                    "name": "duplicate",
+                    "description": "Duplicates the CheckBox at the specified location or offset.",
+                    "type": "PageItem"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The new location of the CheckBox,in the format (x, y). Can accept: Array of 2 Units, Spread, Page or Layer. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "by",
+                            "description": "The amount (in measurement units) to move the CheckBox relative to its current position, in the format (x, y). (Optional)",
+                            "type": "Measurement Unit (Number or String)=any"
+                        }
+                    ],
+                    "name": "move",
+                    "description": "Moves the CheckBox to a new location. Note: Either the 'to' or 'by' parameter is required; if both parameters are defined, only the to value is used."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The object style to apply.",
+                            "type": "ObjectStyle"
+                        },
+                        {
+                            "optional": true,
+                            "value": "true",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "description": "If true, clears the CheckBox's existing attributes before applying the style. (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "clearingOverridesThroughRootObjectStyle",
+                            "description": "If true, clears attributes and formatting applied to the CheckBox that are not defined in the object style. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "applyObjectStyle",
+                    "description": "Applies the specified object style."
+                },
+                {
+                    "parameters": [],
+                    "name": "clearObjectStyleOverrides",
+                    "description": "Clear overrides for object style"
+                },
+                {
+                    "parameters": [],
+                    "name": "clearTransformations",
+                    "description": "Clears transformations from the CheckBox. Transformations include rotation, scaling, flipping, fitting, and shearing."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "in",
+                            "description": "The coordinate space to use",
+                            "type": "CoordinateSpaces"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The temporary origin during the transformation. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withMatrix",
+                            "description": "Transform matrix. Can accept: Array of 6 Reals or TransformationMatrix.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "replacingCurrent",
+                            "description": "Transform components to consider; providing this optional parameter causes the target's existing transform components to be replaced with new values.  Without this parameter, the given matrix is concatenated onto the target's existing transform combining the effect of the two. Can accept: MatrixContent enumerator, Array of MatrixContent enumerators or Long Integer. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "consideringRulerUnits",
+                            "description": "If true then a ruler based origin is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "transform",
+                    "description": "Transform the page item."
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "in",
+                            "description": "The coordinate space to use",
+                            "type": "CoordinateSpaces"
+                        }
+                    ],
+                    "name": "transformValuesOf",
+                    "description": "Get the transformation values of the page item.",
+                    "type": "TransformationMatrix"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "location",
+                            "description": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "in",
+                            "description": "The coordinate space to use.",
+                            "type": "CoordinateSpaces"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "consideringRulerUnits",
+                            "description": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "resolve",
+                    "description": "Get the coordinates of the given location in the specified coordinate system.",
+                    "type": "Mixed"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "to",
+                            "description": "The scale factors to be left on the item.  The default is {1.0, 1.0}. (Optional)",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "redefineScaling",
+                    "description": "Apply an item's scaling to its content if possible."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "in",
+                            "description": "The bounding box to resize. Can accept: CoordinateSpaces enumerator, BoundingBoxLimits enumerator or Ordered array containing coordinateSpace:CoordinateSpaces enumerator, boundsKind:BoundingBoxLimits enumerator.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The transform origin. Legal specifications: relative to bounding box: anchor | {anchor | {x,y}, bounds kind [, coordinate space]}; relative to coordinate space: {x,y} | {{x,y}[, coordinate space]}; relative to layout window ruler: {{x,y}, page index | bounds kind}. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "by",
+                            "description": "How the current dimensions are affected by the given values",
+                            "type": "ResizeMethods"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "values",
+                            "description": "The width and height values. Legal dimensions specifications: {x, y [, coordinate space]}, {x, resize constraint [, coordinate space]}, or {resize constraint, y [, coordinate space]}; where x and y are real numbers and coordinate space is used to determine _only_ the unit of length for x and y; coordinate space is ignored for the 'current dimensions times' resize method). Can accept: Array of Reals, ResizeConstraints enumerators or CoordinateSpaces enumerators.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "true",
+                            "array": false,
+                            "name": "resizeIndividually",
+                            "description": "If false and multiple page items are targeted, the new dimensions are attained only by moving the individual items rather than resizing them. (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "consideringRulerUnits",
+                            "description": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "resize",
+                    "description": "Resize the page item."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "in",
+                            "description": "The bounding box to resize. Can accept: CoordinateSpaces enumerator or Ordered array containing coordinateSpace:CoordinateSpaces enumerator, boundsKind:BoundingBoxLimits enumerator.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "opposingCorners",
+                            "description": "Opposing corners of new bounding box in the given coordinate space",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "reframe",
+                    "description": "Move the bounding box of the page item"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "transformAgain",
+                    "description": "Transforms the CheckBox using the last transformation performed on any object. Transformations include moving, rotating, shearing, scaling, and flipping.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "transformSequenceAgain",
+                    "description": "Transforms the CheckBox using the last sequence of transform operations performed on any single object or performed at the same time on any group of objects. Transformations include moving, rotating, shearing, scaling, and flipping.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "transformAgainIndividually",
+                    "description": "Transforms the CheckBox using the last transformation performed on any CheckBox. Transformations include moving, rotating, shearing, scaling, and flipping.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "transformSequenceAgainIndividually",
+                    "description": "Transforms the CheckBox using the last sequence of transformations performed on any single object or performed at the same time on any group of objects. Transformations include moving, rotating, shearing, scaling, and flipping.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "plainText",
+                            "description": "QR code Plain Text  (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "qrCodeSwatch",
+                            "description": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties (Optional)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "createPlainTextQRCode",
+                    "description": "Create Plain Text QR Code on the page item"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "urlLink",
+                            "description": "QR code Hyperlink URL  (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "qrCodeSwatch",
+                            "description": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties (Optional)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "createHyperlinkQRCode",
+                    "description": "Create Hyperlink QR Code on the page item or document"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "cellNumber",
+                            "description": "QR code Text Phone Number (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "textMessage",
+                            "description": "QR code Text Message (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "qrCodeSwatch",
+                            "description": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties (Optional)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "createTextMsgQRCode",
+                    "description": "Create Text Msg QR Code on the page item or document"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "emailAddress",
+                            "description": "QR code Email Address (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "subject",
+                            "description": "QR code Email Subject (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "body",
+                            "description": "QR code Email Body Message (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "qrCodeSwatch",
+                            "description": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties (Optional)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "createEmailQRCode",
+                    "description": "Create Email QR Code on the page item or document"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "firstName",
+                            "description": "QR code Business Card First Name (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "lastName",
+                            "description": "QR code Business Card Last Name (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "jobTitle",
+                            "description": "QR code Business Card Title (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "cellPhone",
+                            "description": "QR code Business Card Cell Phone Number (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "phone",
+                            "description": "QR code Business Card Phone Number (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "email",
+                            "description": "QR code Business Card Email Address (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "organisation",
+                            "description": "QR code Business Card Organisation (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "streetAddress",
+                            "description": "QR code Business Card Street Address (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "city",
+                            "description": "QR code Business Card City (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "adrState",
+                            "description": "QR code Business Card State (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "country",
+                            "description": "QR code Business Card Country (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "postalCode",
+                            "description": "QR code Business Card Postal Code (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "website",
+                            "description": "QR code Business Card URL (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "qrCodeSwatch",
+                            "description": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties (Optional)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "createVCardQRCode",
+                    "description": "Create Business Card QR Code on the page item or load on document's placegun"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "format",
+                            "description": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The path to the export file.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "showingOptions",
+                            "description": "If true, displays the export options dialog. (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The export style. (Optional)",
+                            "type": "PDFExportPreset"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "versionComments",
+                            "description": "The comment for this version. (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "forceSave",
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "exportFile",
+                    "description": "Exports the object(s) to a file."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "format",
+                            "description": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The path to the export file.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "showingOptions",
+                            "description": "If true, displays the export options dialog. (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The export style. (Optional)",
+                            "type": "PDFExportPreset"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "versionComments",
+                            "description": "The comment for this version. (Optional)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "forceSave",
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "asynchronousExportFile",
+                    "description": "asynchronously exports the object(s) to a file.",
+                    "type": "BackgroundTask"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": true,
+                            "name": "pageItems",
+                            "description": "One or more page items to place or load",
+                            "type": "PageItem"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "linkPageItems",
+                            "description": "Whether to link pageItems in content placer (if true it will override link stories value) (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "linkStories",
+                            "description": "Whether to link stories in content placer (only applicable for single story, pageItem links will also be created in case of more than one item) (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "mapStyles",
+                            "description": "Whether to map styles in content placer (Optional)",
+                            "type": "Boolean"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "showingOptions",
+                            "description": "Whether to display the link options dialog (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "contentPlace",
+                    "description": "Duplicate an object and place it into the target page item.",
+                    "type": "Mixed"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "SelectionOptions.REPLACE_WITH",
+                            "array": false,
+                            "name": "existingSelection",
+                            "description": "The selection status of the CheckBox in relation to previously selected objects. (Optional)",
+                            "type": "SelectionOptions"
+                        }
+                    ],
+                    "name": "select",
+                    "description": "Selects the object."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "using",
+                            "description": "The library in which to store the object.",
+                            "type": "Library"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new CheckBox (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "store",
+                    "description": "Stores the object in the specified library.",
+                    "type": "Asset"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "value",
+                            "description": "The value.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The key.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the CheckBox.",
+                    "type": "String"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "CheckBox"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "type": "EventListener"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventType",
+                            "description": "The registered event type.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "handler",
+                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "captures",
+                            "description": "This parameter is obsolete. (Optional)",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "type": "Boolean"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "anchoredObjectSettings",
+                    "description": "Anchored object settings.",
+                    "type": "AnchoredObjectSetting"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textWrapPreferences",
+                    "description": "The text wrap preference properties that define the default formatting for wrapping text around objects.",
+                    "type": "TextWrapPreference"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "associatedXMLElement",
+                    "description": "The XML element associated with the CheckBox.",
+                    "type": "XMLItem"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "transparencySettings",
+                    "description": "Transparency settings.",
+                    "type": "TransparencySetting"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "strokeTransparencySettings",
+                    "description": "Transparency settings for the stroke.",
+                    "type": "StrokeTransparencySetting"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "fillTransparencySettings",
+                    "description": "Transparency settings for the fill applied to the CheckBox.",
+                    "type": "FillTransparencySetting"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "contentTransparencySettings",
+                    "description": "Transparency settings for the content of the CheckBox.",
+                    "type": "ContentTransparencySetting"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "linkedPageItemOptions",
+                    "description": "Linked Page Item options",
+                    "type": "LinkedPageItemOption"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "overridden",
+                    "description": "If true, the object originated on a master spread and was overridden. If false, the object either originated on a master spread and was not overridden, or the object did not originate on a master page.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "overriddenMasterPageItem",
+                    "description": "An object that originated on a master page and has been overridden. Can return: PageItem, Guide, Graphic, Movie or Sound.",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "allPageItems",
+                    "description": "Lists all page items contained by the CheckBox.",
+                    "type": "PageItem"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "allGraphics",
+                    "description": "Lists all graphics contained by the CheckBox.",
+                    "type": "Graphic"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parentPage",
+                    "description": "The page on which this page item appears.",
+                    "type": "Page"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "animationSettings",
+                    "description": "The page item animation settings.",
+                    "type": "AnimationSetting"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "timingSettings",
+                    "description": "The object timing settings.",
+                    "type": "TimingSetting"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "allArticles",
+                    "description": "The list of all articles this page item is part of",
+                    "type": "Article"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "id",
+                    "description": "The unique ID of the CheckBox.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "isValid",
+                    "description": "Returns true if the object specifier resolves to valid objects.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The parent of the CheckBox (a PlaceGun, Character, Spread, MasterSpread, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Group or Snippet).",
+                    "type": "Mixed"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "index",
+                    "description": "The index of the CheckBox within its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "preferences",
+                    "description": "A collection of preferences objects.",
+                    "type": "Preferences"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "ovals",
+                    "description": "A collection of ellipses.",
+                    "type": "Ovals"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "splineItems",
+                    "description": "The spline items collection.",
+                    "type": "SplineItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pageItems",
+                    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type.",
+                    "type": "PageItems"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "rectangles",
+                    "description": "A collection of rectangles.",
+                    "type": "Rectangles"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "graphicLines",
+                    "description": "A collection of graphic lines.",
+                    "type": "GraphicLines"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "textFrames",
+                    "description": "A collection of text frames.",
+                    "type": "TextFrames"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "polygons",
+                    "description": "A collection of polygons.",
+                    "type": "Polygons"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "events",
+                    "description": "A collection of events.",
+                    "type": "Events"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "eventListeners",
+                    "description": "A collection of event listeners.",
+                    "type": "EventListeners"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "images",
+                    "description": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF).",
+                    "type": "Images"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "graphics",
+                    "description": "A collection of imported graphics in any graphic file format (vector, metafile, or bitmap).",
+                    "type": "Graphics"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "epss",
+                    "description": "A collection of EPS files.",
+                    "type": "EPSs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "wmfs",
+                    "description": "A collection of WMF graphics.",
+                    "type": "WMFs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "picts",
+                    "description": "A collection of PICT graphics.",
+                    "type": "PICTs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "pdfs",
+                    "description": "A collection of PDF files.",
+                    "type": "PDFs"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "groups",
+                    "description": "A collection of groups.",
+                    "type": "Groups"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "epstexts",
+                    "description": "EPSTexts",
+                    "type": "EPSTexts"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "states",
+                    "description": "A collection of states.",
+                    "type": "States"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "submitFormBehaviors",
+                    "description": "A collection of submit form behavior objects.",
+                    "type": "SubmitFormBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "behaviors",
+                    "description": "A collection of behavior objects.",
+                    "type": "Behaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "clearFormBehaviors",
+                    "description": "A collection of clear form behavior objects.",
+                    "type": "ClearFormBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "printFormBehaviors",
+                    "description": "A collection of print form behavior objects.",
+                    "type": "PrintFormBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "viewZoomBehaviors",
+                    "description": "A collection of view zoom behavior objects.",
+                    "type": "ViewZoomBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "soundBehaviors",
+                    "description": "A collection of sound behavior objects.",
+                    "type": "SoundBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "showHideFieldsBehaviors",
+                    "description": "A collection of show/hide fields behavior objects.",
+                    "type": "ShowHideFieldsBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "movieBehaviors",
+                    "description": "A collection of movie behavior objects.",
+                    "type": "MovieBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoAnchorBehaviors",
+                    "description": "A collection of goto anchor behavior objects.",
+                    "type": "GotoAnchorBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoFirstPageBehaviors",
+                    "description": "A collection of goto first page behavior objects.",
+                    "type": "GotoFirstPageBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoLastPageBehaviors",
+                    "description": "A collection of goto last page behavior objects.",
+                    "type": "GotoLastPageBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoNextPageBehaviors",
+                    "description": "A collection of goto next page behavior objects.",
+                    "type": "GotoNextPageBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoPreviousPageBehaviors",
+                    "description": "A collection of goto previous page behavior objects.",
+                    "type": "GotoPreviousPageBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoNextViewBehaviors",
+                    "description": "A collection of goto next view behavior objects.",
+                    "type": "GotoNextViewBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoPreviousViewBehaviors",
+                    "description": "A collection of goto previous view behavior objects.",
+                    "type": "GotoPreviousViewBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "gotoURLBehaviors",
+                    "description": "A collection of goto URL behavior objects.",
+                    "type": "GotoURLBehaviors"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "openFileBehaviors",
+                    "description": "A collection of open file behavior objects.",
+                    "type": "OpenFileBehaviors"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "readOnly",
+                    "description": "If true, the form field is read only in the exported PDF.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "required",
+                    "description": "If true, the form field is required in the exported PDF.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "printableInPdf",
+                    "description": "If true, the form field/push button is printable in the exported PDF.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "hiddenUntilTriggered",
+                    "description": "If true, the form field/push button is hidden until triggered in the exported PDF.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "checkedByDefault",
+                    "description": "If true, the check box/radio button is selected by default in the exported PDF.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "exportValue",
+                    "description": "Export value for the check box/radio button in the exported PDF.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "activeStateIndex",
+                    "description": "The index of the active state in the object's states collection.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of the CheckBox.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "description",
+                    "description": "The description of the CheckBox.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "allowOverrides",
+                    "description": "If true, the master page item can be overridden.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "horizontalLayoutConstraints",
+                    "description": "The left margin, width, and right margin constraints this item is subject to when using the object-based layout rule.",
+                    "type": "DimensionsConstraints"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "verticalLayoutConstraints",
+                    "description": "The top margin, height, and bottom margin constraints this item is subject to when using the object-based layout rule.",
+                    "type": "DimensionsConstraints"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "geometricBounds",
+                    "description": "The bounds of the CheckBox excluding the stroke width, in the format [y1, x1, y2, x2], which give the coordinates of the top-left and bottom-right corners of the bounding box.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "visibleBounds",
+                    "description": "The bounds of the CheckBox including the stroke width, in the format [y1, x1, y2, x2], which give the coordinates of the top-left and bottom-right corners of the bounding box.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fillColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the fill of the CheckBox. . Can also accept: String.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "fillTint",
+                    "description": "The percent of tint to use in the CheckBox's fill color. (To specify a tint percent, use a number in the range of 0 to 100; to use the inherited or overridden value, use -1.)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "overprintFill",
+                    "description": "If true, the CheckBox's fill color overprints any underlying objects. If false, the fill color knocks out the underlying colors.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeWeight",
+                    "description": "The weight (in points) to apply to the CheckBox's stroke.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "value": "4",
+                    "array": false,
+                    "name": "miterLimit",
+                    "description": "The limit of the ratio of stroke width to miter length before a miter (pointed) join becomes a bevel (squared-off) join.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "endCap",
+                    "description": "The end shape of an open path.",
+                    "type": "EndCap"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "endJoin",
+                    "description": "The corner join applied to the CheckBox.",
+                    "type": "EndJoin"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeType",
+                    "description": "The name of the stroke style to apply. Can also accept: String.",
+                    "type": "StrokeStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeCornerAdjustment",
+                    "description": "The corner adjustment applied to the CheckBox.",
+                    "type": "StrokeCornerAdjustment"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "strokeDashAndGap",
+                    "description": "The dash and gap measurements that define the pattern of a custom dashed line. Define up to six values (in points) in the format [dash1, gap1, dash2, gap2, dash3, gap3].",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "leftLineEnd",
+                    "description": "The arrowhead applied to the start of the path.",
+                    "type": "ArrowHead"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rightLineEnd",
+                    "description": "The arrowhead applied to the end of the path.",
+                    "type": "ArrowHead"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the stroke of the CheckBox. Can also accept: String.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeTint",
+                    "description": "The percent of tint to use in object's stroke color. (To specify a tint percent, use a number in the range of 0 to 100; to use the inherited or overridden value, use -1.)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "gradientFillStart",
+                    "description": "The starting point (in page coordinates) of a gradient applied to the fill of the CheckBox, in the format [x, y].",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gradientFillLength",
+                    "description": "The length (for a linear gradient) or radius (for a radial gradient) applied to the fill of the CheckBox.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gradientFillAngle",
+                    "description": "The angle of a linear gradient applied to the fill of the CheckBox. (Range: -180 to 180)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "gradientStrokeStart",
+                    "description": "The starting point (in page coordinates) of a gradient applied to the stroke of the CheckBox, in the format [x, y].",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gradientStrokeLength",
+                    "description": "The length (for a linear gradient) or radius (for a radial gradient) applied to the stroke of the CheckBox.",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gradientStrokeAngle",
+                    "description": "The angle of a linear gradient applied to the stroke of the CheckBox. (Range: -180 to 180)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "overprintStroke",
+                    "description": "If true, the CheckBox's stroke color overprints any underlying objects. If false, the stroke color knocks out the  underlying colors.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gapColor",
+                    "description": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of a dashed, dotted, or striped stroke. For information, see stroke type.",
+                    "type": "Swatch"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "gapTint",
+                    "description": "The tint as a percentage of the gap color. (To specify a tint percent, use a number in the range of 0 to 100; to use the inherited or overridden value, use -1.)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "overprintGap",
+                    "description": "If true, the gap color overprints any underlying colors. If false, the gap color knocks out the underlying colors.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "strokeAlignment",
+                    "description": "The stroke alignment applied to the CheckBox.",
+                    "type": "StrokeAlignment"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "nonprinting",
+                    "description": "If true, the CheckBox does not print.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "itemLayer",
+                    "description": "The layer that the CheckBox is on.",
+                    "type": "Layer"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "locked",
+                    "description": "If true, the CheckBox is locked.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "localDisplaySetting",
+                    "description": "Display performance options for the CheckBox.",
+                    "type": "DisplaySettingOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "rotationAngle",
+                    "description": "The rotatation angle of the CheckBox. (Range: -360 to 360)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "shearAngle",
+                    "description": "The skewing angle applied to the CheckBox. (Range: -360 to 360)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "horizontalScale",
+                    "description": "The horizontal scaling applied to the CheckBox.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "verticalScale",
+                    "description": "The vertical scaling applied to the CheckBox.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "absoluteRotationAngle",
+                    "description": "The rotation angle of the CheckBox relative to its containing object. (Range: -360 to 360)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "absoluteShearAngle",
+                    "description": "The skewing angle of the CheckBox relative to its containing object. (Range: -360 to 360)",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "absoluteHorizontalScale",
+                    "description": "The horizontal scale of the CheckBox relative to its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "absoluteVerticalScale",
+                    "description": "The vertical scale of the CheckBox relative to its containing object.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "appliedObjectStyle",
+                    "description": "The object style applied to the CheckBox.",
+                    "type": "ObjectStyle"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "flip",
+                    "description": "The direction in which to flip the printed image.",
+                    "type": "Flip"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "absoluteFlip",
+                    "description": "Indicates whether the CheckBox has been flipped independently of its parent object and, if yes, the direction in which the CheckBox was flipped.",
+                    "type": "Flip"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "visible",
+                    "description": "If true, the CheckBox is visible.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topLeftCornerOption",
+                    "description": "The shape to be applied to the top left corner of rectangular shapes and all corners of non-rectangular shapes.Note: corner option differs from end join in which you can set a radius for a corner option, whereas the rounded or beveled effect of an end join depends on the stroke weight.",
+                    "type": "CornerOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topRightCornerOption",
+                    "description": "The shape to apply to the top right corner of rectangular shapes",
+                    "type": "CornerOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomLeftCornerOption",
+                    "description": "The shape to apply to the bottom left corner of rectangular shapes.",
+                    "type": "CornerOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomRightCornerOption",
+                    "description": "The shape to apply to the bottom right corner of rectangular shapes.",
+                    "type": "CornerOptions"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topLeftCornerRadius",
+                    "description": "The radius in measurement units of the corner effect applied to the top left corner of rectangular shapes and all corners of non-rectangular shapes",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "topRightCornerRadius",
+                    "description": "The radius in measurement units of the corner effect applied to the top right corner of rectangular shapes",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomLeftCornerRadius",
+                    "description": "The radius in measurement units of the corner effect applied to the bottom left corner of rectangular shapes",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "bottomRightCornerRadius",
+                    "description": "The radius in measurement units of the corner effect applied to the bottom right corner of rectangular shapes",
+                    "type": "Measurement Unit (Number or String)=any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "label",
+                    "description": "A property that can be set to any string.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "properties",
+                    "description": "A property that allows setting of several properties at the same time.",
+                    "type": "Object"
+                }
+            ]
         }
-      ]
     },
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "anchoredObjectSettings",
-          "rwaccess": "readonly",
-          "shortdesc": "Anchored object settings.",
-          "datatype": {
-            "type": "AnchoredObjectSetting"
-          }
-        },
-        {
-          "name": "textWrapPreferences",
-          "rwaccess": "readonly",
-          "shortdesc": "The text wrap preference properties that define the default formatting for wrapping text around objects.",
-          "datatype": {
-            "type": "TextWrapPreference"
-          }
-        },
-        {
-          "name": "associatedXMLElement",
-          "rwaccess": "readonly",
-          "shortdesc": "The XML element associated with the CheckBox.",
-          "datatype": {
-            "type": "XMLItem"
-          }
-        },
-        {
-          "name": "transparencySettings",
-          "rwaccess": "readonly",
-          "shortdesc": "Transparency settings.",
-          "datatype": {
-            "type": "TransparencySetting"
-          }
-        },
-        {
-          "name": "strokeTransparencySettings",
-          "rwaccess": "readonly",
-          "shortdesc": "Transparency settings for the stroke.",
-          "datatype": {
-            "type": "StrokeTransparencySetting"
-          }
-        },
-        {
-          "name": "fillTransparencySettings",
-          "rwaccess": "readonly",
-          "shortdesc": "Transparency settings for the fill applied to the CheckBox.",
-          "datatype": {
-            "type": "FillTransparencySetting"
-          }
-        },
-        {
-          "name": "contentTransparencySettings",
-          "rwaccess": "readonly",
-          "shortdesc": "Transparency settings for the content of the CheckBox.",
-          "datatype": {
-            "type": "ContentTransparencySetting"
-          }
-        },
-        {
-          "name": "linkedPageItemOptions",
-          "rwaccess": "readonly",
-          "shortdesc": "Linked Page Item options",
-          "datatype": {
-            "type": "LinkedPageItemOption"
-          }
-        },
-        {
-          "name": "overridden",
-          "rwaccess": "readonly",
-          "shortdesc": "If true, the object originated on a master spread and was overridden. If false, the object either originated on a master spread and was not overridden, or the object did not originate on a master page.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "overriddenMasterPageItem",
-          "rwaccess": "readonly",
-          "shortdesc": "An object that originated on a master page and has been overridden. Can return: PageItem, Guide, Graphic, Movie or Sound.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "allPageItems",
-          "rwaccess": "readonly",
-          "shortdesc": "Lists all page items contained by the CheckBox.",
-          "datatype": {
-            "type": "PageItem",
-            "array": true
-          }
-        },
-        {
-          "name": "allGraphics",
-          "rwaccess": "readonly",
-          "shortdesc": "Lists all graphics contained by the CheckBox.",
-          "datatype": {
-            "type": "Graphic",
-            "array": true
-          }
-        },
-        {
-          "name": "parentPage",
-          "rwaccess": "readonly",
-          "shortdesc": "The page on which this page item appears.",
-          "datatype": {
-            "type": "Page"
-          }
-        },
-        {
-          "name": "animationSettings",
-          "rwaccess": "readonly",
-          "shortdesc": "The page item animation settings.",
-          "datatype": {
-            "type": "AnimationSetting"
-          }
-        },
-        {
-          "name": "timingSettings",
-          "rwaccess": "readonly",
-          "shortdesc": "The object timing settings.",
-          "datatype": {
-            "type": "TimingSetting"
-          }
-        },
-        {
-          "name": "allArticles",
-          "rwaccess": "readonly",
-          "shortdesc": "The list of all articles this page item is part of",
-          "datatype": {
-            "type": "Article",
-            "array": true
-          }
-        },
-        {
-          "name": "id",
-          "rwaccess": "readonly",
-          "shortdesc": "The unique ID of the CheckBox.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "isValid",
-          "rwaccess": "readonly",
-          "shortdesc": "Returns true if the object specifier resolves to valid objects.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The parent of the CheckBox (a PlaceGun, Character, Spread, MasterSpread, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Group or Snippet).",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "index",
-          "rwaccess": "readonly",
-          "shortdesc": "The index of the CheckBox within its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "preferences",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of preferences objects.",
-          "datatype": {
-            "type": "Preferences"
-          }
-        },
-        {
-          "name": "ovals",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of ellipses.",
-          "datatype": {
-            "type": "Ovals"
-          }
-        },
-        {
-          "name": "splineItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The spline items collection.",
-          "datatype": {
-            "type": "SplineItems"
-          }
-        },
-        {
-          "name": "pageItems",
-          "rwaccess": "readonly",
-          "shortdesc": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type.",
-          "datatype": {
-            "type": "PageItems"
-          }
-        },
-        {
-          "name": "rectangles",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of rectangles.",
-          "datatype": {
-            "type": "Rectangles"
-          }
-        },
-        {
-          "name": "graphicLines",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of graphic lines.",
-          "datatype": {
-            "type": "GraphicLines"
-          }
-        },
-        {
-          "name": "textFrames",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of text frames.",
-          "datatype": {
-            "type": "TextFrames"
-          }
-        },
-        {
-          "name": "polygons",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of polygons.",
-          "datatype": {
-            "type": "Polygons"
-          }
-        },
-        {
-          "name": "events",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of events.",
-          "datatype": {
-            "type": "Events"
-          }
-        },
-        {
-          "name": "eventListeners",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of event listeners.",
-          "datatype": {
-            "type": "EventListeners"
-          }
-        },
-        {
-          "name": "images",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF).",
-          "datatype": {
-            "type": "Images"
-          }
-        },
-        {
-          "name": "graphics",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of imported graphics in any graphic file format (vector, metafile, or bitmap).",
-          "datatype": {
-            "type": "Graphics"
-          }
-        },
-        {
-          "name": "epss",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of EPS files.",
-          "datatype": {
-            "type": "EPSs"
-          }
-        },
-        {
-          "name": "wmfs",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of WMF graphics.",
-          "datatype": {
-            "type": "WMFs"
-          }
-        },
-        {
-          "name": "picts",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of PICT graphics.",
-          "datatype": {
-            "type": "PICTs"
-          }
-        },
-        {
-          "name": "pdfs",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of PDF files.",
-          "datatype": {
-            "type": "PDFs"
-          }
-        },
-        {
-          "name": "groups",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of groups.",
-          "datatype": {
-            "type": "Groups"
-          }
-        },
-        {
-          "name": "epstexts",
-          "rwaccess": "readonly",
-          "shortdesc": "EPSTexts",
-          "datatype": {
-            "type": "EPSTexts"
-          }
-        },
-        {
-          "name": "states",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of states.",
-          "datatype": {
-            "type": "States"
-          }
-        },
-        {
-          "name": "submitFormBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of submit form behavior objects.",
-          "datatype": {
-            "type": "SubmitFormBehaviors"
-          }
-        },
-        {
-          "name": "behaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of behavior objects.",
-          "datatype": {
-            "type": "Behaviors"
-          }
-        },
-        {
-          "name": "clearFormBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of clear form behavior objects.",
-          "datatype": {
-            "type": "ClearFormBehaviors"
-          }
-        },
-        {
-          "name": "printFormBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of print form behavior objects.",
-          "datatype": {
-            "type": "PrintFormBehaviors"
-          }
-        },
-        {
-          "name": "viewZoomBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of view zoom behavior objects.",
-          "datatype": {
-            "type": "ViewZoomBehaviors"
-          }
-        },
-        {
-          "name": "soundBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of sound behavior objects.",
-          "datatype": {
-            "type": "SoundBehaviors"
-          }
-        },
-        {
-          "name": "showHideFieldsBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of show/hide fields behavior objects.",
-          "datatype": {
-            "type": "ShowHideFieldsBehaviors"
-          }
-        },
-        {
-          "name": "movieBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of movie behavior objects.",
-          "datatype": {
-            "type": "MovieBehaviors"
-          }
-        },
-        {
-          "name": "gotoAnchorBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto anchor behavior objects.",
-          "datatype": {
-            "type": "GotoAnchorBehaviors"
-          }
-        },
-        {
-          "name": "gotoFirstPageBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto first page behavior objects.",
-          "datatype": {
-            "type": "GotoFirstPageBehaviors"
-          }
-        },
-        {
-          "name": "gotoLastPageBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto last page behavior objects.",
-          "datatype": {
-            "type": "GotoLastPageBehaviors"
-          }
-        },
-        {
-          "name": "gotoNextPageBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto next page behavior objects.",
-          "datatype": {
-            "type": "GotoNextPageBehaviors"
-          }
-        },
-        {
-          "name": "gotoPreviousPageBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto previous page behavior objects.",
-          "datatype": {
-            "type": "GotoPreviousPageBehaviors"
-          }
-        },
-        {
-          "name": "gotoNextViewBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto next view behavior objects.",
-          "datatype": {
-            "type": "GotoNextViewBehaviors"
-          }
-        },
-        {
-          "name": "gotoPreviousViewBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto previous view behavior objects.",
-          "datatype": {
-            "type": "GotoPreviousViewBehaviors"
-          }
-        },
-        {
-          "name": "gotoURLBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of goto URL behavior objects.",
-          "datatype": {
-            "type": "GotoURLBehaviors"
-          }
-        },
-        {
-          "name": "openFileBehaviors",
-          "rwaccess": "readonly",
-          "shortdesc": "A collection of open file behavior objects.",
-          "datatype": {
-            "type": "OpenFileBehaviors"
-          }
-        },
-        {
-          "name": "readOnly",
-          "shortdesc": "If true, the form field is read only in the exported PDF.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "required",
-          "shortdesc": "If true, the form field is required in the exported PDF.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "printableInPdf",
-          "shortdesc": "If true, the form field/push button is printable in the exported PDF.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "hiddenUntilTriggered",
-          "shortdesc": "If true, the form field/push button is hidden until triggered in the exported PDF.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "checkedByDefault",
-          "shortdesc": "If true, the check box/radio button is selected by default in the exported PDF.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "exportValue",
-          "shortdesc": "Export value for the check box/radio button in the exported PDF.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "activeStateIndex",
-          "shortdesc": "The index of the active state in the object's states collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The name of the CheckBox.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "description",
-          "shortdesc": "The description of the CheckBox.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "allowOverrides",
-          "shortdesc": "If true, the master page item can be overridden.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "horizontalLayoutConstraints",
-          "shortdesc": "The left margin, width, and right margin constraints this item is subject to when using the object-based layout rule.",
-          "datatype": {
-            "type": "DimensionsConstraints",
-            "array": true
-          }
-        },
-        {
-          "name": "verticalLayoutConstraints",
-          "shortdesc": "The top margin, height, and bottom margin constraints this item is subject to when using the object-based layout rule.",
-          "datatype": {
-            "type": "DimensionsConstraints",
-            "array": true
-          }
-        },
-        {
-          "name": "geometricBounds",
-          "shortdesc": "The bounds of the CheckBox excluding the stroke width, in the format [y1, x1, y2, x2], which give the coordinates of the top-left and bottom-right corners of the bounding box.",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "visibleBounds",
-          "shortdesc": "The bounds of the CheckBox including the stroke width, in the format [y1, x1, y2, x2], which give the coordinates of the top-left and bottom-right corners of the bounding box.",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "fillColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the fill of the CheckBox. . Can also accept: String.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "fillTint",
-          "shortdesc": "The percent of tint to use in the CheckBox's fill color. (To specify a tint percent, use a number in the range of 0 to 100; to use the inherited or overridden value, use -1.)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "overprintFill",
-          "shortdesc": "If true, the CheckBox's fill color overprints any underlying objects. If false, the fill color knocks out the underlying colors.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "strokeWeight",
-          "shortdesc": "The weight (in points) to apply to the CheckBox's stroke.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "miterLimit",
-          "shortdesc": "The limit of the ratio of stroke width to miter length before a miter (pointed) join becomes a bevel (squared-off) join.",
-          "datatype": {
-            "type": "Number",
-            "min": 1,
-            "max": 500,
-            "value": 4
-          }
-        },
-        {
-          "name": "endCap",
-          "shortdesc": "The end shape of an open path.",
-          "datatype": {
-            "type": "EndCap"
-          }
-        },
-        {
-          "name": "endJoin",
-          "shortdesc": "The corner join applied to the CheckBox.",
-          "datatype": {
-            "type": "EndJoin"
-          }
-        },
-        {
-          "name": "strokeType",
-          "shortdesc": "The name of the stroke style to apply. Can also accept: String.",
-          "datatype": {
-            "type": "StrokeStyle"
-          }
-        },
-        {
-          "name": "strokeCornerAdjustment",
-          "shortdesc": "The corner adjustment applied to the CheckBox.",
-          "datatype": {
-            "type": "StrokeCornerAdjustment"
-          }
-        },
-        {
-          "name": "strokeDashAndGap",
-          "shortdesc": "The dash and gap measurements that define the pattern of a custom dashed line. Define up to six values (in points) in the format [dash1, gap1, dash2, gap2, dash3, gap3].",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "leftLineEnd",
-          "shortdesc": "The arrowhead applied to the start of the path.",
-          "datatype": {
-            "type": "ArrowHead"
-          }
-        },
-        {
-          "name": "rightLineEnd",
-          "shortdesc": "The arrowhead applied to the end of the path.",
-          "datatype": {
-            "type": "ArrowHead"
-          }
-        },
-        {
-          "name": "strokeColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the stroke of the CheckBox. Can also accept: String.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "strokeTint",
-          "shortdesc": "The percent of tint to use in object's stroke color. (To specify a tint percent, use a number in the range of 0 to 100; to use the inherited or overridden value, use -1.)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "gradientFillStart",
-          "shortdesc": "The starting point (in page coordinates) of a gradient applied to the fill of the CheckBox, in the format [x, y].",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "gradientFillLength",
-          "shortdesc": "The length (for a linear gradient) or radius (for a radial gradient) applied to the fill of the CheckBox.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "gradientFillAngle",
-          "shortdesc": "The angle of a linear gradient applied to the fill of the CheckBox. (Range: -180 to 180)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "gradientStrokeStart",
-          "shortdesc": "The starting point (in page coordinates) of a gradient applied to the stroke of the CheckBox, in the format [x, y].",
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "gradientStrokeLength",
-          "shortdesc": "The length (for a linear gradient) or radius (for a radial gradient) applied to the stroke of the CheckBox.",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "gradientStrokeAngle",
-          "shortdesc": "The angle of a linear gradient applied to the stroke of the CheckBox. (Range: -180 to 180)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "overprintStroke",
-          "shortdesc": "If true, the CheckBox's stroke color overprints any underlying objects. If false, the stroke color knocks out the  underlying colors.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "gapColor",
-          "shortdesc": "The swatch (color, gradient, tint, or mixed ink) applied to the gap of a dashed, dotted, or striped stroke. For information, see stroke type.",
-          "datatype": {
-            "type": "Swatch"
-          }
-        },
-        {
-          "name": "gapTint",
-          "shortdesc": "The tint as a percentage of the gap color. (To specify a tint percent, use a number in the range of 0 to 100; to use the inherited or overridden value, use -1.)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "overprintGap",
-          "shortdesc": "If true, the gap color overprints any underlying colors. If false, the gap color knocks out the underlying colors.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "strokeAlignment",
-          "shortdesc": "The stroke alignment applied to the CheckBox.",
-          "datatype": {
-            "type": "StrokeAlignment"
-          }
-        },
-        {
-          "name": "nonprinting",
-          "shortdesc": "If true, the CheckBox does not print.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "itemLayer",
-          "shortdesc": "The layer that the CheckBox is on.",
-          "datatype": {
-            "type": "Layer"
-          }
-        },
-        {
-          "name": "locked",
-          "shortdesc": "If true, the CheckBox is locked.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "localDisplaySetting",
-          "shortdesc": "Display performance options for the CheckBox.",
-          "datatype": {
-            "type": "DisplaySettingOptions"
-          }
-        },
-        {
-          "name": "rotationAngle",
-          "shortdesc": "The rotatation angle of the CheckBox. (Range: -360 to 360)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "shearAngle",
-          "shortdesc": "The skewing angle applied to the CheckBox. (Range: -360 to 360)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "horizontalScale",
-          "shortdesc": "The horizontal scaling applied to the CheckBox.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "verticalScale",
-          "shortdesc": "The vertical scaling applied to the CheckBox.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "absoluteRotationAngle",
-          "shortdesc": "The rotation angle of the CheckBox relative to its containing object. (Range: -360 to 360)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "absoluteShearAngle",
-          "shortdesc": "The skewing angle of the CheckBox relative to its containing object. (Range: -360 to 360)",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "absoluteHorizontalScale",
-          "shortdesc": "The horizontal scale of the CheckBox relative to its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "absoluteVerticalScale",
-          "shortdesc": "The vertical scale of the CheckBox relative to its containing object.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "appliedObjectStyle",
-          "shortdesc": "The object style applied to the CheckBox.",
-          "datatype": {
-            "type": "ObjectStyle"
-          }
-        },
-        {
-          "name": "flip",
-          "shortdesc": "The direction in which to flip the printed image.",
-          "datatype": {
-            "type": "Flip"
-          }
-        },
-        {
-          "name": "absoluteFlip",
-          "shortdesc": "Indicates whether the CheckBox has been flipped independently of its parent object and, if yes, the direction in which the CheckBox was flipped.",
-          "datatype": {
-            "type": "Flip"
-          }
-        },
-        {
-          "name": "visible",
-          "shortdesc": "If true, the CheckBox is visible.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "topLeftCornerOption",
-          "shortdesc": "The shape to be applied to the top left corner of rectangular shapes and all corners of non-rectangular shapes.Note: corner option differs from end join in which you can set a radius for a corner option, whereas the rounded or beveled effect of an end join depends on the stroke weight.",
-          "datatype": {
-            "type": "CornerOptions"
-          }
-        },
-        {
-          "name": "topRightCornerOption",
-          "shortdesc": "The shape to apply to the top right corner of rectangular shapes",
-          "datatype": {
-            "type": "CornerOptions"
-          }
-        },
-        {
-          "name": "bottomLeftCornerOption",
-          "shortdesc": "The shape to apply to the bottom left corner of rectangular shapes.",
-          "datatype": {
-            "type": "CornerOptions"
-          }
-        },
-        {
-          "name": "bottomRightCornerOption",
-          "shortdesc": "The shape to apply to the bottom right corner of rectangular shapes.",
-          "datatype": {
-            "type": "CornerOptions"
-          }
-        },
-        {
-          "name": "topLeftCornerRadius",
-          "shortdesc": "The radius in measurement units of the corner effect applied to the top left corner of rectangular shapes and all corners of non-rectangular shapes",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "topRightCornerRadius",
-          "shortdesc": "The radius in measurement units of the corner effect applied to the top right corner of rectangular shapes",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "bottomLeftCornerRadius",
-          "shortdesc": "The radius in measurement units of the corner effect applied to the bottom left corner of rectangular shapes",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "bottomRightCornerRadius",
-          "shortdesc": "The radius in measurement units of the corner effect applied to the bottom right corner of rectangular shapes",
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "label",
-          "shortdesc": "A property that can be set to any string.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "properties",
-          "shortdesc": "A property that allows setting of several properties at the same time.",
-          "datatype": {
-            "type": "Object"
-          }
-        }
-      ],
-      "method": [
-        {
-          "name": "bringToFront",
-          "shortdesc": "Brings the CheckBox to the front of its layer or in front of a particular item.",
-          "parameters": [
-            {
-              "name": "reference",
-              "shortdesc": "The reference object to bring the object in front of (must have same parent) ",
-              "datatype": {
-                "type": "PageItem"
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "sendToBack",
-          "shortdesc": "Sends the CheckBox to the back of its layer or behind a particular item (must have same parent).",
-          "parameters": [
-            {
-              "name": "reference",
-              "shortdesc": "The reference object to send the object behind ",
-              "datatype": {
-                "type": "PageItem"
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "bringForward",
-          "shortdesc": "Brings the CheckBox forward one level in its layer."
-        },
-        {
-          "name": "sendBackward",
-          "shortdesc": "Sends the CheckBox back one level in its layer."
-        },
-        {
-          "name": "convertShape",
-          "shortdesc": "Converts the CheckBox to a different shape.",
-          "parameters": [
-            {
-              "name": "given",
-              "shortdesc": "The CheckBox's new shape.",
-              "datatype": {
-                "type": "ConvertShapeOptions"
-              }
-            },
-            {
-              "name": "numberOfSides",
-              "shortdesc": "The number of sides for the resulting polygon. (Range: 3 to 100) ",
-              "datatype": {
-                "type": "Number",
-                "min": 3,
-                "max": 100
-              },
-              "optional": true
-            },
-            {
-              "name": "insetPercentage",
-              "shortdesc": "The star inset percentage for the resulting polygon. (Range: 0.0 to 100.0)  ",
-              "datatype": {
-                "type": "Number",
-                "min": 0,
-                "max": 100
-              },
-              "optional": true
-            },
-            {
-              "name": "cornerRadius",
-              "shortdesc": "The corner radius of the resulting rectangle. ",
-              "datatype": {
-                "type": "Mixed",
-                "min": 0,
-                "max": 800
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "convertToObject",
-          "shortdesc": "Converts the button object to the page item currently in the active state. Page items from other states will be lost."
-        },
-        {
-          "name": "placeXML",
-          "shortdesc": "Places XML content into the specified object. Note: Replaces any existing content.",
-          "parameters": [
-            {
-              "name": "using",
-              "shortdesc": "The XML element whose content you want to place.",
-              "datatype": {
-                "type": "XMLElement"
-              }
-            }
-          ]
-        },
-        {
-          "name": "autoTag",
-          "shortdesc": "Tag the object or the parent story using default tags defined in XML preference."
-        },
-        {
-          "name": "markup",
-          "shortdesc": "Associates the page item with the specified XML element while preserving existing content.",
-          "parameters": [
-            {
-              "name": "using",
-              "shortdesc": "The XML element.",
-              "datatype": {
-                "type": "XMLElement"
-              }
-            }
-          ]
-        },
-        {
-          "name": "findObject",
-          "shortdesc": "Finds objects that match the find what value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "PageItem",
-            "array": true
-          }
-        },
-        {
-          "name": "changeObject",
-          "shortdesc": "Finds objects that match the find what value and replace the objects with the change to value.",
-          "parameters": [
-            {
-              "name": "reverseOrder",
-              "shortdesc": "If true, returns the results in reverse order. ",
-              "datatype": {
-                "type": "Boolean"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "PageItem",
-            "array": true
-          }
-        },
-        {
-          "name": "override",
-          "shortdesc": "Overrides a master page item and places the item on the document page as a new object.",
-          "parameters": [
-            {
-              "name": "destinationPage",
-              "shortdesc": "The document page that contains the master page item to override.",
-              "datatype": {
-                "type": "Page"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "removeOverride",
-          "shortdesc": "Removes the override from a previously overridden master page item."
-        },
-        {
-          "name": "detach",
-          "shortdesc": "Detaches an overridden master page item from the master page."
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes the CheckBox."
-        },
-        {
-          "name": "fit",
-          "shortdesc": "Applies the specified fit option to content in a frame.",
-          "parameters": [
-            {
-              "name": "given",
-              "shortdesc": "The fit option to use.",
-              "datatype": {
-                "type": "FitOptions"
-              }
-            }
-          ]
-        },
-        {
-          "name": "flipItem",
-          "shortdesc": "Flips the CheckBox.",
-          "parameters": [
-            {
-              "name": "given",
-              "shortdesc": "The axis around which to flip the CheckBox.",
-              "datatype": {
-                "type": "Flip"
-              }
-            },
-            {
-              "name": "around",
-              "shortdesc": "The point around which to flip the CheckBox. Can accept: Array of 2 Units or AnchorPoint enumerator. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "duplicate",
-          "shortdesc": "Duplicates the CheckBox at the specified location or offset.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The location of the new CheckBox, specified in coordinates in the format [x, y]. Can accept: Array of 2 Units, Spread, Page or Layer. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "by",
-              "shortdesc": "Amount by which to offset the new CheckBox from the original CheckBox's position. ",
-              "datatype": {
-                "type": "Mixed",
-                "array": true
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "PageItem"
-          }
-        },
-        {
-          "name": "move",
-          "shortdesc": "Moves the CheckBox to a new location. Note: Either the 'to' or 'by' parameter is required; if both parameters are defined, only the to value is used.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The new location of the CheckBox,in the format (x, y). Can accept: Array of 2 Units, Spread, Page or Layer. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "by",
-              "shortdesc": "The amount (in measurement units) to move the CheckBox relative to its current position, in the format (x, y). ",
-              "datatype": {
-                "type": "Mixed",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "applyObjectStyle",
-          "shortdesc": "Applies the specified object style.",
-          "parameters": [
-            {
-              "name": "using",
-              "shortdesc": "The object style to apply.",
-              "datatype": {
-                "type": "ObjectStyle"
-              }
-            },
-            {
-              "name": "clearingOverrides",
-              "optional": true,
-              "shortdesc": "If true, clears the CheckBox's existing attributes before applying the style. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            },
-            {
-              "name": "clearingOverridesThroughRootObjectStyle",
-              "optional": true,
-              "shortdesc": "If true, clears attributes and formatting applied to the CheckBox that are not defined in the object style. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "clearObjectStyleOverrides",
-          "shortdesc": "Clear overrides for object style"
-        },
-        {
-          "name": "clearTransformations",
-          "shortdesc": "Clears transformations from the CheckBox. Transformations include rotation, scaling, flipping, fitting, and shearing."
-        },
-        {
-          "name": "transform",
-          "shortdesc": "Transform the page item.",
-          "parameters": [
-            {
-              "name": "in",
-              "shortdesc": "The coordinate space to use",
-              "datatype": {
-                "type": "CoordinateSpaces"
-              }
-            },
-            {
-              "name": "from",
-              "shortdesc": "The temporary origin during the transformation. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "withMatrix",
-              "shortdesc": "Transform matrix. Can accept: Array of 6 Reals or TransformationMatrix.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "replacingCurrent",
-              "shortdesc": "Transform components to consider; providing this optional parameter causes the target's existing transform components to be replaced with new values.  Without this parameter, the given matrix is concatenated onto the target's existing transform combining the effect of the two. Can accept: MatrixContent enumerator, Array of MatrixContent enumerators or Long Integer. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "consideringRulerUnits",
-              "optional": true,
-              "shortdesc": "If true then a ruler based origin is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "transformValuesOf",
-          "shortdesc": "Get the transformation values of the page item.",
-          "parameters": [
-            {
-              "name": "in",
-              "shortdesc": "The coordinate space to use",
-              "datatype": {
-                "type": "CoordinateSpaces"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "TransformationMatrix",
-            "array": true
-          }
-        },
-        {
-          "name": "resolve",
-          "shortdesc": "Get the coordinates of the given location in the specified coordinate system.",
-          "parameters": [
-            {
-              "name": "location",
-              "shortdesc": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "in",
-              "shortdesc": "The coordinate space to use.",
-              "datatype": {
-                "type": "CoordinateSpaces"
-              }
-            },
-            {
-              "name": "consideringRulerUnits",
-              "optional": true,
-              "shortdesc": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Mixed"
-          }
-        },
-        {
-          "name": "redefineScaling",
-          "shortdesc": "Apply an item's scaling to its content if possible.",
-          "parameters": [
-            {
-              "name": "to",
-              "shortdesc": "The scale factors to be left on the item.  The default is {1.0, 1.0}. ",
-              "datatype": {
-                "type": "Number",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "resize",
-          "shortdesc": "Resize the page item.",
-          "parameters": [
-            {
-              "name": "in",
-              "shortdesc": "The bounding box to resize. Can accept: CoordinateSpaces enumerator, BoundingBoxLimits enumerator or Ordered array containing coordinateSpace:CoordinateSpaces enumerator, boundsKind:BoundingBoxLimits enumerator.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "from",
-              "shortdesc": "The transform origin. Legal specifications: relative to bounding box: anchor | {anchor | {x,y}, bounds kind [, coordinate space]}; relative to coordinate space: {x,y} | {{x,y}[, coordinate space]}; relative to layout window ruler: {{x,y}, page index | bounds kind}. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "by",
-              "shortdesc": "How the current dimensions are affected by the given values",
-              "datatype": {
-                "type": "ResizeMethods"
-              }
-            },
-            {
-              "name": "values",
-              "shortdesc": "The width and height values. Legal dimensions specifications: {x, y [, coordinate space]}, {x, resize constraint [, coordinate space]}, or {resize constraint, y [, coordinate space]}; where x and y are real numbers and coordinate space is used to determine _only_ the unit of length for x and y; coordinate space is ignored for the 'current dimensions times' resize method). Can accept: Array of Reals, ResizeConstraints enumerators or CoordinateSpaces enumerators.",
-              "datatype": {
-                "type": "Mixed",
-                "array": true
-              }
-            },
-            {
-              "name": "resizeIndividually",
-              "optional": true,
-              "shortdesc": "If false and multiple page items are targeted, the new dimensions are attained only by moving the individual items rather than resizing them. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            },
-            {
-              "name": "consideringRulerUnits",
-              "optional": true,
-              "shortdesc": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "reframe",
-          "shortdesc": "Move the bounding box of the page item",
-          "parameters": [
-            {
-              "name": "in",
-              "shortdesc": "The bounding box to resize. Can accept: CoordinateSpaces enumerator or Ordered array containing coordinateSpace:CoordinateSpaces enumerator, boundsKind:BoundingBoxLimits enumerator.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "opposingCorners",
-              "shortdesc": "Opposing corners of new bounding box in the given coordinate space",
-              "datatype": {
-                "type": "Mixed",
-                "array": true
-              }
-            }
-          ]
-        },
-        {
-          "name": "transformAgain",
-          "shortdesc": "Transforms the CheckBox using the last transformation performed on any object. Transformations include moving, rotating, shearing, scaling, and flipping.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "transformSequenceAgain",
-          "shortdesc": "Transforms the CheckBox using the last sequence of transform operations performed on any single object or performed at the same time on any group of objects. Transformations include moving, rotating, shearing, scaling, and flipping.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "transformAgainIndividually",
-          "shortdesc": "Transforms the CheckBox using the last transformation performed on any CheckBox. Transformations include moving, rotating, shearing, scaling, and flipping.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "transformSequenceAgainIndividually",
-          "shortdesc": "Transforms the CheckBox using the last sequence of transformations performed on any single object or performed at the same time on any group of objects. Transformations include moving, rotating, shearing, scaling, and flipping.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "createPlainTextQRCode",
-          "shortdesc": "Create Plain Text QR Code on the page item",
-          "parameters": [
-            {
-              "name": "plainText",
-              "shortdesc": "QR code Plain Text  ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "qrCodeSwatch",
-              "shortdesc": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties ",
-              "datatype": {
-                "type": "String",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "createHyperlinkQRCode",
-          "shortdesc": "Create Hyperlink QR Code on the page item or document",
-          "parameters": [
-            {
-              "name": "urlLink",
-              "shortdesc": "QR code Hyperlink URL  ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "qrCodeSwatch",
-              "shortdesc": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties ",
-              "datatype": {
-                "type": "String",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "createTextMsgQRCode",
-          "shortdesc": "Create Text Msg QR Code on the page item or document",
-          "parameters": [
-            {
-              "name": "cellNumber",
-              "shortdesc": "QR code Text Phone Number ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "textMessage",
-              "shortdesc": "QR code Text Message ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "qrCodeSwatch",
-              "shortdesc": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties ",
-              "datatype": {
-                "type": "String",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "createEmailQRCode",
-          "shortdesc": "Create Email QR Code on the page item or document",
-          "parameters": [
-            {
-              "name": "emailAddress",
-              "shortdesc": "QR code Email Address ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "subject",
-              "shortdesc": "QR code Email Subject ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "body",
-              "shortdesc": "QR code Email Body Message ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "qrCodeSwatch",
-              "shortdesc": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties ",
-              "datatype": {
-                "type": "String",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "createVCardQRCode",
-          "shortdesc": "Create Business Card QR Code on the page item or load on document's placegun",
-          "parameters": [
-            {
-              "name": "firstName",
-              "shortdesc": "QR code Business Card First Name ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "lastName",
-              "shortdesc": "QR code Business Card Last Name ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "jobTitle",
-              "shortdesc": "QR code Business Card Title ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "cellPhone",
-              "shortdesc": "QR code Business Card Cell Phone Number ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "phone",
-              "shortdesc": "QR code Business Card Phone Number ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "email",
-              "shortdesc": "QR code Business Card Email Address ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "organisation",
-              "shortdesc": "QR code Business Card Organisation ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "streetAddress",
-              "shortdesc": "QR code Business Card Street Address ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "city",
-              "shortdesc": "QR code Business Card City ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "country",
-              "shortdesc": "QR code Business Card Country ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "postalCode",
-              "shortdesc": "QR code Business Card Postal Code ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "website",
-              "shortdesc": "QR code Business Card URL ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "qrCodeSwatch",
-              "shortdesc": "Swatch to be applied on generated QR Code Graphic . Can accept: Swatch or String. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new CheckBox. Above parameters can also be passed as properties ",
-              "datatype": {
-                "type": "String",
-                "array": true
-              },
-              "optional": true
-            }
-          ]
-        },
-        {
-          "name": "exportFile",
-          "shortdesc": "Exports the object(s) to a file.",
-          "parameters": [
-            {
-              "name": "format",
-              "shortdesc": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The path to the export file.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "showingOptions",
-              "optional": true,
-              "shortdesc": "If true, displays the export options dialog. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            },
-            {
-              "name": "using",
-              "shortdesc": "The export style. ",
-              "datatype": {
-                "type": "PDFExportPreset"
-              },
-              "optional": true
-            },
-            {
-              "name": "versionComments",
-              "shortdesc": "The comment for this version. ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "forceSave",
-              "optional": true,
-              "shortdesc": "If true, forcibly saves a version. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        },
-        {
-          "name": "asynchronousExportFile",
-          "shortdesc": "asynchronously exports the object(s) to a file.",
-          "parameters": [
-            {
-              "name": "format",
-              "shortdesc": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The path to the export file.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "showingOptions",
-              "optional": true,
-              "shortdesc": "If true, displays the export options dialog. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            },
-            {
-              "name": "using",
-              "shortdesc": "The export style. ",
-              "datatype": {
-                "type": "PDFExportPreset"
-              },
-              "optional": true
-            },
-            {
-              "name": "versionComments",
-              "shortdesc": "The comment for this version. ",
-              "datatype": {
-                "type": "String"
-              },
-              "optional": true
-            },
-            {
-              "name": "forceSave",
-              "optional": true,
-              "shortdesc": "If true, forcibly saves a version. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "BackgroundTask"
-          }
-        },
-        {
-          "name": "contentPlace",
-          "shortdesc": "Duplicate an object and place it into the target page item.",
-          "parameters": [
-            {
-              "name": "pageItems",
-              "shortdesc": "One or more page items to place or load",
-              "datatype": {
-                "type": "PageItem",
-                "array": true
-              }
-            },
-            {
-              "name": "linkPageItems",
-              "optional": true,
-              "shortdesc": "Whether to link pageItems in content placer (if true it will override link stories value) ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            },
-            {
-              "name": "linkStories",
-              "optional": true,
-              "shortdesc": "Whether to link stories in content placer (only applicable for single story, pageItem links will also be created in case of more than one item) ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            },
-            {
-              "name": "mapStyles",
-              "optional": true,
-              "shortdesc": "Whether to map styles in content placer ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            },
-            {
-              "name": "showingOptions",
-              "optional": true,
-              "shortdesc": "Whether to display the link options dialog ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Mixed",
-            "array": true
-          }
-        },
-        {
-          "name": "select",
-          "shortdesc": "Selects the object.",
-          "parameters": [
-            {
-              "name": "existingSelection",
-              "optional": true,
-              "shortdesc": "The selection status of the CheckBox in relation to previously selected objects. ",
-              "datatype": {
-                "type": "SelectionOptions",
-                "value": "SelectionOptions.REPLACE_WITH"
-              }
-            }
-          ]
-        },
-        {
-          "name": "store",
-          "shortdesc": "Stores the object in the specified library.",
-          "parameters": [
-            {
-              "name": "using",
-              "shortdesc": "The library in which to store the object.",
-              "datatype": {
-                "type": "Library"
-              }
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new CheckBox ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "insertLabel",
-          "shortdesc": "Sets the label to the value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "value",
-              "shortdesc": "The value.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "extractLabel",
-          "shortdesc": "Gets the label value associated with the specified key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The key.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the CheckBox.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "getElements",
-          "shortdesc": "Resolves the object specifier, creating an array of object references.",
-          "datatype": {
-            "type": "CheckBox",
-            "array": true
-          }
-        },
-        {
-          "name": "toSpecifier",
-          "shortdesc": "Retrieves the object specifier.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "addEventListener",
-          "shortdesc": "Adds an event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "EventListener"
-          }
-        },
-        {
-          "name": "removeEventListener",
-          "shortdesc": "Removes the event listener.",
-          "parameters": [
-            {
-              "name": "eventType",
-              "shortdesc": "The registered event type.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "handler",
-              "shortdesc": "The registered event handler. Can accept: File or JavaScript Function.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "captures",
-              "optional": true,
-              "shortdesc": "This parameter is obsolete. ",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        }
-      ]
-    }
-  ]
+    "name": "CheckBox",
+    "description": "A checkbox.",
+    "superclass": "FormField"
 }

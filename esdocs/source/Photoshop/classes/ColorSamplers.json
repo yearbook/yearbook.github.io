@@ -1,84 +1,65 @@
 {
-  "name": "ColorSamplers",
-  "dynamic": true,
-  "shortdesc": "The collection of color samplers in the document.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a color sampler.",
-          "parameters": [
-            {
-              "name": "position",
-              "shortdesc": "The horizontal and vertical (x,y) locations, respectively, of the color sampler.",
-              "datatype": {
-                "type": "UnitPoint"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ColorSampler"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "getByName",
-          "shortdesc": "Get the first element in the collection with the provided name.",
-          "parameters": [
-            {
-              "name": "name",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ColorSampler"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Get an element in the collection with the provided index.",
-          "parameters": [
-            {
-              "name": "index",
-              "datatype": {
-                "type": "uint"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ColorSampler"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getByName",
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "ColorSampler"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "type": "uint"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "ColorSampler"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "Number of elements in the collection.",
+                    "type": "int"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
-        },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "Number of elements in the collection.",
-          "datatype": {
-            "type": "int"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "ColorSamplers",
+    "description": "The collection of color samplers in the document."
 }

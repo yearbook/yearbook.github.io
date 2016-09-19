@@ -1,106 +1,108 @@
 {
-  "name": "BatchOptions",
-  "dynamic": true,
-  "shortdesc": "Options to specify when running a Batch command.",
-  "elements": [
-    {
-      "type": "class",
-      "property": [
-        {
-          "name": "overrideOpen",
-          "shortdesc": "If true, overrides action open commands.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "overrideOpen",
+                    "description": "If true, overrides action open commands.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "suppressOpen",
+                    "description": "If true, suppresses file open options dialogs.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "suppressProfile",
+                    "description": "If true, suppresses color profile warnings.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "BatchDestinationType.NODESTINATION",
+                    "array": false,
+                    "name": "destination",
+                    "description": "The type of destination for the processed files.",
+                    "type": "BatchDestinationType"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "destinationFolder",
+                    "description": "The folder location for the processed files. Valid only when 'destination' = folder.",
+                    "type": "File"
+                },
+                {
+                    "readonly": false,
+                    "value": "false",
+                    "array": false,
+                    "name": "overrideSave",
+                    "description": "If true, overrides save as action steps with the specified destination.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": true,
+                    "name": "fileNaming",
+                    "description": "A list of file naming options. Maximum: 6.",
+                    "type": "FileNamingType"
+                },
+                {
+                    "readonly": false,
+                    "value": "1",
+                    "array": false,
+                    "name": "startingSerial",
+                    "description": "The starting serial number to use in naming files.",
+                    "type": "int"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "windowsCompatible",
+                    "description": "If true, the final file names are Windows compatible.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "macintoshCompatible",
+                    "description": "If true, the final file names are Macintosh compatible.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "value": "true",
+                    "array": false,
+                    "name": "unixCompatible",
+                    "description": "If true, the final file names are Unix compatible.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "errorFile",
+                    "description": "The file in which to log errors encountered. To display errors on the screen and stop batch processing when errors occur, leave blank.",
+                    "type": "File"
+                }
+            ]
         },
-        {
-          "name": "suppressOpen",
-          "shortdesc": "If true, suppresses file open options dialogs.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "suppressProfile",
-          "shortdesc": "If true, suppresses color profile warnings.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "destination",
-          "shortdesc": "The type of destination for the processed files.",
-          "datatype": {
-            "type": "BatchDestinationType",
-            "value": "BatchDestinationType.NODESTINATION"
-          }
-        },
-        {
-          "name": "destinationFolder",
-          "shortdesc": "The folder location for the processed files. Valid only when 'destination' = folder.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "overrideSave",
-          "shortdesc": "If true, overrides save as action steps with the specified destination.",
-          "datatype": {
-            "type": "Boolean",
-            "value": false
-          }
-        },
-        {
-          "name": "fileNaming",
-          "shortdesc": "A list of file naming options. Maximum: 6.",
-          "datatype": {
-            "type": "FileNamingType",
-            "array": true
-          }
-        },
-        {
-          "name": "startingSerial",
-          "shortdesc": "The starting serial number to use in naming files.",
-          "datatype": {
-            "type": "int",
-            "value": 1
-          }
-        },
-        {
-          "name": "windowsCompatible",
-          "shortdesc": "If true, the final file names are Windows compatible.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "macintoshCompatible",
-          "shortdesc": "If true, the final file names are Macintosh compatible.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "unixCompatible",
-          "shortdesc": "If true, the final file names are Unix compatible.",
-          "datatype": {
-            "type": "Boolean",
-            "value": true
-          }
-        },
-        {
-          "name": "errorFile",
-          "shortdesc": "The file in which to log errors encountered. To display errors on the screen and stop batch processing when errors occur, leave blank.",
-          "datatype": {
-            "type": "File"
-          }
+        "instance": {
+            "methods": [],
+            "properties": []
         }
-      ]
-    }
-  ]
+    },
+    "name": "BatchOptions",
+    "description": "Options to specify when running a Batch command."
 }

@@ -1,176 +1,169 @@
 {
-  "name": "Events",
-  "dynamic": true,
-  "shortdesc": "A collection of events.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Event.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Event with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Event with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Events within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Event, index, or name at the beginning of the range. Can accept: Event, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Event, index, or name at the end of the range. Can accept: Event, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Event",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Event in the collection.",
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Event in the collection.",
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Event in the collection.",
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Event with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Event that follows the desired Event.",
-              "datatype": {
-                "type": "Event"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Event whose index follows the specified Event in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Event whose index comes before the desired Event.",
-              "datatype": {
-                "type": "Event"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Event in the collection.",
-          "datatype": {
-            "type": "Event"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Event in the collection.",
-          "datatype": {
-            "type": "Event",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Event.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Event with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Event"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Event.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Event with the specified index or name.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Event with the specified ID.",
+                    "type": "Event"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Event, index, or name at the beginning of the range. Can accept: Event, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Event, index, or name at the end of the range. Can accept: Event, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Events within the specified range.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Event in the collection.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Event in the collection.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Event in the collection.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Event that follows the desired Event.",
+                            "type": "Event"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Event with the index previous to the specified index.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Event whose index comes before the desired Event.",
+                            "type": "Event"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Event whose index follows the specified Event in the collection.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Event in the collection.",
+                    "type": "Event"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Event in the collection.",
+                    "type": "Event"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Event.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Event with the specified index.",
+                    "type": "Event"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Events",
+    "description": "A collection of events."
 }

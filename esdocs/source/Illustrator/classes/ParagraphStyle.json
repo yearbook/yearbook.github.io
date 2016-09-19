@@ -1,90 +1,89 @@
 {
-  "name": "ParagraphStyle",
-  "dynamic": true,
-  "shortdesc": "A named style that remembers paragraph attributes.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The paragraph style's name.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "characterAttributes",
-          "rwaccess": "readonly",
-          "shortdesc": "The character properties for the text range.",
-          "datatype": {
-            "type": "CharacterAttributes"
-          }
-        },
-        {
-          "name": "paragraphAttributes",
-          "rwaccess": "readonly",
-          "shortdesc": "The paragraph properties for the text range.",
-          "datatype": {
-            "type": "ParagraphAttributes"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "add",
+                    "description": "Adds an element.",
+                    "type": "ParagraphStyle"
+                },
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "textItem",
+                            "description": "The text object(s) to apply the style to.",
+                            "type": "any"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "description": "Whether to clear any text attributes before apply the style.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "applyTo",
+                    "description": "Apply the paragraph style to text object(s)"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The paragraph style's name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "characterAttributes",
+                    "description": "The character properties for the text range.",
+                    "type": "CharacterAttributes"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "paragraphAttributes",
+                    "description": "The paragraph properties for the text range.",
+                    "type": "ParagraphAttributes"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Adds an element.",
-          "datatype": {
-            "type": "ParagraphStyle"
-          }
-        },
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "applyTo",
-          "shortdesc": "Apply the paragraph style to text object(s)",
-          "parameters": [
-            {
-              "name": "textItem",
-              "shortdesc": "The text object(s) to apply the style to.",
-              "datatype": {
-                "type": "any"
-              }
-            },
-            {
-              "name": "clearingOverrides",
-              "optional": true,
-              "shortdesc": "Whether to clear any text attributes before apply the style.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    },
+    "name": "ParagraphStyle",
+    "description": "A named style that remembers paragraph attributes."
 }

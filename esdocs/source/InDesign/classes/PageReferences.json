@@ -1,241 +1,228 @@
 {
-  "name": "PageReferences",
-  "dynamic": true,
-  "shortdesc": "A collection of index page references.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Creates a new page reference.",
-          "parameters": [
-            {
-              "name": "source",
-              "shortdesc": "The text or insertion point to which the page reference points.",
-              "datatype": {
-                "type": "Text"
-              }
-            },
-            {
-              "name": "pageReferenceType",
-              "optional": true,
-              "shortdesc": "The page number for an index page reference or the last page in an index page reference page range. ",
-              "datatype": {
-                "type": "PageReferenceType",
-                "value": "PageReferenceType.CURRENT_PAGE"
-              }
-            },
-            {
-              "name": "pageReferenceLimit",
-              "shortdesc": "The paragraph style or number of paragraphs or pages that defines the last page in a page range. Valid only when page reference type specifies the next use of a paragraph style or a number of paragraphs or pages. . Can accept: ParagraphStyle or Long Integer. ",
-              "datatype": {
-                "type": "Mixed"
-              },
-              "optional": true
-            },
-            {
-              "name": "pageNumberStyleOverride",
-              "shortdesc": "The style override for the page number.  ",
-              "datatype": {
-                "type": "CharacterStyle"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new PageReference ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the PageReference.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the PageReference with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the PageReference with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the PageReference with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the PageReferences within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The PageReference, index, or name at the beginning of the range. Can accept: PageReference, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The PageReference, index, or name at the end of the range. Can accept: PageReference, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first PageReference in the collection.",
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last PageReference in the collection.",
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle PageReference in the collection.",
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the PageReference with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the PageReference that follows the desired PageReference.",
-              "datatype": {
-                "type": "PageReference"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the PageReference whose index follows the specified PageReference in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The PageReference whose index comes before the desired PageReference.",
-              "datatype": {
-                "type": "PageReference"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any PageReference in the collection.",
-          "datatype": {
-            "type": "PageReference"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every PageReference in the collection.",
-          "datatype": {
-            "type": "PageReference",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the PageReference.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the PageReference with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PageReference"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "source",
+                            "description": "The text or insertion point to which the page reference points.",
+                            "type": "Text"
+                        },
+                        {
+                            "optional": true,
+                            "value": "PageReferenceType.CURRENT_PAGE",
+                            "array": false,
+                            "name": "pageReferenceType",
+                            "description": "The page number for an index page reference or the last page in an index page reference page range. (Optional)",
+                            "type": "PageReferenceType"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "pageReferenceLimit",
+                            "description": "The paragraph style or number of paragraphs or pages that defines the last page in a page range. Valid only when page reference type specifies the next use of a paragraph style or a number of paragraphs or pages. . Can accept: ParagraphStyle or Long Integer. (Optional)",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "pageNumberStyleOverride",
+                            "description": "The style override for the page number.  (Optional)",
+                            "type": "CharacterStyle"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new PageReference (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Creates a new page reference.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the PageReference.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the PageReference with the specified index or name.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the PageReference with the specified name.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the PageReference with the specified ID.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The PageReference, index, or name at the beginning of the range. Can accept: PageReference, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The PageReference, index, or name at the end of the range. Can accept: PageReference, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the PageReferences within the specified range.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first PageReference in the collection.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last PageReference in the collection.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle PageReference in the collection.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the PageReference that follows the desired PageReference.",
+                            "type": "PageReference"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the PageReference with the index previous to the specified index.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The PageReference whose index comes before the desired PageReference.",
+                            "type": "PageReference"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the PageReference whose index follows the specified PageReference in the collection.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any PageReference in the collection.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every PageReference in the collection.",
+                    "type": "PageReference"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the PageReference.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the PageReference with the specified index.",
+                    "type": "PageReference"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "PageReferences",
+    "description": "A collection of index page references."
 }

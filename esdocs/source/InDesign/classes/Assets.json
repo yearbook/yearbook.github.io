@@ -1,192 +1,184 @@
 {
-  "name": "Assets",
-  "dynamic": true,
-  "shortdesc": "A collection of object library assets.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the Asset.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the Asset with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the Asset with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the Asset with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the Assets within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The Asset, index, or name at the beginning of the range. Can accept: Asset, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The Asset, index, or name at the end of the range. Can accept: Asset, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first Asset in the collection.",
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last Asset in the collection.",
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle Asset in the collection.",
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the Asset with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the Asset that follows the desired Asset.",
-              "datatype": {
-                "type": "Asset"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the Asset whose index follows the specified Asset in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The Asset whose index comes before the desired Asset.",
-              "datatype": {
-                "type": "Asset"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any Asset in the collection.",
-          "datatype": {
-            "type": "Asset"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every Asset in the collection.",
-          "datatype": {
-            "type": "Asset",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the Asset.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the Asset with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Asset"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the Asset.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the Asset with the specified index or name.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the Asset with the specified name.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the Asset with the specified ID.",
+                    "type": "Asset"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The Asset, index, or name at the beginning of the range. Can accept: Asset, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The Asset, index, or name at the end of the range. Can accept: Asset, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the Assets within the specified range.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first Asset in the collection.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last Asset in the collection.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle Asset in the collection.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the Asset that follows the desired Asset.",
+                            "type": "Asset"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the Asset with the index previous to the specified index.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The Asset whose index comes before the desired Asset.",
+                            "type": "Asset"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the Asset whose index follows the specified Asset in the collection.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any Asset in the collection.",
+                    "type": "Asset"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every Asset in the collection.",
+                    "type": "Asset"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Asset.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the Asset with the specified index.",
+                    "type": "Asset"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Assets",
+    "description": "A collection of object library assets."
 }

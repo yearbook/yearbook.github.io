@@ -1,53 +1,57 @@
 {
-  "name": "DataSet",
-  "dynamic": true,
-  "shortdesc": "A set of variables and their associated dynamic data which will be used for dynamic publishing.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "name",
-          "shortdesc": "The name of this dataset.",
-          "datatype": {
-            "type": "String"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "remove",
+                    "description": "Deletes this object."
+                },
+                {
+                    "parameters": [],
+                    "name": "removeAll",
+                    "description": "Deletes all elements."
+                },
+                {
+                    "parameters": [],
+                    "name": "display",
+                    "description": "Displays the dynamic data that has been captured in the dataset."
+                },
+                {
+                    "parameters": [],
+                    "name": "update",
+                    "description": "Re-apply the dynamic data of the active dataset to the artboard."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "name",
+                    "description": "The name of this dataset.",
+                    "type": "String"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "remove",
-          "shortdesc": "Deletes this object."
-        },
-        {
-          "name": "removeAll",
-          "shortdesc": "Deletes all elements."
-        },
-        {
-          "name": "display",
-          "shortdesc": "Displays the dynamic data that has been captured in the dataset."
-        },
-        {
-          "name": "update",
-          "shortdesc": "Re-apply the dynamic data of the active dataset to the artboard."
-        }
-      ]
-    }
-  ]
+    },
+    "name": "DataSet",
+    "description": "A set of variables and their associated dynamic data which will be used for dynamic publishing."
 }

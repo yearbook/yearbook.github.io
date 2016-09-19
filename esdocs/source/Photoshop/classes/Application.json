@@ -1,691 +1,712 @@
 {
-  "name": "Application",
-  "dynamic": true,
-  "shortdesc": "The Adobe Photoshop application object.",
-  "elements": [
-    {
-      "type": "instance",
-      "property": [
-        {
-          "name": "parent",
-          "rwaccess": "readonly",
-          "shortdesc": "The object's container.",
-          "datatype": {
-            "type": "Object"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "typename",
-          "rwaccess": "readonly",
-          "shortdesc": "The class name of the object.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "colorSettings",
-          "shortdesc": "The name of the selected color setting's set.",
-          "datatype": {
-            "type": "any"
-          }
-        },
-        {
-          "name": "activeDocument",
-          "shortdesc": "The frontmost document.",
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "name",
-          "rwaccess": "readonly",
-          "shortdesc": "The application name.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "path",
-          "rwaccess": "readonly",
-          "shortdesc": "The full path of the location of the Adobe Photoshop application.",
-          "datatype": {
-            "type": "Folder"
-          }
-        },
-        {
-          "name": "preferences",
-          "rwaccess": "readonly",
-          "shortdesc": "The application preference settings (equivalent to selecting Edit&gt;Preferences in the Adobe Photoshop application in Windows or Photoshop&gt;Preferences in Mac OS).",
-          "datatype": {
-            "type": "Preferences"
-          }
-        },
-        {
-          "name": "scriptingVersion",
-          "rwaccess": "readonly",
-          "shortdesc": "The version of the Scripting interface.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "freeMemory",
-          "rwaccess": "readonly",
-          "shortdesc": "The amount of unused memory available to Photoshop.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "version",
-          "rwaccess": "readonly",
-          "shortdesc": "The version of Adobe Photoshop application that you are running.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "displayDialogs",
-          "shortdesc": "The dialog mode for the document, which indicates whether or not Photoshop displays dialogs when the script runs.",
-          "datatype": {
-            "type": "DialogModes"
-          }
-        },
-        {
-          "name": "foregroundColor",
-          "shortdesc": "The default foreground color (used to paint, fill, and stroke selections).",
-          "datatype": {
-            "type": "SolidColor"
-          }
-        },
-        {
-          "name": "backgroundColor",
-          "shortdesc": "The default background color (used to paint, fill, and stroke selections).",
-          "datatype": {
-            "type": "SolidColor"
-          }
-        },
-        {
-          "name": "playbackParameters",
-          "shortdesc": "The playback options, which indicate the speed at which Photoshop plays actions.",
-          "datatype": {
-            "type": "ActionDescriptor"
-          }
-        },
-        {
-          "name": "playbackDisplayDialogs",
-          "shortdesc": "The dialog mode for playback mode, which indicates whether or not Photoshop displays dialogs in playback mode.",
-          "datatype": {
-            "type": "DialogModes"
-          }
-        },
-        {
-          "name": "notifiersEnabled",
-          "shortdesc": "If true, notifiers are enabled.",
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "windowsFileTypes",
-          "rwaccess": "readonly",
-          "shortdesc": "A list of the image file extensions Photoshop can open.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "macintoshFileTypes",
-          "rwaccess": "readonly",
-          "shortdesc": "A list of the image file types Photoshop can open.",
-          "datatype": {
-            "type": "String",
-            "array": true
-          }
-        },
-        {
-          "name": "preferencesFolder",
-          "rwaccess": "readonly",
-          "shortdesc": "The full path to the preferences folder.",
-          "datatype": {
-            "type": "File"
-          }
-        },
-        {
-          "name": "locale",
-          "rwaccess": "readonly",
-          "shortdesc": "The language locale of the application.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "documents",
-          "rwaccess": "readonly",
-          "shortdesc": "The collection of open documents.",
-          "datatype": {
-            "type": "Documents"
-          }
-        },
-        {
-          "name": "fonts",
-          "rwaccess": "readonly",
-          "shortdesc": "The fonts installed on this system.",
-          "datatype": {
-            "type": "TextFonts"
-          }
-        },
-        {
-          "name": "notifiers",
-          "rwaccess": "readonly",
-          "shortdesc": "The notifiers currently configured (in the Scripts Events Manager menu in the application).",
-          "datatype": {
-            "type": "Notifiers"
-          }
-        },
-        {
-          "name": "scriptingBuildDate",
-          "rwaccess": "readonly",
-          "shortdesc": "The build date of the scripting interface.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "recentFiles",
-          "rwaccess": "readonly",
-          "shortdesc": "Files in the Recent Files list.",
-          "datatype": {
-            "type": "FileArray"
-          }
-        },
-        {
-          "name": "build",
-          "rwaccess": "readonly",
-          "shortdesc": "The build number.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "systemInformation",
-          "rwaccess": "readonly",
-          "shortdesc": "The system and applicaiton information.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "measurementLog",
-          "rwaccess": "readonly",
-          "shortdesc": "The log of measurements taken.",
-          "datatype": {
-            "type": "MeasurementLog"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "parameters": [],
+                    "name": "togglePalettes",
+                    "description": "Toggle palette visibility."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "action",
+                            "description": "The name of the action to play. (Note that the action name is case-sensitive and must match the name as it appears in the Actions palette.)",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The name of the action set containing the action being played. (Note that the Action Set name is case-sensitive and must match the name as it appears in the Actions palette.)",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "doAction",
+                    "description": "Plays the specified action from the Actions palette."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "document",
+                            "description": "The document to load.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "load",
+                    "description": "Loads a support document."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "document",
+                            "description": "The document(s) to opend.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "as",
+                            "description": "The document type (The default is to let Photoshop deduce the format).",
+                            "type": "any"
+                        },
+                        {
+                            "optional": true,
+                            "value": "false",
+                            "array": false,
+                            "name": "asSmartObject",
+                            "description": "Creates a smart object around the document.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "open",
+                    "description": "Opens the specified document file(s).",
+                    "type": "Document"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "target",
+                            "description": "The caches to purge.",
+                            "type": "PurgeTarget"
+                        }
+                    ],
+                    "name": "purge",
+                    "description": "Purges one or more caches."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputFolder",
+                            "description": "Folder to process or an array of files to process.",
+                            "type": "any"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "outputFolder",
+                            "description": "Location for output files.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "options",
+                            "description": "Options for the web photo gallery.",
+                            "type": "GalleryOptions"
+                        }
+                    ],
+                    "name": "makePhotoGallery",
+                    "description": "DEPRECATED. Creates a web photo gallery.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputFiles",
+                            "description": "The input files to include in the presentation.",
+                            "type": "AliasArray"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "outputFile",
+                            "description": "The location of the output file.",
+                            "type": "File"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "options",
+                            "description": "Options for the PDF presentation.",
+                            "type": "PresentationOptions"
+                        }
+                    ],
+                    "name": "makePDFPresentation",
+                    "description": "Creates a PDF presentation file.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputFiles",
+                            "description": "List of input files to include.",
+                            "type": "AliasArray"
+                        }
+                    ],
+                    "name": "makePhotomerge",
+                    "description": "DEPRECATED. Merges multiple files into one, user interaction required.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputFiles",
+                            "description": "The files to include.",
+                            "type": "AliasArray"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "options",
+                            "description": "Options for creating the contact sheet.",
+                            "type": "ContactSheetOptions"
+                        }
+                    ],
+                    "name": "makeContactSheet",
+                    "description": "Creates a contact sheet from multiple files.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputFiles",
+                            "description": "The files to include.",
+                            "type": "AliasArray"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "options",
+                            "description": "Options for creating a Picture Package.",
+                            "type": "PicturePackageOptions"
+                        }
+                    ],
+                    "name": "makePicturePackage",
+                    "description": "Creates a picture package from multiple files.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "inputFiles",
+                            "description": "The files to operate on.",
+                            "type": "AliasArray"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "action",
+                            "description": "The name of the action to play (note that the Action name is case-sensitive and must match the name in the Actions palette).",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The name of the action set containing the action being played (note that the Action Set name is case-sensitive and must match the name in the Actions palette).",
+                            "type": "String"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "options",
+                            "description": "Options for batch automation.",
+                            "type": "BatchOptions"
+                        }
+                    ],
+                    "name": "batch",
+                    "description": "Runs the batch automation routine; analogous to using the Batch command in Photoshop.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [],
+                    "name": "bringToFront",
+                    "description": "Makes Photoshop the active application."
+                },
+                {
+                    "parameters": [],
+                    "name": "refresh",
+                    "description": "Pauses the script until the application refreshes."
+                },
+                {
+                    "parameters": [],
+                    "name": "refreshFonts",
+                    "description": "Force the font list to get refreshed."
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The unique string ID for the user object.",
+                            "type": "String"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "customObject",
+                            "description": "The user-defined custom object to save in the registry.",
+                            "type": "ActionDescriptor"
+                        },
+                        {
+                            "optional": true,
+                            "value": "true",
+                            "array": false,
+                            "name": "persistent",
+                            "description": "If true, the object persists after the script has finished.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "putCustomOptions",
+                    "description": "Save user objects in the Photoshop registry."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The unique string ID for the user object.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "getCustomOptions",
+                    "description": "Retrieves user objects from the Photoshop registry for the ID with value key.",
+                    "type": "ActionDescriptor"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "key",
+                            "description": "The unique string ID for user object(s) to remove.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "eraseCustomOptions",
+                    "description": "Removes the specified user objects from the Photoshop registry."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name of the feature.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "featureEnabled",
+                    "description": "If true, the specified feature is enabled.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "openDialog",
+                    "description": "Uses the Photoshop open dialog to select files.",
+                    "type": "FileArray"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "menuID",
+                            "description": "Id of menu to run.",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "runMenuItem",
+                    "description": "Run a menu item."
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "callString",
+                            "description": "System call string.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "system",
+                    "description": "Perform a system call.",
+                    "type": "int"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "eventID",
+                            "description": "The event to play.",
+                            "type": "int"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "descriptor",
+                            "description": "The action descriptor to play.",
+                            "type": "ActionDescriptor"
+                        },
+                        {
+                            "optional": true,
+                            "array": false,
+                            "name": "displayDialogs",
+                            "description": "The display permissions for dialogs and alert messages.",
+                            "type": "DialogModes"
+                        }
+                    ],
+                    "name": "executeAction",
+                    "description": "Plays an ActionManager event.",
+                    "type": "ActionDescriptor"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "reference",
+                            "description": "The reference specification of the property.",
+                            "type": "ActionReference"
+                        }
+                    ],
+                    "name": "executeActionGet",
+                    "description": "Obtains an action descriptor.",
+                    "type": "ActionDescriptor"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "stringID",
+                            "description": "The ID to convert.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "stringIDToTypeID",
+                    "description": "Converts from a string ID to a runtime ID.",
+                    "type": "int"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "typeID",
+                            "description": "The ID to convert.",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "typeIDToStringID",
+                    "description": "Converts from a runtime ID to a string ID.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "charID",
+                            "description": "The ID to convert.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "charIDToTypeID",
+                    "description": "Converts from a four character code to a runtime ID.",
+                    "type": "int"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "typeID",
+                            "description": "The ID to convert.",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "typeIDToCharID",
+                    "description": "Converts from a runtime ID to a character ID.",
+                    "type": "String"
+                },
+                {
+                    "parameters": [],
+                    "name": "beep",
+                    "description": "Alerts the user."
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "isQuicktimeAvailable",
+                    "description": "Returns true if Quicktime is installed.",
+                    "type": "Boolean"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": true,
+                            "value": "true",
+                            "array": false,
+                            "name": "pickForeground",
+                            "description": "If true the foreground color is chosen, if false the background color is chosen.",
+                            "type": "Boolean"
+                        }
+                    ],
+                    "name": "showColorPicker",
+                    "description": "Display color picker dialog. Returns false if dialog is cancelled, true otherwise.",
+                    "type": "Boolean"
+                },
+                {
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "outputFolder",
+                            "description": "Location for the output files.",
+                            "type": "File"
+                        }
+                    ],
+                    "name": "reflectCSAW",
+                    "description": "Generate Creative Suite ActionScript Wrappers in specified directory."
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "parent",
+                    "description": "The object's container.",
+                    "type": "Object"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "typename",
+                    "description": "The class name of the object.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "colorSettings",
+                    "description": "The name of the selected color setting's set.",
+                    "type": "any"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "activeDocument",
+                    "description": "The frontmost document.",
+                    "type": "Document"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "name",
+                    "description": "The application name.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "path",
+                    "description": "The full path of the location of the Adobe Photoshop application.",
+                    "type": "File"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "preferences",
+                    "description": "The application preference settings (equivalent to selecting Edit > Preferences in the Adobe Photoshop application in Windows or Photoshop > Preferences in Mac OS).",
+                    "type": "Preferences"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "scriptingVersion",
+                    "description": "The version of the Scripting interface.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "freeMemory",
+                    "description": "The amount of unused memory available to Photoshop.",
+                    "type": "Number"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "version",
+                    "description": "The version of Adobe Photoshop application that you are running.",
+                    "type": "String"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "displayDialogs",
+                    "description": "The dialog mode for the document, which indicates whether or not Photoshop displays dialogs when the script runs.",
+                    "type": "DialogModes"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "foregroundColor",
+                    "description": "The default foreground color (used to paint, fill, and stroke selections).",
+                    "type": "SolidColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "backgroundColor",
+                    "description": "The default background color (used to paint, fill, and stroke selections).",
+                    "type": "SolidColor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "playbackParameters",
+                    "description": "The playback options, which indicate the speed at which Photoshop plays actions.",
+                    "type": "ActionDescriptor"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "playbackDisplayDialogs",
+                    "description": "The dialog mode for playback mode, which indicates whether or not Photoshop displays dialogs in playback mode.",
+                    "type": "DialogModes"
+                },
+                {
+                    "readonly": false,
+                    "array": false,
+                    "name": "notifiersEnabled",
+                    "description": "If true, notifiers are enabled.",
+                    "type": "Boolean"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "windowsFileTypes",
+                    "description": "A list of the image file extensions Photoshop can open.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": true,
+                    "name": "macintoshFileTypes",
+                    "description": "A list of the image file types Photoshop can open.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "preferencesFolder",
+                    "description": "The full path to the preferences folder.",
+                    "type": "File"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "locale",
+                    "description": "The language locale of the application.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "documents",
+                    "description": "The collection of open documents.",
+                    "type": "Documents"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "fonts",
+                    "description": "The fonts installed on this system.",
+                    "type": "TextFonts"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "notifiers",
+                    "description": "The notifiers currently configured (in the Scripts Events Manager menu in the application).",
+                    "type": "Notifiers"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "scriptingBuildDate",
+                    "description": "The build date of the scripting interface.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "recentFiles",
+                    "description": "Files in the Recent Files list.",
+                    "type": "FileArray"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "build",
+                    "description": "The build number of Adobe Photoshop application.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "systemInformation",
+                    "description": "System information of the host application and machine.",
+                    "type": "String"
+                },
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "measurementLog",
+                    "description": "The log of measurements taken.",
+                    "type": "MeasurementLog"
+                }
+            ]
         }
-      ],
-      "method": [
-        {
-          "name": "togglePalettes",
-          "shortdesc": "Toggle palette visibility."
-        },
-        {
-          "name": "doAction",
-          "shortdesc": "Plays the specified action from the Actions palette.",
-          "parameters": [
-            {
-              "name": "action",
-              "shortdesc": "The name of the action to play. (Note that the action name is case-sensitive and must match the name as it appears in the Actions palette.)",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "from",
-              "shortdesc": "The name of the action set containing the action being played. (Note that the Action Set name is case-sensitive and must match the name as it appears in the Actions palette.)",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "load",
-          "shortdesc": "Loads a support document.",
-          "parameters": [
-            {
-              "name": "document",
-              "shortdesc": "The document to load.",
-              "datatype": {
-                "type": "File"
-              }
-            }
-          ]
-        },
-        {
-          "name": "open",
-          "shortdesc": "Opens the specified document file(s).",
-          "parameters": [
-            {
-              "name": "document",
-              "shortdesc": "The document(s) to opend.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "as",
-              "optional": true,
-              "shortdesc": "The document type (The default is to let Photoshop deduce the format).",
-              "datatype": {
-                "type": "any"
-              }
-            },
-            {
-              "name": "asSmartObject",
-              "optional": true,
-              "shortdesc": "Creates a smart object around the document.",
-              "datatype": {
-                "type": "Boolean",
-                "value": false
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Document"
-          }
-        },
-        {
-          "name": "purge",
-          "shortdesc": "Purges one or more caches.",
-          "parameters": [
-            {
-              "name": "target",
-              "shortdesc": "The caches to purge.",
-              "datatype": {
-                "type": "PurgeTarget"
-              }
-            }
-          ]
-        },
-        {
-          "name": "makePhotoGallery",
-          "shortdesc": "Deprecated for Adobe Photoshop CS3. Creates a web photo gallery.",
-          "parameters": [
-            {
-              "name": "inputFolder",
-              "shortdesc": "Folder to process or an array of files to process.",
-              "datatype": {
-                "type": "any"
-              }
-            },
-            {
-              "name": "outputFolder",
-              "shortdesc": "Location for output files.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "options",
-              "optional": true,
-              "shortdesc": "Options for the web photo gallery.",
-              "datatype": {
-                "type": "GalleryOptions"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "makePDFPresentation",
-          "shortdesc": "Creates a PDF presentation file.",
-          "parameters": [
-            {
-              "name": "inputFiles",
-              "shortdesc": "The input files to include in the presentation.",
-              "datatype": {
-                "type": "AliasArray"
-              }
-            },
-            {
-              "name": "outputFile",
-              "shortdesc": "The location of the output file.",
-              "datatype": {
-                "type": "File"
-              }
-            },
-            {
-              "name": "options",
-              "optional": true,
-              "shortdesc": "Options for the PDF presentation.",
-              "datatype": {
-                "type": "PresentationOptions"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "makePhotomerge",
-          "shortdesc": "Deprecated for Adobe Photoshop CS3. Merges multiple files into one, user interaction required.",
-          "parameters": [
-            {
-              "name": "inputFiles",
-              "shortdesc": "List of input files to include.",
-              "datatype": {
-                "type": "AliasArray"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "makeContactSheet",
-          "shortdesc": "Creates a contact sheet from multiple files.",
-          "parameters": [
-            {
-              "name": "inputFiles",
-              "shortdesc": "The files to include.",
-              "datatype": {
-                "type": "AliasArray"
-              }
-            },
-            {
-              "name": "options",
-              "optional": true,
-              "shortdesc": "Options for creating the contact sheet.",
-              "datatype": {
-                "type": "ContactSheetOptions"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "makePicturePackage",
-          "shortdesc": "Creates a picture package from multiple files.",
-          "parameters": [
-            {
-              "name": "inputFiles",
-              "shortdesc": "The files to include.",
-              "datatype": {
-                "type": "AliasArray"
-              }
-            },
-            {
-              "name": "options",
-              "optional": true,
-              "shortdesc": "Options for creating a Picture Package.",
-              "datatype": {
-                "type": "PicturePackageOptions"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "batch",
-          "shortdesc": "Runs the batch automation routine; analogous to using the Batch command in Photoshop.",
-          "parameters": [
-            {
-              "name": "inputFiles",
-              "shortdesc": "The files to operate on.",
-              "datatype": {
-                "type": "AliasArray"
-              }
-            },
-            {
-              "name": "action",
-              "shortdesc": "The name of the action to play (note that the Action name is case-sensitive and must match the name in the Actions palette).",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "from",
-              "shortdesc": "The name of the action set containing the action being played (note that the Action Set name is case-sensitive and must match the name in the Actions palette).",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "options",
-              "optional": true,
-              "shortdesc": "Options for batch automation.",
-              "datatype": {
-                "type": "BatchOptions"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "bringToFront",
-          "shortdesc": "Makes Photoshop the active application."
-        },
-        {
-          "name": "refresh",
-          "shortdesc": "Pauses the script until the application refreshes."
-        },
-        {
-          "name": "putCustomOptions",
-          "shortdesc": "Saves user objects in the Photoshop registry.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The unique string ID for the user object.",
-              "datatype": {
-                "type": "String"
-              }
-            },
-            {
-              "name": "customObject",
-              "shortdesc": "The user-defined custom object to save in the registry.",
-              "datatype": {
-                "type": "ActionDescriptor"
-              }
-            },
-            {
-              "name": "persistent",
-              "optional": true,
-              "shortdesc": "If true, the object persists after the script has finished.",
-              "datatype": {
-                "type": "Boolean",
-                "value": true
-              }
-            }
-          ]
-        },
-        {
-          "name": "getCustomOptions",
-          "shortdesc": "Retrieves user objects from the Photoshop registry for the ID with value key.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The unique string ID for the user object.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ActionDescriptor"
-          }
-        },
-        {
-          "name": "eraseCustomOptions",
-          "shortdesc": "Removes the specified user objects from the Photoshop registry.",
-          "parameters": [
-            {
-              "name": "key",
-              "shortdesc": "The unique string ID for user object(s) to remove.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ]
-        },
-        {
-          "name": "featureEnabled",
-          "shortdesc": "If true, the specified feature is enabled.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name of the feature.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "Boolean"
-          }
-        },
-        {
-          "name": "openDialog",
-          "shortdesc": "Uses the Photoshop open dialog to select files.",
-          "datatype": {
-            "type": "FileArray"
-          }
-        },
-        {
-          "name": "runMenuItem",
-          "shortdesc": "Run a menu item with the given ID. Use this for Insert Menu Item.",
-          "datatype": {
-            "type": "int"
-          }
-        },
-        {
-          "name": "executeAction",
-          "shortdesc": "Plays an ActionManager event.",
-          "parameters": [
-            {
-              "name": "eventID",
-              "shortdesc": "The event to play.",
-              "datatype": {
-                "type": "int"
-              }
-            },
-            {
-              "name": "descriptor",
-              "optional": true,
-              "shortdesc": "The action descriptor to play.",
-              "datatype": {
-                "type": "ActionDescriptor"
-              }
-            },
-            {
-              "name": "displayDialogs",
-              "optional": true,
-              "shortdesc": "The display permissions for dialogs and alert messages.",
-              "datatype": {
-                "type": "DialogModes"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ActionDescriptor"
-          }
-        },
-        {
-          "name": "executeActionGet",
-          "shortdesc": "Obtains an action descriptor.",
-          "parameters": [
-            {
-              "name": "reference",
-              "shortdesc": "The reference specification of the property.",
-              "datatype": {
-                "type": "ActionReference"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "ActionDescriptor"
-          }
-        },
-        {
-          "name": "stringIDToTypeID",
-          "shortdesc": "Converts from a string ID to a runtime ID.",
-          "parameters": [
-            {
-              "name": "stringID",
-              "shortdesc": "The ID to convert.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "int"
-          }
-        },
-        {
-          "name": "typeIDToStringID",
-          "shortdesc": "Converts from a runtime ID to a string ID.",
-          "parameters": [
-            {
-              "name": "typeID",
-              "shortdesc": "The ID to convert.",
-              "datatype": {
-                "type": "int"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "charIDToTypeID",
-          "shortdesc": "Converts from a four character code to a runtime ID.",
-          "parameters": [
-            {
-              "name": "charID",
-              "shortdesc": "The ID to convert.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "int"
-          }
-        },
-        {
-          "name": "typeIDToCharID",
-          "shortdesc": "Converts from a runtime ID to a character ID.",
-          "parameters": [
-            {
-              "name": "typeID",
-              "shortdesc": "The ID to convert.",
-              "datatype": {
-                "type": "int"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "beep",
-          "shortdesc": "Alerts the user."
-        }
-      ]
-    }
-  ]
+    },
+    "name": "Application",
+    "description": "The Adobe Photoshop application object, which contains all other Adobe Photoshop objects."
 }

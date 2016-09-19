@@ -1,199 +1,190 @@
 {
-  "name": "PreflightProcesses",
-  "dynamic": true,
-  "shortdesc": "A collection of preflight processes.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "add",
-          "shortdesc": "Adds a new preflight process.",
-          "parameters": [
-            {
-              "name": "targetObject",
-              "shortdesc": "The document the process should inspect.",
-              "datatype": {
-                "type": "Document"
-              }
-            },
-            {
-              "name": "appliedProfile",
-              "shortdesc": "The preflight profile that should be used.",
-              "datatype": {
-                "type": "PreflightProfile"
-              }
-            },
-            {
-              "name": "preflightOptions",
-              "shortdesc": "The preflight options that should be used. ",
-              "datatype": {
-                "type": "PreflightOption"
-              },
-              "optional": true
-            },
-            {
-              "name": "withProperties",
-              "shortdesc": "Initial values for properties of the new PreflightProcess ",
-              "datatype": {
-                "type": "Object"
-              },
-              "optional": true
-            }
-          ],
-          "datatype": {
-            "type": "PreflightProcess"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the PreflightProcess.",
-          "datatype": {
-            "type": "Number"
-          }
-        },
-        {
-          "name": "item",
-          "shortdesc": "Returns the PreflightProcess with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the PreflightProcesses within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The PreflightProcess, index, or name at the beginning of the range. Can accept: PreflightProcess, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The PreflightProcess, index, or name at the end of the range. Can accept: PreflightProcess, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PreflightProcess",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first PreflightProcess in the collection.",
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last PreflightProcess in the collection.",
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle PreflightProcess in the collection.",
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the PreflightProcess with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the PreflightProcess that follows the desired PreflightProcess.",
-              "datatype": {
-                "type": "PreflightProcess"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the PreflightProcess whose index follows the specified PreflightProcess in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The PreflightProcess whose index comes before the desired PreflightProcess.",
-              "datatype": {
-                "type": "PreflightProcess"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any PreflightProcess in the collection.",
-          "datatype": {
-            "type": "PreflightProcess"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every PreflightProcess in the collection.",
-          "datatype": {
-            "type": "PreflightProcess",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the PreflightProcess.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the PreflightProcess with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PreflightProcess"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "targetObject",
+                            "description": "The document the process should inspect.",
+                            "type": "Document"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "appliedProfile",
+                            "description": "The preflight profile that should be used.",
+                            "type": "PreflightProfile"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "preflightOptions",
+                            "description": "The preflight options that should be used. (Optional)",
+                            "type": "PreflightOption"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "withProperties",
+                            "description": "Initial values for properties of the new PreflightProcess (Optional)",
+                            "type": "Object"
+                        }
+                    ],
+                    "name": "add",
+                    "description": "Adds a new preflight process.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the PreflightProcess.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the PreflightProcess with the specified index or name.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The PreflightProcess, index, or name at the beginning of the range. Can accept: PreflightProcess, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The PreflightProcess, index, or name at the end of the range. Can accept: PreflightProcess, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the PreflightProcesses within the specified range.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first PreflightProcess in the collection.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last PreflightProcess in the collection.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle PreflightProcess in the collection.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the PreflightProcess that follows the desired PreflightProcess.",
+                            "type": "PreflightProcess"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the PreflightProcess with the index previous to the specified index.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The PreflightProcess whose index comes before the desired PreflightProcess.",
+                            "type": "PreflightProcess"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the PreflightProcess whose index follows the specified PreflightProcess in the collection.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any PreflightProcess in the collection.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every PreflightProcess in the collection.",
+                    "type": "PreflightProcess"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the PreflightProcess.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the PreflightProcess with the specified index.",
+                    "type": "PreflightProcess"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "PreflightProcesses",
+    "description": "A collection of preflight processes."
 }

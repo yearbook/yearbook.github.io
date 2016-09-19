@@ -1,192 +1,184 @@
 {
-  "name": "PDFs",
-  "dynamic": true,
-  "shortdesc": "A collection of PDF files.",
-  "elements": [
-    {
-      "type": "instance",
-      "method": [
-        {
-          "name": "count",
-          "shortdesc": "Displays the number of elements in the PDF.",
-          "datatype": {
-            "type": "Number"
-          }
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": []
         },
-        {
-          "name": "item",
-          "shortdesc": "Returns the PDF with the specified index or name.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index or name. Can accept: Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "itemByName",
-          "shortdesc": "Returns the PDF with the specified name.",
-          "parameters": [
-            {
-              "name": "name",
-              "shortdesc": "The name.",
-              "datatype": {
-                "type": "String"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "itemByID",
-          "shortdesc": "Returns the PDF with the specified ID.",
-          "parameters": [
-            {
-              "name": "id",
-              "shortdesc": "The ID.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "itemByRange",
-          "shortdesc": "Returns the PDFs within the specified range.",
-          "parameters": [
-            {
-              "name": "from",
-              "shortdesc": "The PDF, index, or name at the beginning of the range. Can accept: PDF, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            },
-            {
-              "name": "to",
-              "shortdesc": "The PDF, index, or name at the end of the range. Can accept: PDF, Long Integer or String.",
-              "datatype": {
-                "type": "Mixed"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF",
-            "array": true
-          }
-        },
-        {
-          "name": "firstItem",
-          "shortdesc": "Returns the first PDF in the collection.",
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "lastItem",
-          "shortdesc": "Returns the last PDF in the collection.",
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "middleItem",
-          "shortdesc": "Returns the middle PDF in the collection.",
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "previousItem",
-          "shortdesc": "Returns the PDF with the index previous to the specified index.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The index of the PDF that follows the desired PDF.",
-              "datatype": {
-                "type": "PDF"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "nextItem",
-          "shortdesc": "Returns the PDF whose index follows the specified PDF in the collection.",
-          "parameters": [
-            {
-              "name": "obj",
-              "shortdesc": "The PDF whose index comes before the desired PDF.",
-              "datatype": {
-                "type": "PDF"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "anyItem",
-          "shortdesc": "Returns any PDF in the collection.",
-          "datatype": {
-            "type": "PDF"
-          }
-        },
-        {
-          "name": "everyItem",
-          "shortdesc": "Returns every PDF in the collection.",
-          "datatype": {
-            "type": "PDF",
-            "array": true
-          }
-        },
-        {
-          "name": "toSource",
-          "shortdesc": "Generates a string which, if executed, will return the PDF.",
-          "datatype": {
-            "type": "String"
-          }
-        },
-        {
-          "name": "[]",
-          "shortdesc": "Returns the PDF with the specified index.",
-          "parameters": [
-            {
-              "name": "index",
-              "shortdesc": "The index.",
-              "datatype": {
-                "type": "Number"
-              }
-            }
-          ],
-          "datatype": {
-            "type": "PDF"
-          }
+        "instance": {
+            "methods": [
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "count",
+                    "description": "Displays the number of elements in the PDF.",
+                    "type": "Number"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index or name. Can accept: Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "item",
+                    "description": "Returns the PDF with the specified index or name.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "name",
+                            "description": "The name.",
+                            "type": "String"
+                        }
+                    ],
+                    "name": "itemByName",
+                    "description": "Returns the PDF with the specified name.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "id",
+                            "description": "The ID.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "itemByID",
+                    "description": "Returns the PDF with the specified ID.",
+                    "type": "PDF"
+                },
+                {
+                    "array": true,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "from",
+                            "description": "The PDF, index, or name at the beginning of the range. Can accept: PDF, Long Integer or String.",
+                            "type": "Mixed"
+                        },
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "to",
+                            "description": "The PDF, index, or name at the end of the range. Can accept: PDF, Long Integer or String.",
+                            "type": "Mixed"
+                        }
+                    ],
+                    "name": "itemByRange",
+                    "description": "Returns the PDFs within the specified range.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "firstItem",
+                    "description": "Returns the first PDF in the collection.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "lastItem",
+                    "description": "Returns the last PDF in the collection.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "middleItem",
+                    "description": "Returns the middle PDF in the collection.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The index of the PDF that follows the desired PDF.",
+                            "type": "PDF"
+                        }
+                    ],
+                    "name": "previousItem",
+                    "description": "Returns the PDF with the index previous to the specified index.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "obj",
+                            "description": "The PDF whose index comes before the desired PDF.",
+                            "type": "PDF"
+                        }
+                    ],
+                    "name": "nextItem",
+                    "description": "Returns the PDF whose index follows the specified PDF in the collection.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "anyItem",
+                    "description": "Returns any PDF in the collection.",
+                    "type": "PDF"
+                },
+                {
+                    "array": true,
+                    "parameters": [],
+                    "name": "everyItem",
+                    "description": "Returns every PDF in the collection.",
+                    "type": "PDF"
+                },
+                {
+                    "array": false,
+                    "parameters": [],
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the PDF.",
+                    "type": "String"
+                },
+                {
+                    "array": false,
+                    "parameters": [
+                        {
+                            "optional": false,
+                            "array": false,
+                            "name": "index",
+                            "description": "The index.",
+                            "type": "Number"
+                        }
+                    ],
+                    "name": "[]",
+                    "description": "Returns the PDF with the specified index.",
+                    "type": "PDF"
+                }
+            ],
+            "properties": [
+                {
+                    "readonly": true,
+                    "array": false,
+                    "name": "length",
+                    "description": "The number of objects in the collection.",
+                    "type": "Number"
+                }
+            ]
         }
-      ],
-      "property": [
-        {
-          "name": "length",
-          "rwaccess": "readonly",
-          "shortdesc": "The number of objects in the collection.",
-          "datatype": {
-            "type": "Number"
-          }
-        }
-      ]
-    }
-  ]
+    },
+    "name": "PDFs",
+    "description": "A collection of PDF files."
 }
