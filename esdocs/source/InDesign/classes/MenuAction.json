@@ -1,245 +1,245 @@
 {
+    "name": "MenuAction",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "beforeInvoke",
+                    "name": "name",
                     "array": false,
-                    "name": "BEFORE_INVOKE",
-                    "description": "Dispatched before the MenuAction is invoked. This event does not bubble. This event is cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the MenuAction."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterInvoke",
+                    "name": "title",
                     "array": false,
-                    "name": "AFTER_INVOKE",
-                    "description": "Dispatched after the MenuAction is invoked. This event does not bubble. This event is not cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the MenuAction for display in the user interface. The title includes any ampersand characters (&), which are used to tell the Windows OS to underline the following character in the name for use with the Alt key to navigate to a menu item. Double ampersands are used to display an actual ampersand character in the name. The Mac OS ignores and removes the extra ampersand characters."
+                },
+                {
+                    "name": "area",
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The menu action area."
+                },
+                {
+                    "name": "enabled",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the MenuAction is enabled."
+                },
+                {
+                    "name": "checked",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the menu item associated with the menu action is checked."
+                },
+                {
+                    "name": "id",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the MenuAction."
+                },
+                {
+                    "name": "isValid",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "array": false,
+                    "type": "Application",
+                    "readonly": true,
+                    "description": "The parent of the MenuAction (a Application)."
+                },
+                {
+                    "name": "index",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the MenuAction within its containing object."
+                },
+                {
+                    "name": "events",
+                    "array": false,
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
+                },
+                {
+                    "name": "eventListeners",
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
+                },
+                {
+                    "name": "label",
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "A property that can be set to any string."
+                },
+                {
+                    "name": "properties",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "invoke",
+                    "description": "Invoke the action.",
+                    "parameters": []
+                },
+                {
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key.",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        },
+                        {
+                            "name": "value",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The value."
+                        }
+                    ]
+                },
+                {
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the MenuAction.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "MenuAction",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "parameters": [],
-                    "name": "invoke",
-                    "description": "Invoke the action."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "value",
-                            "description": "The value.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the MenuAction.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "MenuAction"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
+        "class": {
             "properties": [
                 {
-                    "readonly": true,
+                    "description": "Dispatched before the MenuAction is invoked. This event does not bubble. This event is cancelable.",
                     "array": false,
-                    "name": "name",
-                    "description": "The name of the MenuAction.",
+                    "readonly": true,
+                    "name": "BEFORE_INVOKE",
+                    "value": "beforeInvoke",
                     "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after the MenuAction is invoked. This event does not bubble. This event is not cancelable.",
                     "array": false,
-                    "name": "title",
-                    "description": "The name of the MenuAction for display in the user interface. The title includes any ampersand characters (&), which are used to tell the Windows OS to underline the following character in the name for use with the Alt key to navigate to a menu item. Double ampersands are used to display an actual ampersand character in the name. The Mac OS ignores and removes the extra ampersand characters.",
+                    "readonly": true,
+                    "name": "AFTER_INVOKE",
+                    "value": "afterInvoke",
                     "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "area",
-                    "description": "The menu action area.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "enabled",
-                    "description": "If true, the MenuAction is enabled.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "checked",
-                    "description": "If true, the menu item associated with the menu action is checked.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "id",
-                    "description": "The unique ID of the MenuAction.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parent",
-                    "description": "The parent of the MenuAction (a Application).",
-                    "type": "Application"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "index",
-                    "description": "The index of the MenuAction within its containing object.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "label",
-                    "description": "A property that can be set to any string.",
-                    "type": "String"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
                 }
             ]
         }
     },
-    "name": "MenuAction",
     "description": "A menu action."
 }

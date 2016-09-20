@@ -1,298 +1,298 @@
 {
+    "name": "Index",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "from",
-                            "description": "The file from which to import the topics.",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "importTopics",
-                    "description": "Imports a list of index topics."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeUnusedTopics",
-                    "description": "Removes all index topics that do not have any index entries."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "IndexCapitalizationOptions.ALL_ENTRIES",
-                            "array": false,
-                            "name": "capitalizationOption",
-                            "description": "The entry or entries to capitalize. (Optional)",
-                            "type": "IndexCapitalizationOptions"
-                        }
-                    ],
-                    "name": "capitalize",
-                    "description": "Makes the initial letter for the specified index topic or group of index topics upper case."
-                },
-                {
-                    "parameters": [],
-                    "name": "update",
-                    "description": "Updates the index preview pane. Note: Does not update the index."
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "on",
-                            "description": "The spread or page on which to place the story. Can accept: Page, Spread or MasterSpread. (Optional)",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "placePoint",
-                            "description": "The coordinates of the upper left corner of the story bounding box, in the format [x, y]. (Optional)",
-                            "type": "Measurement Unit (Number or String)=any"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "destinationLayer",
-                            "description": "The layer on which to place the story. (Optional)",
-                            "type": "Layer"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "autoflowing",
-                            "description": "If true, allows the story to flow onto subsequent pages if the story does not fit on the specified page. If no subsequent pages exist in the document, creates the necessary pages. (Optional)",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "includeOverset",
-                            "description": "If true, includes topics in overset text in the story.  (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "generate",
-                    "description": "Generates a new index story.",
-                    "type": "Story"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "value",
-                            "description": "The value.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the Index.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "Index"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": true,
                     "name": "allTopics",
-                    "description": "The topics in the specified index section.",
-                    "type": "Topic"
+                    "array": true,
+                    "type": "Topic",
+                    "readonly": true,
+                    "description": "The topics in the specified index section."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "id",
-                    "description": "The unique ID of the Index.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the Index."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The parent of the Index (a Document).",
-                    "type": "Document"
+                    "array": false,
+                    "type": "Document",
+                    "readonly": true,
+                    "description": "The parent of the Index (a Document)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "index",
-                    "description": "The index of the Index within its containing object.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the Index within its containing object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
+                    "array": false,
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "indexSections",
-                    "description": "A collection of index sections.",
-                    "type": "IndexSections"
-                },
-                {
+                    "array": false,
+                    "type": "IndexSections",
                     "readonly": true,
-                    "array": false,
+                    "description": "A collection of index sections."
+                },
+                {
                     "name": "topics",
-                    "description": "A collection of index topics.",
-                    "type": "Topics"
+                    "array": false,
+                    "type": "Topics",
+                    "readonly": true,
+                    "description": "A collection of index topics."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "label",
-                    "description": "A property that can be set to any string.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "A property that can be set to any string."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "name",
-                    "description": "The name of the Index; this is an alias to the Index's label property.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The name of the Index; this is an alias to the Index's label property."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "importTopics",
+                    "description": "Imports a list of index topics.",
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The file from which to import the topics."
+                        }
+                    ]
+                },
+                {
+                    "name": "removeUnusedTopics",
+                    "description": "Removes all index topics that do not have any index entries.",
+                    "parameters": []
+                },
+                {
+                    "name": "capitalize",
+                    "description": "Makes the initial letter for the specified index topic or group of index topics upper case.",
+                    "parameters": [
+                        {
+                            "description": "The entry or entries to capitalize. (Optional)",
+                            "array": false,
+                            "name": "capitalizationOption",
+                            "value": "IndexCapitalizationOptions.ALL_ENTRIES",
+                            "type": "IndexCapitalizationOptions",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "update",
+                    "description": "Updates the index preview pane. Note: Does not update the index.",
+                    "parameters": []
+                },
+                {
+                    "name": "generate",
+                    "description": "Generates a new index story.",
+                    "array": true,
+                    "type": "Story",
+                    "parameters": [
+                        {
+                            "name": "on",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The spread or page on which to place the story. Can accept: Page, Spread or MasterSpread. (Optional)"
+                        },
+                        {
+                            "name": "placePoint",
+                            "array": true,
+                            "type": "Measurement Unit (Number or String)=any",
+                            "optional": false,
+                            "description": "The coordinates of the upper left corner of the story bounding box, in the format [x, y]. (Optional)"
+                        },
+                        {
+                            "name": "destinationLayer",
+                            "array": false,
+                            "type": "Layer",
+                            "optional": false,
+                            "description": "The layer on which to place the story. (Optional)"
+                        },
+                        {
+                            "description": "If true, allows the story to flow onto subsequent pages if the story does not fit on the specified page. If no subsequent pages exist in the document, creates the necessary pages. (Optional)",
+                            "array": false,
+                            "name": "autoflowing",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, includes topics in overset text in the story.  (Optional)",
+                            "array": false,
+                            "name": "includeOverset",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key.",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        },
+                        {
+                            "name": "value",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The value."
+                        }
+                    ]
+                },
+                {
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Index.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "Index",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "Index",
     "description": "An index."
 }

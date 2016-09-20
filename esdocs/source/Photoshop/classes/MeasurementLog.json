@@ -1,70 +1,70 @@
 {
+    "name": "MeasurementLog",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "file",
-                            "description": "The file to export to. If not specified, a 'file save' dialog is displayed.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "range",
-                            "description": "The measurements to export. Default: selected.",
-                            "type": "MeasurementRange"
-                        },
-                        {
-                            "optional": true,
-                            "array": true,
-                            "name": "dataPoints",
-                            "description": "An array of identifiers of data points to export. The order of the data points is respected in the exported file. Defaults to data points visible in Measurement Log palette.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "exportMeasurements",
-                    "description": "Exports the specified measurements."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "range",
-                            "description": "The measurements to delete. Default: selected.",
-                            "type": "MeasurementRange"
-                        }
-                    ],
-                    "name": "deleteMeasurements",
-                    "description": "Deletes the specified measurements."
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "exportMeasurements",
+                    "description": "Exports the specified measurements.",
+                    "parameters": [
+                        {
+                            "name": "file",
+                            "array": false,
+                            "type": "File",
+                            "optional": true,
+                            "description": "The file to export to. If not specified, a 'file save' dialog is displayed."
+                        },
+                        {
+                            "name": "range",
+                            "array": false,
+                            "type": "MeasurementRange",
+                            "optional": true,
+                            "description": "The measurements to export. Default: selected."
+                        },
+                        {
+                            "name": "dataPoints",
+                            "array": true,
+                            "type": "String",
+                            "optional": true,
+                            "description": "An array of identifiers of data points to export. The order of the data points is respected in the exported file. Defaults to data points visible in Measurement Log palette."
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteMeasurements",
+                    "description": "Deletes the specified measurements.",
+                    "parameters": [
+                        {
+                            "name": "range",
+                            "array": false,
+                            "type": "MeasurementRange",
+                            "optional": true,
+                            "description": "The measurements to delete. Default: selected."
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "MeasurementLog",
     "description": "The log of measurements taken."
 }

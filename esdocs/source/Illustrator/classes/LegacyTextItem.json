@@ -1,75 +1,75 @@
 {
+    "name": "LegacyTextItem",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "move",
-                    "description": "Move the object.",
-                    "type": "LegacyTextItem"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes this object."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeAll",
-                    "description": "Deletes all elements."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "convertToNative",
-                    "description": "Create a native text frame from a legacy text item. The original legacy text item is deleted.",
-                    "type": "GroupItem"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "converted",
-                    "description": "Has the legacy text item been updated to a native text frame item?",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Has the legacy text item been updated to a native text frame item?"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "move",
+                    "description": "Move the object.",
+                    "array": false,
+                    "type": "LegacyTextItem",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes this object.",
+                    "parameters": []
+                },
+                {
+                    "name": "removeAll",
+                    "description": "Deletes all elements.",
+                    "parameters": []
+                },
+                {
+                    "name": "convertToNative",
+                    "description": "Create a native text frame from a legacy text item. The original legacy text item is deleted.",
+                    "array": false,
+                    "type": "GroupItem",
+                    "parameters": []
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "LegacyTextItem",
-    "description": "Unconverted legacy text items from documents in pre-version 11 formats.",
-    "superclass": "PageItem"
+    "superclass": "PageItem",
+    "description": "Unconverted legacy text items from documents in pre-version 11 formats."
 }

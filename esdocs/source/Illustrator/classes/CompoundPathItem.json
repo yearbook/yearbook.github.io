@@ -1,88 +1,88 @@
 {
+    "name": "CompoundPathItem",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "move",
-                    "description": "Move the object.",
-                    "type": "CompoundPathItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "type": "CompoundPathItem"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes this object."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeAll",
-                    "description": "Deletes all elements."
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "pathItems",
-                    "description": "The path artwork in this compound path.",
-                    "type": "PathItems"
+                    "array": false,
+                    "type": "PathItems",
+                    "readonly": true,
+                    "description": "The path artwork in this compound path."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "move",
+                    "description": "Move the object.",
+                    "array": false,
+                    "type": "CompoundPathItem",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "array": false,
+                    "type": "CompoundPathItem",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes this object.",
+                    "parameters": []
+                },
+                {
+                    "name": "removeAll",
+                    "description": "Deletes all elements.",
+                    "parameters": []
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "CompoundPathItem",
-    "description": "Compound path artwork item.",
-    "superclass": "PageItem"
+    "superclass": "PageItem",
+    "description": "Compound path artwork item."
 }

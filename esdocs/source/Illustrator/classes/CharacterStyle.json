@@ -1,82 +1,82 @@
 {
+    "name": "CharacterStyle",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "add",
-                    "description": "Adds an element.",
-                    "type": "CharacterStyle"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes this object."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeAll",
-                    "description": "Deletes all elements."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "textItem",
-                            "description": "The text object(s) to apply the style to.",
-                            "type": "any"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "clearingOverrides",
-                            "description": "Whether to clear any text attributes before apply the style.",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "applyTo",
-                    "description": "Apply the character style to text object(s)"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
-                },
-                {
-                    "readonly": false,
                     "array": false,
-                    "name": "name",
-                    "description": "The character style's name.",
-                    "type": "String"
-                },
-                {
+                    "type": "String",
                     "readonly": true,
+                    "description": "The class name of the object."
+                },
+                {
+                    "name": "name",
                     "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The character style's name."
+                },
+                {
                     "name": "characterAttributes",
-                    "description": "The character properties for the text range.",
-                    "type": "CharacterAttributes"
+                    "array": false,
+                    "type": "CharacterAttributes",
+                    "readonly": true,
+                    "description": "The character properties for the text range."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "description": "Adds an element.",
+                    "array": false,
+                    "type": "CharacterStyle",
+                    "parameters": []
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes this object.",
+                    "parameters": []
+                },
+                {
+                    "name": "removeAll",
+                    "description": "Deletes all elements.",
+                    "parameters": []
+                },
+                {
+                    "name": "applyTo",
+                    "description": "Apply the character style to text object(s)",
+                    "parameters": [
+                        {
+                            "name": "textItem",
+                            "array": false,
+                            "type": "any",
+                            "optional": false,
+                            "description": "The text object(s) to apply the style to."
+                        },
+                        {
+                            "description": "Whether to clear any text attributes before apply the style.",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "CharacterStyle",
     "description": "A named style that remembers character attributes."
 }

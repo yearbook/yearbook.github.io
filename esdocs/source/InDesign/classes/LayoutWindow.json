@@ -1,383 +1,383 @@
 {
+    "name": "LayoutWindow",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "afterSelectionChanged",
+                    "name": "name",
                     "array": false,
-                    "name": "AFTER_SELECTION_CHANGED",
-                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the LayoutWindow."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterSelectionAttributeChanged",
+                    "name": "isValid",
                     "array": false,
-                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
-                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeDeactivate",
+                    "name": "parent",
                     "array": false,
-                    "name": "BEFORE_DEACTIVATE",
-                    "description": "Dispatched before the LayoutWindow becomes inactive. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Document",
+                    "readonly": true,
+                    "description": "The parent of the LayoutWindow (a Document)."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterActivate",
+                    "name": "index",
                     "array": false,
-                    "name": "AFTER_ACTIVATE",
-                    "description": "Dispatched after the LayoutWindow becomes active. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the LayoutWindow within its containing object."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterAttributeChanged",
+                    "name": "events",
                     "array": false,
-                    "name": "AFTER_ATTRIBUTE_CHANGED",
-                    "description": "Dispatched when the value of a property changes on this LayoutWindow. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterOpen",
+                    "name": "eventListeners",
                     "array": false,
-                    "name": "AFTER_OPEN",
-                    "description": "Dispatched after a LayoutWindow is opened. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeClose",
+                    "name": "viewDisplaySetting",
                     "array": false,
-                    "name": "BEFORE_CLOSE",
-                    "description": "Dispatched before a LayoutWindow is closed. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "ViewDisplaySettings",
+                    "readonly": false,
+                    "description": "The display performance preferences override for the view."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterClose",
+                    "name": "transformReferencePoint",
                     "array": false,
-                    "name": "AFTER_CLOSE",
-                    "description": "Dispatched when a LayoutWindow is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Mixed",
+                    "readonly": false,
+                    "description": "The default anchor point around which to transform objects. Can return: AnchorPoint enumerator or Array of 2 Units."
+                },
+                {
+                    "name": "activeLayer",
+                    "array": false,
+                    "type": "Layer",
+                    "readonly": false,
+                    "description": "The active layer. Can also accept: String."
+                },
+                {
+                    "name": "zoomPercentage",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": false,
+                    "description": "The size (as a percentage) to which to enlarge or reduce the view of the document. (Range: 5 to 4000)"
+                },
+                {
+                    "name": "activeSpread",
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": false,
+                    "description": "The front-most spread. Can return: Spread or MasterSpread."
+                },
+                {
+                    "name": "activePage",
+                    "array": false,
+                    "type": "Page",
+                    "readonly": false,
+                    "description": "The front-most page."
+                },
+                {
+                    "name": "screenMode",
+                    "array": false,
+                    "type": "ScreenModeOptions",
+                    "readonly": false,
+                    "description": "The screen mode for layout view."
+                },
+                {
+                    "name": "overprintPreview",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, display a simulation of overprinting."
+                },
+                {
+                    "name": "proofingProfile",
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The profile used for proofing colors."
+                },
+                {
+                    "name": "proofingType",
+                    "array": false,
+                    "type": "ProofingType",
+                    "readonly": false,
+                    "description": "The method of proofing colors."
+                },
+                {
+                    "name": "simulateInkBlack",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, simulates the dark gray produced by many printers in place of solid black, according to the proofing profile. Note: Valid only when proofing type is custom."
+                },
+                {
+                    "name": "simulatePaperWhite",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, simulates the dingy white of real paper, according to the proofing profile. Note: Valid only when proofing type is custom."
+                },
+                {
+                    "name": "preserveColorNumbers",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, leaves color values unchanged for CMYK objects without embedded profiles and native objects such as line art or type. Note: Converts images whose profiles differ from the profile of the simulated device. Valid only when proofing type is custom."
+                },
+                {
+                    "name": "selection",
+                    "array": true,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "The selected object(s). Can also accept: Object or NothingEnum enumerator."
+                },
+                {
+                    "name": "bounds",
+                    "array": true,
+                    "type": "Number",
+                    "readonly": false,
+                    "description": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right]."
+                },
+                {
+                    "name": "selectionKeyObject",
+                    "array": false,
+                    "type": "PageItem",
+                    "readonly": false,
+                    "description": "The key object of the selection. Can also accept: NothingEnum enumerator."
+                },
+                {
+                    "name": "properties",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "zoom",
+                    "description": "Magnifies or reduces the window to the specified display size.",
+                    "parameters": [
+                        {
+                            "name": "given",
+                            "array": false,
+                            "type": "ZoomOptions",
+                            "optional": false,
+                            "description": "The display size."
+                        }
+                    ]
+                },
+                {
+                    "name": "select",
+                    "description": "Selects the specified object(s).",
+                    "parameters": [
+                        {
+                            "name": "selectableItems",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator."
+                        },
+                        {
+                            "description": "The selection status of the LayoutWindow in relation to previously selected objects. (Optional)",
+                            "array": false,
+                            "name": "existingSelection",
+                            "value": "SelectionOptions.REPLACE_WITH",
+                            "type": "SelectionOptions",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "close",
+                    "description": "Closes the LayoutWindow.",
+                    "parameters": []
+                },
+                {
+                    "name": "maximize",
+                    "description": "Maximizes the window.",
+                    "parameters": []
+                },
+                {
+                    "name": "minimize",
+                    "description": "Minimizes the window.",
+                    "parameters": []
+                },
+                {
+                    "name": "restore",
+                    "description": "Restores the window.",
+                    "parameters": []
+                },
+                {
+                    "name": "bringToFront",
+                    "description": "Brings the object to the front.",
+                    "parameters": []
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the LayoutWindow.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "LayoutWindow",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "given",
-                            "description": "The display size.",
-                            "type": "ZoomOptions"
-                        }
-                    ],
-                    "name": "zoom",
-                    "description": "Magnifies or reduces the window to the specified display size."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "selectableItems",
-                            "description": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "SelectionOptions.REPLACE_WITH",
-                            "array": false,
-                            "name": "existingSelection",
-                            "description": "The selection status of the LayoutWindow in relation to previously selected objects. (Optional)",
-                            "type": "SelectionOptions"
-                        }
-                    ],
-                    "name": "select",
-                    "description": "Selects the specified object(s)."
-                },
-                {
-                    "parameters": [],
-                    "name": "close",
-                    "description": "Closes the LayoutWindow."
-                },
-                {
-                    "parameters": [],
-                    "name": "maximize",
-                    "description": "Maximizes the window."
-                },
-                {
-                    "parameters": [],
-                    "name": "minimize",
-                    "description": "Minimizes the window."
-                },
-                {
-                    "parameters": [],
-                    "name": "restore",
-                    "description": "Restores the window."
-                },
-                {
-                    "parameters": [],
-                    "name": "bringToFront",
-                    "description": "Brings the object to the front."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the LayoutWindow.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "LayoutWindow"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
+        "class": {
             "properties": [
                 {
-                    "readonly": true,
+                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "name",
-                    "description": "The name of the LayoutWindow.",
+                    "readonly": true,
+                    "name": "AFTER_SELECTION_CHANGED",
+                    "value": "afterSelectionChanged",
                     "type": "String"
                 },
                 {
+                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
+                    "array": false,
                     "readonly": true,
-                    "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parent",
-                    "description": "The parent of the LayoutWindow (a Document).",
-                    "type": "Document"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "index",
-                    "description": "The index of the LayoutWindow within its containing object.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "viewDisplaySetting",
-                    "description": "The display performance preferences override for the view.",
-                    "type": "ViewDisplaySettings"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "transformReferencePoint",
-                    "description": "The default anchor point around which to transform objects. Can return: AnchorPoint enumerator or Array of 2 Units.",
-                    "type": "Mixed"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "activeLayer",
-                    "description": "The active layer. Can also accept: String.",
-                    "type": "Layer"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "zoomPercentage",
-                    "description": "The size (as a percentage) to which to enlarge or reduce the view of the document. (Range: 5 to 4000)",
-                    "type": "Number"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "activeSpread",
-                    "description": "The front-most spread. Can return: Spread or MasterSpread.",
-                    "type": "Mixed"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "activePage",
-                    "description": "The front-most page.",
-                    "type": "Page"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "screenMode",
-                    "description": "The screen mode for layout view.",
-                    "type": "ScreenModeOptions"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "overprintPreview",
-                    "description": "If true, display a simulation of overprinting.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "proofingProfile",
-                    "description": "The profile used for proofing colors.",
+                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
+                    "value": "afterSelectionAttributeChanged",
                     "type": "String"
                 },
                 {
-                    "readonly": false,
+                    "description": "Dispatched before the LayoutWindow becomes inactive. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "proofingType",
-                    "description": "The method of proofing colors.",
-                    "type": "ProofingType"
+                    "readonly": true,
+                    "name": "BEFORE_DEACTIVATE",
+                    "value": "beforeDeactivate",
+                    "type": "String"
                 },
                 {
-                    "readonly": false,
+                    "description": "Dispatched after the LayoutWindow becomes active. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "simulateInkBlack",
-                    "description": "If true, simulates the dark gray produced by many printers in place of solid black, according to the proofing profile. Note: Valid only when proofing type is custom.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "AFTER_ACTIVATE",
+                    "value": "afterActivate",
+                    "type": "String"
                 },
                 {
-                    "readonly": false,
+                    "description": "Dispatched when the value of a property changes on this LayoutWindow. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "simulatePaperWhite",
-                    "description": "If true, simulates the dingy white of real paper, according to the proofing profile. Note: Valid only when proofing type is custom.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "AFTER_ATTRIBUTE_CHANGED",
+                    "value": "afterAttributeChanged",
+                    "type": "String"
                 },
                 {
-                    "readonly": false,
+                    "description": "Dispatched after a LayoutWindow is opened. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "preserveColorNumbers",
-                    "description": "If true, leaves color values unchanged for CMYK objects without embedded profiles and native objects such as line art or type. Note: Converts images whose profiles differ from the profile of the simulated device. Valid only when proofing type is custom.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "AFTER_OPEN",
+                    "value": "afterOpen",
+                    "type": "String"
                 },
                 {
-                    "readonly": false,
-                    "array": true,
-                    "name": "selection",
-                    "description": "The selected object(s). Can also accept: Object or NothingEnum enumerator.",
-                    "type": "Object"
-                },
-                {
-                    "readonly": false,
-                    "array": true,
-                    "name": "bounds",
-                    "description": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right].",
-                    "type": "Number"
-                },
-                {
-                    "readonly": false,
+                    "description": "Dispatched before a LayoutWindow is closed. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "selectionKeyObject",
-                    "description": "The key object of the selection. Can also accept: NothingEnum enumerator.",
-                    "type": "PageItem"
+                    "readonly": true,
+                    "name": "BEFORE_CLOSE",
+                    "value": "beforeClose",
+                    "type": "String"
                 },
                 {
-                    "readonly": false,
+                    "description": "Dispatched when a LayoutWindow is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "readonly": true,
+                    "name": "AFTER_CLOSE",
+                    "value": "afterClose",
+                    "type": "String"
                 }
             ]
         }
     },
-    "name": "LayoutWindow",
-    "description": "A layout window.",
-    "superclass": "Window"
+    "superclass": "Window",
+    "description": "A layout window."
 }

@@ -1,170 +1,170 @@
 {
+    "name": "PrintEvent",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "beforePrint",
+                    "name": "eventType",
                     "array": false,
-                    "name": "BEFORE_PRINT",
-                    "description": "Dispatched before a PrintEvent is printed. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterPrint",
+                    "name": "target",
                     "array": false,
-                    "name": "AFTER_PRINT",
-                    "description": "Dispatched after a PrintEvent is printed. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The target of the event."
+                },
+                {
+                    "name": "currentTarget",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The current propagation target of the event."
+                },
+                {
+                    "name": "eventPhase",
+                    "array": false,
+                    "type": "EventPhases",
+                    "readonly": true,
+                    "description": "The current propagation phase of the event."
+                },
+                {
+                    "name": "bubbles",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the event supports the bubbling phase of propagation."
+                },
+                {
+                    "name": "cancelable",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the default behavior of the event on its target can be canceled."
+                },
+                {
+                    "name": "timeStamp",
+                    "array": false,
+                    "type": "Date",
+                    "readonly": true,
+                    "description": "The time the event was initialized."
+                },
+                {
+                    "name": "propagationStopped",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, propagation of the event beyond the current target has been stopped."
+                },
+                {
+                    "name": "defaultPrevented",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the default behavior of the event on its target has been canceled."
+                },
+                {
+                    "name": "id",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the PrintEvent."
+                },
+                {
+                    "name": "isValid",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "array": false,
+                    "type": "Document",
+                    "readonly": true,
+                    "description": "The parent of the PrintEvent (a Document)."
+                },
+                {
+                    "name": "index",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the PrintEvent within its containing object."
+                },
+                {
+                    "name": "documentPrintUiOption",
+                    "array": true,
+                    "type": "DocumentPrintUiOptions",
+                    "readonly": false,
+                    "description": "UI options for print document"
+                },
+                {
+                    "name": "properties",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "stopPropagation",
+                    "description": "Stops propagation of the event beyond the current target.",
+                    "parameters": []
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "Cancels the default behavior of the event on its target.",
+                    "parameters": []
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the PrintEvent.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "PrintEvent",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "parameters": [],
-                    "name": "stopPropagation",
-                    "description": "Stops propagation of the event beyond the current target."
-                },
-                {
-                    "parameters": [],
-                    "name": "preventDefault",
-                    "description": "Cancels the default behavior of the event on its target."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the PrintEvent.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "PrintEvent"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                }
-            ],
+        "class": {
             "properties": [
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a PrintEvent is printed. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "eventType",
-                    "description": "The name of the event.",
+                    "readonly": true,
+                    "name": "BEFORE_PRINT",
+                    "value": "beforePrint",
                     "type": "String"
                 },
                 {
+                    "description": "Dispatched after a PrintEvent is printed. This event bubbles. This event is not cancelable.",
+                    "array": false,
                     "readonly": true,
-                    "array": false,
-                    "name": "target",
-                    "description": "The target of the event.",
-                    "type": "Object"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "currentTarget",
-                    "description": "The current propagation target of the event.",
-                    "type": "Object"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "eventPhase",
-                    "description": "The current propagation phase of the event.",
-                    "type": "EventPhases"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "bubbles",
-                    "description": "If true, the event supports the bubbling phase of propagation.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "cancelable",
-                    "description": "If true, the default behavior of the event on its target can be canceled.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "timeStamp",
-                    "description": "The time the event was initialized.",
-                    "type": "Date"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "propagationStopped",
-                    "description": "If true, propagation of the event beyond the current target has been stopped.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "defaultPrevented",
-                    "description": "If true, the default behavior of the event on its target has been canceled.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "id",
-                    "description": "The unique ID of the PrintEvent.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parent",
-                    "description": "The parent of the PrintEvent (a Document).",
-                    "type": "Document"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "index",
-                    "description": "The index of the PrintEvent within its containing object.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": false,
-                    "array": true,
-                    "name": "documentPrintUiOption",
-                    "description": "UI options for print document",
-                    "type": "DocumentPrintUiOptions"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "name": "AFTER_PRINT",
+                    "value": "afterPrint",
+                    "type": "String"
                 }
             ]
         }
     },
-    "name": "PrintEvent",
-    "description": "A print event",
-    "superclass": "Event"
+    "superclass": "Event",
+    "description": "A print event"
 }

@@ -1,73 +1,73 @@
 {
+    "name": "LayerSet",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "add",
-                    "description": "Adds an element.",
-                    "type": "LayerSet"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "merge",
-                    "description": "Merges the layer set.",
-                    "type": "ArtLayer"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
                 },
                 {
-                    "readonly": false,
-                    "array": true,
                     "name": "enabledChannels",
-                    "description": "The channels that are enabled for the layer set. Must be a list of component channels.",
-                    "type": "Channel"
+                    "array": true,
+                    "type": "Channel",
+                    "readonly": false,
+                    "description": "The channels that are enabled for the layer set. Must be a list of component channels."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "layers",
-                    "description": "The layers in this layer set.",
-                    "type": "Layers"
+                    "array": false,
+                    "type": "Layers",
+                    "readonly": true,
+                    "description": "The layers in this layer set."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "layerSets",
-                    "description": "The layer sets contained within the layer set.",
-                    "type": "LayerSets"
+                    "array": false,
+                    "type": "LayerSets",
+                    "readonly": true,
+                    "description": "The layer sets contained within the layer set."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "artLayers",
-                    "description": "The art layers contained in this layer set.",
-                    "type": "ArtLayers"
+                    "array": false,
+                    "type": "ArtLayers",
+                    "readonly": true,
+                    "description": "The art layers contained in this layer set."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "description": "Adds an element.",
+                    "array": false,
+                    "type": "LayerSet",
+                    "parameters": []
+                },
+                {
+                    "name": "merge",
+                    "description": "Merges the layer set.",
+                    "array": false,
+                    "type": "ArtLayer",
+                    "parameters": []
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "LayerSet",
-    "description": "A group of layer objects, which can include art layer objects and other (nested) layer set objects. A single command or set of commands manipulates all layers in a layer set object.",
-    "superclass": "Layer"
+    "superclass": "Layer",
+    "description": "A group of layer objects, which can include art layer objects and other (nested) layer set objects. A single command or set of commands manipulates all layers in a layer set object."
 }

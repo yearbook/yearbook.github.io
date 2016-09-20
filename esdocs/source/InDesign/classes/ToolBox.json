@@ -1,170 +1,170 @@
 {
+    "name": "ToolBox",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "afterAttributeChanged",
+                    "name": "currentToolName",
                     "array": false,
-                    "name": "AFTER_ATTRIBUTE_CHANGED",
-                    "description": "Dispatched when the value of a property changes on this ToolBox. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The currently active tool's name."
+                },
+                {
+                    "name": "currentToolHint",
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The currently active tool's hint."
+                },
+                {
+                    "name": "currentToolIconFile",
+                    "array": false,
+                    "type": "File",
+                    "readonly": true,
+                    "description": "The currently active tool's icon resource file."
+                },
+                {
+                    "name": "isValid",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "array": false,
+                    "type": "Application",
+                    "readonly": true,
+                    "description": "The parent of the ToolBox (a Application)."
+                },
+                {
+                    "name": "events",
+                    "array": false,
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
+                },
+                {
+                    "name": "eventListeners",
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
+                },
+                {
+                    "name": "currentTool",
+                    "array": false,
+                    "type": "UITools",
+                    "readonly": false,
+                    "description": "The currently active tool."
+                },
+                {
+                    "name": "properties",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the ToolBox.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "ToolBox",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the ToolBox.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "ToolBox"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
+        "class": {
             "properties": [
                 {
-                    "readonly": true,
+                    "description": "Dispatched when the value of a property changes on this ToolBox. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "currentToolName",
-                    "description": "The currently active tool's name.",
+                    "readonly": true,
+                    "name": "AFTER_ATTRIBUTE_CHANGED",
+                    "value": "afterAttributeChanged",
                     "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "currentToolHint",
-                    "description": "The currently active tool's hint.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "currentToolIconFile",
-                    "description": "The currently active tool's icon resource file.",
-                    "type": "File"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parent",
-                    "description": "The parent of the ToolBox (a Application).",
-                    "type": "Application"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "currentTool",
-                    "description": "The currently active tool.",
-                    "type": "UITools"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
                 }
             ]
         }
     },
-    "name": "ToolBox",
-    "description": "Tool box tools",
-    "superclass": "Preference"
+    "superclass": "Preference",
+    "description": "Tool box tools"
 }

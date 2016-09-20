@@ -1,65 +1,65 @@
 {
+    "name": "SubPathItems",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "name",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "type": "SubPathItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "index",
-                            "type": "uint"
-                        }
-                    ],
-                    "name": "[]",
-                    "description": "Get an element in the collection with the provided index. ",
-                    "type": "SubPathItem"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "length",
-                    "description": "Number of elements in the collection.",
-                    "type": "int"
+                    "array": false,
+                    "type": "int",
+                    "readonly": true,
+                    "description": "Number of elements in the collection."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getByName",
+                    "description": "Get the first element in the collection with the provided name.",
+                    "array": false,
+                    "type": "SubPathItem",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "array": false,
+                            "type": "String",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "[]",
+                    "description": "Get an element in the collection with the provided index. ",
+                    "array": false,
+                    "type": "SubPathItem",
+                    "parameters": [
+                        {
+                            "name": "index",
+                            "array": false,
+                            "type": "uint",
+                            "optional": false
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "SubPathItems",
     "description": "An array of path point info objects that describes a straight or curved segment of a path. You do not use the sub path item object to create a sub path. Rather, you use the sub path item object to retrieve information about a sub path. To create sub paths, see sub path info."
 }

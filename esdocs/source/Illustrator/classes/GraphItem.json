@@ -1,88 +1,88 @@
 {
+    "name": "GraphItem",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "move",
-                    "description": "Move the object.",
-                    "type": "GraphItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "type": "GraphItem"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes this object."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeAll",
-                    "description": "Deletes all elements."
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
-                },
-                {
+                    "array": false,
+                    "type": "Object",
                     "readonly": true,
-                    "array": false,
-                    "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": false,
+                    "name": "typename",
                     "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
+                },
+                {
                     "name": "contentVariable",
-                    "description": "The content variable bound to this graph.",
-                    "type": "any"
+                    "array": false,
+                    "type": "any",
+                    "readonly": false,
+                    "description": "The content variable bound to this graph."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "move",
+                    "description": "Move the object.",
+                    "array": false,
+                    "type": "GraphItem",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "array": false,
+                    "type": "GraphItem",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes this object.",
+                    "parameters": []
+                },
+                {
+                    "name": "removeAll",
+                    "description": "Deletes all elements.",
+                    "parameters": []
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "GraphItem",
-    "description": "Graph artwork item.",
-    "superclass": "PageItem"
+    "superclass": "PageItem",
+    "description": "Graph artwork item."
 }

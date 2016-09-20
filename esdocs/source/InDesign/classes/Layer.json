@@ -1,440 +1,440 @@
 {
+    "name": "Layer",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "to",
-                            "description": "The location relative to the reference object or within the containing object.",
-                            "type": "LocationOptions"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reference",
-                            "description": "The reference object. Note: Required when the to value specifies before or after. (Optional)",
-                            "type": "Layer"
-                        }
-                    ],
-                    "name": "move",
-                    "description": "Moves the Layer to the specified location.",
-                    "type": "Layer"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes the Layer."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "duplicate",
-                    "description": "Duplicates the Layer.",
-                    "type": "Layer"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "with",
-                            "description": "The layer(s) with which to merge.",
-                            "type": "Layer"
-                        }
-                    ],
-                    "name": "merge",
-                    "description": "Merges the layer with other layer(s).",
-                    "type": "Layer"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "value",
-                            "description": "The value.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the Layer.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "Layer"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": true,
                     "name": "allPageItems",
-                    "description": "Lists all page items contained by the Layer.",
-                    "type": "PageItem"
-                },
-                {
-                    "readonly": true,
                     "array": true,
+                    "type": "PageItem",
+                    "readonly": true,
+                    "description": "Lists all page items contained by the Layer."
+                },
+                {
                     "name": "allGraphics",
-                    "description": "Lists all graphics contained by the Layer.",
-                    "type": "Graphic"
+                    "array": true,
+                    "type": "Graphic",
+                    "readonly": true,
+                    "description": "Lists all graphics contained by the Layer."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "id",
-                    "description": "The unique ID of the Layer.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the Layer."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The parent of the Layer (a Document).",
-                    "type": "Document"
+                    "array": false,
+                    "type": "Document",
+                    "readonly": true,
+                    "description": "The parent of the Layer (a Document)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "index",
-                    "description": "The index of the Layer within its containing object.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the Layer within its containing object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "ovals",
-                    "description": "A collection of ellipses.",
-                    "type": "Ovals"
+                    "array": false,
+                    "type": "Ovals",
+                    "readonly": true,
+                    "description": "A collection of ellipses."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "splineItems",
-                    "description": "The spline items collection.",
-                    "type": "SplineItems"
+                    "array": false,
+                    "type": "SplineItems",
+                    "readonly": true,
+                    "description": "The spline items collection."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "pageItems",
-                    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type.",
-                    "type": "PageItems"
+                    "array": false,
+                    "type": "PageItems",
+                    "readonly": true,
+                    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "rectangles",
-                    "description": "A collection of rectangles.",
-                    "type": "Rectangles"
+                    "array": false,
+                    "type": "Rectangles",
+                    "readonly": true,
+                    "description": "A collection of rectangles."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "graphicLines",
-                    "description": "A collection of graphic lines.",
-                    "type": "GraphicLines"
+                    "array": false,
+                    "type": "GraphicLines",
+                    "readonly": true,
+                    "description": "A collection of graphic lines."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "textFrames",
-                    "description": "A collection of text frames.",
-                    "type": "TextFrames"
+                    "array": false,
+                    "type": "TextFrames",
+                    "readonly": true,
+                    "description": "A collection of text frames."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "polygons",
-                    "description": "A collection of polygons.",
-                    "type": "Polygons"
+                    "array": false,
+                    "type": "Polygons",
+                    "readonly": true,
+                    "description": "A collection of polygons."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
+                    "array": false,
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "guides",
-                    "description": "A collection of guides.",
-                    "type": "Guides"
+                    "array": false,
+                    "type": "Guides",
+                    "readonly": true,
+                    "description": "A collection of guides."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "groups",
-                    "description": "A collection of groups.",
-                    "type": "Groups"
+                    "array": false,
+                    "type": "Groups",
+                    "readonly": true,
+                    "description": "A collection of groups."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "epstexts",
-                    "description": "EPSTexts",
-                    "type": "EPSTexts"
+                    "array": false,
+                    "type": "EPSTexts",
+                    "readonly": true,
+                    "description": "EPSTexts"
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "formFields",
-                    "description": "A collection of form fields.",
-                    "type": "FormFields"
+                    "array": false,
+                    "type": "FormFields",
+                    "readonly": true,
+                    "description": "A collection of form fields."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "buttons",
-                    "description": "A collection of buttons.",
-                    "type": "Buttons"
+                    "array": false,
+                    "type": "Buttons",
+                    "readonly": true,
+                    "description": "A collection of buttons."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "multiStateObjects",
-                    "description": "A collection of multi-state objects.",
-                    "type": "MultiStateObjects"
+                    "array": false,
+                    "type": "MultiStateObjects",
+                    "readonly": true,
+                    "description": "A collection of multi-state objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "checkBoxes",
-                    "description": "A collection of checkboxes.",
-                    "type": "CheckBoxes"
+                    "array": false,
+                    "type": "CheckBoxes",
+                    "readonly": true,
+                    "description": "A collection of checkboxes."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "comboBoxes",
-                    "description": "A collection of comboboxes.",
-                    "type": "ComboBoxes"
+                    "array": false,
+                    "type": "ComboBoxes",
+                    "readonly": true,
+                    "description": "A collection of comboboxes."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "listBoxes",
-                    "description": "A collection of listboxes.",
-                    "type": "ListBoxes"
+                    "array": false,
+                    "type": "ListBoxes",
+                    "readonly": true,
+                    "description": "A collection of listboxes."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "radioButtons",
-                    "description": "A collection of radio buttons.",
-                    "type": "RadioButtons"
+                    "array": false,
+                    "type": "RadioButtons",
+                    "readonly": true,
+                    "description": "A collection of radio buttons."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "textBoxes",
-                    "description": "A collection of text boxes.",
-                    "type": "TextBoxes"
-                },
-                {
+                    "array": false,
+                    "type": "TextBoxes",
                     "readonly": true,
-                    "array": false,
+                    "description": "A collection of text boxes."
+                },
+                {
                     "name": "signatureFields",
-                    "description": "A collection of signature fields.",
-                    "type": "SignatureFields"
+                    "array": false,
+                    "type": "SignatureFields",
+                    "readonly": true,
+                    "description": "A collection of signature fields."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "name",
-                    "description": "The name of the Layer.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The name of the Layer."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "visible",
-                    "description": "If true, the Layer is visible.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the Layer is visible."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "locked",
-                    "description": "If true, the Layer is locked.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the Layer is locked."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "layerColor",
-                    "description": "The color of the layer, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
-                    "type": "Mixed"
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": false,
+                    "description": "The color of the layer, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "ignoreWrap",
-                    "description": "If true, text wrap settings applied to objects on the layer will not affect text on other layers when the layer is hidden.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, text wrap settings applied to objects on the layer will not affect text on other layers when the layer is hidden."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "showGuides",
-                    "description": "If true, guides are visible on the layer.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, guides are visible on the layer."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "lockGuides",
-                    "description": "If true, the guide positions on the layer are locked.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the guide positions on the layer are locked."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "printable",
-                    "description": "If true, the layer will print.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the layer will print."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "label",
-                    "description": "A property that can be set to any string.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "A property that can be set to any string."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "move",
+                    "description": "Moves the Layer to the specified location.",
+                    "array": false,
+                    "type": "Layer",
+                    "parameters": [
+                        {
+                            "name": "to",
+                            "array": false,
+                            "type": "LocationOptions",
+                            "optional": false,
+                            "description": "The location relative to the reference object or within the containing object."
+                        },
+                        {
+                            "name": "reference",
+                            "array": false,
+                            "type": "Layer",
+                            "optional": false,
+                            "description": "The reference object. Note: Required when the to value specifies before or after. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes the Layer.",
+                    "parameters": []
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicates the Layer.",
+                    "array": false,
+                    "type": "Layer",
+                    "parameters": []
+                },
+                {
+                    "name": "merge",
+                    "description": "Merges the layer with other layer(s).",
+                    "array": false,
+                    "type": "Layer",
+                    "parameters": [
+                        {
+                            "name": "with",
+                            "array": true,
+                            "type": "Layer",
+                            "optional": false,
+                            "description": "The layer(s) with which to merge."
+                        }
+                    ]
+                },
+                {
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key.",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        },
+                        {
+                            "name": "value",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The value."
+                        }
+                    ]
+                },
+                {
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Layer.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "Layer",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "Layer",
     "description": "A layer."
 }

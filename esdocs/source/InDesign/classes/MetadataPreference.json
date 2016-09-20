@@ -1,386 +1,386 @@
 {
+    "name": "MetadataPreference",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "to",
-                            "description": "The path to the external file.",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "save",
-                    "description": "Saves the metadata in the document to an external file."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The full path to the file that contains the replacement metadata.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "affectAll",
-                            "description": "If true, treats all properties as external. Note: Defaults to false. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "replace",
-                    "description": "Replaces the current metadata in the document with metadata from the specified file."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "from",
-                            "description": "The path to the external file that contains the metadata.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "affectAll",
-                            "description": "If true, also replaces existing metadata with data from the external file. If false, does not replace existing metadata. Note: Defaults to false. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "append",
-                    "description": "Uses metadata from the specified external file to define any undefined metadata properties in the document."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "namespace",
-                            "description": "The namespace of the property.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "path",
-                            "description": "The specified path.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "getProperty",
-                    "description": "Gets the XMP property value associated with the specified path.",
-                    "type": "String"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "namespace",
-                            "description": "The namespace of the property.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "path",
-                            "description": "The specified path(s).",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "value",
-                            "description": "The value to assign to the property. Note: To remove the property, pass an empty string.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "setProperty",
-                    "description": "Sets the XMP property associated with the specified path."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "namespace",
-                            "description": "The namespace of the container.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "path",
-                            "description": "The path to the container.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": true,
-                            "value": "0",
-                            "array": false,
-                            "name": "index",
-                            "description": "The index of the item within the container. Specified values must be 1 or greater. To append the item to the end of the index and allow the next available value to be assigned, use 0. (Optional)",
-                            "type": "Number"
-                        },
-                        {
-                            "optional": true,
-                            "value": "ContainerType.BAG",
-                            "array": false,
-                            "name": "container",
-                            "description": "The container type. Note: Required when the new item is the first item added to the container. (Optional)",
-                            "type": "ContainerType"
-                        }
-                    ],
-                    "name": "createContainerItem",
-                    "description": "Creates an empty container."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "namespace",
-                            "description": "The namespace of the container.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "path",
-                            "description": "The path to the container.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "countContainer",
-                    "description": "Counts the number of items in the container.",
-                    "type": "Number"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the MetadataPreference.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "MetadataPreference"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "serverURL",
-                    "description": "The location of the document on the asset management server.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The location of the document on the asset management server."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "modificationDate",
-                    "description": "The most recent modification date of the document.",
-                    "type": "Date"
+                    "array": false,
+                    "type": "Date",
+                    "readonly": true,
+                    "description": "The most recent modification date of the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "creationDate",
-                    "description": "The creation date of the document.",
-                    "type": "Date"
+                    "array": false,
+                    "type": "Date",
+                    "readonly": true,
+                    "description": "The creation date of the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "creator",
-                    "description": "The name of the application used to create the document.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the application used to create the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "format",
-                    "description": "The format of the document.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The format of the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The parent of the MetadataPreference (a Document).",
-                    "type": "Document"
+                    "array": false,
+                    "type": "Document",
+                    "readonly": true,
+                    "description": "The parent of the MetadataPreference (a Document)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
-                },
-                {
+                    "array": false,
+                    "type": "Events",
                     "readonly": true,
-                    "array": false,
+                    "description": "A collection of events."
+                },
+                {
                     "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "author",
-                    "description": "The author of the document.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The author of the document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "description",
-                    "description": "The description of the MetadataPreference.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The description of the MetadataPreference."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "jobName",
-                    "description": "The job name.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The job name."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "copyrightStatus",
-                    "description": "The copyright status of the document.",
-                    "type": "CopyrightStatus"
+                    "array": false,
+                    "type": "CopyrightStatus",
+                    "readonly": false,
+                    "description": "The copyright status of the document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "copyrightNotice",
-                    "description": "The text to use as a copyright notice.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The text to use as a copyright notice."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "copyrightInfoURL",
-                    "description": "The URL of the file that contains the linked copyright statement.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The URL of the file that contains the linked copyright statement."
                 },
                 {
-                    "readonly": false,
-                    "array": true,
                     "name": "keywords",
-                    "description": "The list of keywords associated with the document.",
-                    "type": "String"
+                    "array": true,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The list of keywords associated with the document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "documentTitle",
-                    "description": "The title of the document.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The title of the document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "save",
+                    "description": "Saves the metadata in the document to an external file.",
+                    "parameters": [
+                        {
+                            "name": "to",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the external file."
+                        }
+                    ]
+                },
+                {
+                    "name": "replace",
+                    "description": "Replaces the current metadata in the document with metadata from the specified file.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The full path to the file that contains the replacement metadata."
+                        },
+                        {
+                            "description": "If true, treats all properties as external. Note: Defaults to false. (Optional)",
+                            "array": false,
+                            "name": "affectAll",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "append",
+                    "description": "Uses metadata from the specified external file to define any undefined metadata properties in the document.",
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the external file that contains the metadata."
+                        },
+                        {
+                            "description": "If true, also replaces existing metadata with data from the external file. If false, does not replace existing metadata. Note: Defaults to false. (Optional)",
+                            "array": false,
+                            "name": "affectAll",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "getProperty",
+                    "description": "Gets the XMP property value associated with the specified path.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": [
+                        {
+                            "name": "namespace",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The namespace of the property."
+                        },
+                        {
+                            "name": "path",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The specified path."
+                        }
+                    ]
+                },
+                {
+                    "name": "setProperty",
+                    "description": "Sets the XMP property associated with the specified path.",
+                    "parameters": [
+                        {
+                            "name": "namespace",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The namespace of the property."
+                        },
+                        {
+                            "name": "path",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The specified path(s)."
+                        },
+                        {
+                            "name": "value",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The value to assign to the property. Note: To remove the property, pass an empty string."
+                        }
+                    ]
+                },
+                {
+                    "name": "createContainerItem",
+                    "description": "Creates an empty container.",
+                    "parameters": [
+                        {
+                            "name": "namespace",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The namespace of the container."
+                        },
+                        {
+                            "name": "path",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The path to the container."
+                        },
+                        {
+                            "description": "The index of the item within the container. Specified values must be 1 or greater. To append the item to the end of the index and allow the next available value to be assigned, use 0. (Optional)",
+                            "array": false,
+                            "name": "index",
+                            "value": "0",
+                            "type": "Number",
+                            "optional": true
+                        },
+                        {
+                            "description": "The container type. Note: Required when the new item is the first item added to the container. (Optional)",
+                            "array": false,
+                            "name": "container",
+                            "value": "ContainerType.BAG",
+                            "type": "ContainerType",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "countContainer",
+                    "description": "Counts the number of items in the container.",
+                    "array": false,
+                    "type": "Number",
+                    "parameters": [
+                        {
+                            "name": "namespace",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The namespace of the container."
+                        },
+                        {
+                            "name": "path",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The path to the container."
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the MetadataPreference.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "MetadataPreference",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "MetadataPreference",
-    "description": "Metadata preferences.",
-    "superclass": "Preference"
+    "superclass": "Preference",
+    "description": "Metadata preferences."
 }

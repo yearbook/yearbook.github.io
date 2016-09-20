@@ -1,970 +1,970 @@
 {
+    "name": "XMLElement",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "to",
-                            "description": "The location in relation to the reference object or within the containing object.",
-                            "type": "LocationOptions"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reference",
-                            "description": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: XMLItem or Text. (Optional)",
-                            "type": "Mixed"
-                        }
-                    ],
-                    "name": "move",
-                    "description": "Moves the element to the specified location.",
-                    "type": "XMLElement"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "duplicate",
-                    "description": "Duplicates the XMLElement.",
-                    "type": "XMLElement"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The object to mark up. Can accept: PageItem, Movie, Sound, Graphic, Story, Text or Table.",
-                            "type": "Mixed"
-                        }
-                    ],
-                    "name": "markup",
-                    "description": "Associates the object with the specified XML element while preserving existing content."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The object to place into. Can accept: Story, PageItem, Graphic, Movie or Sound.",
-                            "type": "Mixed"
-                        }
-                    ],
-                    "name": "placeXML",
-                    "description": "Places XML content into the story, replacing the existing content."
-                },
-                {
-                    "parameters": [],
-                    "name": "untag",
-                    "description": "Untags an element."
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "250",
-                            "array": false,
-                            "name": "maximumErrors",
-                            "description": "The maximum number of validation errors to generate. (Optional)",
-                            "type": "Number"
-                        }
-                    ],
-                    "name": "validate",
-                    "description": "Validates the element against a DTD.",
-                    "type": "ValidationError"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The paragraph style to apply. Can accept: String or ParagraphStyle.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "clearingOverrides",
-                            "description": "If true, clears any attributes before applying the style. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "applyParagraphStyle",
-                    "description": "Applies the specified paragraph style to the text content of the XMLElement."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The character style to apply. Can accept: String or CharacterStyle.",
-                            "type": "Mixed"
-                        }
-                    ],
-                    "name": "applyCharacterStyle",
-                    "description": "Applies the specified character style to the text content of the XMLElement."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The name to give to the new attribute. (Optional)",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "convertToAttribute",
-                    "description": "Converts the XMLElement to an attribute of its parent element.",
-                    "type": "XMLAttribute"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "rowTag",
-                            "description": "The XML tag that indicates a table row.",
-                            "type": "XMLTag"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "cellTag",
-                            "description": "The XML tag that indicates a table cell.",
-                            "type": "XMLTag"
-                        }
-                    ],
-                    "name": "convertElementToTable",
-                    "description": "Converts the content of the XML element to a table.",
-                    "type": "Table"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "dimensions",
-                            "description": "The dimensions of the inline frame in the format [width, height].",
-                            "type": "Measurement Unit (Number or String)=any"
-                        }
-                    ],
-                    "name": "placeIntoInlineFrame",
-                    "description": "Places an XML element into an inline frame.",
-                    "type": "PageItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "copyItem",
-                            "description": "The page item to copy.",
-                            "type": "PageItem"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "retainExistingFrame",
-                            "description": "If true, moves the existing page item. If false, moves a copy of the page item. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "placeIntoInlineCopy",
-                    "description": "Associates an existing page item with the XML element and places it into an inline frame.",
-                    "type": "PageItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The file path to the import file.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeBasePath",
-                            "description": "Base path used to resolve relative paths. (Optional)",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "setContent",
-                    "description": "Replaces the content of XML element with content imported from a file.",
-                    "type": "PageItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The text to be inserted. Can accept: String or SpecialCharacters enumerator.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "position",
-                            "description": "The position at which to insert the text. Note that text inserted before or after the element does not become part of the content of the element. Instead, it becomes content of the parent of the element.",
-                            "type": "XMLElementPosition"
-                        }
-                    ],
-                    "name": "insertTextAsContent",
-                    "description": "Inserts the specified text as content before, in, or after the XML element.",
-                    "type": "Text"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The table style to apply. Can accept: String or TableStyle.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "clearingOverrides",
-                            "description": "If true, removes local formatting before applying the table style. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "applyTableStyle",
-                    "description": "Applies a table style to the table associated with the XMLElement."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The cell style to apply. Can accept: String or CellStyle.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "clearingOverrides",
-                            "description": "If true, removes local formatting before applying the cell style. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "applyCellStyle",
-                    "description": "Applies a cell style to the table cells associated with the XMLElement."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The object style to apply. Can accept: String or ObjectStyle.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "clearingOverrides",
-                            "description": "If true, removes local formatting before applying the object style. (Optional)",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "clearingOverridesThroughRootObjectStyle",
-                            "description": "If true, clears unchecked category attributes through the root style. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "applyObjectStyle",
-                    "description": "Applies an object style to the frame associated with the XMLElement."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "on",
-                            "description": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "geometricBounds",
-                            "description": "The bounds of the page item excluding the stroke width, in the format [y1, x1, y2, x2].",
-                            "type": "Measurement Unit (Number or String)=any"
-                        }
-                    ],
-                    "name": "placeIntoFrame",
-                    "description": "Places the XML element into a new rectangular page item. If the XML element was already associated with a page item, that page item is deleted.",
-                    "type": "PageItem"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "on",
-                            "description": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "placePoint",
-                            "description": "The page coordinates of the top left corner of the page item, in the format [y1, x1]",
-                            "type": "Measurement Unit (Number or String)=any"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "copyItem",
-                            "description": "The page item to copy.",
-                            "type": "PageItem"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "retainExistingFrame",
-                            "description": "If true, associates the XML element with the existing page item and moves the page item (rather than a copy of the page item). (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "placeIntoCopy",
-                    "description": "Associates the XML element with a copy of a page item.",
-                    "type": "PageItem"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "from",
-                            "description": "The XML file.",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "importXML",
-                    "description": "Imports the specified XML file into an InDesign document."
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The XPath expression.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "prefixMappingTable",
-                            "description": "The namespace mapping table. Can accept: Array of Arrays of 2 Strings. (Optional)",
-                            "type": "Mixed"
-                        }
-                    ],
-                    "name": "evaluateXPathExpression",
-                    "description": "Evaluates an XPath expression starting at this XML element in the structure.",
-                    "type": "XMLItem"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reverseOrder",
-                            "description": "If true, returns the results in reverse order. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "findText",
-                    "description": "Finds text that matches the find what value.",
-                    "type": "Text"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reverseOrder",
-                            "description": "If true, returns the results in reverse order. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "changeText",
-                    "description": "Finds text that matches the find what value and replaces the text with the change to value.",
-                    "type": "Text"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reverseOrder",
-                            "description": "If true, returns the results in reverse order. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "findGrep",
-                    "description": "Finds text that matches the find what value.",
-                    "type": "Text"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reverseOrder",
-                            "description": "If true, returns the results in reverse order. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "changeGrep",
-                    "description": "Finds text that matches the find what value and replaces the text with the change to value.",
-                    "type": "Text"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reverseOrder",
-                            "description": "If true, returns the results in reverse order. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "findTransliterate",
-                    "description": "Finds text that matches the find character type value.",
-                    "type": "Text"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "reverseOrder",
-                            "description": "If true, returns the results in reverse order. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "changeTransliterate",
-                    "description": "Finds text that matches the find character type value and replaces the text with the change character type value.",
-                    "type": "Text"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "format",
-                            "description": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "to",
-                            "description": "The path to the export file.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "showingOptions",
-                            "description": "If true, displays the export options dialog. (Optional)",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The export style. (Optional)",
-                            "type": "PDFExportPreset"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "versionComments",
-                            "description": "The comment for this version. (Optional)",
-                            "type": "String"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "forceSave",
-                            "description": "If true, forcibly saves a version. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "exportFile",
-                    "description": "Exports the object(s) to a file."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "format",
-                            "description": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "to",
-                            "description": "The path to the export file.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "showingOptions",
-                            "description": "If true, displays the export options dialog. (Optional)",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The export style. (Optional)",
-                            "type": "PDFExportPreset"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "versionComments",
-                            "description": "The comment for this version. (Optional)",
-                            "type": "String"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "forceSave",
-                            "description": "If true, forcibly saves a version. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "asynchronousExportFile",
-                    "description": "asynchronously exports the object(s) to a file.",
-                    "type": "BackgroundTask"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The library in which to store the object.",
-                            "type": "Library"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "withProperties",
-                            "description": "Initial values for properties of the new XMLElement (Optional)",
-                            "type": "Object"
-                        }
-                    ],
-                    "name": "store",
-                    "description": "Stores the object in the specified library.",
-                    "type": "Asset"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes the XMLElement."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "SelectionOptions.REPLACE_WITH",
-                            "array": false,
-                            "name": "existingSelection",
-                            "description": "The selection status of the XMLElement in relation to previously selected objects. (Optional)",
-                            "type": "SelectionOptions"
-                        }
-                    ],
-                    "name": "select",
-                    "description": "Selects the object."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the XMLElement.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "XMLElement"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "storyOffset",
-                    "description": "The insertion point before the table in the story containing the table.",
-                    "type": "InsertionPoint"
+                    "array": false,
+                    "type": "InsertionPoint",
+                    "readonly": true,
+                    "description": "The insertion point before the table in the story containing the table."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parentStory",
-                    "description": "The story that contains the text.",
-                    "type": "Story"
+                    "array": false,
+                    "type": "Story",
+                    "readonly": true,
+                    "description": "The story that contains the text."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmlContent",
-                    "description": "The text content or page item referred to by the element. Can return: Text, Story, PageItem, Movie, Sound, Graphic, Table or Cell.",
-                    "type": "Mixed"
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": true,
+                    "description": "The text content or page item referred to by the element. Can return: Text, Story, PageItem, Movie, Sound, Graphic, Table or Cell."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "id",
-                    "description": "The unique ID of the XMLElement.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the XMLElement."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The parent of the XMLElement (a Document or XMLElement).",
-                    "type": "Mixed"
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": true,
+                    "description": "The parent of the XMLElement (a Document or XMLElement)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "index",
-                    "description": "The index of the XMLElement within its containing object.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the XMLElement within its containing object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmlAttributes",
-                    "description": "A collection of XML attributes.",
-                    "type": "XMLAttributes"
+                    "array": false,
+                    "type": "XMLAttributes",
+                    "readonly": true,
+                    "description": "A collection of XML attributes."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmlElements",
-                    "description": "A collection of XML elements.",
-                    "type": "XMLElements"
+                    "array": false,
+                    "type": "XMLElements",
+                    "readonly": true,
+                    "description": "A collection of XML elements."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmlItems",
-                    "description": "A collection of XML items.",
-                    "type": "XMLItems"
+                    "array": false,
+                    "type": "XMLItems",
+                    "readonly": true,
+                    "description": "A collection of XML items."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmlComments",
-                    "description": "A collection of XML comments.",
-                    "type": "XMLComments"
+                    "array": false,
+                    "type": "XMLComments",
+                    "readonly": true,
+                    "description": "A collection of XML comments."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmlInstructions",
-                    "description": "A collection of XML instructions.",
-                    "type": "XMLInstructions"
+                    "array": false,
+                    "type": "XMLInstructions",
+                    "readonly": true,
+                    "description": "A collection of XML instructions."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "pageItems",
-                    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type.",
-                    "type": "PageItems"
+                    "array": false,
+                    "type": "PageItems",
+                    "readonly": true,
+                    "description": "The page items collection, which can be used to process all page items in a container (such as a document, page, or group), regardless of type."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "images",
-                    "description": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF).",
-                    "type": "Images"
+                    "array": false,
+                    "type": "Images",
+                    "readonly": true,
+                    "description": "A collection of bitmap images in any bitmap file format (including TIFF, JPEG, or GIF)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "graphics",
-                    "description": "A collection of imported graphics in any graphic file format (vector, metafile, or bitmap).",
-                    "type": "Graphics"
+                    "array": false,
+                    "type": "Graphics",
+                    "readonly": true,
+                    "description": "A collection of imported graphics in any graphic file format (vector, metafile, or bitmap)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "epss",
-                    "description": "A collection of EPS files.",
-                    "type": "EPSs"
+                    "array": false,
+                    "type": "EPSs",
+                    "readonly": true,
+                    "description": "A collection of EPS files."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "wmfs",
-                    "description": "A collection of WMF graphics.",
-                    "type": "WMFs"
+                    "array": false,
+                    "type": "WMFs",
+                    "readonly": true,
+                    "description": "A collection of WMF graphics."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "picts",
-                    "description": "A collection of PICT graphics.",
-                    "type": "PICTs"
+                    "array": false,
+                    "type": "PICTs",
+                    "readonly": true,
+                    "description": "A collection of PICT graphics."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "pdfs",
-                    "description": "A collection of PDF files.",
-                    "type": "PDFs"
+                    "array": false,
+                    "type": "PDFs",
+                    "readonly": true,
+                    "description": "A collection of PDF files."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "stories",
-                    "description": "A collection of stories.",
-                    "type": "Stories"
+                    "array": false,
+                    "type": "Stories",
+                    "readonly": true,
+                    "description": "A collection of stories."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "tables",
-                    "description": "A collection of tables.",
-                    "type": "Tables"
+                    "array": false,
+                    "type": "Tables",
+                    "readonly": true,
+                    "description": "A collection of tables."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "cells",
-                    "description": "A collection of table cells.",
-                    "type": "Cells"
+                    "array": false,
+                    "type": "Cells",
+                    "readonly": true,
+                    "description": "A collection of table cells."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "texts",
-                    "description": "A collection of text objects.",
-                    "type": "Texts"
+                    "array": false,
+                    "type": "Texts",
+                    "readonly": true,
+                    "description": "A collection of text objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "characters",
-                    "description": "A collection of characters.",
-                    "type": "Characters"
+                    "array": false,
+                    "type": "Characters",
+                    "readonly": true,
+                    "description": "A collection of characters."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "words",
-                    "description": "A collection of words.",
-                    "type": "Words"
+                    "array": false,
+                    "type": "Words",
+                    "readonly": true,
+                    "description": "A collection of words."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "lines",
-                    "description": "A collection of lines.",
-                    "type": "Lines"
+                    "array": false,
+                    "type": "Lines",
+                    "readonly": true,
+                    "description": "A collection of lines."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "textColumns",
-                    "description": "A collection of text columns.",
-                    "type": "TextColumns"
+                    "array": false,
+                    "type": "TextColumns",
+                    "readonly": true,
+                    "description": "A collection of text columns."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "paragraphs",
-                    "description": "A collection of paragraphs.",
-                    "type": "Paragraphs"
+                    "array": false,
+                    "type": "Paragraphs",
+                    "readonly": true,
+                    "description": "A collection of paragraphs."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "insertionPoints",
-                    "description": "A collection of insertion points.",
-                    "type": "InsertionPoints"
+                    "array": false,
+                    "type": "InsertionPoints",
+                    "readonly": true,
+                    "description": "A collection of insertion points."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "textStyleRanges",
-                    "description": "A collection of text style ranges.",
-                    "type": "TextStyleRanges"
+                    "array": false,
+                    "type": "TextStyleRanges",
+                    "readonly": true,
+                    "description": "A collection of text style ranges."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
-                },
-                {
+                    "array": false,
+                    "type": "Events",
                     "readonly": true,
-                    "array": false,
+                    "description": "A collection of events."
+                },
+                {
                     "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "markupTag",
-                    "description": "The XML tag applied to the element. Can also accept: String.",
-                    "type": "XMLTag"
+                    "array": false,
+                    "type": "XMLTag",
+                    "readonly": false,
+                    "description": "The XML tag applied to the element. Can also accept: String."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "contents",
-                    "description": "The contents of the text. Can return: String or SpecialCharacters enumerator.",
-                    "type": "Mixed"
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": false,
+                    "description": "The contents of the text. Can return: String or SpecialCharacters enumerator."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "move",
+                    "description": "Moves the element to the specified location.",
+                    "array": false,
+                    "type": "XMLElement",
+                    "parameters": [
+                        {
+                            "name": "to",
+                            "array": false,
+                            "type": "LocationOptions",
+                            "optional": false,
+                            "description": "The location in relation to the reference object or within the containing object."
+                        },
+                        {
+                            "name": "reference",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: XMLItem or Text. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicates the XMLElement.",
+                    "array": false,
+                    "type": "XMLElement",
+                    "parameters": []
+                },
+                {
+                    "name": "markup",
+                    "description": "Associates the object with the specified XML element while preserving existing content.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The object to mark up. Can accept: PageItem, Movie, Sound, Graphic, Story, Text or Table."
+                        }
+                    ]
+                },
+                {
+                    "name": "placeXML",
+                    "description": "Places XML content into the story, replacing the existing content.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The object to place into. Can accept: Story, PageItem, Graphic, Movie or Sound."
+                        }
+                    ]
+                },
+                {
+                    "name": "untag",
+                    "description": "Untags an element.",
+                    "parameters": []
+                },
+                {
+                    "name": "validate",
+                    "description": "Validates the element against a DTD.",
+                    "array": true,
+                    "type": "ValidationError",
+                    "parameters": [
+                        {
+                            "description": "The maximum number of validation errors to generate. (Optional)",
+                            "array": false,
+                            "name": "maximumErrors",
+                            "value": "250",
+                            "type": "Number",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "applyParagraphStyle",
+                    "description": "Applies the specified paragraph style to the text content of the XMLElement.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The paragraph style to apply. Can accept: String or ParagraphStyle."
+                        },
+                        {
+                            "description": "If true, clears any attributes before applying the style. (Optional)",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "applyCharacterStyle",
+                    "description": "Applies the specified character style to the text content of the XMLElement.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The character style to apply. Can accept: String or CharacterStyle."
+                        }
+                    ]
+                },
+                {
+                    "name": "convertToAttribute",
+                    "description": "Converts the XMLElement to an attribute of its parent element.",
+                    "array": false,
+                    "type": "XMLAttribute",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The name to give to the new attribute. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "convertElementToTable",
+                    "description": "Converts the content of the XML element to a table.",
+                    "array": false,
+                    "type": "Table",
+                    "parameters": [
+                        {
+                            "name": "rowTag",
+                            "array": false,
+                            "type": "XMLTag",
+                            "optional": false,
+                            "description": "The XML tag that indicates a table row."
+                        },
+                        {
+                            "name": "cellTag",
+                            "array": false,
+                            "type": "XMLTag",
+                            "optional": false,
+                            "description": "The XML tag that indicates a table cell."
+                        }
+                    ]
+                },
+                {
+                    "name": "placeIntoInlineFrame",
+                    "description": "Places an XML element into an inline frame.",
+                    "array": false,
+                    "type": "PageItem",
+                    "parameters": [
+                        {
+                            "name": "dimensions",
+                            "array": true,
+                            "type": "Measurement Unit (Number or String)=any",
+                            "optional": false,
+                            "description": "The dimensions of the inline frame in the format [width, height]."
+                        }
+                    ]
+                },
+                {
+                    "name": "placeIntoInlineCopy",
+                    "description": "Associates an existing page item with the XML element and places it into an inline frame.",
+                    "array": false,
+                    "type": "PageItem",
+                    "parameters": [
+                        {
+                            "name": "copyItem",
+                            "array": false,
+                            "type": "PageItem",
+                            "optional": false,
+                            "description": "The page item to copy."
+                        },
+                        {
+                            "description": "If true, moves the existing page item. If false, moves a copy of the page item. (Optional)",
+                            "array": false,
+                            "name": "retainExistingFrame",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "setContent",
+                    "description": "Replaces the content of XML element with content imported from a file.",
+                    "array": false,
+                    "type": "PageItem",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The file path to the import file."
+                        },
+                        {
+                            "name": "relativeBasePath",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "Base path used to resolve relative paths. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "insertTextAsContent",
+                    "description": "Inserts the specified text as content before, in, or after the XML element.",
+                    "array": false,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The text to be inserted. Can accept: String or SpecialCharacters enumerator."
+                        },
+                        {
+                            "name": "position",
+                            "array": false,
+                            "type": "XMLElementPosition",
+                            "optional": false,
+                            "description": "The position at which to insert the text. Note that text inserted before or after the element does not become part of the content of the element. Instead, it becomes content of the parent of the element."
+                        }
+                    ]
+                },
+                {
+                    "name": "applyTableStyle",
+                    "description": "Applies a table style to the table associated with the XMLElement.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The table style to apply. Can accept: String or TableStyle."
+                        },
+                        {
+                            "description": "If true, removes local formatting before applying the table style. (Optional)",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "applyCellStyle",
+                    "description": "Applies a cell style to the table cells associated with the XMLElement.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The cell style to apply. Can accept: String or CellStyle."
+                        },
+                        {
+                            "description": "If true, removes local formatting before applying the cell style. (Optional)",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "applyObjectStyle",
+                    "description": "Applies an object style to the frame associated with the XMLElement.",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The object style to apply. Can accept: String or ObjectStyle."
+                        },
+                        {
+                            "description": "If true, removes local formatting before applying the object style. (Optional)",
+                            "array": false,
+                            "name": "clearingOverrides",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, clears unchecked category attributes through the root style. (Optional)",
+                            "array": false,
+                            "name": "clearingOverridesThroughRootObjectStyle",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "placeIntoFrame",
+                    "description": "Places the XML element into a new rectangular page item. If the XML element was already associated with a page item, that page item is deleted.",
+                    "array": false,
+                    "type": "PageItem",
+                    "parameters": [
+                        {
+                            "name": "on",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread."
+                        },
+                        {
+                            "name": "geometricBounds",
+                            "array": true,
+                            "type": "Measurement Unit (Number or String)=any",
+                            "optional": false,
+                            "description": "The bounds of the page item excluding the stroke width, in the format [y1, x1, y2, x2]."
+                        }
+                    ]
+                },
+                {
+                    "name": "placeIntoCopy",
+                    "description": "Associates the XML element with a copy of a page item.",
+                    "array": false,
+                    "type": "PageItem",
+                    "parameters": [
+                        {
+                            "name": "on",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The page or spread on which to create the new page item. Can accept: Spread, Page or MasterSpread."
+                        },
+                        {
+                            "name": "placePoint",
+                            "array": true,
+                            "type": "Measurement Unit (Number or String)=any",
+                            "optional": false,
+                            "description": "The page coordinates of the top left corner of the page item, in the format [y1, x1]"
+                        },
+                        {
+                            "name": "copyItem",
+                            "array": false,
+                            "type": "PageItem",
+                            "optional": false,
+                            "description": "The page item to copy."
+                        },
+                        {
+                            "description": "If true, associates the XML element with the existing page item and moves the page item (rather than a copy of the page item). (Optional)",
+                            "array": false,
+                            "name": "retainExistingFrame",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "importXML",
+                    "description": "Imports the specified XML file into an InDesign document.",
+                    "parameters": [
+                        {
+                            "name": "from",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The XML file."
+                        }
+                    ]
+                },
+                {
+                    "name": "evaluateXPathExpression",
+                    "description": "Evaluates an XPath expression starting at this XML element in the structure.",
+                    "array": true,
+                    "type": "XMLItem",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The XPath expression."
+                        },
+                        {
+                            "name": "prefixMappingTable",
+                            "array": true,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The namespace mapping table. Can accept: Array of Arrays of 2 Strings. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "findText",
+                    "description": "Finds text that matches the find what value.",
+                    "array": true,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "reverseOrder",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "If true, returns the results in reverse order. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "changeText",
+                    "description": "Finds text that matches the find what value and replaces the text with the change to value.",
+                    "array": true,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "reverseOrder",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "If true, returns the results in reverse order. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "findGrep",
+                    "description": "Finds text that matches the find what value.",
+                    "array": true,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "reverseOrder",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "If true, returns the results in reverse order. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "changeGrep",
+                    "description": "Finds text that matches the find what value and replaces the text with the change to value.",
+                    "array": true,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "reverseOrder",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "If true, returns the results in reverse order. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "findTransliterate",
+                    "description": "Finds text that matches the find character type value.",
+                    "array": true,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "reverseOrder",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "If true, returns the results in reverse order. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "changeTransliterate",
+                    "description": "Finds text that matches the find character type value and replaces the text with the change character type value.",
+                    "array": true,
+                    "type": "Text",
+                    "parameters": [
+                        {
+                            "name": "reverseOrder",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "If true, returns the results in reverse order. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "exportFile",
+                    "description": "Exports the object(s) to a file.",
+                    "parameters": [
+                        {
+                            "name": "format",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String."
+                        },
+                        {
+                            "name": "to",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the export file."
+                        },
+                        {
+                            "description": "If true, displays the export options dialog. (Optional)",
+                            "array": false,
+                            "name": "showingOptions",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "PDFExportPreset",
+                            "optional": false,
+                            "description": "The export style. (Optional)"
+                        },
+                        {
+                            "name": "versionComments",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The comment for this version. (Optional)"
+                        },
+                        {
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "array": false,
+                            "name": "forceSave",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "asynchronousExportFile",
+                    "description": "asynchronously exports the object(s) to a file.",
+                    "array": false,
+                    "type": "BackgroundTask",
+                    "parameters": [
+                        {
+                            "name": "format",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The export format, specified as an enumeration value or as an extension that appears in the Save as type or Format menu in the Export dialog. Can accept: ExportFormat enumerator or String."
+                        },
+                        {
+                            "name": "to",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the export file."
+                        },
+                        {
+                            "description": "If true, displays the export options dialog. (Optional)",
+                            "array": false,
+                            "name": "showingOptions",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "PDFExportPreset",
+                            "optional": false,
+                            "description": "The export style. (Optional)"
+                        },
+                        {
+                            "name": "versionComments",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The comment for this version. (Optional)"
+                        },
+                        {
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "array": false,
+                            "name": "forceSave",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "store",
+                    "description": "Stores the object in the specified library.",
+                    "array": false,
+                    "type": "Asset",
+                    "parameters": [
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "Library",
+                            "optional": false,
+                            "description": "The library in which to store the object."
+                        },
+                        {
+                            "name": "withProperties",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false,
+                            "description": "Initial values for properties of the new XMLElement (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes the XMLElement.",
+                    "parameters": []
+                },
+                {
+                    "name": "select",
+                    "description": "Selects the object.",
+                    "parameters": [
+                        {
+                            "description": "The selection status of the XMLElement in relation to previously selected objects. (Optional)",
+                            "array": false,
+                            "name": "existingSelection",
+                            "value": "SelectionOptions.REPLACE_WITH",
+                            "type": "SelectionOptions",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the XMLElement.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "XMLElement",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "XMLElement",
-    "description": "An XML element.",
-    "superclass": "XMLItem"
+    "superclass": "XMLItem",
+    "description": "An XML element."
 }

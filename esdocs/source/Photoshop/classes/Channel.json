@@ -1,129 +1,129 @@
 {
+    "name": "Channel",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "add",
-                    "description": "Adds an element.",
-                    "type": "Channel"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "type": "Channel"
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes this object."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeAll",
-                    "description": "Deletes all elements."
-                },
-                {
-                    "parameters": [],
-                    "name": "merge",
-                    "description": "Merges a spot channel into the component channels."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "targetDocument",
-                            "description": "The document to duplicate the channel to.",
-                            "type": "Document"
-                        }
-                    ],
-                    "name": "duplicate",
-                    "description": "Duplicates the channel.",
-                    "type": "Channel"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
-                },
-                {
+                    "array": false,
+                    "type": "String",
                     "readonly": true,
-                    "array": true,
+                    "description": "The class name of the object."
+                },
+                {
                     "name": "histogram",
-                    "description": "A histogram of the color of the channel.",
-                    "type": "int"
+                    "array": true,
+                    "type": "int",
+                    "readonly": true,
+                    "description": "A histogram of the color of the channel."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "name",
-                    "description": "The channel name.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The channel name."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "kind",
-                    "description": "The type of channel.",
-                    "type": "ChannelType"
+                    "array": false,
+                    "type": "ChannelType",
+                    "readonly": false,
+                    "description": "The type of channel."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "opacity",
-                    "description": "The opacity of alpha channels (called solidity for spot channels). Range: 0 to 100. Valid only when 'type' = masked area or selected area.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": false,
+                    "description": "The opacity of alpha channels (called solidity for spot channels). Range: 0 to 100. Valid only when 'type' = masked area or selected area."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "visible",
-                    "description": "If true, the channel is visible.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the channel is visible."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "color",
-                    "description": "The color of the channel. Not valid for component channels.",
-                    "type": "SolidColor"
+                    "array": false,
+                    "type": "SolidColor",
+                    "readonly": false,
+                    "description": "The color of the channel. Not valid for component channels."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "description": "Adds an element.",
+                    "array": false,
+                    "type": "Channel",
+                    "parameters": []
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "array": false,
+                    "type": "Channel",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes this object.",
+                    "parameters": []
+                },
+                {
+                    "name": "removeAll",
+                    "description": "Deletes all elements.",
+                    "parameters": []
+                },
+                {
+                    "name": "merge",
+                    "description": "Merges a spot channel into the component channels.",
+                    "parameters": []
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicates the channel.",
+                    "array": false,
+                    "type": "Channel",
+                    "parameters": [
+                        {
+                            "name": "targetDocument",
+                            "array": false,
+                            "type": "Document",
+                            "optional": true,
+                            "description": "The document to duplicate the channel to."
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "Channel",
     "description": "Object that stores information about a color element in the image, analogous to a plate in the printing process that applies a single color. The document's color mode determines the number of default channels. For example, an RGB document has four default channels: A composite channel: RGB; and three component channels: red, green, and blue. A channel can also be an alpha channel, which stores selections as masks; or a spot channel, which stores spot colors."
 }

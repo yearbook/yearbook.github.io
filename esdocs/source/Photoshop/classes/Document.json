@@ -1,824 +1,824 @@
 {
+    "name": "Document",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "relativeObject",
-                            "type": "Object"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "insertionLocation",
-                            "type": "ElementPlacement"
-                        }
-                    ],
-                    "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "type": "Document"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "SaveOptionsType.PROMPTTOSAVECHANGES",
-                            "array": false,
-                            "name": "saving",
-                            "description": "Specifies whether changes should be saved before closing.",
-                            "type": "SaveOptionsType"
-                        }
-                    ],
-                    "name": "close",
-                    "description": "Closes the document."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "destinationProfile",
-                            "description": "The color profile to convert to. Either a string specifying a color profile, one of the working color spaces, or Lab color.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "intent",
-                            "description": "The conversion intent.",
-                            "type": "Intent"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "blackPointCompensation",
-                            "description": "If true, black point compensation is used.",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "dither",
-                            "description": "If true, dither is used.",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "convertProfile",
-                    "description": "Converts the document from using one color profile to using another."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "destinationMode",
-                            "description": "The mode to change to.",
-                            "type": "ChangeMode"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "options",
-                            "description": "Options for changing the mode.",
-                            "type": "DocumentConversionOptions"
-                        }
-                    ],
-                    "name": "changeMode",
-                    "description": "Changes the mode of the document."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "bounds",
-                            "description": "The area to crop.",
-                            "type": "UnitRect"
-                        },
-                        {
-                            "optional": true,
-                            "value": "0",
-                            "array": false,
-                            "name": "angle",
-                            "description": "The angle of cropping bounds.",
-                            "type": "Number"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "width",
-                            "description": "The width of the resulting document.",
-                            "type": "UnitValue"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "height",
-                            "description": "The height of the resulting document.",
-                            "type": "UnitValue"
-                        }
-                    ],
-                    "name": "crop",
-                    "description": "Crops the document."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "exportIn",
-                            "description": "The file to export to.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "value": "ExportType.ILLUSTRATORPATHS",
-                            "array": false,
-                            "name": "exportAs",
-                            "description": "The type of export.",
-                            "type": "ExportType"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "options",
-                            "description": "Options for the specified export type.",
-                            "type": "ExportOptions"
-                        }
-                    ],
-                    "name": "exportDocument",
-                    "description": "Exports the document."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "direction",
-                            "description": "The direction in which to flip the canvas.",
-                            "type": "Direction"
-                        }
-                    ],
-                    "name": "flipCanvas",
-                    "description": "Flips the canvas horizontally or vertically."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "file",
-                            "description": "The document to import annotations from.",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "importAnnotations",
-                    "description": "Imports annotations into the document."
-                },
-                {
-                    "parameters": [],
-                    "name": "flatten",
-                    "description": "Flattens all layers."
-                },
-                {
-                    "parameters": [],
-                    "name": "mergeVisibleLayers",
-                    "description": "Flattens all visible layers in the document."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "intoSelection",
-                            "description": "If true, contents are pasted into the current selection.",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "paste",
-                    "description": "Pastes contents of the clipboard into the document.",
-                    "type": "ArtLayer"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "BinaryEncoding",
-                            "array": false,
-                            "name": "postScriptEncoding",
-                            "description": "The encoding type.",
-                            "type": "PrintEncoding"
-                        },
-                        {
-                            "optional": true,
-                            "value": "SourceSpaceType.DOCUMENT",
-                            "array": false,
-                            "name": "sourceSpace",
-                            "description": "The color space for the source.",
-                            "type": "SourceSpaceType"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "printSpace",
-                            "description": "The color space for the printer. Can be \"nothing\" (meaning same as source); one of the working spaces or Lab color; or a string specifying a color space. Default: nothing.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": true,
-                            "value": "Intent.RELATIVECOLORIMETRIC",
-                            "array": false,
-                            "name": "intent",
-                            "description": "The color conversion intent.",
-                            "type": "Intent"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "blackPointCompensation",
-                            "description": "If true, black point compensation is used.",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "print",
-                    "description": "Prints the document."
-                },
-                {
-                    "parameters": [],
-                    "name": "printOneCopy",
-                    "description": "Print one copy of the document."
-                },
-                {
-                    "parameters": [],
-                    "name": "revealAll",
-                    "description": "Expands the document to show clipped sections."
-                },
-                {
-                    "parameters": [],
-                    "name": "rasterizeAllLayers",
-                    "description": "Rasterizes all layers."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "source",
-                            "description": "The source of the measurements to record.",
-                            "type": "MeasurementSource"
-                        },
-                        {
-                            "optional": true,
-                            "array": true,
-                            "name": "dataPoints",
-                            "description": "An array of identifiers of data points to record. Any data points not appropriate for the specified source are ignored.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "recordMeasurements",
-                    "description": "Records the measurements of document."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "angle",
-                            "description": "The number of degrees to rotate. A positive angle rotates the canvas clockwise; a negative value rotates the canvas counter-clockwise.",
-                            "type": "Number"
-                        }
-                    ],
-                    "name": "rotateCanvas",
-                    "description": "Rotates the canvas."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "width",
-                            "description": "The desired width of the canvas.",
-                            "type": "UnitValue"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "height",
-                            "description": "The desired height of the canvas.",
-                            "type": "UnitValue"
-                        },
-                        {
-                            "optional": true,
-                            "value": "AnchorPosition.MIDDLECENTER",
-                            "array": false,
-                            "name": "anchor",
-                            "description": "The anchor point to resize around.",
-                            "type": "AnchorPosition"
-                        }
-                    ],
-                    "name": "resizeCanvas",
-                    "description": "Changes the size of the canvas."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "width",
-                            "description": "The desired width of the image.",
-                            "type": "UnitValue"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "height",
-                            "description": "The desired height of the image.",
-                            "type": "UnitValue"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "resolution",
-                            "description": "The resolution (in pixels per inch)",
-                            "type": "Number"
-                        },
-                        {
-                            "optional": true,
-                            "value": "ResampleMethod.BICUBIC",
-                            "array": false,
-                            "name": "resampleMethod",
-                            "description": "The downsample method.",
-                            "type": "ResampleMethod"
-                        },
-                        {
-                            "optional": true,
-                            "value": "0",
-                            "array": false,
-                            "name": "amount",
-                            "description": "Amount of noise value when using preserve details (range: 0 - 100)",
-                            "type": "int"
-                        }
-                    ],
-                    "name": "resizeImage",
-                    "description": "Changes the size of the image."
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "splitChannels",
-                    "description": "Splits the channels of the document.",
-                    "type": "Document"
-                },
-                {
-                    "parameters": [],
-                    "name": "save",
-                    "description": "Saves the document."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "saveIn",
-                            "description": "The file to save to, specified as a string containing the full file path or an alias. If not specified, the document is saved to its existing file.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "options",
-                            "description": "Options for the specified file type.",
-                            "type": "any"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "asCopy",
-                            "description": "Saves the document as a copy, leaving the original open.",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "extensionType",
-                            "description": "Appends the specified extension to the file name.",
-                            "type": "MacExtensionType"
-                        }
-                    ],
-                    "name": "saveAs",
-                    "description": "Saves the document with the specified save options."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "historyString",
-                            "description": "The string to use for the history state.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "javaScriptString",
-                            "description": "A string of JavaScript code to execute during the suspension of history.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "suspendHistory",
-                    "description": "Provides a single history state for the entire script. Allows a single undo for all actions taken in the script."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "width",
-                            "description": "The trap width in pixels.",
-                            "type": "int"
-                        }
-                    ],
-                    "name": "trap",
-                    "description": "Applies trapping to a CMYK document. Valid only when 'mode' = CMYK."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "TrimType.TOPLEFT",
-                            "array": false,
-                            "name": "type",
-                            "description": "The color or type of pixels to base the trim on.",
-                            "type": "TrimType"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "top",
-                            "description": "If true, trims away the top of the document.",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "left",
-                            "description": "If true, trims away the left of the document.",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "bottom",
-                            "description": "If true, trims away the bottom of the document.",
-                            "type": "Boolean"
-                        },
-                        {
-                            "optional": true,
-                            "value": "true",
-                            "array": false,
-                            "name": "right",
-                            "description": "If true, trims away the right of the document.",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "trim",
-                    "description": "Trims the transparent area around the image on the specified sides of the canvas."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "name",
-                            "description": "The name of the new document.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": true,
-                            "array": false,
-                            "name": "mergeLayersOnly",
-                            "description": "If ture, duplicates merged layers only.",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "duplicate",
-                    "description": "Creates a duplicate of the document object.",
-                    "type": "Document"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "channel",
-                            "description": "The channel to use for counting.",
-                            "type": "Channel"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "threshold",
-                            "description": "Threshold to use for counting. Range: 0 to 255.",
-                            "type": "int"
-                        }
-                    ],
-                    "name": "autoCount",
-                    "description": "Counts the objects in the document."
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The object's container.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The object's container."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "typename",
-                    "description": "The class name of the object.",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The class name of the object."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "backgroundLayer",
-                    "description": "The background layer for the document.",
-                    "type": "ArtLayer"
+                    "array": false,
+                    "type": "ArtLayer",
+                    "readonly": true,
+                    "description": "The background layer for the document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "bitsPerChannel",
-                    "description": "The number of bits per channel.",
-                    "type": "BitsPerChannelType"
+                    "array": false,
+                    "type": "BitsPerChannelType",
+                    "readonly": false,
+                    "description": "The number of bits per channel."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "colorProfileType",
-                    "description": "The type of color model that defines the working space of the document.",
-                    "type": "ColorProfileType"
+                    "array": false,
+                    "type": "ColorProfileType",
+                    "readonly": false,
+                    "description": "The type of color model that defines the working space of the document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "colorProfileName",
-                    "description": "The name of the color profile. Valid only when no value is specified for color profile kind (to indicate a custom color profile).",
-                    "type": "String"
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The name of the color profile. Valid only when no value is specified for color profile kind (to indicate a custom color profile)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "mode",
-                    "description": "The color profile.",
-                    "type": "DocumentMode"
+                    "array": false,
+                    "type": "DocumentMode",
+                    "readonly": true,
+                    "description": "The color profile."
                 },
                 {
-                    "readonly": true,
-                    "array": true,
                     "name": "componentChannels",
-                    "description": "The color component channels for this document.",
-                    "type": "Channel"
+                    "array": true,
+                    "type": "Channel",
+                    "readonly": true,
+                    "description": "The color component channels for this document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "activeHistoryState",
-                    "description": "The current history state for this document.",
-                    "type": "HistoryState"
+                    "array": false,
+                    "type": "HistoryState",
+                    "readonly": false,
+                    "description": "The current history state for this document."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "activeHistoryBrushSource",
-                    "description": "The history state to use with the history brush.",
-                    "type": "HistoryState"
+                    "array": false,
+                    "type": "HistoryState",
+                    "readonly": false,
+                    "description": "The history state to use with the history brush."
                 },
                 {
-                    "readonly": false,
-                    "array": false,
                     "name": "activeLayer",
-                    "description": "The selected layer.",
-                    "type": "Layer"
+                    "array": false,
+                    "type": "Layer",
+                    "readonly": false,
+                    "description": "The selected layer."
                 },
                 {
-                    "readonly": false,
-                    "array": true,
                     "name": "activeChannels",
-                    "description": "The selected channels.",
-                    "type": "Channel"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "info",
-                    "description": "Metadata about the document.",
-                    "type": "DocumentInfo"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "printSettings",
-                    "description": "Document print settings.",
-                    "type": "DocumentPrintSettings"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "fullName",
-                    "description": "The full path name of the document.",
-                    "type": "File"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "height",
-                    "description": "The height of the document.",
-                    "type": "UnitValue"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "managed",
-                    "description": "If true, the document is a workgroup document.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "saved",
-                    "description": "If true, the document been saved since the last change.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "name",
-                    "description": "The document name.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "path",
-                    "description": "The path to the document.",
-                    "type": "File"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "quickMaskMode",
-                    "description": "If true, the document is in Quick Mask mode.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "resolution",
-                    "description": "The resolution of the document (in pixels per inch)",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "selection",
-                    "description": "The selected area of the document.",
-                    "type": "Selection"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "width",
-                    "description": "The width of the document.",
-                    "type": "UnitValue"
-                },
-                {
-                    "readonly": true,
                     "array": true,
-                    "name": "histogram",
-                    "description": "A histogram showing the number of pixels at each color intensity level for the composite channel.",
-                    "type": "int"
-                },
-                {
+                    "type": "Channel",
                     "readonly": false,
+                    "description": "The selected channels."
+                },
+                {
+                    "name": "info",
                     "array": false,
+                    "type": "DocumentInfo",
+                    "readonly": true,
+                    "description": "Metadata about the document."
+                },
+                {
+                    "name": "printSettings",
+                    "array": false,
+                    "type": "DocumentPrintSettings",
+                    "readonly": true,
+                    "description": "Document print settings."
+                },
+                {
+                    "name": "fullName",
+                    "array": false,
+                    "type": "File",
+                    "readonly": true,
+                    "description": "The full path name of the document."
+                },
+                {
+                    "name": "height",
+                    "array": false,
+                    "type": "UnitValue",
+                    "readonly": true,
+                    "description": "The height of the document."
+                },
+                {
+                    "name": "managed",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the document is a workgroup document."
+                },
+                {
+                    "name": "saved",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the document been saved since the last change."
+                },
+                {
+                    "name": "name",
+                    "array": false,
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The document name."
+                },
+                {
+                    "name": "path",
+                    "array": false,
+                    "type": "File",
+                    "readonly": true,
+                    "description": "The path to the document."
+                },
+                {
+                    "name": "quickMaskMode",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the document is in Quick Mask mode."
+                },
+                {
+                    "name": "resolution",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The resolution of the document (in pixels per inch)"
+                },
+                {
+                    "name": "selection",
+                    "array": false,
+                    "type": "Selection",
+                    "readonly": true,
+                    "description": "The selected area of the document."
+                },
+                {
+                    "name": "width",
+                    "array": false,
+                    "type": "UnitValue",
+                    "readonly": true,
+                    "description": "The width of the document."
+                },
+                {
+                    "name": "histogram",
+                    "array": true,
+                    "type": "int",
+                    "readonly": true,
+                    "description": "A histogram showing the number of pixels at each color intensity level for the composite channel."
+                },
+                {
                     "name": "pixelAspectRatio",
-                    "description": "The (custom) pixel aspect ratio of the document. Range: 0.100 to 10.000.",
-                    "type": "Number"
+                    "array": false,
+                    "type": "Number",
+                    "readonly": false,
+                    "description": "The (custom) pixel aspect ratio of the document. Range: 0.100 to 10.000."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "xmpMetadata",
-                    "description": "The XMP properties of the document. The Camera RAW settings are stored here.",
-                    "type": "XMPMetadata"
+                    "array": false,
+                    "type": "XMPMetadata",
+                    "readonly": true,
+                    "description": "The XMP properties of the document. The Camera RAW settings are stored here."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "measurementScale",
-                    "description": "The measurement scale of the document.",
-                    "type": "MeasurementScale"
+                    "array": false,
+                    "type": "MeasurementScale",
+                    "readonly": true,
+                    "description": "The measurement scale of the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "id",
-                    "description": "The unique ID of this document.",
-                    "type": "int"
+                    "array": false,
+                    "type": "int",
+                    "readonly": true,
+                    "description": "The unique ID of this document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "layers",
-                    "description": "The layers collection in the document.",
-                    "type": "Layers"
+                    "array": false,
+                    "type": "Layers",
+                    "readonly": true,
+                    "description": "The layers collection in the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "layerSets",
-                    "description": "The layer sets collection in the document.",
-                    "type": "LayerSets"
+                    "array": false,
+                    "type": "LayerSets",
+                    "readonly": true,
+                    "description": "The layer sets collection in the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "artLayers",
-                    "description": "The art layers collection in the document.",
-                    "type": "ArtLayers"
+                    "array": false,
+                    "type": "ArtLayers",
+                    "readonly": true,
+                    "description": "The art layers collection in the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "channels",
-                    "description": "The channels collection in this document.",
-                    "type": "Channels"
+                    "array": false,
+                    "type": "Channels",
+                    "readonly": true,
+                    "description": "The channels collection in this document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "guides",
-                    "description": "The guides in this document.",
-                    "type": "Guides"
+                    "array": false,
+                    "type": "Guides",
+                    "readonly": true,
+                    "description": "The guides in this document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "historyStates",
-                    "description": "The history states collection in this document.",
-                    "type": "HistoryStates"
+                    "array": false,
+                    "type": "HistoryStates",
+                    "readonly": true,
+                    "description": "The history states collection in this document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "layerComps",
-                    "description": "The layer comps collection in this document.",
-                    "type": "LayerComps"
+                    "array": false,
+                    "type": "LayerComps",
+                    "readonly": true,
+                    "description": "The layer comps collection in this document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "pathItems",
-                    "description": "The path items collection in this document.",
-                    "type": "PathItems"
+                    "array": false,
+                    "type": "PathItems",
+                    "readonly": true,
+                    "description": "The path items collection in this document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "countItems",
-                    "description": "The current count items in the document.",
-                    "type": "CountItems"
+                    "array": false,
+                    "type": "CountItems",
+                    "readonly": true,
+                    "description": "The current count items in the document."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "colorSamplers",
-                    "description": "The current color samplers associated with the document.",
-                    "type": "ColorSamplers"
+                    "array": false,
+                    "type": "ColorSamplers",
+                    "readonly": true,
+                    "description": "The current color samplers associated with the document."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "duplicate",
+                    "description": "Duplicate this object.",
+                    "array": false,
+                    "type": "Document",
+                    "parameters": [
+                        {
+                            "name": "relativeObject",
+                            "array": false,
+                            "type": "Object",
+                            "optional": false
+                        },
+                        {
+                            "name": "insertionLocation",
+                            "array": false,
+                            "type": "ElementPlacement",
+                            "optional": false
+                        }
+                    ]
+                },
+                {
+                    "name": "close",
+                    "description": "Closes the document.",
+                    "parameters": [
+                        {
+                            "description": "Specifies whether changes should be saved before closing.",
+                            "array": false,
+                            "name": "saving",
+                            "value": "SaveOptionsType.PROMPTTOSAVECHANGES",
+                            "type": "SaveOptionsType",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "convertProfile",
+                    "description": "Converts the document from using one color profile to using another.",
+                    "parameters": [
+                        {
+                            "name": "destinationProfile",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The color profile to convert to. Either a string specifying a color profile, one of the working color spaces, or Lab color."
+                        },
+                        {
+                            "name": "intent",
+                            "array": false,
+                            "type": "Intent",
+                            "optional": false,
+                            "description": "The conversion intent."
+                        },
+                        {
+                            "name": "blackPointCompensation",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "If true, black point compensation is used."
+                        },
+                        {
+                            "description": "If true, dither is used.",
+                            "array": false,
+                            "name": "dither",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "changeMode",
+                    "description": "Changes the mode of the document.",
+                    "parameters": [
+                        {
+                            "name": "destinationMode",
+                            "array": false,
+                            "type": "ChangeMode",
+                            "optional": false,
+                            "description": "The mode to change to."
+                        },
+                        {
+                            "name": "options",
+                            "array": false,
+                            "type": "DocumentConversionOptions",
+                            "optional": true,
+                            "description": "Options for changing the mode."
+                        }
+                    ]
+                },
+                {
+                    "name": "crop",
+                    "description": "Crops the document.",
+                    "parameters": [
+                        {
+                            "name": "bounds",
+                            "array": false,
+                            "type": "UnitRect",
+                            "optional": false,
+                            "description": "The area to crop."
+                        },
+                        {
+                            "description": "The angle of cropping bounds.",
+                            "array": false,
+                            "name": "angle",
+                            "value": "0",
+                            "type": "Number",
+                            "optional": true
+                        },
+                        {
+                            "name": "width",
+                            "array": false,
+                            "type": "UnitValue",
+                            "optional": true,
+                            "description": "The width of the resulting document."
+                        },
+                        {
+                            "name": "height",
+                            "array": false,
+                            "type": "UnitValue",
+                            "optional": true,
+                            "description": "The height of the resulting document."
+                        }
+                    ]
+                },
+                {
+                    "name": "exportDocument",
+                    "description": "Exports the document.",
+                    "parameters": [
+                        {
+                            "name": "exportIn",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The file to export to."
+                        },
+                        {
+                            "description": "The type of export.",
+                            "array": false,
+                            "name": "exportAs",
+                            "value": "ExportType.ILLUSTRATORPATHS",
+                            "type": "ExportType",
+                            "optional": true
+                        },
+                        {
+                            "name": "options",
+                            "array": false,
+                            "type": "ExportOptions",
+                            "optional": true,
+                            "description": "Options for the specified export type."
+                        }
+                    ]
+                },
+                {
+                    "name": "flipCanvas",
+                    "description": "Flips the canvas horizontally or vertically.",
+                    "parameters": [
+                        {
+                            "name": "direction",
+                            "array": false,
+                            "type": "Direction",
+                            "optional": false,
+                            "description": "The direction in which to flip the canvas."
+                        }
+                    ]
+                },
+                {
+                    "name": "importAnnotations",
+                    "description": "Imports annotations into the document.",
+                    "parameters": [
+                        {
+                            "name": "file",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The document to import annotations from."
+                        }
+                    ]
+                },
+                {
+                    "name": "flatten",
+                    "description": "Flattens all layers.",
+                    "parameters": []
+                },
+                {
+                    "name": "mergeVisibleLayers",
+                    "description": "Flattens all visible layers in the document.",
+                    "parameters": []
+                },
+                {
+                    "name": "paste",
+                    "description": "Pastes contents of the clipboard into the document.",
+                    "array": false,
+                    "type": "ArtLayer",
+                    "parameters": [
+                        {
+                            "description": "If true, contents are pasted into the current selection.",
+                            "array": false,
+                            "name": "intoSelection",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "print",
+                    "description": "Prints the document.",
+                    "parameters": [
+                        {
+                            "description": "The encoding type.",
+                            "array": false,
+                            "name": "postScriptEncoding",
+                            "value": "BinaryEncoding",
+                            "type": "PrintEncoding",
+                            "optional": true
+                        },
+                        {
+                            "description": "The color space for the source.",
+                            "array": false,
+                            "name": "sourceSpace",
+                            "value": "SourceSpaceType.DOCUMENT",
+                            "type": "SourceSpaceType",
+                            "optional": true
+                        },
+                        {
+                            "name": "printSpace",
+                            "array": false,
+                            "type": "String",
+                            "optional": true,
+                            "description": "The color space for the printer. Can be \"nothing\" (meaning same as source); one of the working spaces or Lab color; or a string specifying a color space. Default: nothing."
+                        },
+                        {
+                            "description": "The color conversion intent.",
+                            "array": false,
+                            "name": "intent",
+                            "value": "Intent.RELATIVECOLORIMETRIC",
+                            "type": "Intent",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, black point compensation is used.",
+                            "array": false,
+                            "name": "blackPointCompensation",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "printOneCopy",
+                    "description": "Print one copy of the document.",
+                    "parameters": []
+                },
+                {
+                    "name": "revealAll",
+                    "description": "Expands the document to show clipped sections.",
+                    "parameters": []
+                },
+                {
+                    "name": "rasterizeAllLayers",
+                    "description": "Rasterizes all layers.",
+                    "parameters": []
+                },
+                {
+                    "name": "recordMeasurements",
+                    "description": "Records the measurements of document.",
+                    "parameters": [
+                        {
+                            "name": "source",
+                            "array": false,
+                            "type": "MeasurementSource",
+                            "optional": true,
+                            "description": "The source of the measurements to record."
+                        },
+                        {
+                            "name": "dataPoints",
+                            "array": true,
+                            "type": "String",
+                            "optional": true,
+                            "description": "An array of identifiers of data points to record. Any data points not appropriate for the specified source are ignored."
+                        }
+                    ]
+                },
+                {
+                    "name": "rotateCanvas",
+                    "description": "Rotates the canvas.",
+                    "parameters": [
+                        {
+                            "name": "angle",
+                            "array": false,
+                            "type": "Number",
+                            "optional": false,
+                            "description": "The number of degrees to rotate. A positive angle rotates the canvas clockwise; a negative value rotates the canvas counter-clockwise."
+                        }
+                    ]
+                },
+                {
+                    "name": "resizeCanvas",
+                    "description": "Changes the size of the canvas.",
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "array": false,
+                            "type": "UnitValue",
+                            "optional": true,
+                            "description": "The desired width of the canvas."
+                        },
+                        {
+                            "name": "height",
+                            "array": false,
+                            "type": "UnitValue",
+                            "optional": true,
+                            "description": "The desired height of the canvas."
+                        },
+                        {
+                            "description": "The anchor point to resize around.",
+                            "array": false,
+                            "name": "anchor",
+                            "value": "AnchorPosition.MIDDLECENTER",
+                            "type": "AnchorPosition",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "resizeImage",
+                    "description": "Changes the size of the image.",
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "array": false,
+                            "type": "UnitValue",
+                            "optional": true,
+                            "description": "The desired width of the image."
+                        },
+                        {
+                            "name": "height",
+                            "array": false,
+                            "type": "UnitValue",
+                            "optional": true,
+                            "description": "The desired height of the image."
+                        },
+                        {
+                            "name": "resolution",
+                            "array": false,
+                            "type": "Number",
+                            "optional": true,
+                            "description": "The resolution (in pixels per inch)"
+                        },
+                        {
+                            "description": "The downsample method.",
+                            "array": false,
+                            "name": "resampleMethod",
+                            "value": "ResampleMethod.BICUBIC",
+                            "type": "ResampleMethod",
+                            "optional": true
+                        },
+                        {
+                            "description": "Amount of noise value when using preserve details (range: 0 - 100)",
+                            "array": false,
+                            "name": "amount",
+                            "value": "0",
+                            "type": "int",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "splitChannels",
+                    "description": "Splits the channels of the document.",
+                    "array": true,
+                    "type": "Document",
+                    "parameters": []
+                },
+                {
+                    "name": "save",
+                    "description": "Saves the document.",
+                    "parameters": []
+                },
+                {
+                    "name": "saveAs",
+                    "description": "Saves the document with the specified save options.",
+                    "parameters": [
+                        {
+                            "name": "saveIn",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The file to save to, specified as a string containing the full file path or an alias. If not specified, the document is saved to its existing file."
+                        },
+                        {
+                            "name": "options",
+                            "array": false,
+                            "type": "any",
+                            "optional": true,
+                            "description": "Options for the specified file type."
+                        },
+                        {
+                            "name": "asCopy",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "Saves the document as a copy, leaving the original open."
+                        },
+                        {
+                            "name": "extensionType",
+                            "array": false,
+                            "type": "MacExtensionType",
+                            "optional": true,
+                            "description": "Appends the specified extension to the file name."
+                        }
+                    ]
+                },
+                {
+                    "name": "suspendHistory",
+                    "description": "Provides a single history state for the entire script. Allows a single undo for all actions taken in the script.",
+                    "parameters": [
+                        {
+                            "name": "historyString",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The string to use for the history state."
+                        },
+                        {
+                            "name": "javaScriptString",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "A string of JavaScript code to execute during the suspension of history."
+                        }
+                    ]
+                },
+                {
+                    "name": "trap",
+                    "description": "Applies trapping to a CMYK document. Valid only when 'mode' = CMYK.",
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "array": false,
+                            "type": "int",
+                            "optional": false,
+                            "description": "The trap width in pixels."
+                        }
+                    ]
+                },
+                {
+                    "name": "trim",
+                    "description": "Trims the transparent area around the image on the specified sides of the canvas.",
+                    "parameters": [
+                        {
+                            "description": "The color or type of pixels to base the trim on.",
+                            "array": false,
+                            "name": "type",
+                            "value": "TrimType.TOPLEFT",
+                            "type": "TrimType",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, trims away the top of the document.",
+                            "array": false,
+                            "name": "top",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, trims away the left of the document.",
+                            "array": false,
+                            "name": "left",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, trims away the bottom of the document.",
+                            "array": false,
+                            "name": "bottom",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "description": "If true, trims away the right of the document.",
+                            "array": false,
+                            "name": "right",
+                            "value": "true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Creates a duplicate of the document object.",
+                    "array": false,
+                    "type": "Document",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "array": false,
+                            "type": "String",
+                            "optional": true,
+                            "description": "The name of the new document."
+                        },
+                        {
+                            "name": "mergeLayersOnly",
+                            "array": false,
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "If ture, duplicates merged layers only."
+                        }
+                    ]
+                },
+                {
+                    "name": "autoCount",
+                    "description": "Counts the objects in the document.",
+                    "parameters": [
+                        {
+                            "name": "channel",
+                            "array": false,
+                            "type": "Channel",
+                            "optional": false,
+                            "description": "The channel to use for counting."
+                        },
+                        {
+                            "name": "threshold",
+                            "array": false,
+                            "type": "int",
+                            "optional": false,
+                            "description": "Threshold to use for counting. Range: 0 to 255."
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "Document",
     "description": "The active containment object for the layers and all other objects in the script; the basic canvas for the file."
 }

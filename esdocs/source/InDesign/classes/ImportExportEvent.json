@@ -1,208 +1,208 @@
 {
+    "name": "ImportExportEvent",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "beforeExport",
+                    "name": "fullName",
                     "array": false,
-                    "name": "BEFORE_EXPORT",
-                    "description": "Dispatched before a ImportExportEvent is exported. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "File",
+                    "readonly": true,
+                    "description": "The full path to the ImportExportEvent, including the name of the ImportExportEvent."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterExport",
+                    "name": "format",
                     "array": false,
-                    "name": "AFTER_EXPORT",
-                    "description": "Dispatched after a ImportExportEvent is exported. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The import/export file format."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeImport",
+                    "name": "eventType",
                     "array": false,
-                    "name": "BEFORE_IMPORT",
-                    "description": "Dispatched before importing a file into a ImportExportEvent. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterImport",
+                    "name": "target",
                     "array": false,
-                    "name": "AFTER_IMPORT",
-                    "description": "Dispatched after importing a file into a ImportExportEvent. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The target of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "failedExport",
+                    "name": "currentTarget",
                     "array": false,
-                    "name": "FAILED_EXPORT",
-                    "description": "Dispatched after a ImportExportEvent export is canceled or fails. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The current propagation target of the event."
+                },
+                {
+                    "name": "eventPhase",
+                    "array": false,
+                    "type": "EventPhases",
+                    "readonly": true,
+                    "description": "The current propagation phase of the event."
+                },
+                {
+                    "name": "bubbles",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the event supports the bubbling phase of propagation."
+                },
+                {
+                    "name": "cancelable",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the default behavior of the event on its target can be canceled."
+                },
+                {
+                    "name": "timeStamp",
+                    "array": false,
+                    "type": "Date",
+                    "readonly": true,
+                    "description": "The time the event was initialized."
+                },
+                {
+                    "name": "propagationStopped",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, propagation of the event beyond the current target has been stopped."
+                },
+                {
+                    "name": "defaultPrevented",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the default behavior of the event on its target has been canceled."
+                },
+                {
+                    "name": "id",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the ImportExportEvent."
+                },
+                {
+                    "name": "isValid",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": true,
+                    "description": "The parent of the ImportExportEvent (a Application or Document)."
+                },
+                {
+                    "name": "index",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the ImportExportEvent within its containing object."
+                },
+                {
+                    "name": "userInteractionLevel",
+                    "array": false,
+                    "type": "UserInteractionLevels",
+                    "readonly": false,
+                    "description": "Controls the display of dialogs and alerts during script processing."
+                },
+                {
+                    "name": "properties",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "stopPropagation",
+                    "description": "Stops propagation of the event beyond the current target.",
+                    "parameters": []
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "Cancels the default behavior of the event on its target.",
+                    "parameters": []
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the ImportExportEvent.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "ImportExportEvent",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "parameters": [],
-                    "name": "stopPropagation",
-                    "description": "Stops propagation of the event beyond the current target."
-                },
-                {
-                    "parameters": [],
-                    "name": "preventDefault",
-                    "description": "Cancels the default behavior of the event on its target."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the ImportExportEvent.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "ImportExportEvent"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                }
-            ],
+        "class": {
             "properties": [
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a ImportExportEvent is exported. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "fullName",
-                    "description": "The full path to the ImportExportEvent, including the name of the ImportExportEvent.",
-                    "type": "File"
-                },
-                {
                     "readonly": true,
-                    "array": false,
-                    "name": "format",
-                    "description": "The import/export file format.",
+                    "name": "BEFORE_EXPORT",
+                    "value": "beforeExport",
                     "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a ImportExportEvent is exported. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "eventType",
-                    "description": "The name of the event.",
+                    "readonly": true,
+                    "name": "AFTER_EXPORT",
+                    "value": "afterExport",
                     "type": "String"
                 },
                 {
+                    "description": "Dispatched before importing a file into a ImportExportEvent. This event bubbles. This event is cancelable.",
+                    "array": false,
                     "readonly": true,
-                    "array": false,
-                    "name": "target",
-                    "description": "The target of the event.",
-                    "type": "Object"
+                    "name": "BEFORE_IMPORT",
+                    "value": "beforeImport",
+                    "type": "String"
                 },
                 {
+                    "description": "Dispatched after importing a file into a ImportExportEvent. This event bubbles. This event is not cancelable.",
+                    "array": false,
                     "readonly": true,
-                    "array": false,
-                    "name": "currentTarget",
-                    "description": "The current propagation target of the event.",
-                    "type": "Object"
+                    "name": "AFTER_IMPORT",
+                    "value": "afterImport",
+                    "type": "String"
                 },
                 {
+                    "description": "Dispatched after a ImportExportEvent export is canceled or fails. This event bubbles. This event is not cancelable.",
+                    "array": false,
                     "readonly": true,
-                    "array": false,
-                    "name": "eventPhase",
-                    "description": "The current propagation phase of the event.",
-                    "type": "EventPhases"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "bubbles",
-                    "description": "If true, the event supports the bubbling phase of propagation.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "cancelable",
-                    "description": "If true, the default behavior of the event on its target can be canceled.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "timeStamp",
-                    "description": "The time the event was initialized.",
-                    "type": "Date"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "propagationStopped",
-                    "description": "If true, propagation of the event beyond the current target has been stopped.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "defaultPrevented",
-                    "description": "If true, the default behavior of the event on its target has been canceled.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "id",
-                    "description": "The unique ID of the ImportExportEvent.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parent",
-                    "description": "The parent of the ImportExportEvent (a Application or Document).",
-                    "type": "Mixed"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "index",
-                    "description": "The index of the ImportExportEvent within its containing object.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "userInteractionLevel",
-                    "description": "Controls the display of dialogs and alerts during script processing.",
-                    "type": "UserInteractionLevels"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "name": "FAILED_EXPORT",
+                    "value": "failedExport",
+                    "type": "String"
                 }
             ]
         }
     },
-    "name": "ImportExportEvent",
-    "description": "An import or export event.",
-    "superclass": "Event"
+    "superclass": "Event",
+    "description": "An import or export event."
 }

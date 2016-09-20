@@ -1,370 +1,370 @@
 {
+    "name": "Event",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "beforePlace",
+                    "name": "eventType",
                     "array": false,
-                    "name": "BEFORE_PLACE",
-                    "description": "Dispatched before a Event is placed. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "readonly": true,
+                    "description": "The name of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterPlace",
+                    "name": "target",
                     "array": false,
-                    "name": "AFTER_PLACE",
-                    "description": "Dispatched after a Event is placed. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The target of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterLinksChanged",
+                    "name": "currentTarget",
                     "array": false,
-                    "name": "AFTER_LINKS_CHANGED",
-                    "description": "Dispatched after one or more links in the Event have been added, deleted, or modified. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Object",
+                    "readonly": true,
+                    "description": "The current propagation target of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterNew",
+                    "name": "eventPhase",
                     "array": false,
-                    "name": "AFTER_NEW",
-                    "description": "Dispatched after a Event is created. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "EventPhases",
+                    "readonly": true,
+                    "description": "The current propagation phase of the event."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeDelete",
+                    "name": "bubbles",
                     "array": false,
-                    "name": "BEFORE_DELETE",
-                    "description": "Dispatched before a Event is deleted. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the event supports the bubbling phase of propagation."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterDelete",
+                    "name": "cancelable",
                     "array": false,
-                    "name": "AFTER_DELETE",
-                    "description": "Dispatched after a Event is deleted. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the default behavior of the event on its target can be canceled."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeUpdate",
+                    "name": "timeStamp",
                     "array": false,
-                    "name": "BEFORE_UPDATE",
-                    "description": "Dispatched before a Event is updated. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "Date",
+                    "readonly": true,
+                    "description": "The time the event was initialized."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterUpdate",
+                    "name": "propagationStopped",
                     "array": false,
-                    "name": "AFTER_UPDATE",
-                    "description": "Dispatched after a Event is updated. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, propagation of the event beyond the current target has been stopped."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeEmbed",
+                    "name": "defaultPrevented",
                     "array": false,
-                    "name": "BEFORE_EMBED",
-                    "description": "Dispatched before a Event is embedded. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the default behavior of the event on its target has been canceled."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterEmbed",
+                    "name": "id",
                     "array": false,
-                    "name": "AFTER_EMBED",
-                    "description": "Dispatched after a Event is embedded. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the Event."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeUnembed",
+                    "name": "isValid",
                     "array": false,
-                    "name": "BEFORE_UNEMBED",
-                    "description": "Dispatched before a Event is unembedded. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterUnembed",
+                    "name": "parent",
                     "array": false,
-                    "name": "AFTER_UNEMBED",
-                    "description": "Dispatched after a Event is unembedded. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Mixed",
+                    "readonly": true,
+                    "description": "The parent of the Event (a Object, UIDBasedObject, CellStyleGroup, CellStyle, TableStyleGroup, Article, ConditionSet, HiddenText, Condition, MotionPreset, AssignedStory, Assignment, ObjectStyleGroup, ObjectStyle, NumberingList, Snippet, Dialog, ColorGroup, Swatch, Color, Tint, Gradient, MixedInkGroup, MixedInk, Behavior, SubmitFormBehavior, PrintFormBehavior, ClearFormBehavior, GotoPageBehavior, GotoAnchorBehavior, SoundBehavior, ViewZoomBehavior, GotoStateBehavior, GotoPreviousStateBehavior, GotoNextStateBehavior, OpenFileBehavior, AnimationBehavior, ShowHideFieldsBehavior, MovieBehavior, GotoURLBehavior, GotoPreviousViewBehavior, GotoNextViewBehavior, GotoPreviousPageBehavior, GotoNextPageBehavior, GotoLastPageBehavior, GotoFirstPageBehavior, PreflightProfileRule, PreflightRuleInstance, PreflightProfile, CrossReferenceFormat, HyperlinkURLDestination, HyperlinkExternalPageDestination, HyperlinkPageDestination, HyperlinkTextDestination, ParagraphDestination, HyperlinkTextSource, CrossReferenceSource, HyperlinkPageItemSource, Bookmark, Hyperlink, IndexSection, PageReference, CrossReference, Index, TOCStyle, FlattenerPreset, BookContent, MenuAction, ScriptMenuAction, NamedGrid, CompositeFontEntry, CompositeFont, CharacterStyleGroup, ParagraphStyleGroup, TextVariableInstance, Footnote, XMLRuleProcessor, XMLTag, Note, TableStyle, TextPath, Asset, Link, Section, MojikumiTable, KinsokuTable, Guide, LanguageWithVendors, Language, PageItem, HtmlItem, FormField, SignatureField, TextBox, RadioButton, ListBox, ComboBox, CheckBox, MultiStateObject, Button, MediaItem, Sound, Movie, EPSText, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Graphic, ImportedPage, PICT, WMF, PDF, EPS, Image, Group, TextFrame, MasterSpread, TrapPreset, Ink, DocumentPreset, Page, Spread, Layer, CharacterStyle, ParagraphStyle, Story, XmlStory, IDBasedObject, ArticleChild, ArticleMember, DialogRow, DialogColumn, Widget, BorderPanel, MeasurementEditbox, MeasurementCombobox, RealCombobox, AngleEditbox, PercentEditbox, RealEditbox, PercentCombobox, AngleCombobox, EnablingGroup, IntegerCombobox, IntegerEditbox, RadiobuttonControl, RadiobuttonGroup, CheckboxControl, Dropdown, StaticText, TextEditbox, ColorGroupSwatch, BackgroundTask, State, RuleDataObject, XMLItem, DTD, XMLInstruction, XMLComment, XMLElement, Table, Cell, IdleTask, StrokeStyle, StripedStrokeStyle, DottedStrokeStyle, DashedStrokeStyle, GraphicLayer, NonIDBasedObject, TableStyleMapping, CharStyleMapping, CellStyleMapping, ParaStyleMapping, TimingTarget, TimingGroup, TimingList, OpacityGradientStop, ObjectStyleExportTagMap, DataMergeQrcodePlaceholder, DataMergeField, DataMergeImagePlaceholder, DataMergeTextPlaceholder, Panel, LibraryPanel, PagesPanel, Window, StoryWindow, LayoutWindow, NavigationPoint, PreflightProcess, PreflightRule, BuildingBlock, DisplaySetting, IndexingSortOption, Topic, TOCStyleEntry, MenuElement, MenuSeparator, MenuItem, Submenu, Menu, StyleExportTagMap, TextVariable, XMLRuleMatchData, ValidationError, XMLExportMap, XMLImportMap, XMLAttribute, PrinterPreset, Row, Column, Change, RootObject, Document, Application, Book, Library, Preference, SyncPreference, ContentPlacerObject, LinkedPageItemOption, LinkedStoryOption, EPubExportPreviewAppPreference, EPubFixedLayoutExportPreference, HTMLExportPreference, EPubExportPreference, ConditionalTextPreference, TimingSetting, AnimationSetting, XFLExportPreference, SWFExportPreference, AlignDistributePreference, GrabberPreference, ObjectStyleContentEffectsCategorySettings, ObjectStyleFillEffectsCategorySettings, ObjectStyleStrokeEffectsCategorySettings, ObjectStyleObjectEffectsCategorySettings, ChapterNumberPreference, NumberingRestartPolicy, Bullet, DataMerge, DataMergeOption, DataMergePreference, JPEGExportPreference, TrackChangesPreference, NotePreference, TransformPreference, ClipboardPreference, GeneralPreference, WatermarkPreference, ButtonPreference, PNGExportPreference, PreflightBookOption, PreflightOption, XMLViewPreference, DisplayPerformancePreference, IndexOptions, LinkMetadata, MetadataPreference, ExcelImportPreference, TaggedTextImportPreference, TaggedTextExportPreference, WordRTFImportPreference, TextExportPreference, TextImportPreference, FindChangeContentTransparencySetting, FindChangeFillTransparencySetting, FindChangeStrokeTransparencySetting, FindChangeTransparencySetting, GradientFeatherSetting, FindChangeGradientFeatherSetting, DirectionalFeatherSetting, FindChangeDirectionalFeatherSetting, ContentTransparencySetting, SatinSetting, FindChangeSatinSetting, BevelAndEmbossSetting, FindChangeBevelAndEmbossSetting, InnerGlowSetting, FindChangeInnerGlowSetting, OuterGlowSetting, FindChangeOuterGlowSetting, InnerShadowSetting, FindChangeInnerShadowSetting, FeatherSetting, FindChangeFeatherSetting, DropShadowSetting, FindChangeDropShadowSetting, BlendingSetting, FindChangeBlendingSetting, FillTransparencySetting, StrokeTransparencySetting, TransparencySetting, TransparencyPreference, FlattenerPreference, GalleyPreference, GridPrintingPreference, CjkGridPreference, StoryGridDataInformation, LayoutGridDataInformation, GridDataInformation, CaptionMetadataVariablePreference, CustomTextVariablePreference, MatchParagraphStylePreference, MatchCharacterStylePreference, FileNameVariablePreference, DateVariablePreference, ChapterNumberVariablePreference, PageNumberVariablePreference, FootnoteOption, BaselineFrameGridOption, AnchoredObjectSetting, AnchoredObjectDefault, ExportForWebPreference, XMLPreference, XMLExportPreference, XMLImportPreference, InCopyExportOption, LinkingPreference, ChangeTransliteratePreference, ChangeObjectPreference, ChangeGlyphPreference, ChangeGrepPreference, ChangeTextPreference, FindTransliteratePreference, FindObjectPreference, FindGlyphPreference, FindGrepPreference, FindTextPreference, FindChangeTransliterateOption, FindChangeObjectOption, FindChangeGlyphOption, FindChangeGrepOption, FindChangeTextOption, ColorSetting, ScriptArg, ScriptPreference, PlaceGun, LayoutAdjustmentPreference, StrokeFillProxySetting, ImportedPageAttribute, EPSImportPreference, SmartGuidePreference, AutoCorrectPreference, SpellPreference, PolygonPreference, DictionaryPreference, FontLockingPreference, MojikumiUiPreference, ContourOption, TextWrapPreference, TextEditingPreference, FrameFittingOption, ObjectExportOption, PageItemDefault, TaggedPDFPreference, InteractivePDFExportPreference, PDFAttribute, PDFPlacePreference, PDFExportPreference, IMEPreference, GraphicLayerOption, ClippingPathSettings, ImageIOPreference, ImagePreference, ToolBox, EPSExportPreference, PrintBookletPrintPreference, PrintBookletOption, PrintPreference, ViewPreference, PasteboardPreference, MarginPreference, GuidePreference, GridPreference, DocumentPreference, TextDefault, TextPreference, TextFramePreference, StoryPreference, PathPoint, Path, GradientStop, AutoCorrectTable, UserDictionary, HyphenationException, Font, TransformationMatrix, PDFExportPreset, NestedStyle, TabStop, Text, InsertionPoint, TextStyleRange, Paragraph, TextColumn, Line, Word, Character, NestedGrepStyle or NestedLineStyle)."
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeMove",
+                    "name": "index",
                     "array": false,
-                    "name": "BEFORE_MOVE",
-                    "description": "Dispatched before a Event is relocated from one object to another. This event bubbles. This event is cancelable.",
-                    "type": "String"
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the Event within its containing object."
                 },
                 {
-                    "readonly": true,
-                    "value": "afterMove",
+                    "name": "properties",
                     "array": false,
-                    "name": "AFTER_MOVE",
-                    "description": "Dispatched after a Event is relocated from one object to another. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "stopPropagation",
+                    "description": "Stops propagation of the event beyond the current target.",
+                    "parameters": []
                 },
                 {
-                    "readonly": true,
-                    "value": "onInvoke",
-                    "array": false,
-                    "name": "ON_INVOKE",
-                    "description": "Dispatched when the Event is invoked. This event does not bubble. This event is not cancelable.",
-                    "type": "String"
+                    "name": "preventDefault",
+                    "description": "Cancels the default behavior of the event on its target.",
+                    "parameters": []
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeInvoke",
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Event.",
                     "array": false,
-                    "name": "BEFORE_INVOKE",
-                    "description": "Dispatched before the Event is invoked. This event does not bubble. This event is cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "parameters": []
                 },
                 {
-                    "readonly": true,
-                    "value": "afterInvoke",
-                    "array": false,
-                    "name": "AFTER_INVOKE",
-                    "description": "Dispatched after the Event is invoked. This event does not bubble. This event is not cancelable.",
-                    "type": "String"
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "Event",
+                    "parameters": []
                 },
                 {
-                    "readonly": true,
-                    "value": "beforeDisplay",
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
                     "array": false,
-                    "name": "BEFORE_DISPLAY",
-                    "description": "Dispatched before the Event is displayed. This event does not bubble. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "beforeQuit",
-                    "array": false,
-                    "name": "BEFORE_QUIT",
-                    "description": "Dispatched before the Event is quit. Allows the quit to be canceled. This event bubbles. This event is cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterQuit",
-                    "array": false,
-                    "name": "AFTER_QUIT",
-                    "description": "Dispatched when the Event is quitting. Since the quit has been committed, it can not be canceled. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterContextChanged",
-                    "array": false,
-                    "name": "AFTER_CONTEXT_CHANGED",
-                    "description": "Dispatched after the active context changes. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterSelectionChanged",
-                    "array": false,
-                    "name": "AFTER_SELECTION_CHANGED",
-                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterSelectionAttributeChanged",
-                    "array": false,
-                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
-                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "beforeDeactivate",
-                    "array": false,
-                    "name": "BEFORE_DEACTIVATE",
-                    "description": "Dispatched before the Event becomes inactive. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterActivate",
-                    "array": false,
-                    "name": "AFTER_ACTIVATE",
-                    "description": "Dispatched after the Event becomes active. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterOpen",
-                    "array": false,
-                    "name": "AFTER_OPEN",
-                    "description": "Dispatched after a Event is opened. This event bubbles. This event is not cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "beforeClose",
-                    "array": false,
-                    "name": "BEFORE_CLOSE",
-                    "description": "Dispatched before a Event is closed. This event bubbles. This event is cancelable.",
-                    "type": "String"
-                },
-                {
-                    "readonly": true,
-                    "value": "afterClose",
-                    "array": false,
-                    "name": "AFTER_CLOSE",
-                    "description": "Dispatched when a Event is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "String",
+                    "parameters": []
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "parameters": [],
-                    "name": "stopPropagation",
-                    "description": "Stops propagation of the event beyond the current target."
-                },
-                {
-                    "parameters": [],
-                    "name": "preventDefault",
-                    "description": "Cancels the default behavior of the event on its target."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the Event.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "Event"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                }
-            ],
+        "class": {
             "properties": [
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a Event is placed. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "eventType",
-                    "description": "The name of the event.",
+                    "readonly": true,
+                    "name": "BEFORE_PLACE",
+                    "value": "beforePlace",
                     "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a Event is placed. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "target",
-                    "description": "The target of the event.",
-                    "type": "Object"
+                    "readonly": true,
+                    "name": "AFTER_PLACE",
+                    "value": "afterPlace",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after one or more links in the Event have been added, deleted, or modified. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "currentTarget",
-                    "description": "The current propagation target of the event.",
-                    "type": "Object"
+                    "readonly": true,
+                    "name": "AFTER_LINKS_CHANGED",
+                    "value": "afterLinksChanged",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a Event is created. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "eventPhase",
-                    "description": "The current propagation phase of the event.",
-                    "type": "EventPhases"
+                    "readonly": true,
+                    "name": "AFTER_NEW",
+                    "value": "afterNew",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a Event is deleted. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "bubbles",
-                    "description": "If true, the event supports the bubbling phase of propagation.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "BEFORE_DELETE",
+                    "value": "beforeDelete",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a Event is deleted. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "cancelable",
-                    "description": "If true, the default behavior of the event on its target can be canceled.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "AFTER_DELETE",
+                    "value": "afterDelete",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a Event is updated. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "timeStamp",
-                    "description": "The time the event was initialized.",
-                    "type": "Date"
+                    "readonly": true,
+                    "name": "BEFORE_UPDATE",
+                    "value": "beforeUpdate",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a Event is updated. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "propagationStopped",
-                    "description": "If true, propagation of the event beyond the current target has been stopped.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "AFTER_UPDATE",
+                    "value": "afterUpdate",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a Event is embedded. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "defaultPrevented",
-                    "description": "If true, the default behavior of the event on its target has been canceled.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "BEFORE_EMBED",
+                    "value": "beforeEmbed",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a Event is embedded. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "id",
-                    "description": "The unique ID of the Event.",
-                    "type": "Number"
+                    "readonly": true,
+                    "name": "AFTER_EMBED",
+                    "value": "afterEmbed",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a Event is unembedded. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
+                    "readonly": true,
+                    "name": "BEFORE_UNEMBED",
+                    "value": "beforeUnembed",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched after a Event is unembedded. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "parent",
-                    "description": "The parent of the Event (a Object, UIDBasedObject, CellStyleGroup, CellStyle, TableStyleGroup, Article, ConditionSet, HiddenText, Condition, MotionPreset, AssignedStory, Assignment, ObjectStyleGroup, ObjectStyle, NumberingList, Snippet, Dialog, ColorGroup, Swatch, Color, Tint, Gradient, MixedInkGroup, MixedInk, Behavior, SubmitFormBehavior, PrintFormBehavior, ClearFormBehavior, GotoPageBehavior, GotoAnchorBehavior, SoundBehavior, ViewZoomBehavior, GotoStateBehavior, GotoPreviousStateBehavior, GotoNextStateBehavior, OpenFileBehavior, AnimationBehavior, ShowHideFieldsBehavior, MovieBehavior, GotoURLBehavior, GotoPreviousViewBehavior, GotoNextViewBehavior, GotoPreviousPageBehavior, GotoNextPageBehavior, GotoLastPageBehavior, GotoFirstPageBehavior, PreflightProfileRule, PreflightRuleInstance, PreflightProfile, CrossReferenceFormat, HyperlinkURLDestination, HyperlinkExternalPageDestination, HyperlinkPageDestination, HyperlinkTextDestination, ParagraphDestination, HyperlinkTextSource, CrossReferenceSource, HyperlinkPageItemSource, Bookmark, Hyperlink, IndexSection, PageReference, CrossReference, Index, TOCStyle, FlattenerPreset, BookContent, MenuAction, ScriptMenuAction, NamedGrid, CompositeFontEntry, CompositeFont, CharacterStyleGroup, ParagraphStyleGroup, TextVariableInstance, Footnote, XMLRuleProcessor, XMLTag, Note, TableStyle, TextPath, Asset, Link, Section, MojikumiTable, KinsokuTable, Guide, LanguageWithVendors, Language, PageItem, HtmlItem, FormField, SignatureField, TextBox, RadioButton, ListBox, ComboBox, CheckBox, MultiStateObject, Button, MediaItem, Sound, Movie, EPSText, SplineItem, Polygon, GraphicLine, Rectangle, Oval, Graphic, ImportedPage, PICT, WMF, PDF, EPS, Image, Group, TextFrame, MasterSpread, TrapPreset, Ink, DocumentPreset, Page, Spread, Layer, CharacterStyle, ParagraphStyle, Story, XmlStory, IDBasedObject, ArticleChild, ArticleMember, DialogRow, DialogColumn, Widget, BorderPanel, MeasurementEditbox, MeasurementCombobox, RealCombobox, AngleEditbox, PercentEditbox, RealEditbox, PercentCombobox, AngleCombobox, EnablingGroup, IntegerCombobox, IntegerEditbox, RadiobuttonControl, RadiobuttonGroup, CheckboxControl, Dropdown, StaticText, TextEditbox, ColorGroupSwatch, BackgroundTask, State, RuleDataObject, XMLItem, DTD, XMLInstruction, XMLComment, XMLElement, Table, Cell, IdleTask, StrokeStyle, StripedStrokeStyle, DottedStrokeStyle, DashedStrokeStyle, GraphicLayer, NonIDBasedObject, TableStyleMapping, CharStyleMapping, CellStyleMapping, ParaStyleMapping, TimingTarget, TimingGroup, TimingList, OpacityGradientStop, ObjectStyleExportTagMap, DataMergeQrcodePlaceholder, DataMergeField, DataMergeImagePlaceholder, DataMergeTextPlaceholder, Panel, LibraryPanel, PagesPanel, Window, StoryWindow, LayoutWindow, NavigationPoint, PreflightProcess, PreflightRule, BuildingBlock, DisplaySetting, IndexingSortOption, Topic, TOCStyleEntry, MenuElement, MenuSeparator, MenuItem, Submenu, Menu, StyleExportTagMap, TextVariable, XMLRuleMatchData, ValidationError, XMLExportMap, XMLImportMap, XMLAttribute, PrinterPreset, Row, Column, Change, RootObject, Document, Application, Book, Library, Preference, SyncPreference, ContentPlacerObject, LinkedPageItemOption, LinkedStoryOption, EPubExportPreviewAppPreference, EPubFixedLayoutExportPreference, HTMLExportPreference, EPubExportPreference, ConditionalTextPreference, TimingSetting, AnimationSetting, XFLExportPreference, SWFExportPreference, AlignDistributePreference, GrabberPreference, ObjectStyleContentEffectsCategorySettings, ObjectStyleFillEffectsCategorySettings, ObjectStyleStrokeEffectsCategorySettings, ObjectStyleObjectEffectsCategorySettings, ChapterNumberPreference, NumberingRestartPolicy, Bullet, DataMerge, DataMergeOption, DataMergePreference, JPEGExportPreference, TrackChangesPreference, NotePreference, TransformPreference, ClipboardPreference, GeneralPreference, WatermarkPreference, ButtonPreference, PNGExportPreference, PreflightBookOption, PreflightOption, XMLViewPreference, DisplayPerformancePreference, IndexOptions, LinkMetadata, MetadataPreference, ExcelImportPreference, TaggedTextImportPreference, TaggedTextExportPreference, WordRTFImportPreference, TextExportPreference, TextImportPreference, FindChangeContentTransparencySetting, FindChangeFillTransparencySetting, FindChangeStrokeTransparencySetting, FindChangeTransparencySetting, GradientFeatherSetting, FindChangeGradientFeatherSetting, DirectionalFeatherSetting, FindChangeDirectionalFeatherSetting, ContentTransparencySetting, SatinSetting, FindChangeSatinSetting, BevelAndEmbossSetting, FindChangeBevelAndEmbossSetting, InnerGlowSetting, FindChangeInnerGlowSetting, OuterGlowSetting, FindChangeOuterGlowSetting, InnerShadowSetting, FindChangeInnerShadowSetting, FeatherSetting, FindChangeFeatherSetting, DropShadowSetting, FindChangeDropShadowSetting, BlendingSetting, FindChangeBlendingSetting, FillTransparencySetting, StrokeTransparencySetting, TransparencySetting, TransparencyPreference, FlattenerPreference, GalleyPreference, GridPrintingPreference, CjkGridPreference, StoryGridDataInformation, LayoutGridDataInformation, GridDataInformation, CaptionMetadataVariablePreference, CustomTextVariablePreference, MatchParagraphStylePreference, MatchCharacterStylePreference, FileNameVariablePreference, DateVariablePreference, ChapterNumberVariablePreference, PageNumberVariablePreference, FootnoteOption, BaselineFrameGridOption, AnchoredObjectSetting, AnchoredObjectDefault, ExportForWebPreference, XMLPreference, XMLExportPreference, XMLImportPreference, InCopyExportOption, LinkingPreference, ChangeTransliteratePreference, ChangeObjectPreference, ChangeGlyphPreference, ChangeGrepPreference, ChangeTextPreference, FindTransliteratePreference, FindObjectPreference, FindGlyphPreference, FindGrepPreference, FindTextPreference, FindChangeTransliterateOption, FindChangeObjectOption, FindChangeGlyphOption, FindChangeGrepOption, FindChangeTextOption, ColorSetting, ScriptArg, ScriptPreference, PlaceGun, LayoutAdjustmentPreference, StrokeFillProxySetting, ImportedPageAttribute, EPSImportPreference, SmartGuidePreference, AutoCorrectPreference, SpellPreference, PolygonPreference, DictionaryPreference, FontLockingPreference, MojikumiUiPreference, ContourOption, TextWrapPreference, TextEditingPreference, FrameFittingOption, ObjectExportOption, PageItemDefault, TaggedPDFPreference, InteractivePDFExportPreference, PDFAttribute, PDFPlacePreference, PDFExportPreference, IMEPreference, GraphicLayerOption, ClippingPathSettings, ImageIOPreference, ImagePreference, ToolBox, EPSExportPreference, PrintBookletPrintPreference, PrintBookletOption, PrintPreference, ViewPreference, PasteboardPreference, MarginPreference, GuidePreference, GridPreference, DocumentPreference, TextDefault, TextPreference, TextFramePreference, StoryPreference, PathPoint, Path, GradientStop, AutoCorrectTable, UserDictionary, HyphenationException, Font, TransformationMatrix, PDFExportPreset, NestedStyle, TabStop, Text, InsertionPoint, TextStyleRange, Paragraph, TextColumn, Line, Word, Character, NestedGrepStyle or NestedLineStyle).",
-                    "type": "Mixed"
+                    "readonly": true,
+                    "name": "AFTER_UNEMBED",
+                    "value": "afterUnembed",
+                    "type": "String"
                 },
                 {
-                    "readonly": true,
+                    "description": "Dispatched before a Event is relocated from one object to another. This event bubbles. This event is cancelable.",
                     "array": false,
-                    "name": "index",
-                    "description": "The index of the Event within its containing object.",
-                    "type": "Number"
+                    "readonly": true,
+                    "name": "BEFORE_MOVE",
+                    "value": "beforeMove",
+                    "type": "String"
                 },
                 {
-                    "readonly": false,
+                    "description": "Dispatched after a Event is relocated from one object to another. This event bubbles. This event is not cancelable.",
                     "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "readonly": true,
+                    "name": "AFTER_MOVE",
+                    "value": "afterMove",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched when the Event is invoked. This event does not bubble. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "ON_INVOKE",
+                    "value": "onInvoke",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched before the Event is invoked. This event does not bubble. This event is cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "BEFORE_INVOKE",
+                    "value": "beforeInvoke",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched after the Event is invoked. This event does not bubble. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_INVOKE",
+                    "value": "afterInvoke",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched before the Event is displayed. This event does not bubble. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "BEFORE_DISPLAY",
+                    "value": "beforeDisplay",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched before the Event is quit. Allows the quit to be canceled. This event bubbles. This event is cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "BEFORE_QUIT",
+                    "value": "beforeQuit",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched when the Event is quitting. Since the quit has been committed, it can not be canceled. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_QUIT",
+                    "value": "afterQuit",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched after the active context changes. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_CONTEXT_CHANGED",
+                    "value": "afterContextChanged",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_SELECTION_CHANGED",
+                    "value": "afterSelectionChanged",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
+                    "value": "afterSelectionAttributeChanged",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched before the Event becomes inactive. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "BEFORE_DEACTIVATE",
+                    "value": "beforeDeactivate",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched after the Event becomes active. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_ACTIVATE",
+                    "value": "afterActivate",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched after a Event is opened. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_OPEN",
+                    "value": "afterOpen",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched before a Event is closed. This event bubbles. This event is cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "BEFORE_CLOSE",
+                    "value": "beforeClose",
+                    "type": "String"
+                },
+                {
+                    "description": "Dispatched when a Event is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
+                    "array": false,
+                    "readonly": true,
+                    "name": "AFTER_CLOSE",
+                    "value": "afterClose",
+                    "type": "String"
                 }
             ]
         }
     },
-    "name": "Event",
     "description": "An event."
 }

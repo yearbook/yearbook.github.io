@@ -1,217 +1,217 @@
 {
+    "name": "DataMerge",
     "dynamic": true,
     "elements": {
-        "class": {
-            "properties": []
-        },
         "instance": {
-            "methods": [
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "dataSourceFile",
-                            "description": "The path to the data source file.",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "selectDataSource",
-                    "description": "Specifies the file to use as the data source."
-                },
-                {
-                    "parameters": [],
-                    "name": "updateDataSource",
-                    "description": "Updates the data source file with the most current data."
-                },
-                {
-                    "parameters": [],
-                    "name": "removeDataSource",
-                    "description": "Removes the data source."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "outputOversetReportFile",
-                            "description": "The path to the file in which to store the overset report. (Optional)",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "mergeRecords",
-                    "description": "Merges records and produces an optional overset report."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "to",
-                            "description": "The path of exported PDF file.",
-                            "type": "File"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "using",
-                            "description": "The PDF export style to use. (Optional)",
-                            "type": "PDFExportPreset"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "outputOversetReportFile",
-                            "description": "The path to the file in which to store the overset report. (Optional)",
-                            "type": "File"
-                        }
-                    ],
-                    "name": "exportFile",
-                    "description": "Merges records and exports to PDF."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the DataMerge.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "DataMerge"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
             "properties": [
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "dataMergePreferences",
-                    "description": "The data merge preference properties that define the layout and content of the target page.",
-                    "type": "DataMergePreference"
+                    "array": false,
+                    "type": "DataMergePreference",
+                    "readonly": true,
+                    "description": "The data merge preference properties that define the layout and content of the target page."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "parent",
-                    "description": "The parent of the DataMerge (a Document).",
-                    "type": "Document"
+                    "array": false,
+                    "type": "Document",
+                    "readonly": true,
+                    "description": "The parent of the DataMerge (a Document)."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
+                    "array": false,
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
                 },
                 {
-                    "readonly": true,
-                    "array": false,
                     "name": "preferences",
-                    "description": "A collection of preferences objects.",
-                    "type": "Preferences"
-                },
-                {
+                    "array": false,
+                    "type": "Preferences",
                     "readonly": true,
-                    "array": false,
-                    "name": "dataMergeFields",
-                    "description": "A collection of data merge fields.",
-                    "type": "DataMergeFields"
+                    "description": "A collection of preferences objects."
                 },
                 {
-                    "readonly": false,
+                    "name": "dataMergeFields",
                     "array": false,
+                    "type": "DataMergeFields",
+                    "readonly": true,
+                    "description": "A collection of data merge fields."
+                },
+                {
                     "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "selectDataSource",
+                    "description": "Specifies the file to use as the data source.",
+                    "parameters": [
+                        {
+                            "name": "dataSourceFile",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the data source file."
+                        }
+                    ]
+                },
+                {
+                    "name": "updateDataSource",
+                    "description": "Updates the data source file with the most current data.",
+                    "parameters": []
+                },
+                {
+                    "name": "removeDataSource",
+                    "description": "Removes the data source.",
+                    "parameters": []
+                },
+                {
+                    "name": "mergeRecords",
+                    "description": "Merges records and produces an optional overset report.",
+                    "parameters": [
+                        {
+                            "name": "outputOversetReportFile",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the file in which to store the overset report. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "exportFile",
+                    "description": "Merges records and exports to PDF.",
+                    "parameters": [
+                        {
+                            "name": "to",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path of exported PDF file."
+                        },
+                        {
+                            "name": "using",
+                            "array": false,
+                            "type": "PDFExportPreset",
+                            "optional": false,
+                            "description": "The PDF export style to use. (Optional)"
+                        },
+                        {
+                            "name": "outputOversetReportFile",
+                            "array": false,
+                            "type": "File",
+                            "optional": false,
+                            "description": "The path to the file in which to store the overset report. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the DataMerge.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "DataMerge",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
+        },
+        "class": {
+            "properties": []
         }
     },
-    "name": "DataMerge",
-    "description": "A data merge object.",
-    "superclass": "Preference"
+    "superclass": "Preference",
+    "description": "A data merge object."
 }

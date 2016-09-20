@@ -1,411 +1,411 @@
 {
+    "name": "Guide",
     "dynamic": true,
     "elements": {
-        "class": {
+        "instance": {
             "properties": [
                 {
-                    "readonly": true,
-                    "value": "afterPlace",
+                    "name": "overridden",
                     "array": false,
-                    "name": "AFTER_PLACE",
-                    "description": "Dispatched after a Guide is placed. This event bubbles. This event is not cancelable.",
-                    "type": "String"
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "If true, the object originated on a master spread and was overridden. If false, the object either originated on a master spread and was not overridden, or the object did not originate on a master page."
+                },
+                {
+                    "name": "overriddenMasterPageItem",
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": true,
+                    "description": "An object that originated on a master page and has been overridden. Can return: PageItem, Guide, Graphic, Movie or Sound."
+                },
+                {
+                    "name": "parentPage",
+                    "array": false,
+                    "type": "Page",
+                    "readonly": true,
+                    "description": "The page on which this page item appears."
+                },
+                {
+                    "name": "id",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The unique ID of the Guide."
+                },
+                {
+                    "name": "isValid",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": true,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": true,
+                    "description": "The parent of the Guide (a Spread or MasterSpread)."
+                },
+                {
+                    "name": "index",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": true,
+                    "description": "The index of the Guide within its containing object."
+                },
+                {
+                    "name": "events",
+                    "array": false,
+                    "type": "Events",
+                    "readonly": true,
+                    "description": "A collection of events."
+                },
+                {
+                    "name": "eventListeners",
+                    "array": false,
+                    "type": "EventListeners",
+                    "readonly": true,
+                    "description": "A collection of event listeners."
+                },
+                {
+                    "name": "allowOverrides",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the master page item can be overridden."
+                },
+                {
+                    "name": "guideColor",
+                    "array": false,
+                    "type": "Mixed",
+                    "readonly": false,
+                    "description": "The color of the guide, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator."
+                },
+                {
+                    "name": "orientation",
+                    "array": false,
+                    "type": "HorizontalOrVertical",
+                    "readonly": false,
+                    "description": "The orientation of the guide."
+                },
+                {
+                    "name": "location",
+                    "array": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "readonly": false,
+                    "description": "The location at which to place the guide relative to the current ruler zero point."
+                },
+                {
+                    "name": "fitToPage",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, horizontal orientation guides stop at the edges of the specified page. If false, the guides extends across the width of the spread and into the pasteboard area."
+                },
+                {
+                    "name": "viewThreshold",
+                    "array": false,
+                    "type": "Number",
+                    "readonly": false,
+                    "description": "The view magnification as a percentage below which guides are no longer displayed. (Range: 5.0 to 4000.0)"
+                },
+                {
+                    "name": "locked",
+                    "array": false,
+                    "type": "Boolean",
+                    "readonly": false,
+                    "description": "If true, the Guide is locked."
+                },
+                {
+                    "name": "itemLayer",
+                    "array": false,
+                    "type": "Layer",
+                    "readonly": false,
+                    "description": "The layer that the Guide is on."
+                },
+                {
+                    "name": "guideType",
+                    "array": false,
+                    "type": "GuideTypeOptions",
+                    "readonly": false,
+                    "description": "The type of the guide."
+                },
+                {
+                    "name": "guideZone",
+                    "array": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "readonly": false,
+                    "description": "The zone of the guide."
+                },
+                {
+                    "name": "label",
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "A property that can be set to any string."
+                },
+                {
+                    "name": "name",
+                    "array": false,
+                    "type": "String",
+                    "readonly": false,
+                    "description": "The name of the Guide; this is an alias to the Guide's label property."
+                },
+                {
+                    "name": "properties",
+                    "array": false,
+                    "type": "Object",
+                    "readonly": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "override",
+                    "description": "Overrides a master page item and places the item on the document page as a new object.",
+                    "array": false,
+                    "type": "Mixed",
+                    "parameters": [
+                        {
+                            "name": "destinationPage",
+                            "array": false,
+                            "type": "Page",
+                            "optional": false,
+                            "description": "The document page that contains the master page item to override."
+                        }
+                    ]
+                },
+                {
+                    "name": "removeOverride",
+                    "description": "Removes the override from a previously overridden master page item.",
+                    "parameters": []
+                },
+                {
+                    "name": "detach",
+                    "description": "Detaches an overridden master page item from the master page.",
+                    "parameters": []
+                },
+                {
+                    "name": "remove",
+                    "description": "Deletes the Guide.",
+                    "parameters": []
+                },
+                {
+                    "name": "move",
+                    "description": "Moves the guide to a new location. Note: Either the to or the by parameter is required; if both parameters are defined, only the to value is used.",
+                    "parameters": [
+                        {
+                            "name": "to",
+                            "array": true,
+                            "type": "Measurement Unit (Number or String)=any",
+                            "optional": false,
+                            "description": "The new location of the guide, in the format [x, y]. (Optional)"
+                        },
+                        {
+                            "name": "by",
+                            "array": true,
+                            "type": "Measurement Unit (Number or String)=any",
+                            "optional": false,
+                            "description": "The amount to move the guide relative to its current position, in the format [x, y]. (Optional)"
+                        }
+                    ]
+                },
+                {
+                    "name": "duplicate",
+                    "description": "Duplicates the Guide.",
+                    "array": false,
+                    "type": "Guide",
+                    "parameters": []
+                },
+                {
+                    "name": "transformValuesOf",
+                    "description": "Get the transformation values of the page item.",
+                    "array": true,
+                    "type": "TransformationMatrix",
+                    "parameters": [
+                        {
+                            "name": "in",
+                            "array": false,
+                            "type": "CoordinateSpaces",
+                            "optional": false,
+                            "description": "The coordinate space to use"
+                        }
+                    ]
+                },
+                {
+                    "name": "resolve",
+                    "description": "Get the coordinates of the given location in the specified coordinate system.",
+                    "array": false,
+                    "type": "Mixed",
+                    "parameters": [
+                        {
+                            "name": "location",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers."
+                        },
+                        {
+                            "name": "in",
+                            "array": false,
+                            "type": "CoordinateSpaces",
+                            "optional": false,
+                            "description": "The coordinate space to use."
+                        },
+                        {
+                            "description": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. (Optional)",
+                            "array": false,
+                            "name": "consideringRulerUnits",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "select",
+                    "description": "Selects the object.",
+                    "parameters": [
+                        {
+                            "description": "The selection status of the Guide in relation to previously selected objects. (Optional)",
+                            "array": false,
+                            "name": "existingSelection",
+                            "value": "SelectionOptions.REPLACE_WITH",
+                            "type": "SelectionOptions",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "insertLabel",
+                    "description": "Sets the label to the value associated with the specified key.",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        },
+                        {
+                            "name": "value",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The value."
+                        }
+                    ]
+                },
+                {
+                    "name": "extractLabel",
+                    "description": "Gets the label value associated with the specified key.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The key."
+                        }
+                    ]
+                },
+                {
+                    "name": "toSource",
+                    "description": "Generates a string which, if executed, will return the Guide.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "getElements",
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "array": true,
+                    "type": "Guide",
+                    "parameters": []
+                },
+                {
+                    "name": "toSpecifier",
+                    "description": "Retrieves the object specifier.",
+                    "array": false,
+                    "type": "String",
+                    "parameters": []
+                },
+                {
+                    "name": "addEventListener",
+                    "description": "Adds an event listener.",
+                    "array": false,
+                    "type": "EventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "removeEventListener",
+                    "description": "Removes the event listener.",
+                    "array": false,
+                    "type": "Boolean",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "array": false,
+                            "type": "String",
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "array": false,
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "description": "This parameter is obsolete. (Optional)",
+                            "array": false,
+                            "name": "captures",
+                            "value": "false",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
                 }
             ]
         },
-        "instance": {
-            "methods": [
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "destinationPage",
-                            "description": "The document page that contains the master page item to override.",
-                            "type": "Page"
-                        }
-                    ],
-                    "name": "override",
-                    "description": "Overrides a master page item and places the item on the document page as a new object.",
-                    "type": "Mixed"
-                },
-                {
-                    "parameters": [],
-                    "name": "removeOverride",
-                    "description": "Removes the override from a previously overridden master page item."
-                },
-                {
-                    "parameters": [],
-                    "name": "detach",
-                    "description": "Detaches an overridden master page item from the master page."
-                },
-                {
-                    "parameters": [],
-                    "name": "remove",
-                    "description": "Deletes the Guide."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "to",
-                            "description": "The new location of the guide, in the format [x, y]. (Optional)",
-                            "type": "Measurement Unit (Number or String)=any"
-                        },
-                        {
-                            "optional": false,
-                            "array": true,
-                            "name": "by",
-                            "description": "The amount to move the guide relative to its current position, in the format [x, y]. (Optional)",
-                            "type": "Measurement Unit (Number or String)=any"
-                        }
-                    ],
-                    "name": "move",
-                    "description": "Moves the guide to a new location. Note: Either the to or the by parameter is required; if both parameters are defined, only the to value is used."
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "duplicate",
-                    "description": "Duplicates the Guide.",
-                    "type": "Guide"
-                },
-                {
-                    "array": true,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "in",
-                            "description": "The coordinate space to use",
-                            "type": "CoordinateSpaces"
-                        }
-                    ],
-                    "name": "transformValuesOf",
-                    "description": "Get the transformation values of the page item.",
-                    "type": "TransformationMatrix"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "location",
-                            "description": "The location requested. Can accept: Array of 2 Reals, AnchorPoint enumerator or Array of Arrays of 2 Reals, CoordinateSpaces enumerators, AnchorPoint enumerators, BoundingBoxLimits enumerators or Long Integers.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "in",
-                            "description": "The coordinate space to use.",
-                            "type": "CoordinateSpaces"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "consideringRulerUnits",
-                            "description": "If true then a ruler location is interpreted using ruler units rather than points. The default value is false. This parameter has no effect unless the reference point is specified relative to a page. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "resolve",
-                    "description": "Get the coordinates of the given location in the specified coordinate system.",
-                    "type": "Mixed"
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": true,
-                            "value": "SelectionOptions.REPLACE_WITH",
-                            "array": false,
-                            "name": "existingSelection",
-                            "description": "The selection status of the Guide in relation to previously selected objects. (Optional)",
-                            "type": "SelectionOptions"
-                        }
-                    ],
-                    "name": "select",
-                    "description": "Selects the object."
-                },
-                {
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "value",
-                            "description": "The value.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key."
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "key",
-                            "description": "The key.",
-                            "type": "String"
-                        }
-                    ],
-                    "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSource",
-                    "description": "Generates a string which, if executed, will return the Guide.",
-                    "type": "String"
-                },
-                {
-                    "array": true,
-                    "parameters": [],
-                    "name": "getElements",
-                    "description": "Resolves the object specifier, creating an array of object references.",
-                    "type": "Guide"
-                },
-                {
-                    "array": false,
-                    "parameters": [],
-                    "name": "toSpecifier",
-                    "description": "Retrieves the object specifier.",
-                    "type": "String"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "type": "EventListener"
-                },
-                {
-                    "array": false,
-                    "parameters": [
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "eventType",
-                            "description": "The registered event type.",
-                            "type": "String"
-                        },
-                        {
-                            "optional": false,
-                            "array": false,
-                            "name": "handler",
-                            "description": "The registered event handler. Can accept: File or JavaScript Function.",
-                            "type": "Mixed"
-                        },
-                        {
-                            "optional": true,
-                            "value": "false",
-                            "array": false,
-                            "name": "captures",
-                            "description": "This parameter is obsolete. (Optional)",
-                            "type": "Boolean"
-                        }
-                    ],
-                    "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "type": "Boolean"
-                }
-            ],
+        "class": {
             "properties": [
                 {
+                    "description": "Dispatched after a Guide is placed. This event bubbles. This event is not cancelable.",
+                    "array": false,
                     "readonly": true,
-                    "array": false,
-                    "name": "overridden",
-                    "description": "If true, the object originated on a master spread and was overridden. If false, the object either originated on a master spread and was not overridden, or the object did not originate on a master page.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "overriddenMasterPageItem",
-                    "description": "An object that originated on a master page and has been overridden. Can return: PageItem, Guide, Graphic, Movie or Sound.",
-                    "type": "Mixed"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parentPage",
-                    "description": "The page on which this page item appears.",
-                    "type": "Page"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "id",
-                    "description": "The unique ID of the Guide.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "isValid",
-                    "description": "Returns true if the object specifier resolves to valid objects.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "parent",
-                    "description": "The parent of the Guide (a Spread or MasterSpread).",
-                    "type": "Mixed"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "index",
-                    "description": "The index of the Guide within its containing object.",
-                    "type": "Number"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "events",
-                    "description": "A collection of events.",
-                    "type": "Events"
-                },
-                {
-                    "readonly": true,
-                    "array": false,
-                    "name": "eventListeners",
-                    "description": "A collection of event listeners.",
-                    "type": "EventListeners"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "allowOverrides",
-                    "description": "If true, the master page item can be overridden.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "guideColor",
-                    "description": "The color of the guide, specified either as an array of three doubles, each in the range 0 to 255 and representing R, G, and B values, or as a UI color. Can return: Array of 3 Reals (0 - 255) or UIColors enumerator.",
-                    "type": "Mixed"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "orientation",
-                    "description": "The orientation of the guide.",
-                    "type": "HorizontalOrVertical"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "location",
-                    "description": "The location at which to place the guide relative to the current ruler zero point.",
-                    "type": "Measurement Unit (Number or String)=any"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "fitToPage",
-                    "description": "If true, horizontal orientation guides stop at the edges of the specified page. If false, the guides extends across the width of the spread and into the pasteboard area.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "viewThreshold",
-                    "description": "The view magnification as a percentage below which guides are no longer displayed. (Range: 5.0 to 4000.0)",
-                    "type": "Number"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "locked",
-                    "description": "If true, the Guide is locked.",
-                    "type": "Boolean"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "itemLayer",
-                    "description": "The layer that the Guide is on.",
-                    "type": "Layer"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "guideType",
-                    "description": "The type of the guide.",
-                    "type": "GuideTypeOptions"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "guideZone",
-                    "description": "The zone of the guide.",
-                    "type": "Measurement Unit (Number or String)=any"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "label",
-                    "description": "A property that can be set to any string.",
+                    "name": "AFTER_PLACE",
+                    "value": "afterPlace",
                     "type": "String"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "name",
-                    "description": "The name of the Guide; this is an alias to the Guide's label property.",
-                    "type": "String"
-                },
-                {
-                    "readonly": false,
-                    "array": false,
-                    "name": "properties",
-                    "description": "A property that allows setting of several properties at the same time.",
-                    "type": "Object"
                 }
             ]
         }
     },
-    "name": "Guide",
     "description": "A guide."
 }
