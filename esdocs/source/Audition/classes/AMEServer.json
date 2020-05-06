@@ -1,0 +1,157 @@
+{
+    "name": "AMEServer",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "addEventListener",
+                    "parameters": [],
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "removeEventListener",
+                    "parameters": [],
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "dispatchEvent",
+                    "parameters": [],
+                    "type": "any",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "addMultitrackDocumentAndRoutingToQueue",
+                    "parameters": [
+                        {
+                            "name": "multitrackDocument",
+                            "type": "Document",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "trackRouting",
+                            "type": "Array",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "preset",
+                            "type": "AMEPreset",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "temporaryFilesDir",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "outputFile",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "rangeStart",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "rangeLength",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "Add the selected tracks of a multitrack document to the AME queue. The routing information is passed in as an array of tracks. The first track in the array will be routed to the first channels in the output file. A channel can be left unassigned by adding null to the array \"trackRouting\". Beside the final output file you have to specify a directory to store temporary wave files as well as the temporary project file. Optionally you can also specify the range to be exported in audio sample units. The temporary files will be deleted by AME after the export has been completed. An event with type AMEAddMultitrackDocumentToQueueEvent.EVENT_ADDMULTITRACKDOCUMENTTOQUEUE_SUCCESS or AMEAddMultitrackDocumentToQueueEvent.EVENT_ADDMULTITRACKDOCUMENTTOQUEUE_ERROR will be sent to notify about success or failure.",
+                            "longdesc": "Add the selected tracks of a multitrack document to the AME queue."
+                        }
+                    ],
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "addMultitrackDocumentToQueue",
+                    "parameters": [
+                        {
+                            "name": "multitrackDocument",
+                            "type": "Document",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "preset",
+                            "type": "AMEPreset",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "temporaryFilesDir",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "outputFile",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "rangeStart",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "rangeLength",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "Add the master track of a multitrack document to the AME queue. Beside the final output file you have to specify a directory to store temporary wave files as well as the temporary project file. Optionally you can also specify the range to be exported in audio sample units. The temporary files will be deleted by AME after the export has been completed. An event with type AMEAddMultitrackDocumentToQueueEvent.EVENT_ADDMULTITRACKDOCUMENTTOQUEUE_SUCCESS or AMEAddMultitrackDocumentToQueueEvent.EVENT_ADDMULTITRACKDOCUMENTTOQUEUE_ERROR will be sent to notify about success or failure.",
+                            "longdesc": "Add the master track of a multitrack document to the AME queue."
+                        }
+                    ],
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "connect",
+                    "parameters": [],
+                    "description": "Connect to AME. An event with type DynamicLinkConnectionEvent.EVENT_CONNECTION will be sent to notify about success or failure.",
+                    "longdesc": "Connect to AME.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "disconnect",
+                    "parameters": [],
+                    "description": "Disconnect from AME.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "requestFormats",
+                    "parameters": [],
+                    "description": "Request the available formats from AME. An event with type AMEFormatsEvent.EVENT_REQUESTFORMATS_SUCCESS or AMEFormatsEvent.EVENT_REQUESTFORMATS_ERROR will be sent to notify about success or failure.",
+                    "longdesc": "Request the available formats from AME.",
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "AMEServer represents a DynanicLink connection to Adobe Media Encoder"
+}

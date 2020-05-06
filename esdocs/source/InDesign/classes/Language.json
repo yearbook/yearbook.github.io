@@ -2,228 +2,239 @@
     "name": "Language",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the Language."
                 },
                 {
                     "name": "icuLocaleName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The full name of the Language object's ICU locale."
                 },
                 {
-                    "name": "id",
-                    "array": false,
-                    "type": "Number",
+                    "name": "untranslatedName",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The untranslated name of the language."
+                },
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The unique ID of the Language."
                 },
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Document",
                     "readonly": true,
+                    "type": "Document",
+                    "array": false,
                     "description": "The parent of the Language (a Document)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the Language within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "singleQuotes",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The single quotes pair for the language."
                 },
                 {
                     "name": "doubleQuotes",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The double quotes pair for the language."
                 },
                 {
                     "name": "hyphenationVendor",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The hyphenation rules source."
                 },
                 {
                     "name": "spellingVendor",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The spell-checking source."
                 },
                 {
                     "name": "label",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "A property that can be set to any string."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key.",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value."
                         }
-                    ]
+                    ],
+                    "description": "Sets the label to the value associated with the specified key."
                 },
                 {
                     "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         }
-                    ]
+                    ],
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Language.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Language",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "The language on which to base hyphenation rules and spell checking."

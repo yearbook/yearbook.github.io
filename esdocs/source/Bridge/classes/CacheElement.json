@@ -1,0 +1,137 @@
+{
+    "name": "CacheElement",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "path",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The path of the asset associated with this object. "
+                },
+                {
+                    "name": "immediate",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set. ",
+                    "longdesc": "Contains mandatory node information, supplied at node creation."
+                },
+                {
+                    "name": "item",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": " Node information that can be determined without opening and inspecting the contents of the referenced file."
+                },
+                {
+                    "name": "itemContent",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": " Node information that must be determined by opening the referenced file."
+                },
+                {
+                    "name": "icon",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"bitmap\" contains a  BitmapData object representing the pixels for the node\u2019s icon."
+                },
+                {
+                    "name": "badges",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": " Member \"badges\" contains an array of Badge objects representing the node\u2019s status icons. A node in the Content pane can have up to four badge icons."
+                },
+                {
+                    "name": "children",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"children\" contains an Array of Thumbnail objects representing the child nodes of a container node. Container nodes must update their child node lists."
+                },
+                {
+                    "name": "thumbnail",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"thumbnail\" contains a  BitmapData object representing the pixels for the file's thumbnail image. Member \"hasHighQualityThumbnail\" is true if the file contains a high-quality thumbnail image."
+                },
+                {
+                    "name": "preview",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"preview\" contains a  BitmapData object representing the pixels for the file's preview thumbnail image. Member \"hasHighQualityThumbnail\" is true if the file contains a high-quality preview image."
+                },
+                {
+                    "name": "fullsize",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"fullsize\" contains a  BitmapData object representing the pixels for the file's full-size preview thumbnail image. "
+                },
+                {
+                    "name": "metadata",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"metadata\" contains the metadata blob for the file, if applicable"
+                },
+                {
+                    "name": "linkTarget",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"linkTarget\" contains a string, the full path to the target, if this node is a link."
+                },
+                {
+                    "name": "cameraRaw",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "Member \"rawSupportType\" identifies the extent to which this file can be handled by the Camera Raw plug-in. One of: 0 (the file is of a type that is not handled by the plug-in), 1 (the file is in a camera-raw format), 2 (the file is in JPEG or TIFF format) "
+                },
+                {
+                    "name": "quickMetadata",
+                    "readonly": false,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Core data set.",
+                    "longdesc": "This is the authoritative source of displayed values, although the same properties are also kept in various other places."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "doAuthentication",
+                    "parameters": [],
+                    "description": "Calls the authenticate() method defined in the ExtensionHandler object associated with this element. "
+                }
+            ]
+        }
+    },
+    "description": "Encapsulates all node-handling data and the node handler for a Thumbnail object.",
+    "longdesc": "This object associates a Thumbnail object with the ExtensionModel object that handles the node and that defines additional node data. The cache collects all currently defined node data. This object actually contains the ExtensionModel object that is created for the thumbnail, as well as the associated Infoset objects. Each Infoset  object in the cache is associated with a CacheData object object that contains its cache status.When Adobe Bridge needs to display a handled node, it instantiates this object. It creates the ExtensionModel object using the handler\u2019s makeModel() method, and stores it in the CacheElement. It then passes the CacheElement object to the node handler\u2019s model method registerInterest().Your implementation of the registerInterest() method must store the cache object (typically in the model object's privateData property) so that the model\u2019s refreshInfoset() method can use it to update the data. "
+}

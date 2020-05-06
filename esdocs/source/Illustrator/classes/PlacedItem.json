@@ -2,133 +2,137 @@
     "name": "PlacedItem",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "file",
-                    "array": false,
-                    "type": "File",
                     "readonly": false,
+                    "type": "File",
+                    "array": false,
                     "description": "The file containing the placed artwork."
                 },
                 {
                     "name": "matrix",
-                    "array": false,
-                    "type": "Matrix",
                     "readonly": false,
+                    "type": "Matrix",
+                    "array": false,
                     "description": "The transformation matrix of the placed art object."
                 },
                 {
                     "name": "boundingBox",
-                    "array": false,
-                    "type": "Rectangle",
                     "readonly": true,
+                    "type": "Rectangle",
+                    "array": false,
                     "description": "Dimensions of placed art object, regardless of transformations."
                 },
                 {
                     "name": "contentVariable",
-                    "array": false,
-                    "type": "any",
                     "readonly": false,
+                    "type": "any",
+                    "array": false,
                     "description": "The content variable bound to this placed art object."
                 }
             ],
             "methods": [
                 {
                     "name": "move",
-                    "description": "Move the object.",
-                    "array": false,
-                    "type": "PlacedItem",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Move the object.",
+                    "type": "PlacedItem",
+                    "array": false
                 },
                 {
                     "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "array": false,
-                    "type": "PlacedItem",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Duplicate this object.",
+                    "type": "PlacedItem",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "Deletes this object.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes this object."
                 },
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "embed",
-                    "description": "Embed the placed art within the illustration.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Embed the placed art within the illustration."
                 },
                 {
                     "name": "trace",
+                    "parameters": [],
                     "description": "Trace this raster object using default options. Reorders this placed to the source art.",
-                    "array": false,
                     "type": "PluginItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "relink",
-                    "description": "Relink the placed art with supplied art from file.",
                     "parameters": [
                         {
                             "name": "fileSpec",
-                            "array": false,
                             "type": "File",
+                            "array": false,
                             "optional": false,
                             "description": "File spec to relink from."
                         }
-                    ]
+                    ],
+                    "description": "Relink the placed art with supplied art from file."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "superclass": "PageItem",
-    "description": "Placed artwork item."
+    "description": "Placed artwork item.",
+    "superclass": "PageItem"
 }

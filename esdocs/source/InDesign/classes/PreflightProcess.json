@@ -2,220 +2,224 @@
     "name": "PreflightProcess",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "targetObject",
-                    "array": false,
-                    "type": "Document",
                     "readonly": true,
+                    "type": "Document",
+                    "array": false,
                     "description": "The target document the process is inspecting."
                 },
                 {
                     "name": "appliedProfile",
-                    "array": false,
-                    "type": "PreflightProfile",
                     "readonly": true,
+                    "type": "PreflightProfile",
+                    "array": false,
                     "description": "The preflight profile the process is using."
                 },
                 {
                     "name": "description",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The description of the PreflightProcess."
                 },
                 {
                     "name": "processResults",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The results found by the process as a large string."
                 },
                 {
                     "name": "processInventory",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "A string containing a description of all elements visited by the process."
                 },
                 {
                     "name": "aggregatedResults",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The aggregated results found by the process. Can return: Ordered array containing documentName:String, profileName:String, results:Array of Ordered array containing parentNodeID:Long Integer, errorName:String, pageNumber:String, errorInfo:String, errorDetail:Array of Ordered array containing label:String, description:String."
                 },
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Application",
                     "readonly": true,
+                    "type": "Application",
+                    "array": false,
                     "description": "The parent of the PreflightProcess (a Application)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the PreflightProcess within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the PreflightProcess.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes the PreflightProcess."
                 },
                 {
                     "name": "waitForProcess",
-                    "description": "Waits for the process to finish, up to an optional maximum amount of time. No other processes get cycles during this time.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "waitTime",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The maximum time to wait, in seconds; if omitted, waits until completion no matter how long it takes. (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Waits for the process to finish, up to an optional maximum amount of time. No other processes get cycles during this time.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "saveReport",
-                    "description": "Saves a report of the completed preflight process.",
                     "parameters": [
                         {
                             "name": "to",
-                            "array": false,
                             "type": "File",
+                            "array": false,
                             "optional": false,
                             "description": "The preflight report to save to."
                         },
                         {
-                            "description": "If true, automatically open the report after creation. (Optional)",
-                            "array": false,
                             "name": "autoOpen",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, automatically open the report after creation. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Saves a report of the completed preflight process."
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the PreflightProcess.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "PreflightProcess",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "An active preflight process."

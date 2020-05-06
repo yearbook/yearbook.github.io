@@ -1,0 +1,83 @@
+{
+    "name": "Metadata",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "namespace",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The current XMP namespace, used to search for XMP properties. ",
+                    "longdesc": "Default is the root namespace. Assigning a new namespace creates that namespace in the XMP metadata. To access values in a specific schema, the namespace for that schema must be set before referencing the properties in the schema. "
+                }
+            ],
+            "methods": [
+                {
+                    "name": "applyMetadataTemplate",
+                    "parameters": [
+                        {
+                            "name": "templateName",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": " The name of the XMP template. ",
+                            "longdesc": "Templates are stored for each user in:\n\t\t\t\t\t\t (Windows) %APPDATA%/Adobe/XMP/Metadata Templates/\n\t\t\t\t\t\t (Mac OS) /Users/username/Library/Application Support/Adobe/XMP/\nMetadata Templates/"
+                        },
+                        {
+                            "name": "modType",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The modification type.",
+                            "longdesc": "One of:\n\t\t\t\t\t\tappend: Adds to the metadata any property that is in the template but not in the source. If a property in the template already exists in the source, its value is not changed, unless it is an array. For an array, adds members that are in the template but not in the source. If an array member already exists in the source, the value is not changed.\n\t\t\t\t\t\treplace: Adds to the metadata all properties and values that are in the template. If a property in the template already exists in the source, its value is changed to the template value."
+                        }
+                    ],
+                    "description": "Adds metadata properties to this object that were saved to an XMP template from the FileInfo dialog. "
+                },
+                {
+                    "name": "read",
+                    "parameters": [
+                        {
+                            "name": "namespace",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The XMP namespace."
+                        },
+                        {
+                            "name": "property",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The property name. ",
+                            "longdesc": "To access a multivalue (complex) property, use an XPath to the individual value."
+                        }
+                    ],
+                    "description": "Retrieves and returns the string value of a metadata property in the specified namespace.",
+                    "longdesc": "Returns the string value, or an empty string if the specified property does not exist.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "serialize",
+                    "parameters": [],
+                    "description": "Serializes the XMP packet into a string.",
+                    "longdesc": "Returns the string containing the serialized metadata. ",
+                    "type": "String",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "Allows you to access the Extensible Metadata Platform (XMP) metadata associated with the file node of a Thumbnail object. ",
+    "longdesc": "This is external data associated with the file, such a copyright owner, author, or camera settings.Access the Metadata object for a file-type thumbnail through Thumbnail.metadata . When a script needs to access the metadata through the Thumbnail object, it is important to make sure that the returned object contains the most current data. To ensure this, your script should set app.synchronousMode to true before attempting to retrieve values through  Thumbnail.metadata , or else use  Thumbnail.synchronousMetadata . Keep in mind, however, that metadata access is a time-intensive operation. Do not do it unnecessarily, or as part of operations that occur very frequently, such as a MenuItem onDisplay callback function.The Metadata object does not support multi-valued properties."
+}

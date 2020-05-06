@@ -2,74 +2,79 @@
     "name": "UnitValue",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "baseUnit",
+                    "readonly": false,
+                    "type": "UnitValue",
+                    "array": false,
+                    "description": "The base unit for all conversions."
+                }
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The unit name."
                 },
                 {
                     "name": "value",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "The numeric value."
                 },
                 {
                     "name": "baseUnit",
-                    "array": false,
-                    "type": "UnitValue",
                     "readonly": false,
+                    "type": "UnitValue",
+                    "array": false,
                     "description": "The base unit."
                 }
             ],
             "methods": [
                 {
                     "name": "convert",
-                    "description": "Converts this instance to a different unit.",
-                    "array": false,
-                    "type": "any",
                     "parameters": [
                         {
                             "name": "unitName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The unit name."
                         }
-                    ]
+                    ],
+                    "description": "Converts this instance to a different unit.",
+                    "type": "any",
+                    "array": false
                 },
                 {
                     "name": "as",
-                    "description": "Returns this instance as a different unit.",
-                    "array": false,
-                    "type": "UnitValue",
                     "parameters": [
                         {
                             "name": "unitName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The unit name."
                         }
-                    ]
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "name": "baseUnit",
-                    "array": false,
+                    ],
+                    "description": "Returns this instance as a different unit.",
                     "type": "UnitValue",
-                    "readonly": false,
-                    "description": "The base unit for all conversions."
+                    "array": false
                 }
             ]
         }
     },
-    "description": "Represents a measurement as a combination of values and unit."
+    "description": "Represents a measurement as a combination of values and unit.",
+    "longdesc": "Note that this object is not available in all applications."
 }

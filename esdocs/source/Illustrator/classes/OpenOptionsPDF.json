@@ -2,41 +2,59 @@
     "name": "OpenOptionsPDF",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "pageToOpen",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": false,
+                    "type": "Int32",
+                    "array": false,
                     "description": "What page should be used when opening a multipage document (default: 1)"
                 },
                 {
                     "name": "pDFCropToBox",
-                    "array": false,
-                    "type": "PDFBoxType",
                     "readonly": false,
+                    "type": "PDFBoxType",
+                    "array": false,
                     "description": "What box should be used when placing a multipage document (default: PDF media box)"
+                },
+                {
+                    "name": "pageRangeToOpen",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "Range of pages when opening a multipage document [possible values: 'all', range(for example: '1,2,3-5,8')]"
+                },
+                {
+                    "name": "placeAsLinks",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Import PDF pages as links for optimal performance (default: true for PageRangeToOpen=all; false otherwise)"
                 }
             ],
             "methods": []
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "Options which may be supplied when opening a PDF file."

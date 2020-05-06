@@ -1,0 +1,47 @@
+{
+    "name": "PreferencesDialog",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "addPanel",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of the new page, used as the title of the new Window object."
+                        }
+                    ],
+                    "description": "Creates and returns a ScriptUI Window object to be used as a new page in the Preferences dialog.",
+                    "longdesc": "\n\t\t\t\t\tYou can add ScriptUI controls to the window to allow users to access and set preferences that you provide. Returns the new Window object.\n\t\t\t\t"
+                },
+                {
+                    "name": "close",
+                    "parameters": [
+                        {
+                            "name": "isOK",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": false,
+                            "description": "Pass true to simulate the user clicking OK to close the dialog, false for Cancel."
+                        }
+                    ],
+                    "description": "Closes the Preferences dialog.",
+                    "longdesc": "Returns undefined."
+                }
+            ]
+        }
+    },
+    "longdesc": "\n\t\tProvides access to the Adobe Bridge Preferences dialog, allowing you to add a panel to the dialog with your own ScriptUI controls that access and set any application preferences that you have defined by adding properties to the Preferences Object.\n\t\tYou can only access this object as the target of an event. The object is returned in the object property of an Event Object that results from an event in a Preferences dialog. See PreferencesDialog events.\n\t\tThe Preferences dialog is modal, which means that no other Adobe Bridge events can occur until the user dismisses it with the OK or Cancel button, or closes it with the window-frame icon.\n\t\tFor the OK button, the dialog generates an ok event. Your handler can collect the values from the controls in your panel, and modify the property values in the Preferences object accordingly.\n\t\tFor the Cancel button, the dialog generates a cancel event, and for the window-close gesture, it generates a destroy event. Your handler can, for example, clean up structures you created for the window.\n\t\tThe class defines no properties.\n\t\t"
+}

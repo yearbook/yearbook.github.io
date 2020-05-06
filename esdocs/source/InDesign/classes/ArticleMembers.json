@@ -2,204 +2,208 @@
     "name": "ArticleMembers",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of objects in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "add",
-                    "description": "Adds a new member.",
-                    "array": false,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "itemRef",
-                            "array": false,
                             "type": "PageItem",
+                            "array": false,
                             "optional": false,
                             "description": "page item to be added to article"
                         },
                         {
-                            "description": "The location relative to the reference object or within the containing object. (Optional)",
-                            "array": false,
                             "name": "at",
-                            "value": "LocationOptions.AT_END",
                             "type": "LocationOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The location relative to the reference object or within the containing object. (Optional)",
+                            "value": "LocationOptions.AT_END"
                         },
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "ArticleMember",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. Note: Required when the to value specifies before or after. (Optional)"
                         },
                         {
                             "name": "withProperties",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false,
                             "description": "Initial values for properties of the new ArticleMember (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Adds a new member.",
+                    "type": "ArticleMember",
+                    "array": false
                 },
                 {
                     "name": "count",
+                    "parameters": [],
                     "description": "Displays the number of elements in the ArticleMember.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "item",
-                    "description": "Returns the ArticleMember with the specified index or name.",
-                    "array": false,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The index or name. Can accept: Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the ArticleMember with the specified index or name.",
+                    "type": "ArticleMember",
+                    "array": false
                 },
                 {
                     "name": "itemByID",
-                    "description": "Returns the ArticleMember with the specified ID.",
-                    "array": false,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "id",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The ID."
                         }
-                    ]
+                    ],
+                    "description": "Returns the ArticleMember with the specified ID.",
+                    "type": "ArticleMember",
+                    "array": false
                 },
                 {
                     "name": "itemByRange",
-                    "description": "Returns the ArticleMembers within the specified range.",
-                    "array": true,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "from",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The ArticleMember, index, or name at the beginning of the range. Can accept: ArticleMember, Long Integer or String."
                         },
                         {
                             "name": "to",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The ArticleMember, index, or name at the end of the range. Can accept: ArticleMember, Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the ArticleMembers within the specified range.",
+                    "type": "ArticleMember",
+                    "array": true
                 },
                 {
                     "name": "firstItem",
+                    "parameters": [],
                     "description": "Returns the first ArticleMember in the collection.",
-                    "array": false,
                     "type": "ArticleMember",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "lastItem",
+                    "parameters": [],
                     "description": "Returns the last ArticleMember in the collection.",
-                    "array": false,
                     "type": "ArticleMember",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "middleItem",
+                    "parameters": [],
                     "description": "Returns the middle ArticleMember in the collection.",
-                    "array": false,
                     "type": "ArticleMember",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "previousItem",
-                    "description": "Returns the ArticleMember with the index previous to the specified index.",
-                    "array": false,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "ArticleMember",
+                            "array": false,
                             "optional": false,
                             "description": "The index of the ArticleMember that follows the desired ArticleMember."
                         }
-                    ]
+                    ],
+                    "description": "Returns the ArticleMember with the index previous to the specified index.",
+                    "type": "ArticleMember",
+                    "array": false
                 },
                 {
                     "name": "nextItem",
-                    "description": "Returns the ArticleMember whose index follows the specified ArticleMember in the collection.",
-                    "array": false,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "ArticleMember",
+                            "array": false,
                             "optional": false,
                             "description": "The ArticleMember whose index comes before the desired ArticleMember."
                         }
-                    ]
+                    ],
+                    "description": "Returns the ArticleMember whose index follows the specified ArticleMember in the collection.",
+                    "type": "ArticleMember",
+                    "array": false
                 },
                 {
                     "name": "anyItem",
+                    "parameters": [],
                     "description": "Returns any ArticleMember in the collection.",
-                    "array": false,
                     "type": "ArticleMember",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "everyItem",
+                    "parameters": [],
                     "description": "Returns every ArticleMember in the collection.",
-                    "array": true,
                     "type": "ArticleMember",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the ArticleMember.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Returns the ArticleMember with the specified index.",
-                    "array": false,
-                    "type": "ArticleMember",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The index."
                         }
-                    ]
+                    ],
+                    "description": "Returns the ArticleMember with the specified index.",
+                    "type": "ArticleMember",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of article members."

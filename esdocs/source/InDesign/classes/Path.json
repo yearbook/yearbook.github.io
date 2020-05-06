@@ -2,168 +2,172 @@
     "name": "Path",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
-                    "description": "The parent of the Path (a SplineItem, Polygon, GraphicLine, Rectangle, Oval, TextFrame, MediaItem, Sound, Movie, Button, MultiStateObject, ClippingPathSettings or TextWrapPreference)."
+                    "type": "Mixed",
+                    "array": false,
+                    "description": "The parent of the Path (a SplineItem, Polygon, GraphicLine, Rectangle, Oval, TextFrame, EndnoteTextFrame, MediaItem, Sound, Movie, Button, MultiStateObject, ClippingPathSettings or TextWrapPreference)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the Path within its containing object."
                 },
                 {
-                    "name": "pathPoints",
-                    "array": false,
-                    "type": "PathPoints",
-                    "readonly": true,
-                    "description": "A collection of path points."
-                },
-                {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
-                    "name": "pathType",
+                    "name": "pathPoints",
+                    "readonly": true,
+                    "type": "PathPoints",
                     "array": false,
-                    "type": "PathType",
+                    "description": "A collection of path points."
+                },
+                {
+                    "name": "pathType",
                     "readonly": false,
+                    "type": "PathType",
+                    "array": false,
                     "description": "The path type."
                 },
                 {
                     "name": "entirePath",
-                    "array": true,
-                    "type": "Mixed",
                     "readonly": false,
+                    "type": "Mixed",
+                    "array": true,
                     "description": "A list of the coordinates of all of the path points on the path, including anchor points and left- and right-direction points. When creating a path using this property, supply either a list of anchor point coordinates ([[x1, y1], [x2, y2], ...]) or a list of anchor point, left-direction point, and right-direction point coordinates ([[[x1, y1], [x2, y2], [x3, y3]], [[x4, y4], [x5, y5], [x6, y6]], ...]). Note: Providing only anchor points results in a path on which all of the path points are connected with straight line segments; supplying the positions of left- and right-direction points specifies curved line segments. Can return: Array of Arrays of 2 Units."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the Path.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes the Path."
                 },
                 {
                     "name": "reverse",
-                    "description": "Reverses the path.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Reverses the path."
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Path.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Path",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A path."

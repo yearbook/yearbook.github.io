@@ -2,514 +2,518 @@
     "name": "Selection",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "bounds",
-                    "array": false,
-                    "type": "UnitRect",
                     "readonly": true,
+                    "type": "UnitRect",
+                    "array": false,
                     "description": "The bounding rectangle of the entire selection."
                 },
                 {
                     "name": "solid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, the bounding rectangle a solid rectangle."
                 }
             ],
             "methods": [
                 {
                     "name": "clear",
-                    "description": "Clears the selection and does not copy it to the clipboard.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Clears the selection and does not copy it to the clipboard."
                 },
                 {
                     "name": "copy",
-                    "description": "Copies the selection to the clipboard.",
                     "parameters": [
                         {
                             "name": "merge",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true the copy includes all visible layers. If false, copies only from the current layer."
                         }
-                    ]
+                    ],
+                    "description": "Copies the selection to the clipboard."
                 },
                 {
                     "name": "cut",
-                    "description": "Cuts the current selection to the clipboard.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Cuts the current selection to the clipboard."
                 },
                 {
                     "name": "selectBorder",
-                    "description": "Selects the selection border only (in the specified width); subsequent actions do not affect the selected area within the borders.",
                     "parameters": [
                         {
                             "name": "width",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": false,
                             "description": "The width of the border selection."
                         }
-                    ]
+                    ],
+                    "description": "Selects the selection border only (in the specified width); subsequent actions do not affect the selected area within the borders."
                 },
                 {
                     "name": "contract",
-                    "description": "Contracts the selection.",
                     "parameters": [
                         {
                             "name": "by",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": false,
                             "description": "The amount to contract the selection."
                         }
-                    ]
+                    ],
+                    "description": "Contracts the selection."
                 },
                 {
                     "name": "fill",
-                    "description": "Fills the selection.",
                     "parameters": [
                         {
                             "name": "fillType",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false,
                             "description": "The color or history state with which to fill the object."
                         },
                         {
-                            "description": "The color blend mode.",
-                            "array": false,
                             "name": "mode",
-                            "value": "ColorBlendMode.NORMAL",
                             "type": "ColorBlendMode",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The color blend mode.",
+                            "value": "ColorBlendMode.NORMAL"
                         },
                         {
-                            "description": "The opacity as a percentage. Range: 1 to 100.",
-                            "array": false,
                             "name": "opacity",
-                            "value": "100",
                             "type": "int",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The opacity as a percentage. Range: 1 to 100.",
+                            "value": "100"
                         },
                         {
                             "name": "preserveTransparency",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, perserves transparencies."
                         }
-                    ]
+                    ],
+                    "description": "Fills the selection."
                 },
                 {
                     "name": "stroke",
-                    "description": "Strokes the selection.",
                     "parameters": [
                         {
                             "name": "strokeColor",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false,
                             "description": "The color to stroke the selection with."
                         },
                         {
                             "name": "width",
-                            "array": false,
                             "type": "int",
+                            "array": false,
                             "optional": false,
                             "description": "The stroke width."
                         },
                         {
-                            "description": "The stroke location.",
-                            "array": false,
                             "name": "location",
-                            "value": "StrokeLocation.CENTER",
                             "type": "StrokeLocation",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The stroke location.",
+                            "value": "StrokeLocation.CENTER"
                         },
                         {
-                            "description": "The color blend mode.",
-                            "array": false,
                             "name": "mode",
-                            "value": "ColorBlendMode.NORMAL",
                             "type": "ColorBlendMode",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The color blend mode.",
+                            "value": "ColorBlendMode.NORMAL"
                         },
                         {
-                            "description": "The opacity of the stroke color as a percentage. Range: 1 to 100.",
-                            "array": false,
                             "name": "opacity",
-                            "value": "100",
                             "type": "int",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The opacity of the stroke color as a percentage. Range: 1 to 100.",
+                            "value": "100"
                         },
                         {
                             "name": "preserveTransparency",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, preserves transparency."
                         }
-                    ]
+                    ],
+                    "description": "Strokes the selection."
                 },
                 {
                     "name": "selectAll",
-                    "description": "Selects the entire layer.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Selects the entire layer."
                 },
                 {
                     "name": "deselect",
-                    "description": "Deselects the current selection.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deselects the current selection."
                 },
                 {
                     "name": "select",
-                    "description": "Selects the specified region.",
                     "parameters": [
                         {
                             "name": "region",
-                            "array": true,
                             "type": "any",
+                            "array": true,
                             "optional": false,
                             "description": "Array of x and y coordinates that describe the corners of the selection, in the format [[x1, y1], [x2,y2],[x3, y3], [x4,y4]]"
                         },
                         {
-                            "description": "The method for combining the new selection with the existing selection.",
-                            "array": false,
                             "name": "type",
-                            "value": "SelectionType.REPLACE",
                             "type": "SelectionType",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The method for combining the new selection with the existing selection.",
+                            "value": "SelectionType.REPLACE"
                         },
                         {
-                            "description": "The feather amount.",
-                            "array": false,
                             "name": "feather",
-                            "value": "0",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The feather amount.",
+                            "value": "0"
                         },
                         {
-                            "description": "If true, anti-aliasing is used.",
-                            "array": false,
                             "name": "antiAlias",
-                            "value": "true",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, anti-aliasing is used.",
+                            "value": "true"
                         }
-                    ]
+                    ],
+                    "description": "Selects the specified region."
                 },
                 {
                     "name": "expand",
-                    "description": "Expands the selection.",
                     "parameters": [
                         {
                             "name": "by",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": false,
                             "description": "The amount to expand the selection."
                         }
-                    ]
+                    ],
+                    "description": "Expands the selection."
                 },
                 {
                     "name": "feather",
-                    "description": "Feathers the edges of the selection.",
                     "parameters": [
                         {
                             "name": "by",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": false,
                             "description": "The amount to feather the edge."
                         }
-                    ]
+                    ],
+                    "description": "Feathers the edges of the selection."
                 },
                 {
                     "name": "grow",
-                    "description": "Grows the selection to include all adjacent pixels falling within the specified tolerance range.",
                     "parameters": [
                         {
                             "name": "tolerance",
-                            "array": false,
                             "type": "int",
+                            "array": false,
                             "optional": false,
                             "description": "The tolerance range. Range: 0 to 255."
                         },
                         {
                             "name": "antiAlias",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": false,
                             "description": "If true, anti-aliasing is used."
                         }
-                    ]
+                    ],
+                    "description": "Grows the selection to include all adjacent pixels falling within the specified tolerance range."
                 },
                 {
                     "name": "invert",
-                    "description": "Inverts the selection.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Inverts the selection."
                 },
                 {
                     "name": "similar",
-                    "description": "Grows the selection to include pixels throughout the image falling within the tolerance range.",
                     "parameters": [
                         {
                             "name": "tolerance",
-                            "array": false,
                             "type": "int",
+                            "array": false,
                             "optional": false,
                             "description": "The tolerance range. Range: 0 to 255."
                         },
                         {
                             "name": "antiAlias",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": false,
                             "description": "If true, anti-aliasing is used."
                         }
-                    ]
+                    ],
+                    "description": "Grows the selection to include pixels throughout the image falling within the tolerance range."
                 },
                 {
                     "name": "smooth",
-                    "description": "Cleans up stray pixels left inside or outside a color-based selection (within the radius specified in pixels).",
                     "parameters": [
                         {
                             "name": "radius",
-                            "array": false,
                             "type": "int",
+                            "array": false,
                             "optional": false,
                             "description": "The sample radius in pixels. Range: 0 to 100."
                         }
-                    ]
+                    ],
+                    "description": "Cleans up stray pixels left inside or outside a color-based selection (within the radius specified in pixels)."
                 },
                 {
                     "name": "store",
-                    "description": "Saves the selection as a channel.",
                     "parameters": [
                         {
                             "name": "into",
-                            "array": false,
                             "type": "Channel",
+                            "array": false,
                             "optional": false,
                             "description": "The channel to save the selection to."
                         },
                         {
-                            "description": "How to add the selection to the existing contents of the channel.",
-                            "array": false,
                             "name": "combination",
-                            "value": "SelectionType.REPLACE",
                             "type": "SelectionType",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "How to add the selection to the existing contents of the channel.",
+                            "value": "SelectionType.REPLACE"
                         }
-                    ]
+                    ],
+                    "description": "Saves the selection as a channel."
                 },
                 {
                     "name": "load",
-                    "description": "Loads the selection from the specified channel.",
                     "parameters": [
                         {
                             "name": "from",
-                            "array": false,
                             "type": "Channel",
+                            "array": false,
                             "optional": false,
                             "description": "The channel to load the selection from."
                         },
                         {
-                            "description": "How to combine the channel contents with the existing selection.",
-                            "array": false,
                             "name": "combination",
-                            "value": "SelectionType.REPLACE",
                             "type": "SelectionType",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "How to combine the channel contents with the existing selection.",
+                            "value": "SelectionType.REPLACE"
                         },
                         {
-                            "description": "If true, selects the inverse of the channel contents.",
-                            "array": false,
                             "name": "inverting",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, selects the inverse of the channel contents.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Loads the selection from the specified channel."
                 },
                 {
                     "name": "translate",
-                    "description": "Moves the object relative to its current position.",
                     "parameters": [
                         {
                             "name": "deltaX",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": true,
                             "description": "The amount to move the object horizontally."
                         },
                         {
                             "name": "deltaY",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": true,
                             "description": "The amount to move the object vertically."
                         }
-                    ]
+                    ],
+                    "description": "Moves the object relative to its current position."
                 },
                 {
                     "name": "translateBoundary",
-                    "description": "Moves the boundary of selection relative to its current position.",
                     "parameters": [
                         {
                             "name": "deltaX",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": true,
                             "description": "The amount to move the object horizontally."
                         },
                         {
                             "name": "deltaY",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": true,
                             "description": "The amount to move the object vertically."
                         }
-                    ]
+                    ],
+                    "description": "Moves the boundary of selection relative to its current position."
                 },
                 {
                     "name": "rotate",
-                    "description": "Rotates the object.",
                     "parameters": [
                         {
                             "name": "angle",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The number of degrees to rotate the object."
                         },
                         {
-                            "description": "The point to rotate about.",
-                            "array": false,
                             "name": "anchor",
-                            "value": "AnchorPosition.MIDDLECENTER",
                             "type": "AnchorPosition",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The point to rotate about.",
+                            "value": "AnchorPosition.MIDDLECENTER"
                         }
-                    ]
+                    ],
+                    "description": "Rotates the object."
                 },
                 {
                     "name": "rotateBoundary",
-                    "description": "Rotates the boundary of the selection.",
                     "parameters": [
                         {
                             "name": "angle",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The rotation angle (in degrees)"
                         },
                         {
-                            "description": "The point to rotate about.",
-                            "array": false,
                             "name": "anchor",
-                            "value": "AnchorPosition.MIDDLECENTER",
                             "type": "AnchorPosition",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The point to rotate about.",
+                            "value": "AnchorPosition.MIDDLECENTER"
                         }
-                    ]
+                    ],
+                    "description": "Rotates the boundary of the selection."
                 },
                 {
                     "name": "resize",
-                    "description": "Resizes the selected area to the specified dimensions and anchor position.",
                     "parameters": [
                         {
-                            "description": "The amount to scale the selection horizontally (as a percentage).",
-                            "array": false,
                             "name": "horizontal",
-                            "value": "100",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The amount to scale the selection horizontally (as a percentage).",
+                            "value": "100"
                         },
                         {
-                            "description": "The amount to scale the selection vertically (as a percentage).",
-                            "array": false,
                             "name": "vertical",
-                            "value": "100",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The amount to scale the selection vertically (as a percentage).",
+                            "value": "100"
                         },
                         {
-                            "description": "The point to scale around.",
-                            "array": false,
                             "name": "anchor",
-                            "value": "AnchorPosition.MIDDLECENTER",
                             "type": "AnchorPosition",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The point to scale around.",
+                            "value": "AnchorPosition.MIDDLECENTER"
                         }
-                    ]
+                    ],
+                    "description": "Resizes the selected area to the specified dimensions and anchor position."
                 },
                 {
                     "name": "resizeBoundary",
-                    "description": "Scales the boundary of the selection.",
                     "parameters": [
                         {
-                            "description": "The amount to scale the object horizontally (as a percentage).",
-                            "array": false,
                             "name": "horizontal",
-                            "value": "100",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The amount to scale the object horizontally (as a percentage).",
+                            "value": "100"
                         },
                         {
-                            "description": "The amount to scale the object vertically (as a percentage).",
-                            "array": false,
                             "name": "vertical",
-                            "value": "100",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The amount to scale the object vertically (as a percentage).",
+                            "value": "100"
                         },
                         {
-                            "description": "The point to scale around.",
-                            "array": false,
                             "name": "anchor",
-                            "value": "AnchorPosition.MIDDLECENTER",
                             "type": "AnchorPosition",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The point to scale around.",
+                            "value": "AnchorPosition.MIDDLECENTER"
                         }
-                    ]
+                    ],
+                    "description": "Scales the boundary of the selection."
                 },
                 {
                     "name": "makeWorkPath",
-                    "description": "Makes this selection item the workpath for this document.",
                     "parameters": [
                         {
                             "name": "tolerance",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The tolerance in pixels."
                         }
-                    ]
+                    ],
+                    "description": "Makes this selection item the workpath for this document."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "The selected area of the document or layer."

@@ -1,0 +1,97 @@
+{
+    "name": "TabbedPalette",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "content",
+                    "readonly": true,
+                    "type": "Object",
+                    "array": false,
+                    "description": "When type is script, the ScriptUI Window object to display."
+                },
+                {
+                    "name": "title",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The localized string to display as the palette title."
+                },
+                {
+                    "name": "id",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A non-localized unique identifier for the palette.",
+                    "longdesc": "The identifiers for the built-in palettes are:favoritesTab, foldersTab, filterTab, metadataTab, keywordsTab, contentTab, cinemaPreviewTab, inspectorTab"
+                },
+                {
+                    "name": "showMenuItem",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "type",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The type of content displayed in the palette; script (ScriptUI) or web (HTML). "
+                },
+                {
+                    "name": "url",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "When type is web, the path to the page to display."
+                },
+                {
+                    "name": "visible",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, this palette is visible, when false it is hidden."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "remove",
+                    "parameters": [],
+                    "description": "Removes this palette from the list of available palettes and destroys it."
+                },
+                {
+                    "name": "setLocation",
+                    "parameters": [
+                        {
+                            "name": "paletteColumn",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The horizontal location of the palette in the browser.",
+                            "longdesc": " One of \"left\" (the leftmost column), \"center\" (the middle column), or \"right\" (the rightmost column)."
+                        },
+                        {
+                            "name": "paletteRow",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The vertical location of the palette in the browser. ",
+                            "longdesc": "The number of rows can vary according to the current workspace configuration. This function cannot create new rows. A string or number, one of: \n\t\t\t\t\t\t\"top\": The topmost row (the default)\n\t\t\t\t\t\t\"middle\": The middle row (or close to the middle, if there are an even number)\t\n\t\t\t\t\t\t\"bottom\": The bottommost row\n\t\t\t\t\t\tCan be a number, the 0-based index of the row, where 0 is the topmost row. If the index is out of range, the palette is placed in the closest existing row."
+                        }
+                    ],
+                    "description": "Moves this palette to a specific docking location in the browser."
+                }
+            ]
+        }
+    },
+    "description": "Represents a  tabbed palette in the Adobe Bridge browser window. ",
+    "longdesc": "Allows a script to define and add a tabbed palette to a browser window. A script-defined palette is displayed in addition to the default palettes such as Favorites, Folders, Preview, Filter, Keywords, and Metadata. A script-defined palette can display a user interface defined in ScriptUI, or it can display HTML.\n\t\tYou can add a palette to an existing browser window at any time (as long as the identifier is unique), and you can use the create document event to add your palette to new browser windows on creation.\n\t\tThe name of a script-defined palette is automatically added to all relevant menus. You can specify where the tab goes, or move it programmatically. When it is shown, it can be dragged and dropped like the default palettes; scripts cannot query the current position..\n\t\tYou can show and hide individual palettes using this object's properties. A list of all defined palettes for a browser, including default palettes, is available in app.document.palettes. "
+}

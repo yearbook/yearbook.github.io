@@ -1,0 +1,236 @@
+{
+    "name": "ProgressOperator",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "cancelRequested",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the user has requested that the operation be canceled. "
+                },
+                {
+                    "name": "conflictType",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The type of the current file-system conflict encountered during the operation. ",
+                    "longdesc": "One of: none, userConfirmationRequired, fatal"
+                },
+                {
+                    "name": "conflictMessage",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A string describing the current file-system conflict that prevents the operation from being performed. ",
+                    "longdesc": "Can identify one of the preset Adobe Bridge error messages, or can be an arbitrary descriptive string. Preset messages are identified by the following string values: none, deleteFile, deleteMultipleFiles, deleteReadOnlyFile, moveReadOnlyFile, readOnlyFileExists, fileExists, fileIsBusy, targetFolderExists, fatalErrorSameFile, fatalErrorSameFolder, fatalErrorMoveToChild, fatalErrorSourceNotAvailable, fatalErrorStorageFull, fatalErrorSourceAccessDenied, fatalErrorTargetAccessDenied, fatalErrorUnknown, noXMPSupport, undoDelete, messageCustom"
+                },
+                {
+                    "name": "description",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A description of the operation, suitable for display."
+                },
+                {
+                    "name": "errorTarget",
+                    "readonly": false,
+                    "type": "Thumbnail",
+                    "array": false,
+                    "description": "When operationStatus is inError, the problematic thumbnail."
+                },
+                {
+                    "name": "newNames",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "When sources has a value, an array of the same length containing the new name strings to be assigned to the source Thumbnail objects after they are transfered to the target. "
+                },
+                {
+                    "name": "operationStatus",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The status of the operation with respect to the immediate action.",
+                    "longdesc": "Also returned by getOperationStatus(). One of: incomplete, inCancellation, inConflict, inError, succeeded, cancelled, failed"
+                },
+                {
+                    "name": "percentageComplete",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "How much of the operation has currently been completed, in the range [0..100]. "
+                },
+                {
+                    "name": "processingStatus",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The current overall status of the operation with respect to Adobe Bridge.",
+                    "longdesc": "Reports whether the operation has begun, is still going on, has been paused by the user, or has finished. Also returned by the getProcessingStatus(). One of: notStarted, inProgress, awaitingResume, completed"
+                },
+                {
+                    "name": "progressMessage",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A description of the current state of the operation, suitable for display. ",
+                    "longdesc": "Also returned by getProgressMessage().."
+                },
+                {
+                    "name": "resolvePolicy",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "How to apply the conflict-resolution method, applyForOneConflictOnly or applyToAllConflicts",
+                    "longdesc": "This is for the developer's information in a ModalOperator or when UI is suppressed; Adobe Bridge does not check it.   "
+                },
+                {
+                    "name": "resolveMethod",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "How to resolve file-system conflicts. ",
+                    "longdesc": "This is for the developer's information in a ModalOperator or when UI is suppressed; Adobe Bridge does not check it. One of: abort, noOverride, override, overrideConditionally"
+                },
+                {
+                    "name": "result",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
+                    "description": "An optional result for an operation, such as the path that results from a createNewContainer() operation."
+                },
+                {
+                    "name": "sources",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A set of Thumbnail objects that the operation acts upon. "
+                },
+                {
+                    "name": "target",
+                    "readonly": false,
+                    "type": "Thumbnail",
+                    "array": false,
+                    "description": "A target Thumbnail object for the operation. "
+                },
+                {
+                    "name": "timeout",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "A number of milliseconds to wait before aborting the operation.",
+                    "longdesc": "Default is 0, meaning that the operation does not time out."
+                },
+                {
+                    "name": "getPercentageComplete",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns the percentage of the operation that has currently been completed, for use in displaying the Progress dialog.",
+                    "longdesc": "Adobe Bridge invokes this when it needs to update the Progress bar. Return a number in the range [0..100]."
+                },
+                {
+                    "name": "getProcessingStatus",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns the current overall status of the operation with respect to Adobe Bridge.",
+                    "longdesc": "Describes whether the operation has begun, is still going on, has been paused by the user, or has finished. Return one of the following string values: notStarted, inProgress, awaitingResume, completed"
+                },
+                {
+                    "name": "getProgressMessage",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns a message suitable for display in the Progress dialog. ",
+                    "longdesc": "Return a string."
+                },
+                {
+                    "name": "getTotalBytesTransferred",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns the current number of bytes that have been transferred to the target in the course of this operation. ",
+                    "longdesc": "Return a number."
+                },
+                {
+                    "name": "getConflictInfo",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns a description of a file-system conflict that prevents the operation from being performed on the current thumbnail. ",
+                    "longdesc": "The string can identify one of the preset Adobe Bridge error messages, or can be an arbitrary descriptive string suitable for display in a conflict-resolution dialog. Preset messages are identified by the following string values: readOnlyFile, readOnlyFileExists, targetFolderExists, fileExists, sameFile, sameFolder, moveToChild, sourceNotAvailable, storageFull, sourceAccessDenied, targetAccessDenied, unknown"
+                },
+                {
+                    "name": "getTotalNodeCount",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns the total number of source nodes to be operated on. ",
+                    "longdesc": "Return a number."
+                },
+                {
+                    "name": "getProcessedNodeCount",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns the number of source nodes that have been processed so far. ",
+                    "longdesc": "Return a number."
+                },
+                {
+                    "name": "getType",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that returns the subclass type of this operator. ",
+                    "longdesc": "Return a string, modal or progress."
+                },
+                {
+                    "name": "start",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that initiates the operation. ",
+                    "longdesc": " Adobe Bridge invokes this after the operator has been enqueued.\n\t\t\t\tFor a modal operator, the method should return when the operation is complete.\n\t\t\t\tFor a progress operator, the method should begin the background task and return.\n\t\t\t\tReturn undefined."
+                },
+                {
+                    "name": "stop",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that terminates the operation.",
+                    "longdesc": " Adobe Bridge invokes this after the operation has been stopped by user interaction. Return undefined."
+                },
+                {
+                    "name": "resume",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that restarts the operation after it has been stopped by user interaction.",
+                    "longdesc": "Return true if the operation has been successfully restarted."
+                },
+                {
+                    "name": "resolveConflict",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a method that resolves a file-system conflict, as identified by the conflictType and conflictMessage values. ",
+                    "longdesc": "Adobe Bridge invokes this after the user makes selections in a conflict-resolution dialog, passing in the user\u2019s choices. See Adobe Bridge JavaScript Reference for additional details."
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "A lengthy node-handling operation that can report its progress and be interrupted or canceled.",
+    "longdesc": "When implementing a node-handling extension, you must define certain methods for a node-handler\u2019s ExtensionHandler and ExtensionModel to create and return an Operator object, which actually implements the operation. The model method returns immediately. To start the operation, your node handler (or Adobe Bridge) passes the returned Operator object to  app.enqueueOperation(). This in turn calls the  start() method defined in the object.\n\t\tThis object encapsulates an operation that performs a background task, while Adobe Bridge displays a Progress bar. It can do so incrementally, periodically notifying Adobe Bridge of the current status. For this object, the start() method should spawn a thread to perform the operation and return immediately. Adobe Bridge displays a Progress bar, and resumes activity on the main thread. When the background thread updates the status in any way that affects the display, it must pass this object to  app.operationChanged(). Adobe Bridge queries this object in order to update the Progress dialog or display the Adobe Bridge-supplied error handling or resolution conflict dialogs."
+}

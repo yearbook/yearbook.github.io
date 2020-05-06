@@ -2,63 +2,114 @@
     "name": "LayerComps",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of the layer comp."
+                        },
+                        {
+                            "name": "comment",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The description of the layer comp."
+                        },
+                        {
+                            "name": "appearance",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, uses the layer appearance or style for this layer comp.",
+                            "value": "false"
+                        },
+                        {
+                            "name": "position",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, uses the layer position for this layer comp.",
+                            "value": "false"
+                        },
+                        {
+                            "name": "visibility",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, uses the layer visibility for this layer comp.",
+                            "value": "true"
+                        }
+                    ],
+                    "description": "Adds a layer comp.",
+                    "type": "LayerComp",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "LayerComp",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "LayerComp",
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Get an element in the collection with the provided index. ",
-                    "array": false,
-                    "type": "LayerComp",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "uint",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "LayerComp",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "The layer comp objects associated with the document."

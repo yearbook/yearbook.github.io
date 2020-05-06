@@ -2,169 +2,194 @@
     "name": "Socket",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "Socket",
+                    "parameters": [],
+                    "description": "Creates a new Socket object.",
+                    "type": "Socket",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "host",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "The name of the remote computer when a connection is established."
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the remote computer when a connection is established.",
+                    "longdesc": " If the connection is shut down or does not exist, the property contains the empty string."
                 },
                 {
                     "name": "encoding",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "Sets or retrieves the name of the encoding used to transmit data."
+                    "type": "String",
+                    "array": false,
+                    "description": "Sets or retrieves the name of the encoding used to transmit data.",
+                    "longdesc": "Typical values are \"ASCII\", \"BINARY\", or \"UTF-8\"."
                 },
                 {
                     "name": "error",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "A message describing the most recent error. Setting this value clears any error message."
                 },
                 {
                     "name": "eof",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "When true, the receive buffer is empty."
                 },
                 {
                     "name": "connected",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "When true, the connection is active."
                 },
                 {
-                    "description": "The timeout in seconds to be applied to read or write operations.",
-                    "array": false,
-                    "readonly": false,
                     "name": "timeout",
-                    "value": "10",
-                    "type": "Number"
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The timeout in seconds to be applied to read or write operations.",
+                    "value": "10"
                 }
             ],
             "methods": [
                 {
                     "name": "open",
-                    "description": "Opens the connection for subsequent read/write operations.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "host",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The server to connect to. "
+                            "description": "The server to connect to. ",
+                            "longdesc": "This can be a DNS name, an IPv4 address, or an IPv6 address, followed by a colon and a port number."
                         },
                         {
-                            "description": "The encoding to be used for the connection",
-                            "array": false,
                             "name": "encoding",
-                            "value": "ASCII",
                             "type": "String",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The encoding to be used for the connection",
+                            "longdesc": "Typical values are \"ASCII\", \"binary\", or \"UTF-8\".",
+                            "value": "ASCII"
                         }
-                    ]
+                    ],
+                    "description": "Opens the connection for subsequent read/write operations.",
+                    "longdesc": "The call to open() and the call to listen() are mutually exclusive. Call one function or the other, not both.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "listen",
-                    "description": "Instructs the object to start listening for an incoming connection.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "port",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "\n\t\t\t\t\t\t\t\tThe TCP/IP port number to listen on.\n\t\t\t\t\t\t\t"
+                            "description": "\n\t\t\t\t\t\t\t\tThe TCP/IP port number to listen on.\n\t\t\t\t\t\t\t",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tValid port numbers are 1 to 65535. Typical values are 80 for a Web server, 23 for a Telnet server and so on.\n\t\t\t\t\t\t\t"
                         },
                         {
-                            "description": "The encoding to be used for the connection",
-                            "array": false,
                             "name": "encoding",
-                            "value": "ASCII",
                             "type": "String",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The encoding to be used for the connection",
+                            "longdesc": "Typical values are \"ASCII\", \"BINARY\", or \"UTF-8\".",
+                            "value": "ASCII"
                         }
-                    ]
+                    ],
+                    "description": "Instructs the object to start listening for an incoming connection.",
+                    "longdesc": "The call to open() and the call to listen()are mutually exclusive. Call one function or the other, not both.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "close",
+                    "parameters": [],
                     "description": "Terminates the open connection.",
-                    "array": false,
+                    "longdesc": "\n\t\t\t\t\t\tReturns true if the connection was closed, false on I/O errors.\n\t\t\t\t\t\tDeleting the object also closes the connection, but not until JavaScript garbage-collects the object. The connection might stay open longer than you wish if you do not close it explicitly.\n\t\t\t\t\t",
                     "type": "Boolean",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "read",
-                    "description": "\n\t\t\t\t\t\tReads up to the specified number of characters from the connection. CR characters are ignored unless the encoding is set to \"BINARY\".\n\t\t\t\t\t",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "count",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
-                            "description": "The number of characters to read."
+                            "description": "The number of characters to read.",
+                            "longdesc": "If not supplied, the connection attempts to read as many characters it can get and returns immediately. "
                         }
-                    ]
+                    ],
+                    "description": "\n\t\t\t\t\t\tReads up to the specified number of characters from the connection. CR characters are ignored unless the encoding is set to \"BINARY\".\n\t\t\t\t\t",
+                    "longdesc": "Returns a string that contains up to the number of characters that were supposed to be read, or the number of characters read before the connection closed or timed out.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "readln",
+                    "parameters": [],
                     "description": "Reads one line of text up to the next line feed. ",
-                    "array": false,
+                    "longdesc": "Line feeds are recognized as LF or CRLF pairs. CR characters are ignored. Returns a string containing the characters.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "write",
-                    "description": "Concatenates all arguments into a single string and writes that string to the connection.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "\n\t\t\t\t\t\t\t\tAny number of string values. All arguments are concatenated to form the string to be written. CRLF sequences are converted to LFs unless the encoding is set to \"BINARY\".\n\t\t\t\t\t\t\t"
                         }
-                    ]
+                    ],
+                    "description": "Concatenates all arguments into a single string and writes that string to the connection.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "writeln",
-                    "description": "Concatenates all arguments into a single string, appends a LF character, and writes that string to the connection.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "\n\t\t\t\t\t\t\t\tAny number of string values. All arguments are concatenated to form the string to be written. CRLF sequences are converted to LFs unless the encoding is set to \"BINARY\".\n\t\t\t\t\t\t\t"
                         }
-                    ]
+                    ],
+                    "description": "Concatenates all arguments into a single string, appends a LF character, and writes that string to the connection.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "poll",
+                    "parameters": [],
                     "description": "Checks a listening object for a new incoming connection.",
-                    "array": false,
+                    "longdesc": "If a connection request was detected, the method returns a new Socket object that wraps the new connection. Use this connection object to communicate with the remote computer. After use, close the connection and delete the JavaScript object. If no new connection request was detected, the method returns null.",
                     "type": "Socket",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "Creates a TCP/IP connection, or establishes a TCP/IP server."

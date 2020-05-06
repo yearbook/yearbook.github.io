@@ -2,306 +2,412 @@
     "name": "Folder",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "fs",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the current file system.",
+                    "longdesc": "One of \"Windows\", \"Macintosh\", or \"Unix\"."
+                },
+                {
+                    "name": "current",
+                    "readonly": false,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the current folder.",
+                    "longdesc": "Assign a Folder object or a string containing the new path name to set the current folder. This is a class property accessed through the Folder constructor."
+                },
+                {
+                    "name": "startup",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the folder containing the executable image of the running application."
+                },
+                {
+                    "name": "appPackage",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "In Mac OS, a Folder object for the folder containing the bundle of the running application."
+                },
+                {
+                    "name": "system",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the folder containing the operating system files.",
+                    "longdesc": "\n\t\t\t\t\t\tIn Windows, the value of %windir% (by default, C:\\\\Windows)\n\t\t\t\t\t\tIn Mac OS, /System\n\t\t\t\t\t"
+                },
+                {
+                    "name": "trash",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the folder containing deleted items. On Windows, the trash folder is a virtual\n\t\t\t\t\t\t\t\t   folder containing a database; therefore, the property value is null on Windows."
+                },
+                {
+                    "name": "temp",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the default folder for temporary files."
+                },
+                {
+                    "name": "userData",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the folder containing the user's application data.",
+                    "longdesc": "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tIn Windows, the value of %USERDATA% (by default, C:\\\\Documents and Settings\\\\username\\\\Application Data)\n\t\t\t\t\t\t\n\t\t\t\t\t\tIn Mac OS,  ~/Library/Application Support.\n\t\t\t\t\t"
+                },
+                {
+                    "name": "appData",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "The folder containing the application data for all users.",
+                    "longdesc": "\n\t\t\t\t\t\tIn Windows, the value of %APPDATA% (by default, C:\\\\Documents and Settings\\\\All Users\\\\Application Data)\n\t\t\t\t\t\tIn Mac OS, /Library/Application Support\n\t\t\t\t\t"
+                },
+                {
+                    "name": "commonFiles",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the folder containing common files for all programs installed by the user.",
+                    "longdesc": "\n\t\t\t\t\t\tIn Windows, the value of %CommonProgramFiles% (by default, C:\\\\Program Files\\\\Common Files)\n\t\t\t\t\t\tIn Mac OS, /Library/Application Support\n\t\t\t\t\t"
+                },
+                {
+                    "name": "myDocuments",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A folder pointing to the user's My Documents folder.",
+                    "longdesc": "\n\t\t\t\t\t\tIn Windows, C:\\\\Documents and Settings\\\\username\\\\My Documents\n\t\t\t\t\t\tIn Mac OS,  ~/Documents\n\t\t\t\t\t"
+                },
+                {
+                    "name": "desktop",
+                    "readonly": true,
+                    "type": "Folder",
+                    "array": false,
+                    "description": "A Folder object for the folder that contains the user\u2019s desktop.",
+                    "longdesc": "\n\t\t\t\t\t\tIn Windows, C:\\\\Documents and Settings\\\\username\\\\Desktop\n\t\t\t\t\t\tIn Mac OS, ~/Desktop\n\t\t\t\t\t"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "encode",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The string to encode."
+                        }
+                    ],
+                    "description": "Encodes a string as required by RFC 2396, and returns the encoded string.",
+                    "longdesc": "\n\t\t\t\t\t\tAll special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string \"my file\" is encoded as \"my%20file\".\n\t\t\t\t\t\tSpecial characters are those with a numeric value greater than 127, except the following: / - _ . ! ~ * ' ( )\n\t\t\t\t\t\tSee also\u00a0encodeURI().\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "decode",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The UTF-8 string to decode."
+                        }
+                    ],
+                    "description": "Decodes a UTF-8 encoded string as required by RFC 2396, and returns the decoded string.",
+                    "longdesc": "\n\t\t\t\t\t\tSee also\u00a0String.decodeURI().\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "isEncodingAvailable",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The encoding name.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tTypical values are \"ASCII\", \"binary\", or \"UTF-8\".  For a complete list of supported encodings, see the\u00a0JavaScript Tools Guide.\n\t\t\t\t\t\t\t"
+                        }
+                    ],
+                    "description": "Reports whether a given encoding is available.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "selectDialog",
+                    "parameters": [
+                        {
+                            "name": "prompt",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The prompt text, if the dialog allows a prompt."
+                        }
+                    ],
+                    "description": "Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder.",
+                    "longdesc": "\n\t\t\t\t\t\tDiffers from the object method selectDlg() in that it does not preselect a folder.\n\t\t\t\t\t\tIf the user clicks OK, returns a File or Folder object for the selected file or folder.\n\t\t\t\t\t\tIf the user cancels, returns null.\n\t\t\t\t\t",
+                    "type": "Folder",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "Folder",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The absolute or relative path to the folder associated with this object, specified in URI format.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tThe value stored in the object is the absolute path.The path need not refer to an existing folder. If the path refers to an existing file, rather than a folder:\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tThe\u00a0Folder()\u00a0function returns a File object instead of a Folder object.\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tThe\u00a0new\u00a0operator returns a Folder object for a nonexisting folder with the same name.\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t"
+                        }
+                    ],
+                    "description": "Creates and returns a new Folder object referring to a given file-system location.",
+                    "longdesc": "If the path name refers to an already existing disk file, a File object is returned instead.  Returns the new Folder object.",
+                    "type": "Folder",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "alias",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "When true, the object refers to a file system alias or shortcut."
                 },
                 {
                     "name": "created",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The creation date of the referenced folder, or null if the object does not refer to a folder on disk."
                 },
                 {
                     "name": "error",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "A message describing the most recent file system error."
+                    "type": "String",
+                    "array": false,
+                    "description": "A message describing the most recent file system error.",
+                    "longdesc": "Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files. Contains the empty string if there is no error."
                 },
                 {
                     "name": "exists",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "When true, this object refers to a folder that currently exists in the file system."
                 },
                 {
                     "name": "fsName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The platform-specific name of the referenced folder as a full path name."
                 },
                 {
                     "name": "fullName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The full path name for the referenced folder in URI notation. ."
                 },
                 {
                     "name": "absoluteURI",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The full path name for the referenced folder in URI notation."
                 },
                 {
                     "name": "relativeURI",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The path name for the referenced folder in URI notation, relative to the current folder."
                 },
                 {
                     "name": "modified",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The date of the referenced folder's last modification, or null if the object does not refer to a folder on disk."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The folder name portion of the absolute URI for the referenced file, without the path specification."
                 },
                 {
                     "name": "displayName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The localized name portion of the absolute URI for the referenced folder, without the path specification."
                 },
                 {
                     "name": "path",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The path portion of the object absolute URI for the referenced file, without the folder name."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Folder",
                     "readonly": true,
+                    "type": "Folder",
+                    "array": false,
                     "description": "TThe Folder object for the folder that contains this folder, or null if this object refers to the root folder of a volume."
                 }
             ],
             "methods": [
                 {
                     "name": "resolve",
+                    "parameters": [],
                     "description": "Attempts to resolve the file-system alias or shortcut that this object refers to.",
-                    "array": false,
+                    "longdesc": "If successful, creates and returns a new Folder object that points to the resolved file system element. Returns null if this object does not refer to an alias, or if the alias could not be resolved.",
                     "type": "Folder",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "rename",
-                    "description": "Renames the associated folder.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "newName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The new folder name, with no path information."
                         }
-                    ]
+                    ],
+                    "description": "Renames the associated folder.",
+                    "longdesc": "Does not resolve aliases, but renames the referenced alias or shortcut file itself. Returns true if the folder was successfully renamed.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "remove",
+                    "parameters": [],
                     "description": "Deletes the folder associated with this object from disk immediately, without moving it to the system trash.",
-                    "array": false,
+                    "longdesc": "\n\t\t\t\t\t\tFolders must be empty before they can be deleted. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself. Returns true if the file was successfully removed.\n\t\t\t\t\t\tIMPORTANT: Cannot be undone. It is recommended that you prompt the user for permission before deleting.\n\t\t\t\t\t",
                     "type": "Boolean",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "changePath",
-                    "description": "Changes the path specification of the referenced folder.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "path",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A string containing the new path, absolute or relative to the current folder."
                         }
-                    ]
+                    ],
+                    "description": "Changes the path specification of the referenced folder.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "getRelativeURI",
-                    "description": "Retrieves and returns the path for this file, relative to the specified base path, in URI notation.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
-                            "description": "A base path in URI notation.",
-                            "array": false,
                             "name": "basePath",
-                            "value": ".",
                             "type": "String",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "A base path in URI notation.",
+                            "value": "."
                         }
-                    ]
+                    ],
+                    "description": "Retrieves and returns the path for this file, relative to the specified base path, in URI notation.",
+                    "longdesc": "If no base path is supplied, the URI is relative to the path of the current folder.  Returns a string containing the relative URI.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "execute",
+                    "parameters": [],
                     "description": "Opens this folder in the platform-specific file browser (as if it had been double-clicked in the file browser).",
-                    "array": false,
+                    "longdesc": "Returns true immediately if the folder was opened successfully.",
                     "type": "Boolean",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Converts this object to a string.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Creates and returns a serialized string representation of this object.",
-                    "array": false,
+                    "longdesc": "\n\t\t\t\t\t\tPass the resulting string to\u00a0eval()\u00a0to recreate the object.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "selectDlg",
-                    "description": "Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder.",
-                    "array": false,
-                    "type": "Folder",
                     "parameters": [
                         {
                             "name": "prompt",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The prompt text, if the dialog allows a prompt."
                         }
-                    ]
+                    ],
+                    "description": "Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder.",
+                    "longdesc": "\n\t\t\t\t\t\tDiffers from the class method selectDialog() in that it preselects this folder.\n\t\t\t\t\t\tIf the user clicks OK, returns a File or Folder object for the selected file or folder.\n\t\t\t\t\t\tIf the user cancels, returns null.\n\t\t\t\t\t",
+                    "type": "Folder",
+                    "array": false
                 },
                 {
                     "name": "getFiles",
-                    "description": "Retrieves the contents of this folder, filtered by the supplied mask.",
-                    "array": false,
-                    "type": "Array",
                     "parameters": [
                         {
                             "name": "mask",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false,
-                            "description": "A search mask for file names, specified as a string or a function."
+                            "description": "A search mask for file names, specified as a string or a function.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tA mask string can contain question mark (?) and asterisk (*) wild cards. Default is \"*\", which matches all file names.\n\t\t\t\t\t\t\t\tCan also be the name of a function that takes a File or Folder object as its argument. It is called for each file or folder found in the search; if it returns true, the object is added to the return array.\n\t\t\t\t\t\t\t\tNOTE: In Windows, all aliases end with the extension .lnk. ExtendScript strips this from the file name when found, in order to preserve compatibility with other operating systems. You can search for all aliases by supplying the search mask \"*.lnk\", but note that such code is not portable.\n\t\t\t\t\t\t\t"
                         }
-                    ]
+                    ],
+                    "description": "Retrieves the contents of this folder, filtered by the supplied mask.",
+                    "longdesc": "Returns an array of File and Folder objects, or null if this object's referenced folder does not exist.",
+                    "type": "Array",
+                    "array": false
                 },
                 {
                     "name": "create",
-                    "description": "\n\t\t\t\t\t\tCreates a folder at the location given by this object's\u00a0",
-                    "array": false,
+                    "parameters": [],
+                    "description": "\n\t\t\t\t\t\tCreates a folder at the location given by this object's\u00a0path\u00a0property.\n\t\t\t\t\t",
+                    "longdesc": "Returns true if the folder was created.",
                     "type": "Boolean",
-                    "parameters": []
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "name": "fs",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The name of the current file system."
-                },
-                {
-                    "name": "current",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": false,
-                    "description": "A Folder object for the current folder."
-                },
-                {
-                    "name": "startup",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the folder containing the executable image of the running application."
-                },
-                {
-                    "name": "appPackage",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "In Mac OS, a Folder object for the folder containing the bundle of the running application."
-                },
-                {
-                    "name": "system",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the folder containing the operating system files."
-                },
-                {
-                    "name": "trash",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the folder containing deleted items. On Windows, the trash folder is a virtual\n\t\t\t\t\t\t\t\t   folder containing a database; therefore, the property value is null on Windows."
-                },
-                {
-                    "name": "temp",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the default folder for temporary files."
-                },
-                {
-                    "name": "userData",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the folder containing the user's application data."
-                },
-                {
-                    "name": "appData",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "The folder containing the application data for all users."
-                },
-                {
-                    "name": "commonFiles",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the folder containing common files for all programs installed by the user."
-                },
-                {
-                    "name": "myDocuments",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A folder pointing to the user's My Documents folder."
-                },
-                {
-                    "name": "desktop",
-                    "array": false,
-                    "type": "Folder",
-                    "readonly": true,
-                    "description": "A Folder object for the folder that contains the user\u2019s desktop."
+                    "array": false
                 }
             ]
         }

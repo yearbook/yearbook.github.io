@@ -2,191 +2,195 @@
     "name": "Topic",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The parent of the Topic (a IndexSection, Topic or Index)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the Topic within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
-                    "name": "topics",
-                    "array": false,
-                    "type": "Topics",
-                    "readonly": true,
-                    "description": "A collection of index topics."
-                },
-                {
                     "name": "crossReferences",
-                    "array": false,
-                    "type": "CrossReferences",
                     "readonly": true,
+                    "type": "CrossReferences",
+                    "array": false,
                     "description": "A collection of index cross references. (For cross references in text, use the 'cross reference source' and 'hyperlink' objects.)"
                 },
                 {
                     "name": "pageReferences",
-                    "array": false,
-                    "type": "PageReferences",
                     "readonly": true,
+                    "type": "PageReferences",
+                    "array": false,
                     "description": "A collection of index page references."
                 },
                 {
-                    "name": "sortOrder",
+                    "name": "topics",
+                    "readonly": true,
+                    "type": "Topics",
                     "array": false,
-                    "type": "String",
+                    "description": "A collection of index topics."
+                },
+                {
+                    "name": "sortOrder",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The string by which the topic is sorted instead of the topic name is not used. Note: The actual topic text, rather than the sort order text, appears in the index."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the Topic."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the Topic.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes the Topic."
                 },
                 {
                     "name": "capitalize",
-                    "description": "Makes the initial letter for the specified index topic or group of index topics upper case.",
                     "parameters": [
                         {
-                            "description": "The entry or entries to capitalize. (Optional)",
-                            "array": false,
                             "name": "capitalizationOption",
-                            "value": "IndexCapitalizationOptions.ALL_ENTRIES",
                             "type": "IndexCapitalizationOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The entry or entries to capitalize. (Optional)",
+                            "value": "IndexCapitalizationOptions.ALL_ENTRIES"
                         }
-                    ]
+                    ],
+                    "description": "Makes the initial letter for the specified index topic or group of index topics upper case."
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Topic.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Topic",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "An index topic."

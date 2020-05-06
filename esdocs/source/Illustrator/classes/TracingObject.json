@@ -2,86 +2,90 @@
     "name": "TracingObject",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "sourceArt",
-                    "array": false,
-                    "type": "PageItem",
                     "readonly": true,
+                    "type": "PageItem",
+                    "array": false,
                     "description": "The source art used when creating a new tracing object."
                 },
                 {
                     "name": "tracingOptions",
-                    "array": false,
-                    "type": "TracingOptions",
                     "readonly": true,
+                    "type": "TracingOptions",
+                    "array": false,
                     "description": "The options used when tracing the artwork."
                 },
                 {
                     "name": "pathCount",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": true,
+                    "type": "Int32",
+                    "array": false,
                     "description": "The number of paths in the tracing result."
                 },
                 {
                     "name": "anchorCount",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": true,
+                    "type": "Int32",
+                    "array": false,
                     "description": "The number of anchors in the tracing result."
                 },
                 {
                     "name": "usedColorCount",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": true,
+                    "type": "Int32",
+                    "array": false,
                     "description": "The number of colors used in the tracing result."
                 }
             ],
             "methods": [
                 {
                     "name": "releaseTracing",
+                    "parameters": [],
                     "description": "Release the source artwork for the tracing object. Deletes this tracing object.",
-                    "array": false,
                     "type": "PageItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "expandTracing",
-                    "description": "Expand the tracing to paths. Deletes this tracing object.",
-                    "array": false,
-                    "type": "GroupItem",
                     "parameters": [
                         {
-                            "description": "Expand as viewed with the raster and vector view modes.",
-                            "array": false,
                             "name": "viewed",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "Expand as viewed with the raster and vector view modes.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Expand the tracing to paths. Deletes this tracing object.",
+                    "type": "GroupItem",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A tracing object."

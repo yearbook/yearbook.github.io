@@ -1,0 +1,103 @@
+{
+    "name": "MixedAudioTrackCollection",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": ".index",
+                    "readonly": true,
+                    "type": "AudioTrack",
+                    "array": false,
+                    "description": "Returns an audio track by its index"
+                },
+                {
+                    "name": "audioBusTracks",
+                    "readonly": true,
+                    "type": "AudioTrackCollection",
+                    "array": false,
+                    "description": "Collection of all audio bus tracks of the multitrack document."
+                },
+                {
+                    "name": "audioClipTracks",
+                    "readonly": true,
+                    "type": "AudioTrackCollection",
+                    "array": false,
+                    "description": "Collection of all audio clip tracks of the multitrack document."
+                },
+                {
+                    "name": "length",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Number of audio tracks."
+                },
+                {
+                    "name": "masterTrack",
+                    "readonly": true,
+                    "type": "AudioTrack",
+                    "array": false,
+                    "description": "The master track of the multitrack document."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "layout",
+                            "type": "AudioChannelLayout",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "trackType",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "Add new track"
+                        }
+                    ],
+                    "type": "AudioTrack",
+                    "array": false
+                },
+                {
+                    "name": "getAudioTrack",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Return audio track by its name"
+                        }
+                    ],
+                    "type": "AudioTrack",
+                    "array": false
+                },
+                {
+                    "name": "remove",
+                    "parameters": [
+                        {
+                            "name": "track",
+                            "type": "AudioTrack",
+                            "array": false,
+                            "optional": false,
+                            "description": "Remove track"
+                        }
+                    ],
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "Collection of all audio tracks of the according multitrack document as a mixed collection consiting of audio clip tracks, audio bus tracks and the master track. If accessed by index then the index starts with audio clip tracks, followed by audio bus tracks and the master track as the last entry."
+}

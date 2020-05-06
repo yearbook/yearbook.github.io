@@ -2,76 +2,167 @@
     "name": "ScriptUI",
     "dynamic": true,
     "elements": {
-        "instance": {
-            "properties": [],
-            "methods": []
-        },
         "class": {
             "properties": [
                 {
                     "name": "applicationFonts",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The font constants defined by the host application."
                 },
                 {
                     "name": "compatibility",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
-                    "description": "An object whose properties are the names of compatability modes supported by the host application. "
+                    "type": "Object",
+                    "array": false,
+                    "description": "An object whose properties are the names of compatability modes supported by the host application. ",
+                    "longdesc": "\n            The presence of ScriptUI.compatability.su1PanelCoordinates means that the application allows backward compatibility with the coordinate system of Panel elements in ScriptUI version 1.\n          "
                 },
                 {
                     "name": "coreVersion",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "A string containing the internal version number of the ScriptUI module."
                 },
                 {
                     "name": "environment",
-                    "array": false,
-                    "type": "Environment",
                     "readonly": true,
+                    "type": "Environment",
+                    "array": false,
                     "description": "An object whose properties define attributes of the environment in which ScriptUI operates."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
-                    "description": "An object whose properties and methods provide access to objects used in the ScriptUI event system."
+                    "type": "Events",
+                    "array": false,
+                    "description": "An object whose properties and methods provide access to objects used in the ScriptUI event system.",
+                    "longdesc": "\n            It contains one function, createEvent(), which allows you to create event objects in order to simulate user-interaction event\n          "
                 },
                 {
                     "name": "frameworkName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "A string containing the name of the UI component framework with which this version of ScriptUI is compatible."
                 },
                 {
                     "name": "version",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "A string containing the version number of the ScriptUI component framework"
                 },
                 {
                     "name": "Alignment",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "\n            Collects the enumerated values that can be used in the "
+                    "type": "String",
+                    "array": false,
+                    "description": "\n            Collects the enumerated values that can be used in the alignment and alignChildren properties of controls and containers.\n          ",
+                    "longdesc": " Predefined alignment values are: TOP, BOTTOM, LEFT, RIGHT, FILL, CENTER "
                 },
                 {
                     "name": "FontStyle",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
-                    "description": "\n            Collects the enumerated values that can be used as the style argument to the\u00a0"
+                    "type": "Object",
+                    "array": false,
+                    "description": "\n            Collects the enumerated values that can be used as the style argument to the\u00a0ScriptUI.newFont()\u00a0method.\n          ",
+                    "longdesc": "Predefined styles are REGULAR, BOLD, ITALIC, BOLDITALIC."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getResourceText",
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The text to match."
+                        }
+                    ],
+                    "description": "Finds and returns the resource for a given text string from the host application's resource data. ",
+                    "longdesc": "If no string resource matches the given text, the text itself is returned.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "newImage",
+                    "parameters": [
+                        {
+                            "name": "normal",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The resource name or the disk file path to the image used for the normal state."
+                        },
+                        {
+                            "name": "disabled",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The resource name, or the disk file path to the image used for the disabled state."
+                        },
+                        {
+                            "name": "pressed",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The resource name, or the file-system path to the image used for the pressed state."
+                        },
+                        {
+                            "name": "rollover",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The resource name, or the file-system path to the image used for the rollover state."
+                        }
+                    ],
+                    "description": "Loads a new image from resources or disk files into an image object.",
+                    "longdesc": "Creates a new global image object for use in controls that can display images, loading the associated images from the specified resources or image files. ",
+                    "type": "ScriptUIImage",
+                    "array": false
+                },
+                {
+                    "name": "newFont",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The font name, or the font family name."
+                        },
+                        {
+                            "name": "style",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "\n                The font style; can be string, or one of the values of\u00a0ScriptUI.FontStyle.\n              "
+                        },
+                        {
+                            "name": "size",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The font size in points."
+                        }
+                    ],
+                    "description": "Creates a new font object for use in text controls and titles.",
+                    "type": "ScriptUIFont",
+                    "array": false
                 }
             ]
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": []
         }
     },
     "description": "A global class containing central information about ScriptUI. Not instantiable. "

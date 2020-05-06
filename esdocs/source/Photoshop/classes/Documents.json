@@ -2,63 +2,144 @@
     "name": "Documents",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "UnitValue",
+                            "array": false,
+                            "optional": true,
+                            "description": "The width of the document."
+                        },
+                        {
+                            "name": "height",
+                            "type": "UnitValue",
+                            "array": false,
+                            "optional": true,
+                            "description": "The height of the document."
+                        },
+                        {
+                            "name": "resolution",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The resolution of the document (in pixels per inch)",
+                            "value": "72"
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The name of the document."
+                        },
+                        {
+                            "name": "mode",
+                            "type": "NewDocumentMode",
+                            "array": false,
+                            "optional": true,
+                            "description": "The document mode.",
+                            "value": "NewDocumentMode.RGB"
+                        },
+                        {
+                            "name": "initialFill",
+                            "type": "DocumentFill",
+                            "array": false,
+                            "optional": true,
+                            "description": "The initial fill of the document.",
+                            "value": "DocumentFill.WHITE"
+                        },
+                        {
+                            "name": "pixelAspectRatio",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The initial pixel aspect ratio of the document.",
+                            "value": "1.0"
+                        },
+                        {
+                            "name": "bitsPerChannel",
+                            "type": "BitsPerChannelType",
+                            "array": false,
+                            "optional": true,
+                            "description": "The number of bits per channel.",
+                            "value": "BitsPerChannelType.EIGHT"
+                        },
+                        {
+                            "name": "colorProfileName",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The name of color profile for document."
+                        }
+                    ],
+                    "description": "A document.",
+                    "type": "Document",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "Document",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "Document",
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Get an element in the collection with the provided index. ",
-                    "array": false,
-                    "type": "Document",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "uint",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "Document",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of documents."

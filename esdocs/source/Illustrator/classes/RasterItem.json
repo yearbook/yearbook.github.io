@@ -2,191 +2,195 @@
     "name": "RasterItem",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "file",
-                    "array": false,
-                    "type": "File",
                     "readonly": true,
+                    "type": "File",
+                    "array": false,
                     "description": "The file containing the raster artwork."
                 },
                 {
                     "name": "matrix",
-                    "array": false,
-                    "type": "Matrix",
                     "readonly": false,
+                    "type": "Matrix",
+                    "array": false,
                     "description": "The transformation matrix of the raster art object."
                 },
                 {
                     "name": "boundingBox",
-                    "array": false,
-                    "type": "Rectangle",
                     "readonly": false,
+                    "type": "Rectangle",
+                    "array": false,
                     "description": "Dimensions of raster art object regardless of transformations."
                 },
                 {
                     "name": "imageColorSpace",
-                    "array": false,
-                    "type": "ImageColorSpace",
                     "readonly": true,
+                    "type": "ImageColorSpace",
+                    "array": false,
                     "description": "The color space of the raster image."
                 },
                 {
                     "name": "embedded",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Is the raster art embedded within the illustration?"
                 },
                 {
                     "name": "overprint",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Is the raster art overprinting?"
                 },
                 {
                     "name": "colorizedGrayscale",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Is the raster art a colorized grayscale image?"
                 },
                 {
                     "name": "transparent",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Is the raster art transparent?"
                 },
                 {
                     "name": "channels",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": true,
+                    "type": "Int32",
+                    "array": false,
                     "description": "The number of image channels."
                 },
                 {
                     "name": "bitsPerChannel",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": true,
+                    "type": "Int32",
+                    "array": false,
                     "description": "The number of bits per channel."
                 },
                 {
                     "name": "colorants",
-                    "array": true,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": true,
                     "description": "List of colorant names."
                 },
                 {
                     "name": "status",
-                    "array": false,
-                    "type": "RasterLinkState",
                     "readonly": true,
+                    "type": "RasterLinkState",
+                    "array": false,
                     "description": "Status of the linked image."
                 },
                 {
                     "name": "contentVariable",
-                    "array": false,
-                    "type": "any",
                     "readonly": false,
+                    "type": "any",
+                    "array": false,
                     "description": "The content variable bound to this raster art object."
                 }
             ],
             "methods": [
                 {
                     "name": "move",
-                    "description": "Move the object.",
-                    "array": false,
-                    "type": "RasterItem",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Move the object.",
+                    "type": "RasterItem",
+                    "array": false
                 },
                 {
                     "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "array": false,
-                    "type": "RasterItem",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Duplicate this object.",
+                    "type": "RasterItem",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "Deletes this object.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes this object."
                 },
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "colorize",
-                    "description": "Colorize the RasterItem with a CMYK or RGB Color.",
                     "parameters": [
                         {
                             "name": "rasterColor",
-                            "array": false,
                             "type": "Color",
+                            "array": false,
                             "optional": false,
                             "description": "The color to use for coloring the TIFF image."
                         }
-                    ]
+                    ],
+                    "description": "Colorize the RasterItem with a CMYK or RGB Color."
                 },
                 {
                     "name": "trace",
+                    "parameters": [],
                     "description": "Trace this raster object using default options. Reorders this raster to the source art.",
-                    "array": false,
                     "type": "PluginItem",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "superclass": "PageItem",
-    "description": "Raster artwork item."
+    "description": "Raster artwork item.",
+    "superclass": "PageItem"
 }

@@ -2,449 +2,636 @@
     "name": "Date",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "parse",
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The string to parse."
+                        }
+                    ],
+                    "description": "Parses a string, returning a new Date object. The string should be similar to the string returned bt toString().",
+                    "type": "Date",
+                    "array": false
+                },
+                {
+                    "name": "UTC",
+                    "parameters": [
+                        {
+                            "name": "year",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The year expressed in four digits, for example, 2001.",
+                            "longdesc": "To indicate for a year from 1900 to 1999, you can specify a value from 0 to 99."
+                        },
+                        {
+                            "name": "month",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 (Jan) to 11 (Dec).",
+                            "value": "0"
+                        },
+                        {
+                            "name": "day",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 1 to 31, If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "hours",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 (midnight) to 23 (11 PM). If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "min",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 to 59. If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "sec",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An Integer value from 0 to 59. If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "ms",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 to 999. If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        }
+                    ],
+                    "description": "Returns the number of milliseconds between midnight January 1, 1970, UTC, and the specified time.",
+                    "type": "Date",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "Date",
+                    "parameters": [
+                        {
+                            "name": "year",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The year expressed in four digits."
+                        },
+                        {
+                            "name": "month",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 (Jan) to 11 (Dec).",
+                            "value": "0"
+                        },
+                        {
+                            "name": "day",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 1 to 31, If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "hours",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 (midnight) to 23 (11 PM). If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "min",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 to 59. If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "sec",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An Integer value from 0 to 59. If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        },
+                        {
+                            "name": "ms",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An integer value from 0 to 999. If this argument is not supplied, its value is set to 0.",
+                            "value": "0"
+                        }
+                    ],
+                    "description": "Returns a new Date object holding the current date and time.",
+                    "longdesc": "If parameters are supplied, returns a new Date object holding the supplied date and time.",
+                    "type": "Date",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [],
             "methods": [
                 {
                     "name": "getDate",
+                    "parameters": [],
                     "description": "Returns the day of the month of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getDay",
+                    "parameters": [],
                     "description": "Returns the day of the week for the specified Date object in local time.",
-                    "array": false,
+                    "longdesc": "This is an integer from 0 (Sunday) to 6 (Saturday).  Returns the day of the week for date.",
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getYear",
+                    "parameters": [],
                     "description": "Returns the year of the specified Date object, as a difference from 1900, in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getFullYear",
+                    "parameters": [],
                     "description": "Returns the four digit year of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getHours",
+                    "parameters": [],
                     "description": "Returns the hour of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getMilliseconds",
+                    "parameters": [],
                     "description": "Returns the milliseconds of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getMinutes",
+                    "parameters": [],
                     "description": "Returns the minutes of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getMonth",
+                    "parameters": [],
                     "description": "Returns the month of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getSeconds",
+                    "parameters": [],
                     "description": "Returns the seconds of the specified Date object in local time.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getTime",
+                    "parameters": [],
                     "description": "Returns the number of milliseconds since midnight January 1,1970 UTC for the specified Date object.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getTimezoneOffset",
+                    "parameters": [],
                     "description": "Returns the difference in minutes between the computer's local time and UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCDate",
+                    "parameters": [],
                     "description": "Returns the day of the month of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCDay",
+                    "parameters": [],
                     "description": "Returns the day of the week for the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCFullYear",
+                    "parameters": [],
                     "description": "Returns the four digit year of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCHours",
+                    "parameters": [],
                     "description": "Returns the hour of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCMilliseconds",
+                    "parameters": [],
                     "description": "Returns the milliseconds of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCMinutes",
+                    "parameters": [],
                     "description": "Returns the minutes of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCMonth",
+                    "parameters": [],
                     "description": "Returns the month of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getUTCSeconds",
+                    "parameters": [],
                     "description": "Returns the seconds of the specified Date object according to UTC.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "setDate",
-                    "description": "Sets the day of the month of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "date",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer from 1 to 31 indicating the day of the month."
+                            "description": "An integer from 1 to 31 indicating the day of the month.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the day of the month of a specified Date object according to local time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setFullYear",
-                    "description": "Sets the year of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "year",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "A four-digit integer value indicating the year to set."
+                            "description": "A four-digit integer value indicating the year to set.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the year of a specified Date object according to local time.",
+                    "longdesc": "This method can also set month and date if those arguments are specified. Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setHours",
-                    "description": "Sets the hours of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "hour",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value from 0 (midnight) to 23 (11 PM)."
+                            "description": "An integer value from 0 (midnight) to 23 (11 PM).",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the hours of a specified Date object according to local time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setMilliseconds",
-                    "description": "Sets the milliseconds of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "ms",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "An integer value from 0 to 999."
                         }
-                    ]
+                    ],
+                    "description": "Sets the milliseconds of a specified Date object according to local time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setMinutes",
-                    "description": "Sets the minutes of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "minutes",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "An integer value from 0 to 59."
                         }
-                    ]
+                    ],
+                    "description": "Sets the minutes of a specified Date object according to local time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setSeconds",
-                    "description": "Sets the seconds of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "seconds",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "An integer value from 0 to 59."
                         }
-                    ]
+                    ],
+                    "description": "Sets the seconds of a specified Date object according to local time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setMonth",
-                    "description": "Sets the month of a specified Date object according to local time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "month",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value from 0 (Jan) to 11 (Dec)."
+                            "description": "An integer value from 0 (Jan) to 11 (Dec).",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the month of a specified Date object according to local time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCDate",
-                    "description": "Sets the date of a specified Date object according to universal time.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "date",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer from 1 to 31 indicating the day of the month."
+                            "description": "An integer from 1 to 31 indicating the day of the month.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the date of a specified Date object according to universal time.",
+                    "longdesc": "Returns the number of milliseconds between the new date and midnight, January 1, 1970 in UTC time.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCFullYear",
-                    "description": "Sets the year of a specified Date object according to UTC, can also set the month and date.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "year",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "The year expressed in four digits."
+                            "description": "The year expressed in four digits.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the year of a specified Date object according to UTC, can also set the month and date.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCHours",
-                    "description": "Sets the hours of a specified Date object according to UTC.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "hours",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value from 0 (midnight) to 23 (11 PM) indicating the hour to be set."
+                            "description": "An integer value from 0 (midnight) to 23 (11 PM) indicating the hour to be set.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the hours of a specified Date object according to UTC.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCMilliseconds",
-                    "description": "Sets the milliseconds of a specified Date object according to UTC.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "ms",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value in the range of 0 to 999 indicating the number of milliseconds to set."
+                            "description": "An integer value in the range of 0 to 999 indicating the number of milliseconds to set.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the milliseconds of a specified Date object according to UTC.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCMinutes",
-                    "description": "Sets the minutes of a specified Date object according to UTC.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "min",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value in the range 0 to 59 indicating the number of minutes to be set."
+                            "description": "An integer value in the range 0 to 59 indicating the number of minutes to be set.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the minutes of a specified Date object according to UTC.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCSeconds",
-                    "description": "Sets the seconds of a specified Date object according to UTC.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "sec",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value in the range 0 to 59 indicating the number of seconds to set."
+                            "description": "An integer value in the range 0 to 59 indicating the number of seconds to set.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the seconds of a specified Date object according to UTC.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setUTCMonth",
-                    "description": "Sets the month of a specified Date object according to UTC.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "month",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "An integer value in the range 0 (Jan.) to 11 (Dec.) indicating the month to set."
                         }
-                    ]
+                    ],
+                    "description": "Sets the month of a specified Date object according to UTC.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970, in UTC.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setTime",
-                    "description": "Sets the date of a specified Date object in milliseconds since midnight, January 1, 1970.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "ms",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer indicating the number of milliseconds between the date set and midnight, January 1, 1970."
+                            "description": "An integer indicating the number of milliseconds between the date set and midnight, January 1, 1970.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Sets the date of a specified Date object in milliseconds since midnight, January 1, 1970.",
+                    "longdesc": "Returns the value of ms.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "setYear",
-                    "description": "Sets the year of a specified Date object according to local time, as a difference between the current year and 1900.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "year",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "An integer value indicating the year to set."
+                            "description": "An integer value indicating the year to set.",
+                            "longdesc": "The method interprets a 1- or 2- digit value to mean the 1900s; for example, 13 is interpreted to mean 1913."
                         }
-                    ]
+                    ],
+                    "description": "Sets the year of a specified Date object according to local time, as a difference between the current year and 1900.",
+                    "longdesc": "Returns the number of milliseconds between the date set and midnight, January 1, 1970.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "toDateString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns the date as a string.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toTimeString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns the time as a string.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toLocaleString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns a string value representing the date and time stored in the Date object in human readable format (localized).",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toLocaleDateString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns the date as a localized string.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toLocaleTimeString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns the time as a localized string.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toGMTString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns the date and time adjusted to GMT (UTC) as a string.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toUTCString",
-                    "array": false,
+                    "parameters": [],
+                    "longdesc": "Returns the date and time adjusted to UTC as a string.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Returns a string value representing the date and time stored in the Date object in human readable format.",
-                    "array": false,
+                    "longdesc": "Returns the following string is an example of the format returned by this method: Mon Aug 13, 10:54:21 GMT-0700 2001.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "valueOf",
+                    "parameters": [],
                     "description": "The valueOf() method returns the number of milliseconds that have passed since midnight, Returns an integer.",
-                    "array": false,
+                    "longdesc": "",
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toSource",
-                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0",
-                    "array": false,
+                    "parameters": [],
+                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0eval()\u00a0to re-create an object. Works only with built-in classes.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A date/time object."

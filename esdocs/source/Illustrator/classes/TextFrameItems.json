@@ -2,54 +2,181 @@
     "name": "TextFrameItems",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [],
+                    "description": "Create a point text frame item.",
+                    "type": "TextFrameItem",
+                    "array": false
+                },
+                {
+                    "name": "pointText",
+                    "parameters": [
+                        {
+                            "name": "anchor",
+                            "type": "Point",
+                            "array": false,
+                            "optional": false,
+                            "description": "The position (coordinates) of the anchor point."
+                        },
+                        {
+                            "name": "orientation",
+                            "type": "TextOrientation",
+                            "array": false,
+                            "optional": true,
+                            "description": "The orientation of the text.",
+                            "value": "TextOrientation.HORIZONTAL"
+                        }
+                    ],
+                    "description": "Create a point text frame item.",
+                    "type": "TextFrameItem",
+                    "array": false
+                },
+                {
+                    "name": "areaText",
+                    "parameters": [
+                        {
+                            "name": "textPath",
+                            "type": "PathItem",
+                            "array": false,
+                            "optional": false,
+                            "description": "The path item associated with the text frame."
+                        },
+                        {
+                            "name": "orientation",
+                            "type": "TextOrientation",
+                            "array": false,
+                            "optional": true,
+                            "description": "The orientation of the text.",
+                            "value": "TextOrientation.HORIZONTAL"
+                        },
+                        {
+                            "name": "baseFrame",
+                            "type": "TextFrameItem",
+                            "array": false,
+                            "optional": true,
+                            "description": "The base text frame if it has one."
+                        },
+                        {
+                            "name": "postFix",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Whether to postfix/prefix the new text frame to the specified base text frame.",
+                            "value": "true"
+                        }
+                    ],
+                    "description": "Create an area text frame item.",
+                    "type": "TextFrameItem",
+                    "array": false
+                },
+                {
+                    "name": "pathText",
+                    "parameters": [
+                        {
+                            "name": "textPath",
+                            "type": "PathItem",
+                            "array": false,
+                            "optional": false,
+                            "description": "The path item associated with the text frame."
+                        },
+                        {
+                            "name": "startTValue",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The start position of text along a path, as a value relative to the path's segments (path text only)",
+                            "value": "0.0"
+                        },
+                        {
+                            "name": "endTValue",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The end position of text along a path, as a value relative to the path's segments (path text only)",
+                            "value": "0.0"
+                        },
+                        {
+                            "name": "orientation",
+                            "type": "TextOrientation",
+                            "array": false,
+                            "optional": true,
+                            "description": "The orientation of the text.",
+                            "value": "TextOrientation.HORIZONTAL"
+                        },
+                        {
+                            "name": "baseFrame",
+                            "type": "TextFrameItem",
+                            "array": false,
+                            "optional": true,
+                            "description": "The base text frame if it has one."
+                        },
+                        {
+                            "name": "postFix",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Whether to postfix/prefix the new text frame to the specified base text frame.",
+                            "value": "true"
+                        }
+                    ],
+                    "description": "Create an on-path text frame item.",
+                    "type": "TextFrameItem",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "TextFrameItem",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "TextFrameItem",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of text frame items."

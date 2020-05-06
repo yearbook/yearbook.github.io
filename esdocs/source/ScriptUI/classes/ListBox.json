@@ -2,328 +2,355 @@
     "name": "ListBox",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "items",
-                    "array": true,
-                    "type": "ListItem",
                     "readonly": true,
-                    "description": "The array of choice items displayed in the list."
+                    "type": "ListItem",
+                    "array": true,
+                    "description": "The array of choice items displayed in the list.",
+                    "longdesc": "\n            Access this array with a 0-based index. To obtain the number of items in the list, use items.length.The objects are created when items are specified on creation of the parent list object, or afterward using the list control\u2019s\u00a0add()\u00a0method. Each item has a\u00a0selected\u00a0property that is true when it is in the selected state.\n          "
                 },
                 {
                     "name": "itemSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The width and height in pixels of each item in the list."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The width and height in pixels of each item in the list.",
+                    "longdesc": "\n            Used by auto-layout to determine the\u00a0preferredSize\u00a0of the list, if not otherwise specified. If not set explicitly, the size of each item is set to match the largest height and width among all items in the list\n          "
                 },
                 {
                     "name": "selection",
-                    "array": false,
-                    "type": "ListItem",
                     "readonly": false,
-                    "description": "The currently selected item for a single-selection list, or an array of items for current selection in a multi-selection list. "
+                    "type": "ListItem",
+                    "array": false,
+                    "description": "The currently selected item for a single-selection list, or an array of items for current selection in a multi-selection list. ",
+                    "longdesc": "\n            Setting this value causes the selected item to be highlighted and to be scrolled into view if necessary. If no items are selected, the value is null. Set to null to deselect all items. You can set the value using the index of an item or an array of indices, rather than object references. If set to an index value that is out of range, the operation is ignored. When set with index values, the property still returns object references.\n            If you set the value to an array for a single-selection list, only the first item in the array is selected.\n            If you set the value to a single item for a multi-selection list, that item is added to the current selection.\n          "
                 },
                 {
                     "name": "active",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is active."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is active.",
+                    "longdesc": "\n            An active control is the one with keyboard focus\u2014that is, the one that accepts keystrokes, or in the case of a\u00a0Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.\n          "
                 },
                 {
                     "name": "shortcutKey",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "\n            The key sequence that invokes the\u00a0"
+                    "type": "String",
+                    "array": false,
+                    "description": "\n            The key sequence that invokes the\u00a0onShortcutKey()\u00a0callback for this element (in Windows only).\n          "
                 },
                 {
                     "name": "graphics",
-                    "array": false,
-                    "type": "ScriptUIGraphics",
                     "readonly": true,
-                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0"
+                    "type": "ScriptUIGraphics",
+                    "array": false,
+                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0onDraw()\u00a0event.\n          "
                 },
                 {
                     "name": "visible",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is shown, false if it is hidden."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is shown, false if it is hidden.",
+                    "longdesc": "When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown."
                 },
                 {
                     "name": "bounds",
-                    "array": false,
-                    "type": "Bounds",
                     "readonly": false,
-                    "description": "The boundaries of the element, in parent-relative coordinates. "
+                    "type": "Bounds",
+                    "array": false,
+                    "description": "The boundaries of the element, in parent-relative coordinates. ",
+                    "longdesc": "Setting an element's size or location changes its bounds property, and vice-versa."
                 },
                 {
                     "name": "location",
-                    "array": false,
-                    "type": "Point",
                     "readonly": false,
-                    "description": "The upper left corner of this element relative to its parent."
+                    "type": "Point",
+                    "array": false,
+                    "description": "The upper left corner of this element relative to its parent.",
+                    "longdesc": "The location is defined as [bounds.x, bounds.y]. Setting an element's location changes its bounds property, and vice-versa. "
                 },
                 {
                     "name": "maximumSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
+                    "type": "Dimension",
+                    "array": false,
                     "description": " The maximum height and width to which the element can be resized."
                 },
                 {
                     "name": "minimumSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
+                    "type": "Dimension",
+                    "array": false,
                     "description": " The minimum height and width to which the element can be resized."
                 },
                 {
                     "name": "preferredSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The preferred size, used by layout managers to determine the best size for each element."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The preferred size, used by layout managers to determine the best size for each element.",
+                    "longdesc": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default. "
                 },
                 {
                     "name": "size",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The current dimensions of this element."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The current dimensions of this element.",
+                    "longdesc": "\n            Initially undefined, and unless explicitly set by a script, it is defined by a\u00a0LayoutManager\u00a0. A script can explicitly set size before the layout manager is invoked to establish an element size other than the preferredSize or the default size, but this is not recommended. Defined as [bounds.width, bounds.height]. Setting an element's size changes its bounds property, and vice-versa.\n          "
                 },
                 {
                     "name": "windowBounds",
-                    "array": false,
-                    "type": "Bounds",
                     "readonly": true,
+                    "type": "Bounds",
+                    "array": false,
                     "description": "The bounds of this element relative to the top-level parent window."
                 },
                 {
                     "name": "alignment",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "\n            The alignment style for this element. If defined, this value overrides the "
+                    "type": "String",
+                    "array": false,
+                    "description": "\n            The alignment style for this element. If defined, this value overrides the alignChildren setting for the parent container.\n          ",
+                    "longdesc": "\n            This can be a single string, which indicates the alignment for the orientation specified in the parent container, or an array of two strings, indicating both the horizontal and vertical alignment (in that order). Allowed values depend on the orientation value of the parent container. They are not case sensitive.\n            \n              For orientation=row:top, bottom, fill\n            \n            \n              For orientation=column: left, right, fill\n            \n            \n              For orientation=stack:top, bottom, left, right, fill\n            \n          "
                 },
                 {
                     "name": "children",
-                    "array": true,
-                    "type": "Object",
                     "readonly": true,
-                    "description": "\n            An array of child\u00a0"
+                    "type": "Object",
+                    "array": true,
+                    "description": "\n            An array of child\u00a0ListItem\u00a0elements.\n          "
                 },
                 {
                     "name": "columns",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
-                    "description": "For a multi-column list box, the column properties."
+                    "type": "Object",
+                    "array": false,
+                    "description": "For a multi-column list box, the column properties.",
+                    "longdesc": "\n            A JavaScript object with two read-only properties whose values are set by the creation parameters:\n            \n              titles: An array of column title strings, whose length matches the number of columns specified at creation.\n            \n            \n              preferredWidths: An array of column widths, whose length matches the number of columns specified at creation.\n            \n            \n              visible: An array of boolean visible attributes, whose length matches the number of columns specified at creation.This property can be used to show/hide a column. Avaiblable in ScriptUI Version 6.0 or later provided ScriptUI.frameworkName == 'Flex'.\n            \n          "
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
-                    "description": "An object that contains one or more creation properties of the control (properties used only when the element is created). "
+                    "type": "Object",
+                    "array": false,
+                    "description": "An object that contains one or more creation properties of the control (properties used only when the element is created). ",
+                    "longdesc": "\n            Creation properties of a ListBox object can include:\n            \n              multiselect: When false (the default), only one item can be selected. When true, multiple items can be selected.\n            \n            \n              items: An array of strings for the text of each list item. An item object is created for each item. An item with the text string \"-\" creates a separator item. Supply this property, or the items argument to the\u00a0add()\u00a0method, not both. This form is most useful for elements defined using Resource Specifications.\n            \n            \n              numberOfColumns: A number of columns in which to display the items; default is 1. When there are multiple columns, each\u00a0ListItem\u00a0object represents a selectable row. Its\u00a0text\u00a0and\u00a0image\u00a0values specify the label in the first column, and the\u00a0subitems\u00a0property specifies the labels in the additional columns.\n            \n            \n              showHeaders: True to display column titles.\n            \n            \n              columnWidths: An array of numbers for the preferred width in pixels of each column.\n            \n            \n              columnTitles: A corresponding array of strings for the title of each column, to be shown if showHeaders is true.\n            \n          "
                 },
                 {
                     "name": "enabled",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is enabled."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is enabled.",
+                    "longdesc": "An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance. "
                 },
                 {
                     "name": "helpTip",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The help text that is displayed when the mouse hovers over the element."
                 },
                 {
                     "name": "indent",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The number of pixels to indent the element during automatic layout."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of pixels to indent the element during automatic layout.",
+                    "longdesc": "Applies for column orientation and left alignment, or row orientation and top alignment."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The parent element."
                 },
                 {
                     "name": "window",
-                    "array": false,
-                    "type": "Window",
                     "readonly": true,
+                    "type": "Window",
+                    "array": false,
                     "description": "The window that this element belongs to."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The element type; \"listbox\"."
                 }
             ],
             "methods": [
                 {
                     "name": "add",
-                    "description": " Adds an item to the choices in this list.",
-                    "array": false,
-                    "type": "ListItem",
                     "parameters": [
                         {
                             "name": "type",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The type of the child element, the string \"item\". "
                         },
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "The localizable text label for the item. "
                         }
-                    ]
+                    ],
+                    "description": " Adds an item to the choices in this list.",
+                    "longdesc": "\n            Returns the item control object. If this is a multi-column list box, each added\u00a0ListItem\u00a0represents one selectable row.  Its\u00a0text\u00a0and\u00a0image\u00a0values specify the label in the first column, and the\u00a0subitems\u00a0property specifies the labels in the additional columns.\n          ",
+                    "type": "ListItem",
+                    "array": false
                 },
                 {
                     "name": "find",
-                    "description": "Retrieves an item object from the list that has a given text label.",
-                    "array": false,
-                    "type": "ListItem",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text string to match."
                         }
-                    ]
+                    ],
+                    "description": "Retrieves an item object from the list that has a given text label.",
+                    "type": "ListItem",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "Removes a child item from the list.",
                     "parameters": [
                         {
                             "name": "what",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
-                            "description": "\n                The item or child to remove, specified by 0-based index, text value, or as a\u00a0"
+                            "description": "\n                The item or child to remove, specified by 0-based index, text value, or as a\u00a0ListItem\u00a0object.\n              "
                         }
-                    ]
+                    ],
+                    "description": "Removes a child item from the list."
                 },
                 {
                     "name": "removeAll",
-                    "description": "Removes all child items from the list.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Removes all child items from the list."
                 },
                 {
                     "name": "notify",
-                    "description": "Sends a notification message, simulating the specified user interaction event. ",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
-                            "description": "The name of the control event handler to call. "
+                            "description": "The name of the control event handler to call. ",
+                            "longdesc": "\n                One of: onClick, onChange, onChanging. By default, simulates the onChange event for an edittext control, an onClick event for controls that support that event.\n              "
                         }
-                    ]
+                    ],
+                    "description": "Sends a notification message, simulating the specified user interaction event. "
                 },
                 {
                     "name": "show",
+                    "parameters": [],
                     "description": "Shows this element.",
-                    "parameters": []
+                    "longdesc": " When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states."
                 },
                 {
                     "name": "hide",
-                    "description": "Hides this element.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Hides this element."
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Registers an event handler for a particular type of event occuring in this element.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The name of the event."
+                            "description": "The name of the event.",
+                            "longdesc": "\n                Event names are listed in the JavaScript Tools Guide.\n              "
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
-                            "description": "The function that handles the event."
+                            "description": "The function that handles the event.",
+                            "longdesc": "\n                This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the\u00a0UIEvent\u00a0object.\n              "
                         },
                         {
-                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
-                            "array": false,
                             "name": "capturePhase",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
+                            "longdesc": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Registers an event handler for a particular type of event occuring in this element.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the event."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
                             "description": "The function that handles the event."
                         },
                         {
-                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
-                            "array": false,
                             "name": "capturePhase",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
+                    "longdesc": " All arguments must be identical to those that were used to register the event handler.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "dispatchEvent",
+                    "parameters": [],
                     "description": "Simulates the occurrence of an event in this target. ",
-                    "array": false,
+                    "longdesc": "\n            A script can create a\u00a0UIEvent\u00a0object for a specific event and pass it to this method to start the event propagation for the event.\n          ",
                     "type": "Event",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "\n        Displays a list of choices, represented by\u00a0"
+    "description": "\n        Displays a list of choices, represented by\u00a0ListItem\u00a0objects.\n      ",
+    "longdesc": "\n        When you create the object, you specify whether it allows the user to select only one or multiple items. If a list contains more items than can be displayed in the available area, a scrollbar may appear that allows the user to scroll through all the list items.You can specify the items on creation of the list object, or afterward using the list object\u2019s\u00a0add()\u00a0method. You can remove items programmatically with the list object\u2019s\u00a0remove()\u00a0and\u00a0removeAll()\u00a0methods. You can create a list box with multiple columns; in this case, each row is a selectable choice, and each\u00a0ListItem\u00a0represents one row.\n      "
 }

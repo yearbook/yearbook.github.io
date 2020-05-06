@@ -2,222 +2,254 @@
     "name": "TextRange",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "characterOffset",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": false,
+                    "type": "Int32",
+                    "array": false,
                     "description": "Offset of the first character of the range from the beginning of the story, in characters."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": false,
+                    "type": "Int32",
+                    "array": false,
                     "description": "Length of text range."
                 },
                 {
                     "name": "contents",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The text string."
                 },
                 {
                     "name": "kerning",
-                    "array": false,
-                    "type": "Int32",
                     "readonly": false,
+                    "type": "Int32",
+                    "array": false,
                     "description": "Controls the spacing between two characters (in milli-ems)"
                 },
                 {
                     "name": "story",
-                    "array": false,
-                    "type": "Story",
                     "readonly": true,
+                    "type": "Story",
+                    "array": false,
                     "description": "The story of the text range."
                 },
                 {
                     "name": "textSelection",
-                    "array": true,
-                    "type": "TextRange",
                     "readonly": true,
+                    "type": "TextRange",
+                    "array": true,
                     "description": "The selected text (ranges) in the text range."
                 },
                 {
                     "name": "characters",
-                    "array": false,
-                    "type": "Characters",
                     "readonly": true,
+                    "type": "Characters",
+                    "array": false,
                     "description": "All the characters in this text range."
                 },
                 {
                     "name": "words",
-                    "array": false,
-                    "type": "Words",
                     "readonly": true,
+                    "type": "Words",
+                    "array": false,
                     "description": "All the words in this text range."
                 },
                 {
                     "name": "lines",
-                    "array": false,
-                    "type": "Lines",
                     "readonly": true,
+                    "type": "Lines",
+                    "array": false,
                     "description": "All the lines in this text range."
                 },
                 {
                     "name": "paragraphs",
-                    "array": false,
-                    "type": "Paragraphs",
                     "readonly": true,
+                    "type": "Paragraphs",
+                    "array": false,
                     "description": "All the paragraphs in this text range."
                 },
                 {
                     "name": "textRanges",
-                    "array": false,
-                    "type": "TextRanges",
                     "readonly": true,
+                    "type": "TextRanges",
+                    "array": false,
                     "description": "All the text in this text range."
                 },
                 {
                     "name": "insertionPoints",
-                    "array": false,
-                    "type": "InsertionPoints",
                     "readonly": true,
+                    "type": "InsertionPoints",
+                    "array": false,
                     "description": "All the insertion points in this text range."
                 },
                 {
                     "name": "characterStyles",
-                    "array": false,
-                    "type": "CharacterStyles",
                     "readonly": true,
+                    "type": "CharacterStyles",
+                    "array": false,
                     "description": "List of referenced character styles in the text range."
                 },
                 {
                     "name": "paragraphStyles",
-                    "array": false,
-                    "type": "ParagraphStyles",
                     "readonly": true,
+                    "type": "ParagraphStyles",
+                    "array": false,
                     "description": "List of referenced paragraph styles in the text range."
                 },
                 {
                     "name": "characterAttributes",
-                    "array": false,
-                    "type": "CharacterAttributes",
                     "readonly": true,
+                    "type": "CharacterAttributes",
+                    "array": false,
                     "description": "The character properties for the text range."
                 },
                 {
                     "name": "paragraphAttributes",
-                    "array": false,
-                    "type": "ParagraphAttributes",
                     "readonly": true,
+                    "type": "ParagraphAttributes",
+                    "array": false,
                     "description": "The paragraph properties for the text range."
+                },
+                {
+                    "name": "start",
+                    "readonly": false,
+                    "type": "Int32",
+                    "array": false,
+                    "description": "Start index of the text range."
+                },
+                {
+                    "name": "end",
+                    "readonly": false,
+                    "type": "Int32",
+                    "array": false,
+                    "description": "End index of the text range."
                 }
             ],
             "methods": [
                 {
                     "name": "move",
-                    "description": "Move the object.",
-                    "array": false,
-                    "type": "TextRange",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Move the object.",
+                    "type": "TextRange",
+                    "array": false
                 },
                 {
                     "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "array": false,
-                    "type": "TextRange",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Duplicate this object.",
+                    "type": "TextRange",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "Deletes this object.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes this object."
                 },
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "select",
-                    "description": "Select the text range.",
                     "parameters": [
                         {
-                            "description": "Whether to add the text range to the document text selection.",
-                            "array": false,
                             "name": "addToDocument",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "Whether to add the text range to the document text selection.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Select the text range."
                 },
                 {
                     "name": "deSelect",
-                    "description": "Deselect the text range.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deselect the text range."
+                },
+                {
+                    "name": "getTextRunLength",
+                    "parameters": [],
+                    "description": "Get the length of the first text run.",
+                    "type": "Int32",
+                    "array": false
+                },
+                {
+                    "name": "getParagraphLength",
+                    "parameters": [],
+                    "description": "Get the length of the first paragraph.",
+                    "type": "Int32",
+                    "array": false
                 },
                 {
                     "name": "changeCaseTo",
-                    "description": "Change the capitalization of text.",
                     "parameters": [
                         {
                             "name": "type",
-                            "array": false,
                             "type": "CaseChangeType",
+                            "array": false,
                             "optional": false,
                             "description": "The type of case."
                         }
-                    ]
+                    ],
+                    "description": "Change the capitalization of text."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A range of characters from a text item."

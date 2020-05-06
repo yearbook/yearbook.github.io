@@ -2,97 +2,132 @@
     "name": "Function",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "Function",
+                    "parameters": [
+                        {
+                            "name": "arguments",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The list of formal arguments, separated by commas.",
+                            "longdesc": "The formal arguments can also be supplied one by one; in this case, the last argument to the Function constructor is considered to be the function body."
+                        },
+                        {
+                            "name": "body",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The body of the function to create."
+                        }
+                    ],
+                    "longdesc": "The Function constructor parses the argument list and creates a Function object.",
+                    "type": "Function",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "arguments",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
-                    "description": "The function arguments, packed into an array."
+                    "type": "Object",
+                    "array": false,
+                    "description": "The function arguments, packed into an array.",
+                    "longdesc": "This property is deprecated; use the arguments property within the function body."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of formal arguments."
                 },
                 {
                     "name": "arity",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
-                    "description": "The number of formal arguments."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of formal arguments.",
+                    "longdesc": "This property is deprecated; use the length property instead."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The function name."
                 }
             ],
             "methods": [
                 {
                     "name": "apply",
-                    "description": "\n\t\t\t\t\t\tApply a\u00a0",
-                    "array": false,
-                    "type": "any",
                     "parameters": [
                         {
                             "name": "thisObj",
-                            "array": false,
                             "type": "Object",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "longdesc": "\n\t\t\t\t\t\t\t\tThe object to be used as\u00a0this.\n\t\t\t\t\t\t\t"
                         },
                         {
                             "name": "args",
-                            "array": false,
                             "type": "Array",
+                            "array": false,
                             "optional": false,
                             "description": "An array of arguments."
                         }
-                    ]
+                    ],
+                    "description": "\n\t\t\t\t\t\tApply a\u00a0this\u00a0object and an argument list to a function.\n\t\t\t\t\t",
+                    "longdesc": "\n\t\t\t\t\t\tThis function is different from\u00a0call(); here, the arguments are suppliedas an Array object.\n\t\t\t\t\t",
+                    "type": "any",
+                    "array": false
                 },
                 {
                     "name": "call",
-                    "description": "\n\t\t\t\t\t\tApply a\u00a0",
-                    "array": false,
-                    "type": "any",
                     "parameters": [
                         {
                             "name": "thisObj",
-                            "array": false,
                             "type": "Object",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "longdesc": "\n\t\t\t\t\t\t\t\tThe object to be used as\u00a0this.\n\t\t\t\t\t\t\t"
                         },
                         {
                             "name": "argument",
-                            "array": false,
                             "type": "any",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "longdesc": "The first agument to the function. Add as many as needed."
                         }
-                    ]
+                    ],
+                    "description": "\n\t\t\t\t\t\tApply a\u00a0this\u00a0object and arguments to a function.\n\t\t\t\t\t",
+                    "longdesc": "\n\t\t\t\t\t\tThis function is different from\u00a0apply(); here, the arguments are supplied one by one.\n\t\t\t\t\t",
+                    "type": "any",
+                    "array": false
                 },
                 {
                     "name": "toSource",
-                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0",
-                    "array": false,
+                    "parameters": [],
+                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0eval()\u00a0to re-create an object. Works only with JavaScript functions.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Returns the function definition as a string.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "Wraps a built-in or JavaScript function."

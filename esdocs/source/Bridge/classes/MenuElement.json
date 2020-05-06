@@ -1,0 +1,197 @@
+{
+    "name": "MenuElement",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "create",
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The type of menu element, a menu or command.",
+                            "longdesc": " Either  menu, a menu or submenu, or command, a menu item."
+                        },
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The localizable string that is displayed as the label text. ",
+                            "longdesc": "Script-created menu and menu commands cannot have keyboard shortcuts or icons."
+                        },
+                        {
+                            "name": "location",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "A string describing the location of the new menu element, with respect to existing menu elements. ",
+                            "longdesc": "This can take one of the following forms:\n\t\t\t\t\t\tbefore identifier: Create the new element before the given menu element.\n\t\t\t\t\t\tafter identifier: Create the new element before the given menu element.\n\t\t\t\t\t\tat the end of identifier: Append the new element to the given menu. The identifier must be for a menu, not a command item.\n\t\t\t\t\t\tat the beginning of identifier: Create the new element as the first item in the given menu. The identifier must be for a menu, not a command item.\n\t\t\t\t\t\tTo insert a separator before or after the new element, specify a dash (-) at the beginning or end of the location string. \n\t\t\t\t\t\tA string that does not conform to these rules causes a run-time error. "
+                        },
+                        {
+                            "name": "id",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The unique identifier for this element. ",
+                            "longdesc": "If the ID of an existing menu or submenu is supplied, the call returns that menu object.\n\t\t\t\t\t\tIf the ID of an existing command is supplied, the call causes a JavaScript error.\n\t\t\t\t\t\tIf not supplied, the call generates a numeric value, which can be found in the id property of the returned menu object."
+                        }
+                    ],
+                    "description": "Adds a new menu to the menu bar, a new submenu to an existing menu, or a new command to an existing menu or submenu. ",
+                    "longdesc": "Use this function to create new menu items, rather than the new operator. This function behaves correctly if a menu item with the same name already exists.",
+                    "type": "MenuElement",
+                    "array": false
+                },
+                {
+                    "name": "find",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifier for the menu element to find."
+                        }
+                    ],
+                    "description": "Retrieves a menu element object using its unique identifier.",
+                    "longdesc": "Returns the MenuElement object for the specified menu or menu item, or null if no such element is found.",
+                    "type": "MenuElement",
+                    "array": false
+                },
+                {
+                    "name": "remove",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifier for the menu element to remove."
+                        }
+                    ],
+                    "description": "Removes a script-defined menu or menu item. "
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "A unique identifier for the element.",
+                    "longdesc": " Identifiers take the form: /app/menu/submenu/command. They are not localized, and are case sensitive. Predefined identifiers are listed in the Adobe Bridge JavaScript Reference."
+                },
+                {
+                    "name": "location",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "A string describing the location of the new menu element, with respect to existing menu elements. ",
+                    "longdesc": "Set on creation; see create() method. "
+                },
+                {
+                    "name": "separatorAfter",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether there is a separator after this item.",
+                    "longdesc": "Set on creation; see create() method. "
+                },
+                {
+                    "name": "separatorBefore",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether there is a separator before this item.",
+                    "longdesc": "Set on creation; see create() method. "
+                },
+                {
+                    "name": "canBeChecked",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether the menu item can be checked.",
+                    "longdesc": "When true, the menu item can be checked. Otherwise, the menu item cannot be checked. "
+                },
+                {
+                    "name": "checked",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether the item is checked.",
+                    "longdesc": "When true, the command is selected. A check mark appears next to the label. When false, the item is not selected, and no check mark is shown. "
+                },
+                {
+                    "name": "enabled",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether the menu or item is enabled.",
+                    "longdesc": "When true, the menu or command is selectable. When false, it is grayed out and cannot be selected. Read/write."
+                },
+                {
+                    "name": "type",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The type of menu element, a menu or command.",
+                    "longdesc": "Set on creation; see create() method. "
+                },
+                {
+                    "name": "altDown",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the Alt modifier key was pressed when the item was selected."
+                },
+                {
+                    "name": "cmdDown",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the Command modifier key was pressed when the item was selected."
+                },
+                {
+                    "name": "ctrlDown",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the Control modifier key was pressed when the item was selected. "
+                },
+                {
+                    "name": "optionDown",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the Option modifier key was pressed when the item was selected."
+                },
+                {
+                    "name": "shiftDown",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the Shift modifier key was pressed when the item was selected. "
+                },
+                {
+                    "name": "text",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The displayed label text, a localizable string. "
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Represents the application menu bar, menus and submenus, and individual items or commands.",
+    "longdesc": "Adobe Bridge creates MenuElement instances for each of the existing menu elements, and you can create additional instances to extend the existing menus. \nA script can execute a menu command using app.document.chooseMenuItem().Existing menu elements that can be extended have predefined identifiers, listed in the Adobe Bridge JavaScript Reference. Not all existing menu elements can be extended. You can only add a new menu or command before or after an existing menu or command, which you must specify using the predefined unique identifier. Use the create() static function to create new menu items, rather than the new operator. This function behaves correctly if a menu item with the same name already exists."
+}

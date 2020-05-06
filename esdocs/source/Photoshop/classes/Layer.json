@@ -2,257 +2,262 @@
     "name": "Layer",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the layer."
                 },
                 {
                     "name": "allLocked",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, the layer's contents and settings are locked."
                 },
                 {
                     "name": "blendMode",
-                    "array": false,
-                    "type": "BlendMode",
                     "readonly": false,
+                    "type": "BlendMode",
+                    "array": false,
                     "description": "The mode to use when compositing an object."
                 },
                 {
                     "name": "linkedLayers",
-                    "array": true,
-                    "type": "Layer",
                     "readonly": true,
+                    "type": "Layer",
+                    "array": true,
                     "description": "The layers linked to this layer."
                 },
                 {
                     "name": "opacity",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "The layer's master opacity (as a percentage). Range: 0.0 to 100.0."
                 },
                 {
                     "name": "visible",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, the layer is visible."
                 },
                 {
                     "name": "id",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "The unique ID of this layer."
                 },
                 {
                     "name": "itemIndex",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "The layer index sans layer groups, how Photoshop would index them."
                 },
                 {
                     "name": "bounds",
-                    "array": false,
-                    "type": "UnitRect",
                     "readonly": true,
+                    "type": "UnitRect",
+                    "array": false,
                     "description": "If the Layer is a layer set, this property returns a reference to the corresponding layer set object."
                 },
                 {
                     "name": "boundsNoEffects",
-                    "array": false,
-                    "type": "UnitRect",
                     "readonly": true,
+                    "type": "UnitRect",
+                    "array": false,
                     "description": "Bounding rectangle of the Layer not including effects."
                 },
                 {
                     "name": "xmpMetadata",
-                    "array": false,
-                    "type": "XMPMetadata",
                     "readonly": true,
+                    "type": "XMPMetadata",
+                    "array": false,
                     "description": "XMP metadata associated with the Layer."
                 }
             ],
             "methods": [
                 {
                     "name": "move",
-                    "description": "Move the object.",
-                    "array": false,
-                    "type": "Layer",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Move the object.",
+                    "type": "Layer",
+                    "array": false
                 },
                 {
                     "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "array": false,
-                    "type": "Layer",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Duplicate this object.",
+                    "type": "Layer",
+                    "array": false
                 },
                 {
                     "name": "moveToEnd",
-                    "description": "...",
                     "parameters": [
                         {
                             "name": "layerSet",
-                            "array": false,
                             "type": "LayerSet",
+                            "array": false,
                             "optional": true
                         }
-                    ]
+                    ],
+                    "description": "..."
                 },
                 {
                     "name": "remove",
-                    "description": "Deletes this object.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes this object."
                 },
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "unlink",
-                    "description": "Unlinks the layer.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Unlinks the layer."
                 },
                 {
                     "name": "link",
-                    "description": "Links the layer with the specified layer.",
                     "parameters": [
                         {
                             "name": "with",
-                            "array": false,
                             "type": "Layer",
+                            "array": false,
                             "optional": false,
                             "description": "The layer to link to."
                         }
-                    ]
+                    ],
+                    "description": "Links the layer with the specified layer."
                 },
                 {
                     "name": "translate",
-                    "description": "Moves the object relative to its current position.",
                     "parameters": [
                         {
                             "name": "deltaX",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": true,
                             "description": "The amount to move the object horizontally."
                         },
                         {
                             "name": "deltaY",
-                            "array": false,
                             "type": "UnitValue",
+                            "array": false,
                             "optional": true,
                             "description": "The amount to move the object vertically."
                         }
-                    ]
+                    ],
+                    "description": "Moves the object relative to its current position."
                 },
                 {
                     "name": "rotate",
-                    "description": "Rotates the object.",
                     "parameters": [
                         {
                             "name": "angle",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The number of degrees to rotate the object."
                         },
                         {
-                            "description": "The point to rotate about.",
-                            "array": false,
                             "name": "anchor",
-                            "value": "AnchorPosition.MIDDLECENTER",
                             "type": "AnchorPosition",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The point to rotate about.",
+                            "value": "AnchorPosition.MIDDLECENTER"
                         }
-                    ]
+                    ],
+                    "description": "Rotates the object."
                 },
                 {
                     "name": "resize",
-                    "description": "Scales the object.",
                     "parameters": [
                         {
-                            "description": "The amount to scale the object horizontally (as a percentage).",
-                            "array": false,
                             "name": "horizontal",
-                            "value": "100",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The amount to scale the object horizontally (as a percentage).",
+                            "value": "100"
                         },
                         {
-                            "description": "The amount to scale the object vertically (as a percentage).",
-                            "array": false,
                             "name": "vertical",
-                            "value": "100",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The amount to scale the object vertically (as a percentage).",
+                            "value": "100"
                         },
                         {
-                            "description": "The point to resize about.",
-                            "array": false,
                             "name": "anchor",
-                            "value": "AnchorPosition.MIDDLECENTER",
                             "type": "AnchorPosition",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The point to resize about.",
+                            "value": "AnchorPosition.MIDDLECENTER"
                         }
-                    ]
+                    ],
+                    "description": "Scales the object."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "A layer object."
+    "description": "A layer object.",
+    "longdesc": "Layers may contain nested layers, which are called sublayers in the user interface. The layer object contains all of the page items in the specific layer as elements. Your script can access page items as elements of either the layer object or the document object."
 }

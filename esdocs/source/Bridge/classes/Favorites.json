@@ -1,0 +1,199 @@
+{
+    "name": "Favorites",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "section",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "Sets the section of the Favorites pane for the next node operations in the immediate scope. ",
+                    "longdesc": "One of: \n\t\t\t\tstandard (default): The top section of the Favorites pane containing predefined nodes. \n\t\t\t\tuser: The bottom section of the Favorites pane containing user-selected nodes.\n\t\t\t\t"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "thumbnail",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the node to add."
+                        }
+                    ],
+                    "description": "Appends a new node into the current section of the favorites array.",
+                    "longdesc": "Updates the Favorites pane to show the new node at the root level.Returns true on success. If the referenced node is already in the array, returns false and does not change the array.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "addChild",
+                    "parameters": [
+                        {
+                            "name": "parent",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the parent node. ",
+                            "longdesc": "Must be a root node in the favorites array."
+                        },
+                        {
+                            "name": "child",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the new subnode. ",
+                            "longdesc": "This node can be, but does not need not to be a child of the parent Thumbnail. It is not added to the parent\u2019s children array."
+                        }
+                    ],
+                    "description": "Inserts a new node into favorites.",
+                    "longdesc": "Inserts a new subnode into the current section of the favorites array, and updates the Favorites pane to show the new node below its parent when the parent is selected. Returns true on success. If the specified parent node is not in favorites array, returns false and does not add the subnode.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "associateWorkspace",
+                    "parameters": [
+                        {
+                            "name": "thumb",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object. "
+                        },
+                        {
+                            "name": "workspace",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The workspace name. ",
+                            "longdesc": "See  Document.workspace."
+                        }
+                    ],
+                    "description": "Associates a named workspace with a thumbnail in the standard section of the Favorites pane.",
+                    "longdesc": " When the user clicks this thumbnail, this workspace becomes current.Returns true on success. If the thumbnail is in the user section, or is not in the Favorites pane, returns false and does nothing.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "clearAll",
+                    "parameters": [],
+                    "description": "Deletes all the nodes from the current section of the favorites array and updates the Favorites pane. "
+                },
+                {
+                    "name": "contains",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Bridge URI string for the node."
+                        }
+                    ],
+                    "description": "Reports whether the list of favorites currently contains a specific node, either in the standard or user sections.",
+                    "longdesc": "Returns true if the node is in the current favorites list, false otherwise.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "disable",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Bridge URI string for the node."
+                        }
+                    ],
+                    "description": "Disables a node from the standard section.",
+                    "longdesc": "Removes the node from display in the browser, but leaves it as an unchecked option in the General page of the Preferences dialog."
+                },
+                {
+                    "name": "enable",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Bridge URI string for the node."
+                        }
+                    ],
+                    "description": "Enables a node from the standard section.",
+                    "longdesc": "Displays the node in the browser, and checks the corresponding option in the General page of the Preferences dialog."
+                },
+                {
+                    "name": "getChildren",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Bridge URI string for the node."
+                        }
+                    ],
+                    "description": "Retrieves the children of a node in the Standard section of the Favorites pane. ",
+                    "longdesc": "The node can be in either the enabled or disabled state. Returns an array of URI strings for the child nodes, or undefined if the node is not in the Standard section or not in the Favorites pane.",
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "insert",
+                    "parameters": [
+                        {
+                            "name": "thumbnail",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the node to add."
+                        },
+                        {
+                            "name": "index",
+                            "type": "Unspecified",
+                            "array": false,
+                            "optional": true,
+                            "description": "A 0-based index into the existing node array at which to insert the new node, or an object reference for a node in the existing node array. ",
+                            "longdesc": " The node is inserted before this existing node. If the value is beyond the end, is not in the existing node array, or is not supplied, the new node is appended to the end of the array."
+                        }
+                    ],
+                    "description": "Inserts a new node into the current section of the favorites array.",
+                    "longdesc": "Updates the Favorites pane to show the new node at the root level.Returns true on success. If the referenced node is already in the array, returns false and does not change the array.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "remove",
+                    "parameters": [
+                        {
+                            "name": "thumbnail",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the node to remove."
+                        }
+                    ],
+                    "description": "Removes the specified script-defined node from the favorites array and updates the Favorites pane.",
+                    "longdesc": "Scripts cannot access predefined nodes.",
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "Represents the navigation nodes that appear in the Favorites pane in the Adobe Bridge browser. ",
+    "longdesc": "The Favorites object is itself an array of Thumbnail objects. Use Favorites.length to get the size of the array. While the Folders pane shows the full navigation hierarchy, with all folders and subfolders that Adobe Bridge can access, the Favorites pane shows only certain top-level folders and one level of subfolders. Subfolders in the Favorites pane can be, but are not necessarily, children of the Thumbnail for the parent node.Access the Favorites object through app.favorites."
+}

@@ -2,274 +2,278 @@
     "name": "Window",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "AFTER_SELECTION_CHANGED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
+                    "value": "afterSelectionChanged"
+                },
+                {
+                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
+                    "value": "afterSelectionAttributeChanged"
+                },
+                {
+                    "name": "BEFORE_DEACTIVATE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before the Window becomes inactive. This event bubbles. This event is not cancelable.",
+                    "value": "beforeDeactivate"
+                },
+                {
+                    "name": "AFTER_ACTIVATE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after the Window becomes active. This event bubbles. This event is not cancelable.",
+                    "value": "afterActivate"
+                },
+                {
+                    "name": "AFTER_ATTRIBUTE_CHANGED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched when the value of a property changes on this Window. This event bubbles. This event is not cancelable.",
+                    "value": "afterAttributeChanged"
+                },
+                {
+                    "name": "AFTER_OPEN",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Window is opened. This event bubbles. This event is not cancelable.",
+                    "value": "afterOpen"
+                },
+                {
+                    "name": "BEFORE_CLOSE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before a Window is closed. This event bubbles. This event is cancelable.",
+                    "value": "beforeClose"
+                },
+                {
+                    "name": "AFTER_CLOSE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched when a Window is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
+                    "value": "afterClose"
+                }
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the Window."
                 },
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Document",
                     "readonly": true,
+                    "type": "Document",
+                    "array": false,
                     "description": "The parent of the Window (a Document)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the Window within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "selection",
-                    "array": true,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": true,
                     "description": "The selected object(s). Can also accept: Object or NothingEnum enumerator."
                 },
                 {
-                    "name": "bounds",
-                    "array": true,
-                    "type": "Number",
-                    "readonly": false,
-                    "description": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right]."
-                },
-                {
                     "name": "selectionKeyObject",
-                    "array": false,
-                    "type": "PageItem",
                     "readonly": false,
+                    "type": "PageItem",
+                    "array": false,
                     "description": "The key object of the selection. Can also accept: NothingEnum enumerator."
                 },
                 {
-                    "name": "properties",
-                    "array": false,
-                    "type": "Object",
+                    "name": "bounds",
                     "readonly": false,
+                    "type": "Number",
+                    "array": true,
+                    "description": "The bounds of the window (specified in pixels) in the form [top, left, bottom, right]."
+                },
+                {
+                    "name": "properties",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "select",
-                    "description": "Selects the specified object(s).",
                     "parameters": [
                         {
                             "name": "selectableItems",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The objects to select. Can accept: Object, Array of Objects, NothingEnum enumerator or SelectAll enumerator."
                         },
                         {
-                            "description": "The selection status of the Window in relation to previously selected objects. (Optional)",
-                            "array": false,
                             "name": "existingSelection",
-                            "value": "SelectionOptions.REPLACE_WITH",
                             "type": "SelectionOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The selection status of the Window in relation to previously selected objects. (Optional)",
+                            "value": "SelectionOptions.REPLACE_WITH"
                         }
-                    ]
+                    ],
+                    "description": "Selects the specified object(s)."
                 },
                 {
                     "name": "close",
-                    "description": "Closes the Window.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Closes the Window."
                 },
                 {
                     "name": "maximize",
-                    "description": "Maximizes the window.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Maximizes the window."
                 },
                 {
                     "name": "minimize",
-                    "description": "Minimizes the window.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Minimizes the window."
                 },
                 {
                     "name": "restore",
-                    "description": "Restores the window.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Restores the window."
                 },
                 {
                     "name": "bringToFront",
-                    "description": "Brings the object to the front.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Brings the object to the front."
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Window.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Window",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "description": "Dispatched after the active selection changes. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_SELECTION_CHANGED",
-                    "value": "afterSelectionChanged",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after an attribute on the active selection changes. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_SELECTION_ATTRIBUTE_CHANGED",
-                    "value": "afterSelectionAttributeChanged",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before the Window becomes inactive. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_DEACTIVATE",
-                    "value": "beforeDeactivate",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after the Window becomes active. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_ACTIVATE",
-                    "value": "afterActivate",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched when the value of a property changes on this Window. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_ATTRIBUTE_CHANGED",
-                    "value": "afterAttributeChanged",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after a Window is opened. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_OPEN",
-                    "value": "afterOpen",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before a Window is closed. This event bubbles. This event is cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_CLOSE",
-                    "value": "beforeClose",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched when a Window is closing. Since the close has been committed, it can no longer be canceled. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_CLOSE",
-                    "value": "afterClose",
-                    "type": "String"
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
         }

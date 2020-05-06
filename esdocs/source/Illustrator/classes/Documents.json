@@ -2,64 +2,184 @@
     "name": "Documents",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "addDocument",
+                    "parameters": [
+                        {
+                            "name": "startupPreset",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of a startup document preset."
+                        },
+                        {
+                            "name": "presetSettings",
+                            "type": "DocumentPreset",
+                            "array": false,
+                            "optional": true,
+                            "description": "Custom settings to apply to the preset."
+                        },
+                        {
+                            "name": "showOptionsDialog",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "If false, do not show Options dialog."
+                        }
+                    ],
+                    "description": "Create a new document from a preset.",
+                    "type": "Document",
+                    "array": false
+                },
+                {
+                    "name": "addDocumentWithDialogOption",
+                    "parameters": [
+                        {
+                            "name": "startupPreset",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of startup document preset."
+                        },
+                        {
+                            "name": "showOptionsDialog",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Argument controls if options Dialog is shown or not."
+                        }
+                    ],
+                    "description": "Create a document from the preset with option to throw dialog to customize present settings.",
+                    "type": "Document",
+                    "array": false
+                },
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "documentColorSpace",
+                            "type": "DocumentColorSpace",
+                            "array": false,
+                            "optional": true,
+                            "description": "The color model used for the document.",
+                            "value": "DocumentColorSpace.CMYK"
+                        },
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "Width of the artboard.",
+                            "value": "612.0"
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "Height of the artboard.",
+                            "value": "792.0"
+                        },
+                        {
+                            "name": "numArtboards",
+                            "type": "Int32",
+                            "array": false,
+                            "optional": true,
+                            "description": "Number of artboards for new document.Range (1:100).",
+                            "value": "1"
+                        },
+                        {
+                            "name": "artboardLayout",
+                            "type": "DocumentArtboardLayout",
+                            "array": false,
+                            "optional": true,
+                            "description": "Layout of artboards for new document.",
+                            "value": "DocumentArtboardLayout.GridByRow"
+                        },
+                        {
+                            "name": "artboardSpacing",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "Spacing between artboards for new document.",
+                            "value": "20.0"
+                        },
+                        {
+                            "name": "artboardRowsOrCols",
+                            "type": "Int32",
+                            "array": false,
+                            "optional": true,
+                            "description": "Number of rows (for rows layout) OR column(for column layouts)of artboards.Range is 1 to (docNumArtboards - 1) or 1 for single row or column layouts.",
+                            "value": "1"
+                        }
+                    ],
+                    "description": "A document.",
+                    "type": "Document",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "Document",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "Document",
+                    "array": false
                 },
                 {
                     "name": "arrange",
-                    "description": "Arranges the documents in the specified style.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "layoutStyle",
-                            "array": false,
                             "type": "DocumentLayoutStyle",
+                            "array": false,
                             "optional": false,
                             "description": "The document layout style."
                         }
-                    ]
+                    ],
+                    "description": "Arranges the documents in the specified style.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of documents."

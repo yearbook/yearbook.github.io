@@ -1,0 +1,96 @@
+{
+    "name": "AudioFormat",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "SAMPLETYPE_16",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "16 bit signed integer"
+                },
+                {
+                    "name": "SAMPLETYPE_24",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "24 bit signed integer"
+                },
+                {
+                    "name": "SAMPLETYPE_32",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "32 bit floating point"
+                },
+                {
+                    "name": "SAMPLETYPE_8",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "8 bit unsigned integer"
+                }
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "AudioFormat",
+                    "parameters": [
+                        {
+                            "name": "samplerate",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "bitDepth",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "channelLayout",
+                            "type": "AudioChannelLayout",
+                            "array": false,
+                            "optional": false,
+                            "description": "Constructs a new AudioFormat object."
+                        }
+                    ],
+                    "type": "AudioFormat",
+                    "array": false
+                }
+            ]
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "bitDepth",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Bit depth of a sample as well as its data format. Always normalized to 8 bit unsigned integer 16 bit signed integer little endian 24 bit signed integer little endian packed or 32 bit floating point (range -1.0 to 1.0)"
+                },
+                {
+                    "name": "channelLayout",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
+                    "description": "Channel layout"
+                },
+                {
+                    "name": "sampleRate",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Samplerate"
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "AudioFormat describes the format in the form of the sample rate, the bit depth and the channel layout."
+}

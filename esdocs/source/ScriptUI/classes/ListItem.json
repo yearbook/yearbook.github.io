@@ -2,84 +2,97 @@
     "name": "ListItem",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "checked",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "The checked state of an item in a list."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "The checked state of an item in a list.",
+                    "longdesc": "When true, the item is marked with the platform-appropriate checkmark. When false, no checkmark is drawn, but space is reserved for it in the left margin, so that the item lines up with other checkable items. When undefined, no space is reserved for a checkmark."
                 },
                 {
                     "name": "expanded",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "\n            The expansion state of an item of type "
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "\n            The expansion state of an item of type node that is a child of a\u00a0TreeView\u00a0list control.\n          ",
+                    "longdesc": "When true, the item is in the expanded state and its children are shown, when false, it is collapsed and children are hidden."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
-                    "description": "\n            The 0-based index of this item in the "
+                    "type": "Number",
+                    "array": false,
+                    "description": "\n            The 0-based index of this item in the items collection of its parent list control.\n          "
                 },
                 {
                     "name": "selected",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "The selection state of this item."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "The selection state of this item.",
+                    "longdesc": "When true, the item is part of the selection for its parent list. When false, the item is not selected. Set to true to select this item in a single-selection list, or to add it to the selection array for a multi-selection list. "
                 },
                 {
                     "name": "image",
-                    "array": false,
-                    "type": "ScriptUIImage",
                     "readonly": false,
-                    "description": "An image object for an icon to display in the item."
+                    "type": "ScriptUIImage",
+                    "array": false,
+                    "description": "An image object for an icon to display in the item.",
+                    "longdesc": "\n            When specified, the image appropriate to the selections state is drawn to the left of the text label. If the parent is a multi-column list box, this describes the label in the first column. Labels in additional columns are described by the\u00a0subitems\u00a0property.\n          "
                 },
                 {
                     "name": "text",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "The label text to display for the item, a localizable string."
+                    "type": "String",
+                    "array": false,
+                    "description": "The label text to display for the item, a localizable string.",
+                    "longdesc": "\n            If the parent is a multi-column list box, this describes the label in the first column. Labels in additional columns are described by the\u00a0subitems\u00a0property.\n          "
                 },
                 {
                     "name": "subItems",
-                    "array": false,
-                    "type": "Array",
                     "readonly": true,
-                    "description": "\n            When the parent is a multi-column\u00a0"
+                    "type": "Array",
+                    "array": false,
+                    "description": "\n            When the parent is a multi-column\u00a0ListBox, this describes the labels for this selectable row in additional columns.\n          ",
+                    "longdesc": "\n            A array of JavaScript objects whose length is one less than the number of columns. The first member describes the label in the second column. Each member object has two properties, of which you can specify one or both:\n            \n              text: A display string for the corresponding label.\n            \n            \n              image: An\u00a0ScriptUIImage\u00a0object for the corresponding label.\n            \n          "
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
-                    "description": "An object that contains one or more creation properties of the item (properties used only when the element is created). "
+                    "type": "Object",
+                    "array": false,
+                    "description": "An object that contains one or more creation properties of the item (properties used only when the element is created). ",
+                    "longdesc": "A ListItem object has no creation properties. "
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The parent element, a list control."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "The element type."
+                    "type": "String",
+                    "array": false,
+                    "description": "The element type.",
+                    "longdesc": "\n            Normally \"item\", but an item whose parent is a\u00a0DropDownList\u00a0control can have type \"separator\". A separator item is not mouse-sensitive and is drawn as a horizontal line across the drop-down or pop-up menu.\n          "
                 }
             ],
             "methods": []
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "An item in a list box, drop-down list, or tree view. "
+    "description": "An item in a list box, drop-down list, or tree view. ",
+    "longdesc": "\n        You can specify initial items in the creation parameters when creating the parent list. Create new items using the add() method (ListBox.add(), DropDownList.add(), TreeView.add()) in the parent list with control type=\"item\", or, for\u00a0DropDownList\u00a0controls, type=\"separator\".For a multi-column list box, the object represents one selectable row. Its\u00a0text\u00a0and\u00a0image\u00a0values specify the label in the first column, and the\u00a0subitems\u00a0property specifies the labels in the additional columns.\n      "
 }

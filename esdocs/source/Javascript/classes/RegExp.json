@@ -2,183 +2,212 @@
     "name": "RegExp",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "$1",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #1."
+                },
+                {
+                    "name": "$2",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #2."
+                },
+                {
+                    "name": "$3",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #3."
+                },
+                {
+                    "name": "$4",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #4."
+                },
+                {
+                    "name": "$5",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #5."
+                },
+                {
+                    "name": "$6",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #6."
+                },
+                {
+                    "name": "$7",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #7."
+                },
+                {
+                    "name": "$8",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #8."
+                },
+                {
+                    "name": "$9",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The matched subexpression #9."
+                },
+                {
+                    "name": "lastMatch",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The last match."
+                },
+                {
+                    "name": "lastParen",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The value of the last matched subexpression."
+                },
+                {
+                    "name": "leftContext",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The string before the match."
+                },
+                {
+                    "name": "rightContext",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The string after the match."
+                },
+                {
+                    "name": "global",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Indicates whether the match is a global match."
+                },
+                {
+                    "name": "ignoreCase",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Indicates whether the match is not case sensitive."
+                },
+                {
+                    "name": "multiline",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Indicates whether the match matches multiple lines."
+                },
+                {
+                    "name": "input",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The original input string."
+                }
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "RegExp",
+                    "parameters": [
+                        {
+                            "name": "pattern",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The pattern to convert."
+                        },
+                        {
+                            "name": "flags",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "Flags that control how the conversion is performed.",
+                            "longdesc": "A string containing any combination of the letters i, m, g:\n\t\t\t\t\t\t\t\"i\" -- ignore case in pattern matching\n\t\t\t\t\t\t\t\t\"m\" -- treat the string as multiple lines\n\t\t\t\t\t\t\t\t\"g\" -- do global pattern matching"
+                        }
+                    ],
+                    "description": "Creates and returns a new RegExp object set to the value of the argument converted to a regular expression.",
+                    "type": "RegExp",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [],
             "methods": [
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Converts this RegExp object to a string.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "compile",
-                    "description": "Compiles a string to a regular expression. Returns true if the compilation was successful.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "pattern",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The pattern to compile."
                         }
-                    ]
+                    ],
+                    "description": "Compiles a string to a regular expression. Returns true if the compilation was successful.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "exec",
-                    "description": "Execute a regular expression.",
-                    "array": false,
-                    "type": "Array",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The string to match."
                         }
-                    ]
+                    ],
+                    "description": "Execute a regular expression.",
+                    "longdesc": "The return value is an array of matches, with the first element containing the match, and successive elements containing the results of any matching subexpression in their order of appearance. If there is no match, the result is null.",
+                    "type": "Array",
+                    "array": false
                 },
                 {
                     "name": "test",
-                    "description": "Execute a regular expression, and return true if there is a match.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The string to match."
                         }
-                    ]
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "name": "$1",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #1."
-                },
-                {
-                    "name": "$2",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #2."
-                },
-                {
-                    "name": "$3",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #3."
-                },
-                {
-                    "name": "$4",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #4."
-                },
-                {
-                    "name": "$5",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #5."
-                },
-                {
-                    "name": "$6",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #6."
-                },
-                {
-                    "name": "$7",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #7."
-                },
-                {
-                    "name": "$8",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #8."
-                },
-                {
-                    "name": "$9",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The matched subexpression #9."
-                },
-                {
-                    "name": "lastMatch",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The last match."
-                },
-                {
-                    "name": "lastParen",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The value of the last matched subexpression."
-                },
-                {
-                    "name": "leftContext",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The string before the match."
-                },
-                {
-                    "name": "rightContext",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The string after the match."
-                },
-                {
-                    "name": "global",
-                    "array": false,
+                    ],
+                    "description": "Execute a regular expression, and return true if there is a match.",
                     "type": "Boolean",
-                    "readonly": false,
-                    "description": "Indicates whether the match is a global match."
-                },
-                {
-                    "name": "ignoreCase",
-                    "array": false,
-                    "type": "Boolean",
-                    "readonly": false,
-                    "description": "Indicates whether the match is not case sensitive."
-                },
-                {
-                    "name": "multiline",
-                    "array": false,
-                    "type": "Boolean",
-                    "readonly": false,
-                    "description": "Indicates whether the match matches multiple lines."
-                },
-                {
-                    "name": "input",
-                    "array": false,
-                    "type": "String",
-                    "readonly": false,
-                    "description": "The original input string."
+                    "array": false
                 }
             ]
         }

@@ -1,0 +1,140 @@
+{
+    "name": "ExtensionHandler",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "infosets",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of Infoset objects defining node data managed by this handler.",
+                    "longdesc": "The data members of the managed sets are reflected in handler-defined Thumbnail object properties. Modify the list with app.registerInfoset() and app.unregisterInfoset()."
+                },
+                {
+                    "name": "methods",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
+                    "description": "New methods that are defined on Thumbnail objects that are managed by this handler.",
+                    "longdesc": "Each object property is a function definition; for example: ext.methods.fnName = function(arg1, arg2){body}. Each method can be accessed at run time through Thumbnail.fnName()."
+                },
+                {
+                    "name": "name",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The unique identifying name of this node-handling extension. ",
+                    "longdesc": "Must be a valid JavaScript identifier (containing no colons or special characters, and beginning with a lowercase letter)."
+                },
+                {
+                    "name": "prefixes",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of lexical prefix strings for Bridge URIs. ",
+                    "longdesc": "Prefixes identify node types for which this handler supplies a model. Modify the list with app.registerPrefix() and app.unregisterPrefix()."
+                },
+                {
+                    "name": "duplicate",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that duplicates a set of nodes that are handled by this handler. ",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                },
+                {
+                    "name": "getBridgeUriForPath",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that converts a path string to a canonical Bridge URI.",
+                    "longdesc": "A canonical URI includes the node-type identifying prefix. The function takes one argument, the path string to process. If the path is already in the form of a canonical Bridge URI, the method should simply return it.Return the Bridge URI string for the path, or undefined if the path cannot be parsed."
+                },
+                {
+                    "name": "getBridgeUriForSearch",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that executes an extension-defined search among Adobe Bridge nodes of an extension-defined node type.",
+                    "longdesc": "The Find dialog calls this method in response to a click on Find, if the dialog has been invoked for a node handled by this extension, or for a container that contains a handled node type.  The function takes two arguments, the target Thumbnail for the search (a ), and the SearchSpecification returned by the Find dialog. Your method can store the parameters such that they can be retrieved by the ExtensionModel.getSearchDetails() method for the returned container node, or that method can recreate the specification and target by some other means. Return the search result, a Bridge URI for a container node that contains the matching nodes. "
+                },
+                {
+                    "name": "getSidecars",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that retrieves existing sidecar files for a set of nodes. ",
+                    "longdesc": "See Adobe Bridge JavaScript Reference for details."
+                },
+                {
+                    "name": "makeModel",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that creates a model instance that implements node handling. ",
+                    "longdesc": "Adobe Bridge calls this each time it needs to display a handled node.Return the new ExtensionModel object."
+                },
+                {
+                    "name": "rotate",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that sets the rotation setting in metadata for a set of thumbnails to the same value for all. Does not rotate image bits.",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                },
+                {
+                    "name": "setLabels",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that sets the labels for a set of thumbnails.",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                },
+                {
+                    "name": "setRatings",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that sets the ratings for a set of thumbnails.",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                },
+                {
+                    "name": "setXmp",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that embeds XMP file metadata packets in a set of files.",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                },
+                {
+                    "name": "acquirePhysicalFiles",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that  acquires actual file data for a set of placeholder nodes.",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                },
+                {
+                    "name": "moveToTrash",
+                    "readonly": false,
+                    "type": "Function",
+                    "array": false,
+                    "description": "Implement a function that deletes a set of nodes, marking the associated files for deletion on disc by moving them to the system trash or recycle bin.",
+                    "longdesc": "This function creates and returns a ModalOperator or ProgressOperator to perform the long-running operation. "
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Defines the properties and methods needed to extend the Adobe Bridge node model. ",
+    "longdesc": "To extend the node-handling behavior of Adobe Bridge, you must implement these properties and methods to define you own node type and handler. See Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference for complete details. \n\t\tRegister a script-defined extension handler with  app.registerExtension(). You can access the global list of all registered extensions through app.extensions.\n\t\tYour node-handling extension defines a node type. Your node types are identified by a Bridge URI prefix. You must associates your handler with at least one prefix, using app.registerPrefix()."
+}

@@ -1,0 +1,36 @@
+{
+    "name": "CacheData",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "cookie",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "Opaque storage to aid extensions in discovering the cache status. ",
+                    "longdesc": "The string contains data in an extension-defined format. "
+                },
+                {
+                    "name": "status",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The cache status for a member of the associated information set, or of the set itself. ",
+                    "longdesc": "One of:\n\t\t\t\tgood Known valid data.\n\t\t\t\tbad Was good at one point, but not now. \n\t\t\t\tunknown \n\t\t\t\tinProgress The status after a refresh has been requested but before the data is confirmed as good. \n\t\t\t\tinvalid The status is invalid if the ExtensionModel Object no longer exists."
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Tracks the current cache status of node data in an Infoset object.",
+    "longdesc": "This object associates a cache status with each IInfoset object in a CacheElement object. The status determines whether the data needs to be refreshed.Your ExtensionModel object method for refreshInfoset() should update the cache status for each data set it updates, including core data sets."
+}

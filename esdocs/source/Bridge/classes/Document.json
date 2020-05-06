@@ -1,0 +1,508 @@
+{
+    "name": "Document",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "additionalMetadata",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "Identifies up to four lines of additional metadata to display for thumbnails in the Content pane. ",
+                    "longdesc": "Overrides the values set in the Additional Thumbnail Metatdata drop-down lists and checkboxes in the General page of the Preferences dialog, and any value set in Preferences.extraMetadata, but does not change the preference values.The first value in the array sets the first line of additional metadata, the second value sets the second line, and so on. An array value of undefined turns off the display of metadata for that line. Allowed values are: author, bit-depth, color-mode, color-profile, copyright, date-created, date-modified, description, dimensions, document-creator, document-kind, exposure, file-size, focal-length, keywords, label, opening-application "
+                },
+                {
+                    "name": "allowDrags",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether to allow drag-and-drop of thumbnails in this browser window.",
+                    "longdesc": "When true (the default), drag-and-drop of thumbnails is allowed in this browser window. When false, thumbnails cannot be dragged within or from this browser window."
+                },
+                {
+                    "name": "bottomNavbar",
+                    "readonly": false,
+                    "type": "Unspecified",
+                    "array": false,
+                    "description": "DEPRECATED. Use navbars.filesystem.bottom."
+                },
+                {
+                    "name": "browserMode",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The browser window mode, corresponding to the UI button on the upper right, \"Switch to compact mode\". ",
+                    "longdesc": "Value can be full or compact. Ultra-compact mode has no scripting equivalent. "
+                },
+                {
+                    "name": "content",
+                    "readonly": true,
+                    "type": "Unspecified",
+                    "array": false,
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "contentPaneMode",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "DEPRECATED. Do not use. "
+                },
+                {
+                    "name": "context",
+                    "readonly": true,
+                    "type": "Thumbnail",
+                    "array": false,
+                    "description": "The Thumbnail object a user has right-clicked to invoke a context menu; otherwise undefined."
+                },
+                {
+                    "name": "displayInspectorView",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether to display Inspector panels.",
+                    "longdesc": "When true, this browser window displays the Inspector palette, showing the panels listed in  app.inspectorPanels. When false, the Inspector is not shown. "
+                },
+                {
+                    "name": "groupedSelections",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "Current selected thumbnails in the Content pane.",
+                    "longdesc": "A list of selections in the current Content page, where each member is an array containing a single selected Thumbnail object, or an array of Thumbnail objects that make up a selected stack."
+                },
+                {
+                    "name": "height",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The height of the browser window in pixels. ",
+                    "longdesc": " Legal values are positive integers. The window is resized only within the limits of the minimum and maximum size allowed by the screen resolution."
+                },
+                {
+                    "name": "hwnd",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "In Windows only, a platform-specific handle to the window for this browser."
+                },
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "A unique identifier for the browser window, valid for the life of the window.  ",
+                    "longdesc": "It is possible for more than one Document object to reference the same window."
+                },
+                {
+                    "name": "jsFuncs",
+                    "readonly": false,
+                    "type": "Unspecified",
+                    "array": false,
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "maximized",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, this browser window is in the zoomed or maximized state. "
+                },
+                {
+                    "name": "minimized",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, this browser window is in the collapsed or minimized state. ",
+                    "longdesc": "In Mac OS, a window can be in the zoomed state, and still be minimized. If both Document.maximized and Document.minimized are true, call restore() to un-zoom the window."
+                },
+                {
+                    "name": "navbars",
+                    "readonly": true,
+                    "type": "Object",
+                    "array": false,
+                    "description": "Contains the predefined NavBar objects for the configurable navigation bars. ",
+                    "longdesc": "\n\t\t\tTo access the navigation bars that can be shown when the Content pane displays files and folders, use navbars.filesystem.top and navbars.filesystem.bottom.\n\t\t\tBoth of the two bars can be configured to display ScriptUI controls, and are hidden by default. "
+                },
+                {
+                    "name": "noItems",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "Text to be displayed in the Content pane when the selected thumbnail is for an empty folder. ",
+                    "longdesc": " The default is \"No Items to Display\". "
+                },
+                {
+                    "name": "owner",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The Adobe Bridge-enabled application that created or first activated this browser window, if it was not Adobe Bridge. ",
+                    "longdesc": "An application specifier, such as \"photoshop\"."
+                },
+                {
+                    "name": "palettes",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of TabbedPalette objects for all default and script-defined display palettes available to this browser, regardless of their visibility status. "
+                },
+                {
+                    "name": "position",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
+                    "description": "The position of this browser window on the screen. ",
+                    "longdesc": "An object with two properties, x and y, whose value is the point of the screen coordinates, the screen coordinates are relative to the upper-left corner of the main display. "
+                },
+                {
+                    "name": "presentationMode",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The presentation mode of the Content pane. ",
+                    "longdesc": "The value is always \"browser\" in Bridge, in correspondence with that setPresentationMode() and presentationPath supports the \"browser\" mode only."
+                },
+                {
+                    "name": "presentationPath",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The path to the content displayed in the Content pane.",
+                    "longdesc": "A Bridge URI, which is a valid filesystem path that Adobe Bridge can interpret. This property no longer supports URL. To display HTML page, use TabbedPalette."
+                },
+                {
+                    "name": "selections",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The Thumbnail objects for all currently selected files in the Content pane of this document. ",
+                    "longdesc": "Change the selections using the  select(), selectAll(), deselect() and deselectAll() methods. A script should wait until the loaded event has occurred before making calls to document selection methods. \n\t\t\tUse getSelection() to limit the request to visible thumbnails, or those for files of a given type. Use groupedSelections to include thumbnails that are in selected stacks.NOTE: Accessing this value is a time-intensive operation. To improve performance, access it outside loops. Also, use selectionLength when possible, rather than checking the length of this array.\t"
+                },
+                {
+                    "name": "selectionLength",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of currently selected thumbnails in the Content pane."
+                },
+                {
+                    "name": "selectionsLength",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of currently selected thumbnails in the Content pane."
+                },
+                {
+                    "name": "sorts",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "How the thumbnails in the Content pane are sorted. ",
+                    "longdesc": "An array containing one JavaScript object, { type:String, name:String, reverse:Boolean }.\n\t\t\t The type value is one of these strings: \"string\", \"date\", \"number\", \"dimensions\", \"resolution\", \"colorProfile\", \"user\". \n\t\t\t The name value is one of these strings: \"user\", \"name\", \"date-created\", \"date-modified\", \"label\", \"rating\", \"file-size\", \"document-kind\", \"keywords\", dimensions\", \"resolution\", \"color-profile\". \n\t\t\t The reverse value is true if the thumbnails are sorted in reverse order in the given category. "
+                },
+                {
+                    "name": "showThumbnailName",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, thumbnail names are displayed in the Content pane. ",
+                    "longdesc": "This overrides the ShowName preference value."
+                },
+                {
+                    "name": "stacks",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A list of all current thumbnail stacks in this browser.",
+                    "longdesc": "Each stack is an object with these properties and functions:\n\t\t\t\tthumbnails: An array of Thumbnail objects.\n\t\t\t\tproperties: Read/write. An array that user can add and retrieve customized properties for the stack. Those properties can be stored into the cache file by calling flushStackProperties().\n\t\t\t\tisValid: Function. If the stack already exists and valid, the function returns true, otherwise returns false.\n\t\t\t"
+                },
+                {
+                    "name": "status",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The text displayed in the document's status line at the bottom of the Content pane."
+                },
+                {
+                    "name": "thumbnail",
+                    "readonly": false,
+                    "type": "Thumbnail",
+                    "array": false,
+                    "description": "The Thumbnail object for the node currently selected in the Folders or Favorites pane. ",
+                    "longdesc": "Setting this value navigates to and selects the corresponding node in the Folders pane. The contents of this node are displayed in the Content pane according to its displayMode. The Thumbnail.children array is not populated until the loaded event has occurred for the document."
+                },
+                {
+                    "name": "thumbnailViewMode",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The view mode of the Content pane, as selected by the View menu.",
+                    "longdesc": "One of: thumbnails, details, list "
+                },
+                {
+                    "name": "topNavbar",
+                    "readonly": false,
+                    "type": "Unspecified",
+                    "array": false,
+                    "description": "DEPRECATED. Use navbars.filesystem.top."
+                },
+                {
+                    "name": "visible",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the browser window is expanded, as opposed to being minimized or collapsed. ",
+                    "longdesc": "Setting visible to false collapses the window. "
+                },
+                {
+                    "name": "visibleThumbnails",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "An array of Thumbnail objects that are currently shown in the Content pane. ",
+                    "longdesc": "The array is ordered according to the current sort order, and contains only thumbnails whose visible property is true.\n\t\t\t\tAccessing this value is a time-intensive operation. To improve performance, access it outside loops. Also, use visibleThumbnailsLength when possible, rather than checking the length of this array."
+                },
+                {
+                    "name": "visibleThumbnailsLength",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of thumbnails in the visibleThumbnails array. "
+                },
+                {
+                    "name": "visitUrl",
+                    "readonly": false,
+                    "type": "Unspecified",
+                    "array": false,
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "width",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The width of the browser window in pixels. ",
+                    "longdesc": "Legal values are positive integers. The window is resized only within the limits of the minimum and maximum size allowed by the screen resolution."
+                },
+                {
+                    "name": "workspace",
+                    "readonly": true,
+                    "type": "Object",
+                    "array": false,
+                    "description": "Retrieves the most recently set workspace.",
+                    "longdesc": "A workspace value is  a JavaScript object with two properties, id and name, whose string values are the unique identifier and display name of the workspace. A user-defined workspace may have been renamed by the user since being set by a script.  Set with Document.setWorkspace(). The current workspace can also be set by user action. Value is undefined for a new document before any workspace has been explicitly set. "
+                }
+            ],
+            "methods": [
+                {
+                    "name": "bringToFront",
+                    "parameters": [],
+                    "description": "Makes this browser window the topmost active window in the windowing system. "
+                },
+                {
+                    "name": "center",
+                    "parameters": [],
+                    "description": "Centers this browser window on the screen.",
+                    "longdesc": " If there is more than one monitor, centers the window on the monitor where most of the window resides."
+                },
+                {
+                    "name": "chooseMenuItem",
+                    "parameters": [
+                        {
+                            "name": "menuID",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifier for the command to execute.",
+                            "longdesc": "Predefined identifiers for Adobe Bridge menu commands are listed in the Adobe Bridge JavaScript Reference.  If the ID is for a submenu, the function does nothing."
+                        }
+                    ],
+                    "description": "Executes an Adobe Bridge-defined or script-defined menu command programatically.",
+                    "longdesc": "This is the equivalent to the user selecting the command interactively."
+                },
+                {
+                    "name": "close",
+                    "parameters": [],
+                    "description": "Closes this browser window."
+                },
+                {
+                    "name": "deselect",
+                    "parameters": [
+                        {
+                            "name": "thumbnail",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail for the node."
+                        }
+                    ],
+                    "description": "Deselects a node in the Content pane.",
+                    "longdesc": "If the specified Thumbnail is a child of this document and is selected, removes it from the selections  array and deselects it in the browser window. Returns true if the thumbnail was deselected. \n\t\t\t\tA script should wait until the loaded event has occurred before making calls to document selection methods.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "deselectAll",
+                    "parameters": [],
+                    "description": "Deselects all selected nodes in the Content pane.",
+                    "longdesc": "Removes all members from the selections array and deselects all thumbnails in the browser window. A script should wait until the loaded event has occurred before making calls to document selection methods."
+                },
+                {
+                    "name": "execJS",
+                    "parameters": [],
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "flushStackProperties",
+                    "parameters": [],
+                    "description": "Stores stack properties into the cache file. "
+                },
+                {
+                    "name": "getSelection",
+                    "parameters": [
+                        {
+                            "name": "filter",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "A comma-delimited list of file extensions to match.",
+                            "longdesc": "Can contain the wildcard character \"*\" to match all file extensions. \"*\" is the default."
+                        }
+                    ],
+                    "description": "Collects selected thumbnails for files of a given type, if any are selected.",
+                    "longdesc": "If no matching thumbnails are selected, collects matching thumbnails that are currently visible in the Content pane.Returns an Array of Thumbnail object.",
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "maximize",
+                    "parameters": [],
+                    "description": "Maximizes or zooms this browser window. "
+                },
+                {
+                    "name": "minimize",
+                    "parameters": [],
+                    "description": "Minimizes or docks this browser window."
+                },
+                {
+                    "name": "normalize",
+                    "parameters": [],
+                    "description": "Centers this browser window on the screen, and sets the height and width to 80% of the screen height and width."
+                },
+                {
+                    "name": "preflightFiles",
+                    "parameters": [],
+                    "description": "DEPRECATED in Creative Suite 3. Use app.acquirePhysicalFiles() instead. "
+                },
+                {
+                    "name": "print",
+                    "parameters": [],
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "refresh",
+                    "parameters": [],
+                    "description": "Refreshes the display of this browser window."
+                },
+                {
+                    "name": "resetToDefaultWorkspace",
+                    "parameters": [],
+                    "description": "Restores the default configuration of the tabbed palettes in this browser window. ",
+                    "longdesc": "This is the equivalent of choosing Reset from the Window:Workspace menu.NOTE:This works only when browserMode is full. If browser mode is compact, it does nothing."
+                },
+                {
+                    "name": "restore",
+                    "parameters": [],
+                    "description": "Restores this browser window after it has been minimized.",
+                    "longdesc": "In Windows, makes the window user-sizeable. \n\t\t\t\tIn Mac OS, returns the window to the user-configured size."
+                },
+                {
+                    "name": "reveal",
+                    "parameters": [
+                        {
+                            "name": "thumbnail",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object."
+                        }
+                    ],
+                    "description": "Causes the Content pane (not the Folders or Favorites pane) to show the specified thumbnail.",
+                    "longdesc": "Scrolls  the display if necessary to make the node visible. Does not select the thumbnail. "
+                },
+                {
+                    "name": "select",
+                    "parameters": [
+                        {
+                            "name": "thumbnail",
+                            "type": "Unspecified",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object."
+                        }
+                    ],
+                    "description": "Selects a thumbnail in the Content pane.",
+                    "longdesc": "If the specified thumbnail is a child of this document and is not selected, adds it to the selections array and selects it in the Content pane. This is the same as selecting the icon in the Content pane with Control-click. Returns true if the thumbnail was selected. A script should wait until the loaded event has occurred before making calls to document selection methods.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "selectAll",
+                    "parameters": [],
+                    "description": "Selects all children of the currenly selected thumbnail in the Content pane.",
+                    "longdesc": "Adds all child Thumbnail objects of the current thumbnail (in the thumbnail property) to the selections array, and selects them in the Content pane. This is the same as typing Control-a in the Content pane. A script should wait until the loaded event has occurred before making calls to document selection methods."
+                },
+                {
+                    "name": "setPresentationMode",
+                    "parameters": [
+                        {
+                            "name": "mode",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The new display mode. ",
+                            "longdesc": "Must be \"browser\" in Bridge, otherwise the presentationPath property will not work properly."
+                        },
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The path string, a Bridge URI."
+                        }
+                    ],
+                    "description": "Sets the presentation mode of the Content pane, and optionally the path to the current content to display.",
+                    "longdesc": "The mode determines how the presentationPath value is interpreted.CAUTION: In Bridge CC only the \"browser\" mode is supported. Set the presentation mode to other mode will cause the presentationPath property not working properly. To display HTML page, use TabbedPalette."
+                },
+                {
+                    "name": "setWorkspace",
+                    "parameters": [
+                        {
+                            "name": "workspaceId",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique, identifying name string for the new workspace. ",
+                            "longdesc": "If it is the same as the name of the current workspace, the function does nothing. Identifiers of predefined workspaces are: default, lightTable, navigator, metadata, horizontalFilmstrip, verticalFilmstrip"
+                        }
+                    ],
+                    "description": "Sets the browser configuration to a predefined, user-defined or script-defined workspace.",
+                    "longdesc": "The current workspace can also be set by user action. A user-defined workspace may have been renamed by the user since being set by a script. If an invalid ID is assigned, the workspace is not changed. If a script-defined tabbed palette is visible when the user or a script creates a workspace, the workspace references that palette by its unique identifier. If a workspace references a script-defined tabbed palette, the palette must be created before the workspace is applied. Otherwise, the palette does not appear.NOTE:This works only when browserMode is full. If browser mode is compact, it does nothing.",
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "Represents an Adobe Bridge browser window. ",
+    "longdesc": "The user can create multiple browser windows by selecting the New Window command in the File menu. For each browser window, there is one Document instance. \n\t\tAccess the object for the active browser window using  app.document \n\t\tAccess an array of objects for all open browser windows in app.documents  "
+}

@@ -1,0 +1,427 @@
+{
+    "name": "Thumbnail",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "aliasType",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "If the value of type is alias, the kind of target this thumbnail represents.",
+                    "longdesc": "Either file or folder. If type is not alias, value is undefined."
+                },
+                {
+                    "name": "children",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The node children of this container node. ",
+                    "longdesc": "An array of Thumbnail objects. When this object references a folder, the children are the thumbnails that reference the contents of the folder. By default, when the thumbnail is selected in a navigation pane, its children are shown in the Content pane.This array is not populated until the loaded event has occurred for the browser.The list of children is cached on the first reference so that subsequent references do not result in further disk access. To ensure that the list is up to date (for example after you have performed operations that may have resulted in children being deleted, added, or renamed) call the refresh() method to make sure the list is updated on the next access. You do not need to refresh if you changed the content or properties of a child thumbnail. "
+                },
+                {
+                    "name": "container",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the node is a container.",
+                    "longdesc": "A container can have child nodes (regardless of whether it currently has any children). Only container nodes can appear in the Folders and Favorites panes. Folder thumbnails are containers; a node-handling extension can define other container node types. "
+                },
+                {
+                    "name": "core",
+                    "readonly": true,
+                    "type": "Infoset",
+                    "array": false,
+                    "description": "Provides access to the core node-data sets defined by the default node handler. ",
+                    "longdesc": "Refer to core node attributes through the name of the core Infoset object and InfosetMemberDescription object. For example, myThumbSize = myThumb.core.immediate.size"
+                },
+                {
+                    "name": "creationDate",
+                    "readonly": true,
+                    "type": "Date",
+                    "array": false,
+                    "description": "Date the referenced file or folder was created, if it can be determined. "
+                },
+                {
+                    "name": "displayMode",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "DEPRECATED. Do not use. "
+                },
+                {
+                    "name": "displayPath",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "DEPRECATED. Do not use. "
+                },
+                {
+                    "name": "exists",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "For a file or folder, whether the resource for this node exists on the local disk.",
+                    "longdesc": "A node-handling extension can define other criteria for whether a node exists."
+                },
+                {
+                    "name": "extensions",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "All of the ExtensionHandler objects that could handle this node.",
+                    "longdesc": " The last one in the list is the one that does handle it. "
+                },
+                {
+                    "name": "hasMetadata",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether this thumbnail is associated with a file that contains embedded metadata."
+                },
+                {
+                    "name": "hidden",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether this thumbnail is displayable.",
+                    "longdesc": "When true, this thumbnail is hidden. When false (the default), it is shown. "
+                },
+                {
+                    "name": "iconPath",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The path to the operating-system icon image file for this node, when it represents a web page."
+                },
+                {
+                    "name": "label",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The label string for this thumbnail.",
+                    "longdesc": "Can be one of the predefined color strings (as seen in the Label menu) to apply one of the standard colors. Any string that does not match a predefined color is considered a label string rather than a color. The default color is White. This label is displayed for all thumbnails, regardless of whether they support embedded metadata."
+                },
+                {
+                    "name": "lastModifiedDate",
+                    "readonly": true,
+                    "type": "Date",
+                    "array": false,
+                    "description": "Date the referenced file or folder was last modified, if it can be determined. "
+                },
+                {
+                    "name": "location",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Whether the thumbnail is associated with a local file-system object or a Version Cue node (which can have both a local and remote replica).",
+                    "longdesc": "One of: local, unknown, VersionCue"
+                },
+                {
+                    "name": "locked",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether this node represents a read-only file in Windows, or a file that has been locked in the Finder in Mac OS."
+                },
+                {
+                    "name": "metadata",
+                    "readonly": false,
+                    "type": "Metadata",
+                    "array": false,
+                    "description": "The Metadata object associated with this thumbnail, if it supports embedded metadata. ",
+                    "longdesc": "Some properties of this Metadata object may not be immediately available. To ensure the object contains current data, set app.synchronousMode to true, or use  Thumbnail.synchronousMetadata .If no metadata is defined for a thumbnail, and you attempt to access a metadata property through this property, the value undefined is returned. Note that this differs from the behavior in Adobe Bridge CS2, where an exception was thrown in this case."
+                },
+                {
+                    "name": "mimeType",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The referenced file\u2019s MIME type, if it can be determined. ",
+                    "longdesc": "If the type cannot be determined, returns the empty string."
+                },
+                {
+                    "name": "model",
+                    "readonly": true,
+                    "type": "ExtensionModel",
+                    "array": false,
+                    "description": "The ExtensionModel object associated with this node. "
+                },
+                {
+                    "name": "name",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The label displayed for the thumbnail. ",
+                    "longdesc": "Default is the path value."
+                },
+                {
+                    "name": "parent",
+                    "readonly": true,
+                    "type": "Thumbnail",
+                    "array": false,
+                    "description": "The Thumbnail object for the parent node of this thumbnail. ",
+                    "longdesc": "The value is undefined for thumbnails added to the root level of app.favorites. This object is in the children array of its parent."
+                },
+                {
+                    "name": "path",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "DEPRECATED. Use spec or uri instead. "
+                },
+                {
+                    "name": "rating",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The rating value for this thumbnail.",
+                    "longdesc": "In the range [-1..5]. A negative value signifies a rejection. If set to a value that is out of range, the rating is set to 0. Applies to all thumbnails regardless of whether they support embedded metadata."
+                },
+                {
+                    "name": "rotation",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The angle of rotation for the icon image of this node, in degrees.",
+                    "longdesc": "One of: 0: No rotation, 90: Rotated 90 degrees clockwise, -90: Rotated 90 degrees counterclockwise, 180: Rotated 180 degrees. All other values are ignored. "
+                },
+                {
+                    "name": "spec",
+                    "readonly": true,
+                    "type": "File",
+                    "array": false,
+                    "description": "A  File or Folder object for this thumbnail\u2019s referenced node. ",
+                    "longdesc": "Set when the object is created, using the first argument to the Thumbnail object constructor. If the thumbnail does not reference a file or folder, the value is undefined. "
+                },
+                {
+                    "name": "synchronousMetadata",
+                    "readonly": false,
+                    "type": "Metadata",
+                    "array": false,
+                    "description": "Waits for confirmation of a valid value to return the Metadata object associated with this thumbnail, if any. ",
+                    "longdesc": "If the node does not support embedded metadata, returns undefined. If app.synchronousMode is true, this is the same as  Thumbnail.metadata. "
+                },
+                {
+                    "name": "type",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The type of node this thumbnail references. ",
+                    "longdesc": "One of: file, folder, alias, package, application (an executable file), other"
+                },
+                {
+                    "name": "uri",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The full Bridge URI ( unique resource identifier) for this thumbnail. ",
+                    "longdesc": "This is the path string preceded by a registered node-type identifying prefix such as \"vc:\". "
+                }
+            ],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [],
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "copyTo",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The parent node of the new copy.",
+                            "longdesc": " A File or Folder object, a Thumbnail object, or a Bridge URI string."
+                        }
+                    ],
+                    "description": "Creates a new Thumbnail object that references the same node as this one.",
+                    "longdesc": "Adds the new thumbnail to the target thumbnail's children list. Each call to this function is added to the Undo stack.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "insert",
+                    "parameters": [],
+                    "description": "DEPRECATED. Do not use."
+                },
+                {
+                    "name": "moveTo",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The new parent node.",
+                            "longdesc": " A File or Folder object, a Thumbnail object, or a Bridge URI string."
+                        }
+                    ],
+                    "description": "Changes the parent of this thumbnail.",
+                    "longdesc": "Removes this thumbnail from its current parent, and adds it to the target thumbnail\u2019s children list.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "open",
+                    "parameters": [],
+                    "description": "Launches the file referenced by this thumbnail in the appropriate application (such as Photoshop for JPEG files). ",
+                    "longdesc": "This is the same as choosing Open from the File or context menu, or double-clicking the thumbnail icon in the Content pane. If this thumbnail references a JSX file, runs the script in its target application, or, if no target is specified, in the ExtendScript Toolkit. If this thumbnail references a folder, navigates to that folder in the Folders pane\u2014that is, sets Document.thumbnail to this thumbnail.Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "openWith",
+                    "parameters": [
+                        {
+                            "name": "appPath",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "A platform-specific path string to the application.",
+                            "longdesc": "A string as returned in the appPath property of the openWith event object when a user makes a selection of thumbnails in the Content pane, then selects an application from the Open With submenu of the File or context menu. Returns true on success."
+                        }
+                    ],
+                    "description": "Launches the file referenced by this thumbnail in the specified application. ",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "refresh",
+                    "parameters": [
+                        {
+                            "name": "infosetName",
+                            "type": "Array",
+                            "array": false,
+                            "optional": true,
+                            "description": "The data sets to refresh.",
+                            "longdesc": " An array of Infoset object names, or the string all (the default), which refreshes all information sets associated with this thumbnail."
+                        }
+                    ],
+                    "description": "Refreshes an associated information set or sets to reflect the current state of this node\u2019s referenced file or folder.",
+                    "longdesc": "For container thumbnails, marks the Thumbnail object so that the next access to the children property causes a disk access to update the cached list of children.\n\t\t\tFor non-container thumbnails, returns true if the node has changed since the last access.\n\t\t\tFor container thumbnails, returns true if the node has been renamed since the last access.\n\t\t\tReturns true on success. ",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "registerInterest",
+                    "parameters": [
+                        {
+                            "name": "callback",
+                            "type": "Unspecified",
+                            "array": false,
+                            "optional": false,
+                            "description": "A developer-defined callback function.",
+                            "longdesc": "Must conform to the prototype function interestCallback (thumb, message) \n\t\t\t\t\tthumb is this Thumbnail object. \n\t\t\t\t\t message is a string, the name of the Infoset object whose update triggered the call."
+                        }
+                    ],
+                    "description": "Registers a callback function that is executed whenever a node-data value in this thumbnail changes."
+                },
+                {
+                    "name": "remove",
+                    "parameters": [],
+                    "description": "Deletes this Thumbnail object.",
+                    "longdesc": "Also deletes the file or folder associated with the thumbnail from the disk."
+                },
+                {
+                    "name": "resolve",
+                    "parameters": [],
+                    "description": "If the value of type is alias, retrieves a Thumbnail object for the target of the alias.",
+                    "longdesc": "If the alias can be resolved, returns the Thumbnail object for the target.\n\t\t\t\tIf the alias cannot be resolved, returns undefined.\n\t\t\t\tIf the type is not alias, returns this Thumbnail object.",
+                    "type": "Thumbnail",
+                    "array": false
+                },
+                {
+                    "name": "revealInSystemBrowser",
+                    "parameters": [],
+                    "description": "Opens the platform-specific native file browser, displays and selects the file or folder for this thumbnail."
+                },
+                {
+                    "name": "unregisterInterest",
+                    "parameters": [
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "array": false,
+                            "optional": false,
+                            "description": "A developer-defined callback function, previously registered with registerInterest()."
+                        }
+                    ],
+                    "description": "Removes a callback function from the list of callbacks registered for this thumbnail."
+                },
+                {
+                    "name": "verifyExternalChanges",
+                    "parameters": [],
+                    "description": "Re-enumerates the children of a container node. ",
+                    "longdesc": "Has no effect if the node is not a container."
+                },
+                {
+                    "name": "isDynamicMedia",
+                    "parameters": [],
+                    "description": "Returns true if the Thumbnail object can be played in Bridge.",
+                    "longdesc": "Returns true if the Thumbnail object can be played in the Preview panel in Bridge, such as a video or an audio file. Returns false if the Thumbnail object cannot be played."
+                },
+                {
+                    "name": "togglePlayPause",
+                    "parameters": [],
+                    "description": "Toggles the state of the Play or Pause button in Preview panel for the selected item.",
+                    "longdesc": "Toggles the state of the Play or Pause button in Preview panel for the selected item. This button is enabled when a playable item is selected in the Content panel."
+                },
+                {
+                    "name": "isPlaying",
+                    "parameters": [],
+                    "description": "Returns true if selected file is already playing in the Preview panel.",
+                    "longdesc": "Returns true if the selected file is already playing in the Preview panel. Returns false if the file is paused, a thumbnail is not selected, or the selected item cannot be played."
+                },
+                {
+                    "name": "toggleAutoLoop",
+                    "parameters": [],
+                    "description": "Toggles the state of the Auto-Loop button in Preview panel for the selected item.",
+                    "longdesc": "Toggles the state of the Auto-Loop button in Preview panel for the selected item. This button is enabled when a playable item is selected in the Content panel."
+                },
+                {
+                    "name": "isAutoLoopOn",
+                    "parameters": [],
+                    "description": "Returns true if the auto-loop is enabled in the Preview panel.",
+                    "longdesc": "Returns true if the auto-loop is enabled in the Preview panel. Returns false if the file is paused, thumbnail is not selected, or the selected item cannot be played."
+                },
+                {
+                    "name": "setPosition",
+                    "parameters": [],
+                    "description": "Sets seek position of playback slider in the Preview panel.",
+                    "longdesc": "Sets seek position of the playback slider in the Preview panel for the selected file. This function expects two numbers as arguments."
+                },
+                {
+                    "name": "getPosition",
+                    "parameters": [],
+                    "description": "Returns the position of playback slider from Preview panel.",
+                    "longdesc": "Returns the position of playback slider from Preview panel. This function returns an array of two numbers, which are nPosition and nTotal, as defined in the setPosition method."
+                },
+                {
+                    "name": "setVolume",
+                    "parameters": [],
+                    "description": "Sets position of the volume slider in the Preview panel.",
+                    "longdesc": "Sets position of the volume slider in the Preview panel for the selected file. This function expects two numbers as arguments."
+                },
+                {
+                    "name": "getVolume",
+                    "parameters": [],
+                    "description": "Returns the position of volume slider for the item being previewed in Bridge.",
+                    "longdesc": "Returns the position of volume slider for the item being previewed in Bridge. This function returns an array of two numbers, which are nPosition and nTotal, as defined in the setVolume method."
+                }
+            ]
+        }
+    },
+    "description": "Represents a reference to a node in the browser navigation hierarchy.",
+    "longdesc": " Thumbnail objects can represent:\n\t\t\tFiles and folders in the local file system. \n\t\t\tURLs\n\t\t\tNavigation nodes of types defined by a node-handling extension. \n\t\t\tA thumbnail's applicable node handler determines how nodes are displayed when that thumbnail is selected. The Content pane can show thumbnail icons. CAUTION: When a script accesses the properties of a Thumbnail object, some properties of the object may not be immediately available. To ensure the object contains current data, set app.synchronousMode to true before accessing properties.\n      "
+}

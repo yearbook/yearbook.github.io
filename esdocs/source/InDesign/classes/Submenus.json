@@ -2,204 +2,208 @@
     "name": "Submenus",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of objects in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "add",
-                    "description": "Creates a new submenu.",
-                    "array": false,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "title",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the Submenu for display in the user interface. The title includes any ampersand characters (&), which are used to tell the Windows OS to underline the following character in the name for use with the Alt key to navigate to a menu item. Double ampersands are used to display an actual ampersand character in the name. The Mac OS ignores and removes the extra ampersand characters."
                         },
                         {
-                            "description": "The location of the submenu relative to the reference object or within the containing object. (Optional)",
-                            "array": false,
                             "name": "at",
-                            "value": "LocationOptions.AT_END",
                             "type": "LocationOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The location of the submenu relative to the reference object or within the containing object. (Optional)",
+                            "value": "LocationOptions.AT_END"
                         },
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "MenuElement",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. Note: Required when the at parameter specifies before or after. (Optional)"
                         },
                         {
                             "name": "withProperties",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false,
                             "description": "Initial values for properties of the new Submenu (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Creates a new submenu.",
+                    "type": "Submenu",
+                    "array": false
                 },
                 {
                     "name": "count",
+                    "parameters": [],
                     "description": "Displays the number of elements in the Submenu.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "item",
-                    "description": "Returns the Submenu with the specified index or name.",
-                    "array": false,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The index or name. Can accept: Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Submenu with the specified index or name.",
+                    "type": "Submenu",
+                    "array": false
                 },
                 {
                     "name": "itemByName",
-                    "description": "Returns the Submenu with the specified name.",
-                    "array": false,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Submenu with the specified name.",
+                    "type": "Submenu",
+                    "array": false
                 },
                 {
                     "name": "itemByRange",
-                    "description": "Returns the Submenus within the specified range.",
-                    "array": true,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "from",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The Submenu, index, or name at the beginning of the range. Can accept: Submenu, Long Integer or String."
                         },
                         {
                             "name": "to",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The Submenu, index, or name at the end of the range. Can accept: Submenu, Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Submenus within the specified range.",
+                    "type": "Submenu",
+                    "array": true
                 },
                 {
                     "name": "firstItem",
+                    "parameters": [],
                     "description": "Returns the first Submenu in the collection.",
-                    "array": false,
                     "type": "Submenu",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "lastItem",
+                    "parameters": [],
                     "description": "Returns the last Submenu in the collection.",
-                    "array": false,
                     "type": "Submenu",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "middleItem",
+                    "parameters": [],
                     "description": "Returns the middle Submenu in the collection.",
-                    "array": false,
                     "type": "Submenu",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "previousItem",
-                    "description": "Returns the Submenu with the index previous to the specified index.",
-                    "array": false,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "Submenu",
+                            "array": false,
                             "optional": false,
                             "description": "The index of the Submenu that follows the desired Submenu."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Submenu with the index previous to the specified index.",
+                    "type": "Submenu",
+                    "array": false
                 },
                 {
                     "name": "nextItem",
-                    "description": "Returns the Submenu whose index follows the specified Submenu in the collection.",
-                    "array": false,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "Submenu",
+                            "array": false,
                             "optional": false,
                             "description": "The Submenu whose index comes before the desired Submenu."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Submenu whose index follows the specified Submenu in the collection.",
+                    "type": "Submenu",
+                    "array": false
                 },
                 {
                     "name": "anyItem",
+                    "parameters": [],
                     "description": "Returns any Submenu in the collection.",
-                    "array": false,
                     "type": "Submenu",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "everyItem",
+                    "parameters": [],
                     "description": "Returns every Submenu in the collection.",
-                    "array": true,
                     "type": "Submenu",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Submenu.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Returns the Submenu with the specified index.",
-                    "array": false,
-                    "type": "Submenu",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The index."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Submenu with the specified index.",
+                    "type": "Submenu",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of submenus."

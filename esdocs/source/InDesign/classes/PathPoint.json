@@ -2,190 +2,194 @@
     "name": "PathPoint",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Path",
                     "readonly": true,
+                    "type": "Path",
+                    "array": false,
                     "description": "The parent of the PathPoint (a Path)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the PathPoint within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "pointType",
-                    "array": false,
-                    "type": "PointType",
                     "readonly": false,
+                    "type": "PointType",
+                    "array": false,
                     "description": "The path point type."
                 },
                 {
                     "name": "anchor",
-                    "array": true,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": true,
                     "description": "The location of the path point on the page, in the format [x, y]."
                 },
                 {
                     "name": "leftDirection",
-                    "array": true,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": true,
                     "description": "The left-direction point, which controls the curve of the line segment preceding the path point on the path, in the format [x, y]."
                 },
                 {
                     "name": "rightDirection",
-                    "array": true,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": true,
                     "description": "The right-direction point, which controls the curve of the line segment following the path point on the path, in the format [x, y]."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the PathPoint.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes the PathPoint."
                 },
                 {
                     "name": "join",
-                    "description": "Join this path point to another path point. The two points must be end points and their paths combined into a single path on a single page item.",
                     "parameters": [
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "PathPoint",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. The path point to join to"
                         },
                         {
                             "name": "given",
-                            "array": false,
                             "type": "JoinOptions",
+                            "array": false,
                             "optional": false,
                             "description": "The join option to use. (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Join this path point to another path point. The two points must be end points and their paths combined into a single path on a single page item."
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the PathPoint.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "PathPoint",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A path point of a path."

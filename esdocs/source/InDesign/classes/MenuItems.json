@@ -2,219 +2,223 @@
     "name": "MenuItems",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of objects in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "add",
-                    "description": "Creates a new menu item.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "associatedMenuAction",
-                            "array": false,
                             "type": "MenuAction",
+                            "array": false,
                             "optional": false,
                             "description": "The menu action that implements the  menu item."
                         },
                         {
-                            "description": "The location of the menu item relative to the reference object or within the containing object. (Optional)",
-                            "array": false,
                             "name": "at",
-                            "value": "LocationOptions.AT_END",
                             "type": "LocationOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The location of the menu item relative to the reference object or within the containing object. (Optional)",
+                            "value": "LocationOptions.AT_END"
                         },
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "MenuElement",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. Note: Required when the at parameter specifies before or after. (Optional)"
                         },
                         {
                             "name": "withProperties",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false,
                             "description": "Initial values for properties of the new MenuItem (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Creates a new menu item.",
+                    "type": "MenuItem",
+                    "array": false
                 },
                 {
                     "name": "count",
+                    "parameters": [],
                     "description": "Displays the number of elements in the MenuItem.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "item",
-                    "description": "Returns the MenuItem with the specified index or name.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The index or name. Can accept: Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItem with the specified index or name.",
+                    "type": "MenuItem",
+                    "array": false
                 },
                 {
                     "name": "itemByName",
-                    "description": "Returns the MenuItem with the specified name.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItem with the specified name.",
+                    "type": "MenuItem",
+                    "array": false
                 },
                 {
                     "name": "itemByID",
-                    "description": "Returns the MenuItem with the specified ID.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "id",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The ID."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItem with the specified ID.",
+                    "type": "MenuItem",
+                    "array": false
                 },
                 {
                     "name": "itemByRange",
-                    "description": "Returns the MenuItems within the specified range.",
-                    "array": true,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "from",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The MenuItem, index, or name at the beginning of the range. Can accept: MenuItem, Long Integer or String."
                         },
                         {
                             "name": "to",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The MenuItem, index, or name at the end of the range. Can accept: MenuItem, Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItems within the specified range.",
+                    "type": "MenuItem",
+                    "array": true
                 },
                 {
                     "name": "firstItem",
+                    "parameters": [],
                     "description": "Returns the first MenuItem in the collection.",
-                    "array": false,
                     "type": "MenuItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "lastItem",
+                    "parameters": [],
                     "description": "Returns the last MenuItem in the collection.",
-                    "array": false,
                     "type": "MenuItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "middleItem",
+                    "parameters": [],
                     "description": "Returns the middle MenuItem in the collection.",
-                    "array": false,
                     "type": "MenuItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "previousItem",
-                    "description": "Returns the MenuItem with the index previous to the specified index.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "MenuItem",
+                            "array": false,
                             "optional": false,
                             "description": "The index of the MenuItem that follows the desired MenuItem."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItem with the index previous to the specified index.",
+                    "type": "MenuItem",
+                    "array": false
                 },
                 {
                     "name": "nextItem",
-                    "description": "Returns the MenuItem whose index follows the specified MenuItem in the collection.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "MenuItem",
+                            "array": false,
                             "optional": false,
                             "description": "The MenuItem whose index comes before the desired MenuItem."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItem whose index follows the specified MenuItem in the collection.",
+                    "type": "MenuItem",
+                    "array": false
                 },
                 {
                     "name": "anyItem",
+                    "parameters": [],
                     "description": "Returns any MenuItem in the collection.",
-                    "array": false,
                     "type": "MenuItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "everyItem",
+                    "parameters": [],
                     "description": "Returns every MenuItem in the collection.",
-                    "array": true,
                     "type": "MenuItem",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the MenuItem.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Returns the MenuItem with the specified index.",
-                    "array": false,
-                    "type": "MenuItem",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The index."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MenuItem with the specified index.",
+                    "type": "MenuItem",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of menu items."

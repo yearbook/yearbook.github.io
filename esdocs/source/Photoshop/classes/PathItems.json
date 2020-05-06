@@ -2,63 +2,90 @@
     "name": "PathItems",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name for the new path."
+                        },
+                        {
+                            "name": "entirePath",
+                            "type": "SubPathInfo",
+                            "array": true,
+                            "optional": false,
+                            "description": "The item's sub paths."
+                        }
+                    ],
+                    "description": "Creates a new path item.",
+                    "type": "PathItem",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "PathItem",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "PathItem",
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Get an element in the collection with the provided index. ",
-                    "array": false,
-                    "type": "PathItem",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "uint",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "PathItem",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "The collection of path item objects in the document."

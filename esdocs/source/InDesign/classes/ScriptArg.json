@@ -2,232 +2,236 @@
     "name": "ScriptArg",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Application",
                     "readonly": true,
+                    "type": "Application",
+                    "array": false,
                     "description": "The parent of the ScriptArg (a Application)."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "get",
-                    "description": "Gets the value of a script argument.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the script argument."
                         }
-                    ]
+                    ],
+                    "description": "Gets the value of a script argument.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "getValue",
-                    "description": "Gets the value of a script argument.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the script argument."
                         }
-                    ]
+                    ],
+                    "description": "Gets the value of a script argument.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "set",
-                    "description": "Sets the value of a script argument.",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the script argument."
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value."
                         }
-                    ]
+                    ],
+                    "description": "Sets the value of a script argument."
                 },
                 {
                     "name": "setValue",
-                    "description": "Sets the value of a script argument.",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the script argument."
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value."
                         }
-                    ]
+                    ],
+                    "description": "Sets the value of a script argument."
                 },
                 {
                     "name": "isDefined",
-                    "description": "Verifies whether the script argument is defined.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the script argument."
                         }
-                    ]
+                    ],
+                    "description": "Verifies whether the script argument is defined.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "clear",
-                    "description": "Clears all script arguments.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Clears all script arguments."
                 },
                 {
                     "name": "save",
-                    "description": "Saves the script arguments.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Saves the script arguments."
                 },
                 {
                     "name": "restore",
-                    "description": "Restores all script arguments.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Restores all script arguments."
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the ScriptArg.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "ScriptArg",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "superclass": "Preference",
-    "description": "Arguments to pass to a script."
+    "description": "Arguments to pass to a script.",
+    "superclass": "Preference"
 }

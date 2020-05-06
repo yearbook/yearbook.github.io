@@ -2,251 +2,255 @@
     "name": "Gradient",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parentColorGroup",
-                    "array": false,
-                    "type": "ColorGroup",
                     "readonly": true,
+                    "type": "ColorGroup",
+                    "array": false,
                     "description": "The color group that a swatch belongs to"
                 },
                 {
                     "name": "id",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The unique ID of the Gradient."
                 },
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The parent of the Gradient (a Application or Document)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the Gradient within its containing object."
                 },
                 {
-                    "name": "events",
-                    "array": false,
-                    "type": "Events",
+                    "name": "gradientStops",
                     "readonly": true,
+                    "type": "GradientStops",
+                    "array": false,
+                    "description": "A collection of gradient stops."
+                },
+                {
+                    "name": "events",
+                    "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
-                    "name": "gradientStops",
-                    "array": false,
-                    "type": "GradientStops",
-                    "readonly": true,
-                    "description": "A collection of gradient stops."
-                },
-                {
                     "name": "type",
-                    "array": false,
-                    "type": "GradientType",
                     "readonly": false,
+                    "type": "GradientType",
+                    "array": false,
                     "description": "The gradient type."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the Gradient."
                 },
                 {
                     "name": "label",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "A property that can be set to any string."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the swatch.",
                     "parameters": [
                         {
                             "name": "replacingWith",
-                            "array": false,
                             "type": "Swatch",
+                            "array": false,
                             "optional": false,
                             "description": "The swatch to apply in place of the deleted swatch. (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Deletes the swatch."
                 },
                 {
                     "name": "duplicate",
+                    "parameters": [],
                     "description": "Duplicates the Gradient.",
-                    "array": false,
                     "type": "Gradient",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "merge",
-                    "description": "Merges the specified swatches with the swatch.",
-                    "array": false,
-                    "type": "Swatch",
                     "parameters": [
                         {
                             "name": "with",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The swatches to merge. Can accept: Array of Swatches, Swatch or String."
                         }
-                    ]
+                    ],
+                    "description": "Merges the specified swatches with the swatch.",
+                    "type": "Swatch",
+                    "array": false
                 },
                 {
                     "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key.",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value."
                         }
-                    ]
+                    ],
+                    "description": "Sets the label to the value associated with the specified key."
                 },
                 {
                     "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         }
-                    ]
+                    ],
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Gradient.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Gradient",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "superclass": "Swatch",
-    "description": "A gradient."
+    "description": "A gradient.",
+    "superclass": "Swatch"
 }

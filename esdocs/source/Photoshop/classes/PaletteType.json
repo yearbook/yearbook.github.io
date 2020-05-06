@@ -2,109 +2,118 @@
     "name": "PaletteType",
     "dynamic": false,
     "elements": {
-        "instance": {
-            "properties": [],
-            "methods": []
-        },
         "class": {
             "properties": [
                 {
-                    "description": "The palette uses the exact colors appearing in the RGB image; available only if the image uses 256 or fewer colors.",
-                    "array": false,
-                    "readonly": true,
                     "name": "EXACT",
-                    "value": "1",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "The palette uses the exact colors appearing in the RGB image; available only if the image uses 256 or fewer colors.",
+                    "longdesc": "Because the image's palette contains all colors in the image, there is no dithering.",
+                    "value": "1"
                 },
                 {
-                    "description": "The Mac OS default 8-bit palette, whch is based on a uniform sampling of RGB colors.",
-                    "array": false,
-                    "readonly": true,
                     "name": "MACOSPALETTE",
-                    "value": "2",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "The Mac OS default 8-bit palette, whch is based on a uniform sampling of RGB colors.",
+                    "value": "2"
                 },
                 {
-                    "description": "The Windows system's default 8-bit palette, whch is based on a uniform sampling of RGB colors.",
-                    "array": false,
-                    "readonly": true,
                     "name": "WINDOWSPALETTE",
-                    "value": "3",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "The Windows system's default 8-bit palette, whch is based on a uniform sampling of RGB colors.",
+                    "value": "3"
                 },
                 {
-                    "description": "The 216-color palette that web browsers, regardless of platform, use to display images on a monitor limited to 256 colors.",
-                    "array": false,
-                    "readonly": true,
                     "name": "WEBPALETTE",
-                    "value": "4",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "The 216-color palette that web browsers, regardless of platform, use to display images on a monitor limited to 256 colors.",
+                    "longdesc": "A subset of the Mac OS 8-bit palette. Use this option to avoid browser dither when viewing images on a monitor display limited to 256 colors.",
+                    "value": "4"
                 },
                 {
-                    "description": "Creates a palette by uniformly sampling colors from the RGB color cube.",
-                    "array": false,
-                    "readonly": true,
                     "name": "UNIFORM",
-                    "value": "5",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a palette by uniformly sampling colors from the RGB color cube.",
+                    "longdesc": "For example, if Photoshop takes six evenly spaced color levels each of red, green, and blue, the combination produces a uniform palette of 216 colors (6 cubed = 6 x 6 x 6 = 216). The total number of colors displayed in an image corresponds to the nearest perfect cube (8, 27, 64, 125, or 216) that is less than the value in the Colors text box.",
+                    "value": "5"
                 },
                 {
-                    "description": "Creates a custom palette by giving priority to colors for in the image which the human eye has greater sensitivity.",
-                    "array": false,
-                    "readonly": true,
                     "name": "LOCALPERCEPTUAL",
-                    "value": "6",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a custom palette by giving priority to colors for in the image which the human eye has greater sensitivity.",
+                    "value": "6"
                 },
                 {
-                    "description": "Creates a color table similar to the Perceptual color table, but favoring broad areas of color in the image and the preservation of web colors.",
-                    "array": false,
-                    "readonly": true,
                     "name": "LOCALSELECTIVE",
-                    "value": "7",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a color table similar to the Perceptual color table, but favoring broad areas of color in the image and the preservation of web colors.",
+                    "longdesc": "Usually produces images with the greatest color integrity.",
+                    "value": "7"
                 },
                 {
-                    "description": "Creates a palette by sampling the colors from the spectrum appearing most commonly in the image.",
-                    "array": false,
-                    "readonly": true,
                     "name": "LOCALADAPTIVE",
-                    "value": "8",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a palette by sampling the colors from the spectrum appearing most commonly in the image.",
+                    "longdesc": "For example, an RGB image with only the colors green and blue produces a palette made primarily of greens and blues. ",
+                    "value": "8"
                 },
                 {
-                    "description": "Creates a custom palette by giving priority to colors in a group of open images with the same color palette for which the human eye has greater sensitivity.",
-                    "array": false,
-                    "readonly": true,
                     "name": "MASTERPERCEPTUAL",
-                    "value": "9",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a custom palette by giving priority to colors in a group of open images with the same color palette for which the human eye has greater sensitivity.",
+                    "value": "9"
                 },
                 {
-                    "description": "Creates a color table similar to the Master Perceptual color table, but favoring broad areas of color and the preservation of web colors.",
-                    "array": false,
-                    "readonly": true,
                     "name": "MASTERSELECTIVE",
-                    "value": "10",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a color table similar to the Master Perceptual color table, but favoring broad areas of color and the preservation of web colors.",
+                    "value": "10"
                 },
                 {
-                    "description": "Creates a palette by sampling the colors from the spectrum appearing most commonly in a group of open images that share the same color palette.",
-                    "array": false,
-                    "readonly": true,
                     "name": "MASTERADAPTIVE",
-                    "value": "11",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Creates a palette by sampling the colors from the spectrum appearing most commonly in a group of open images that share the same color palette.",
+                    "value": "11"
                 },
                 {
-                    "description": "Uses the custom palette from the previous conversion, making it easy to convert several images with the same custom palette.",
-                    "array": false,
-                    "readonly": true,
                     "name": "PREVIOUSPALETTE",
-                    "value": "12",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Uses the custom palette from the previous conversion, making it easy to convert several images with the same custom palette.",
+                    "value": "12"
                 }
-            ]
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": []
         }
     },
     "description": "The palette type for converting an image to indexed color."

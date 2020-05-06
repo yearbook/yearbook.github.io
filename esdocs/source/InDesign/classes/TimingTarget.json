@@ -2,190 +2,194 @@
     "name": "TimingTarget",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "TimingGroup",
                     "readonly": true,
+                    "type": "TimingGroup",
+                    "array": false,
                     "description": "The parent of the TimingTarget (a TimingGroup)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the TimingTarget within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "dynamicTarget",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": false,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "A page item target that is an animation, media, or mso. Can return: PageItem, Graphic, Behavior or MediaItem."
                 },
                 {
                     "name": "delaySeconds",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "The time delay in seconds for a single target or a group of targets after the previoius group has finished."
                 },
                 {
                     "name": "reverseAnimation",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Set to true if reversing animation on rolloff. Valid only for self rolloff trigger event."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the TimingTarget.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes the TimingTarget."
                 },
                 {
                     "name": "unlink",
-                    "description": "Unlink target from this group and append to the end of this timing list.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Unlink target from this group and append to the end of this timing list."
                 },
                 {
                     "name": "move",
-                    "description": "Moves the timing group or target to the specified location.",
-                    "array": false,
-                    "type": "TimingTarget",
                     "parameters": [
                         {
                             "name": "to",
-                            "array": false,
                             "type": "LocationOptions",
+                            "array": false,
                             "optional": false,
                             "description": "The location in relation to the reference object or within the containing object."
                         },
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. Note: Required when the to parameter specifies before or after. . Can accept: TimingGroup, TimingTarget or TimingList. (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Moves the timing group or target to the specified location.",
+                    "type": "TimingTarget",
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the TimingTarget.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "TimingTarget",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "a timing target."

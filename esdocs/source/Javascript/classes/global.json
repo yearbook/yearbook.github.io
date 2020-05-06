@@ -2,362 +2,386 @@
     "name": "global",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
-                    "description": "The NaN global property is a predefined variable with the value NaN (Not-a-Number), as specified by the IEEE-754 standard.",
-                    "array": false,
-                    "readonly": false,
                     "name": "NaN",
-                    "value": "NaN",
-                    "type": "Number"
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The NaN global property is a predefined variable with the value NaN (Not-a-Number), as specified by the IEEE-754 standard.",
+                    "value": "NaN"
                 },
                 {
-                    "description": "The Infinity global property is a predefined variable with the value for infinity.",
-                    "array": false,
-                    "readonly": false,
                     "name": "Infinity",
-                    "value": "+Infinity",
-                    "type": "Number"
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The Infinity global property is a predefined variable with the value for infinity.",
+                    "value": "+Infinity"
                 },
                 {
-                    "description": "This global property is a predefined variable with the value for an undefined value.",
-                    "array": false,
-                    "readonly": false,
                     "name": "undefined",
-                    "value": "undefined",
-                    "type": "Undefined"
+                    "readonly": false,
+                    "type": "Undefined",
+                    "array": false,
+                    "description": "This global property is a predefined variable with the value for an undefined value.",
+                    "value": "undefined"
                 }
             ],
             "methods": [
                 {
                     "name": "encodeURI",
-                    "description": "Encodes a string after RFC2396.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to encode."
                         }
-                    ]
+                    ],
+                    "description": "Encodes a string after RFC2396.",
+                    "longdesc": "\n\t\t\t\t\t\tCreate an UTF-8 ASCII encoded version of this string. The string is converted into UTF-8. Every non-alphanumeric character is encoded as a percent escape\n\t\t\t\t\t\tcharacter of the form %xx, where xx is the hex value of the character. After the conversion to UTF-8 encoding and escaping, it is guaranteed that the string does not contain characters codes greater than 127. The list of characters not to be encoded is -_.!~*'();/?:@&=+$,#. The method returns false on errors.\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "encodeURIComponent",
-                    "description": "Encodes a string after RFC2396.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to encode."
                         }
-                    ]
+                    ],
+                    "description": "Encodes a string after RFC2396.",
+                    "longdesc": "\n\t\t\t\t\t\tCreate an UTF-8 ASCII encoded version of this string. The string is converted into UTF-8. Every non-alphanumeric character is encoded as a percent escape\n\t\t\t\t\t\tcharacter of the form %xx, where xx is the hex value of the character. After the conversion to UTF-8 encoding and escaping, it is guaranteed that the string does not contain characters codes greater than 127. The list of characters not to be encoded is -_.!~*'(). The method returns false on errors.\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "decodeURI",
-                    "description": "\n\t\t\t\t\t\tDecodes a string created with\u00a0",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "uri",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to decode."
                         }
-                    ]
+                    ],
+                    "description": "\n\t\t\t\t\t\tDecodes a string created with\u00a0encodeURI().\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "decodeURIComponent",
-                    "description": "\n\t\t\t\t\t\tDecodes a string created with\u00a0",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "uri",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to decode."
                         }
-                    ]
+                    ],
+                    "description": "\n\t\t\t\t\t\tDecodes a string created with\u00a0encodeURIComponent().\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "escape",
-                    "description": "Creates a URL-encoded string from aString.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "aString",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The string to be encoded."
+                            "description": "The string to be encoded.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Creates a URL-encoded string from aString.",
+                    "longdesc": "In the new string, characters of aString that require URL encoding are replaced with the format %xx, where xx is the hexadecimal value of the character code in the Unicode character set.  This format is used to transmit information appended to a URL during, for example, execution of the GET method.  Use the unescape() global function to translate the string back into its original format. Returns a string which is aString URL-encoded.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "eval",
-                    "description": "Evaluates its argument as a JavaScript script, and returns the result of evaluation.",
-                    "array": false,
-                    "type": "any",
                     "parameters": [
                         {
                             "name": "stringExpression",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The string to evaluate."
+                            "description": "The string to evaluate.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Evaluates its argument as a JavaScript script, and returns the result of evaluation.",
+                    "longdesc": "You can pass the result of an object's toSource() method to reconstruct that object.",
+                    "type": "any",
+                    "array": false
                 },
                 {
                     "name": "uneval",
-                    "description": "Creates a source code representation of the supplied argument, and returns it as a string.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "what",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false,
                             "description": "The object to uneval."
                         }
-                    ]
+                    ],
+                    "description": "Creates a source code representation of the supplied argument, and returns it as a string.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "isFinite",
-                    "description": "Evaluates an expression and reports whether the result is a finite number.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "expression",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "Any valid JavaScript expression."
+                            "description": "Any valid JavaScript expression.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Evaluates an expression and reports whether the result is a finite number.",
+                    "longdesc": "Returns true if the expression is a finite number, false otherwise. False if the value is infinity or negative infinity.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "isNaN",
-                    "description": "Evaluates an expression and reports whether the result is \"Not-a-Number\" (NaN).",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "expression",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "Any valid JavaScript expression."
+                            "description": "Any valid JavaScript expression.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Evaluates an expression and reports whether the result is \"Not-a-Number\" (NaN).",
+                    "longdesc": "Returns true if the result of evaluation is not a number (NaN), false if the value is a number.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "parseInt",
-                    "description": "Extracts an integer from a string.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The string from which to extract an integer."
+                            "description": "The string from which to extract an integer.",
+                            "longdesc": ""
                         },
                         {
                             "name": "base",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
-                            "description": "The base of the string to parse (from base 2 to base 36)."
+                            "description": "The base of the string to parse (from base 2 to base 36).",
+                            "longdesc": "If not supplied, base is determined by the format of string."
                         }
-                    ]
+                    ],
+                    "description": "Extracts an integer from a string.",
+                    "longdesc": "Parses a string to find the first set of characters, in a specified base, that can be converted to an integer, and returns that integer, or NaN if it does not encounter characters that it can convert to a number.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "parseFloat",
-                    "description": "Extracts a floating-point number from a string.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The string from which to extract a floating point number."
+                            "description": "The string from which to extract a floating point number.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Extracts a floating-point number from a string.",
+                    "longdesc": "Parses a string to find the first set of characters that can be converted to a floating point number, and returns that number, or NaN if it does not encounter characters that it can converted to a number.  The function supports exponential notation.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "unescape",
-                    "description": "Translates URL-encoded string into a regular string, and returns that string.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "stringExpression",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The URL-encoded string to convert."
+                            "description": "The URL-encoded string to convert.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Translates URL-encoded string into a regular string, and returns that string.",
+                    "longdesc": "Use the escape() global function to URL-encode strings.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "localize",
-                    "description": "Localizes a ZString-encoded string and merges additional arguments into the string.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "what",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The string to localize. A ZString-encoded string that can contain placeholder for additional arguments in the form %1 to %n."
                         },
                         {
                             "name": "argument",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": true,
                             "description": "Optional argument(s) to be merged into the string. There may be more than one argument."
                         }
-                    ]
+                    ],
+                    "description": "Localizes a ZString-encoded string and merges additional arguments into the string.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "isXMLName",
-                    "description": "Returns true if the supplied string is a valid XML name.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The XML name to test."
                         }
-                    ]
+                    ],
+                    "description": "Returns true if the supplied string is a valid XML name.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "setDefaultXMLNamespace",
-                    "description": "Defines the default XML namespace.",
                     "parameters": [
                         {
                             "name": "namespace",
-                            "array": false,
                             "type": "Namespace",
+                            "array": false,
                             "optional": false,
-                            "description": "The namespace to use."
+                            "description": "The namespace to use.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tOmit this parameter to return to the empty namespace. This is either a\u00a0Namespace\u00a0object or a string.\n\t\t\t\t\t\t\t"
                         }
-                    ]
+                    ],
+                    "description": "Defines the default XML namespace.",
+                    "longdesc": "\n\t\t\t\t\t\tThis is a replacement function for the standard JavaScript statement\u00a0set default xml namespace.\n\t\t\t\t\t"
                 },
                 {
                     "name": "alert",
-                    "description": "Displays an alert box",
                     "parameters": [
                         {
                             "name": "message",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to display"
                         },
                         {
                             "name": "title",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "The title of the alert; ignored on the Macintosh"
                         },
                         {
-                            "description": "Display an Error icon; ignored on the Macintosh",
-                            "array": false,
                             "name": "errorIcon",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Display an Error icon; ignored on the Macintosh",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Displays an alert box"
                 },
                 {
                     "name": "confirm",
-                    "description": "Displays an alert box with Yes and No buttons; returns true for Yes",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "message",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to display"
                         },
                         {
-                            "description": "Set to true to set the No button as the default button",
-                            "array": false,
                             "name": "noAsDefault",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true to set the No button as the default button",
+                            "value": "false"
                         },
                         {
                             "name": "title",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "The title of the alert; ignored on the Macintosh"
                         }
-                    ]
+                    ],
+                    "description": "Displays an alert box with Yes and No buttons; returns true for Yes",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "prompt",
-                    "description": "Displays a dialog allowing the user to enter text",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "prompt",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to display"
                         },
                         {
                             "name": "default",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "The default text to preset the edit field with"
                         },
                         {
                             "name": "title",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "The title of the dialog;"
                         }
-                    ]
+                    ],
+                    "description": "Displays a dialog allowing the user to enter text",
+                    "longdesc": "Returns null if the user cancelled the dialog, the text otherwise",
+                    "type": "String",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "The global methods and properties for ExtendScript."

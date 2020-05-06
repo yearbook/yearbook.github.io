@@ -2,122 +2,142 @@
     "name": "Artboards",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "artboardRect",
+                            "type": "Rectangle",
+                            "array": false,
+                            "optional": false,
+                            "description": "Size and position of artboard."
+                        }
+                    ],
+                    "description": "Add artboard object.",
+                    "type": "Artboard",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "Artboard",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "Artboard",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "Delete artboard object.",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Int32",
+                            "array": false,
                             "optional": false,
                             "description": "Index of the crop area to be deleted."
                         }
-                    ]
+                    ],
+                    "description": "Delete artboard object."
                 },
                 {
                     "name": "getByName",
-                    "description": "Get the first Artboard with specified name.",
-                    "array": false,
-                    "type": "Artboard",
                     "parameters": [
                         {
                             "name": "artboardName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the artboard."
                         }
-                    ]
+                    ],
+                    "description": "Get the first Artboard with specified name.",
+                    "type": "Artboard",
+                    "array": false
                 },
                 {
                     "name": "insert",
-                    "description": "Insert an Artboard at specified location.",
                     "parameters": [
                         {
                             "name": "artboardRect",
-                            "array": false,
                             "type": "Rectangle",
+                            "array": false,
                             "optional": false,
                             "description": "Size and position of artboard."
                         },
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Int32",
+                            "array": false,
                             "optional": false,
                             "description": "Index position where artboard should be inserted."
                         }
-                    ]
+                    ],
+                    "description": "Insert an Artboard at specified location."
                 },
                 {
                     "name": "getActiveArtboardIndex",
+                    "parameters": [],
                     "description": "Retrieves the index position of the active artboard in the document's list.",
-                    "array": false,
                     "type": "Int32",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "setActiveArtboardIndex",
-                    "description": "Makes a specific artboard active, and makes it current in the iteration order.",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Int32",
+                            "array": false,
                             "optional": false,
                             "description": "The 0-based index position of the artboard in the document list."
                         }
-                    ]
+                    ],
+                    "description": "Makes a specific artboard active, and makes it current in the iteration order."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of artboards."

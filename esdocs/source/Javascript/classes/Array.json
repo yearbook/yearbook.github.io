@@ -2,173 +2,218 @@
     "name": "Array",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "Array",
+                    "parameters": [
+                        {
+                            "name": "length",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "If no other parameters are passed, the initial length of the empty array.",
+                            "longdesc": "Otherwise, the first element."
+                        },
+                        {
+                            "name": "element",
+                            "type": "any",
+                            "array": false,
+                            "optional": true,
+                            "description": "If there is more than one parameter, the array is initialized with the given parameters."
+                        }
+                    ],
+                    "description": "Creates and returns a new array.",
+                    "longdesc": "Takes any number of parameters, which become the elements of the array, or a single value which becomes the length of an empty array. Note that you cannot create a one-element array, as the single parameter value is interpreted as the length. Returns the new array.",
+                    "type": "Array",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "The length of the array"
                 }
             ],
             "methods": [
                 {
                     "name": "concat",
-                    "description": "Returns a new array created by concatenating the given values to the end of the original array.",
-                    "array": false,
-                    "type": "Array",
                     "parameters": [
                         {
                             "name": "value",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false,
-                            "description": "Any number of values to be added to the end of the array."
+                            "description": "Any number of values to be added to the end of the array.",
+                            "longdesc": "Can also be arrays."
                         }
-                    ]
+                    ],
+                    "description": "Returns a new array created by concatenating the given values to the end of the original array.",
+                    "longdesc": "The original array is unchanged.  If an array is provided as a parameter to concat(), each of its elements are appended as separate array elements at the end of the new array.  Returns a new array, the result of concatenation the given values to the end of the original array.",
+                    "type": "Array",
+                    "array": false
                 },
                 {
                     "name": "join",
-                    "description": "Joins all elements of the array into a string; optionally, each element is separated by delimiter.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "delimiter",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
-                            "description": "A string used to separate each element of the array."
+                            "description": "A string used to separate each element of the array.",
+                            "longdesc": "If omitted, the array elements are separated with a comma."
                         }
-                    ]
+                    ],
+                    "description": "Joins all elements of the array into a string; optionally, each element is separated by delimiter.",
+                    "longdesc": "Returns the string containing the joined elements and delimiters.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "reverse",
+                    "parameters": [],
                     "description": "Reverses the order of the elements in the array.",
-                    "array": false,
+                    "longdesc": "Returns the reversed array.",
                     "type": "Array",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "slice",
+                    "parameters": [],
                     "description": "Creates a new array, which contains a subset of the original array's elements.",
-                    "array": false,
+                    "longdesc": "The slice begins with the index start, and continues up to, but not including the index, end.  If start or end is a negative number, the indexed is resolved counting backwards from the end of the array resulting in the element array[array. length + negativeIndex]. Returns a new array containing elements array[start] through array[end-1].",
                     "type": "Array",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "sort",
-                    "description": "Sorts the elements of the array in place, using the given function to compare to elements.",
                     "parameters": [
                         {
                             "name": "userFunction",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
                             "description": "A user-supplied function of the form userFunction(a, b) which returns less than 0 if a is greater than b, 0 if a and b are equal, and greater than 0 if b is greater than a."
                         }
-                    ]
+                    ],
+                    "description": "Sorts the elements of the array in place, using the given function to compare to elements.",
+                    "longdesc": "If no function is provided, the elements are sorted alphabetically.  Returns no return value."
                 },
                 {
                     "name": "pop",
+                    "parameters": [],
                     "description": "Removes the last element from the array, decreases the length by 1, and returns the value of the element.",
-                    "array": false,
+                    "longdesc": "Returns the value of the deleted array element.",
                     "type": "any",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "push",
-                    "description": "Places one or more values onto the end of the array and increases length by n.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "value",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "Any number of values to be pushed onto the end of the array."
                         }
-                    ]
+                    ],
+                    "description": "Places one or more values onto the end of the array and increases length by n.",
+                    "longdesc": "Returns the new length of the array.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "splice",
-                    "description": "Removes num elements from the array beginning with index, start.",
-                    "array": false,
-                    "type": "Array",
                     "parameters": [
                         {
                             "name": "start",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "The index of the first element to remove. Negative values are relative to the end of the array."
+                            "description": "The index of the first element to remove. Negative values are relative to the end of the array.",
+                            "longdesc": ""
                         },
                         {
                             "name": "num",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
-                            "description": "The number of array elements to remove, including start. If omitted, all elements from array index start to the end of the array are removed."
+                            "description": "The number of array elements to remove, including start. If omitted, all elements from array index start to the end of the array are removed.",
+                            "longdesc": ""
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": true,
-                            "description": "A list of one or more values to be added to the array starting at index start."
+                            "description": "A list of one or more values to be added to the array starting at index start.",
+                            "longdesc": "Must specify a value for num, to use this argument."
                         }
-                    ]
+                    ],
+                    "description": "Removes num elements from the array beginning with index, start.",
+                    "longdesc": "Optionally insert new elements beginning at index start.  To ensure contiguity, elements are moved up to fill in any gaps.  Returns a new array containing any elements deleted from the original array.",
+                    "type": "Array",
+                    "array": false
                 },
                 {
                     "name": "shift",
+                    "parameters": [],
                     "description": "Removes the first element from the array, decreases the length by 1, and returns the value of the element.",
-                    "array": false,
+                    "longdesc": "Returns the value of the deleted array element.",
                     "type": "any",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Converts an array to a string and returns the string.",
-                    "array": false,
+                    "longdesc": "Yields the same result as array. join() when called without a parameter.  Returns a comma-separated list of all the elements of the array.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toLocaleString",
+                    "parameters": [],
                     "description": "Converts an array to a string and returns the string (localized).",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "unshift",
-                    "description": "Adds one or more elements to the beginning of the array.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "value",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false,
                             "description": "The values of one or more elements to be added to the beginning of the array."
                         }
-                    ]
+                    ],
+                    "description": "Adds one or more elements to the beginning of the array.",
+                    "longdesc": "Returns the new array length.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "toSource",
-                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0",
-                    "array": false,
+                    "parameters": [],
+                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0eval()\u00a0to re-create an object. Works only with built-in classes.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "\n\t\t\t\tAn array with integer indexing and a\u00a0"
+    "description": "\n\t\t\t\tAn array with integer indexing and a\u00a0length\u00a0property.\n\t\t\t"
 }

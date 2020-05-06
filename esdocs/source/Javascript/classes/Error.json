@@ -2,35 +2,69 @@
     "name": "Error",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "Error",
+                    "parameters": [
+                        {
+                            "name": "msg",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The error message."
+                        },
+                        {
+                            "name": "file",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The name of the file."
+                        },
+                        {
+                            "name": "line",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The line number."
+                        }
+                    ],
+                    "description": "Creates a new Error object.",
+                    "type": "Error",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "description",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The error message."
                 }
             ],
             "methods": [
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Convert this object to a string.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toSource",
-                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0",
-                    "array": false,
+                    "parameters": [],
+                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0eval()\u00a0to re-create an object. Works only with built-in classes.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "Wraps a runtime error."

@@ -1,0 +1,89 @@
+{
+    "name": "Infoset",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "cacheData",
+                    "readonly": false,
+                    "type": "CacheData",
+                    "array": false,
+                    "description": "The CacheData object containing cache status for this set.",
+                    "longdesc": "The status reflects whether any associated values have changed such that the set needs to be refreshed in the CacheElement object that collects all node data for this node."
+                },
+                {
+                    "name": "description",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The descriptions of the members of this set.",
+                    "longdesc": "A collection of InfosetMemberDescription objects containing the member names and data types of data values contained in this set. "
+                },
+                {
+                    "name": "extension",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the ExtensionHandler object that manages this data.",
+                    "longdesc": "Available after this set has been registered with app.registerInfoset(). "
+                },
+                {
+                    "name": "infosetName",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of this set. ",
+                    "longdesc": "Must be a valid JavaScript identifier. This becomes a property of the ExtensionModel object for the managing extension. "
+                }
+            ],
+            "methods": [
+                {
+                    "name": "addChild",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Bridge URI (path and file name) of the child node"
+                        },
+                        {
+                            "name": "model",
+                            "type": "ExtensionModel",
+                            "array": false,
+                            "optional": true,
+                            "description": "An ExtensionModel  object that manages the new child. ",
+                            "longdesc": "Can be undefined (the default)."
+                        },
+                        {
+                            "name": "containerHint",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": " Whether the new child is a container.",
+                            "longdesc": "Either \"container\" or \"notContainer\" (the default). Ignored if model is provided; otherwise, controls which icon is used for the child."
+                        }
+                    ],
+                    "description": "Adds a child node to the core data set children. ",
+                    "longdesc": "Use this in the model's refreshInfoset() method to add any children of a handled container node. "
+                },
+                {
+                    "name": "initializeMembersToDefaultValues",
+                    "parameters": [],
+                    "description": "Sets all members of this set to the default value for the data type.",
+                    "longdesc": "Default value are: String: \"\" (empty string), Boolean: false, Number: 0, SizeIn Bytes: 0"
+                }
+            ]
+        }
+    },
+    "description": "Represents Adobe Bridge-defined or script-defined data for Adobe Bridge nodes. ",
+    "longdesc": "For a script-defined node-handling extension, you can register an Infoset object that defines a related set of script-defined Thumbnail object properties for handled nodes. Adobe Bridge-defined Infoset objects and their members are listed in the Adobe Bridge JavaScript Reference.To declare new properties, create the Infoset object and associate it with your ExtensionHandler object using  app.registerInfoset(). The Infoset object is added to the list in ExtensionHandler.infosets.An Infoset is a named set of data elements. Each member element has a name and type, defined by a InfosetMemberDescription object. Each member name becomes a property of the containing Infoset, and you can access the data value, of the corresponding type, through that property."
+}

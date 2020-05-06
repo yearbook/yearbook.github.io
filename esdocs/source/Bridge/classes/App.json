@@ -1,0 +1,949 @@
+{
+    "name": "App",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "defaultFilterCriteria",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of the default FilterDescription objects used to populate the Filter palette."
+                },
+                {
+                    "name": "defaultSortCriteria",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of the default SortCriterion objects used to sort the contents of container nodes.",
+                    "longdesc": "Default list is: Filename, Document type, Date created, Date file modified, File size, Dimensions, Resolution, Color profile, Label, Rating"
+                },
+                {
+                    "name": "displayDialogs",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The policy for the display of modal dialogs. ",
+                    "longdesc": "One of: \n\t\t\t\tall (default): Modal dialogs should always be displayed.\n\t\t\t\tnone: Modal dialog should never be displayed.\n\t\t\t\terror: Only dialogs that report an error to the user should be displayed. "
+                },
+                {
+                    "name": "document",
+                    "readonly": false,
+                    "type": "Document",
+                    "array": false,
+                    "description": "The active (top-most)   Document   object, representing the active browser window. ",
+                    "longdesc": "During an open or create event, this value still contains the previous   Document   object, while the new Document object is passed to the event handler."
+                },
+                {
+                    "name": "documents",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of   Document   objects representing the set of all open browser windows."
+                },
+                {
+                    "name": "eventHandlers",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "An array of  event handler objects installed by scripts. ",
+                    "longdesc": "Add an event-handler object to register it with Adobe Bridge. Registered handler functions are called when any user-interaction event is triggered.Each event handler is specified by a JavaScript object with one property, the handler function name: ={ handler: fnName}= The handler function takes one argument, an Event object, and returns a result object ={handled: boolean}=.\n\t\t\t\tWhen true, the event has been completely handled and Adobe Bridge does not look for more handlers or call the default handler.\n\t\t\t\tWhen false (or when the handler returns undefined), Adobe Bridge continues to call registered handlers, or if there are no more, calls the default handler."
+                },
+                {
+                    "name": "extensions",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of ExtensionHandler objects representing registered node-handling extensions. ",
+                    "longdesc": "Use app.registerExtension() and app.unregisterExtension() to modify the list."
+                },
+                {
+                    "name": "favorites",
+                    "readonly": true,
+                    "type": "Favorites",
+                    "array": false,
+                    "description": "The top-level Favoritesobject for the navigation hierarchy displayed in the Favorites palette. ",
+                    "longdesc": "This object contains two arrays of Thumbnailobjects for the nodes that appear in the \"standard\" and \"user\" sections of the palette."
+                },
+                {
+                    "name": "folderRoots",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The list of Bridge URI strings for the root nodes of the Folders palette.",
+                    "longdesc": "Extension developers can modify the list with app.addCustomRoot()."
+                },
+                {
+                    "name": "inspectorPanels",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The collection of script-defined InspectorPanel objects that make up the Inspector view for new browser windows.",
+                    "longdesc": " The list is in display order. Use app.registerInspectorPanel() and app.unregisterInspectorPanel()  to modify the list."
+                },
+                {
+                    "name": "language",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The display name of the language for the current locale, as configured by the operating system. ",
+                    "longdesc": "This is the language name as it appears in the Preferences dialog."
+                },
+                {
+                    "name": "lastSender",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The application specifier for the application that has most recently sent an interapplication message to Adobe Bridge."
+                },
+                {
+                    "name": "locale",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The Adobe locale code for the current locale, as configured by the operating system. ",
+                    "longdesc": "An Adobe locale code consists of a 2-letter ISO-639 language code and an optional 2-letter ISO 3166 country code separated by an underscore. Case is significant. For example, en_US, en_UK, ja_JP, de_DE, fr_FR. "
+                },
+                {
+                    "name": "name",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The application specifier for this application, \"bridge\"."
+                },
+                {
+                    "name": "pendingJobs",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of background tasks that Adobe Bridge has left to process.",
+                    "longdesc": "Background tasks are started for asynchronous operations, such as metadata extraction from thumbnails, or exporting the cache with app.buildFolderCache(). When all tasks have been started, this value is 0. A value of 0 does not mean that all started tasks have been completed."
+                },
+                {
+                    "name": "preferences",
+                    "readonly": true,
+                    "type": "Preferences",
+                    "array": false,
+                    "description": "The Preferences object, which provides access to the user preferences shown in the Preferences dialog. "
+                },
+                {
+                    "name": "standardFavorites",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "synchronousMode",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, Adobe Bridge attempts to ensure that all Thumbnail properties are valid before returning their values. ",
+                    "longdesc": "This is particularly important when accessing metadata. Scripts (other than node handlers) typically need to set synchronous mode to true. Default is false, for performance reasons."
+                },
+                {
+                    "name": "userFavorites",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "version",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The version number of the Adobe Bridge application. "
+                },
+                {
+                    "name": "watchDirInterval",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The duration in seconds between checks for folder consistency (checking whether files have been added or removed)."
+                },
+                {
+                    "name": "workspaces",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The list of all available workspaces, both default and user- or script-defined.",
+                    "longdesc": " Each workspace is a JavaScript object with two properties,  id  and  name , specifying the unique identifier and the localized display name; see Document.workspace. "
+                }
+            ],
+            "methods": [
+                {
+                    "name": "acquirePhysicalFiles",
+                    "parameters": [
+                        {
+                            "name": "files",
+                            "type": "Array",
+                            "array": false,
+                            "optional": false,
+                            "description": "An array of strings, each of which is a file or folder specification"
+                        }
+                    ],
+                    "description": "For each specified file or folder, if it refers to a resource that does not have a local copy (such as the files referenced by VersionCue nodes), downloads the resource.",
+                    "longdesc": "For efficiency, make one call for all files to be processed, rather than calling repeatedly."
+                },
+                {
+                    "name": "addCollectionMember",
+                    "parameters": [
+                        {
+                            "name": "collection",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the collection node, as returned by app.createCollection()."
+                        },
+                        {
+                            "name": "member",
+                            "type": "any",
+                            "array": false,
+                            "optional": false,
+                            "description": "A Thumbnail object or Array of Thumbnail objects to be added to the collection."
+                        }
+                    ],
+                    "description": "Adds a member thumbnail, or set of member thumbnails, to a collection.",
+                    "longdesc": "Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "addCredits",
+                    "parameters": [
+                        {
+                            "name": "title",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifying string for this addition."
+                        },
+                        {
+                            "name": "content",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The localizable string to be displayed."
+                        }
+                    ],
+                    "description": "Appends a line of text to the Credits section of the Adobe Bridge About box.",
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "addCustomRoot",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Bridge URI string."
+                        }
+                    ],
+                    "description": "Appends a custom URI to the list of root nodes in app.folderRoots, which appear in the Folders palette. ",
+                    "longdesc": "Used by script-defined node handlers. Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "addLegalNotice",
+                    "parameters": [
+                        {
+                            "name": "title",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifying string for this addition."
+                        },
+                        {
+                            "name": "content",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The localizable string to be displayed."
+                        }
+                    ],
+                    "description": "Appends a line of text to the Legal Notice section of the Adobe Bridge About box.",
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "beep",
+                    "parameters": [],
+                    "description": "Calls on the operating system to emit a short audio tone."
+                },
+                {
+                    "name": "bringToFront",
+                    "parameters": [],
+                    "description": "Gives Adobe Bridge the application focus for the operating system, and makes the current browser window the topmost active window in the windowing system. "
+                },
+                {
+                    "name": "browseTo",
+                    "parameters": [],
+                    "description": "Deprecated in Creative Suite 3. Do not use.",
+                    "type": "Mixed",
+                    "array": false
+                },
+                {
+                    "name": "buildFolderCache",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The folder.",
+                            "longdesc": " A Folder object, Thumbnail object for a folder, or Bridge URI path string. If this specifies a file, the cache is built for the containing folder."
+                        },
+                        {
+                            "name": "recurse",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Optional in Adobe Bridge 1.0, not used in Adobe Bridge 2.0. ",
+                            "longdesc": "Cache building is always recursive; pass true."
+                        },
+                        {
+                            "name": "quality",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "Whether to create low or high quality thumbnail images. ",
+                            "longdesc": " One of the strings quick (the default) or highQuality."
+                        },
+                        {
+                            "name": "buildFullSize",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Whether to export fullsize images to cache folder. ",
+                            "longdesc": "This determines Bridge's caching behavior in the same way as the \"Generate 100% Previews\" drop down menu item on the toolbar. The value set to this property is also reflected by the checking status of the toolbar menu item."
+                        }
+                    ],
+                    "description": "Forces Adobe Bridge to create thumbnail images for the specified folder. ",
+                    "longdesc": "The images are stored in a cache file in the folder to which they apply. ",
+                    "type": "Mixed",
+                    "array": false
+                },
+                {
+                    "name": "cancelTask",
+                    "parameters": [
+                        {
+                            "name": "taskId",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The task ID number, as returned from app.scheduleTask()."
+                        }
+                    ],
+                    "description": "Cancels a task that has been scheduled using app.scheduleTask(). ",
+                    "type": "Mixed",
+                    "array": false
+                },
+                {
+                    "name": "createCollection",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of the new collection.",
+                            "longdesc": "If a collection with this name already exists, a unique name is generated using this string."
+                        }
+                    ],
+                    "description": "Creates a new, named collection node.",
+                    "longdesc": "Returns the Thumbnail object for the new node. Use this to access the collection programmatically.",
+                    "type": "Thumbnail",
+                    "array": false
+                },
+                {
+                    "name": "createSmartCollection",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of the new smart collection.",
+                            "longdesc": "If a collection with this name already exists, a unique name is generated using this string."
+                        },
+                        {
+                            "name": "scope",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "A Thumbnail object for the target container node."
+                        },
+                        {
+                            "name": "searchSpec",
+                            "type": "SearchSpecification",
+                            "array": false,
+                            "optional": false,
+                            "description": "\n                A SearchSpecification object used to generate the search result.\n              "
+                        }
+                    ],
+                    "description": "Creates a new, named smart collection node.",
+                    "longdesc": "\n            Returns the Thumbnail object for the new node. Use this to access the collection programmatically.\n          ",
+                    "type": "Thumbnail",
+                    "array": false
+                },
+                {
+                    "name": "deleteCollection",
+                    "parameters": [
+                        {
+                            "name": "collection",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the collection node, as returned by app.createCollection()."
+                        }
+                    ],
+                    "description": "Deletes a collection node.",
+                    "longdesc": "Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "deleteSmartCollection",
+                    "parameters": [
+                        {
+                            "name": "collection",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "\n                The Thumbnail object for the collection node, as returned by app.createSmartCollection().\n              "
+                        }
+                    ],
+                    "description": "Deletes a smart collection node.",
+                    "longdesc": "Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "enqueueOperation",
+                    "parameters": [
+                        {
+                            "name": "operator",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ModalOperator or ProgressOperator instance that encapsulates the operation, returned by an ExtensionModel method."
+                        }
+                    ],
+                    "description": "Enqueues a long-running node-handling operation for execution at an appropriate time.",
+                    "longdesc": "Note that, for a ProgressOperator, Adobe Bridge does not display or update the UI until the node handler calls app.operationChanged()."
+                },
+                {
+                    "name": "exportKeywordsFromFile",
+                    "parameters": [
+                        {
+                            "name": "keywordsFile",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The file, specified as a string or ExtendScript File object."
+                        }
+                    ],
+                    "description": "Exports keywords from the Keywords palette to a file. ",
+                    "longdesc": "This is the same as choosing Export from the flyout menu in the Keywords palette."
+                },
+                {
+                    "name": "getCollectionMembers",
+                    "parameters": [
+                        {
+                            "name": "collection",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the collection node, as returned by app.createCollection()."
+                        }
+                    ],
+                    "description": "Retrieves the collection members for a collection node.",
+                    "longdesc": "Returns an Array of TThumbnail objects for the collection members.",
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "getCollections",
+                    "parameters": [],
+                    "description": "Retrieves all collection nodes, as created with app.createCollection().",
+                    "longdesc": "Returns an Array of Thumbnail objects for the collection nodes.",
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "getSmartCollections",
+                    "parameters": [],
+                    "description": "\n            Retrieves all smart collection nodes, as created with app.createSmartCollection().\n          ",
+                    "longdesc": "\n            Returns an Array of Thumbnail objects for the collection nodes.\n          ",
+                    "type": "Array",
+                    "array": false
+                },
+                {
+                    "name": "hide",
+                    "parameters": [],
+                    "description": "Hides or minimizes all Adobe Bridge browser windows.",
+                    "longdesc": "In Mac OS, performs the platform-specific hide gesture.\n\t\t\t\tIn Windows, does the equivalent of app.document.minimize()."
+                },
+                {
+                    "name": "importKeywordsFromFile",
+                    "parameters": [
+                        {
+                            "name": "keywordsFile",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The file, specified as a string or ExtendScript File object."
+                        },
+                        {
+                            "name": "importType",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "Whether to replace existing keywords in the palette, or merge these keywords with any existing keywords in the palette. ",
+                            "longdesc": "One of \"clearExistingKeywords\" or \"mergeWithExistingKeywords\" (the default)."
+                        }
+                    ],
+                    "description": "Imports keywords from a file to the Keywords palette. ",
+                    "longdesc": "This is the same as choosing Import from the flyout menu in the Keywords palette."
+                },
+                {
+                    "name": "isCollectionMember",
+                    "parameters": [
+                        {
+                            "name": "collection",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the collection node, as returned by app.createCollection()."
+                        },
+                        {
+                            "name": "member",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the node to be tested."
+                        }
+                    ],
+                    "description": "Reports whether a given thumbnail is a member of a given collection.",
+                    "longdesc": "Returns true if the thumbnail is a member.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "isProcessingJob",
+                    "parameters": [],
+                    "description": "Reports whether Adobe Bridge is processing any jobs. Returns false if all the jobs are finished.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "openUrl",
+                    "parameters": [
+                        {
+                            "name": "url",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The URL for the page to open."
+                        }
+                    ],
+                    "description": "Opens a page in the platform's default web browser."
+                },
+                {
+                    "name": "operationChanged",
+                    "parameters": [
+                        {
+                            "name": "operator",
+                            "type": "ProgressOperator",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ProgressOperator object that encapsulates the operation.",
+                            "longdesc": "This object is returned by an ExtensionHandler or ExtensionModel method."
+                        }
+                    ],
+                    "description": "Notifies Adobe Bridge of an update to the processing status or progress of a long-running background operation implemented by a ProgressOperator object.",
+                    "longdesc": "Adobe Bridge queries the object to find the current status and updates the UI as appropriate. It does not display or update the UI until this call is made. "
+                },
+                {
+                    "name": "preflightFiles",
+                    "parameters": [
+                        {
+                            "name": "files",
+                            "type": "Unspecified",
+                            "array": false,
+                            "optional": false
+                        }
+                    ],
+                    "description": "DEPRECATED in Creative Suite 3. Use app.acquirePhysicalFiles() instead. ",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "purgeAllCaches",
+                    "parameters": [],
+                    "description": "Purges the thumbnail caches for all folders. ",
+                    "longdesc": "See also  app.buildFolderCache()  and app.purgeFolderCache()."
+                },
+                {
+                    "name": "purgeFolderCache",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "Object",
+                            "array": false,
+                            "optional": true,
+                            "description": "The folder to purge. ",
+                            "longdesc": "A Folder object, Thumbnail object for a folder, or Bridge URI path string. If this specifies a file, the cache is purged for the containing folder. If not supplied, purges all folder caches."
+                        }
+                    ],
+                    "description": "Purges the thumbnail cache for a folder. ",
+                    "longdesc": "See also  app.buildFolderCache()  and app.purgeFolderCache().",
+                    "type": "Mixed",
+                    "array": false
+                },
+                {
+                    "name": "quit",
+                    "parameters": [],
+                    "description": "Shuts down the Adobe Bridge application and closes all browser windows."
+                },
+                {
+                    "name": "registerBrowseScheme",
+                    "parameters": [
+                        {
+                            "name": "protocol",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "handler",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false
+                        }
+                    ],
+                    "description": "DEPRECATED in Creative Suite 3. Do not use.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "registerExtension",
+                    "parameters": [
+                        {
+                            "name": "extension",
+                            "type": "ExtensionHandler",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ExtensionHandler object. "
+                        }
+                    ],
+                    "description": "Adds a script-defined node-handling extension to the application's list of available handlers, app.extensions.",
+                    "longdesc": "Returns true on success, false if there is an existing extension with the same name.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "registerInfoset",
+                    "parameters": [
+                        {
+                            "name": "extension",
+                            "type": "ExtensionHandler",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ExtensionHandler object. "
+                        },
+                        {
+                            "name": "infoset",
+                            "type": "Infoset",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Infoset object."
+                        }
+                    ],
+                    "description": "Declares a new node-data information set, associating it with a node-handling extension.",
+                    "longdesc": "Sets can be associated with multiple handlers. All handlers must support the core sets. Registering a set makes the defined properties available to node display code. Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "registerInspectorPanel",
+                    "parameters": [
+                        {
+                            "name": "panel",
+                            "type": "InspectorPanel",
+                            "array": false,
+                            "optional": false,
+                            "description": "The InspectorPanel object."
+                        }
+                    ],
+                    "description": "Registers a script-defined Inspector panel, adding it to app.inspectorPanels. ",
+                    "longdesc": "This panel appears in the Inspector palette unless the selected thumbnail explicitly disallows it.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "registerPrefix",
+                    "parameters": [
+                        {
+                            "name": "prefix",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The prefix string , which must contain only ASCII characters."
+                        },
+                        {
+                            "name": "extension",
+                            "type": "ExtensionHandler",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ExtensionHandler object. "
+                        }
+                    ],
+                    "description": "Associates a URI prefix string with a node-handling extension. ",
+                    "longdesc": "The prefix identifies a node type managed by the handler. Handlers can register multiple prefixes.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "removeCollectionMember",
+                    "parameters": [
+                        {
+                            "name": "collection",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the collection node, as returned by app.createCollection()."
+                        },
+                        {
+                            "name": "member",
+                            "type": "any",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Thumbnail object for the node to be removed, or an Array of Thumbnail objects."
+                        }
+                    ],
+                    "description": "Removes one or more member thumbnails from a collection.",
+                    "longdesc": "Returns true on success.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "removeCredits",
+                    "parameters": [
+                        {
+                            "name": "title",
+                            "type": "Unspecified",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifying string for the item to remove."
+                        }
+                    ],
+                    "description": "Removes a text item from the Credits area of the Adobe Bridge About box.",
+                    "longdesc": "The text must have been previously added with addCredits().",
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "removeLegalNotice",
+                    "parameters": [
+                        {
+                            "name": "title",
+                            "type": "Unspecified",
+                            "array": false,
+                            "optional": false,
+                            "description": "The unique identifying string for the item to remove."
+                        }
+                    ],
+                    "description": "Removes a text item from the LegalNotice area of the Adobe Bridge About box.",
+                    "longdesc": "The text must have been previously added with addLegalNotice().",
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "renameCollection",
+                    "parameters": [
+                        {
+                            "name": "arg1",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        }
+                    ],
+                    "type": "Thumbnail",
+                    "array": false
+                },
+                {
+                    "name": "renameSmartCollection",
+                    "parameters": [
+                        {
+                            "name": "arg1",
+                            "type": "Thumbnail",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        }
+                    ],
+                    "type": "Thumbnail",
+                    "array": false
+                },
+                {
+                    "name": "runSlideshow",
+                    "parameters": [
+                        {
+                            "name": "sources",
+                            "type": "Array",
+                            "array": false,
+                            "optional": false,
+                            "description": " An array of Thumbnail objects or file path strings."
+                        }
+                    ],
+                    "description": "Loads a set of files or thumbnails as a slideshow, using the Preference options currently set for Adobe Bridge."
+                },
+                {
+                    "name": "scheduleTask",
+                    "parameters": [
+                        {
+                            "name": "script",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "A string containing the script to be run.",
+                            "longdesc": "If this script needs to load another script, do not use the JavaScript eval() function; instead use the $.evalFile() function."
+                        },
+                        {
+                            "name": "delay",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "A number of milliseconds to wait before executing the script.  ",
+                            "longdesc": "If 0, waits the default number of milliseconds, which is 10."
+                        },
+                        {
+                            "name": "repeat",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": " When true, execute the script repeatedly after each elapsed delay.",
+                            "longdesc": "Stops when a script execution returns undefined, or when this task is cancelled by calling app.cancelTask(). Default is false, which means execute the script only once."
+                        }
+                    ],
+                    "description": "Executes a script after a specified delay. ",
+                    "longdesc": "The script can be executed repeatedly, stopping when it returns undefined, or when you cancel the task using app.cancelTask().\nReturns the task ID number, which can be used to cancel the scheduled task. ",
+                    "type": "Number",
+                    "array": false
+                },
+                {
+                    "name": "system",
+                    "parameters": [
+                        {
+                            "name": "commandLine",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The command to pass to the operating system."
+                        }
+                    ],
+                    "description": "Issues the argument to the operating system, as if it were entered on the command line in a shell. ",
+                    "longdesc": "Control does not return to Adobe Bridge until this function returns. ",
+                    "type": "Mixed",
+                    "array": false
+                },
+                {
+                    "name": "unregisterExtension",
+                    "parameters": [
+                        {
+                            "name": "extension",
+                            "type": "ExtensionHandler",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ExtensionHandler object. "
+                        }
+                    ],
+                    "description": "Removes a node-handling extension, previously registered with app.registerExtension(), from the application\u2019s global list."
+                },
+                {
+                    "name": "unregisterInspectorPanel",
+                    "parameters": [
+                        {
+                            "name": "panel",
+                            "type": "InspectorPanel",
+                            "array": false,
+                            "optional": false,
+                            "description": "The InspectorPanel object."
+                        }
+                    ],
+                    "description": "Removes a script-defined Inspector panel from the global list in app.inspectorPanels(). ",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "unregisterInfoset",
+                    "parameters": [
+                        {
+                            "name": "extension",
+                            "type": "ExtensionHandler",
+                            "array": false,
+                            "optional": false,
+                            "description": "The ExtensionHandler object. "
+                        },
+                        {
+                            "name": "infoset",
+                            "type": "Infoset",
+                            "array": false,
+                            "optional": false,
+                            "description": "The Infoset object."
+                        }
+                    ],
+                    "description": "Removes the association between an extension and an information set, previously established with app.registerInfoset(). ",
+                    "type": "Mixed",
+                    "array": false
+                },
+                {
+                    "name": "unregisterPrefix",
+                    "parameters": [
+                        {
+                            "name": "prefix",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The prefix string."
+                        },
+                        {
+                            "name": "extension",
+                            "type": "ExtensionHandler",
+                            "array": false,
+                            "optional": false,
+                            "description": "\n                The ExtensionHandler object.\n              "
+                        }
+                    ],
+                    "description": "Removes a node URI prefix from the list of prefixes that the associated node-handling extension manages.",
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "Represents the Adobe Bridge application. ",
+    "longdesc": "A single global instance is created on startup; access it using the app global variable. There is only one App object. Multiple browser windows are represented by instances of  Document, and can be accessed with the app.document or app.documents properties."
+}

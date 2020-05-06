@@ -2,272 +2,374 @@
     "name": "TextFramePreference",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
-                    "description": "The parent of the TextFramePreference (a Application, Document, TextFrame or ObjectStyle)."
+                    "type": "Mixed",
+                    "array": false,
+                    "description": "The parent of the TextFramePreference (a ObjectStyle, Application, Document, TextFrame or EndnoteTextFrame)."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
-                    "name": "textColumnCount",
-                    "array": false,
-                    "type": "Number",
+                    "name": "footnotesEnableOverrides",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "If true, enable overrides to document footnote options."
+                },
+                {
+                    "name": "footnotesSpanAcrossColumns",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "If true, enable straddling footnotes."
+                },
+                {
+                    "name": "footnotesMinimumSpacing",
+                    "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
+                    "description": "Minimum Spacing Before First Footnote"
+                },
+                {
+                    "name": "footnotesSpaceBetween",
+                    "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
+                    "description": "Space between footnotes."
+                },
+                {
+                    "name": "textColumnCount",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of columns in the text frame. Note: Depending on the value of use fixed column width, the number of columns can change automatically when the text frame size changes."
                 },
                 {
                     "name": "textColumnGutter",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The space between columns in the text frame."
                 },
                 {
                     "name": "textColumnFixedWidth",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The column width of the columns in the text frame."
                 },
                 {
                     "name": "useFixedColumnWidth",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, maintains column width when the text frame is resized. If false, causes columns to resize when the text frame is resized. Note: When true, resizing the frame can change the number of columns in the frame."
                 },
                 {
                     "name": "insetSpacing",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": false,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The amount to offset text from the edges of the text frame, specified either as a single value applied uniformly to all sides of the text frame or as an array of 4 values in the format [top inset, left inset, bottom inset, right inset]. Can return: Unit (0 - 8640 points) or Array of 4 Units (0 - 8640 points)."
                 },
                 {
                     "name": "firstBaselineOffset",
-                    "array": false,
-                    "type": "FirstBaseline",
                     "readonly": false,
+                    "type": "FirstBaseline",
+                    "array": false,
                     "description": "The distance between the baseline of the text and the top inset of the text frame or cell."
                 },
                 {
                     "name": "minimumFirstBaselineOffset",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The minimum distance between the baseline of the text and the top inset of the text frame or cell."
                 },
                 {
                     "name": "verticalJustification",
-                    "array": false,
-                    "type": "VerticalJustification",
                     "readonly": false,
+                    "type": "VerticalJustification",
+                    "array": false,
                     "description": "The vertical alignment of the text content."
                 },
                 {
                     "name": "verticalThreshold",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The maximum amount of vertical space between two paragraphs. Note: Valid only when vertical justification is justified; the specified amount is applied in addition to the space before or space after values defined for the paragraph."
                 },
                 {
                     "name": "ignoreWrap",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, ignores text wrap settings for drawn or placed objects in the text frame."
                 },
                 {
-                    "name": "useFlexibleColumnWidth",
-                    "array": false,
-                    "type": "Boolean",
+                    "name": "verticalBalanceColumns",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Vertically justify balanced across all columns."
+                },
+                {
+                    "name": "useFlexibleColumnWidth",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, maintains column width between a min and max range when the text frame is resized. If false, causes columns to resize when the text frame is resized. Note: When true, resizing the frame can change the number of columns in the frame."
                 },
                 {
                     "name": "textColumnMaxWidth",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The maximum column width of the columns in the text frame. Use 0 to indicate no upper limit."
                 },
                 {
                     "name": "autoSizingType",
-                    "array": false,
-                    "type": "AutoSizingTypeEnum",
                     "readonly": false,
+                    "type": "AutoSizingTypeEnum",
+                    "array": false,
                     "description": "Auto-sizing type of text frame. Based on type, reference value is automatically adjusted. For example, for height only type, top-left reference point becomes top-center. Recommended to change auto-sizing type, after setting other auto-sizing attributes"
                 },
                 {
                     "name": "autoSizingReferencePoint",
-                    "array": false,
-                    "type": "AutoSizingReferenceEnum",
                     "readonly": false,
+                    "type": "AutoSizingReferenceEnum",
+                    "array": false,
                     "description": "The reference point for auto sizing of text frame. Reference point is automatically adjusted to the suitable value depending on the auto-sizing type value. As an example, top left reference point becomes top center for height only dimension"
                 },
                 {
                     "name": "useMinimumHeightForAutoSizing",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, minimum height value is used during the auto-sizing of text frame."
                 },
                 {
                     "name": "minimumHeightForAutoSizing",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The minimum height for auto-sizing of the text frame."
                 },
                 {
                     "name": "useMinimumWidthForAutoSizing",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, minimum width value is used during the auto-sizing of text frame."
                 },
                 {
                     "name": "minimumWidthForAutoSizing",
-                    "array": false,
-                    "type": "Measurement Unit (Number or String)=any",
                     "readonly": false,
+                    "type": "Measurement Unit (Number or String)=any",
+                    "array": false,
                     "description": "The minimum width for auto-sizing of the text frame."
                 },
                 {
                     "name": "useNoLineBreaksForAutoSizing",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, line-breaks are not introduced after auto sizing."
                 },
                 {
-                    "name": "verticalBalanceColumns",
-                    "array": false,
-                    "type": "Boolean",
+                    "name": "columnRuleOverride",
                     "readonly": false,
-                    "description": "Vertically justify balanced across all columns."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "If true, enable overrides to text frame vertical column rule options."
+                },
+                {
+                    "name": "columnRuleOffset",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Text Frame Column Rule Offset"
+                },
+                {
+                    "name": "columnRuleTopInset",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Text Frame Column Rule top inset"
+                },
+                {
+                    "name": "columnRuleInsetChainOverride",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "If true, enable inset chain override."
+                },
+                {
+                    "name": "columnRuleBottomInset",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Text Frame Column Rule Bottom Inset"
+                },
+                {
+                    "name": "columnRuleStrokeWidth",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Text Frame Column Rule Width"
+                },
+                {
+                    "name": "columnRuleStrokeColor",
+                    "readonly": false,
+                    "type": "Swatch",
+                    "array": false,
+                    "description": "Text Frame Column Rule Stroke Color"
+                },
+                {
+                    "name": "columnRuleStrokeType",
+                    "readonly": false,
+                    "type": "StrokeStyle",
+                    "array": false,
+                    "description": "Text Frame Column Rule Stroke Type"
+                },
+                {
+                    "name": "columnRuleStrokeTint",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Text Frame Column Rule Stroke Tint"
+                },
+                {
+                    "name": "columnRuleOverprintOverride",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "If true, enable overprint override."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the TextFramePreference.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "TextFramePreference",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "superclass": "Preference",
-    "description": "Text frame preferences."
+    "description": "Text frame preferences.",
+    "superclass": "Preference"
 }

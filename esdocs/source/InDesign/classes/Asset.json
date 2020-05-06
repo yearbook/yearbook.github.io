@@ -2,248 +2,252 @@
     "name": "Asset",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "date",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The date and time the Asset was created."
                 },
                 {
                     "name": "id",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The unique ID of the Asset."
                 },
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Library",
                     "readonly": true,
+                    "type": "Library",
+                    "array": false,
                     "description": "The parent of the Asset (a Library)."
                 },
                 {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the Asset within its containing object."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the Asset."
                 },
                 {
                     "name": "description",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The description of the Asset."
                 },
                 {
                     "name": "assetType",
-                    "array": false,
-                    "type": "AssetType",
                     "readonly": false,
+                    "type": "AssetType",
+                    "array": false,
                     "description": "The type of object library asset."
                 },
                 {
                     "name": "label",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "A property that can be set to any string."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "remove",
-                    "description": "Deletes the Asset.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes the Asset."
                 },
                 {
                     "name": "placeAsset",
-                    "description": "Places the asset in the specified document or text.",
-                    "array": true,
-                    "type": "Mixed",
                     "parameters": [
                         {
                             "name": "on",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The document or text object in which to place the asset. Can accept: Document or Text."
                         }
-                    ]
+                    ],
+                    "description": "Places the asset in the specified document or text.",
+                    "type": "Mixed",
+                    "array": true
                 },
                 {
                     "name": "select",
-                    "description": "Selects the object.",
                     "parameters": [
                         {
-                            "description": "The selection status of the Asset in relation to previously selected objects. (Optional)",
-                            "array": false,
                             "name": "existingSelection",
-                            "value": "SelectionOptions.REPLACE_WITH",
                             "type": "SelectionOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The selection status of the Asset in relation to previously selected objects. (Optional)",
+                            "value": "SelectionOptions.REPLACE_WITH"
                         }
-                    ]
+                    ],
+                    "description": "Selects the object."
                 },
                 {
                     "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key.",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value."
                         }
-                    ]
+                    ],
+                    "description": "Sets the label to the value associated with the specified key."
                 },
                 {
                     "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         }
-                    ]
+                    ],
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Asset.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Asset",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "An object library asset."

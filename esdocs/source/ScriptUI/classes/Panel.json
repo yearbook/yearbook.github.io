@@ -2,324 +2,355 @@
     "name": "Panel",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "characters",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "\n            Reserve space for the specified number of characters; affects calculation of\u00a0"
+                    "type": "Number",
+                    "array": false,
+                    "description": "\n            Reserve space for the specified number of characters; affects calculation of\u00a0preferredSize\u00a0.\n          "
                 },
                 {
-                    "description": "The default text justification style for child text elements. ",
-                    "array": false,
-                    "readonly": false,
                     "name": "justify",
-                    "value": "left",
-                    "type": "String"
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The default text justification style for child text elements. ",
+                    "longdesc": "\n            One of left, center, or right. Justification only works if this value is set on creation of the element.\n          ",
+                    "value": "left"
                 },
                 {
                     "name": "text",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The title or label text, a localizable string."
                 },
                 {
                     "name": "graphics",
-                    "array": false,
-                    "type": "ScriptUIGraphics",
                     "readonly": true,
-                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0"
+                    "type": "ScriptUIGraphics",
+                    "array": false,
+                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0onDraw()\u00a0event.\n          "
                 },
                 {
                     "name": "visible",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is shown, false if it is hidden."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is shown, false if it is hidden.",
+                    "longdesc": "When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown."
                 },
                 {
                     "name": "bounds",
-                    "array": false,
-                    "type": "Bounds",
                     "readonly": false,
-                    "description": "The boundaries of the element, in parent-relative coordinates. "
+                    "type": "Bounds",
+                    "array": false,
+                    "description": "The boundaries of the element, in parent-relative coordinates. ",
+                    "longdesc": "Setting an element's size or location changes its bounds property, and vice-versa."
                 },
                 {
                     "name": "location",
-                    "array": false,
-                    "type": "Point",
                     "readonly": false,
-                    "description": "The upper left corner of this element's frame relative to its parent."
+                    "type": "Point",
+                    "array": false,
+                    "description": "The upper left corner of this element's frame relative to its parent.",
+                    "longdesc": "The location is defined as [bounds.x, bounds.y]. Setting an element's location changes its bounds property, and vice-versa. "
                 },
                 {
                     "name": "maximumSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
+                    "type": "Dimension",
+                    "array": false,
                     "description": " The maximum height and width to which the element can be resized."
                 },
                 {
                     "name": "minimumSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
+                    "type": "Dimension",
+                    "array": false,
                     "description": " The minimum height and width to which the element can be resized."
                 },
                 {
                     "name": "preferredSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The preferred size, used by layout managers to determine the best size for each element."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The preferred size, used by layout managers to determine the best size for each element.",
+                    "longdesc": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default. "
                 },
                 {
                     "name": "size",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The current dimensions of this element."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The current dimensions of this element.",
+                    "longdesc": "\n            Initially undefined, and unless explicitly set by a script, it is defined by a\u00a0LayoutManager\u00a0. A script can explicitly set size before the layout manager is invoked to establish an element size other than the preferredSize or the default size, but this is not recommended. Defined as [bounds.width, bounds.height]. Setting an element's size changes its bounds property, and vice-versa.\n          "
                 },
                 {
                     "name": "windowBounds",
-                    "array": false,
-                    "type": "Bounds",
                     "readonly": true,
+                    "type": "Bounds",
+                    "array": false,
                     "description": "The bounds of this element relative to the top-level parent window."
                 },
                 {
                     "name": "alignChildren",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "Specifies how to align the child elements."
                 },
                 {
                     "name": "children",
-                    "array": true,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": true,
                     "description": "An array of child elements."
                 },
                 {
                     "name": "layout",
-                    "array": false,
-                    "type": "LayoutManager",
                     "readonly": false,
-                    "description": "The layout manager for this container."
+                    "type": "LayoutManager",
+                    "array": false,
+                    "description": "The layout manager for this container.",
+                    "longdesc": "\n            The first time a container object is made visible, ScriptUI invokes this layout manager by calling its\u00a0layout()\u00a0function. Default is an instance of the\u00a0LayoutManager\u00a0class that is automatically created when the container element is created.\n          "
                 },
                 {
                     "name": "margins",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The number of pixels between the edges of a container and the outermost child elements."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of pixels between the edges of a container and the outermost child elements.",
+                    "longdesc": " You can specify different margins for each edge of the container. The default value is based on the type of container, and is chosen to match the standard Adobe UI guidelines. "
                 },
                 {
                     "name": "orientation",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "The layout orientation of children in a container."
+                    "type": "String",
+                    "array": false,
+                    "description": "The layout orientation of children in a container.",
+                    "longdesc": "\n            Interpreted by the layout manager for the container. The default\u00a0LayoutManager\u00a0 Object accepts the (case-insensitive) values row, column, or stack.  For window and panel, the default is column, and for group the default is row. The allowed values for the container\u2019s alignChildren and its children\u2019s alignment properties depend on the orientation.\n          "
                 },
                 {
                     "name": "spacing",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The number of pixels separating one child element from its adjacent sibling element."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of pixels separating one child element from its adjacent sibling element.",
+                    "longdesc": "Because each container holds only a single row or column of children, only a single spacing value is needed for a container. The default value is based on the type of container, and is chosen to match standard Adobe UI guidelines. "
                 },
                 {
                     "name": "alignment",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "\n            The alignment style for this element. If defined, this value overrides the "
+                    "type": "String",
+                    "array": false,
+                    "description": "\n            The alignment style for this element. If defined, this value overrides the alignChildren setting for the parent container.\n          ",
+                    "longdesc": "\n            This can be a single string, which indicates the alignment for the orientation specified in the parent container, or an array of two strings, indicating both the horizontal and vertical alignment (in that order). Allowed values depend on the orientation value of the parent container. They are not case sensitive.\n            \n              For orientation=row:top, bottom, fill\n            \n            \n              For orientation=column: left, right, fill\n            \n            \n              For orientation=stack:top, bottom, left, right, fill\n            \n          "
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
-                    "description": "An object that contains one or more creation properties of the control (properties used only when the element is created). "
+                    "type": "Object",
+                    "array": false,
+                    "description": "An object that contains one or more creation properties of the control (properties used only when the element is created). ",
+                    "longdesc": "\n            Creation properties of a Panel object can include:\n            \n              borderStyle: A string that specifies the appearance of the border drawn around the panel. One of black, etched, gray, raised, sunken. Default is etched.\n            \n            \n              su1PanelCoordinates: Photoshop only. When true, this panel automatically adjusts the positions of its children for compatability with Photoshop CS. Default is false, meaning that the panel does not adjust the positions of its children, even if the parent window has automatic adjustment enabled.\n            \n          "
                 },
                 {
                     "name": "enabled",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is enabled."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is enabled.",
+                    "longdesc": "An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance. "
                 },
                 {
                     "name": "helpTip",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The help text that is displayed when the mouse hovers over the element."
                 },
                 {
                     "name": "indent",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The number of pixels to indent the element during automatic layout."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of pixels to indent the element during automatic layout.",
+                    "longdesc": "Applies for column orientation and left alignment, or row orientation and top alignment."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The parent element."
                 },
                 {
                     "name": "window",
-                    "array": false,
-                    "type": "Window",
                     "readonly": true,
+                    "type": "Window",
+                    "array": false,
                     "description": "The window that this element belongs to."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The element type; \"panel\"."
                 }
             ],
             "methods": [
                 {
                     "name": "show",
+                    "parameters": [],
                     "description": "Shows this element.",
-                    "parameters": []
+                    "longdesc": " When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states."
                 },
                 {
                     "name": "hide",
-                    "description": "Hides this element.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Hides this element."
                 },
                 {
                     "name": "add",
-                    "description": "Adds a child element to this container.",
-                    "array": false,
-                    "type": "Object",
                     "parameters": [
                         {
                             "name": "type",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "\n                The type of the child element, as specified for the "
+                            "description": "\n                The type of the child element, as specified for the type property.\n              ",
+                            "longdesc": "\n                Control types are listed in the JavaScript Tools Guide.\n              "
                         },
                         {
                             "name": "bounds",
-                            "array": false,
                             "type": "Bounds",
+                            "array": false,
                             "optional": true,
-                            "description": "A bounds specification that describes the size and position of the new control or container, relative to its parent. "
+                            "description": "A bounds specification that describes the size and position of the new control or container, relative to its parent. ",
+                            "longdesc": "\n                If supplied, this value creates a new\u00a0Bounds\u00a0object which is assigned to the new object\u2019s bounds property.\n              "
                         },
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
-                            "description": "The text or label, a localizable string."
+                            "description": "The text or label, a localizable string.",
+                            "longdesc": "\n                Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object\u2019s text property.\n              "
                         },
                         {
                             "name": "properties",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": true,
-                            "description": "An object that contains one or more creation properties of the new child (properties used only when the element is created). "
+                            "description": "An object that contains one or more creation properties of the new child (properties used only when the element is created). ",
+                            "longdesc": "\n                The creation properties depend on the element type. See properties property of each control type.\n              "
                         }
-                    ]
+                    ],
+                    "description": "Adds a child element to this container.",
+                    "longdesc": "Creates and returns a new control or container object and adds it to the children of this group.",
+                    "type": "Object",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "\n            Removes the specified child control from this group's\u00a0",
                     "parameters": [
                         {
                             "name": "what",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
-                            "description": "\n                The child control to remove, specified by 0-based index, "
+                            "description": "\n                The child control to remove, specified by 0-based index, text property value, or as a control object.\n              "
                         }
-                    ]
+                    ],
+                    "description": "\n            Removes the specified child control from this group's\u00a0children\u00a0array.\n          ",
+                    "longdesc": " No error results if the child does not exist. "
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Registers an event handler for a particular type of event occuring in this element.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The name of the event."
+                            "description": "The name of the event.",
+                            "longdesc": "\n                Event names are listed in the JavaScript Tools Guide.\n              "
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
-                            "description": "The function that handles the event."
+                            "description": "The function that handles the event.",
+                            "longdesc": "\n                This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the\u00a0UIEvent\u00a0object.\n              "
                         },
                         {
-                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
-                            "array": false,
                             "name": "capturePhase",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
+                            "longdesc": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Registers an event handler for a particular type of event occuring in this element.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the event."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
                             "description": "The function that handles the event."
                         },
                         {
-                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
-                            "array": false,
                             "name": "capturePhase",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
+                    "longdesc": " All arguments must be identical to those that were used to register the event handler.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "dispatchEvent",
+                    "parameters": [],
                     "description": "Simulates the occurrence of an event in this target. ",
-                    "array": false,
+                    "longdesc": "\n            A script can create a\u00a0UIEvent\u00a0object for a specific event and pass it to this method to start the event propagation for the event.\n          ",
                     "type": "Event",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "A container for other types of controls, with an optional frame. "
+    "description": "A container for other types of controls, with an optional frame. ",
+    "longdesc": "A panel can specify layout options for its child elements. Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden. "
 }

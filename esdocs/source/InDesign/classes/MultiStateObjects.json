@@ -2,219 +2,223 @@
     "name": "MultiStateObjects",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of objects in the collection."
                 }
             ],
             "methods": [
                 {
-                    "name": "count",
-                    "description": "Displays the number of elements in the MultiStateObject.",
-                    "array": false,
-                    "type": "Number",
-                    "parameters": []
-                },
-                {
                     "name": "add",
-                    "description": "Creates a new MultiStateObject",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "layer",
-                            "array": false,
                             "type": "Layer",
+                            "array": false,
                             "optional": false,
                             "description": "The layer on which to create the MultiStateObject. (Optional)"
                         },
                         {
-                            "description": "The location at which to insert the MultiStateObject relative to the reference object or within the container object. (Optional)",
-                            "array": false,
                             "name": "at",
-                            "value": "LocationOptions.UNKNOWN",
                             "type": "LocationOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The location at which to insert the MultiStateObject relative to the reference object or within the container object. (Optional)",
+                            "value": "LocationOptions.UNKNOWN"
                         },
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)"
                         },
                         {
                             "name": "withProperties",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false,
                             "description": "Initial values for properties of the new MultiStateObject (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Creates a new MultiStateObject",
+                    "type": "MultiStateObject",
+                    "array": false
+                },
+                {
+                    "name": "count",
+                    "parameters": [],
+                    "description": "Displays the number of elements in the MultiStateObject.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "item",
-                    "description": "Returns the MultiStateObject with the specified index or name.",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The index or name. Can accept: Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObject with the specified index or name.",
+                    "type": "MultiStateObject",
+                    "array": false
                 },
                 {
                     "name": "itemByName",
-                    "description": "Returns the MultiStateObject with the specified name.",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObject with the specified name.",
+                    "type": "MultiStateObject",
+                    "array": false
                 },
                 {
                     "name": "itemByID",
-                    "description": "Returns the MultiStateObject with the specified ID.",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "id",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The ID."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObject with the specified ID.",
+                    "type": "MultiStateObject",
+                    "array": false
                 },
                 {
                     "name": "itemByRange",
-                    "description": "Returns the MultiStateObjects within the specified range.",
-                    "array": true,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "from",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The MultiStateObject, index, or name at the beginning of the range. Can accept: MultiStateObject, Long Integer or String."
                         },
                         {
                             "name": "to",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The MultiStateObject, index, or name at the end of the range. Can accept: MultiStateObject, Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObjects within the specified range.",
+                    "type": "MultiStateObject",
+                    "array": true
                 },
                 {
                     "name": "firstItem",
+                    "parameters": [],
                     "description": "Returns the first MultiStateObject in the collection.",
-                    "array": false,
                     "type": "MultiStateObject",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "lastItem",
+                    "parameters": [],
                     "description": "Returns the last MultiStateObject in the collection.",
-                    "array": false,
                     "type": "MultiStateObject",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "middleItem",
+                    "parameters": [],
                     "description": "Returns the middle MultiStateObject in the collection.",
-                    "array": false,
                     "type": "MultiStateObject",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "previousItem",
-                    "description": "Returns the MultiStateObject with the index previous to the specified index.",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "MultiStateObject",
+                            "array": false,
                             "optional": false,
                             "description": "The index of the MultiStateObject that follows the desired MultiStateObject."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObject with the index previous to the specified index.",
+                    "type": "MultiStateObject",
+                    "array": false
                 },
                 {
                     "name": "nextItem",
-                    "description": "Returns the MultiStateObject whose index follows the specified MultiStateObject in the collection.",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "MultiStateObject",
+                            "array": false,
                             "optional": false,
                             "description": "The MultiStateObject whose index comes before the desired MultiStateObject."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObject whose index follows the specified MultiStateObject in the collection.",
+                    "type": "MultiStateObject",
+                    "array": false
                 },
                 {
                     "name": "anyItem",
+                    "parameters": [],
                     "description": "Returns any MultiStateObject in the collection.",
-                    "array": false,
                     "type": "MultiStateObject",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "everyItem",
+                    "parameters": [],
                     "description": "Returns every MultiStateObject in the collection.",
-                    "array": true,
                     "type": "MultiStateObject",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the MultiStateObject.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Returns the MultiStateObject with the specified index.",
-                    "array": false,
-                    "type": "MultiStateObject",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The index."
                         }
-                    ]
+                    ],
+                    "description": "Returns the MultiStateObject with the specified index.",
+                    "type": "MultiStateObject",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of multi-state objects."

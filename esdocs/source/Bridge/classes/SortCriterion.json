@@ -1,0 +1,65 @@
+{
+    "name": "SortCriterion",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "displayName",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A localized display name for this sorting criterion. ",
+                    "longdesc": "Used as a label for the Sort menu and Filter palette flyout menu. If not assigned, name is displayed. "
+                },
+                {
+                    "name": "infosetMember",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of an Infoset property by which to sort. ",
+                    "longdesc": "A string in the form infosetName.memberName, as defined by an Infoset and an InfosetMemberDescription object."
+                },
+                {
+                    "name": "name",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The unique identifying name of this sort criterion."
+                },
+                {
+                    "name": "type",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The data type of the criterion property. ",
+                    "longdesc": "One of: date, string, number, dimensions, rating, resolution, colorProfile"
+                },
+                {
+                    "name": "xmpNamespace",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The namespace portion of an XMP property by which to sort."
+                },
+                {
+                    "name": "xmpUri",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The URI key portion of an XMP property by which to sort. "
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Provides a way for Adobe Bridge extensions to specify how handled nodes can be sorted.",
+    "longdesc": "Sorting compares the values of a property associated with the displayed nodes. This object identifies that property, which can be in handler-defined node data (that is, defined in an Infoset object), or defined in embedded XMP metadata.When Adobe Bridge enters a container node, it calls the node's ExtensionModel.getSortCriteria() method, which returns a list of these objects. The method can supply a completely new list, or can get the default list from  app.defaultSortCriteria and modify it, append to it, or return it unchanged."
+}

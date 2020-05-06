@@ -2,226 +2,230 @@
     "name": "Groups",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The number of objects in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "count",
+                    "parameters": [],
                     "description": "Displays the number of elements in the Group.",
-                    "array": false,
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "add",
-                    "description": "Creates a new Group.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "groupItems",
-                            "array": true,
                             "type": "PageItem",
+                            "array": true,
                             "optional": false,
                             "description": "The objects to group."
                         },
                         {
                             "name": "layer",
-                            "array": false,
                             "type": "Layer",
+                            "array": false,
                             "optional": false,
                             "description": "The layer on which to create the Group. (Optional)"
                         },
                         {
-                            "description": "The location at which to insert the Group relative to the reference object or within the container object. (Optional)",
-                            "array": false,
                             "name": "at",
-                            "value": "LocationOptions.UNKNOWN",
                             "type": "LocationOptions",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The location at which to insert the Group relative to the reference object or within the container object. (Optional)",
+                            "value": "LocationOptions.UNKNOWN"
                         },
                         {
                             "name": "reference",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The reference object. Note: Required when the at parameter is before or after. Can accept: Document, Spread, MasterSpread, Page, Layer or PageItem. (Optional)"
                         },
                         {
                             "name": "withProperties",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false,
                             "description": "Initial values for properties of the new Group (Optional)"
                         }
-                    ]
+                    ],
+                    "description": "Creates a new Group.",
+                    "type": "Group",
+                    "array": false
                 },
                 {
                     "name": "item",
-                    "description": "Returns the Group with the specified index or name.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The index or name. Can accept: Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Group with the specified index or name.",
+                    "type": "Group",
+                    "array": false
                 },
                 {
                     "name": "itemByName",
-                    "description": "Returns the Group with the specified name.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Group with the specified name.",
+                    "type": "Group",
+                    "array": false
                 },
                 {
                     "name": "itemByID",
-                    "description": "Returns the Group with the specified ID.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "id",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The ID."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Group with the specified ID.",
+                    "type": "Group",
+                    "array": false
                 },
                 {
                     "name": "itemByRange",
-                    "description": "Returns the Groups within the specified range.",
-                    "array": true,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "from",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The Group, index, or name at the beginning of the range. Can accept: Group, Long Integer or String."
                         },
                         {
                             "name": "to",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The Group, index, or name at the end of the range. Can accept: Group, Long Integer or String."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Groups within the specified range.",
+                    "type": "Group",
+                    "array": true
                 },
                 {
                     "name": "firstItem",
+                    "parameters": [],
                     "description": "Returns the first Group in the collection.",
-                    "array": false,
                     "type": "Group",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "lastItem",
+                    "parameters": [],
                     "description": "Returns the last Group in the collection.",
-                    "array": false,
                     "type": "Group",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "middleItem",
+                    "parameters": [],
                     "description": "Returns the middle Group in the collection.",
-                    "array": false,
                     "type": "Group",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "previousItem",
-                    "description": "Returns the Group with the index previous to the specified index.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "Group",
+                            "array": false,
                             "optional": false,
                             "description": "The index of the Group that follows the desired Group."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Group with the index previous to the specified index.",
+                    "type": "Group",
+                    "array": false
                 },
                 {
                     "name": "nextItem",
-                    "description": "Returns the Group whose index follows the specified Group in the collection.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "obj",
-                            "array": false,
                             "type": "Group",
+                            "array": false,
                             "optional": false,
                             "description": "The Group whose index comes before the desired Group."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Group whose index follows the specified Group in the collection.",
+                    "type": "Group",
+                    "array": false
                 },
                 {
                     "name": "anyItem",
+                    "parameters": [],
                     "description": "Returns any Group in the collection.",
-                    "array": false,
                     "type": "Group",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "everyItem",
+                    "parameters": [],
                     "description": "Returns every Group in the collection.",
-                    "array": true,
                     "type": "Group",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Group.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Returns the Group with the specified index.",
-                    "array": false,
-                    "type": "Group",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The index."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Group with the specified index.",
+                    "type": "Group",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of groups."

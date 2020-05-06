@@ -1,0 +1,44 @@
+{
+    "name": "SearchCondition",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "searchField",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of some property associated with the search node.",
+                    "longdesc": "Typically a metadata property or a member of an Infoset object associated with handled nodes. This corresponds to the left side of a line in the Criteria box of the Find dialog. Read/write."
+                },
+                {
+                    "name": "operand",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The value to compare against the value of the search field in each node. ",
+                    "longdesc": "This corresponds to the right side of a line in the Criteria box of the Find dialog."
+                },
+                {
+                    "name": "operatorType",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The comparison operator for the search. ",
+                    "longdesc": "This corresponds to the middle field of a line in the Criteria box of the Find dialog. One of: exists , doesNotExist, equals, notEquals, less, lessThanOrEqual, greater, greaterThanOrEqual, contains, doesNotContain, startsWith, endsWith"
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Defines a specific condition that must be met for a handled node to match a search. ",
+    "longdesc": " The Find dialog returns a SearchSpecification object for a specific search, which contains a list of these objects in the conditionList property; each object corresponds to the user's selection in one line of the Criteria box in the dialog. The SearchSpecification.conjunction controls whether all or any of the conditions must be met.\n\t\tYour node handler can define possible search criteria for your nodes by creating SearchCriteria objects.\n\t\tEach condition specifies a property associated with a node (the searchField), whose value is compared to a selected operand value, using a selected operator such as \"equals\". Operators are predefined. Some operators, such as \"exists\", do not require an operand. "
+}

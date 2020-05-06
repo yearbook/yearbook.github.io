@@ -1,0 +1,99 @@
+{
+    "name": "ManageCache",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "buildAndExportSharedCache",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Platform path of the folder for which cache export needs to be done.",
+                            "longdesc": "Cache is exported for all subfolders in the specified path."
+                        },
+                        {
+                            "name": "buildFullPreviews",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Specifies whether you want to build and export full-size previews.",
+                            "longdesc": "The full-size previews may result in a slower export operation."
+                        }
+                    ],
+                    "description": "Builds cache for a folder and all subfolders.",
+                    "longdesc": "Exports cache to the folder(s) itself. Returns true or false according to the operation completion status.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "importSharedCache",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Platform path of the folder for which cache export needs to be done.",
+                            "longdesc": "Cache is imported for all the subfolders in this path."
+                        }
+                    ],
+                    "description": "Imports the already exported cache.",
+                    "longdesc": "The cache is imported for the selected folder and all subfolders, which avoids the need to build the new cache. Returns true or false according to the operation completion status.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "purgeAllLocalCache",
+                    "parameters": [],
+                    "description": "Purges all local (thumbnail) cache for all the folders.",
+                    "longdesc": ""
+                },
+                {
+                    "name": "purgeCacheForLocation",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Platform path of the folder for which cache export needs to be done.",
+                            "longdesc": ""
+                        },
+                        {
+                            "name": "includeSubFolders",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Specifies if the cache is to be purged for all the subfolders on the selected path.",
+                            "longdesc": ""
+                        },
+                        {
+                            "name": "purgeForAllUsers",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "",
+                            "longdesc": "Specifies if the exported cache is to be purged for everyone."
+                        }
+                    ],
+                    "description": "Purges all cache for input folder.",
+                    "longdesc": "You can choose to include all subfolders for purging. If the chosen path already has the exported cache, you can choose to delete the cache via this method."
+                }
+            ]
+        }
+    },
+    "description": "Manages Bridge cache.",
+    "longdesc": "Adobe Bridge lets you export the cache to shared folders. The imported cache can be reused later using the same or different Bridge applications. Through this class, you can also choose to purge the local cache or cache for a specific location, with options to include all subfolders and shared cache for purging. The cache import should be performed only after the cache has been exported once. "
+}

@@ -2,54 +2,322 @@
     "name": "PathItems",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [],
+                    "description": "Create a path.",
+                    "type": "PathItem",
+                    "array": false
+                },
+                {
+                    "name": "ellipse",
+                    "parameters": [
+                        {
+                            "name": "top",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The ellipse's bounds.",
+                            "value": "100"
+                        },
+                        {
+                            "name": "left",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The ellipse's bounds.",
+                            "value": "100"
+                        },
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The ellipse's bounds.",
+                            "value": "50"
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The height of the ellipse.",
+                            "value": "100"
+                        },
+                        {
+                            "name": "reversed",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Is the ellipse path reversed?",
+                            "value": "false"
+                        },
+                        {
+                            "name": "inscribed",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Is the ellipse path inscribed?",
+                            "value": "true"
+                        }
+                    ],
+                    "description": "Create an elliptical path item.",
+                    "type": "PathItem",
+                    "array": false
+                },
+                {
+                    "name": "rectangle",
+                    "parameters": [
+                        {
+                            "name": "top",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The top coordinate of the rectangle's bounds."
+                        },
+                        {
+                            "name": "left",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The left coordinate of the rectangle's bounds."
+                        },
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The width of the rectangle."
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The height of the rectangle."
+                        },
+                        {
+                            "name": "reversed",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Is the rectangle path reversed?",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Used to create a rectangular path item. Not for path item access.",
+                    "type": "PathItem",
+                    "array": false
+                },
+                {
+                    "name": "roundedRectangle",
+                    "parameters": [
+                        {
+                            "name": "top",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "left",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "horizontalRadius",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "Horizontal corner radius.",
+                            "value": "15"
+                        },
+                        {
+                            "name": "verticalRadius",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "Vertical corner radius.",
+                            "value": "20"
+                        },
+                        {
+                            "name": "reversed",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Is the rectangle path reversed?",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Used to create a rounded-corner rectangular path item. Not for path item access.",
+                    "type": "PathItem",
+                    "array": false
+                },
+                {
+                    "name": "polygon",
+                    "parameters": [
+                        {
+                            "name": "centerX",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "value": "200"
+                        },
+                        {
+                            "name": "centerY",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "value": "300"
+                        },
+                        {
+                            "name": "radius",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The radius of the polygon points.",
+                            "value": "50"
+                        },
+                        {
+                            "name": "sides",
+                            "type": "Int32",
+                            "array": false,
+                            "optional": true,
+                            "description": "The number of sides on the polygon.",
+                            "value": "8"
+                        },
+                        {
+                            "name": "reversed",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Is the polygon path reversed?",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Used to create a regular polygon path item. Not for path item access.",
+                    "type": "PathItem",
+                    "array": false
+                },
+                {
+                    "name": "star",
+                    "parameters": [
+                        {
+                            "name": "centerX",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "value": "200"
+                        },
+                        {
+                            "name": "centerY",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "value": "300"
+                        },
+                        {
+                            "name": "radius",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The outside radius of the star points.",
+                            "value": "50"
+                        },
+                        {
+                            "name": "innerRadius",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The inside radius of the star points.",
+                            "value": "20"
+                        },
+                        {
+                            "name": "points",
+                            "type": "Int32",
+                            "array": false,
+                            "optional": true,
+                            "description": "The number of points on the star.",
+                            "value": "5"
+                        },
+                        {
+                            "name": "reversed",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "Is the star path reversed?",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Used to create a star-shaped path item. Not for path item access.",
+                    "type": "PathItem",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "PathItem",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "PathItem",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of path items."

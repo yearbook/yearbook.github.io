@@ -2,274 +2,298 @@
     "name": "EditText",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "textselection",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "The currently selected text, or the empty string if there is no text selected."
+                    "type": "String",
+                    "array": false,
+                    "description": "The currently selected text, or the empty string if there is no text selected.",
+                    "longdesc": "\n            Setting the value replaces the current text selection and modifies the value of the\u00a0text\u00a0property. If there is no current selection, inserts the new value into the text string at the current insertion point. The textselection value is reset to an empty string after it modifies the text value. Note that setting the textselection property before the element\u2019s parent Window exists is an undefined operation.\n          "
                 },
                 {
                     "name": "characters",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "A number of characters for which to reserve space when calculating the preferred size of the element. "
                 },
                 {
-                    "description": "The text justification style. ",
-                    "array": false,
-                    "readonly": false,
                     "name": "justify",
-                    "value": "left",
-                    "type": "String"
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The text justification style. ",
+                    "longdesc": "\n            One of left, center, or right. Justification only works if this value is set on creation of the element.\n          ",
+                    "value": "left"
                 },
                 {
                     "name": "text",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The current text displayed in the field, a localizable string."
                 },
                 {
                     "name": "graphics",
-                    "array": false,
-                    "type": "ScriptUIGraphics",
                     "readonly": true,
-                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0"
+                    "type": "ScriptUIGraphics",
+                    "array": false,
+                    "description": "\n            The graphics object that can be used to customize the element's appearance, in response to the\u00a0onDraw()\u00a0event.\n          "
                 },
                 {
                     "name": "visible",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is shown, false if it is hidden."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is shown, false if it is hidden.",
+                    "longdesc": "When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown."
                 },
                 {
                     "name": "bounds",
-                    "array": false,
-                    "type": "Bounds",
                     "readonly": false,
-                    "description": "The boundaries of the element, in parent-relative coordinates. "
+                    "type": "Bounds",
+                    "array": false,
+                    "description": "The boundaries of the element, in parent-relative coordinates. ",
+                    "longdesc": "Setting an element's size or location changes its bounds property, and vice-versa."
                 },
                 {
                     "name": "location",
-                    "array": false,
-                    "type": "Point",
                     "readonly": false,
-                    "description": "The upper left corner of this element relative to its parent."
+                    "type": "Point",
+                    "array": false,
+                    "description": "The upper left corner of this element relative to its parent.",
+                    "longdesc": "The location is defined as [bounds.x, bounds.y]. Setting an element's location changes its bounds property, and vice-versa. "
                 },
                 {
                     "name": "maximumSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
+                    "type": "Dimension",
+                    "array": false,
                     "description": " The maximum height and width to which the element can be resized."
                 },
                 {
                     "name": "minimumSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
+                    "type": "Dimension",
+                    "array": false,
                     "description": " The minimum height and width to which the element can be resized."
                 },
                 {
                     "name": "preferredSize",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The preferred size, used by layout managers to determine the best size for each element."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The preferred size, used by layout managers to determine the best size for each element.",
+                    "longdesc": "If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default. "
                 },
                 {
                     "name": "size",
-                    "array": false,
-                    "type": "Dimension",
                     "readonly": false,
-                    "description": "The current dimensions of this element."
+                    "type": "Dimension",
+                    "array": false,
+                    "description": "The current dimensions of this element.",
+                    "longdesc": "\n            Initially undefined, and unless explicitly set by a script, it is defined by a\u00a0LayoutManager\u00a0. A script can explicitly set size before the layout manager is invoked to establish an element size other than the preferredSize or the default size, but this is not recommended. Defined as [bounds.width, bounds.height]. Setting an element's size changes its bounds property, and vice-versa.\n          "
                 },
                 {
                     "name": "windowBounds",
-                    "array": false,
-                    "type": "Bounds",
                     "readonly": true,
+                    "type": "Bounds",
+                    "array": false,
                     "description": "The bounds of this element relative to the top-level parent window."
                 },
                 {
                     "name": "active",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is active."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is active.",
+                    "longdesc": "\n            An active control is the one with keyboard focus\u2014that is, the one that accepts keystrokes, or in the case of a\u00a0Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.\n          "
                 },
                 {
                     "name": "shortcutKey",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "\n            The key sequence that invokes the\u00a0"
+                    "type": "String",
+                    "array": false,
+                    "description": "\n            The key sequence that invokes the\u00a0onShortcutKey()\u00a0callback for this element (in Windows only).\n          "
                 },
                 {
                     "name": "alignment",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "\n            The alignment style for this element. If defined, this value overrides the "
+                    "type": "String",
+                    "array": false,
+                    "description": "\n            The alignment style for this element. If defined, this value overrides the alignChildren setting for the parent container.\n          ",
+                    "longdesc": "\n            This can be a single string, which indicates the alignment for the orientation specified in the parent container, or an array of two strings, indicating both the horizontal and vertical alignment (in that order). Allowed values depend on the orientation value of the parent container. They are not case sensitive.\n            \n              For orientation=row:top, bottom, fill\n            \n            \n              For orientation=column: left, right, fill\n            \n            \n              For orientation=stack:top, bottom, left, right, fill\n            \n          "
                 },
                 {
                     "name": "children",
-                    "array": true,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": true,
                     "description": "An array of child elements."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
-                    "description": "An object that contains one or more creation properties of the container (properties used only when the element is created). "
+                    "type": "Object",
+                    "array": false,
+                    "description": "An object that contains one or more creation properties of the container (properties used only when the element is created). ",
+                    "longdesc": "\n            Creation properties of an EditText object can include:\n            \n              multiline: When false (the default), the control displays a single line of text. When true, the control displays multiple lines, in which case the text wraps within the width of the control.\n            \n            \n              readonly: When false (the default),  the control accepts text input. When true, the control does not accept input but only displays the contents of the text property.\n            \n            \n              noecho: When false (the default), the control displays input text. When true, the control does not display input text (used for password input fields).\n            \n            \n              enterKeySignalsOnChange: When false (the default), the control signals an onChange event when the editable text is changed and the control loses the keyboard focus (that is, the user tabs to another control, clicks outside the control, or types Enter). When true, the control only signals an\u00a0onChange()\u00a0event when the editable text is changed and the user types Enter; other changes to the keyboard focus do not signal the event.\n            \n            \n              wantReturn: Only applies to multiple line edit controls in ScriptUI Version 6.0 or later. When true the RETURN/ENTER keystroke is considered as text-input advancing the cursor to the next line. The default value is false.\n            \t\t\t\n          "
                 },
                 {
                     "name": "enabled",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "True if this element is enabled."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if this element is enabled.",
+                    "longdesc": "An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance. "
                 },
                 {
                     "name": "helpTip",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The help text that is displayed when the mouse hovers over the element."
                 },
                 {
                     "name": "indent",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The number of pixels to indent the element during automatic layout."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The number of pixels to indent the element during automatic layout.",
+                    "longdesc": "Applies for column orientation and left alignment, or row orientation and top alignment."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The parent element."
                 },
                 {
                     "name": "window",
-                    "array": false,
-                    "type": "Window",
                     "readonly": true,
+                    "type": "Window",
+                    "array": false,
                     "description": "The window that this element belongs to."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The element type; \"edittext\"."
                 }
             ],
             "methods": [
                 {
                     "name": "show",
+                    "parameters": [],
                     "description": "Shows this element.",
-                    "parameters": []
+                    "longdesc": " When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states."
                 },
                 {
                     "name": "hide",
-                    "description": "Hides this element.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Hides this element."
                 },
                 {
                     "name": "notify",
-                    "description": "Sends a notification message, simulating the specified user interaction event. ",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
-                            "description": "The name of the control event handler to call. "
+                            "description": "The name of the control event handler to call. ",
+                            "longdesc": "\n                One of: onClick, onChange, onChanging. By default, simulates the onChange event for an edittext control, an onClick event for controls that support that event.\n              "
                         }
-                    ]
+                    ],
+                    "description": "Sends a notification message, simulating the specified user interaction event. "
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Registers an event handler for a particular type of event occuring in this element.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The name of the event."
+                            "description": "The name of the event.",
+                            "longdesc": "\n                Event names are listed in the JavaScript Tools Guide.\n              "
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
-                            "description": "The function that handles the event."
+                            "description": "The function that handles the event.",
+                            "longdesc": "\n                This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the\u00a0UIEvent\u00a0object.\n              "
                         },
                         {
-                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
-                            "array": false,
                             "name": "capturePhase",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "When true, the handler is called only in the capturing phase of the event propagation. ",
+                            "longdesc": "Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Registers an event handler for a particular type of event occuring in this element.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The name of the event."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Function",
+                            "array": false,
                             "optional": false,
                             "description": "The function that handles the event."
                         },
                         {
-                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
-                            "array": false,
                             "name": "capturePhase",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Whether to call the handler only in the capturing phase of the event propagation.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Unregisters an event handler for a particular type of event occuring in this element.",
+                    "longdesc": " All arguments must be identical to those that were used to register the event handler.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "dispatchEvent",
+                    "parameters": [],
                     "description": "Simulates the occurrence of an event in this target. ",
-                    "array": false,
+                    "longdesc": "\n            A script can create a\u00a0UIEvent\u00a0object for a specific event and pass it to this method to start the event propagation for the event.\n          ",
                     "type": "Event",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "An editable text field that the user can select and change."
+    "description": "An editable text field that the user can select and change.",
+    "longdesc": "\n        Calls the\u00a0onChange()\u00a0callback if the text is changed and the user types Enter or the control loses focus, or if its\u00a0notify()\u00a0method is called. Calls the\u00a0onChanging()\u00a0callback when any change is made to the text. The\u00a0textselection\u00a0property contains currently selected text.\n      "
 }

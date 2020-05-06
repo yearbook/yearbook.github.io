@@ -1,0 +1,79 @@
+{
+    "name": "SearchSpecification",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "conditionList",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of SearchCondition objects to use for this search.",
+                    "longdesc": "Each object specifies a search field, which identifies a property associated with a node, a comparison operator, such as \"exists\" or \"equals\", and an operand, the value to compare with the search field value (if the operator requires a comparison value)."
+                },
+                {
+                    "name": "conjunction",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The search conjunction, and or or, as selected in the Find dialog. ",
+                    "longdesc": "When it is and, all conditions must succeed for a node to match. When it is or, the success of any condition results in a match."
+                },
+                {
+                    "name": "maximumResults",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The maximum number of result nodes to return from the search. ",
+                    "longdesc": "The search halts after this number of matches are found."
+                },
+                {
+                    "name": "rankField",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of a Rank object, as specified for a SearchDefinition object.",
+                    "longdesc": "If the number of results are limited, results are sorted on the named attribute value, and the maximum number of result nodes with the highest rank values are returned. \nThe returned results are again sorted by the view's sorting criteria upon display."
+                },
+                {
+                    "name": "rankOrdering",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The ordering style, one of ascending (the default) or descending."
+                },
+                {
+                    "name": "scopeSpecifiers",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "One or more Scope object name strings, as specified for a SearchDefinition object. ",
+                    "longdesc": "Each scope modifier can expand or limit the original scope defined by the target node. The scope value and usage is defined entirely by your ExtensionModel.getSearchDefinition() method implementation."
+                },
+                {
+                    "name": "quickSearchItem",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "quickSearchValue",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Defines a specific search among handled nodes. ",
+    "longdesc": "Returned from a selection in the Find dialog. Encapsulates a specific search among member nodes of a target container node. The object contains a set of conditions to be met in order for a node to match, and instructions for how to return matching nodes.Adobe Bridge creates this object from user selections in the Find dialog. For a search that involves handled nodes, Adobe Bridge passes the search specification to the handler's getBridgeUriForSearch() method."
+}

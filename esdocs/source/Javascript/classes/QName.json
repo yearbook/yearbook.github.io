@@ -2,27 +2,55 @@
     "name": "QName",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "QName",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "any",
+                            "array": false,
+                            "optional": false,
+                            "description": "\n\t\t\t\t\t\t\t\tThe URI, specified as a Namespace object, an existing QName object, or string.\n\t\t\t\t\t\t\t",
+                            "longdesc": "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tIf this is a Namespace object, the URI is set to the namespace URI, and there is no local name.\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tIf this is a QName object, the URI and localName is set to those of that object.\n\t\t\t\t\t\t\t\t\tIf this is a string, the URI is set to that string.\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t"
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The local name. Used only if URI is given as a string."
+                        }
+                    ],
+                    "description": "Creates a QName object.",
+                    "type": "QName",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "uri",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The URI part of the qualified name."
                 },
                 {
                     "name": "localName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The local name part of the qualified name."
                 }
             ],
             "methods": []
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A qualified XML name, containing the URI and the local name."

@@ -1,0 +1,254 @@
+{
+    "name": "MultitrackDocument",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "ancestor",
+                    "readonly": true,
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "audioClipSelection",
+                    "readonly": true,
+                    "type": "AudioClipSelectionCollection",
+                    "array": false,
+                    "description": "Collection of all currently selected audio clips of this multitrack document."
+                },
+                {
+                    "name": "audioTracks",
+                    "readonly": true,
+                    "type": "MixedAudioTrackCollection",
+                    "array": false,
+                    "description": "Collection of all audio tracks of the multitrack document."
+                },
+                {
+                    "name": "dirty",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "The dirty state of the document"
+                },
+                {
+                    "name": "displayName",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Display name of the document as shown in the UI. It doesn't necessarily refers to the file name without filename extension."
+                },
+                {
+                    "name": "duration",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Duration in samples"
+                },
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Unique identifier of this document."
+                },
+                {
+                    "name": "isCompoundSubDocument",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Returns true if this document is a sub-document of a CompountDocument."
+                },
+                {
+                    "name": "markers",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "Returns an array of marker objects. Each marker object consists of the properties 'start' 'length' 'name' 'description' and 'type'."
+                },
+                {
+                    "name": "metadata",
+                    "readonly": true,
+                    "type": "Metadata",
+                    "array": false,
+                    "description": "Returns the document's current metadata as a vanilla Object. Each property is readonly and represents an metadata entry."
+                },
+                {
+                    "name": "pannerSettings",
+                    "readonly": true,
+                    "type": "PannerSettings",
+                    "array": false,
+                    "description": "Retrieve the panner settings of the multitrack document."
+                },
+                {
+                    "name": "parentCompoundDocument",
+                    "readonly": true,
+                    "type": "Object",
+                    "array": false,
+                    "description": "Returns this document's parent CompoundDocument if it exists."
+                },
+                {
+                    "name": "path",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Returns a platform-specific path to the document on disk or empty if it doesn't currently have a path."
+                },
+                {
+                    "name": "playheadPosition",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The current playhead position in samples"
+                },
+                {
+                    "name": "sampleRate",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The audio sample rate (Hz) of the current document."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "activate",
+                    "parameters": [],
+                    "description": "Makes the current document the active (front-most) document.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "addMarker",
+                    "parameters": [
+                        {
+                            "name": "start",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "duration",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "type",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "description",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Add a new marker to the document. Possible marker types are 'cue' 'track' 'cart' 'subclip'"
+                        }
+                    ],
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "closeDocument",
+                    "parameters": [],
+                    "description": "Deprecated use 'close' instead. Close the document. Returns false if the document can't be closed right now (e.g. due to ongoing document operations)\n(Deprecated)",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "exportAsTemplate",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "exportParameter",
+                            "type": "MultitrackExportAsTemplateParameter",
+                            "array": false,
+                            "optional": false,
+                            "description": "Export document as a template. Optional parameter exportParameter specifies the export in more detail. Returns an object which provides information if and what error occured with the properties error: true if any error occured internal: internal error templateExists: template name already exists.",
+                            "longdesc": "Export document as a template."
+                        }
+                    ],
+                    "type": "Object",
+                    "array": false
+                },
+                {
+                    "name": "exportDocument",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "exportParameter",
+                            "type": "MultitrackExportParameter",
+                            "array": false,
+                            "optional": false,
+                            "description": "Export document to a new location. Optional parameter exportParameter specifies the export in more detail. Returns an object which provides information if and what error occured with the properties error: true if any error occured fileReadOnly: destination file is readonly folderReadOnly: destination folder is readonly invalidFilename: destination filename is empty or too long or a reserved name invalidFilenameExt: invalid filename extension for the destination format openDocument: destination file would overwrite a currently open document internal: internal error.",
+                            "longdesc": "Export document to a new location optionally with conversion parameters."
+                        }
+                    ],
+                    "type": "Object",
+                    "array": false
+                },
+                {
+                    "name": "saveAsDocument",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": false
+                        },
+                        {
+                            "name": "saveAsParameter",
+                            "type": "MultitrackSaveAsParameter",
+                            "array": false,
+                            "optional": false,
+                            "description": "Save document to a new location. Optional parameter saveAsParameter specifies the saveAs in more detail. Returns an object which provides information if and what error occured with the properties error: true if any error occured fileReadOnly: destination file is readonly folderReadOnly: destination folder is readonly invalidFilename: destination filename is empty or too long or a reserved name invalidFilenameExt: invalid filename extension for the destination format openDocument: destination file would overwrite a currently open document internal: internal error.",
+                            "longdesc": "Save document to a new location optionally with conversion parameters."
+                        }
+                    ],
+                    "type": "Object",
+                    "array": false
+                },
+                {
+                    "name": "saveDocument",
+                    "parameters": [
+                        {
+                            "name": "saveParameter",
+                            "type": "MultitrackSaveParameter",
+                            "array": false,
+                            "optional": false,
+                            "description": "Save document to its current location. Optional parameter saveParameter specifies the save in more detail. Returns an object which provides information if and what error occured with the properties error: true if any error occured missingPath: document doesn't provide a valid destination path fileReadOnly: destination file is readonly folderReadOnly: destination folder is readonly internal: internal error.",
+                            "longdesc": "Save document to its current location."
+                        }
+                    ],
+                    "type": "Object",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "An object that represents a particular multitrack document."
+}

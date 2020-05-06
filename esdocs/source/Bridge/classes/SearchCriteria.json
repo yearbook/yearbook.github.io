@@ -1,0 +1,68 @@
+{
+    "name": "SearchCriteria",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "operands",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "One or more Operand objects used to populate the drop-down list for the right-side field of this line in the Find dialog.",
+                    "longdesc": " This allows you to specify a closed list of possible values to match against in the search field."
+                },
+                {
+                    "name": "operandType",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The data type of the operand values. ",
+                    "longdesc": "Determines the description that appears in the operand field in the absence of a closed list of operands. The description is the expected format for Date values, otherwise generally \"Enter text\". One of: String, Number, Float, Date, Boolean"
+                },
+                {
+                    "name": "operatorTypesToDisable",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A set of predefined operator strings that are not displayed for selection.",
+                    "longdesc": "An array of strings. Predefined operators are: exists, doesNotExist, equals, doesNotEqual, less, lessThanOrEqual, greater, greaterThanOrEqual, contains, doesNotContain, startsWith, endsWith"
+                },
+                {
+                    "name": "searchField",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A search field, the name of some property associated with the search node.",
+                    "longdesc": "Typically a metadata property or a member of an Infoset associated with handled nodes. The value of the selected search field is compared to the selected operand, using the selected comparison operator."
+                },
+                {
+                    "name": "searchFieldDisplay",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A localized display name for the search field, displayed in the Find dialog. .",
+                    "longdesc": "Default is the searchField value"
+                },
+                {
+                    "name": "searchFieldSort",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether searchfield display names are sorted alphabetically in the Find dialog.  ",
+                    "longdesc": "When true, search field display names are sorted alphabetically. Default is false."
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Defines one possible search criterion for a search among handled nodes. ",
+    "longdesc": "Passed to Adobe Bridge to populate the Find dialog. Encapsulates one search criterion for a search among handled nodes. Your node handler can define possible search criteria for your nodes by creating these objects and passing them to Adobe Bridge in a SearchDefinition object, during the call to the node's ExtensionModel.getSearchDefinition() method. \n\t\tEach object corresponds to one line in the Criteria box of the Find dialog.\n\t\t\tThe left side is a property associated with possible matching nodes, called the search field\n\t\t\tThe middle value is the comparison operator\n\t\t\tThe right side is the comparison value, or operand (some operators, such as \"exists\", do not require an operand)\n\t\t\tFor each node in the scope, a search that uses a selected criterion matches the selected search-field value against the operand using the selected comparison operator. This object specifies the left and right sides. By default, all of the predefined operators are displayed for user selection. You can use this object to limit which of these operators are available for selection. \nThe user's choices in the dialog are returned to Adobe Bridge in a set of a SearchCondition objects contained in a SearchSpecification object. "
+}

@@ -1,0 +1,310 @@
+{
+    "name": "BitmapData",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "height",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Image height in pixels."
+                },
+                {
+                    "name": "pointer",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "A pointer to the buffer storing the matrix of pixels. "
+                },
+                {
+                    "name": "rectangle",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "The rectangle that defines the size of the bitmap image, in the format [0, 0, w, h]. Origin is top left."
+                },
+                {
+                    "name": "rowBytes",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The length in bytes of a row of pixels.",
+                    "longdesc": "This provides the offset from a given pixel to the pixel immediately below it, allowing for padding at the end of each line. Because a pixel is typically represented by 4 bytes, the value is usually around 4 times bigger than the width in pixels. Typically, rows are padded to multiples of 4, sometimes 16. For example, if a bitmap is 3 pixels wide, width is 3, and rowBytes could be 12 or 16."
+                },
+                {
+                    "name": "transparent",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "True if the bitmap image supports per-pixel transparency. "
+                },
+                {
+                    "name": "width",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "Image width in pixels."
+                },
+                {
+                    "name": "channelCount",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false
+                },
+                {
+                    "name": "colorSpace",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false
+                },
+                {
+                    "name": "checksum",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "A 32-bit Adler checksum of the image data. ",
+                    "longdesc": "Use to compare two object to see if they represent the same image."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "clone",
+                    "parameters": [],
+                    "description": "Duplicates this object, creating a new object with an exact copy of the contained bitmap.",
+                    "longdesc": "Returns the new BitmapData object.",
+                    "type": "BitmapData",
+                    "array": false
+                },
+                {
+                    "name": "dispose",
+                    "parameters": [],
+                    "description": "Explicitly frees the memory used to store pixel data for this object.",
+                    "longdesc": " If not called, the JavaScript garbage collector eventually frees the memory when there are no references remaining."
+                },
+                {
+                    "name": "exportTo",
+                    "parameters": [
+                        {
+                            "name": "dest",
+                            "type": "File",
+                            "array": false,
+                            "optional": false,
+                            "description": "A  File object or a string containing the platform-specific path and filename for the target file. ",
+                            "longdesc": "Creates the file if it does not exist, or overwrites an existing file. It is recommended that the file name have an extension of \".jpg\"."
+                        },
+                        {
+                            "name": "jpegQuality",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The quality of the image.",
+                            "longdesc": " A number in the range [0..100] where 100 is the highest quality image and largest file size, and lower values indicate more compression, lossier image, and smaller file size. Default is 60 (equivalent to Photoshop quality 7).",
+                            "value": "60"
+                        }
+                    ],
+                    "description": "Writes the image data to a file in JPEG format."
+                },
+                {
+                    "name": "getPixel",
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The horizontal coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The vertical coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        }
+                    ],
+                    "description": "Retrieves the color data for a specific pixel from the image.",
+                    "longdesc": "If the transparent property for this object is true, the returned color number is pre-multiplied.Returns an integer that represents the ARGB pixel value. This can be used to create a Color object.",
+                    "type": "Number",
+                    "array": false
+                },
+                {
+                    "name": "getPixel32",
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The horizontal coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The vertical coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        }
+                    ],
+                    "description": "Retrieves the color data for a specific pixel from the image, including its alpha channel.",
+                    "longdesc": "Returns an integer that represents the ARGB pixel value. This can be used to create a Color object.",
+                    "type": "Number",
+                    "array": false
+                },
+                {
+                    "name": "loadFromJpegStream",
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The address of the data stream.",
+                            "longdesc": "A 32-bit value or an array of two elements containing the low word and high word of a 64-bit address."
+                        },
+                        {
+                            "name": "dataSize",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The length of the data buffer in bytes."
+                        }
+                    ],
+                    "description": "Loads the JPEG stream at a memory address into this object, replacing the previous content. ",
+                    "longdesc": "The object is resized, if necessary."
+                },
+                {
+                    "name": "loadFromPngStream",
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The address of the data stream.",
+                            "longdesc": "A 32-bit value or an array of two elements containing the low word and high word of a 64-bit address."
+                        },
+                        {
+                            "name": "dataSize",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The length of the data buffer in bytes."
+                        }
+                    ],
+                    "description": "Loads the PNG stream at a memory address into this object, replacing the previous content. ",
+                    "longdesc": "The object is resized, if necessary."
+                },
+                {
+                    "name": "resize",
+                    "parameters": [
+                        {
+                            "name": "dimensions",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The desired edge size, in pixels, of the resized image. ",
+                            "longdesc": "The resized image is obtained by scaling down the source image to fit into a square with sides that are this number of pixels."
+                        },
+                        {
+                            "name": "quality",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The algorithm to use in scaling, which trades off image quality and execution time.",
+                            "longdesc": "One of \"bilinear\" (the default), a lower quality image but faster scaling; or \"bicubic\", a higher quality image but slower scaling; or \"bicubicSharper\", slowest but best quality. "
+                        }
+                    ],
+                    "description": "Resizes the bitmap to the specified dimensions.",
+                    "longdesc": "The target dimensions must be smaller than the largest of the current bitmap dimensions.Returns a new BitmapData object whose sides are no greater than the specified dimensions, or undefined if the object already satisfies this condition.",
+                    "type": "BitmapData",
+                    "array": false
+                },
+                {
+                    "name": "rotate",
+                    "parameters": [
+                        {
+                            "name": "angle",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The rotation angle in degrees. ",
+                            "longdesc": " Positive values rotate clockwise, negative values rotate counterclockwise. Allowed values are -90, 0, 90, 180, 270."
+                        }
+                    ],
+                    "description": "Rotates the bitmap by the specified multiple of 90 degrees.",
+                    "longdesc": "Returns a new BitmapData object containing the rotated image.",
+                    "type": "BitmapData",
+                    "array": false
+                },
+                {
+                    "name": "setPixel",
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The horizontal coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The vertical coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        },
+                        {
+                            "name": "color",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The color.",
+                            "longdesc": "A Color object, or an integer that represents the RGB pixel value, or a predefined color name string."
+                        }
+                    ],
+                    "description": "Sets the color data for a specific pixel from the image. ",
+                    "longdesc": "The alpha channel is set to 255 (fully opaque)."
+                },
+                {
+                    "name": "setPixel32",
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The horizontal coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The vertical coordinate of the pixel, relative to the bitmap's origin, the top left."
+                        },
+                        {
+                            "name": "color",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The color.",
+                            "longdesc": "A Color object, or an integer that represents the RGB pixel value, or a predefined color name string."
+                        }
+                    ],
+                    "description": "Sets the color data for a specific pixel from the image, including its alpha channel."
+                }
+            ]
+        }
+    },
+    "description": "Represents an image as a matrix of pixell.  ",
+    "longdesc": "Pixels are described by four channels: red, green, blue, and an \"alpha\" channel that represents the opacity of the pixel. Each channel stores a number between 0 and 255. For the color channels, 0 means an absence of that color and 255 means the maximum amount of that color. For the alpha channel, 0 means the pixel is completely transparent and 255 means it is completely opaque.This object allows direct manipulation of the pixels in memory. They are assumed to be stored in row-major order, with consecutive bytes for red, green, blue, and alpha channel. Each row may have some padding at the end, and the total width of a row, in bytes, is represented by rowBytes. The maximum width and maximum height of a BitmapData object is 8192 pixels.Create the object using the new operator: There are three forms of the constructor:new BitmapData (width, height, transparent*, fillColor*)new BitmapData (file[, preserveColorProfile])new BitmapData (width, height, transparent, rowBytes, data)Parameters set corresponding properties, or specify the source data, directly or indirectly. Specify true for preserveColorProfile to preserve the embedded color profile, if any. If none is present, or if not supplied, embeds the default sRGB profile. Note that ACR cannot be used with a preserved embedded profile; it returns all images with an sRGB profile which would conflict with the desired color profile behavior. If you choose to preserve the embedded profile, the standard JPEG or TIFF libraries are used, even if the thumbnail preference \"Use ACR for JPEG and TIFF\" is set. "
+}

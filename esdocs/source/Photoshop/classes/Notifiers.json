@@ -2,63 +2,102 @@
     "name": "Notifiers",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "add",
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The class id of the event, four characters or a unique string."
+                        },
+                        {
+                            "name": "eventFile",
+                            "type": "File",
+                            "array": false,
+                            "optional": false,
+                            "description": "The script file to execute when the event occurs."
+                        },
+                        {
+                            "name": "eventClass",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The class of the object the event is applied to, four characters or a unique string. When an event applies to multiple types of objects, you use the event class parameter to distinguish which object this Notifier applies to. For example, the Make event (\u201cMk\u201c) applies to documents (\u201cDcmn\u201d), channels (\u201cChnl\u201d) and other objects."
+                        }
+                    ],
+                    "description": "Creates a notifier.",
+                    "type": "Notifier",
+                    "array": false
+                },
+                {
+                    "name": "removeAll",
+                    "parameters": [],
+                    "description": "Deletes all elements."
+                }
+            ]
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "int",
                     "readonly": true,
+                    "type": "int",
+                    "array": false,
                     "description": "Number of elements in the collection."
                 }
             ],
             "methods": [
                 {
                     "name": "getByName",
-                    "description": "Get the first element in the collection with the provided name.",
-                    "array": false,
-                    "type": "Notifier",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get the first element in the collection with the provided name.",
+                    "type": "Notifier",
+                    "array": false
                 },
                 {
                     "name": "[]",
-                    "description": "Get an element in the collection with the provided index. ",
-                    "array": false,
-                    "type": "Notifier",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "uint",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Get an element in the collection with the provided index. ",
+                    "type": "Notifier",
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A collection of notifier objects in the document."

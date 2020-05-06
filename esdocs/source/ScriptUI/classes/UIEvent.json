@@ -2,175 +2,228 @@
     "name": "UIEvent",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "UIEvent",
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "\n                The event type. See\u00a0UIEvent.type\u00a0property.\n              "
+                        },
+                        {
+                            "name": "captures",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if this event can be captured.",
+                            "value": "false"
+                        },
+                        {
+                            "name": "bubbles",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if the event bubbles.",
+                            "value": "false"
+                        },
+                        {
+                            "name": "view",
+                            "type": "Object",
+                            "array": false,
+                            "optional": true,
+                            "description": "The ScriptUI element that this event relates to."
+                        },
+                        {
+                            "name": "detail",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "The click count for a mouse-click event."
+                        }
+                    ],
+                    "description": "Creates an event.",
+                    "longdesc": "\n            The\u00a0UIEvent\u00a0object is normally created by ScriptUI and passed to your event handler. However, you can simulate a user action by constructing an event object and sending it to a target object\u2019s dispatchEvent() function.\n          ",
+                    "type": "UIEvent",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "captures",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "True if this event can be captured."
                 },
                 {
                     "name": "bubbles",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "True if the event is of a type that bubbles."
                 },
                 {
                     "name": "cancelable",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "True if the default action associated with the event can be canceled with preventDefault()."
                 },
                 {
                     "name": "currentTarget",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "The event target object which is currently handling the event. During capturing and bubbling, this is different from the property target."
                 },
                 {
                     "name": "eventPhase",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The current phase of event propagation; one of none, target, capture, bubble."
                 },
                 {
                     "name": "target",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The event target object for this event."
                 },
                 {
                     "name": "timeStamp",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The date and time at which the event occurred."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "The name of the event that this  object represents."
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the event that this  object represents.",
+                    "longdesc": "\n            Event types are listed in the JavaScript Tools Guide.\n          "
                 },
                 {
                     "name": "view",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The ScriptUI element that this event relates to."
                 },
                 {
                     "name": "detail",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The click count for a mouse-click event."
                 }
             ],
             "methods": [
                 {
                     "name": "preventDefault",
-                    "description": "Prevents the default action associated with this event from being called.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Prevents the default action associated with this event from being called."
                 },
                 {
                     "name": "stopPropagation",
-                    "description": "Stops the propagation of this event.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Stops the propagation of this event."
                 },
                 {
                     "name": "initEvent",
-                    "description": "Initializes a UI event as a core W3C event.",
                     "parameters": [
                         {
                             "name": "type",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
-                            "description": "Set to true if this event can be captured.",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if this event can be captured.",
+                            "value": "false"
                         },
                         {
-                            "description": "Set to true if the event bubbles.",
-                            "array": false,
                             "name": "bubbles",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if the event bubbles.",
+                            "value": "false"
                         },
                         {
-                            "description": "Set to true if the default action is cancelable.",
-                            "array": false,
                             "name": "cancelable",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if the default action is cancelable.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Initializes a UI event as a core W3C event."
                 },
                 {
                     "name": "initUIEvent",
-                    "description": "Initializes an event.",
                     "parameters": [
                         {
                             "name": "type",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
-                            "description": "Set to true if this event can be captured.",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if this event can be captured.",
+                            "value": "false"
                         },
                         {
-                            "description": "Set to true if the event bubbles.",
-                            "array": false,
                             "name": "bubbles",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": false
+                            "array": false,
+                            "optional": false,
+                            "description": "Set to true if the event bubbles.",
+                            "value": "false"
                         },
                         {
                             "name": "view",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": true,
                             "description": "The ScriptUI element that this event relates to."
                         },
                         {
                             "name": "detail",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The click count for a mouse-click event."
                         }
-                    ]
+                    ],
+                    "description": "Initializes an event."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
-    "description": "Encapsulates input event information for an event that propagates through a container and control hierarchy. "
+    "description": "Encapsulates input event information for an event that propagates through a container and control hierarchy. ",
+    "longdesc": "\n        Implements W3C standard event handling. This object is passed to a function that you register to respond to events of a certain type that occur in a window or control. Use windowObj.addEventListener()\u00a0or controlObj.addEventListener() to register a handler function.\n      "
 }

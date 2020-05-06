@@ -2,454 +2,613 @@
     "name": "File",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "fs",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the file system.",
+                    "longdesc": "This is a class property accessed through the File constructor. Valid values are \"Windows\", \"Macintosh\", and \"Unix\"."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "encode",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The string to encode."
+                        }
+                    ],
+                    "description": "Encodes a string as required by RFC 2396, and returns the encoded string.",
+                    "longdesc": "\n\t\t\t\t\t\tAll special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string \"my file\" is encoded as \"my%20file\".\n\t\t\t\t\t\tSpecial characters are those with a numeric value greater than 127, except the following: / - _ . ! ~ * ' ( )\n\t\t\t\t\t\tSee also\u00a0encodeURI().\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "decode",
+                    "parameters": [
+                        {
+                            "name": "uri",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The UTF-8 encoded string to decode."
+                        }
+                    ],
+                    "description": "\n\t\t\t\t\t\tDecodes a UTF-8 encoded string as required by RFC 2396, and returns the decoded string.\n\t\t\t\t\t",
+                    "longdesc": "\n\t\t\t\t\t\tSee also\u00a0String.decodeURI().\n\t\t\t\t\t",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "isEncodingAvailable",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The encoding name.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tTypical values are \"ASCII\", \"binary\", or \"UTF-8\".  For a complete list of supported encodings, see the\u00a0JavaScript Tools Guide.\n\t\t\t\t\t\t\t"
+                        }
+                    ],
+                    "description": "Reports whether a given encoding is available.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "openDialog",
+                    "parameters": [
+                        {
+                            "name": "prompt",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The prompt text, displayed if the dialog allows a prompt."
+                        },
+                        {
+                            "name": "filter",
+                            "type": "any",
+                            "array": false,
+                            "optional": true,
+                            "description": "A filter that limits the types of files displayed in the dialog.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tIn Windows,  a filter expression such as \"Javascript files:*.jsx;All files:*.*\".\n\t\t\t\t\t\t\t\tIn Mac OS, a filter function that takes a File instance and returns true if the file should be included in the display, false if it should not.\n\t\t\t\t\t\t\t",
+                            "value": "null"
+                        },
+                        {
+                            "name": "multiSelect",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "When true, the user can select multiple files and the return value is an array.",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Opens a dialog so the user can select one or more files to open.",
+                    "longdesc": "\n\t\t\t\t\t\tOpens the built-in platform-specific file-browsing dialog in which a user can select an existing file or multiple files, and creates new File objects to represent the selected files.\n\t\t\t\t\t\tIf the user clicks OK, returns a File object for the selected file, or an array of objects if multiple files are selected.\n\t\t\t\t\t\tIf the user cancels, returns null.\n\t\t\t\t\t",
+                    "type": "File",
+                    "array": false
+                },
+                {
+                    "name": "saveDialog",
+                    "parameters": [
+                        {
+                            "name": "prompt",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The prompt text, displayed if the dialog allows a prompt."
+                        },
+                        {
+                            "name": "filter",
+                            "type": "any",
+                            "array": false,
+                            "optional": true,
+                            "description": "In Windows only, a filter that limits the types of files displayed in the dialog.",
+                            "longdesc": "In Windows only,  a filter expression such as \"Javascript files:*.jsx;All files:*.*\". Not used In Mac OS. ",
+                            "value": "null"
+                        }
+                    ],
+                    "description": "Opens a dialog so the user can select a file name to save to.",
+                    "longdesc": "\n\t\t\t\t\t\tOpens the built-in platform-specific file-browsing dialog in which a user can select an existing file location to which to save information, and creates a new File object to represent the selected file location.\n\t\t\t\t\t\tIf the user clicks OK, returns a File object for the selected file location.\n\t\t\t\t\t\tIf the user cancels, returns null.\n\t\t\t\t\t",
+                    "type": "File",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "File",
+                    "parameters": [
+                        {
+                            "name": "path",
+                            "type": "String",
+                            "array": false,
+                            "optional": true,
+                            "description": "The full or partial path name of the file,  in platform-specific or URI format.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tThe value stored in the object is the absolute path. The file that the path refers to does not need to exist.If the path refers to an existing folder:\n\t\t\t\t\t\t\t\tThe File function returns a Folder object instead of a File object.\n\t\t\t\t\t\t\t\tThe new operator returns a File object for a nonexisting file with the same name.\n\t\t\t\t\t\t\t"
+                        }
+                    ],
+                    "description": "Creates and returns a new File object referring to a given file system location.",
+                    "type": "File",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "alias",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, the object refers to a file system alias or shortcut."
                 },
                 {
                     "name": "created",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The creation date of the referenced file, or null if the object does not refer to a file on disk."
                 },
                 {
                     "name": "error",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "A string containing a message describing the most recent file system error."
+                    "type": "String",
+                    "array": false,
+                    "description": "A string containing a message describing the most recent file system error.",
+                    "longdesc": "Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files. Contains the empty string if there is no error."
                 },
                 {
                     "name": "exists",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, this object refers to a file or file-system alias that actually exists in the file system."
                 },
                 {
                     "name": "fsName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The platform-specific full path name for the referenced file."
                 },
                 {
                     "name": "fullName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The full path name for the referenced file in URI notation."
                 },
                 {
                     "name": "absoluteURI",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The full path name for the referenced file in URI notation."
                 },
                 {
                     "name": "relativeURI",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The path name for the object in URI notation, relative to the current folder."
                 },
                 {
                     "name": "modified",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The date of the referenced file's last modification, or null if the object does not refer to a file on the disk."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The file name portion of the absolute URI for the referenced file, without the path specification."
                 },
                 {
                     "name": "displayName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The localized name of the referenced file, without the path specification."
                 },
                 {
                     "name": "path",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The path portion of the absolute URI for the referenced file, without the file name."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Folder",
                     "readonly": true,
+                    "type": "Folder",
+                    "array": false,
                     "description": "The Folder object for the folder that contains this file."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "The file type as a four-character string."
+                    "type": "String",
+                    "array": false,
+                    "description": "The file type as a four-character string.",
+                    "longdesc": "\n\t\t\t\t\t\tIn Mac OS, the Mac OS file type.\n\t\t\t\t\t\tIn Windows, \"appl\" for .EXE files, \"shlb\" for .DLL files and \"TEXT\" for any other file.\n\t\t\t\t\t"
                 },
                 {
                     "name": "creator",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "In Mac OS, the file creator as a four-character string. In Windows or UNIX, value is \"????\"."
                 },
                 {
                     "name": "hidden",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "When true, the file is not shown in the platform-specific file browser."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the file is not shown in the platform-specific file browser.",
+                    "longdesc": "If the object references a file-system alias or shortcut, the flag is altered on the alias, not on the original file."
                 },
                 {
                     "name": "readonly",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
-                    "description": "When true, prevents the file from being altered or deleted."
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, prevents the file from being altered or deleted.",
+                    "longdesc": "If the referenced file is a file-system alias or shortcut, the flag is altered on the alias, not on the original file."
                 },
                 {
                     "name": "lineFeed",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "How line feed characters are written in the file system."
+                    "type": "String",
+                    "array": false,
+                    "description": "How line feed characters are written in the file system.",
+                    "longdesc": "One of the values \"Windows\", \"Macintosh\", or \"Unix\"."
                 },
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The size of the file in bytes."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The size of the file in bytes.",
+                    "longdesc": "Can be set only for a file that is not open, in which case it truncates or pads the file with 0-bytes to the new length."
                 },
                 {
                     "name": "encoding",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "Gets or sets the encoding for subsequent read/write operations."
+                    "type": "String",
+                    "array": false,
+                    "description": "Gets or sets the encoding for subsequent read/write operations.",
+                    "longdesc": "\n\t\t\t\t\t\tOne of the encoding constants listed in the\u00a0JavaScript Tools Guide. If the value is not recognized, uses the system default encoding.A special encoder, BINARY, is used to read binary files. It stores each byte of the file as one Unicode character regardless of any encoding. When writing, the lower byte of each Unicode character is treated as a single byte to write.\n\t\t\t\t\t"
                 },
                 {
                     "name": "eof",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "When true, a read attempt caused the current position to be at the end of the file, or the file is not open."
                 }
             ],
             "methods": [
                 {
                     "name": "resolve",
+                    "parameters": [],
                     "description": "Attempts to resolve the file-system alias or shortcut that this object refers to.",
-                    "array": false,
+                    "longdesc": "If successful, creates and returns a new File object that points to the resolved file system element. Returns null if this object does not refer to an alias, or if the alias could not be resolved.",
                     "type": "File",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "rename",
-                    "description": "Renames the associated file.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "newName",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The new file name, with no path information."
                         }
-                    ]
+                    ],
+                    "description": "Renames the associated file.",
+                    "longdesc": "Does not resolve aliases, but renames the referenced alias or shortcut file itself. Returns true if the file was successfully renamed.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "remove",
+                    "parameters": [],
                     "description": "Deletes the file associated with this object from disk immediately, without moving it to the system trash.",
-                    "array": false,
+                    "longdesc": "\n\t\t\t\t\t\tDoes not resolve aliases; instead, deletes the referenced alias or shortcut file itself. Returns true if the file was successfully removed.\n\t\t\t\t\t\tIMPORTANT: Cannot be undone. It is recommended that you prompt the user for permission before deleting.\n\t\t\t\t\t",
                     "type": "Boolean",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "changePath",
-                    "description": "Changes the path specification of the referenced file.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "path",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A string containing the new path, absolute or relative to the current folder."
                         }
-                    ]
+                    ],
+                    "description": "Changes the path specification of the referenced file.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "getRelativeURI",
-                    "description": "Retrieves and returns the path for this file, relative to the specified base path, in URI notation.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "basePath",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A base path in URI notation."
                         }
-                    ]
+                    ],
+                    "description": "Retrieves and returns the path for this file, relative to the specified base path, in URI notation.",
+                    "longdesc": "If no base path is supplied, the URI is relative to the path of the current folder.  Returns a string containing the relative URI.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "execute",
+                    "parameters": [],
                     "description": "Executes or opens this file using the appropriate application, as if it had been double-clicked in a file browser.",
-                    "array": false,
+                    "longdesc": "\n\t\t\t\t\t\tYou can use this method to run scripts, launch applications, and so on.Returns true immediately if the application launch was successful.\n\t\t\t\t\t",
                     "type": "Boolean",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "openDlg",
-                    "description": "Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file or files, and creates new File objects to represent the selected files.",
-                    "array": false,
-                    "type": "File",
                     "parameters": [
                         {
                             "name": "prompt",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A string containing the prompt text, if the dialog allows a prompt."
                         },
                         {
-                            "description": "A filter that limits the types of files displayed in the dialog.",
-                            "array": false,
                             "name": "filter",
-                            "value": "null",
                             "type": "any",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "A filter that limits the types of files displayed in the dialog.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tIn Windows,  a filter expression such as \"Javascript files:*.jsx;All files:*.*\".\n\t\t\t\t\t\t\t\tIn Mac OS, a filter function that takes a File instance and returns true if the file should be included in the display, false if it should not.\n\t\t\t\t\t\t\t",
+                            "value": "null"
                         },
                         {
-                            "description": "When true, the user can select multiple files and the return value is an array.",
-                            "array": false,
                             "name": "multiSelect",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "When true, the user can select multiple files and the return value is an array.",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file or files, and creates new File objects to represent the selected files.",
+                    "longdesc": "\n\t\t\t\t\t\tDiffers from the class method openDialog() in that it presets the current folder to this File object\u2019s parent folder and the current file to this object\u2019s associated file.\n\t\t\t\t\t\tIf the user clicks OK, returns a File or Folder object for the selected file or folder, or an array of objects.\n\t\t\t\t\t\tIf the user cancels, returns null.\n\t\t\t\t\t",
+                    "type": "File",
+                    "array": false
                 },
                 {
                     "name": "saveDlg",
-                    "description": "Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.",
-                    "array": false,
-                    "type": "File",
                     "parameters": [
                         {
                             "name": "prompt",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A string containing the prompt text, if the dialog allows a prompt."
                         },
                         {
-                            "description": "In Windows only, a filter that limits the types of files displayed in the dialog.",
-                            "array": false,
                             "name": "filter",
-                            "value": "null",
                             "type": "any",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "In Windows only, a filter that limits the types of files displayed in the dialog.",
+                            "longdesc": "In Windows only,  a filter expression such as \"Javascript files:*.jsx;All files:*.*\". Not used In Mac OS. ",
+                            "value": "null"
                         }
-                    ]
+                    ],
+                    "description": "Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.",
+                    "longdesc": "Differs from the class method saveDialog() in that it presets the current folder to this File object\u2019s parent folder and the file to this object\u2019s associated file.\n\t\t\t\t\t\tIf the user clicks OK, returns a File object for the selected file.\n\t\t\t\t\t\tIf the user cancels, returns null.\n\t\t\t\t\t",
+                    "type": "File",
+                    "array": false
                 },
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Converts this object to a string.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Creates and returns a serialized string representation of this object.",
-                    "array": false,
+                    "longdesc": "\n\t\t\t\t\t\tPass the resulting string to\u00a0eval()\u00a0to recreate the object.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "createAlias",
-                    "description": "Makes this file a file-system alias or shortcut to the specified file.",
                     "parameters": [
                         {
                             "name": "path",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A string containing the path of the target file."
                         }
-                    ]
+                    ],
+                    "description": "Makes this file a file-system alias or shortcut to the specified file.",
+                    "longdesc": "The referenced file for this object must not yet exist on disk. Returns true if the operation was successful."
                 },
                 {
                     "name": "open",
-                    "description": "Opens the referenced file for subsequent read/write operations. The method resolves any aliases to find the file.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "mode",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "The read-write mode, a single-character string."
+                            "description": "The read-write mode, a single-character string.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tOne of these characters:\n\t\t\t\t\t\t\t\tr (read) Opens for reading. If the file does not exist or cannot be found, the call fails.\n\t\t\t\t\t\t\t\tw (write) Opens a file for writing. If the file exists, its contents are destroyed. If the file does not exist, creates a new, empty file.\n\t\t\t\t\t\t\t\te (edit) Opens an existing file for reading and writing.\n\t\t\t\t\t\t\t\ta (append) Opens an existing file for reading and writing, and moves the current position to the end of the file.\n\t\t\t\t\t\t\t"
                         },
                         {
                             "name": "type",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "In Mac OS, the type of a newly created file, a 4-character string. Ignored in Windows and UNIX."
                         },
                         {
                             "name": "creator",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "In Mac OS, the creator of a newly created file, a 4-character string. Ignored in Windows and UNIX."
                         }
-                    ]
+                    ],
+                    "description": "Opens the referenced file for subsequent read/write operations. The method resolves any aliases to find the file.",
+                    "longdesc": "\n\t\t\t\t\t\tReturns true if the file was opened successfully.The method attempts to detect the encoding of the open file. It reads a few bytes at the current location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is advanced behind the detected character and the encoding property is set to one of the strings UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for zero bytes at the current location and makes an assumption about one of the above formats (except UTF-8). If everything fails, the encoding property is set to the system encoding.\n\t\t\t\t\t\tIMPORTANT: Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.\n\t\t\t\t\t",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "close",
+                    "parameters": [],
                     "description": "Closes this open file.",
-                    "array": false,
+                    "longdesc": "Returns true if the file was closed successfully, false if an I/O error occurred.",
                     "type": "Boolean",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "read",
-                    "description": "Reads the contents of the file, starting at the current position.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "chars",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "An integer specifying the number of characters to read."
                         }
-                    ]
+                    ],
+                    "description": "Reads the contents of the file, starting at the current position.",
+                    "longdesc": "Returns a string that contains up to the specified number of characters. If a number of characters is not supplied, reads from the current position to the end of the file. If the file is encoded, multiple bytes might be read to create single Unicode characters.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "readch",
+                    "parameters": [],
                     "description": "Reads a single text character from the file at the current position.",
-                    "array": false,
+                    "longdesc": "Line feeds are recognized as CR, LF, CRLF or LFCR pairs.  If the file is encoded, multiple bytes might be read to create a single Unicode character. Returns a string that contains the character.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "readln",
+                    "parameters": [],
                     "description": "Reads a single line of text from the file at the current position.",
-                    "array": false,
+                    "longdesc": "Line feeds are recognized as CR, LF, CRLF or LFCR pairs.. If the file is encoded, multiple bytes might be read to create single Unicode characters. Returns a string that contains the text.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "write",
-                    "description": "Writes the specified text to the file at the current position.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A text string to be written."
                         }
-                    ]
+                    ],
+                    "description": "Writes the specified text to the file at the current position.",
+                    "longdesc": "\n\t\t\t\t\t\tYou can supply multiple\u00a0text\u00a0values; the strings are concatenated to form a single string.For encoded files, writing a single Unicode character may write multiple bytes. Returns true if the write was successful.IMPORTANT: Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.\n\t\t\t\t\t",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "writeln",
-                    "description": "Writes a string to the file at the current position and appends a line-feed sequence.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "text",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A text string to be written."
                         }
-                    ]
+                    ],
+                    "description": "Writes a string to the file at the current position and appends a line-feed sequence.",
+                    "longdesc": "\n\t\t\t\t\t\tYou can supply multiple\u00a0text\u00a0values. The strings are concatenated into a single string, which is written in the file followed by one line-feed sequence, of the style specified by this object's\u00a0linefeed\u00a0property.For encoded files, writing a single Unicode character may write multiple bytes.  Returns true if the write was successful.IMPORTANT: Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.\n\t\t\t\t\t",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "seek",
-                    "description": "Seeks to a given position in the file.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "pos",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "\n\t\t\t\t\t\t\t\tThe new current position in the file as an offset in bytes from the start, current position, or end, depending on the\u00a0"
+                            "description": "\n\t\t\t\t\t\t\t\tThe new current position in the file as an offset in bytes from the start, current position, or end, depending on the\u00a0mode.\n\t\t\t\t\t\t\t"
                         },
                         {
-                            "description": "The seek mode.",
-                            "array": false,
                             "name": "mode",
-                            "value": "0",
                             "type": "Number",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "The seek mode.",
+                            "longdesc": "\n\t\t\t\t\t\t\t\tOne of:\n\t\t\t\t\t\t\t\t0: Seek to absolute position, where pos=0 is the first byte of the file. This is the default.\n\t\t\t\t\t\t\t\t1: Seek relative to the current position.\n\t\t\t\t\t\t\t\t2. Seek backward from the end of the file.\n\t\t\t\t\t\t\t",
+                            "value": "0"
                         }
-                    ]
+                    ],
+                    "description": "Seeks to a given position in the file.",
+                    "longdesc": "The new position cannot be less than 0 or greater than the current file size. Returns true if the position was changed.",
+                    "type": "Boolean",
+                    "array": false
                 },
                 {
                     "name": "tell",
+                    "parameters": [],
                     "description": "Retrieves the current position as a byte offset from the start of the file.",
-                    "array": false,
+                    "longdesc": "Returns a number, the position index.",
                     "type": "Number",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "copy",
-                    "description": "Copies this object\u2019s referenced file to the specified target location.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "target",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "A string with the URI path to the target location, or a File object that references the target location."
                         }
-                    ]
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "name": "fs",
-                    "array": false,
-                    "type": "String",
-                    "readonly": true,
-                    "description": "The name of the file system."
+                    ],
+                    "description": "Copies this object\u2019s referenced file to the specified target location.",
+                    "longdesc": "\n\t\t\t\t\t\tResolves any aliases to find the source file. If a file exists at the target location, it is overwritten.\n\t\t\t\t\t\tReturns true if the copy was successful.\n\t\t\t\t\t",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
         }

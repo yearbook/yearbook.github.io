@@ -2,431 +2,485 @@
     "name": "String",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": [
+                {
+                    "name": "fromCharCode",
+                    "parameters": [
+                        {
+                            "name": "value1",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "One or more ASCII values."
+                        }
+                    ],
+                    "description": "Returns a string created by concatenation one or more characters specified as ASCII values.",
+                    "type": "String",
+                    "array": false
+                }
+            ]
+        },
+        "constructors": {
+            "methods": [
+                {
+                    "name": "String",
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "array": false,
+                            "optional": false,
+                            "description": "A number, variable, or object to convert to a string.",
+                            "longdesc": ""
+                        }
+                    ],
+                    "description": "Returns a string representation of the value given as an argument.",
+                    "type": "String",
+                    "array": false
+                }
+            ]
+        },
         "instance": {
             "properties": [
                 {
                     "name": "length",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The length of the string."
                 }
             ],
             "methods": [
                 {
                     "name": "toString",
+                    "parameters": [],
                     "description": "Returns itself.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toSource",
-                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0",
-                    "array": false,
+                    "parameters": [],
+                    "description": "\n\t\t\t\t\t\tCreates a string representation of this object that can be fed back to\u00a0eval()\u00a0to re-create an object. Works only with built-in classes.\n\t\t\t\t\t",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "valueOf",
+                    "parameters": [],
                     "description": "Returns itself.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "charAt",
-                    "description": "Returns the character at the specified index.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "An integer between 0 and string.length -1, specifying the character to return."
                         }
-                    ]
+                    ],
+                    "description": "Returns the character at the specified index.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "charCodeAt",
-                    "description": "Returns the Unicode value of the character at the given index.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "index",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "An integer between 0 and string.length -1, specifying the character."
                         }
-                    ]
+                    ],
+                    "description": "Returns the Unicode value of the character at the given index.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "concat",
-                    "description": "If necessary, converts the one or more given values to strings.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The values to be concatenated with the given string."
                         }
-                    ]
+                    ],
+                    "description": "If necessary, converts the one or more given values to strings.",
+                    "longdesc": "Those values are concatenated with the original string, the result is returned. The original string is not effected.  Returns the concatenated string.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "indexOf",
-                    "description": "Returns the index within the string of the first occurrence of the specified string, starting the search at fromIndex if provided.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "searchValue",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The string for which to search."
                         },
                         {
                             "name": "offset",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The starting offset of the search."
                         }
-                    ]
+                    ],
+                    "description": "Returns the index within the string of the first occurrence of the specified string, starting the search at fromIndex if provided.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "lastIndexOf",
-                    "description": "Returns the index within the string of the last occurrence of the specified value.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "searchValue",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The string for which to search."
                         },
                         {
                             "name": "offset",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The starting offset of the search."
                         }
-                    ]
+                    ],
+                    "description": "Returns the index within the string of the last occurrence of the specified value.",
+                    "longdesc": "The string is searched backward, starting at fromIndex.  Returns the index within the string where the last occurrence of searchValue was found, or -1 if it was not found.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "slice",
-                    "description": "Extracts a substring of the given string and returns it as a new string.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "startSlice",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "The index at which to begin extraction."
+                            "description": "The index at which to begin extraction.",
+                            "longdesc": ""
                         },
                         {
                             "name": "endSlice",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
-                            "description": "The index at which to end extraction."
+                            "description": "The index at which to end extraction.",
+                            "longdesc": "If omitted, slice extracts to the end of the string."
                         }
-                    ]
+                    ],
+                    "description": "Extracts a substring of the given string and returns it as a new string.",
+                    "longdesc": "The substring begins at startSlice, and includes all characters up to, but not including the character at the index endSlice.   A negative value indexes from the end of the string.  For example, a negative value for startSlice is resolved as: string. length + startSlice.  The original string is unchanged.  Returns a substring of characters from the given string, starting at startSlice and ending with endSlice-1.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "toLowerCase",
+                    "parameters": [],
                     "description": "Returns a new string which contains all the characters of the original string converted to lowercase.",
-                    "array": false,
+                    "longdesc": "The original string is unchanged.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toUpperCase",
+                    "parameters": [],
                     "description": "Returns a new string which contains all the characters of the original string converted to uppercase.",
-                    "array": false,
+                    "longdesc": "The original string is unchanged.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toLocaleLowerCase",
+                    "parameters": [],
                     "description": "Returns a new string which contains all the characters of the original string converted to lowercase (localized).",
-                    "array": false,
+                    "longdesc": "The original string is unchanged.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "toLocaleUpperCase",
+                    "parameters": [],
                     "description": "Returns a new string which contains all the characters of the original string converted to uppercase (localized).",
-                    "array": false,
+                    "longdesc": "The original string is unchanged.",
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "localeCompare",
-                    "description": "Performs a localized comparison of two strings.",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "what",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The string to compare with."
                         }
-                    ]
+                    ],
+                    "description": "Performs a localized comparison of two strings.",
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "match",
-                    "description": "\n\t\t\t\t\t\tMatches a string against a regular expression.\n\t\t\t\t\t",
-                    "array": false,
-                    "type": "Array",
                     "parameters": [
                         {
                             "name": "regexp",
-                            "array": false,
                             "type": "RegExp",
+                            "array": false,
                             "optional": false,
                             "description": "The regular expression to use."
                         }
-                    ]
+                    ],
+                    "description": "\n\t\t\t\t\t\tMatches a string against a regular expression.\n\t\t\t\t\t",
+                    "type": "Array",
+                    "array": false
                 },
                 {
                     "name": "replace",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "what",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "with",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "search",
-                    "array": false,
-                    "type": "Number",
                     "parameters": [
                         {
                             "name": "search",
-                            "array": false,
                             "type": "RegExp",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "type": "Number",
+                    "array": false
                 },
                 {
                     "name": "split",
-                    "description": "Splits a string into a group of substrings, places those strings in an array, and returns the array.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "delimiter",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
-                            "description": "Specifies the string to use for delimiting."
+                            "description": "Specifies the string to use for delimiting.",
+                            "longdesc": "If delimiter is omitted, the array returned contains one element, consisting of the entire string."
                         },
                         {
                             "name": "limit",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Splits a string into a group of substrings, places those strings in an array, and returns the array.",
+                    "longdesc": "The substrings are created by breaking the original string at places that match delimiter, the delimiter characters are removed.  Returns an array whose elements are the substrings.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "substr",
-                    "description": "Returns a string containing the characters beginning at the specified index, start, through the specified number of characters.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "start",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "Location at which to begin extracting characters."
+                            "description": "Location at which to begin extracting characters.",
+                            "longdesc": ""
                         },
                         {
                             "name": "length",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "(OptIonal) The number of characters to extract."
+                            "description": "(OptIonal) The number of characters to extract.",
+                            "longdesc": ""
                         }
-                    ]
+                    ],
+                    "description": "Returns a string containing the characters beginning at the specified index, start, through the specified number of characters.",
+                    "longdesc": "The original string is unchanged.  Returns a string containing the extracted characters.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "substring",
-                    "description": "Returns a substring of the given string by extracting characters from indexA up to but not including indexB.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "indexA",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "The index to begin extracting."
+                            "description": "The index to begin extracting.",
+                            "longdesc": ""
                         },
                         {
                             "name": "indexB",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
-                            "description": "(Optional) The index at which to end extraction."
+                            "description": "(Optional) The index at which to end extraction.",
+                            "longdesc": "If omitted, slice extracts to the end of the string."
                         }
-                    ]
+                    ],
+                    "description": "Returns a substring of the given string by extracting characters from indexA up to but not including indexB.",
+                    "longdesc": "The original string is unchanged.  Returns a substring of characters from the given string, starting at indexA and ending with indexB-1.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "anchor",
-                    "description": "Returns a string consisting of this string enclosed in a <a> tag.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The text to be stored in the anchors' name attribute."
                         }
-                    ]
+                    ],
+                    "description": "Returns a string consisting of this string enclosed in a <a> tag.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "big",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <big> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "blink",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <blink> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "bold",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <b> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "fixed",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <tt> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "fontcolor",
-                    "description": "Returns a string consisting of this string enclosed in a <font> tag.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "color",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value to be stored in the tag's color attribute."
                         }
-                    ]
+                    ],
+                    "description": "Returns a string consisting of this string enclosed in a <font> tag.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "fontsize",
-                    "description": "Returns a string consisting of this string enclosed in a <font> tag.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "size",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": false,
                             "description": "The value to be stored in the tag's size attribute."
                         }
-                    ]
+                    ],
+                    "description": "Returns a string consisting of this string enclosed in a <font> tag.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "italics",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <i> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "link",
-                    "description": "Returns a string consisting of this string enclosed in a <a> tag.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "href",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value to be stored in the tag's href attribute."
                         }
-                    ]
+                    ],
+                    "description": "Returns a string consisting of this string enclosed in a <a> tag.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "small",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <small> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "strike",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <strike> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "sub",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <sub> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "sup",
+                    "parameters": [],
                     "description": "Returns a string consisting of this string enclosed in a <sup> tag.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A character string. Each character is adressable by index."

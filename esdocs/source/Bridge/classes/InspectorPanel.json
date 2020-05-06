@@ -1,0 +1,121 @@
+{
+    "name": "InspectorPanel",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "displayInInspector",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether to display this panel.",
+                    "longdesc": "When true, this panel is displayed when Document.displayInspectorView is true, and if the  script-defined callback hidePanelForThumbnail returns true or is not implemented for this panel.When false, this panel is never displayed, and is also hidden in the Inspector page of the Preferences dialog."
+                },
+                {
+                    "name": "displayTitle",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The localized title string to display in the panel's tab header. ",
+                    "longdesc": " The string can include values derived dynamically at display time, using panelette markup elements.Supplying this value allows you to use the same panel object with different titles for different node types. If this value is not supplied, the title value is displayed."
+                },
+                {
+                    "name": "flyoutMenuId",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The unique menu identifier of a script-defined flyout menu for this panel. "
+                },
+                {
+                    "name": "minimized",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the panel is minimized or iconified."
+                },
+                {
+                    "name": "panelettes",
+                    "readonly": true,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of panelettes contained in this panel, in display order. ",
+                    "longdesc": "Use registerPanelette() and unregisterPanelette() to manage the list. Contains instances of the type-specific panelette subclasses:IconListPanelette, TextPanelette, ThumbnailPanelette. "
+                },
+                {
+                    "name": "sortPosition",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The preferred default position of this tabbed panel in the Inspector, relative to other panels.",
+                    "longdesc": "In the range [1..100]. Panels with lower values are above and to the left."
+                },
+                {
+                    "name": "title",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The title text of this panel, displayed in the tab header.",
+                    "longdesc": "See also displayTitle."
+                },
+                {
+                    "name": "visible",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, the majority of this panel is visible on the screen. ",
+                    "longdesc": " When false, the panel is minimized or iconified, or most of it is positioned off the screen. "
+                },
+                {
+                    "name": "wide",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "When true, this panel occupies the entire available horizontal space. ",
+                    "longdesc": "When false, the default, the panel occupies one third of available space."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "registerPanelette",
+                    "parameters": [
+                        {
+                            "name": "panelette",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The panelette object.",
+                            "longdesc": "One of the type-specific panelette subclasses:IconListPanelette, TextPanelette, ThumbnailPanelette."
+                        }
+                    ],
+                    "description": "Registers a script-defined panelette as a member of this panel, adding it to panelettes list.",
+                    "longdesc": "Returns true on success, false if the panelette is already registered or the operation fails.",
+                    "type": "Boolean",
+                    "array": false
+                },
+                {
+                    "name": "unregisterPanelette",
+                    "parameters": [
+                        {
+                            "name": "panelette",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "The panelette object."
+                        }
+                    ],
+                    "description": "Removes a member panelette from this panel. "
+                }
+            ]
+        }
+    },
+    "description": "Represents an object-inspection panel, a special type of tabbed palette that displays contextual information for a selected thumbnail. ",
+    "longdesc": "Your script defines what kind of related information to display, and how to display it. The panel serves as a frame and parent for subpanels that actually display the information. Subpanels are represented by members of the Panelette Base Class contained in this parent panel.\n\t\tRegister a inspection panel that you create to make it available to Adobe Bridge, using app.registerInspectorPanel().\n\t\tTo turn the display of registered inspection panels on or off in a particular browser window, set Document.displayInspectorView."
+}

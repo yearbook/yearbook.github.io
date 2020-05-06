@@ -2,226 +2,230 @@
     "name": "PathItem",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The object's container."
                 },
                 {
                     "name": "typename",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The class name of the object."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the path item."
                 },
                 {
                     "name": "subPathItems",
-                    "array": false,
-                    "type": "SubPathItems",
                     "readonly": true,
+                    "type": "SubPathItems",
+                    "array": false,
                     "description": "The sub path objects for this path item."
                 },
                 {
                     "name": "kind",
-                    "array": false,
-                    "type": "PathKind",
                     "readonly": false,
+                    "type": "PathKind",
+                    "array": false,
                     "description": "The type of path."
                 }
             ],
             "methods": [
                 {
                     "name": "add",
+                    "parameters": [],
                     "description": "Adds an element.",
-                    "array": false,
                     "type": "PathItem",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "duplicate",
-                    "description": "Duplicate this object.",
-                    "array": false,
-                    "type": "PathItem",
                     "parameters": [
                         {
                             "name": "relativeObject",
-                            "array": false,
                             "type": "Object",
+                            "array": false,
                             "optional": false
                         },
                         {
                             "name": "insertionLocation",
-                            "array": false,
                             "type": "ElementPlacement",
+                            "array": false,
                             "optional": false
                         }
-                    ]
+                    ],
+                    "description": "Duplicate this object.",
+                    "type": "PathItem",
+                    "array": false
                 },
                 {
                     "name": "remove",
-                    "description": "Deletes this object.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes this object."
                 },
                 {
                     "name": "removeAll",
-                    "description": "Deletes all elements.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Deletes all elements."
                 },
                 {
                     "name": "duplicate",
-                    "description": "Duplicates this path item.",
-                    "array": false,
-                    "type": "PathItem",
                     "parameters": [
                         {
                             "name": "name",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": true,
                             "description": "The name for the new path."
                         }
-                    ]
+                    ],
+                    "description": "Duplicates this path item.",
+                    "type": "PathItem",
+                    "array": false
                 },
                 {
                     "name": "makeSelection",
-                    "description": "Makes a selection object, whose border is the path, from this path item object.",
                     "parameters": [
                         {
                             "name": "feather",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The feather amount in pixels. Range: 0.0 to 250.0."
                         },
                         {
                             "name": "antiAlias",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, the selection uses anti-aliasing."
                         },
                         {
                             "name": "operation",
-                            "array": false,
                             "type": "SelectionType",
+                            "array": false,
                             "optional": true,
                             "description": "The selection behavior relative to the existing selection (when a selection already exists)."
                         }
-                    ]
+                    ],
+                    "description": "Makes a selection object, whose border is the path, from this path item object."
                 },
                 {
                     "name": "fillPath",
-                    "description": "Fills the area enclosed by the path.",
                     "parameters": [
                         {
                             "name": "fillColor",
-                            "array": false,
                             "type": "any",
+                            "array": false,
                             "optional": true,
                             "description": "The color of the fill for this path."
                         },
                         {
                             "name": "mode",
-                            "array": false,
                             "type": "ColorBlendMode",
+                            "array": false,
                             "optional": true,
                             "description": "The blending mode of the fill for this path."
                         },
                         {
                             "name": "opacity",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The opacity of the fill for this path (as a percentage). Range: 0.0 to 100.0."
                         },
                         {
                             "name": "preserveTransparency",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, transparency is preserved."
                         },
                         {
                             "name": "feather",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "The feather amount in pixels. Range: 0.0 to 250.0."
                         },
                         {
                             "name": "antiAlias",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, uses anti-aliasing for the selection."
                         },
                         {
                             "name": "wholePath",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, uses all subpaths when doing the fill."
                         }
-                    ]
+                    ],
+                    "description": "Fills the area enclosed by the path."
                 },
                 {
                     "name": "strokePath",
-                    "description": "Strokes the path.",
                     "parameters": [
                         {
                             "name": "tool",
-                            "array": false,
                             "type": "ToolType",
+                            "array": false,
                             "optional": true,
                             "description": "The tool to use when stroking the path."
                         },
                         {
                             "name": "simulatePressure",
-                            "array": false,
                             "type": "Boolean",
+                            "array": false,
                             "optional": true,
                             "description": "If true, simulates the pressure when using the tool."
                         }
-                    ]
+                    ],
+                    "description": "Strokes the path."
                 },
                 {
                     "name": "makeClippingPath",
-                    "description": "Makes this path item the clipping path for this document.",
                     "parameters": [
                         {
                             "name": "flatness",
-                            "array": false,
                             "type": "Number",
+                            "array": false,
                             "optional": true,
                             "description": "Flatness in device pixels; tells the PostScript printer how to approximate curves. Range: 0.2 to 100)."
                         }
-                    ]
+                    ],
+                    "description": "Makes this path item the clipping path for this document."
                 },
                 {
                     "name": "select",
-                    "description": "Makes this path item the active or selected path item.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Makes this path item the active or selected path item."
                 },
                 {
                     "name": "deselect",
-                    "description": "Unselects the selection, no path items are selected.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Unselects the selection, no path items are selected."
                 }
             ]
-        },
-        "class": {
-            "properties": []
         }
     },
     "description": "A path or drawing object, such as the outline of a shape or a straight or curved line, which contains sub paths that comprise its geometry."

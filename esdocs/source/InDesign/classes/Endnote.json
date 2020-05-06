@@ -1,0 +1,287 @@
+{
+    "name": "Endnote",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "storyOffset",
+                    "readonly": true,
+                    "type": "InsertionPoint",
+                    "array": false,
+                    "description": "The location of the endnote marker in the parent story"
+                },
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The unique ID of the Endnote."
+                },
+                {
+                    "name": "isValid",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
+                    "description": "The parent of the Endnote (a InsertionPoint, Story, XmlStory, Cell or Table)."
+                },
+                {
+                    "name": "index",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The index of the Endnote within its containing object."
+                },
+                {
+                    "name": "textColumns",
+                    "readonly": true,
+                    "type": "TextColumns",
+                    "array": false,
+                    "description": "A collection of text columns."
+                },
+                {
+                    "name": "texts",
+                    "readonly": true,
+                    "type": "Texts",
+                    "array": false,
+                    "description": "A collection of text objects."
+                },
+                {
+                    "name": "textStyleRanges",
+                    "readonly": true,
+                    "type": "TextStyleRanges",
+                    "array": false,
+                    "description": "A collection of text style ranges."
+                },
+                {
+                    "name": "lines",
+                    "readonly": true,
+                    "type": "Lines",
+                    "array": false,
+                    "description": "A collection of lines."
+                },
+                {
+                    "name": "words",
+                    "readonly": true,
+                    "type": "Words",
+                    "array": false,
+                    "description": "A collection of words."
+                },
+                {
+                    "name": "characters",
+                    "readonly": true,
+                    "type": "Characters",
+                    "array": false,
+                    "description": "A collection of characters."
+                },
+                {
+                    "name": "insertionPoints",
+                    "readonly": true,
+                    "type": "InsertionPoints",
+                    "array": false,
+                    "description": "A collection of insertion points."
+                },
+                {
+                    "name": "events",
+                    "readonly": true,
+                    "type": "Events",
+                    "array": false,
+                    "description": "A collection of events."
+                },
+                {
+                    "name": "eventListeners",
+                    "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
+                    "description": "A collection of event listeners."
+                },
+                {
+                    "name": "endnoteTextRange",
+                    "readonly": false,
+                    "type": "EndnoteRange",
+                    "array": false,
+                    "description": "The endnote range object."
+                },
+                {
+                    "name": "label",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A property that can be set to any string."
+                },
+                {
+                    "name": "name",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the Endnote; this is an alias to the Endnote's label property."
+                },
+                {
+                    "name": "properties",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "deleteEndnote",
+                    "parameters": [],
+                    "description": "Deletes the endnote reference and the associated endnote text range."
+                },
+                {
+                    "name": "insertTextInEndnote",
+                    "parameters": [
+                        {
+                            "name": "storyOffset",
+                            "type": "InsertionPoint",
+                            "array": false,
+                            "optional": false,
+                            "description": "The location within the story, specified as an insertion point."
+                        },
+                        {
+                            "name": "contents",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The content to insert."
+                        }
+                    ],
+                    "description": "Insert the text in endnote text range at specified text index. Insertion position should lie within the start and end range indices excluding the markers"
+                },
+                {
+                    "name": "insertLabel",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The key."
+                        },
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The value."
+                        }
+                    ],
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "name": "extractLabel",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The key."
+                        }
+                    ],
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "toSource",
+                    "parameters": [],
+                    "description": "Generates a string which, if executed, will return the Endnote.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "getElements",
+                    "parameters": [],
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "Endnote",
+                    "array": true
+                },
+                {
+                    "name": "toSpecifier",
+                    "parameters": [],
+                    "description": "Retrieves the object specifier.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "addEventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "type": "Mixed",
+                            "array": false,
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "name": "captures",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
+                },
+                {
+                    "name": "removeEventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "type": "Mixed",
+                            "array": false,
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "name": "captures",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "An endnote."
+}

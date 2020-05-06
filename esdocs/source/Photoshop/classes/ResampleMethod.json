@@ -2,82 +2,88 @@
     "name": "ResampleMethod",
     "dynamic": false,
     "elements": {
-        "instance": {
-            "properties": [],
-            "methods": []
-        },
         "class": {
             "properties": [
                 {
-                    "description": "Does not resample.",
-                    "array": false,
-                    "readonly": true,
                     "name": "NONE",
-                    "value": "1",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Does not resample.",
+                    "value": "1"
                 },
                 {
-                    "description": "Chooses a pixel in the center of the sample area and replaces the entire area with that pixel color. Same as subsampling.",
-                    "array": false,
-                    "readonly": true,
                     "name": "NEARESTNEIGHBOR",
-                    "value": "2",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Chooses a pixel in the center of the sample area and replaces the entire area with that pixel color. Same as subsampling.",
+                    "longdesc": "Significantly reduces the conversion time compared with downsampling but results in images that are less smooth and continuous.",
+                    "value": "2"
                 },
                 {
-                    "description": "Averages the pixels in a sample area and replaces the entire area with the average pixel color at the specified resolution. Same as average downsampling.",
-                    "array": false,
-                    "readonly": true,
                     "name": "BILINEAR",
-                    "value": "3",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Averages the pixels in a sample area and replaces the entire area with the average pixel color at the specified resolution. Same as average downsampling.",
+                    "value": "3"
                 },
                 {
-                    "description": "Uses a weighted average to determine pixel color, which usually yields better results than the simple averageing method of downsampling.",
-                    "array": false,
-                    "readonly": true,
                     "name": "BICUBIC",
-                    "value": "4",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "Uses a weighted average to determine pixel color, which usually yields better results than the simple averageing method of downsampling.",
+                    "longdesc": "The slowest but most precise method, resulting in the smoothest gradations.",
+                    "value": "4"
                 },
                 {
-                    "description": "A good method for reducing the size of an image based on Bicubic interpolation with enhanced sharpening. Maintains the detail in a resampled image.",
-                    "array": false,
-                    "readonly": true,
                     "name": "BICUBICSHARPER",
-                    "value": "5",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "A good method for reducing the size of an image based on Bicubic interpolation with enhanced sharpening. Maintains the detail in a resampled image.",
+                    "value": "5"
                 },
                 {
-                    "description": "A good method for enlarging images based on Bicubic interpolation but designed to produce smoother results.",
-                    "array": false,
-                    "readonly": true,
                     "name": "BICUBICSMOOTHER",
-                    "value": "6",
-                    "type": "int"
+                    "readonly": true,
+                    "type": "int",
+                    "array": false,
+                    "description": "A good method for enlarging images based on Bicubic interpolation but designed to produce smoother results.",
+                    "value": "6"
                 },
                 {
                     "name": "BICUBICAUTOMATIC",
-                    "array": false,
-                    "value": "7",
+                    "readonly": true,
                     "type": "int",
-                    "readonly": true
+                    "array": false,
+                    "value": "7"
                 },
                 {
                     "name": "AUTOMATIC",
-                    "array": false,
-                    "value": "8",
+                    "readonly": true,
                     "type": "int",
-                    "readonly": true
+                    "array": false,
+                    "value": "8"
                 },
                 {
                     "name": "PRESERVEDETAILS",
-                    "array": false,
-                    "value": "9",
+                    "readonly": true,
                     "type": "int",
-                    "readonly": true
+                    "array": false,
+                    "value": "9"
                 }
-            ]
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": []
         }
     },
     "description": "The method to use to resample the image."

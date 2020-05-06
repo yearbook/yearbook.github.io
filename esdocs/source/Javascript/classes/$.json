@@ -2,153 +2,310 @@
     "name": "$",
     "dynamic": true,
     "elements": {
-        "instance": {
-            "properties": [],
-            "methods": []
-        },
         "class": {
             "properties": [
                 {
                     "name": "error",
-                    "array": false,
-                    "type": "Error",
                     "readonly": false,
-                    "description": "The most recent run-time error information."
+                    "type": "Error",
+                    "array": false,
+                    "description": "The most recent run-time error information.",
+                    "longdesc": "\n\t\t\t\t\t\tAssigning error text to this property generates a run-time error; however, the preferred way to generate a run-time error is to throw an\u00a0Error\u00a0object.\n\t\t\t\t\t"
                 },
                 {
                     "name": "version",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "The version number of the ExtendScript engine."
+                    "type": "String",
+                    "array": false,
+                    "description": "The version number of the ExtendScript engine.",
+                    "longdesc": "Formatted as a three-part number and description; for example: \"3.92.95 (debug)\"."
                 },
                 {
                     "name": "build",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The ExtendScript build information."
                 },
                 {
                     "name": "buildDate",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The ExtendScript build date."
                 },
                 {
                     "name": "global",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "A reference to the global object, which contains the JavaScript global namespace."
                 },
                 {
                     "name": "stack",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The current stack trace."
                 },
                 {
                     "name": "level",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "The current debugging level, which enables or disables the JavaScript debugger."
+                    "type": "Number",
+                    "array": false,
+                    "description": "The current debugging level, which enables or disables the JavaScript debugger.",
+                    "longdesc": "One of 0 (no debugging), 1 (break on runtime errors), or 2 (full debug mode)."
                 },
                 {
                     "name": "flags",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
-                    "description": "Gets or sets low-level debug output flags."
+                    "type": "Number",
+                    "array": false,
+                    "description": "Gets or sets low-level debug output flags.",
+                    "longdesc": "\n\t\t\t\t\t\tA logical AND of bit flag values:\n\t\t\t\t\t\t0x0002 (2): Displays each line with its line number as it is executed.\n\t\t\t\t\t\t0x0040 (64): Enables excessive garbage collection. Usually, garbage collection starts when the number of objects has increased by a certain amount since the last garbage collection. This flag causes ExtendScript to garbage collect after almost every statement. This impairs performance severely, but is useful when you suspect that an object gets released too soon.\n\t\t\t\t\t\t0x0080 (128): Displays all calls with their arguments and the return value.\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t0x0100 (256): Enables extended error handling (see\u00a0strict).\n\t\t\t\t\t\t\n\t\t\t\t\t\t0x0200 (512): Enables the localization feature of the toString method. Equivalent to the localize property.\n\t\t\t\t\t"
                 },
                 {
                     "name": "strict",
-                    "array": false,
-                    "type": "any",
                     "readonly": false,
-                    "description": "Sets or clears strict mode for object modification."
+                    "type": "any",
+                    "array": false,
+                    "description": "Sets or clears strict mode for object modification.",
+                    "longdesc": "When true, any attempt to write to a read-only property causes a runtime error. Some objects do not permit the creation of new properties when true."
                 },
                 {
                     "name": "locale",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
-                    "description": "Gets or sets the current locale."
+                    "type": "String",
+                    "array": false,
+                    "description": "Gets or sets the current locale.",
+                    "longdesc": "\n\t\t\t\t\t\tThe string contains five characters in the form LL_RR, where LL is an ISO 639 language specifier, and RR is an ISO 3166 region specifier.Initially, this is the value that the application or the platform returns for the current user. You can set it to temporarily change the locale for testing. To return to the application or platform setting, set to undefined, null, or the empty string.\n\t\t\t\t\t"
                 },
                 {
                     "name": "localize",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": false,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Set to true to enable the extended localization features of the built-in toString() method."
                 },
                 {
                     "name": "decimalPoint",
-                    "array": false,
-                    "type": "String",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "The character used as the decimal point character in formatted numeric output."
                 },
                 {
                     "name": "memCache",
-                    "array": false,
-                    "type": "Number",
                     "readonly": false,
+                    "type": "Number",
+                    "array": false,
                     "description": "The ExtendScript memory cache size, in bytes."
                 },
                 {
                     "name": "screens",
-                    "array": true,
-                    "type": "Object",
                     "readonly": true,
-                    "description": "An array of objects containing information about the display screens attached to your computer."
+                    "type": "Object",
+                    "array": true,
+                    "description": "An array of objects containing information about the display screens attached to your computer.",
+                    "longdesc": "\n\t\t\t\t\t\tEach object has the properties\u00a0left, top, right, bottom, which contain the four corners of each screen in global coordinates.A property\u00a0primary\u00a0is true if that object describes the primary display.\n\t\t\t\t\t"
                 },
                 {
                     "name": "os",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The current operating system version information."
                 },
                 {
                     "name": "fileName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The file name of the current script."
                 },
                 {
                     "name": "line",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The current line number of the currently executing script."
                 },
                 {
                     "name": "hiresTimer",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "\n\t\t\t\t\t\tA high-resolution timer, measuring the time in microseconds. The timer starts when ExtendScript is\n\t\t\t\t\t\tinitialized during the application startup sequence. Every read access resets the timer to Zero.\n\t\t\t\t\t"
                 },
                 {
                     "name": "engineName",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the current ExtendScript engine, if set."
                 },
                 {
                     "name": "includePath",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The path for include files for the current script."
                 }
+            ],
+            "methods": [
+                {
+                    "name": "about",
+                    "parameters": [],
+                    "description": "Shows an About box for the ExtendScript component, and returns the text for the box.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "toString",
+                    "parameters": [],
+                    "description": "Converts this object to a string.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "write",
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "any",
+                            "array": false,
+                            "optional": false,
+                            "description": "The text to print. All arguments are concatenated."
+                        }
+                    ],
+                    "description": "Prints text to the Console."
+                },
+                {
+                    "name": "writeln",
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "any",
+                            "array": false,
+                            "optional": false,
+                            "description": "The text to print. All arguments are concatenated."
+                        }
+                    ],
+                    "description": "Prints text to the Console, and adds a newline character."
+                },
+                {
+                    "name": "bp",
+                    "parameters": [
+                        {
+                            "name": "condition",
+                            "type": "any",
+                            "array": false,
+                            "optional": true,
+                            "description": "A string containing a JavaScript statement to be used as a condition. If the statement evaluates to true or nonzero when this point is reached, execution stops."
+                        }
+                    ],
+                    "description": "Breaks execution at the current position."
+                },
+                {
+                    "name": "getenv",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of the variable."
+                        }
+                    ],
+                    "description": "Retrieves the value of an environment variable.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "setenv",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The name of the variable."
+                        },
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The value of the variable."
+                        }
+                    ],
+                    "description": "Sets the value of an environment variable."
+                },
+                {
+                    "name": "sleep",
+                    "parameters": [
+                        {
+                            "name": "msecs",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "Number of milliseconds to sleep."
+                        }
+                    ],
+                    "description": "Suspends the calling thread for a number of milliseconds.",
+                    "longdesc": "During a sleep period, checks at 100 millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired."
+                },
+                {
+                    "name": "colorPicker",
+                    "parameters": [
+                        {
+                            "name": "color",
+                            "type": "Number",
+                            "array": false,
+                            "optional": false,
+                            "description": "The color to be preselected in the dialog, as 0xRRGGBB, or -1 for the platform default."
+                        }
+                    ],
+                    "description": "Invokes the platform-specific color selection dialog, and returns the selected color.",
+                    "type": "Number",
+                    "array": false
+                },
+                {
+                    "name": "evalFile",
+                    "parameters": [
+                        {
+                            "name": "file",
+                            "type": "File",
+                            "array": false,
+                            "optional": false,
+                            "description": "The file to load."
+                        },
+                        {
+                            "name": "timeout",
+                            "type": "Number",
+                            "array": false,
+                            "optional": true,
+                            "description": "An optional timeout in milliseconds.",
+                            "value": "10000"
+                        }
+                    ],
+                    "description": "Loads and evaluates a file.",
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "gc",
+                    "parameters": [],
+                    "description": "Initiates garbage collection in the ExtendScript engine."
+                }
             ]
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [],
+            "methods": []
         }
     },
     "description": "The $ object provides a number of debugging facilities and informational methods."

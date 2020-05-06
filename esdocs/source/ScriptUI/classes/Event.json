@@ -2,106 +2,112 @@
     "name": "Event",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "NOT_DISPATCHING",
+                    "readonly": true,
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "CAPTURING_PHASE",
+                    "readonly": true,
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "AT_TARGET",
+                    "readonly": true,
+                    "type": "any",
+                    "array": false
+                },
+                {
+                    "name": "BUBBLING_PHASE",
+                    "readonly": true,
+                    "type": "any",
+                    "array": false
+                }
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "captures",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "True if this event can be captured."
                 },
                 {
                     "name": "bubbles",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "True if the event is of a type that bubbles."
                 },
                 {
                     "name": "cancelable",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "True if the default action associated with the event can be canceled with preventDefault()."
                 },
                 {
                     "name": "currentTarget",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "The event target object which is currently handling the event. During capturing and bubbling, this is different from the property target."
                 },
                 {
                     "name": "eventPhase",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The current phase of event propagation; one of none, target, capture, bubble."
                 },
                 {
                     "name": "target",
-                    "array": false,
-                    "type": "Object",
                     "readonly": true,
+                    "type": "Object",
+                    "array": false,
                     "description": "The event target object for this event."
                 },
                 {
                     "name": "timeStamp",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The date and time at which the event occurred."
                 },
                 {
                     "name": "type",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
-                    "description": "The name of the event that this object represents."
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the event that this object represents.",
+                    "longdesc": "\n            Event types are listed in the JavaScript Tools Guide.\n          "
                 }
             ],
             "methods": [
                 {
                     "name": "preventDefault",
-                    "description": "Prevents the default action associated with this event from being called.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Prevents the default action associated with this event from being called."
                 },
                 {
                     "name": "stopPropagation",
-                    "description": "Stops the propagation of this event.",
-                    "parameters": []
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "name": "NOT_DISPATCHING",
-                    "array": false,
-                    "type": "any",
-                    "readonly": true
-                },
-                {
-                    "name": "CAPTURING_PHASE",
-                    "array": false,
-                    "type": "any",
-                    "readonly": true
-                },
-                {
-                    "name": "AT_TARGET",
-                    "array": false,
-                    "type": "any",
-                    "readonly": true
-                },
-                {
-                    "name": "BUBBLING_PHASE",
-                    "array": false,
-                    "type": "any",
-                    "readonly": true
+                    "parameters": [],
+                    "description": "Stops the propagation of this event."
                 }
             ]
         }
     },
-    "description": "\n        Base class for "
+    "description": "\n        Base class for UIEvent.\n      ",
+    "longdesc": "Encapsulates input event information for an event that propagates through a container and control hierarchy.  Implements W3C standard event handling. "
 }

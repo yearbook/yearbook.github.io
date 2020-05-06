@@ -1,0 +1,56 @@
+{
+    "name": "SearchDefinition",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "criteriaList",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A collection of possible SearchCriteria objects to use for this search.",
+                    "longdesc": "Used to populate the Criteria box in the Find dialog. "
+                },
+                {
+                    "name": "defaultResultsLimit",
+                    "readonly": false,
+                    "type": "Number",
+                    "array": false,
+                    "description": "If non-zero, the Find dialog offers choices to limit the result set to certain sizes, and the choice defaults to this value. "
+                },
+                {
+                    "name": "ranks",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A set of Rank objects to use only if the search can limit results."
+                },
+                {
+                    "name": "scopeSpecifiers",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false,
+                    "description": "A set of scopes used to extend or limit the scope of the search. ",
+                    "longdesc": "One or more Scope objects. The Results box of the Find dialog displays a check box for each scope modifier. "
+                },
+                {
+                    "name": "quickSearchMenuItems",
+                    "readonly": false,
+                    "type": "Array",
+                    "array": false
+                }
+            ],
+            "methods": []
+        }
+    },
+    "description": "Defines a set of search criteria for a search amond handled nodes. ",
+    "longdesc": "Passed to Adobe Bridge to populate the Find dialog. Provides a way for Adobe Bridge extensions to specify how the Adobe Bridge Find dialog should be populated for a search among handled nodes. It specifies possible search criteria, and result scope and ranking criteria. \n\t\t\tIf the user invokes the Find dialog for a handled node, the dialog calls the the node's ExtensionModel.getSearchDefinition() method. Your node-handling extension must define this method to return a SearchDefinition object that can be used to populate Find dialog.\n\t\t\tWhen a user clicks Find in the Find dialog, Adobe Bridge uses the dialog selections to create a SearchSpecification object, which, together with a target node, specifies a search."
+}

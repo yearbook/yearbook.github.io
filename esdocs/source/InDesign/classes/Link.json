@@ -2,513 +2,569 @@
     "name": "Link",
     "dynamic": true,
     "elements": {
+        "class": {
+            "properties": [
+                {
+                    "name": "AFTER_NEW",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Link is created. This event bubbles. This event is not cancelable.",
+                    "value": "afterNew"
+                },
+                {
+                    "name": "BEFORE_DELETE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before a Link is deleted. This event bubbles. This event is cancelable.",
+                    "value": "beforeDelete"
+                },
+                {
+                    "name": "AFTER_DELETE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Link is deleted. This event bubbles. This event is not cancelable.",
+                    "value": "afterDelete"
+                },
+                {
+                    "name": "BEFORE_UPDATE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before a Link is updated. This event bubbles. This event is cancelable.",
+                    "value": "beforeUpdate"
+                },
+                {
+                    "name": "AFTER_UPDATE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Link is updated. This event bubbles. This event is not cancelable.",
+                    "value": "afterUpdate"
+                },
+                {
+                    "name": "BEFORE_EMBED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before a Link is embedded. This event bubbles. This event is cancelable.",
+                    "value": "beforeEmbed"
+                },
+                {
+                    "name": "AFTER_EMBED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Link is embedded. This event bubbles. This event is not cancelable.",
+                    "value": "afterEmbed"
+                },
+                {
+                    "name": "BEFORE_UNEMBED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before a Link is unembedded. This event bubbles. This event is cancelable.",
+                    "value": "beforeUnembed"
+                },
+                {
+                    "name": "AFTER_UNEMBED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Link is unembedded. This event bubbles. This event is not cancelable.",
+                    "value": "afterUnembed"
+                },
+                {
+                    "name": "BEFORE_MOVE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched before a Link is relocated from one object to another. This event bubbles. This event is cancelable.",
+                    "value": "beforeMove"
+                },
+                {
+                    "name": "AFTER_MOVE",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched after a Link is relocated from one object to another. This event bubbles. This event is not cancelable.",
+                    "value": "afterMove"
+                },
+                {
+                    "name": "AFTER_ATTRIBUTE_CHANGED",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "Dispatched when the value of a property changes on this Link. This event bubbles. This event is not cancelable.",
+                    "value": "afterAttributeChanged"
+                }
+            ],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
         "instance": {
             "properties": [
                 {
                     "name": "versionState",
-                    "array": false,
-                    "type": "VersionState",
                     "readonly": true,
+                    "type": "VersionState",
+                    "array": false,
                     "description": "The Version Cue version state of the file."
                 },
                 {
                     "name": "editingState",
-                    "array": false,
-                    "type": "EditingState",
                     "readonly": true,
+                    "type": "EditingState",
+                    "array": false,
                     "description": "The Version Cue editing state of the file."
                 },
                 {
-                    "name": "linkXmp",
-                    "array": false,
-                    "type": "LinkMetadata",
-                    "readonly": true,
-                    "description": "XMP data for the link source file."
-                },
-                {
                     "name": "index",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The index of the link in the links collection."
                 },
                 {
                     "name": "parent",
-                    "array": false,
-                    "type": "Mixed",
                     "readonly": true,
+                    "type": "Mixed",
+                    "array": false,
                     "description": "The linked object. Can return: Story, Graphic, Movie or Sound."
                 },
                 {
                     "name": "assetURL",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The asset URL of the linked object."
                 },
                 {
                     "name": "assetID",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The asset ID of the linked object."
                 },
                 {
                     "name": "edited",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, indicates the linked object has been edited in the current document but the source file has not been updated."
                 },
                 {
                     "name": "name",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The name of the Link."
                 },
                 {
                     "name": "needed",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "If true, indicates a link to a full-resolution version of the source file is needed. If false, indicates the object is embedded."
                 },
                 {
                     "name": "status",
-                    "array": false,
-                    "type": "LinkStatus",
                     "readonly": true,
+                    "type": "LinkStatus",
+                    "array": false,
                     "description": "The status of the link."
                 },
                 {
                     "name": "linkType",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The file type of the linked object."
                 },
                 {
                     "name": "date",
-                    "array": false,
-                    "type": "Date",
                     "readonly": true,
+                    "type": "Date",
+                    "array": false,
                     "description": "The date and time the Link was created."
                 },
                 {
                     "name": "size",
-                    "array": false,
-                    "type": "Number",
                     "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The size of the Link file."
                 },
                 {
                     "name": "filePath",
-                    "array": false,
-                    "type": "String",
                     "readonly": true,
+                    "type": "String",
+                    "array": false,
                     "description": "The file path (colon delimited on the Mac OS). Can also accept: File."
                 },
                 {
-                    "name": "id",
-                    "array": false,
-                    "type": "Number",
+                    "name": "renditionData",
                     "readonly": true,
+                    "type": "LinkResourceRenditionType",
+                    "array": false,
+                    "description": "The rendition data of the link resource."
+                },
+                {
+                    "name": "linkResourceURI",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The URI of the linked resource."
+                },
+                {
+                    "name": "linkXmp",
+                    "readonly": true,
+                    "type": "LinkMetadata",
+                    "array": false,
+                    "description": "XMP data for the link source file."
+                },
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
                     "description": "The unique ID of the Link."
                 },
                 {
                     "name": "isValid",
-                    "array": false,
-                    "type": "Boolean",
                     "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
                     "description": "Returns true if the object specifier resolves to valid objects."
                 },
                 {
                     "name": "events",
-                    "array": false,
-                    "type": "Events",
                     "readonly": true,
+                    "type": "Events",
+                    "array": false,
                     "description": "A collection of events."
                 },
                 {
                     "name": "eventListeners",
-                    "array": false,
-                    "type": "EventListeners",
                     "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
                     "description": "A collection of event listeners."
                 },
                 {
-                    "name": "preferences",
-                    "array": false,
-                    "type": "Preferences",
-                    "readonly": true,
-                    "description": "A collection of preferences objects."
-                },
-                {
                     "name": "links",
-                    "array": false,
-                    "type": "Links",
                     "readonly": true,
+                    "type": "Links",
+                    "array": false,
                     "description": "A collection of links."
                 },
                 {
-                    "name": "label",
+                    "name": "preferences",
+                    "readonly": true,
+                    "type": "Preferences",
                     "array": false,
-                    "type": "String",
+                    "description": "A collection of preferences objects."
+                },
+                {
+                    "name": "label",
                     "readonly": false,
+                    "type": "String",
+                    "array": false,
                     "description": "A property that can be set to any string."
                 },
                 {
                     "name": "properties",
-                    "array": false,
-                    "type": "Object",
                     "readonly": false,
+                    "type": "Object",
+                    "array": false,
                     "description": "A property that allows setting of several properties at the same time."
                 }
             ],
             "methods": [
                 {
                     "name": "checkIn",
-                    "description": "Check in to Version Cue.",
                     "parameters": [
                         {
                             "name": "versionComments",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The comment for this version (Optional)"
                         },
                         {
-                            "description": "Forcibly save a version (Optional)",
-                            "array": false,
                             "name": "forceSave",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "Forcibly save a version (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Check in to Version Cue."
                 },
                 {
                     "name": "relink",
-                    "description": "Points the link to a new source file.",
                     "parameters": [
                         {
                             "name": "to",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The full path name of the new source file. Can accept: File or String."
                         }
-                    ]
+                    ],
+                    "description": "Points the link to a new source file."
                 },
                 {
                     "name": "unlink",
-                    "description": "Embeds the source file in the document.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Embeds the source file in the document."
                 },
                 {
                     "name": "update",
+                    "parameters": [],
                     "description": "Updates the link if the source file has been changed.",
-                    "array": false,
                     "type": "Link",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "unembed",
-                    "description": "Unembeds the source file. If no folder is specified, creates a link to the original source file; if a folder is specified, copies the file to the folder and creates a link to the copied file.",
                     "parameters": [
                         {
                             "name": "to",
-                            "array": false,
                             "type": "File",
+                            "array": false,
                             "optional": false,
                             "description": "The folder to which to copy the unembedded file. (Optional)"
                         },
                         {
                             "name": "versionComments",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The comment for this version. (Optional)"
                         },
                         {
-                            "description": "If true, forcibly saves a version. (Optional)",
-                            "array": false,
                             "name": "forceSave",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Unembeds the source file. If no folder is specified, creates a link to the original source file; if a folder is specified, copies the file to the folder and creates a link to the copied file."
                 },
                 {
                     "name": "editOriginal",
-                    "description": "Opens the source file of the link in the default editor for the source file type.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Opens the source file of the link in the default editor for the source file type."
                 },
                 {
                     "name": "show",
-                    "description": "Selects the link.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Selects the link."
                 },
                 {
                     "name": "revealInSystem",
-                    "description": "Opens the file system to the folder that contains the source file of the link, and selects the file.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Opens the file system to the folder that contains the source file of the link, and selects the file."
                 },
                 {
                     "name": "revealInBridge",
-                    "description": "Opens Adobe Bridge and selects the source file of the link.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Opens Adobe Bridge and selects the source file of the link."
                 },
                 {
                     "name": "copyLink",
-                    "description": "Copies the link file to the specified location.",
                     "parameters": [
                         {
                             "name": "to",
-                            "array": false,
                             "type": "File",
+                            "array": false,
                             "optional": false,
                             "description": "The file or folder to which to copy the file."
                         },
                         {
                             "name": "versionComments",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The comment for this version. (Optional)"
                         },
                         {
-                            "description": "If true, forcibly saves a version. (Optional)",
-                            "array": false,
                             "name": "forceSave",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "If true, forcibly saves a version. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Copies the link file to the specified location."
                 },
                 {
                     "name": "goToSource",
-                    "description": "Opens the source file of the link in InDesign for SharedContent links.",
-                    "parameters": []
+                    "parameters": [],
+                    "description": "Opens the source file of the link in InDesign for SharedContent links."
+                },
+                {
+                    "name": "replaceWithOriginal",
+                    "parameters": [],
+                    "description": "Experimental: Download the original asset and replace FPO with it."
+                },
+                {
+                    "name": "relinkTextFragmentLink",
+                    "parameters": [
+                        {
+                            "name": "linkResourceURI",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Resource URI to relink to."
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The tag name for the key. (Optional)"
+                        }
+                    ],
+                    "description": "Experimental: Relink the text fragment link to a new uri"
+                },
+                {
+                    "name": "reinitLink",
+                    "parameters": [
+                        {
+                            "name": "linkResourceURI",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "Resource URI to relink."
+                        }
+                    ],
+                    "description": "Experimental: Reinitialize the link to a new uri"
                 },
                 {
                     "name": "insertLabel",
-                    "description": "Sets the label to the value associated with the specified key.",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         },
                         {
                             "name": "value",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The value."
                         }
-                    ]
+                    ],
+                    "description": "Sets the label to the value associated with the specified key."
                 },
                 {
                     "name": "extractLabel",
-                    "description": "Gets the label value associated with the specified key.",
-                    "array": false,
-                    "type": "String",
                     "parameters": [
                         {
                             "name": "key",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The key."
                         }
-                    ]
+                    ],
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String",
+                    "array": false
                 },
                 {
                     "name": "toSource",
+                    "parameters": [],
                     "description": "Generates a string which, if executed, will return the Link.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "getElements",
+                    "parameters": [],
                     "description": "Resolves the object specifier, creating an array of object references.",
-                    "array": true,
                     "type": "Link",
-                    "parameters": []
+                    "array": true
                 },
                 {
                     "name": "toSpecifier",
+                    "parameters": [],
                     "description": "Retrieves the object specifier.",
-                    "array": false,
                     "type": "String",
-                    "parameters": []
+                    "array": false
                 },
                 {
                     "name": "addEventListener",
-                    "description": "Adds an event listener.",
-                    "array": false,
-                    "type": "EventListener",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
                 },
                 {
                     "name": "removeEventListener",
-                    "description": "Removes the event listener.",
-                    "array": false,
-                    "type": "Boolean",
                     "parameters": [
                         {
                             "name": "eventType",
-                            "array": false,
                             "type": "String",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event type."
                         },
                         {
                             "name": "handler",
-                            "array": false,
                             "type": "Mixed",
+                            "array": false,
                             "optional": false,
                             "description": "The registered event handler. Can accept: File or JavaScript Function."
                         },
                         {
-                            "description": "This parameter is obsolete. (Optional)",
-                            "array": false,
                             "name": "captures",
-                            "value": "false",
                             "type": "Boolean",
-                            "optional": true
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
                         }
-                    ]
-                }
-            ]
-        },
-        "class": {
-            "properties": [
-                {
-                    "description": "Dispatched after a Link is created. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_NEW",
-                    "value": "afterNew",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before a Link is deleted. This event bubbles. This event is cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_DELETE",
-                    "value": "beforeDelete",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after a Link is deleted. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_DELETE",
-                    "value": "afterDelete",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before a Link is updated. This event bubbles. This event is cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_UPDATE",
-                    "value": "beforeUpdate",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after a Link is updated. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_UPDATE",
-                    "value": "afterUpdate",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before a Link is embedded. This event bubbles. This event is cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_EMBED",
-                    "value": "beforeEmbed",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after a Link is embedded. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_EMBED",
-                    "value": "afterEmbed",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before a Link is unembedded. This event bubbles. This event is cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_UNEMBED",
-                    "value": "beforeUnembed",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after a Link is unembedded. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_UNEMBED",
-                    "value": "afterUnembed",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched before a Link is relocated from one object to another. This event bubbles. This event is cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "BEFORE_MOVE",
-                    "value": "beforeMove",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched after a Link is relocated from one object to another. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_MOVE",
-                    "value": "afterMove",
-                    "type": "String"
-                },
-                {
-                    "description": "Dispatched when the value of a property changes on this Link. This event bubbles. This event is not cancelable.",
-                    "array": false,
-                    "readonly": true,
-                    "name": "AFTER_ATTRIBUTE_CHANGED",
-                    "value": "afterAttributeChanged",
-                    "type": "String"
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
                 }
             ]
         }

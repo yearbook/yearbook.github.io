@@ -1,0 +1,294 @@
+{
+    "name": "PDFComment",
+    "dynamic": true,
+    "elements": {
+        "class": {
+            "properties": [],
+            "methods": []
+        },
+        "constructors": {
+            "methods": []
+        },
+        "instance": {
+            "properties": [
+                {
+                    "name": "commentReviewer",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the reviewer who made the comment"
+                },
+                {
+                    "name": "commentContent",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The content of the comment"
+                },
+                {
+                    "name": "commentDate",
+                    "readonly": true,
+                    "type": "Date",
+                    "array": false,
+                    "description": "The date of the comment"
+                },
+                {
+                    "name": "commentType",
+                    "readonly": true,
+                    "type": "CommentTypeEnum",
+                    "array": false,
+                    "description": "The type of the comment"
+                },
+                {
+                    "name": "commentFilePath",
+                    "readonly": true,
+                    "type": "String",
+                    "array": false,
+                    "description": "The file path of the comment"
+                },
+                {
+                    "name": "commentPathGeometry",
+                    "readonly": true,
+                    "type": "Mixed",
+                    "array": true,
+                    "description": "Path geometry of the comment. Can return: Ordered array containing pathPointArray:Array of Ordered array containing anchor:Array of 2 Reals, leftDirection:Array of 2 Reals, rightDirection:Array of 2 Reals, pathOpen:Boolean."
+                },
+                {
+                    "name": "commentStatus",
+                    "readonly": true,
+                    "type": "CommentStatusEnum",
+                    "array": false,
+                    "description": "The status of the comment"
+                },
+                {
+                    "name": "commentIsOrphan",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether the comment is an orphan"
+                },
+                {
+                    "name": "commentIsApplied",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Whether the comment has been applied"
+                },
+                {
+                    "name": "id",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The unique ID of the PDFComment."
+                },
+                {
+                    "name": "isValid",
+                    "readonly": true,
+                    "type": "Boolean",
+                    "array": false,
+                    "description": "Returns true if the object specifier resolves to valid objects."
+                },
+                {
+                    "name": "parent",
+                    "readonly": true,
+                    "type": "Document",
+                    "array": false,
+                    "description": "The parent of the PDFComment (a Document)."
+                },
+                {
+                    "name": "index",
+                    "readonly": true,
+                    "type": "Number",
+                    "array": false,
+                    "description": "The index of the PDFComment within its containing object."
+                },
+                {
+                    "name": "events",
+                    "readonly": true,
+                    "type": "Events",
+                    "array": false,
+                    "description": "A collection of events."
+                },
+                {
+                    "name": "eventListeners",
+                    "readonly": true,
+                    "type": "EventListeners",
+                    "array": false,
+                    "description": "A collection of event listeners."
+                },
+                {
+                    "name": "replies",
+                    "readonly": true,
+                    "type": "Replies",
+                    "array": false,
+                    "description": "A collection of reply objects"
+                },
+                {
+                    "name": "label",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "A property that can be set to any string."
+                },
+                {
+                    "name": "name",
+                    "readonly": false,
+                    "type": "String",
+                    "array": false,
+                    "description": "The name of the PDFComment; this is an alias to the PDFComment's label property."
+                },
+                {
+                    "name": "properties",
+                    "readonly": false,
+                    "type": "Object",
+                    "array": false,
+                    "description": "A property that allows setting of several properties at the same time."
+                }
+            ],
+            "methods": [
+                {
+                    "name": "remove",
+                    "parameters": [],
+                    "description": "Deletes the PDFComment."
+                },
+                {
+                    "name": "changeStatus",
+                    "parameters": [
+                        {
+                            "name": "commentStatus",
+                            "type": "CommentStatusEnum",
+                            "array": false,
+                            "optional": false,
+                            "description": "The new status of the comment"
+                        },
+                        {
+                            "name": "withProperties",
+                            "type": "Object",
+                            "array": false,
+                            "optional": false,
+                            "description": "Initial values for properties of the new PDFComment (Optional)"
+                        }
+                    ],
+                    "description": "Change the status of a comment"
+                },
+                {
+                    "name": "insertLabel",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The key."
+                        },
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The value."
+                        }
+                    ],
+                    "description": "Sets the label to the value associated with the specified key."
+                },
+                {
+                    "name": "extractLabel",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The key."
+                        }
+                    ],
+                    "description": "Gets the label value associated with the specified key.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "toSource",
+                    "parameters": [],
+                    "description": "Generates a string which, if executed, will return the PDFComment.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "getElements",
+                    "parameters": [],
+                    "description": "Resolves the object specifier, creating an array of object references.",
+                    "type": "PDFComment",
+                    "array": true
+                },
+                {
+                    "name": "toSpecifier",
+                    "parameters": [],
+                    "description": "Retrieves the object specifier.",
+                    "type": "String",
+                    "array": false
+                },
+                {
+                    "name": "addEventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The event type."
+                        },
+                        {
+                            "name": "handler",
+                            "type": "Mixed",
+                            "array": false,
+                            "optional": false,
+                            "description": "The event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "name": "captures",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Adds an event listener.",
+                    "type": "EventListener",
+                    "array": false
+                },
+                {
+                    "name": "removeEventListener",
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "String",
+                            "array": false,
+                            "optional": false,
+                            "description": "The registered event type."
+                        },
+                        {
+                            "name": "handler",
+                            "type": "Mixed",
+                            "array": false,
+                            "optional": false,
+                            "description": "The registered event handler. Can accept: File or JavaScript Function."
+                        },
+                        {
+                            "name": "captures",
+                            "type": "Boolean",
+                            "array": false,
+                            "optional": true,
+                            "description": "This parameter is obsolete. (Optional)",
+                            "value": "false"
+                        }
+                    ],
+                    "description": "Removes the event listener.",
+                    "type": "Boolean",
+                    "array": false
+                }
+            ]
+        }
+    },
+    "description": "PDF comment object"
+}
